@@ -5958,7 +5958,7 @@ input[type="checkbox"]:active,
 
 /* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
 body.p-profiles-edit .tipsy.tipsy-s {
-    transform: translateY(calc(100% + 62px));
+    transform: translateY(calc(100% + 38px));
 }
 body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
     top: 0 !important; bottom: auto !important;
@@ -5976,4 +5976,27 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
 .c-ms-dropdown:not([hidden]) {
     animation: shiki-drop var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
     transform-origin: top center;
+}
+
+/* --- Списки фильтров: плавное сворачивание (и выезд) через transition --- */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    animation: none !important;
+    display: block;
+    clip-path: inset(0 0 0 0 round 10px);
+    transform: none;
+    transition: clip-path var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+                transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+                display var(--ui-drop, .24s) allow-discrete !important;
+}
+.c-ms-dropdown[hidden] {
+    display: none !important;
+    clip-path: inset(0 0 100% 0 round 10px);
+    transform: translateY(-4px);
+}
+@starting-style {
+    .c-ms-dropdown:not([hidden]) {
+        clip-path: inset(0 0 100% 0 round 10px);
+        transform: translateY(-4px);
+    }
 }
