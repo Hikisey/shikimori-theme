@@ -6242,3 +6242,112 @@ select option { background: rgb(var(--popup-color)); color: rgb(var(--light-colo
     select:not(#u):open { animation: none !important; filter: none !important; }
     select:not(#u) option { animation: none !important; transform: none !important; }
 }
+
+/* ================================================================
+   ОБЩИЙ КОМПОНЕНТ «поле-список»: один набор переменных для всех
+   select на сайте и для фильтров каталога (Мой список, Статус…).
+   Менять вид — только здесь, в переменных.
+   (:not(#u) поднимает вес над старыми правилами сайта и темы)
+   ================================================================ */
+:root {
+    --field-bg: rgba(20, 22, 28, .85);
+    --field-border: rgba(255, 255, 255, .10);
+    --field-border-hover: rgba(255, 255, 255, .22);
+    --field-radius: 8px;
+    --field-height: 32px;
+    --field-font: 13px;
+    --field-pad: 6px 11px 6px 10px;
+    --field-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    --field-open-border: rgba(var(--bright-color), .6);
+    --field-open-ring: 0 0 0 3px rgba(var(--bright-color), .15);
+    --drop-gap: 4px;
+    --drop-radius: 10px;
+    --drop-pad: 4px;
+    --drop-bg: rgb(var(--popup-color));
+    --drop-border: rgba(var(--light-color), .12);
+    --drop-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
+    --opt-pad: 5px 10px;
+    --opt-radius: 6px;
+    --opt-hover: rgba(var(--bright-color), .18);
+}
+
+/* --- само поле --- */
+select:not(#u),
+.c-ms-control:not(#u) {
+    box-sizing: border-box;
+    min-height: var(--field-height) !important;
+    height: auto !important;
+    padding: var(--field-pad) !important;
+    font-size: var(--field-font) !important;
+    line-height: 1.4 !important;
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    box-shadow: var(--field-shadow) !important;
+    color: rgb(var(--light-color)) !important;
+    outline: none !important;
+    animation: none !important;
+    filter: none !important;
+    cursor: pointer;
+    transition: transform var(--ui-release, .28s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+                border-color .2s ease, box-shadow .2s ease !important;
+}
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+select:not(#u):hover,
+.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
+select:not(#u):focus,
+.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
+select:not(#u):open,
+.c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+}
+select:not(#u):active,
+.c-ms-control:not(#u):active {
+    transform: scale(.98) !important;
+    transition-duration: var(--ui-press, .08s) !important;
+}
+
+/* --- выпадающий список фильтров --- */
+.c-ms-dropdown:not(#u) {
+    top: calc(100% + var(--drop-gap)) !important;
+    background: var(--drop-bg) !important;
+    border: 1px solid var(--drop-border) !important;
+    border-radius: var(--drop-radius) !important;
+    box-shadow: var(--drop-shadow) !important;
+}
+.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
+.c-ms-option:not(#u) { padding: var(--opt-pad) !important; border-radius: var(--opt-radius); font-size: var(--field-font); }
+.c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
+
+@supports (appearance: base-select) {
+    select:not(#u),
+    select:not(#u)::picker(select) { appearance: base-select !important; }
+    select:not(#u) { display: inline-flex !important; align-items: center; gap: 8px; }
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+
+    /* --- выпадающий список select: тот же вид --- */
+    select:not(#u)::picker(select) {
+        min-width: anchor-size(width);
+        margin: var(--drop-gap) 0 0 0;
+        padding: var(--drop-pad);
+        background: var(--drop-bg);
+        color: rgb(var(--light-color));
+        border: 1px solid var(--drop-border);
+        border-radius: var(--drop-radius);
+        box-shadow: var(--drop-shadow);
+        font-size: var(--field-font);
+    }
+    select:not(#u) option {
+        padding: var(--opt-pad) !important;
+        border-radius: var(--opt-radius);
+        background: transparent !important;
+        color: rgb(var(--light-color));
+        font-size: var(--field-font);
+    }
+    select:not(#u) option:hover,
+    select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
+    select:not(#u) option:checked { color: rgb(var(--bright-color)); }
+    select:not(#u) option::checkmark { display: none; }
+}
