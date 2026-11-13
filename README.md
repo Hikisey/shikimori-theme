@@ -22,15 +22,15 @@
 ```css
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_4mob.css");
 ```
 
 `CodeMirror_dark.css` делает тёмным редактор кода в настройках. `custom_posters.min.css` нужен для замены постеров персонажей. Эти две строки должны стоять в «Внешнем виде сайта», а не внутри файлов темы: Шикимори вырезает `@import` из подключённых файлов.
 
-В ссылках указана версия (`v1.0`). Так Шикимори и GitHub всегда отдают нужные файлы, а не устаревшие копии из кеша. Когда выйдет новая версия, замените `v1.0` на её номер во всех четырёх строках.
+В ссылках указана версия (`v1.1`). Так Шикимори и GitHub всегда отдают нужные файлы, а не устаревшие копии из кеша. Когда выйдет новая версия, замените `v1.1` на её номер во всех четырёх строках.
 
 ## Палитра и картинки
 

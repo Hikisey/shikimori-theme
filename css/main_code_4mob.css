@@ -6363,3 +6363,12 @@ select:not(#u):active,
 .oauth a:is(.facebook, [href*="auth/facebook"])::after {
     filter: brightness(1.45) saturate(1.2) !important;
 }
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"]) > *,
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"])::before {
+    filter: brightness(1.12) saturate(1.1) !important;
+}
