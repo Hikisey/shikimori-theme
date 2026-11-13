@@ -6210,3 +6210,35 @@ select option { background: rgb(var(--popup-color)); color: rgb(var(--light-colo
     select:not(#u) option:focus-visible { background: rgba(var(--bright-color), .18) !important; }
     select:not(#u) option:checked { color: rgb(var(--bright-color)); }
 }
+
+/* ================================================================
+   Анимация списков select = анимация фильтров (Мой список, Статус…)
+   Перекрывает все прежние правила выезда для select.
+   ================================================================ */
+@supports (appearance: base-select) {
+    select:not(#u)::picker(select) {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: translateY(0) !important;
+        clip-path: inset(0 0 0 0 round 10px) !important;
+        transition: clip-path var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+                    transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+                    display var(--ui-drop, .24s) allow-discrete,
+                    overlay var(--ui-drop, .24s) allow-discrete !important;
+    }
+    select:not(#u):not(:open)::picker(select) {
+        clip-path: inset(0 0 100% 0 round 10px) !important;
+        transform: translateY(-4px) !important;
+    }
+    @starting-style {
+        select:not(#u):open::picker(select) {
+            opacity: 1 !important;
+            clip-path: inset(0 0 100% 0 round 10px) !important;
+            transform: translateY(-4px) !important;
+        }
+    }
+    select:not(#u),
+    select:not(#u):focus,
+    select:not(#u):open { animation: none !important; filter: none !important; }
+    select:not(#u) option { animation: none !important; transform: none !important; }
+}
