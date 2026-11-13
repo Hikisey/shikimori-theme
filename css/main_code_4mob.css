@@ -5813,3 +5813,46 @@ input[type="checkbox"]:active,
     .c-filter-select option:checked { color: rgb(var(--bright-color)); }
     .c-filter-select option::checkmark { display: none; }
 }
+
+/* --- Сортировка: «отскок» при открытии, без залипания и без отскока на отпускании --- */
+.c-filter-select:focus { animation: none !important; }
+.c-filter-select:open { animation: shiki-press .28s cubic-bezier(.22,1,.36,1); }
+@supports (appearance: base-select) {
+    .c-filter-select option:focus,
+    .c-filter-select option:focus-visible {
+        outline: none !important;
+        background: rgba(var(--bright-color), .18);
+    }
+}
+
+/* --- Ник в профиле: обводка под цвет темы --- */
+.p-profiles .profile-head .c-brief header.head h1 {
+    color: rgb(var(--light-color)) !important;
+    text-shadow: 0 0 1px rgba(var(--bright-color), .9),
+                 0 2px 10px rgba(var(--bright-color), .35),
+                 0 2px 4px rgba(0, 0, 0, .6) !important;
+}
+
+/* --- Кнопки сохранения в настройках в стиле темы --- */
+.p-profiles-edit input[type="submit"],
+.p-profiles-edit button[type="submit"],
+.p-profiles-edit .b-button,
+.p-profiles-edit .buttons .b-button,
+.p-profiles-edit .buttons input {
+    background: rgb(var(--buttoms-color)) !important;
+    color: rgb(var(--light-color)) !important;
+    border: 1px solid rgba(255, 255, 255, .10) !important;
+    border-radius: 8px !important;
+    padding: 7px 16px !important;
+    box-shadow: 0 4px 14px rgba(var(--shadows-color), .45) !important;
+    text-shadow: none !important;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
+}
+.p-profiles-edit input[type="submit"]:hover,
+.p-profiles-edit button[type="submit"]:hover,
+.p-profiles-edit .b-button:hover,
+.p-profiles-edit .buttons input:hover {
+    background: rgb(var(--hover-buttoms-2)) !important;
+    box-shadow: 0 6px 18px rgba(var(--bright-color), .25) !important;
+}
