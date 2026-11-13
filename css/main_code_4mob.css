@@ -5583,7 +5583,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 /* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
-body.p-profiles .b-options-floated a:after,
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:after,
 body#clubs_edit .b-options-floated a:after {
     width: 42px !important;
     height: 42px !important;
@@ -5595,14 +5595,14 @@ body#clubs_edit .b-options-floated a:after {
     box-sizing: border-box;
     transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
 }
-body.p-profiles .b-options-floated a:hover:after,
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
 body#clubs_edit .b-options-floated a:hover:after {
     background: rgba(var(--popup-color), 1) !important;
     border-color: rgba(var(--bright-color), .55) !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(var(--shadows-color), .6) !important;
 }
-body.p-profiles .b-options-floated a.selected:after,
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:after,
 body#clubs_edit .b-options-floated a.selected:after {
     background: rgba(var(--bright-color), .18) !important;
     border: 1px solid rgba(var(--bright-color), .7) !important;
