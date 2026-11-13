@@ -1,11 +1,42 @@
-/*
- * main_code_1.css — база темы E-design для Шикимори.
- * Оригинал: ed-main, https://github.com/ed-main/ed-main.github.io
- *   (файл cssfiles/main_code_1.css, сборщик основан на shiki-theme от grin3671).
- * Это копия с исправлениями: https://github.com/Hikisey/shikimori-theme
- * Все изменения помечены комментариями FIX / ОТКЛЮЧЕНО / НОВОЕ.
- * Права на исходный код принадлежат автору оригинала.
- */
+/* Палитра по умолчанию (rgb-тройки). Свою палитру задавайте в «Внешнем виде сайта» —
+   она подключается позже и перекрывает эти значения. */
+@media screen and (min-width: 1px) {
+  html:root {
+    --white-color: 255, 255, 255;
+    --light-color: 236, 240, 247;
+    --dark-color: 170, 178, 192;
+    --bright-color: 232, 108, 108;
+    --dull-color: 140, 148, 160;
+    --input-color: 165, 172, 184;
+    --hover-bottoms-1: 26, 28, 34;
+    --buttoms-color: 178, 58, 64;
+    --hover-buttoms-2: 214, 82, 82;
+    --very-high-rating: 129, 199, 132;
+    --high-rating: 156, 204, 101;
+    --average-rating: 255, 202, 40;
+    --small-rating: 239, 108, 108;
+    --time-filled: 232, 108, 108;
+    --time-empty: 34, 38, 46;
+    --anime-inprocess: 128, 246, 255;
+    --anime-complete: 0, 229, 255;
+    --manga-inprocess: 255, 92, 160;
+    --manga-complete: 255, 0, 110;
+    --hover-color: 232, 108, 108;
+    --shadows-color: 10, 12, 16;
+    --block-color: 30, 34, 42;
+    --menu-back: 20, 22, 28;
+    --nick-cover: 160, 165, 175;
+    --popup-color: 38, 43, 54;
+    --hundred: 1;
+    --menu-bar: 18, 20, 26;
+    --menu-bar-hover: 26, 29, 37;
+  }
+}
+
+/* Цвет ссылок в истории на светлой схеме */
+html[data-color-mode=light] {
+  --link-color: #adbfde;
+}
 
 @font-face {
     font-family: "Comfortaa";
@@ -773,17 +804,11 @@ a:hover .title span {
     color: #f6e5ec;
 }
 
-/* ОТКЛЮЧЕНО: всплывающая мини-карточка при наведении на аниме, персонажей и т.п.
-   (общий контейнер сайта .tooltip с крестиком). Прячем через visibility,
-   чтобы её можно было вернуть одной правкой в своём CSS:
-
-   .tooltip { visibility: visible !important; pointer-events: auto !important; }
-   .tooltip * { visibility: inherit !important; pointer-events: auto !important; }
-
-   Скопируйте эти две строки к себе в «Внешний вид сайта» — и всплывашка вернётся
-   (её оформление ниже не трогали). Короткие подсказки .tipsy не затрагиваются. */
+/* Всплывающие карточки с описанием при наведении (окно с крестиком) скрыты.
+   Вернуть можно блоком в «Внешнем виде сайта» (см. README). */
 .tooltip {
     visibility: hidden !important;
+    opacity: 0 !important;
     pointer-events: none !important;
 }
 .tooltip * {
