@@ -5346,15 +5346,15 @@ tr.user_rate.selectable.editable:after {
 /* --- Обои с плавным зумом --- */
 /* Обои сразу приближены (без анимации при загрузке страницы),
    плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
-html { background: #1c1e21; }
+html { background: rgb(var(--page-bg, 28, 30, 33)); }
 body { background: none !important; }
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp") center / cover no-repeat;
-    transform: scale(1.08);
+    background: var(--bg-image, url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp")) center / cover no-repeat;
+    transform: scale(var(--bg-zoom, 1.08));
     /* одинаковая анимация на приближение и отдаление */
     transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
     pointer-events: none;
@@ -5382,9 +5382,8 @@ html:not(:hover) body::before {
     .p-profiles-show .profile-head:before {
         content: "";
         display: block;
-        height: 300px;
-        background: url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif") repeat;
-        background-size: cover;
+        height: var(--profile-banner-height, 300px);
+        background: var(--profile-banner, url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif")) center / cover no-repeat;
         margin: -15px;
         margin-bottom: 5px;
         border-radius: 15px 15px 0 0;
