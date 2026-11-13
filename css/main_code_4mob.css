@@ -5669,15 +5669,13 @@ body#clubs_edit .b-options-floated a.selected:after {
 .c-ms-chip { background: rgba(var(--buttoms-color), 1) !important; border-radius: 6px !important; }
 
 /* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
-.c-filter-select:active,
 .c-ms-control:active,
 .b-link_button:active,
 .b-button:active,
 input[type="submit"]:active,
 button:active,
 input[type="file"]::file-selector-button:active,
-.p-profiles-edit .account .oauth a:active,
-.b-options-floated a:active {
+.p-profiles-edit .account .oauth a:active {
     transform: translateY(1px) scale(.97) !important;
     filter: brightness(.92);
     box-shadow: inset 0 2px 6px rgba(0, 0, 0, .35) !important;
@@ -5748,4 +5746,70 @@ input[type="checkbox"]:active,
 .c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
 .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
     transform: translateY(-50%) !important;
+}
+
+/* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Сортировка: короткий «отскок» при клике вместо залипания --- */
+@keyframes shiki-press {
+    0%   { transform: scale(1); }
+    35%  { transform: translateY(1px) scale(.97); filter: brightness(.92); }
+    100% { transform: scale(1); }
+}
+.c-filter-select:active { transform: none !important; filter: none !important; }
+.c-filter-select:focus { animation: shiki-press .28s cubic-bezier(.22,1,.36,1); }
+
+/* --- Выпадающие списки фильтров плавно выезжают --- */
+@keyframes shiki-drop {
+    from { opacity: 0; transform: translateY(-6px) scaleY(.96); }
+    to   { opacity: 1; transform: none; }
+}
+.c-ms-dropdown:not([hidden]) {
+    transform-origin: top center;
+    animation: shiki-drop .22s cubic-bezier(.22,1,.36,1);
+}
+
+/* Обычный select: выезжающий список (браузеры на Chromium с поддержкой base-select) */
+@supports (appearance: base-select) {
+    .c-filter-select,
+    .c-filter-select::picker(select) {
+        appearance: base-select;
+    }
+    .c-filter-select::picker-icon { display: none; }
+    .c-filter-select::picker(select) {
+        background: rgb(var(--popup-color));
+        color: rgb(var(--light-color));
+        border: 1px solid rgba(var(--light-color), .12);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
+        padding: 4px;
+        margin-top: 4px;
+        opacity: 1;
+        transform: none;
+        transition: opacity .22s cubic-bezier(.22,1,.36,1), transform .22s cubic-bezier(.22,1,.36,1), display .22s allow-discrete, overlay .22s allow-discrete;
+    }
+    .c-filter-select:not(:open)::picker(select) {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    @starting-style {
+        .c-filter-select:open::picker(select) { opacity: 0; transform: translateY(-6px); }
+    }
+    .c-filter-select option {
+        padding: 5px 10px;
+        border-radius: 6px;
+        background: transparent;
+    }
+    .c-filter-select option:hover { background: rgba(var(--bright-color), .18); }
+    .c-filter-select option:checked { color: rgb(var(--bright-color)); }
+    .c-filter-select option::checkmark { display: none; }
 }
