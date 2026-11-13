@@ -6351,3 +6351,15 @@ select:not(#u):active,
     select:not(#u) option:checked { color: rgb(var(--bright-color)); }
     select:not(#u) option::checkmark { display: none; }
 }
+
+/* --- Сервисы в настройках: X белым, Facebook ярче --- */
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
+    filter: invert(1) brightness(1.15) !important;
+}
+.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
+.oauth a:is(.facebook, [href*="auth/facebook"])::before,
+.oauth a:is(.facebook, [href*="auth/facebook"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}

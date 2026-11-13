@@ -4,10 +4,10 @@
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/f2026d4088b44e22c4a257b17f9ac7c6bae71a70/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/f2026d4088b44e22c4a257b17f9ac7c6bae71a70/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/f2026d4088b44e22c4a257b17f9ac7c6bae71a70/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/f2026d4088b44e22c4a257b17f9ac7c6bae71a70/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.0/css/main_code_4mob.css");
 
 /* ===================== Палитра ===================== */
 /* Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
@@ -56,7 +56,7 @@
     --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");  /* обои сайта */
     --bg-zoom: 1.08;                   /* приближение обоев, 1 — без зума */
     --page-bg: 28, 30, 33;             /* цвет под обоями, пока они грузятся */
-    --profile-banner: url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif");  /* баннер в профиле */
+    --profile-banner: url("https://i.pinimg.com/1200x/84/c5/37/84c5370f7c8a96126765b9e80210850a.jpg");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
     --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
