@@ -5856,3 +5856,111 @@ input[type="checkbox"]:active,
     background: rgb(var(--hover-buttoms-2)) !important;
     box-shadow: 0 6px 18px rgba(var(--bright-color), .25) !important;
 }
+
+/* ================================================================
+   ЕДИНАЯ анимация для всех полей-списков (фильтры, сортировка, настройки)
+   Всё ниже перекрывает прежние отдельные правила.
+   ================================================================ */
+:root {
+    --ui-ease: cubic-bezier(.22, 1, .36, 1);
+    --ui-press: .08s;      /* нажатие */
+    --ui-release: .28s;    /* возврат */
+    --ui-drop: .24s;       /* выезд списка */
+}
+.c-filter-select,
+.c-ms-control,
+.c-score-input,
+.b-input select,
+.p-profiles-edit select {
+    animation: none !important;
+    transform: none;
+    filter: none;
+    transition: transform var(--ui-release) var(--ui-ease),
+                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+}
+.c-filter-select:focus,
+.c-filter-select:open { animation: none !important; }
+/* нажатие: одинаково для всех, без залипания */
+.c-filter-select:active,
+.c-ms-control:active,
+.b-input select:active,
+.p-profiles-edit select:active {
+    transform: scale(.98) !important;
+    filter: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3) !important;
+    transition-duration: var(--ui-press) !important;
+}
+
+/* выезд списка: без прозрачности, чтобы поля под ним не просвечивали */
+@keyframes shiki-drop {
+    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
+    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+}
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: shiki-drop var(--ui-drop) var(--ui-ease) !important;
+}
+@supports (appearance: base-select) {
+    .b-input select,
+    .b-input select::picker(select),
+    .p-profiles-edit select,
+    .p-profiles-edit select::picker(select) {
+        appearance: base-select;
+    }
+    .b-input select::picker-icon,
+    .p-profiles-edit select::picker-icon { display: none; }
+    .c-filter-select::picker(select),
+    .b-input select::picker(select),
+    .p-profiles-edit select::picker(select) {
+        background: rgb(var(--popup-color));
+        color: rgb(var(--light-color));
+        border: 1px solid rgba(var(--light-color), .12);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
+        padding: 4px;
+        margin-top: 4px;
+        opacity: 1 !important;
+        transform: none;
+        clip-path: inset(0 0 0 0 round 10px);
+        transition: clip-path var(--ui-drop) var(--ui-ease), transform var(--ui-drop) var(--ui-ease),
+                    display var(--ui-drop) allow-discrete, overlay var(--ui-drop) allow-discrete !important;
+    }
+    .c-filter-select:not(:open)::picker(select),
+    .b-input select:not(:open)::picker(select),
+    .p-profiles-edit select:not(:open)::picker(select) {
+        opacity: 1 !important;
+        clip-path: inset(0 0 100% 0 round 10px);
+        transform: translateY(-4px);
+    }
+    @starting-style {
+        .c-filter-select:open::picker(select),
+        .b-input select:open::picker(select),
+        .p-profiles-edit select:open::picker(select) {
+            clip-path: inset(0 0 100% 0 round 10px);
+            transform: translateY(-4px);
+        }
+    }
+    .b-input select option,
+    .p-profiles-edit select option {
+        padding: 5px 10px; border-radius: 6px; background: transparent;
+    }
+    .b-input select option:hover,
+    .p-profiles-edit select option:hover,
+    .b-input select option:focus,
+    .p-profiles-edit select option:focus {
+        background: rgba(var(--bright-color), .18); outline: none !important;
+    }
+    .b-input select option:checked,
+    .p-profiles-edit select option:checked { color: rgb(var(--bright-color)); }
+    .b-input select option::checkmark,
+    .p-profiles-edit select option::checkmark { display: none; }
+}
+
+/* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
+body.p-profiles-edit .tipsy.tipsy-s {
+    transform: translateY(calc(100% + 62px));
+}
+body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
+    top: 0 !important; bottom: auto !important;
+    transform: rotate(180deg);
+}
