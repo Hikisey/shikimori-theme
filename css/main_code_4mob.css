@@ -5688,3 +5688,28 @@ body#clubs_edit .b-options-floated a:active:after {
     transform: translateY(1px) scale(.92) !important;
     transition-duration: .06s !important;
 }
+
+/* --- Галочки: без плашки слева после клика --- */
+input[type="checkbox"],
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:active,
+.b-input input[type="checkbox"]:focus {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Подсветка полей только пока список открыт / с клавиатуры, после выбора гаснет --- */
+.b-input select:focus:not(:focus-visible),
+.p-profiles-edit select:focus:not(:focus-visible),
+.c-filter-select:focus:not(:focus-visible),
+.c-ms-control:focus:not(:focus-visible):not([aria-expanded="true"]) {
+    border-color: rgba(255, 255, 255, .10) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+}
