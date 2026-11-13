@@ -5553,3 +5553,58 @@ input[type="file"]::file-selector-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(var(--shadows-color), .6);
 }
+
+/* --- Настройки: выпадающие списки (язык, пол, дата) — как текстовые поля --- */
+.p-profiles-edit select,
+.p-profiles-edit .b-input select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 6px 30px 6px 10px !important;
+    background-color: rgba(20, 22, 28, .85) !important;
+    background-image: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%),
+                      linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) !important;
+    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50% !important;
+    background-size: 5px 5px, 5px 5px !important;
+    background-repeat: no-repeat !important;
+    color: rgb(var(--light-color)) !important;
+    border: 1px solid rgba(255, 255, 255, .10) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+.p-profiles-edit select:hover {
+    border-color: rgba(255, 255, 255, .22) !important;
+}
+.p-profiles-edit select:focus {
+    border-color: rgba(var(--bright-color), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
+    outline: none !important;
+}
+
+/* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
+body.p-profiles .b-options-floated a:after,
+body#clubs_edit .b-options-floated a:after {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    background: rgba(var(--block-color), .95) !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    box-shadow: 0 4px 14px rgba(var(--shadows-color), .5) !important;
+    color: rgb(var(--light-color)) !important;
+    box-sizing: border-box;
+    transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
+}
+body.p-profiles .b-options-floated a:hover:after,
+body#clubs_edit .b-options-floated a:hover:after {
+    background: rgba(var(--popup-color), 1) !important;
+    border-color: rgba(var(--bright-color), .55) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--shadows-color), .6) !important;
+}
+body.p-profiles .b-options-floated a.selected:after,
+body#clubs_edit .b-options-floated a.selected:after {
+    background: rgba(var(--bright-color), .18) !important;
+    border: 1px solid rgba(var(--bright-color), .7) !important;
+    color: rgb(var(--bright-color)) !important;
+}
