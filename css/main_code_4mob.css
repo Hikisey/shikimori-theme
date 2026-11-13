@@ -5713,3 +5713,39 @@ input[type="checkbox"]:active,
     border-color: rgba(255, 255, 255, .10) !important;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
 }
+
+/* --- Выпадающие списки (обычные select): без рамки фокуса после выбора --- */
+.c-filter-select:focus,
+.c-filter-select:focus-visible,
+.b-input select:focus,
+.b-input select:focus-visible,
+.p-profiles-edit select:focus,
+.p-profiles-edit select:focus-visible {
+    border-color: rgba(255, 255, 255, .10) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+    outline: none !important;
+}
+/* подсветка, только пока список раскрыт (браузеры с поддержкой :open) */
+.c-filter-select:open,
+.b-input select:open,
+.p-profiles-edit select:open {
+    border-color: rgba(var(--bright-color), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
+}
+
+/* --- Фильтры: при переходе к другому полю открытый список закрывается --- */
+.c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
+.c-filters:has(.c-score-input:focus) .c-ms-dropdown {
+    display: none !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"],
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"],
+.c-filters:has(.c-score-input:focus) .c-ms-control[aria-expanded="true"] {
+    border-color: rgba(255, 255, 255, .10) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
