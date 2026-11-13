@@ -5355,13 +5355,16 @@ body::before {
     z-index: -1;
     background: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp") center / cover no-repeat;
     transform: scale(1.08);
-    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
+    /* приближение: мягкий разгон и мягкое торможение */
+    transition: transform 3s cubic-bezier(.45, 0, .25, 1);
     pointer-events: none;
     will-change: transform;
     backface-visibility: hidden;
 }
 html:not(:hover) body::before {
     transform: scale(1);
+    /* отдаление: как было */
+    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
 }
 
 /* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
