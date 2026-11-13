@@ -5382,7 +5382,9 @@ html:not(:hover) body::before {
     .p-profiles-show .profile-head:before {
         content: "";
         display: block;
-        height: var(--profile-banner-height, 300px);
+        height: auto;
+        aspect-ratio: var(--profile-banner-ratio, 4 / 1);
+        max-height: var(--profile-banner-max-height, 450px);
         background: var(--profile-banner, url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif")) var(--profile-banner-position, center) / cover no-repeat;
         margin: -15px;
         margin-bottom: 5px;

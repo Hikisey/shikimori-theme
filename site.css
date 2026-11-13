@@ -57,7 +57,8 @@
     --bg-zoom: 1.08;                   /* приближение обоев, 1 — без зума */
     --page-bg: 28, 30, 33;             /* цвет под обоями, пока они грузятся */
     --profile-banner: url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif");  /* баннер в профиле */
-    --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
+    --profile-banner-ratio: 1049 / 590; /* ширина / высота картинки в пикселях — высота блока подстроится под неё */
+    --profile-banner-max-height: 450px; /* максимум высоты; если картинка выше, лишнее аккуратно обрежется */
     --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
     --hundred: 1;                      /* непрозрачность текста, обычно 1 */
