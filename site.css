@@ -4,10 +4,10 @@
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/5542f9b9f2bda1b7bc185a2d3e8965811a739226/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/5542f9b9f2bda1b7bc185a2d3e8965811a739226/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/5542f9b9f2bda1b7bc185a2d3e8965811a739226/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/5542f9b9f2bda1b7bc185a2d3e8965811a739226/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/4747cb7e99e7d03a67be0ab1c6ecd9ea0fe557cc/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/4747cb7e99e7d03a67be0ab1c6ecd9ea0fe557cc/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/4747cb7e99e7d03a67be0ab1c6ecd9ea0fe557cc/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/4747cb7e99e7d03a67be0ab1c6ecd9ea0fe557cc/css/main_code_4mob.css");
 
 /* ===================== Палитра ===================== */
 /* Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
