@@ -1541,10 +1541,7 @@ body#topics_index .b-collection_search .b-catalog_entry {
     background: transparent;
 }
 
-*:focus {
-    border: none !important;
-    outline: none !important;
-}
+*:focus:not(:focus-visible) { outline: none !important; }
 
 .b-add_to_list.on_hold .edit, .b-add_to_list.on_hold .trigger-arrow:before {
     color: #ffe7cd;

@@ -5608,3 +5608,83 @@ body#clubs_edit .b-options-floated a.selected:after {
     border: 1px solid rgba(var(--bright-color), .7) !important;
     color: rgb(var(--bright-color)) !important;
 }
+
+/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* --- Фильтры каталога: поля как текстовые, рамка не пропадает --- */
+.c-filter-select,
+.c-ms-control,
+.c-score-input {
+    background-color: rgba(20, 22, 28, .85) !important;
+    color: rgb(var(--light-color)) !important;
+    border: 1px solid rgba(255, 255, 255, .10) !important;
+    border-radius: 8px !important;
+    min-height: 34px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease, background-color .2s ease !important;
+}
+.c-filter-select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 6px 30px 6px 10px !important;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%),
+                      linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) !important;
+    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50% !important;
+    background-size: 5px 5px, 5px 5px !important;
+    background-repeat: no-repeat !important;
+}
+.c-filter-select option { background: rgb(var(--popup-color)); color: rgb(var(--light-color)); }
+.c-ms-control { padding: 4px 26px 4px 10px !important; }
+.c-ms-caret { border-top-color: rgb(var(--dark-color)) !important; right: 11px !important; transform: translateY(-50%); transition: transform .2s ease; }
+.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
+.c-ms-placeholder { color: rgb(var(--dark-color)) !important; }
+.c-ms-title { color: rgb(var(--dark-color)) !important; }
+
+.c-filter-select:hover,
+.c-ms-control:hover,
+.c-score-input:hover {
+    border-color: rgba(255, 255, 255, .22) !important;
+}
+/* открыт / в фокусе — алая рамка, она остаётся при любом числе кликов */
+.c-filter-select:focus,
+.c-ms-control:focus,
+.c-ms-control[aria-expanded="true"],
+.c-score-input:focus {
+    border-color: rgba(var(--bright-color), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
+    outline: none !important;
+}
+.c-ms.is-filled .c-ms-control,
+.c-score.is-filled .c-score-input {
+    border-color: rgba(var(--bright-color), .45) !important;
+}
+.c-ms-chip { background: rgba(var(--buttoms-color), 1) !important; border-radius: 6px !important; }
+
+/* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
+.c-filter-select:active,
+.c-ms-control:active,
+.b-link_button:active,
+.b-button:active,
+input[type="submit"]:active,
+button:active,
+input[type="file"]::file-selector-button:active,
+.p-profiles-edit .account .oauth a:active,
+.b-options-floated a:active {
+    transform: translateY(1px) scale(.97) !important;
+    filter: brightness(.92);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, .35) !important;
+    transition-duration: .06s !important;
+}
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:active:after,
+body#clubs_edit .b-options-floated a:active:after {
+    transform: translateY(1px) scale(.92) !important;
+    transition-duration: .06s !important;
+}
