@@ -5964,3 +5964,16 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
     top: 0 !important; bottom: auto !important;
     transform: rotate(180deg);
 }
+
+/* --- Та же анимация выезда для остальных выпадающих меню --- */
+.l-top_menu-v2 .menu-dropdown.active > .submenu,
+.l-top_menu-v2 .menu-dropdown:hover > .submenu,
+.l-top_menu-v2 .menu-dropdown:focus-within > .submenu,
+.b-options-dropdown.active .submenu,
+.b-subposter-actions .submenu,
+.dropdown.active .submenu,
+.dropdown.active .dropdown-menu,
+.c-ms-dropdown:not([hidden]) {
+    animation: shiki-drop var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
+    transform-origin: top center;
+}
