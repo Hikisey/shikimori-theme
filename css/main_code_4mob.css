@@ -5355,8 +5355,8 @@ body::before {
     z-index: -1;
     background: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp") center / cover no-repeat;
     transform: scale(1.08);
-    /* одна и та же мягкая кривая в обе стороны: без рывка в начале и без «залипания» */
-    transition: transform 2.5s cubic-bezier(.3, .1, .25, 1);
+    /* одинаковая анимация на приближение и отдаление */
+    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
     pointer-events: none;
     will-change: transform;
     backface-visibility: hidden;
@@ -5511,4 +5511,45 @@ a:hover, .b-link:hover, .b-js-link:hover {
 }
 .l-footer:after {
     content: "*Modern Dark*" !important;
+}
+
+
+/* --- Настройки: кнопка выбора файла (аватар) в стиле темы --- */
+input[type="file"] {
+    color: rgb(var(--dark-color));
+}
+input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    background: rgb(var(--buttoms-color));
+    color: rgb(var(--light-color));
+    font: inherit;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .15s ease;
+}
+input[type="file"]::file-selector-button:hover {
+    background: rgb(var(--hover-buttoms-2));
+    transform: translateY(-1px);
+}
+
+/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
+.p-profiles-edit .account .oauth a,
+.p-profiles-edit .account .oauth .b-link_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--block-color), .95) !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 14px rgba(var(--shadows-color), .5);
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.p-profiles-edit .account .oauth a:hover,
+.p-profiles-edit .account .oauth .b-link_button:hover {
+    border-color: rgba(var(--bright-color), .55) !important;
+    background: rgba(var(--popup-color), 1) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--shadows-color), .6);
 }
