@@ -6117,3 +6117,96 @@ select option { background: rgb(var(--popup-color)); color: rgb(var(--light-colo
     select option:checked { color: rgb(var(--bright-color)); }
     select option::checkmark { display: none; }
 }
+
+/* ================================================================
+   Сортировка = остальные фильтры = настройки: один вид и одна анимация
+   (:not(#u) поднимает вес правила над старыми правилами сайта/темы)
+   ================================================================ */
+.c-ms-caret {
+    transition: transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
+    border-top-color: rgb(var(--dark-color)) !important;
+}
+.c-ms-dropdown {
+    top: calc(100% + 4px) !important;
+    background: rgb(var(--popup-color)) !important;
+    border: 1px solid rgba(var(--light-color), .12) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 30px rgba(var(--shadows-color), .6) !important;
+}
+.c-ms-options { padding: 4px !important; }
+.c-ms-option {
+    padding: 5px 10px !important;
+    border-radius: 6px;
+    transition: background-color .15s ease, color .15s ease;
+}
+.c-ms-option:hover { background: rgba(var(--bright-color), .18) !important; }
+.c-ms-option.is-on { color: rgb(var(--bright-color)) !important; }
+
+@supports (appearance: base-select) {
+    select:not(#u),
+    select:not(#u)::picker(select) { appearance: base-select !important; }
+    select:not(#u) {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 32px;
+        padding: 6px 11px 6px 10px !important;
+        background: rgba(20, 22, 28, .85) !important;
+        border: 1px solid rgba(255, 255, 255, .10) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+        color: rgb(var(--light-color)) !important;
+        outline: none !important;
+    }
+    select:not(#u):hover { border-color: rgba(255, 255, 255, .22) !important; }
+    select:not(#u):focus:not(:open) {
+        border-color: rgba(255, 255, 255, .10) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+    }
+    select:not(#u):open {
+        border-color: rgba(var(--bright-color), .6) !important;
+        box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
+    }
+    /* стрелка такая же, как у фильтров, и так же поворачивается */
+    select:not(#u)::picker-icon {
+        display: block !important;
+        content: "";
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        margin-inline-start: auto;
+        flex: 0 0 auto;
+        box-sizing: content-box;
+        padding: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid rgb(var(--dark-color));
+        background: none;
+        transition: rotate var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1));
+    }
+    select:not(#u):open::picker-icon { rotate: 180deg; }
+    select:not(#u)::picker(select) {
+        min-width: anchor-size(width);
+        margin: 4px 0 0 0;
+        padding: 4px;
+        background: rgb(var(--popup-color));
+        color: rgb(var(--light-color));
+        border: 1px solid rgba(var(--light-color), .12);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
+        font-size: 13px;
+    }
+    select:not(#u) option {
+        padding: 5px 10px !important;
+        border-radius: 6px;
+        background: transparent !important;
+        color: rgb(var(--light-color));
+        transition: background-color .15s ease, color .15s ease;
+    }
+    select:not(#u) option:hover,
+    select:not(#u) option:focus-visible { background: rgba(var(--bright-color), .18) !important; }
+    select:not(#u) option:checked { color: rgb(var(--bright-color)); }
+}
