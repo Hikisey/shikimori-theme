@@ -5382,9 +5382,7 @@ html:not(:hover) body::before {
     .p-profiles-show .profile-head:before {
         content: "";
         display: block;
-        height: auto;
-        aspect-ratio: var(--profile-banner-ratio, 4 / 1);
-        max-height: var(--profile-banner-max-height, 450px);
+        height: var(--profile-banner-height, 300px);
         background: var(--profile-banner, url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif")) var(--profile-banner-position, center) / cover no-repeat;
         margin: -15px;
         margin-bottom: 5px;
@@ -6000,4 +5998,38 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
         clip-path: inset(0 0 100% 0 round 10px);
         transform: translateY(-4px);
     }
+}
+
+/* --- Под баннером мягкое свечение в цвет самой картинки --- */
+@media (min-width: 1200px) {
+    .p-profiles-show .profile-head {
+        position: relative;
+        display: flow-root;
+        isolation: isolate;
+    }
+    .p-profiles-show .profile-head:before {
+        position: relative;
+        z-index: 1;
+        -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+        mask-image: linear-gradient(to bottom, #000 82%, transparent);
+    }
+    .p-profiles-show .profile-head:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(var(--profile-banner-height, 300px) - 90px);
+        height: 220px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(45px) saturate(1.5);
+        opacity: var(--profile-banner-glow, .5);
+        z-index: 0;
+        pointer-events: none;
+        clear: none;
+        border-radius: 15px;
+        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+    }
+    .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
 }
