@@ -29,7 +29,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.2.21 (подвал сайта: «hikisey theme v1.2.21») |
+| **текущая версия** | v1.2.22 (подвал сайта: «hikisey theme v1.2.22»); карта строк ниже — по v1.2.21 |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 4 css-файла, 18 645 строк, около 535 КБ без сжатия |
 | **подключение** | 4 строки `@import` с тегом версии + блок палитры в «Внешнем виде сайта» |
@@ -232,16 +232,16 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.22/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 4 импорта темы
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.22/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.22/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.22/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.22/css/main_code_4mob.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -249,7 +249,7 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 ## выпуск релиза
 
 1. **правка исходников** — исходники `main_code_*` и `mobile_v12.css`, никогда сами файлы в `css/`
-2. **сборка** — `THEME_VERSION=1.2.21 REPO=<путь к репозиторию> bash assemble.sh` — версия попадает в `--theme-version` и в подвал
+2. **сборка** — `THEME_VERSION=1.2.22 REPO=<путь к репозиторию> bash assemble.sh` — версия попадает в `--theme-version` и в подвал
 3. **проверки** — css-tree без ошибок; эмуляция фильтра шикимори сохраняет все правила; ссылки целы; нет behavior и @view-transition
 4. **скриншоты до/после** — пк 1280 в Chrome, iPhone 13 в WebKit и телефон в Chrome
 5. **версия в site.css и README** — замена старого тега на новый
@@ -320,3 +320,4 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.2.19 | чёткие логотипы, подъём на 3px вместо алого свечения |
 | v1.2.20 | все цвета на переменных: акцент, фон, стекло, текст |
 | v1.2.21 | стекло на iPhone снова размыто, баннер на телефоне, плотная панель фильтров, кнопка-крестик на экране |
+| v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |

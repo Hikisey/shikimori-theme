@@ -5160,6 +5160,20 @@ div.Ssylki-anime:hover .Text-2 {
     z-index: 2;
 }
 }
+/* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
+   наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
+   Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
+@media (hover: hover) and (pointer: fine) {
+.b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px;
+    background: transparent;
+}
+}
 /* Лёгкий зум картинки внутри обложки (не выходит за края) */
 .b-catalog_entry .cover {
     overflow: hidden;
@@ -5422,7 +5436,8 @@ html:not(:hover) body::before {
 @media (hover: hover) and (pointer: fine) {
 .b-link_button:hover,
 .b-button:hover {
-    transform: translateY(-1px);
+    /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
 }
 }
 .b-catalog_entry, .b-user, .b-club, .b-achievement, .cc-franchises .b-badge,
@@ -5483,7 +5498,6 @@ input[type="file"]::file-selector-button {
 @media (hover: hover) and (pointer: fine) {
 input[type="file"]::file-selector-button:hover {
     background: var(--accent-hover);
-    transform: translateY(-1px);
 }
 }
 
@@ -5504,8 +5518,20 @@ input[type="file"]::file-selector-button:hover {
 .p-profiles-edit .account .oauth .b-link_button:hover {
     border-color: rgba(var(--accent), .55) !important;
     background: var(--glass-popup) !important;
-    transform: translateY(-2px);
     box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+}
+/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
+   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
+   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
+.p-profiles-edit .account .oauth a::before,
+.p-profiles-edit .account .oauth a > * {
+    transition: transform .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.p-profiles-edit .account .oauth a:hover::before,
+.p-profiles-edit .account .oauth a:hover > * {
+    transform: translateY(-2px);
 }
 }
 
@@ -6019,7 +6045,6 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         box-sizing: border-box !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
-        overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
         transform: translate(-50%, -50%);
         transform-origin: 50% 50%;
@@ -6692,7 +6717,6 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         margin-top: 0 !important;
         max-height: 220px;
         overflow-y: auto;
-        overscroll-behavior: contain;
     }
     /* высота карточки не пересчитывается, когда прячется панель Safari */
     section.l-page.menu-expanded aside.l-menu:not(#u) {
@@ -6950,6 +6974,16 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         box-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .3);
         z-index: 2;
     }
+    /* v1.2.22: невидимая полоска под поднятой карточкой — наведение не мигает у нижнего края */
+    .p-user_rates-index .list-posters .user_rate:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 10px;
+        background: transparent;
+    }
     .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
         background: rgba(var(--accent), .85) !important;
         border-color: rgba(var(--accent), 1);
@@ -7193,10 +7227,16 @@ html input[type="checkbox"]:not(#u):focus-visible {
   z-index: 2;
 }
 .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker::before { color: rgb(var(--text-strong)) !important; }
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
+  transform-origin: 50% 100%;
+}
 @media (hover: hover) and (pointer: fine) {
+  /* v1.2.22: кадр не сдвигается вверх, а чуть растёт от нижнего края — нижняя кромка стоит
+     на месте, и курсор у неё больше не выпадает из кадра (раньше наведение мигало) */
   .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot:hover,
   .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video:hover {
-    transform: translateY(-3px);
+    transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(var(--shade), 0.45), 0 0 0 1px rgba(var(--accent), .55);
   }
 }
