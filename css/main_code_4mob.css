@@ -175,18 +175,22 @@
         color: #cc4e05b3;
     }
 
-    body[data-locale="ru"] .b-offtopic_marker.off:hover:before,
-    body[data-locale="ru"] .b-offtopic_marker.active:hover:before {
+    @media (hover: hover) and (pointer: fine) {
+body[data-locale="ru"] .b-offtopic_marker.off:hover:before,
+body[data-locale="ru"] .b-offtopic_marker.active:hover:before {
         color: #ffcfe0;
         background-color: #ad024f;
     }
+}
 
-    body[data-locale="ru"] .b-summary_marker.off:hover:before,
-    body[data-locale="ru"] .b-summary_marker.active:hover:before {
+    @media (hover: hover) and (pointer: fine) {
+body[data-locale="ru"] .b-summary_marker.off:hover:before,
+body[data-locale="ru"] .b-summary_marker.active:hover:before {
         color: #eaffe9 !important;
         background-color: #037d03 !important;
         border: none;
     }
+}
 
     .editor-container .b-offtopic_marker:before,
     .editor-container .b-summary_marker:before {
@@ -368,11 +372,13 @@
         margin-right: auto;
     }
 
-    .b-video_variant a:hover {
+    @media (hover: hover) and (pointer: fine) {
+.b-video_variant a:hover {
         background: none !important;
         box-shadow: none !important;
         border: none !important;
     }
+}
 
     .p-dashboards-show .cc-ongoings .c-column {
         width: calc(12.5% - 10px) !important;
@@ -694,11 +700,13 @@
         display: none !important;
     }
 
-    a:hover,
-    .link:hover {
+    @media (hover: hover) and (pointer: fine) {
+a:hover,
+.link:hover {
         transition: none !important;
         box-shadow: none !important;
     }
+}
 
     .b-dialog > .inner div.body {
         margin-left: 10px;
@@ -917,12 +925,16 @@
         bottom: 5px !important;
     }
 
-    .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
-    .p-profiles .profile-head:hover .c-info .c-lists-info,
     .p-profiles .profile-head .c-info .c-lists-info,
-    .x1000 > .l-page div .profile-head .c-info .c-lists-info {
+.x1000 > .l-page div .profile-head .c-info .c-lists-info {
         margin-top: 0  !important;
     }
+@media (hover: hover) and (pointer: fine) {
+.x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+.p-profiles .profile-head:hover .c-info .c-lists-info {
+        margin-top: 0  !important;
+    }
+}
 
     .b-catalog_entry-tooltip .b-add_to_list {
         max-width: 600px;
@@ -990,10 +1002,12 @@
         width: 38px;
     }
 
-    .userbox img.avatar:hover {
+    @media (hover: hover) and (pointer: fine) {
+.userbox img.avatar:hover {
         transform: scale(1.3);
         border: 1px solid rgba(var(--hover-color), var(--hundred)) !important;
     }
+}
 
     .buttons .editor-italic:before,
     .buttons .editor-spoiler:before,
@@ -1169,24 +1183,28 @@
         display: none;
     }
 
-    .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
-    .p-profiles .profile-head:hover .c-info .c-lists-info {
+    @media (hover: hover) and (pointer: fine) {
+.x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+.p-profiles .profile-head:hover .c-info .c-lists-info {
         margin-top: 0  !important;
     }
+}
 
     .p-profiles .profile-head .c-brief .avatar .profile-actions {
         bottom: 50px !important;
     }
 
-    .text.full:hover,
-    .text.moderate:hover,
-    .text.high:hover,
-    .text.weak:hover,
-    .text.zero:hover,
-    .b-stats_bar.manga .compatibility a:hover,
-    .b-stats_bar.anime .compatibility a:hover {
+    @media (hover: hover) and (pointer: fine) {
+.text.full:hover,
+.text.moderate:hover,
+.text.high:hover,
+.text.weak:hover,
+.text.zero:hover,
+.b-stats_bar.manga .compatibility a:hover,
+.b-stats_bar.anime .compatibility a:hover {
         transform: scale(1);
     }
+}
 
     body#profiles_show .about.block {
         margin-top: 20px;
@@ -1387,10 +1405,12 @@
         display: none;
     }
 
-    .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
-    .p-profiles .profile-head:hover .c-info .c-lists-info {
+    @media (hover: hover) and (pointer: fine) {
+.x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+.p-profiles .profile-head:hover .c-info .c-lists-info {
         margin-top: 45px !important;
     }
+}
 
     .p-profiles .profile-head .c-info .c-lists-info,
     .x1000 > .l-page div .profile-head .c-info .c-lists-info {
@@ -1435,14 +1455,18 @@
         width: 80px;
     }
 
-    .p-profiles .profile-head .c-brief .avatar img:hover {
+    @media (hover: hover) and (pointer: fine) {
+.p-profiles .profile-head .c-brief .avatar img:hover {
         transform: scale(1.3) !important;
         width: 80px;
     }
+}
 
-    .p-profiles .profile-head:hover .c-brief .avatar img {
+    @media (hover: hover) and (pointer: fine) {
+.p-profiles .profile-head:hover .c-brief .avatar img {
         transform: scale(1.3) !important;
     }
+}
 
     .p-profiles .profile-head .c-brief .avatar {
         float: none;
@@ -2131,11 +2155,13 @@
         padding: 0 ;
     }
 
-    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:hover,
-    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:hover {
+    @media (hover: hover) and (pointer: fine) {
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:hover,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:hover {
         clip-path: none;
         transform: none;
     }
+}
 
     .p-profiles .profile-head .c-history,
     .p-profiles .profile-head .c-history.x2,
@@ -2631,13 +2657,17 @@
         transform: scale(1.3) !important;
     }
 
-    .p-profiles .profile-head .c-brief .avatar img:hover {
+    @media (hover: hover) and (pointer: fine) {
+.p-profiles .profile-head .c-brief .avatar img:hover {
         transform: scale(1.3) !important;
     }
+}
 
-    .p-profiles .profile-head:hover .c-brief .avatar img {
+    @media (hover: hover) and (pointer: fine) {
+.p-profiles .profile-head:hover .c-brief .avatar img {
         transform: scale(1.3) !important;
     }
+}
 
 
     .b-stats_bar.anime .compatibility a:before,
@@ -3108,22 +3138,28 @@
 .b-reviews_navigation
 .navigation-node-positive:not(.is-active):not(.is-empty):active,
 .b-reviews_navigation
-.navigation-node-positive:not(.is-active):not(.is-empty):hover,
-.b-reviews_navigation
 .navigation-node-neutral:not(.is-active):not(.is-empty):active,
-.b-reviews_navigation
-.navigation-node-neutral:not(.is-active):not(.is-empty):hover,
 .b-reviews_navigation
 .navigation-node-negative:not(.is-active):not(.is-empty):active,
 .b-reviews_navigation
-.navigation-node-negative:not(.is-active):not(.is-empty):hover,
+.navigation-node-all:not(.is-active):not(.is-empty):active {
+    color: rgba(var(--hover-color), var(--hundred)) !important;
+    background: none;
+    border: none;
+}
+@media (hover: hover) and (pointer: fine) {
 .b-reviews_navigation
-.navigation-node-all:not(.is-active):not(.is-empty):active,
+.navigation-node-positive:not(.is-active):not(.is-empty):hover,
+.b-reviews_navigation
+.navigation-node-neutral:not(.is-active):not(.is-empty):hover,
+.b-reviews_navigation
+.navigation-node-negative:not(.is-active):not(.is-empty):hover,
 .b-reviews_navigation
 .navigation-node-all:not(.is-active):not(.is-empty):hover {
     color: rgba(var(--hover-color), var(--hundred)) !important;
     background: none;
     border: none;
+}
 }
 
 .b-reviews_navigation a.navigation-node.is-active:hover .label span,
@@ -3310,9 +3346,11 @@
    #profiles_show .b-achievement .c-image .inner {
       transform: scale(1.065);
    }
-   #profiles_show .b-achievement .c-image .inner:hover {
+   @media (hover: hover) and (pointer: fine) {
+#profiles_show .b-achievement .c-image .inner:hover {
       transform: scale(1.15);
    }
+}
    #profiles_show .b-achievement.is-badge .c-image {
       border-radius: 0.5rem;
       overflow: hidden;
@@ -3332,25 +3370,27 @@
       padding: 2px;
       transition: 0s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
    }
-   #profiles_show
+   @media (hover: hover) and (pointer: fine) {
+#profiles_show
       .achievements
       .c-column:nth-child(1)
       .cc-achievements
       .b-achievement:hover,
-   #profiles_show
+#profiles_show
       .achievements
       .c-column:nth-child(2)
       .cc-achievements
       .b-achievement:hover,
-   #profiles_show.p-profiles-show
+#profiles_show.p-profiles-show
       .achievements
       .cc-authors
       .b-achievement:hover,
-   body#profiles_show .cc-franchises .b-badge:hover img {
+body#profiles_show .cc-franchises .b-badge:hover img {
       box-shadow: -20px 20px 0 -17px rgb(62 62 62 / 85%),
          20px -20px 0 -17px #383838, 20px 20px 0 -20px rgb(0 0 0 / 80%),
          0 0 0 2px rgb(0 0 0 / 80%);
    }
+}
     #profiles_show .achievements .cc-franchises .b-badge::before {
          visibility: hidden;
    }
@@ -3388,10 +3428,12 @@
         -webkit-transition: box-shadow 0.25s ease;
     }
 
-    .about .b-catalog_entry .cover:hover {
+    @media (hover: hover) and (pointer: fine) {
+.about .b-catalog_entry .cover:hover {
         border-radius: 0.6rem;
         background: linear-gradient(transparent 0 , rgba(var(--block-color), 0.35)) !important;
     }
+}
 
     .about .cc-9-g0 > .c-column .cover,
     .about .cc-8-g0 > .c-column .cover,
@@ -3606,8 +3648,10 @@
     box-shadow: none !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas .b-catalog_entry:hover {
     transform: none;
+}
 }
 
 .about .Animes_Mangas .b-catalog_entry .image-decor:before {
@@ -3639,8 +3683,10 @@
     -webkit-transition: box-shadow 0.4s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas .b-catalog_entry:hover > a .image-cutter::after {
     box-shadow: none;
+}
 }
 
 .about .Animes_Mangas .b-catalog_entry a .image-cutter::before {
@@ -3665,8 +3711,10 @@
     opacity: 1;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas .b-catalog_entry .cover .image-decor:hover .image-cutter {
     background: none;
+}
 }
 
 .about .Animes_Mangas .b-catalog_entry .cover {
@@ -3679,9 +3727,11 @@
     -webkit-transition: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas .b-catalog_entry .cover:hover {
     box-shadow: none !important;
     background: none !important;
+}
 }
 
 @keyframes glowing {
@@ -3843,8 +3893,10 @@
     box-shadow: none !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas-1 .b-catalog_entry:hover {
     transform: none;
+}
 }
 
 .about .Animes_Mangas-1 .b-catalog_entry .image-decor:before {
@@ -3875,8 +3927,10 @@
     -webkit-transition: box-shadow 0.4s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
     box-shadow: none;
+}
 }
 
 .about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
@@ -3901,8 +3955,10 @@
     opacity: 1;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
     background: none;
+}
 }
 
 .about .Animes_Mangas-1 .b-catalog_entry .cover {
@@ -3915,9 +3971,11 @@
     -webkit-transition: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
     box-shadow: none !important;
     background: none !important;
+}
 }
 
 
@@ -4545,9 +4603,11 @@ div.Ssylki-anime-v-1:hover .progress {
     transition: 0s ease, transform 0.3s ease, background 0.3s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 div.Ssylki-Characters:hover {
     transform: rotate(-360deg);
     background-image: url("/\x/dere.shikimori.one/system/images/original/111569.gif?1610135594");
+}
 }
 
 .Ssylki-Characters .b-link {
@@ -4671,8 +4731,10 @@ div.Ssylki-Characters:hover .Text-1:after {
     overflow: hidden;
 }
 
+@media (hover: hover) and (pointer: fine) {
 div.Ssylki-anime:hover {
     transform: translateY(-5px);
+}
 }
 
 .Ssylki-anime .b-link {
@@ -4762,9 +4824,11 @@ div.Ssylki-anime:hover .Evaluation {
     z-index: -1;
 }
 
+@media (hover: hover) and (pointer: fine) {
 div.Ssylki-anime:hover > strong > a::before {
     filter: contrast(105%) grayscale(70%);
     box-shadow: none;
+}
 }
 
 .Ssylki-anime > strong > a::before {
@@ -4996,11 +5060,17 @@ div.Ssylki-anime:hover .Text-2 {
 }
 
 .k-0-1 .b-catalog_entry,
-.k-0-1 .b-catalog_entry .cover,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
 .k-0-1 .b-catalog_entry .cover:hover {
     transform: none !important;
     box-shadow: none !important;
     background: none !important;
+}
 }
 
 .k-0-1 .Anime-v-0-1 {
@@ -5008,8 +5078,10 @@ div.Ssylki-anime:hover .Text-2 {
     transform: scale(1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .k-0-1 .Anime-v-0-1:hover {
     transform: scale(1.025);
+}
 }
 
 /*------*/
@@ -5060,10 +5132,15 @@ div.Ssylki-anime:hover .Text-2 {
 /* ===================== Исправления и доработки ===================== */
 
 /* --- Карточки аниме: обложка и подложка двигаются вместе --- */
-.b-catalog_entry .cover,
+.b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
 .b-catalog_entry:hover .cover {
     transform: none !important;
     box-shadow: none !important;
+}
 }
 .b-catalog_entry {
     border-radius: 14px;
@@ -5073,6 +5150,7 @@ div.Ssylki-anime:hover .Text-2 {
         box-shadow .35s cubic-bezier(.22, 1, .36, 1),
         background-color .35s ease !important;
 }
+@media (hover: hover) and (pointer: fine) {
 .b-catalog_entry:hover {
     transform: translateY(-6px) scale(1.03);
     margin-top: 0;
@@ -5080,6 +5158,7 @@ div.Ssylki-anime:hover .Text-2 {
         0 16px 32px rgba(0, 0, 0, .5),
         0 0 0 1px rgba(var(--bright-color), .35);
     z-index: 2;
+}
 }
 /* Лёгкий зум картинки внутри обложки (не выходит за края) */
 .b-catalog_entry .cover {
@@ -5089,9 +5168,11 @@ div.Ssylki-anime:hover .Text-2 {
 .b-catalog_entry .cover .image {
     transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
 }
+@media (hover: hover) and (pointer: fine) {
 .b-catalog_entry:hover .cover img,
 .b-catalog_entry:hover .cover .image {
     transform: scale(1.06);
+}
 }
 /* Название подсвечивается акцентом */
 .b-catalog_entry .title,
@@ -5337,8 +5418,11 @@ html:not(:hover) body::before {
     border-radius: 10px !important;
     transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
-.b-link_button:hover, .b-button:hover {
+@media (hover: hover) and (pointer: fine) {
+.b-link_button:hover,
+.b-button:hover {
     transform: translateY(-1px);
+}
 }
 .b-catalog_entry, .b-user, .b-club, .b-achievement, .cc-franchises .b-badge,
 .b-link_button, .b-button, .menu-item, .b-options-floated .item {
@@ -5395,9 +5479,11 @@ input[type="file"]::file-selector-button {
     cursor: pointer;
     transition: background-color .2s ease, transform .15s ease;
 }
+@media (hover: hover) and (pointer: fine) {
 input[type="file"]::file-selector-button:hover {
     background: rgb(var(--hover-buttoms-2));
     transform: translateY(-1px);
+}
 }
 
 /* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
@@ -5412,12 +5498,14 @@ input[type="file"]::file-selector-button:hover {
     box-shadow: 0 4px 14px rgba(var(--shadows-color), .5);
     transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
+@media (hover: hover) and (pointer: fine) {
 .p-profiles-edit .account .oauth a:hover,
 .p-profiles-edit .account .oauth .b-link_button:hover {
     border-color: rgba(var(--bright-color), .55) !important;
     background: rgba(var(--popup-color), 1) !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(var(--shadows-color), .6);
+}
 }
 
 /* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
@@ -5433,12 +5521,14 @@ body#clubs_edit .b-options-floated a:after {
     box-sizing: border-box;
     transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
 }
+@media (hover: hover) and (pointer: fine) {
 body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
 body#clubs_edit .b-options-floated a:hover:after {
     background: rgba(var(--popup-color), 1) !important;
     border-color: rgba(var(--bright-color), .55) !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(var(--shadows-color), .6) !important;
+}
 }
 body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:after,
 body#clubs_edit .b-options-floated a.selected:after {
@@ -5524,12 +5614,14 @@ input[type="checkbox"]:active,
     cursor: pointer;
     transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
 }
+@media (hover: hover) and (pointer: fine) {
 .p-profiles-edit input[type="submit"]:hover,
 .p-profiles-edit button[type="submit"]:hover,
 .p-profiles-edit .b-button:hover,
 .p-profiles-edit .buttons input:hover {
     background: rgb(var(--hover-buttoms-2)) !important;
     box-shadow: 0 6px 18px rgba(var(--bright-color), .25) !important;
+}
 }
 
 /* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
@@ -5755,7 +5847,9 @@ select:not(#u):active,
     color: rgb(var(--light-color));
     transition: background-color .15s ease, color .15s ease;
 }
+@media (hover: hover) and (pointer: fine) {
 .c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
+}
 .c-ms-option.is-on { color: rgb(var(--bright-color)) !important; }
 
 /* при переходе к другому полю открытый список закрывается */
@@ -5853,8 +5947,10 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         transform: none !important;
         transition: background-color .15s ease, color .15s ease;
     }
-    select:not(#u) option:hover,
     select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
+@media (hover: hover) and (pointer: fine) {
+select:not(#u) option:hover { background: var(--opt-hover) !important; }
+}
     select:not(#u) option:checked { color: rgb(var(--bright-color)); }
     select:not(#u) option::checkmark { display: none; }
 }
@@ -6610,5 +6706,78 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     html body::before {
         background: var(--bg-image-mobile, url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp")) center / cover no-repeat;
         background-color: rgb(var(--page-bg-mobile, 167, 148, 145));
+    }
+}
+
+/* ================================================================
+   v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* цветные заголовки главной — как «Темы дня» */
+    html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
+        background: rgba(var(--block-color), .6) !important;
+        color: rgba(var(--dark-color), 1) !important;
+    }
+    html body .headline:has(> .misc-links) {
+        min-height: 36px;
+        height: auto !important;
+        padding: 4px 4px 4px 14px !important;
+        box-sizing: border-box;
+        gap: 10px;
+        -webkit-backdrop-filter: var(--glass-blur);
+        backdrop-filter: var(--glass-blur);
+    }
+    /* кнопки — справа, в одну строку, внутри полосы */
+    html body .headline > .misc-links {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 0 0 auto !important;
+        flex: 0 0 auto;
+    }
+    html body .headline > .misc-links > a {
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+    }
+    html body .headline > .misc-links > a::before { display: none !important; }
+    html body .headline > .misc-links > a::after {
+        display: flex !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+        border-radius: 9px !important;
+        background: rgba(var(--white-color), .05) !important;
+        border: 1px solid rgba(var(--white-color), .09);
+        box-shadow: none !important;
+        color: rgba(var(--light-color), .72) !important;
+        font-size: 13px !important;
+        line-height: 1;
+        transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .12s ease !important;
+    }
+    html body .headline > .misc-links > a:active::after {
+        background: rgba(var(--bright-color), .18) !important;
+        border-color: rgba(var(--bright-color), .6);
+        color: rgb(var(--bright-color)) !important;
+        transform: scale(.92);
+        transition-duration: .06s !important;
+    }
+}
+
+/* Касание карточки на телефоне: короткий отклик нажатия, без «залипания» (hover-эффекты
+   теперь только для мыши, см. @media (hover: hover) and (pointer: fine)). */
+@media (hover: none) {
+    .b-catalog_entry .cover:active,
+    .b-db_entry-variant-photo:active,
+    .about .b-catalog_entry .cover:active {
+        transform: scale(.97);
+        transition: transform .08s ease;
     }
 }

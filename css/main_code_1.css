@@ -172,8 +172,10 @@ body:after {
     transition: 0.2s;
 }
 
+@media (hover: hover) and (pointer: fine) {
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(var(--light-color), 0.7);
+}
 }
 
 ::-webkit-scrollbar-thumb:active {
@@ -262,10 +264,12 @@ header.head h1 {
     background-color: rgba(var(--buttoms-color), 0.7) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-link_button:hover {
     background-color: rgba(var(--hover-buttoms-2), 1) !important;
     color: white !important;
     border: none !important;
+}
 }
 
 .b-link_button {
@@ -446,6 +450,7 @@ header.head h1 {
     background: rgba(var(--block-color), 0.6) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .tags .b-anime_status_tag:hover,
 .tags .b-tag:hover,
 .line .b-tag:hover,
@@ -463,6 +468,7 @@ a.b-anime_status_tag.studio:hover:before {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
     border: none !important;
 }
+}
 
 .block.genres .b-spoiler label,
 .b-show_more,
@@ -479,6 +485,7 @@ a.b-anime_status_tag.studio:hover:before {
     text-align: center;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .block.genres .b-spoiler label:hover,
 .b-table .actions a:hover,
 .b-show_more:hover,
@@ -488,6 +495,7 @@ a.b-anime_status_tag.studio:hover:before {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
     border: none !important;
     animation: none;
+}
 }
 
 .block.genres .b-spoiler {
@@ -583,11 +591,13 @@ a.b-anime_status_tag.studio:hover:before {
     border-radius: 8px 8px 0 0;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .bar.simple .bar.s3:hover,
 .bar.simple .bar.s2:hover,
 .bar.simple .bar.s1:hover,
 .bar.simple .bar.s0:hover {
     background: rgba(var(--hover-color), 1);
+}
 }
 
 /* цвет никнеймов */
@@ -655,11 +665,13 @@ a:hover .title span {
     min-height 0s !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-animes-show .other-names.click-loader:hover,
 .p-mangas-show .other-names.click-loader:hover,
 .p-ranobe-show .other-names.click-loader:hover {
     background: none;
     color: white;
+}
 }
 
 .p-animes-show .other-names.click-loader:before,
@@ -676,10 +688,12 @@ a:hover .title span {
     min-height 0s !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-animes-show .other-names.click-loader:hover:before,
 .p-mangas-show .other-names.click-loader:hover:before,
 .p-ranobe-show .other-names.click-loader:hover:before {
     background-color: rgba(var(--hover-buttoms-2), 1);
+}
 }
 
 /* загрузить еще комментарии */
@@ -701,6 +715,7 @@ a:hover .title span {
 }
 
 /* когда наводишь на загрузку*/
+@media (hover: hover) and (pointer: fine) {
 .b-comments .comments-loader:hover,
 .b-comments .comments-hider:hover,
 .b-comments .comments-expander:hover,
@@ -713,6 +728,7 @@ a:hover .title span {
     color: rgba(var(--white-color), 1) !important;
     border: none;
     border-radius: 6px;
+}
 }
 
 .b-comments .comments-loader:active,
@@ -744,10 +760,12 @@ a:hover .title span {
     background-color: #54263a;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .locale-ru .b-offtopic_marker.off:hover:before {
     border-color: rgba(var(--hover-color), 1);
     background-color: rgba(var(--hover-color), 1);
     color: rgba(var(--white-color), 1);
+}
 }
 
 .locale-ru .b-offtopic_marker.active:before {
@@ -756,10 +774,12 @@ a:hover .title span {
     background-color: #7c3152;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .locale-ru .b-offtopic_marker.active:hover:before {
     border-color: rgba(var(--hover-color), 1);
     background-color: rgba(var(--hover-color), 1);
     color: rgba(var(--white-color), 1);
+}
 }
 
 .locale-ru .b-offtopic_marker:before {
@@ -821,6 +841,7 @@ a:hover .title span {
     color: rgba(var(--white-color), 1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .list-lines tr .name a:hover,
 .b-user.detailed .history .line a .event:hover {
     background: none;
@@ -828,6 +849,7 @@ a:hover .title span {
     color: rgba(var(--hover-color), 1);
     text-decoration: none;
     border: none;
+}
 }
 
 .p-user_rates-index .list-lines tr.editable {
@@ -873,10 +895,12 @@ a:hover .title span {
     color: rgba(var(--white-color), 1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-stats_bar a.title:hover {
     color: rgba(var(--hover-color), 1);
     box-shadow: none;
     background: none;
+}
 }
 
 /* под списком кол-во просмотреных прочитанных и т.д. */
@@ -947,6 +971,7 @@ a.start.b-button,
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-form input[type="submit"]:hover,
 .b-shiki_editor footer .preview:hover,
 .b-shiki_editor.previewed footer .unpreview:hover,
@@ -965,6 +990,7 @@ a.start.b-button:hover,
     color: #e4e4e4 !important;
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
     opacity: 1;
+}
 }
 
 .b-shiki_editor-v2 .hide {
@@ -991,11 +1017,13 @@ a.start.b-button:hover,
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-comments .comments-loader:hover,
 .b-comments .comments-hider:hover,
 .b-comments .comments-expander:hover {
     background-color: white;
     color: white;
+}
 }
 
 /* полоса оттеняющая, если не развернуто */
@@ -1057,11 +1085,13 @@ input {
     min-height 0s;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .stat-categories .category:hover {
     color: rgba(var(--hover-color), 1) !important;
     transform: scale(1.1);
     box-shadow: none;
     background: none;
+}
 }
 
 .p-user_rates-index .stat-categories .category.active {
@@ -1122,11 +1152,13 @@ a:hover {
     text-decoration: none !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 a.name:hover {
     color: rgba(var(--hover-color), 1) !important;
     text-decoration: none !important;
     background: none !important;
     box-shadow: none !important;
+}
 }
 
 .b-comment > .inner div.body,
@@ -1146,18 +1178,22 @@ a.name:hover {
     white-space: normal;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .list-lines .selectable:hover,
 .p-userlist_comparer .comparer table .selectable:hover {
     color: rgba(var(--hover-color), 1) !important;
     transform: scale(1.01);
     background: transparent;
 }
+}
 
+@media (hover: hover) and (pointer: fine) {
 tr.user_rate.selectable.editable:hover:after {
     background: rgba(var(--shadows-color), 0.15);
     border-radius: 10px;
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
     transform: scale(1.01);
+}
 }
 
 tr.user_rate.selectable.editable:after {
@@ -1243,9 +1279,11 @@ tr.user_rate.selectable.editable:after {
     border: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-profiles .profile-head .c-info .c-additionals div a:hover {
     color: rgba(var(--hover-color), 1) !important;
     transform: scale(1.1) !important;
+}
 }
 
 .b-spoiler label {
@@ -1383,11 +1421,13 @@ textarea {
     text-decoration: none !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-clubs-menu .admin .b-user:hover {
     transform: scale(1.2);
     border-color: rgba(var(--hover-color), 1);
     color: rgba(var(--hover-color), 1);
     text-decoration: none !important;
+}
 }
 
 .b-block_list li a {
@@ -1727,11 +1767,13 @@ header.head a.edit,
     border: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-video_player .cc-player_controls .episode-num .video-link a:hover {
     background: none !important;
     color: rgba(var(--white-color), 1);
     border: none;
     box-shadow: none !important;
+}
 }
 
 .b-video_player .cc-player_controls .episode-num input {
@@ -1892,10 +1934,12 @@ header.head a.misc {
     text-transform: capitalize;
 }
 
+@media (hover: hover) and (pointer: fine) {
 header.head a.misc:hover {
     background-color: rgba(var(--hover-buttoms-2), 0.6);
     color: #e4e4e4 !important;
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+}
 }
 
 .b-collection-topic > .inner .status-line .collection-size,
@@ -2007,10 +2051,12 @@ header.head a.misc:hover {
     color: rgba(var(--bright-color), 1) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-profiles-edit .list .profile-action a:not(.b-button):hover {
     color: rgba(var(--hover-color), 1) !important;
     box-shadow: none !important;
     background: none !important;
+}
 }
 
 time {
@@ -2021,11 +2067,13 @@ time {
     color: rgba(var(--dark-color), 1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .subheadline .misc-link:hover {
     transform: scale(1) !important;
     background: none !important;
     box-shadow: none !important;
     font-size: 12px !important;
+}
 }
 
 .buttons .main-controls a {
@@ -2285,6 +2333,7 @@ code.b-code_inline {
 }
 
 /* history-yeah */
+@media (hover: hover) and (pointer: fine) {
 .p-profiles .profile-head .c-history .entry:hover,
 .p-topics .l-menu .reviews .entry:hover,
 .p-topics .l-menu .clubs .entry:hover {
@@ -2298,6 +2347,7 @@ code.b-code_inline {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     background 0.2s;
+}
 }
 
 body.localized_names-ru .name-ru {
@@ -2413,11 +2463,13 @@ body.localized_names-ru .name-ru:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .headline > a:hover:before,
 .midheadline > a:hover:before,
 .subheadline > a:hover:before {
     color: rgba(var(--hover-color), 1) !important;
     background: linear-gradient(270deg, rgba(var(--hover-color), 1), rgba(var(--hover-color), 0.3));
+}
 }
 
 .headline > a,
@@ -2429,6 +2481,7 @@ body.localized_names-ru .name-ru:before {
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .headline > a:hover,
 .midheadline > a:hover,
 .subheadline > a:hover {
@@ -2436,6 +2489,7 @@ body.localized_names-ru .name-ru:before {
     color: rgba(var(--hover-color), 1) !important;
     background: rgba(var(--shadows-color), 0.15);
     border: none;
+}
 }
 
 .profile-actions .mail::before,
@@ -2462,15 +2516,19 @@ a.name {
     font-size: 12px;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-user.avatar img:hover {
     border-radius: 50%;
     border: 2px solid rgba(var(--hover-color), 1);
     transform: scale(1.3);
 }
+}
 
+@media (hover: hover) and (pointer: fine) {
 .b-club .logo:hover {
     border: 2px solid rgba(var(--hover-color), 1);
     transform: scale(1.3);
+}
 }
 
 .b-clubs.one-line .b-club {
@@ -2585,6 +2643,7 @@ img {
     text-align: center;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .profile-actions .mail:hover::before,
 .profile-actions .talk:hover::before,
 .profile-actions .fav-remove:hover::before,
@@ -2595,6 +2654,7 @@ img {
 .profile-actions .ignore-remove:hover::before {
     color: rgba(var(--hover-color), 1) !important;
     transform: scale(1.3);
+}
 }
 
 .profile-actions .mail:before,
@@ -2682,9 +2742,11 @@ img {
     -webkit-font-smoothing: antialiased;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .activity .graph.vertical .line .bar:hover {
     animation-name: none;
     transform: none;
+}
 }
 
 .activity .graph.vertical .line:nth-of-type(6n + 2) .bar {
@@ -2747,6 +2809,7 @@ img {
     color: rgba(var(--bright-color), 1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .club-actions .invite:hover:before,
 .club-actions .upload:hover:before,
 .club-actions .broadcast:hover:before,
@@ -2755,10 +2818,13 @@ img {
     color: rgba(var(--hover-color), 1);
     transform: scale(1.3);
 }
+}
 
+@media (hover: hover) and (pointer: fine) {
 .club-actions a:hover {
     background: none;
     box-shadow: none;
+}
 }
 
 .b-comments-notifier {
@@ -2777,8 +2843,10 @@ img {
     z-index: 9;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-comments-notifier:hover {
     background-color: rgba(var(--hover-color), 1);
+}
 }
 
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
@@ -2817,6 +2885,7 @@ body#dashboards_show .l-page {
     color: rgba(var(--light-color), 1);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-dashboards .user_list .list-type > .title .switch:hover,
 .p-dashboards .user_list .history > .title .switch:hover,
 .p-dashboards .user_list .list-type > .title .link:hover,
@@ -2824,6 +2893,7 @@ body#dashboards_show .l-page {
     color: rgba(var(--hover-color), 1);
     box-shadow: 0 0 20px rgba(var(--shadows-color), 0.5);
     background: rgba(var(--shadows-color), 0.25);
+}
 }
 
 .p-dashboards .user_list .list-type > .title .switch,
@@ -2969,9 +3039,11 @@ h1 + hr {
 .menu_group.menu_group-controls .icon {
     transition: 0.2s ease;
 }
+@media (hover: hover) and (pointer: fine) {
 .menu_group.menu_group-controls .icon.is-button:hover {
     background-color: rgba(var(--hover-buttoms-2), 0.6);
     color: #e4e4e4 !important;
+}
 }
 .menu_group.menu_group-controls .icon.is-button.is-active {
     color: rgba(var(--hover-color), 1)!important;
@@ -3000,10 +3072,12 @@ h1 + hr {
 }
 
 @media screen and (min-width: 1024px) {
-    .b-spoiler_block > span:hover {
+    @media (hover: hover) and (pointer: fine) {
+.b-spoiler_block > span:hover {
         background-color: rgba(var(--hover-buttoms-2), 0.6);
         color: #e4e4e4 !important;
     }
+}
 }
 
 .p-animes .c-about .watch-online > div.kind,
@@ -3074,9 +3148,11 @@ h1 + hr {
     line-height: 1.3;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-animes .c-about .watch-online > a.kind:hover {
     background-color: rgb(var(--hover-buttoms-2));
     color: #fff !important;
+}
 }
 
 .p-animes .c-about .watch-online > a.kind + a.kind {

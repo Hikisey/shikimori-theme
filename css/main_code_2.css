@@ -6,22 +6,26 @@
     transition: 1s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-club .name-logo:hover .name {
     text-decoration: none;
     color: rgba(var(--hover-color), var(--hundred)) !important;
     background: rgba(var(--shadows-color), 0.25);
     box-shadow: 0 0 20px rgba(var(--shadows-color), 0.5);
 }
+}
 
 .b-user16:hover span {
     text-decoration: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-statistics-index .forum-nav .sections a:hover {
     color: rgba(var(--hover-color), var(--hundred)) !important;
     background: rgba(var(--shadows-color), 0.25);
     box-shadow: 0 0 20px rgba(var(--shadows-color), 0.5);
     text-decoration: none !important;
+}
 }
 
 .p-statistics-index .forum-nav .sections a {
@@ -42,8 +46,10 @@
     color: rgba(var(--light-color), var(--hundred));
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-contest_match .vs .actions .action span:hover {
     background: rgba(var(--shadows-color), 0.25);
+}
 }
 
 .b-contest_match .vs .actions .action span, .b-contest_match .vs .actions .action span {
@@ -59,11 +65,14 @@
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
-.b-contest_match .vs .actions .action span:hover, .b-contest_match .vs .actions .action span:hover {
+@media (hover: hover) and (pointer: fine) {
+.b-contest_match .vs .actions .action span:hover,
+.b-contest_match .vs .actions .action span:hover {
     box-shadow: none !important;
     background-color: rgba(var(--hover-buttoms-2), var(--hundred));
     color: #e4e4e4 !important;
     text-decoration: none !important;
+}
 }
 
 .p-contests .match-day .match-link {
@@ -76,10 +85,12 @@
     background: #dddddd !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-contests .match-day .match-link:hover {
     color: rgba(var(--hover-color), var(--hundred)) !important;
     background: rgba(var(--shadows-color), 0.2);
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+}
 }
 
 .p-contests .match-day .match-link.active {
@@ -119,9 +130,12 @@
     transition: 0.3s ease;
 }
 
-.b-contest_match .prev-match:hover, .b-contest_match .next-match:hover {
+@media (hover: hover) and (pointer: fine) {
+.b-contest_match .prev-match:hover,
+.b-contest_match .next-match:hover {
     color: rgba(var(--hover-color), var(--hundred)) !important;
     transform: scale(1.1);
+}
 }
 
 .p-topics header h1 a.reload {
@@ -133,10 +147,12 @@
     border-radius: 10px;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-topic > .inner header img:hover {
     background: rgba(var(--shadows-color), 0.3);
     box-shadow: 0 0 50px rgba(var(--shadows-color), 0.3) !important;
     transform: scale(1.1);
+}
 }
 
 .p-recommendations-index .b-header_filters .hint, .b-header_filters .filter-line .title {
@@ -487,10 +503,15 @@ body[data-locale=ru] .b-offtopic_marker:before, .b-anime_status_tag.offtopic:bef
     border: none;
 }
 
-.p-animes_collection-index .pagination .link.disabled:hover, .p-mangas_collection-index .pagination .link.disabled:hover, .p-recommendations-index .pagination .link.disabled:hover, .p-userlist_comparer-show .pagination .link.disabled:hover {
+@media (hover: hover) and (pointer: fine) {
+.p-animes_collection-index .pagination .link.disabled:hover,
+.p-mangas_collection-index .pagination .link.disabled:hover,
+.p-recommendations-index .pagination .link.disabled:hover,
+.p-userlist_comparer-show .pagination .link.disabled:hover {
     box-shadow: none;
     background: transparent;
     color: rgba(var(--light-color), var(--hundred)) !important;
+}
 }
 
 .p-profiles header.head .misc span, .p-profiles header.head .misc a {
@@ -624,16 +645,20 @@ body.p-achievements.p-profiles .b-ajax:before, body.p-achievements.p-profiles .b
     border-right: 30px solid #710c3a;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-contest_match .votes-percents .left-part:hover .right-part {
     background-color: #960047;
+}
 }
 
 .b-contest_match .votes-percents .left-part:hover .right-part:before {
     border-right: 30px solid #960047;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-contest_match .votes-percents .left-part:hover {
     background-color: #0068bd;
+}
 }
 
 .p-contests-index .contest .date {
@@ -709,47 +734,97 @@ div.compatibility > a:before {
 
 /* Красим совместимость*/
 /* нету */
-.b-stats_bar .compatibility span.link-replacement .text.zero:before, .b-stats_bar .compatibility .text.zero:before, .b-stats_bar .compatibility .text.zero:hover:before {
+.b-stats_bar .compatibility span.link-replacement .text.zero:before,
+.b-stats_bar .compatibility .text.zero:before {
     color: rgba(var(--dark-color), var(--hundred));
     background: transparent !important;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
+@media (hover: hover) and (pointer: fine) {
+.b-stats_bar .compatibility .text.zero:hover:before {
+    color: rgba(var(--dark-color), var(--hundred));
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+}
 
 /* низкая */
-.b-stats_bar .compatibility span.link-replacement .text.weak:before, .b-stats_bar .compatibility .text.weak:before, .b-stats_bar .compatibility .text.weak:hover:before {
+.b-stats_bar .compatibility span.link-replacement .text.weak:before,
+.b-stats_bar .compatibility .text.weak:before {
     color: #c3a87e;
     background: transparent !important;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
+@media (hover: hover) and (pointer: fine) {
+.b-stats_bar .compatibility .text.weak:hover:before {
+    color: #c3a87e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+}
 
 /* средняя */
-.b-stats_bar .compatibility span.link-replacement .text.modarate:before, .b-stats_bar .compatibility .text.moderate:before, .b-stats_bar .compatibility .text.moderate:hover:before {
+.b-stats_bar .compatibility span.link-replacement .text.modarate:before,
+.b-stats_bar .compatibility .text.moderate:before {
     color: #c5c23e;
     background: transparent !important;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
+@media (hover: hover) and (pointer: fine) {
+.b-stats_bar .compatibility .text.moderate:hover:before {
+    color: #c5c23e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+}
 
 /* высокая */
-.b-stats_bar .compatibility span.link-replacement .text.high:before, .b-stats_bar .compatibility .text.high:before, .b-stats_bar .compatibility .text.high:hover:before {
+.b-stats_bar .compatibility span.link-replacement .text.high:before,
+.b-stats_bar .compatibility .text.high:before {
     color: #96c53e;
     background: transparent !important;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
+@media (hover: hover) and (pointer: fine) {
+.b-stats_bar .compatibility .text.high:hover:before {
+    color: #96c53e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+}
 
 /* полная */
-.b-stats_bar .compatibility span.link-replacement .text.full:before, .b-stats_bar .compatibility .text.full:before, .b-stats_bar .compatibility .text.full:hover:before {
+.b-stats_bar .compatibility span.link-replacement .text.full:before,
+.b-stats_bar .compatibility .text.full:before {
     color: #3ec557;
     background: transparent !important;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
-
-.text.full:hover, .text.moderate:hover, .text.high:hover, .text.weak:hover, .text.zero:hover, .b-stats_bar.manga .compatibility a:hover, .b-stats_bar.anime .compatibility a:hover {
-    transform: scale(1.17);
+@media (hover: hover) and (pointer: fine) {
+.b-stats_bar .compatibility .text.full:hover:before {
+    color: #3ec557;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
 }
 
+@media (hover: hover) and (pointer: fine) {
+.text.full:hover,
+.text.moderate:hover,
+.text.high:hover,
+.text.weak:hover,
+.text.zero:hover,
+.b-stats_bar.manga .compatibility a:hover,
+.b-stats_bar.anime .compatibility a:hover {
+    transform: scale(1.17);
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
     box-shadow: none !important;
     background: transparent !important;
+}
 }
 
 /*****рейтинг совместимости******/
@@ -792,11 +867,20 @@ div.compatibility > a:before {
     width: 22.00%;
 }
 
-.b-link_button.dark.disabled, .b-link_button.dark.disabled:hover, .b-link_button.dark.disabled:active {
+.b-link_button.dark.disabled,
+.b-link_button.dark.disabled:active {
     cursor: default;
     background-color: #27415a;
     border: 2px dashed rgba(142, 128, 73, 0.25);
     color: #bbd5e8 !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.b-link_button.dark.disabled:hover {
+    cursor: default;
+    background-color: #27415a;
+    border: 2px dashed rgba(142, 128, 73, 0.25);
+    color: #bbd5e8 !important;
+}
 }
 
 
@@ -812,10 +896,12 @@ div.compatibility > a:before {
     border: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .ac_results li:hover {
     background: #54588Ae0;
     color: rgba(var(--white-color), var(--hundred));
     border: none;
+}
 }
 
 .ac_results.menu-suggest .ac_even .name, .ac_results.menu-suggest .ac_odd .name, .completable-block.menu-suggest .ac_even .name, .completable-block.menu-suggest .ac_odd .name {
@@ -864,6 +950,7 @@ div.compatibility > a:before {
     padding: 3px 0;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-dashboard .l-menu .ongoing:hover {
     background: rgba(var(--shadows-color), 0.25);
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
@@ -873,6 +960,7 @@ div.compatibility > a:before {
     border-radius: 10px;
     padding-left: 4px;
     padding-right: 5px;
+}
 }
 
 .p-dashboard .l-menu .ongoing {
@@ -928,10 +1016,12 @@ textarea#user_rate_text {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-form a.remove:hover {
     background-color: rgba(var(--hover-buttoms-2), var(--hundred));
     color: rgba(var(--white-color), var(--hundred)) !important;
     box-shadow: none !important;
+}
 }
 
 .p-user_rates-index .list-groups .summary.posters {
@@ -1105,9 +1195,15 @@ a.b-mention.bubbled-processed {
     color: rgba(var(--white-color), var(--hundred));
 }
 
-.p-contests .suggestion > a, .p-contests .variant > a:hover {
+.p-contests .suggestion > a {
     background: none;
     box-shadow: none;
+}
+@media (hover: hover) and (pointer: fine) {
+.p-contests .variant > a:hover {
+    background: none;
+    box-shadow: none;
+}
 }
 
 .b-collection-topic > .inner .see-more, .b-collection-topic > .inner .see-more .text .inner {
@@ -1116,10 +1212,13 @@ a.b-mention.bubbled-processed {
     transition: 0.3s ease-out;
 }
 
-.b-collection-topic > .inner .see-more:hover, .b-collection-topic > .inner .see-more:hover .circle {
+@media (hover: hover) and (pointer: fine) {
+.b-collection-topic > .inner .see-more:hover,
+.b-collection-topic > .inner .see-more:hover .circle {
     border: none;
     box-shadow: none;
     transition: 1s ease-out;
+}
 }
 
 body#profiles_show .b-to-top .slide {
@@ -1348,18 +1447,22 @@ body#profiles_show .b-shiki_editor footer {
     transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-catalog_entry .cover:hover {
     border-radius: 4px;
     background: none;
     box-shadow: none;
 }
+}
 
 
 
+@media (hover: hover) and (pointer: fine) {
 .p-dashboard .l-content .b-catalog_entry:hover {
     box-shadow: none;
     background: none !important;
     transform: scale(1);
+}
 }
 
 
@@ -1467,13 +1570,17 @@ body#profiles_show .b-shiki_editor footer {
     transform: scale(1.03);
 }
 
+@media (hover: hover) and (pointer: fine) {
 body#animes_collection_index .b-collection_search .b-catalog_entry:hover {
     transform: scale(1.05);
 }
+}
 
+@media (hover: hover) and (pointer: fine) {
 body#topics_index .b-collection_search .b-catalog_entry:hover {
     box-shadow: none;
     background: none !important;
+}
 }
 
 body#topics_index .b-collection_search .b-catalog_entry {
@@ -1539,26 +1646,41 @@ header.head h1 a.back, header.head h2 a.back {
     color: rgba(var(--bright-color), var(--hundred));
 }
 
-.b-message .b-catalog_entry:hover, .l-content.swiss .b-catalog_entry:hover, .b-catalog-entry-embedded .b-catalog_entry:hover, .b-message .b-catalog_entry, .l-content.swiss .b-catalog_entry, .b-catalog-entry-embedded .b-catalog_entry {
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
     background: transparent !important;
     transform: scale(1);
     box-shadow: none;
 }
+@media (hover: hover) and (pointer: fine) {
+.b-message .b-catalog_entry:hover,
+.l-content.swiss .b-catalog_entry:hover,
+.b-catalog-entry-embedded .b-catalog_entry:hover {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+}
 
+@media (hover: hover) and (pointer: fine) {
 .b-catalog_entry .cover .title:hover {
     background: none !important;
     box-shadow: none !important;
+}
 }
 
 body#profiles_show .b-catalog_entry, .c-column.user_rate .b-catalog_entry {
     background: transparent;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-modal .b-catalog_entry:hover {
     transform: none;
     background: none !important;
     z-index: 10;
     box-shadow: none;
+}
 }
 
 .b-modal .b-catalog_entry {
@@ -1575,9 +1697,11 @@ body#profiles_show .b-catalog_entry, .c-column.user_rate .b-catalog_entry {
     transition: 0.5s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .l-content.swiss .image-cutter:hover {
     transform: scale(1.05) !important;
     box-shadow: 0 2px 8px 3px rgba(0, 0, 0, 0.3) !important;
+}
 }
 
 /*--------------------------------------------------------*/
@@ -1613,11 +1737,13 @@ body#profiles_show .b-catalog_entry, .c-column.user_rate .b-catalog_entry {
     color: rgba(var(--light-color), var(--hundred));
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-profiles-show .about a:hover {
     box-shadow: none;
     background: none;
     border: none;
     opacity: 1;
+}
 }
 
 .b-image img {
@@ -1626,12 +1752,14 @@ body#profiles_show .b-catalog_entry, .c-column.user_rate .b-catalog_entry {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-image img:hover {
     -webkit-filter: brightness(1);
     opacity: 1;
     transform: scale(1.03);
     border-radius: 4px;
     box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.6) !important;
+}
 }
 
 .b-message > .inner .was_updated:hover {
@@ -1644,9 +1772,13 @@ body#profiles_show .b-catalog_entry, .c-column.user_rate .b-catalog_entry {
     transition: 0.3s ease;
 }
 
-.b-user16:hover, .b-user16:hover span, .b-user16 a:hover {
+@media (hover: hover) and (pointer: fine) {
+.b-user16:hover,
+.b-user16:hover span,
+.b-user16 a:hover {
     box-shadow: none;
     background: none;
+}
 }
 
 .b-add_to_list .trigger-arrow {
@@ -1899,9 +2031,11 @@ body#people_show .c-works .b-catalog_entry .image-cutter {
     border: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-breadcrumbs a.b-link:hover {
     background: none !important;
     box-shadow: none !important;
+}
 }
 
 .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .plus::before, .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .edit::before, .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .trigger-arrow::before, .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .plus::before, .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .edit::before, .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .trigger-arrow::before {
@@ -1951,12 +2085,16 @@ body#people_show .c-works .b-catalog_entry .image-cutter {
     background: #453065b5;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
     background: transparent;
 }
+}
 
+@media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover:before {
     background: rgba(var(--hover-color), 0.7);
+}
 }
 
 .p-profiles-show .lifetime .cuts .cut:after {
@@ -2049,8 +2187,10 @@ body#dialogs_show .b-topic > .editor-container {
     transition: 0.1s ease-in-out;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-height_shortener .expand:hover:after {
     background-color: rgba(var(--hover-color), 0.3);
+}
 }
 
 .b-height_shortener .expand {
@@ -2237,9 +2377,11 @@ body.p-achievements.p-profiles img {
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
 }
 
+@media (hover: hover) and (pointer: fine) {
 .ac_results .character-suggest .animes div a:hover {
     background: none !important;
     box-shadow: none;
+}
 }
 
 .ac_results .animes .name-ru:hover {
@@ -2293,8 +2435,10 @@ body.p-achievements.p-profiles img {
     background-color: #355980 !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .flat_button:hover {
     background-color: #416d9c !important;
+}
 }
 
 .wcommunity_subscribers, .post_video_views_count {
@@ -2335,9 +2479,15 @@ body.p-achievements.p-profiles img {
     border-color: rgba(var(--light-color), var(--hundred)) !important;
 }
 
-.bulma .button.is-info:hover, .bulma .button.is-info.is-hovered {
+.bulma .button.is-info.is-hovered {
     background-color: rgba(var(--hover-buttoms-2), var(--hundred)) !important;
     color: white !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.bulma .button.is-info:hover {
+    background-color: rgba(var(--hover-buttoms-2), var(--hundred)) !important;
+    color: white !important;
+}
 }
 
 .bulma .button.is-info {
@@ -2430,9 +2580,11 @@ body#profiles_edit .b-catalog_entry .cover .image-decor img {
     transition: 0s ease-out, transform .4s ease-out;
 }
 
+@media (hover: hover) and (pointer: fine) {
 #profiles_show .b-achievement .c-image .inner:hover {
     transform: scale(1.1);
     transition: 0s ease-out, transform .4s ease-out;
+}
 }
 
 #profiles_show .b-achievement.is-badge::before {
@@ -2514,9 +2666,11 @@ body#profiles_edit .b-catalog_entry .cover .image-decor img {
     width: 100%;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .p-profiles-show a.b-badge:hover:before {
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
     background: rgba(var(--menu-back), 0.5);
+}
 }
 /*Авторы*/
 @media screen and (min-width: 768px) {
@@ -2724,8 +2878,10 @@ body#profiles_edit .b-catalog_entry .cover .image-decor img {
     border-radius: 6px;
 }
 
+@media (hover: hover) and (pointer: fine) {
 .b-link_button.dark-2:hover {
     background-color: rgba(var(--hover-buttoms-2), var(--hundred));
+}
 }
 
 .b-topic.b-news_wall-topic.b-news-topic > .inner > a, .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name, .p-dashboards-show .generated-news-line .info .name, .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
@@ -2990,9 +3146,12 @@ body#tests_reset_styles_cache input[type="submit"] {
     display: none;
 }
 
-.p-profiles-show .about .item-edit:hover:before, .p-profiles-show .about .item-edit:hover:after {
+@media (hover: hover) and (pointer: fine) {
+.p-profiles-show .about .item-edit:hover:before,
+.p-profiles-show .about .item-edit:hover:after {
     color: rgba(var(--light-color), 1);
     background: rgba(var(--block-color), 1);
+}
 }
 
 .b-user_history-line .destroy {
@@ -3501,9 +3660,11 @@ body.p-achievements.p-profiles .b-list_switchers > *.selected:after {
     color: #bb8d57;
 }
 
+@media (hover: hover) and (pointer: fine) {
 body.p-achievements.p-profiles .b-list_switchers > *:hover:after {
     background: #442d1c;
     color: #dc9e55;
+}
 }
 
 .b-review_votes .votes-for, .b-review_votes .votes-against {
@@ -3581,11 +3742,13 @@ body.p-achievements.p-profiles .b-list_switchers > *:hover:after {
     border: 0 !important;
     border-radius: 12px;
 }
+@media (hover: hover) and (pointer: fine) {
 .p-dashboards-show .v2 .fc-user-sections .tag-link:hover {
     background-color: rgba(var(--hover-buttoms-2), 1) !important;
     color: white !important;
     box-shadow: 0 2px 6px 2px rgb(0 0 0 / 20%) !important;
     border: none !important;
+}
 }
 
 .p-dashboards-show .v2 .fc-user-sections .tag-link.manga-tag {
@@ -3770,9 +3933,12 @@ body.p-achievements.p-profiles .b-list_switchers > *:hover:after {
     background: rgba(var(--light-color), 0.2);
     transition: 0.2s ease;
 }
-.pika-button:hover, .pika-row.pick-whole-week:hover .pika-button {
+@media (hover: hover) and (pointer: fine) {
+.pika-button:hover,
+.pika-row.pick-whole-week:hover .pika-button {
     color: rgba(var(--white-color), 1);
     background: rgba(var(--hover-color), 1);
+}
 }
 .pika-next, .pika-prev {
     background: none !important;
