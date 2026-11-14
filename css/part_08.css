@@ -1,3 +1,40 @@
+/* плавный выезд и сворачивание через transition */
+/* из components/forms */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: none !important;
+    display: block;
+    transform-origin: top center;
+    clip-path: inset(0 0 0 0 round var(--drop-radius));
+    transform: none;
+    transition: clip-path var(--ui-drop) var(--ui-ease),
+                transform var(--ui-drop) var(--ui-ease),
+                display var(--ui-drop) allow-discrete !important;
+}
+
+/* --- Сервисы в настройках: X белым, Facebook ярче --- */
+/* из pages/settings */
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
+    filter: invert(1) brightness(1.15) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
+.oauth a:is(.facebook, [href*="auth/facebook"])::before,
+.oauth a:is(.facebook, [href*="auth/facebook"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
 @media screen and (max-width: 767px) {
     /* реклама и пустые служебные блоки не занимают место над заголовком */
     /* из pages/catalog */

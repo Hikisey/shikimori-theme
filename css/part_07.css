@@ -1,3 +1,67 @@
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner a.name {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner a.name:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .additional-images .link .title {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .line .value a {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .line .value a:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .rating .text {
+    color: rgba(var(--text), var(--hundred));
+}
+
+/*test*/
+/* из components/cards */
+.b-catalog_entry,
+.b-catalog_entry .cover .image-decor,
+.b-catalog_entry .cover .image-decor img,
+.b-catalog_entry .cover .image-cutter,
+.b-catalog_entry .cover .image-cutter img {
+    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
+}
+
+/* из components/cards */
+.b-catalog_entry .cover .image-decor .image-cutter {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9px;
+}
+
+/* из components/cards */
+.b-catalog_entry.completed .cover .misc span {
+    color: #99bba7;
+}
+
+/* из components/cards */
+.b-catalog_entry.completed .cover .title span {
+    color: #cce0d1;
+}
+
+/* из components/cards */
+.b-catalog_entry.dropped .cover .misc span {
+    color: #c7a7a1;
+}
+
 /* из components/cards */
 .b-catalog_entry.dropped .cover .title span {
     color: var(--tone-e4d7d7);
@@ -2837,41 +2901,4 @@ input[type="checkbox"]:active,
         background: var(--btn-bg-hover) !important;
         box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
     }
-}
-
-/* плавный выезд и сворачивание через transition */
-/* из components/forms */
-.c-ms-dropdown,
-.c-ms-dropdown:not([hidden]) {
-    opacity: 1 !important;
-    animation: none !important;
-    display: block;
-    transform-origin: top center;
-    clip-path: inset(0 0 0 0 round var(--drop-radius));
-    transform: none;
-    transition: clip-path var(--ui-drop) var(--ui-ease),
-                transform var(--ui-drop) var(--ui-ease),
-                display var(--ui-drop) allow-discrete !important;
-}
-
-/* --- Сервисы в настройках: X белым, Facebook ярче --- */
-/* из pages/settings */
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
-    filter: invert(1) brightness(1.15) !important;
-}
-
-/* из pages/settings */
-.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
-.oauth a:is(.facebook, [href*="auth/facebook"])::before,
-.oauth a:is(.facebook, [href*="auth/facebook"])::after {
-    filter: brightness(1.45) saturate(1.2) !important;
-}
-
-/* из pages/settings */
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
-    filter: brightness(1.45) saturate(1.2) !important;
 }

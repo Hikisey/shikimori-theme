@@ -1,3 +1,55 @@
+/* загрузить еще комментарии */
+.b-comments .comments-loader,
+.b-comments .comments-hider,
+.b-comments .comments-expander,
+.b-comments .faye-loader,
+.collapsed,
+.b-forum .faye-loader,
+.b-topic .faye-loader,
+.collapsed + .spoiler .hide-expanded {
+    background: var(--plate-bg);
+    color: rgba(var(--text-2), 1);
+    border: none;
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    border-radius: var(--plate-radius-lg);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* когда наводишь на загрузку*/
+    .b-comments .comments-loader:hover,
+    .b-comments .comments-hider:hover,
+    .b-comments .comments-expander:hover,
+    .b-comments .faye-loader:hover,
+    .collapsed:hover,
+    .b-forum .faye-loader:hover,
+    .b-topic .faye-loader:hover,
+    .collapsed + .spoiler .hide-expanded:hover {
+        background: color-mix(in srgb, var(--glass-active) 80%, transparent) !important;
+        color: rgba(var(--text-strong), 1) !important;
+        border: none;
+        border-radius: 6px;
+    }
+}
+
+.b-spoiler .b-poll label {
+    border: none;
+}
+
+.b-forums .forum .link-with-input .link {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-topics header h1 a.reload {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-animes-menu .menu-topics-block a.entry .name:hover {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
 .b-animes-menu .menu-topics-block a.entry .name {
     color: rgba(var(--text-strong), 1);
 }
@@ -2396,7 +2448,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.3.3";
+    --theme-version: "1.3.4";
 }
 
 .l-footer:before {
@@ -3048,68 +3100,4 @@ body * [class*="new_marker"] {
 /* из components/cards */
 .b-catalog_entry .cover .misc span {
     color: rgba(var(--text-2), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .additional-images .link .title {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .line .value a {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .line .value a:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .rating .text {
-    color: rgba(var(--text), var(--hundred));
-}
-
-/*test*/
-/* из components/cards */
-.b-catalog_entry,
-.b-catalog_entry .cover .image-decor,
-.b-catalog_entry .cover .image-decor img,
-.b-catalog_entry .cover .image-cutter,
-.b-catalog_entry .cover .image-cutter img {
-    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
-}
-
-/* из components/cards */
-.b-catalog_entry .cover .image-decor .image-cutter {
-    display: block;
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 9px;
-}
-
-/* из components/cards */
-.b-catalog_entry.completed .cover .misc span {
-    color: #99bba7;
-}
-
-/* из components/cards */
-.b-catalog_entry.completed .cover .title span {
-    color: #cce0d1;
-}
-
-/* из components/cards */
-.b-catalog_entry.dropped .cover .misc span {
-    color: #c7a7a1;
 }

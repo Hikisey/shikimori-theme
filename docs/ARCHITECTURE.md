@@ -1,6 +1,6 @@
 # hikisey theme — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.3**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.4**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,7 +26,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.3.3 (подвал сайта: «hikisey theme v1.3.3»), 8 частей по ≤ 80 КБ |
+| **текущая версия** | v1.3.4 (подвал сайта: «hikisey theme v1.3.4»), 8 частей по ≤ 80 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются частями `css/part_NN.css` по ≤ 80 КБ |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
@@ -227,20 +227,20 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/site.css
-2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 7 импортов темы
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/site.css
+2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 8 импортов темы (1–4 с raw.githubusercontent, 5–8 с jsDelivr)
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_04.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_05.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_06.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_07.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_08.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_04.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_05.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_06.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_07.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_08.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -259,6 +259,10 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 - main только для разработки; в v1.2 пробовали следить за main и сбрасывать кеш `?v=2`, `?v=3` — от этого отказались
 - без минификации: в v1.2.9 сжатие склеило `url("…")}`, camo съел скобку и следующие правила пропали; v1.2.10 вернул читаемый вид
 - у тега v1.2.4 нет GitHub-релиза; опубликованные теги не переносятся
+
+## почему части 5–8 идут через jsDelivr (v1.3.4)
+
+после v1.3.3 шикимори стабильно не мог импортировать части 5–8 с `raw.githubusercontent.com`, а 1–4 подключались; те же файлы через `cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@vX.Y.Z/css/part_NN.css` подключились сразу. похоже, GitHub raw ограничивает (throttle) сервер шикимори после ~4–6 запросов подряд. поэтому части 1–4 — с raw, 5–8 — с jsDelivr (тот же тег, те же байты); `tools/build.py` печатает строки уже так (`RAW_PARTS = 4`). jsDelivr первый раз отдаёт новый тег с задержкой — после релиза адреса нужно запросить, чтобы прогреть кеш.
 
 ## почему тема разбита на части (v1.2.23)
 
@@ -341,4 +345,5 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.1 | телефон, фильтры каталога: шторка и затемнение плавно появляются и исчезают (`@starting-style` + `allow-discrete`, токены `--sheet-time`/`--sheet-shift`); списки фильтров раскрываются плавно и без «пружины» при касании; в списках с поиском строка поиска внизу, варианты над ней — не уходят под клавиатуру (`--drop-max`, `--drop-max-typing`) |
 | v1.3.2 | фильтры каталога: списки в панели (ПК и телефон) раскрываются и сворачиваются одним механизмом — строки сетки `0fr ↔ 1fr` + прозрачность, анимация в обе стороны; списки раздвигают поля ниже и больше не наслаиваются; у выпадающих списков вне панели вернулась анимация открытия (`@starting-style` с двойным классом); телефон: поиск снова сверху, при вводе поле поднимается под заголовок «Фильтры» (scroll-snap + `scroll-margin`, токены `--sheet-head`, `--sheet-typing-room`), варианты под ним уходят под клавиатуру и листаются (`--drop-max-typing`, `--drop-time`) |
 | v1.3.3 | списки фильтров (ПК и телефон) опускаются вниз так же, как «Сортировка»: общие токены `--drop-time`/`--drop-ease` = `--ui-drop`/`--ui-ease`, строки сетки `min-content 0fr ↔ 1fr` (поле больше не «подпрыгивает») + сдвиг `--drop-shift`, без прозрачности и перелёта; шторка фильтров и затемнение на телефоне появляются через `@keyframes` (`shiki-sheet`, `shiki-fade`, fill `backwards`) — работает в любом Safari, закрытие — transition с `allow-discrete`; на сенсорных экранах текст не выделяется (кроме полей ввода, редактора и contenteditable) |
+| v1.3.4 | части 5–8 подключаются через jsDelivr (GitHub raw ограничивал шикимори после 4–6 файлов); фильтры: сворачивание без задержавшейся полоски (кривая `--drop-ease-close` без медленного хвоста + рамка/фон гаснут к концу, `--drop-fade-close`); на ПК один клик по нижнему полю при открытом верхнем списке открывает его — фокус в другом списке больше не сворачивает верхний (поле уезжало из-под мыши между нажатием и отпусканием), закрывает скрипт по клику; телефон: привязка прокрутки при вводе `proximity` вместо `mandatory` — с открытой клавиатурой панель листается |
 | v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |

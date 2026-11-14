@@ -1,6 +1,6 @@
 # hikisey theme
 
-Тёмная тема для [Шикимори](https://shikimori.io): графит с алым акцентом, мягкое стекло, обои и баннер в профиле. Работает на ПК и на телефоне. Тема в разработке, текущая версия **v1.3.3**.
+Тёмная тема для [Шикимори](https://shikimori.io): графит с алым акцентом, мягкое стекло, обои и баннер в профиле. Работает на ПК и на телефоне. Тема в разработке, текущая версия **v1.3.4**.
 
 ![hikisey theme: страница аниме](docs/screenshot.jpg)
 
@@ -8,7 +8,7 @@
 
 ## Установка
 
-1. Откройте [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/site.css) и скопируйте весь текст.
+1. Откройте [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/site.css) и скопируйте весь текст.
 2. На Шикимори: профиль → «Настройки» → «Внешний вид сайта».
 3. Замените всё в поле стиля скопированным текстом, нажмите «Сохранить» и обновите страницу (Ctrl+Shift+R).
 
@@ -17,17 +17,19 @@
 ```css
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_04.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_05.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_06.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_07.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.3/css/part_08.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_04.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_05.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_06.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_07.css");
+@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_08.css");
 ```
 
 Чтобы обновиться, замените в этих строках номер версии на новый со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Если число файлов в новой версии другое, проще заново скопировать `site.css` (свою палитру сохраните).
+
+Части 1–4 подключаются с GitHub (raw.githubusercontent.com), а 5–8 — с jsDelivr: GitHub, похоже, ограничивает Шикимори после 4–6 файлов подряд, и последние части не подключались. Оба адреса отдают одни и те же файлы одного тега.
 
 Если Шикимори пишет «Не удалось импортировать», вставьте ссылку из сообщения на странице [shikimori.io/tests/reset_styles_cache](https://shikimori.io/tests/reset_styles_cache) и сохраните стиль ещё раз.
 

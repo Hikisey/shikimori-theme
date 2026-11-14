@@ -1,3 +1,58 @@
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.b-message > .inner .was_updated:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.tooltip-details .b-message {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.b-message .inner {
+    min-height: 38px;
+}
+
+.b-shiki_editor.previewed .body .preview .b-comment,
+.b-shiki_editor.previewed .body .preview .b-message {
+    border: none !important;
+}
+
+/*почта-Назад-Вперёд → фикс на 100%*/
+.p-messages .b-postloader.collapsed {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    font-size: 11px;
+    padding: 3px 2px 2px 15px;
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow) !important;
+    width: 135px;
+    height: 15px;
+    border-radius: 9px;
+    position: relative;
+    margin-left: -22px;
+    top: -2px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    content: 'перейти к диалогу';
+}
+
 .b-dialog .to_dialog:before,
 .to-review:before {
     font: normal normal normal 15px FontAwesome;
@@ -2463,56 +2518,4 @@ body#clubs_edit .b-options-floated a:active:after {
     padding: 5px 12px !important;
     text-align: center;
     box-shadow: var(--plate-shadow) !important;
-}
-
-/* загрузить еще комментарии */
-.b-comments .comments-loader,
-.b-comments .comments-hider,
-.b-comments .comments-expander,
-.b-comments .faye-loader,
-.collapsed,
-.b-forum .faye-loader,
-.b-topic .faye-loader,
-.collapsed + .spoiler .hide-expanded {
-    background: var(--plate-bg);
-    color: rgba(var(--text-2), 1);
-    border: none;
-    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border-radius: var(--plate-radius-lg);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* когда наводишь на загрузку*/
-    .b-comments .comments-loader:hover,
-    .b-comments .comments-hider:hover,
-    .b-comments .comments-expander:hover,
-    .b-comments .faye-loader:hover,
-    .collapsed:hover,
-    .b-forum .faye-loader:hover,
-    .b-topic .faye-loader:hover,
-    .collapsed + .spoiler .hide-expanded:hover {
-        background: color-mix(in srgb, var(--glass-active) 80%, transparent) !important;
-        color: rgba(var(--text-strong), 1) !important;
-        border: none;
-        border-radius: 6px;
-    }
-}
-
-.b-spoiler .b-poll label {
-    border: none;
-}
-
-.b-forums .forum .link-with-input .link {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-topics header h1 a.reload {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-animes-menu .menu-topics-block a.entry .name:hover {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
 }

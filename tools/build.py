@@ -6,7 +6,7 @@
 от нарезки не меняется: part_01 + part_02 + … == модули подряд.
 
     python3 tools/build.py                   # пересобрать css/
-    python3 tools/build.py --version 1.3.3  # заодно поставить версию в подвал
+    python3 tools/build.py --version 1.3.4  # заодно поставить версию в подвал
     python3 tools/build.py --out /tmp/x      # собрать в другую папку (css/ не трогать)
 
 Шикимори на v1.2.21–v1.2.22 не смог импортировать файл ~231 КБ, поэтому
@@ -17,6 +17,8 @@ import argparse, glob, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HARD_LIMIT = 100_000
 RAW = 'https://raw.githubusercontent.com/Hikisey/shikimori-theme/{tag}/css/{name}'
+CDN = 'https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@{tag}/css/{name}'
+RAW_PARTS = 4  # части 1–4 — с GitHub raw, остальные — с jsDelivr (raw отдаёт шикимори не больше ~4–6 файлов подряд)
 
 
 def modules():
@@ -79,7 +81,7 @@ def split(s, limit):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--version', help='версия для подвала, например 1.3.3')
+    ap.add_argument('--version', help='версия для подвала, например 1.3.4')
     ap.add_argument('--max', type=int, default=80_000, help='наибольший размер части в байтах (по умолчанию 80000)')
     ap.add_argument('--out', default=os.path.join(ROOT, 'css'))
     a = ap.parse_args()
@@ -114,8 +116,9 @@ def main():
     m = re.search(r'--theme-version: "([^"]*)"', s)
     tag = 'v' + m.group(1) if m else 'vX.Y.Z'
     print('\nстроки для «Внешнего вида сайта»:')
-    for n in names:
-        print(f'@import url("{RAW.format(tag=tag, name=n)}");')
+    for i, n in enumerate(names):
+        url = (RAW if i < RAW_PARTS else CDN).format(tag=tag, name=n)
+        print(f'@import url("{url}");')
 
 
 main()
