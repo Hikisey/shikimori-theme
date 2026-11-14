@@ -1357,7 +1357,7 @@ video#main-video_html5_api .vjs-big-play-button {
 .b-options-floated a,
 .b-options-floated .link {
     font-size: 13px;
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
     padding: 0 8px 0 8px;
 }
 
@@ -1372,21 +1372,21 @@ video#main-video_html5_api .vjs-big-play-button {
 
 /* свернуть списки в списке аниме */
 .b-options-floated .action {
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
     border: none;
 }
 
 .b-options-floated .action:hover {
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
 }
 
 .b-list_switchers .switcher.lines:before:hover,
 .b-list_switchers .switcher.lines:hover {
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
 }
 
 .b-list_switchers .switcher.posters:before:hover {
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
 }
 
 .b-list_switchers .switcher.posters:after {
@@ -1401,7 +1401,7 @@ video#main-video_html5_api .vjs-big-play-button {
 
 .b-options-floated a:hover,
 .b-options-floated .link:hover {
-    color: rgba(var(--accent), 1);
+    color: var(--tab-active);
 }
 
 .b-options-floated a:after,
@@ -1667,11 +1667,11 @@ video#main-video_html5_api .vjs-big-play-button {
 }
 
 .use-tabs.--ripple > [data-dynamic].active:hover::after {
-    animation: switch-tap--vertical 0.25s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0.25s var(--tab-tap-ease);
 }
 
 .use-tabs.--ripple > [data-dynamic].active::after {
-    animation: switch-tap--vertical 0s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0s var(--tab-tap-ease);
 }
 
 /* Tabline */
@@ -1728,19 +1728,19 @@ video#main-video_html5_api .vjs-big-play-button {
 }
 
 .use-tabs.--On.--ripple > [data-dynamic].active::after {
-    animation: switch-tap--vertical 0s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0s var(--tab-tap-ease);
 }
 
 .use-tabs.--On.--ripple > [data-dynamic].active:hover::after {
-    animation: switch-tap--vertical 0.25s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0.25s var(--tab-tap-ease);
 }
 
 .use-tabs.--Fat.--ripple > [data-dynamic].active::after {
-    animation: switch-tap--vertical 0s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0s var(--tab-tap-ease);
 }
 
 .use-tabs.--Fat.--ripple > [data-dynamic].active:hover::after {
-    animation: switch-tap--vertical 0.25s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0.25s var(--tab-tap-ease);
 }
 
 .custom-panel {
@@ -1858,11 +1858,11 @@ video#main-video_html5_api .vjs-big-play-button {
 }
 
 .custom-panel > [data-dynamic].active::after {
-    animation: switch-tap--vertical 0s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0s var(--tab-tap-ease);
 }
 
 .custom-panel > [data-dynamic]:hover::after {
-    animation: switch-tap--vertical 0.24s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    animation: switch-tap--vertical 0.24s var(--tab-tap-ease);
 }
 
 /* Tabline */
