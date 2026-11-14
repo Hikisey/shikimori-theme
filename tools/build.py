@@ -7,7 +7,7 @@
 уровня. Каскад от нарезки не меняется: part_01 + part_02 + … == модули подряд.
 
     python3 tools/build.py                   # пересобрать css/
-    python3 tools/build.py --version 1.3.6  # заодно поставить версию в подвал
+    python3 tools/build.py --version 1.3.7  # заодно поставить версию в подвал
     python3 tools/build.py --out /tmp/x      # собрать в другую папку (css/ не трогать)
 
 Пределы Шикимори (см. docs/ARCHITECTURE.md, «пределы импорта»):
@@ -101,7 +101,7 @@ def pack(mods_text, limit):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--version', help='версия для подвала, например 1.3.6')
+    ap.add_argument('--version', help='версия для подвала, например 1.3.7')
     ap.add_argument('--max', type=int, default=150_000, help='наибольший размер части в байтах (по умолчанию 150000)')
     ap.add_argument('--out', default=os.path.join(ROOT, 'css'))
     a = ap.parse_args()

@@ -1,6 +1,6 @@
 # hikisey theme — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.6**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.7**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,7 +26,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.3.6 (подвал сайта: «hikisey theme v1.3.6»), 4 части по ≤ 150 КБ |
+| **текущая версия** | v1.3.7 (подвал сайта: «hikisey theme v1.3.7»), 4 части по ≤ 150 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются 4 частями `css/part_NN.css` по ≤ 150 КБ |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
@@ -227,16 +227,16 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.6/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.7/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 4 импорта темы (все с raw.githubusercontent)
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.6/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.6/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.6/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.6/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.7/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.7/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.7/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.7/css/part_04.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -351,4 +351,5 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.4 | части 5–8 через jsDelivr (не помогло: дело в числе `@import`, см. v1.3.5); фильтры: сворачивание без задержавшейся полоски (кривая `--drop-ease-close` без медленного хвоста + рамка/фон гаснут к концу, `--drop-fade-close`); на ПК один клик по нижнему полю при открытом верхнем списке открывает его — фокус в другом списке больше не сворачивает верхний (поле уезжало из-под мыши между нажатием и отпусканием), закрывает скрипт по клику; телефон: привязка прокрутки при вводе `proximity` вместо `mandatory` — с открытой клавиатурой панель листается |
 | v1.3.5 | тема в 4 частях ≤ 150 КБ вместо 8 по ≤ 80 КБ: шикимори обрабатывает только ~6 первых `@import` (2 — css-club), части 5–8 не подключались ни с raw, ни с jsDelivr; все части снова с raw.githubusercontent; `tools/build.py` раскладывает модули целиком, предел 160 КБ и 4 части. внешне без изменений |
 | v1.3.6 | пк: `html { scrollbar-gutter: stable; }` (только `(hover: hover) and (pointer: fine)`) — место под полосу прокрутки занято всегда, страницы с прокруткой и без неё не сдвигаются по горизонтали; на телефоне без изменений |
+| v1.3.7 | пк (≥ 1024px): полоса прокрутки окна всегда (`html { overflow-x: hidden; overflow-y: scroll; scrollbar-gutter: stable }`, у body `overflow: visible`) без условия по указателю: в v1.3.6 правило стояло под `(hover: hover) and (pointer: fine)`, у пользователя (Helium, Linux) не сработало — Настройки → Профиль (с прокруткой) и → Аккаунт (без) отличались на ширину полосы, всё по центру сдвигалось на её половину; телефоны не затронуты |
 | v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |
