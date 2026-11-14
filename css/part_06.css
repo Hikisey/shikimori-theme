@@ -2198,7 +2198,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.2.24";
+    --theme-version: "1.3.0";
 }
 
 .l-footer:before {

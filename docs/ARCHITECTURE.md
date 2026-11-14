@@ -1,6 +1,6 @@
 # hikisey theme — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.2.24**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.0**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,7 +26,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.2.24 (подвал сайта: «hikisey theme v1.2.24»), 8 частей по ≤ 80 КБ |
+| **текущая версия** | v1.3.0 (подвал сайта: «hikisey theme v1.3.0»), 8 частей по ≤ 80 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются частями `css/part_NN.css` по ≤ 80 КБ |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
@@ -227,20 +227,20 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 7 импортов темы
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_04.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_05.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_06.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_07.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.24/css/part_08.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_05.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_06.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_07.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.0/css/part_08.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -337,4 +337,5 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.2.21 | стекло на iPhone снова размыто, баннер на телефоне, плотная панель фильтров, кнопка-крестик на экране |
 | v1.2.23 | тема подключается 7 частями по ≤ 80 КБ вместо 4 файлов (4mob на 234 КБ перестал импортироваться); короткий README. после релиза в `main`: исходники разбиты на 35 модулей, `tools/build.py`, `tools/quick_check.py` |
 | v1.2.24 | внутренняя переделка без изменений внешнего вида: исходники в 36 модулях, общие токены компонентов (`tokens/components.css`: плашки, заголовки, кнопки, стрелки лент, карточки, подсказки, вкладки, поля, плавность), 60 поздних правил вернулись домой, удалены правила старого видеоплеера, виджета VK и старого меню, перебитые объявления и повторы селекторов; 8 частей |
+| v1.3.0 | тот же код, что v1.2.24, выпущен как 1.3.0: перестройка кода — модули, общие компоненты и токены; внешне без изменений |
 | v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |
