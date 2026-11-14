@@ -1,6 +1,6 @@
 # hikisey theme — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.8**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.9**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,7 +26,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.3.8 (подвал сайта: «hikisey theme v1.3.8»), 4 части по ≤ 150 КБ |
+| **текущая версия** | v1.3.9 (подвал сайта: «hikisey theme v1.3.9»), 4 части по ≤ 150 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются 4 частями `css/part_NN.css` по ≤ 150 КБ |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
@@ -227,16 +227,16 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.8/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.9/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 4 импорта темы (все с raw.githubusercontent)
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.8/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.8/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.8/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.8/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.9/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.9/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.9/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.9/css/part_04.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -353,4 +353,5 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.6 | пк: `html { scrollbar-gutter: stable; }` (только `(hover: hover) and (pointer: fine)`) — место под полосу прокрутки занято всегда, страницы с прокруткой и без неё не сдвигаются по горизонтали; на телефоне без изменений |
 | v1.3.7 | пк (≥ 1024px): полоса прокрутки окна всегда (`html { overflow-x: hidden; overflow-y: scroll; scrollbar-gutter: stable }`, у body `overflow: visible`) без условия по указателю: в v1.3.6 правило стояло под `(hover: hover) and (pointer: fine)`, у пользователя (Helium, Linux) не сработало — Настройки → Профиль (с прокруткой) и → Аккаунт (без) отличались на ширину полосы, всё по центру сдвигалось на её половину; телефоны не затронуты |
 | v1.3.8 | первая загрузка без «дёрганья»: подменные шрифты под размеры Comfortaa (`Comfortaa Fallback` — Arial/Liberation Sans, `… DejaVu`, `… Noto`; `size-adjust`, `ascent/descent-override`, unicode-range как у Comfortaa) и все списки шрифтов через `var(--font-family)`; ширина значка форума/почты в верхней панели задана (`1em`); место под логотипы клубов и аватарки «В избранном» занято до загрузки (`aspect-ratio`). CLS при холодной загрузке (шрифты задержаны на 1,5 с): каталог 0,0022 → 0,0001, профиль 0,0056 → 0,0001, аниме 0,0313 → 0,0004 |
+| v1.3.9 | «Сортировка» раздвигает фильтры, как остальные списки: это обычный `<select>` с `appearance: base-select`, его окно `::picker(select)` живёт в верхнем слое и в поток не встаёт, поэтому на ПК, пока select `:open`, у его `.c-ms-field` растёт `padding-bottom` ровно на высоту окна (число пунктов через `:has(option:nth-child(n))` × 28px + поля и рамки), с теми же `--drop-time`/`--drop-ease`/`--drop-ease-close`; окно всегда вниз (`position-try-fallbacks: none`). На сенсорных экранах — системный список, без изменений |
 | v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |

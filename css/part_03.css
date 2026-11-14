@@ -596,6 +596,64 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
     }
 }
 
+/* ================================================================
+   v1.3.9 — «Сортировка» раздвигает фильтры, как остальные списки
+   ================================================================ */
+/* «Сортировка» — это обычный <select>, а не список сайта (.c-ms). Его выпадающее
+   окно (::picker(select)) браузер рисует в верхнем слое поверх страницы, и в поток
+   его поставить нельзя. Поэтому, пока select открыт, под ним резервируется место
+   ровно по высоте окна: нижние поля плавно уезжают вниз (те же время и кривые, что
+   у .c-ms), окно выезжает в освободившийся промежуток, а при закрытии всё
+   возвращается. Только где работает base-select и не сенсорный экран —
+   на телефоне остаётся системный список. */
+@supports (appearance: base-select) and selector(:open) {
+    @media not ((hover: none) and (pointer: coarse)) {
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select) {
+            --sort-n: 1;
+            --sort-opt: 28px;   /* высота пункта: 18px строка + 2 × 5px отступ (--opt-pad) */
+            padding-bottom: 0;
+            transition: padding-bottom var(--drop-time) var(--drop-ease-close);
+        }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(2)) { --sort-n: 2; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(3)) { --sort-n: 3; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(4)) { --sort-n: 4; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(5)) { --sort-n: 5; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(6)) { --sort-n: 6; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(7)) { --sort-n: 7; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(8)) { --sort-n: 8; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(9)) { --sort-n: 9; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(10)) { --sort-n: 10; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(11)) { --sort-n: 11; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(12)) { --sort-n: 12; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(13)) { --sort-n: 13; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(14)) { --sort-n: 14; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(15)) { --sort-n: 15; }
+        /* открыт: место = отступ + рамки + поля окна + пункты */
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select:open) {
+            padding-bottom: calc(var(--drop-gap) + 2px + 2 * var(--drop-pad) + var(--sort-n) * var(--sort-opt));
+            transition: padding-bottom var(--drop-time) var(--drop-ease);
+        }
+        /* пункты одной высоты, чтобы место совпало с окном */
+        section.l-page aside.l-menu .c-filter-select option:not(#u) {
+            box-sizing: border-box;
+            block-size: var(--sort-opt);
+            line-height: 18px;
+        }
+        /* окно всегда раскрывается вниз, в зарезервированное место,
+           и сворачивается той же кривой, что и списки фильтров */
+        section.l-page aside.l-menu .c-filter-select::picker(select) {
+            position-try-fallbacks: none;
+            max-height: none;
+        }
+        section.l-page aside.l-menu .c-filter-select:not(:open)::picker(select) {
+            transition: clip-path var(--drop-time) var(--drop-ease-close),
+                        transform var(--drop-time) var(--drop-ease-close),
+                        display var(--drop-time) allow-discrete,
+                        overlay var(--drop-time) allow-discrete !important;
+        }
+    }
+}
+
 /* ===== pages/messages =====
    почта, диалоги, уведомления */
 
