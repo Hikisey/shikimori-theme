@@ -1,35 +1,208 @@
-/* Палитра по умолчанию (rgb-тройки). Свою палитру задавайте в «Внешнем виде сайта» —
-   она подключается позже и перекрывает эти значения. */
+/* =====================================================================
+   ПАЛИТРА ТЕМЫ — все цвета берутся отсюда.
+   Цвета пишутся rgb-тройкой «R, G, B» (так работает rgba(var(--x), .5)).
+   Чтобы перекрасить тему, вставьте в «Внешний вид сайта» ПОСЛЕ четырёх @import:
+     @media screen and (min-width: 1px) { html:root { --accent: 90, 150, 255; } }
+   (обёртка @media обязательна — без неё Шикимори применит стиль только к ПК).
+   Старые имена (--bright-color, --block-color, --page-bg …) тоже понимаются.
+   ===================================================================== */
 @media screen and (min-width: 1px) {
   html:root {
-    --white-color: 255, 255, 255;
-    --light-color: 236, 240, 247;
-    --dark-color: 170, 178, 192;
-    --bright-color: 232, 108, 108;
-    --dull-color: 140, 148, 160;
-    --input-color: 165, 172, 184;
-    --hover-bottoms-1: 26, 28, 34;
-    --buttoms-color: 178, 58, 64;
-    --hover-buttoms-2: 214, 82, 82;
+    /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
+    --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
+    --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
+    /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
+
+    /* ---------- ФОН ---------- */
+    --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
+    --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
+    --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
+    --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
+    --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
+    --bg-blur: 0px;                                 /* размытие обоев на ПК */
+    --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
+    --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
+    --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
+    --profile-banner: none;                         /* баннер профиля: url("…") */
+    --profile-banner-height: 300px;                 /* высота баннера */
+    --profile-banner-position: center;              /* какая часть картинки видна */
+    --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
+
+    /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
+    --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
+    --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
+    --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
+    --shade: 0, 0, 0;                               /* цвет теней и затемнений */
+
+    /* ---------- ТЕКСТ ---------- */
+    --text: var(--light-color, 236, 240, 247);      /* основной текст */
+    --text-2: var(--dark-color, 170, 178, 192);     /* второстепенный текст, подписи */
+    --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
+    --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
+    --hundred: 1;                                   /* непрозрачность части текста */
+
+    /* ---------- СТАТУСЫ И ОЦЕНКИ (по желанию) ---------- */
     --very-high-rating: 129, 199, 132;
     --high-rating: 156, 204, 101;
     --average-rating: 255, 202, 40;
     --small-rating: 239, 108, 108;
-    --time-filled: 232, 108, 108;
-    --time-empty: 34, 38, 46;
+    --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
+    --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
     --anime-inprocess: 128, 246, 255;
     --anime-complete: 0, 229, 255;
     --manga-inprocess: 255, 92, 160;
     --manga-complete: 255, 0, 110;
-    --hover-color: 232, 108, 108;
-    --shadows-color: 10, 12, 16;
-    --block-color: 30, 34, 42;
-    --menu-back: 20, 22, 28;
-    --nick-cover: 178, 58, 64;
-    --popup-color: 38, 43, 54;
-    --hundred: 1;
-    --menu-bar: 18, 20, 26;
-    --menu-bar-hover: 26, 29, 37;
+  }
+}
+
+/* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
+   Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,
+   вычисленные из --accent / --glass / --text / --link (Chrome 119+, Safari 16.4+, Firefox 128+). */
+@media screen and (min-width: 1px) {
+  html:root {
+    --accent-dim: rgb(178, 58, 64); /* тёмный акцент: кнопки, подложка ника */
+    --accent-hover: rgb(214, 82, 82); /* акцент кнопок под курсором */
+    --glass-deep: rgb(20, 22, 28); /* самое тёмное стекло: меню, затемнение обоев */
+    --glass-bar: rgb(18, 20, 26); /* верхняя панель */
+    --glass-bar-hover: rgb(26, 29, 37); /* пункты панели под курсором */
+    --glass-popup: rgb(38, 43, 54); /* всплывающие окна и подсказки */
+    --glass-active: rgb(26, 28, 34); /* нажатые и выбранные элементы */
+    --glass-shadow: rgb(10, 12, 16); /* тени блоков */
+    --text-input: rgb(165, 172, 184); /* текст в полях ввода */
+    --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
+    /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
+    --tone-6e1515: rgb(110, 21, 21);
+    --tone-010101: rgb(1, 1, 1);
+    --tone-0c0c0c: rgb(12, 12, 12);
+    --tone-121223: rgb(18, 18, 35);
+    --tone-131010: rgb(19, 16, 16);
+    --tone-151414: rgb(21, 20, 20);
+    --tone-171212: rgb(23, 18, 18);
+    --tone-171616: rgb(23, 22, 22);
+    --tone-171717: rgb(23, 23, 23);
+    --tone-191717: rgb(25, 23, 23);
+    --tone-1b1b1b: rgb(27, 27, 27);
+    --tone-1e1e27: rgb(30, 30, 39);
+    --tone-1f1e1e: rgb(31, 30, 30);
+    --tone-1f2123: rgb(31, 33, 35);
+    --tone-212121: rgb(33, 33, 33);
+    --tone-263238: rgb(38, 50, 56);
+    --tone-271f1c: rgb(39, 31, 28);
+    --tone-282b2f: rgb(40, 43, 47);
+    --tone-282d56: rgb(40, 45, 86);
+    --tone-282e33: rgb(40, 46, 51);
+    --tone-2a2f33: rgb(42, 47, 51);
+    --tone-2d2626: rgb(45, 38, 38);
+    --tone-373737: rgb(55, 55, 55);
+    --tone-373c3e: rgb(55, 60, 62);
+    --tone-383838: rgb(56, 56, 56);
+    --tone-3b3a3e: rgb(59, 58, 62);
+    --tone-3e3e3e: rgb(62, 62, 62);
+    --tone-3e4d5d: rgb(62, 77, 93);
+    --tone-444444: rgb(68, 68, 68);
+    --tone-4c4b4b: rgb(76, 75, 75);
+    --tone-54588a: rgb(84, 88, 138);
+    --tone-556571: rgb(85, 101, 113);
+    --tone-6b6965: rgb(107, 105, 101);
+    --tone-6d6d6d: rgb(109, 109, 109);
+    --tone-9fa9b5: rgb(159, 169, 181);
+    --tone-a5aae6: rgb(165, 170, 230);
+    --tone-a8a99f: rgb(168, 169, 159);
+    --tone-b1cdde: rgb(177, 205, 222);
+    --tone-b5a28c: rgb(181, 162, 140);
+    --tone-b7b7b7: rgb(183, 183, 183);
+    --tone-bfc5d0: rgb(191, 197, 208);
+    --tone-c4cad4: rgb(196, 202, 212);
+    --tone-d2d2d2: rgb(210, 210, 210);
+    --tone-d4d2cd: rgb(212, 210, 205);
+    --tone-d6d6d6: rgb(214, 214, 214);
+    --tone-d6dbe4: rgb(214, 219, 228);
+    --tone-dadada: rgb(218, 218, 218);
+    --tone-dadfff: rgb(218, 223, 255);
+    --tone-dcdcdc: rgb(220, 220, 220);
+    --tone-dddddd: rgb(221, 221, 221);
+    --tone-e2e2e2: rgb(226, 226, 226);
+    --tone-e4d7d7: rgb(228, 215, 215);
+    --tone-e4e4e4: rgb(228, 228, 228);
+    --tone-e7e7e7: rgb(231, 231, 231);
+    --tone-e9f1f3: rgb(233, 241, 243);
+    --tone-eadddd: rgb(234, 221, 221);
+    --tone-ebeef1: rgb(235, 238, 241);
+    --tone-f9f9f9: rgb(249, 249, 249);
+    --tone-fdfdfd: rgb(253, 253, 253);
+  }
+}
+@supports (color: rgb(from red r g b)) {
+  html:root {
+    --accent-dim: rgb(from rgb(var(--accent)) calc(r * 178 / 232) calc(g * 58 / 108) calc(b * 64 / 108));
+    --accent-hover: rgb(from rgb(var(--accent)) calc(r * 214 / 232) calc(g * 82 / 108) calc(b * 82 / 108));
+    --glass-deep: rgb(from rgb(var(--glass)) calc(r * 20 / 30) calc(g * 22 / 34) calc(b * 28 / 42));
+    --glass-bar: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 20 / 34) calc(b * 26 / 42));
+    --glass-bar-hover: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 29 / 34) calc(b * 37 / 42));
+    --glass-popup: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 43 / 34) calc(b * 54 / 42));
+    --glass-active: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 28 / 34) calc(b * 34 / 42));
+    --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
+    --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
+    --link-hover: rgb(from rgb(var(--link)) calc(r + (255 - r) * 13 / 23) calc(g + (255 - g) * 42 / 147) calc(b + (255 - b) * 42 / 147));
+    --tone-6e1515: rgb(from rgb(var(--accent)) calc(r * 110 / 232) calc(g * 21 / 108) calc(b * 21 / 108));
+    --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
+    --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
+    --tone-121223: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 18 / 34) calc(b * 35 / 42));
+    --tone-131010: rgb(from rgb(var(--glass)) calc(r * 19 / 30) calc(g * 16 / 34) calc(b * 16 / 42));
+    --tone-151414: rgb(from rgb(var(--glass)) calc(r * 21 / 30) calc(g * 20 / 34) calc(b * 20 / 42));
+    --tone-171212: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 18 / 34) calc(b * 18 / 42));
+    --tone-171616: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 22 / 34) calc(b * 22 / 42));
+    --tone-171717: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+    --tone-191717: rgb(from rgb(var(--glass)) calc(r * 25 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+    --tone-1b1b1b: rgb(from rgb(var(--glass)) calc(r * 27 / 30) calc(g * 27 / 34) calc(b * 27 / 42));
+    --tone-1e1e27: rgb(from rgb(var(--glass)) r calc(g * 30 / 34) calc(b * 39 / 42));
+    --tone-1f1e1e: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 30 / 34) calc(b * 30 / 42));
+    --tone-1f2123: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 33 / 34) calc(b * 35 / 42));
+    --tone-212121: rgb(from rgb(var(--glass)) calc(r * 33 / 30) calc(g * 33 / 34) calc(b * 33 / 42));
+    --tone-263238: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 50 / 34) calc(b * 56 / 42));
+    --tone-271f1c: rgb(from rgb(var(--glass)) calc(r * 39 / 30) calc(g * 31 / 34) calc(b * 28 / 42));
+    --tone-282b2f: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 43 / 34) calc(b * 47 / 42));
+    --tone-282d56: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 45 / 34) calc(b * 86 / 42));
+    --tone-282e33: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 46 / 34) calc(b * 51 / 42));
+    --tone-2a2f33: rgb(from rgb(var(--glass)) calc(r * 42 / 30) calc(g * 47 / 34) calc(b * 51 / 42));
+    --tone-2d2626: rgb(from rgb(var(--glass)) calc(r * 45 / 30) calc(g * 38 / 34) calc(b * 38 / 42));
+    --tone-373737: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 55 / 34) calc(b * 55 / 42));
+    --tone-373c3e: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 60 / 34) calc(b * 62 / 42));
+    --tone-383838: rgb(from rgb(var(--glass)) calc(r * 56 / 30) calc(g * 56 / 34) calc(b * 56 / 42));
+    --tone-3b3a3e: rgb(from rgb(var(--glass)) calc(r * 59 / 30) calc(g * 58 / 34) calc(b * 62 / 42));
+    --tone-3e3e3e: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 62 / 34) calc(b * 62 / 42));
+    --tone-3e4d5d: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 77 / 34) calc(b * 93 / 42));
+    --tone-444444: rgb(from rgb(var(--glass)) calc(r * 68 / 30) calc(g * 68 / 34) calc(b * 68 / 42));
+    --tone-4c4b4b: rgb(from rgb(var(--glass)) calc(r * 76 / 30) calc(g * 75 / 34) calc(b * 75 / 42));
+    --tone-54588a: rgb(from rgb(var(--glass)) calc(r * 84 / 30) calc(g * 88 / 34) calc(b * 138 / 42));
+    --tone-556571: rgb(from rgb(var(--glass)) calc(r * 85 / 30) calc(g * 101 / 34) calc(b * 113 / 42));
+    --tone-6b6965: rgb(from rgb(var(--glass)) calc(r * 107 / 30) calc(g * 105 / 34) calc(b * 101 / 42));
+    --tone-6d6d6d: rgb(from rgb(var(--glass)) calc(r * 109 / 30) calc(g * 109 / 34) calc(b * 109 / 42));
+    --tone-9fa9b5: rgb(from rgb(var(--text)) calc(r * 159 / 236) calc(g * 169 / 240) calc(b * 181 / 247));
+    --tone-a5aae6: rgb(from rgb(var(--text)) calc(r * 165 / 236) calc(g * 170 / 240) calc(b * 230 / 247));
+    --tone-a8a99f: rgb(from rgb(var(--text)) calc(r * 168 / 236) calc(g * 169 / 240) calc(b * 159 / 247));
+    --tone-b1cdde: rgb(from rgb(var(--text)) calc(r * 177 / 236) calc(g * 205 / 240) calc(b * 222 / 247));
+    --tone-b5a28c: rgb(from rgb(var(--text)) calc(r * 181 / 236) calc(g * 162 / 240) calc(b * 140 / 247));
+    --tone-b7b7b7: rgb(from rgb(var(--text)) calc(r * 183 / 236) calc(g * 183 / 240) calc(b * 183 / 247));
+    --tone-bfc5d0: rgb(from rgb(var(--text)) calc(r * 191 / 236) calc(g * 197 / 240) calc(b * 208 / 247));
+    --tone-c4cad4: rgb(from rgb(var(--text)) calc(r * 196 / 236) calc(g * 202 / 240) calc(b * 212 / 247));
+    --tone-d2d2d2: rgb(from rgb(var(--text)) calc(r * 210 / 236) calc(g * 210 / 240) calc(b * 210 / 247));
+    --tone-d4d2cd: rgb(from rgb(var(--text)) calc(r * 212 / 236) calc(g * 210 / 240) calc(b * 205 / 247));
+    --tone-d6d6d6: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 214 / 240) calc(b * 214 / 247));
+    --tone-d6dbe4: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 219 / 240) calc(b * 228 / 247));
+    --tone-dadada: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 218 / 240) calc(b * 218 / 247));
+    --tone-dadfff: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 223 / 240) calc(b * 255 / 247));
+    --tone-dcdcdc: rgb(from rgb(var(--text)) calc(r * 220 / 236) calc(g * 220 / 240) calc(b * 220 / 247));
+    --tone-dddddd: rgb(from rgb(var(--text)) calc(r * 221 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+    --tone-e2e2e2: rgb(from rgb(var(--text)) calc(r * 226 / 236) calc(g * 226 / 240) calc(b * 226 / 247));
+    --tone-e4d7d7: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 215 / 240) calc(b * 215 / 247));
+    --tone-e4e4e4: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 228 / 240) calc(b * 228 / 247));
+    --tone-e7e7e7: rgb(from rgb(var(--text)) calc(r * 231 / 236) calc(g * 231 / 240) calc(b * 231 / 247));
+    --tone-e9f1f3: rgb(from rgb(var(--text)) calc(r * 233 / 236) calc(g * 241 / 240) calc(b * 243 / 247));
+    --tone-eadddd: rgb(from rgb(var(--text)) calc(r * 234 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+    --tone-ebeef1: rgb(from rgb(var(--text)) calc(r * 235 / 236) calc(g * 238 / 240) calc(b * 241 / 247));
+    --tone-f9f9f9: rgb(from rgb(var(--text)) calc(r * 249 / 236) calc(g * 249 / 240) calc(b * 249 / 247));
+    --tone-fdfdfd: rgb(from rgb(var(--text)) calc(r * 253 / 236) calc(g * 253 / 240) calc(b * 253 / 247));
   }
 }
 
@@ -94,14 +267,14 @@ body {
 }
 
 .css {
-    color: #010101cc;
+    color: color-mix(in srgb, var(--tone-010101) 80%, transparent);
 }
 
 html {
     height: 100%;
     min-height: 100%;
     overflow: visible;
-    background-color: #151515;
+    background-color: rgb(var(--bg-color));
 }
 
 body {
@@ -132,7 +305,7 @@ body:after {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: rgba(var(--menu-back), 0.5);
+    background-color: color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent);
 }
 
 .l-top_menu-v2 {
@@ -146,13 +319,13 @@ body:after {
 }
 
 .l-top_menu-v2 .global-search .search-results::before {
-    background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(var(--menu-back), 0.65) 100%);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(var(--menu-back), 0.65) 100%);
+    background: -webkit-linear-gradient(bottom, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(0deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
 }
 
 .l-top_menu-v2 .global-search .search-results::after {
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(var(--menu-back), 0.65) 100%);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(var(--menu-back), 0.65) 100%);
+    background: -webkit-linear-gradient(top, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(180deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
 }
 
 ::-webkit-scrollbar {
@@ -167,23 +340,23 @@ body:after {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--light-color), 0.5);
+    background-color: rgba(var(--text), 0.5);
     border-radius: 8px;
     transition: 0.2s;
 }
 
 @media (hover: hover) and (pointer: fine) {
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(var(--light-color), 0.7);
+    background-color: rgba(var(--text), 0.7);
 }
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background-color: rgba(var(--light-color), 0.6);
+    background-color: rgba(var(--text), 0.6);
 }
 
 .b-shiki_editor footer .about-bb_codes:hover:before {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 /* цвет текста */
@@ -204,7 +377,7 @@ body:after {
 .b-mention:before,
 .b-mention s,
 .b-mention span {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     cursor: pointer;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
@@ -217,7 +390,7 @@ body:after {
 .b-mention:hover span,
 .b-mention:hover s {
     text-decoration: none !important;
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 header.head .misc {
@@ -227,12 +400,12 @@ header.head .misc {
 
 * .c-brief header.head h1 {
     border-bottom: none;
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
     font-family: Comfortaa, sans-serif;
-    text-shadow: 2px -2px 0 rgba(var(--nick-cover), 1), -2px 2px 0 rgba(var(--nick-cover), 1),
-    -2px -2px 0 rgba(var(--nick-cover), 1), 2px 2px 0 rgba(var(--nick-cover), 1),
-    0 -2px 0 rgba(var(--nick-cover), 1), 0 2px 0 rgba(var(--nick-cover), 1),
-    2px 0 0 rgba(var(--nick-cover), 1), -2px 0 0 rgba(var(--nick-cover), 1);
+    text-shadow: 2px -2px 0 var(--accent-dim), -2px 2px 0 var(--accent-dim),
+    -2px -2px 0 var(--accent-dim), 2px 2px 0 var(--accent-dim),
+    0 -2px 0 var(--accent-dim), 0 2px 0 var(--accent-dim),
+    2px 0 0 var(--accent-dim), -2px 0 0 var(--accent-dim);
     font-size: 34px;
     line-height: 38px;
     pointer-events: none;
@@ -242,7 +415,7 @@ header.head .misc {
 header.head h2,
 header.head h1 {
     border-bottom: none;
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
     font-family: "Comfortaa", sans-serif;
     display: block;
 }
@@ -250,43 +423,43 @@ header.head h1 {
 /* цвет описания аниме */
 .b-prgrph,
 .b-spoiler_prgrph {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 /* цвет смотрю, планы и т.д. */
 .b-db_entry-note .name-container .note .relation,
 .b-db_entry-note .name-container .note .additional {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 /* кнопка смотреть онлайн */
 .b-link_button {
-    background-color: rgba(var(--buttoms-color), 0.7) !important;
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
 .b-link_button:hover {
-    background-color: rgba(var(--hover-buttoms-2), 1) !important;
-    color: white !important;
+    background-color: var(--accent-hover) !important;
+    color: rgb(var(--text-strong)) !important;
     border: none !important;
 }
 }
 
 .b-link_button {
-    background-color: rgba(var(--buttoms-color), 0.7);
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
     border: none;
-    color: rgba(var(--white-color), 1) !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
+    color: rgba(var(--text-strong), 1) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
 }
 
 /* инфо-описание */
 .line .value {
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
 }
 
 /* инфо тег */
 .line .key {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
     font-weight: bold;
 }
 
@@ -302,12 +475,12 @@ header.head h1 {
 
 /* история-время */
 .p-profiles .profile-head .c-history .entry .misc.date {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 /* история-история */
 .p-profiles .profile-head .c-history .entry .misc {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -315,14 +488,14 @@ header.head h1 {
 .b-add_to_list.completed .trigger,
 .b-add_to_list.completed .option {
     background: #1c4c20;
-    border-color: rgba(var(--block-color), 0.4);
+    border-color: rgba(var(--glass), 0.4);
     color: #c4e9ed;
 }
 
 .b-add_to_list.dropped .trigger,
 .b-add_to_list.dropped .option {
     background: #77251c;
-    border-color: rgba(var(--block-color), 0.4);
+    border-color: rgba(var(--glass), 0.4);
     color: #f2ddcc;
 }
 
@@ -330,15 +503,15 @@ header.head h1 {
 .b-add_to_list.on_hold .trigger,
 .b-add_to_list.on_hold .option {
     background: #864e13;
-    border-color: rgba(var(--block-color), 0.4);
-    color: #ebeef1;
+    border-color: rgba(var(--glass), 0.4);
+    color: var(--tone-ebeef1);
 }
 
 /* кнопка "Запланировано" на страничке аниме*/
 .b-add_to_list.planned .trigger,
 .b-add_to_list.planned .option {
     background: #173969;
-    border-color: rgba(var(--block-color), 0.4);
+    border-color: rgba(var(--glass), 0.4);
     color: #cfe0ec;
 }
 
@@ -346,7 +519,7 @@ header.head h1 {
 .b-add_to_list.watching .trigger,
 .b-add_to_list.watching .option {
     background: #382f7b;
-    border-color: rgba(var(--block-color), 0.4);
+    border-color: rgba(var(--glass), 0.4);
     color: #d8f8f6;
 }
 
@@ -354,7 +527,7 @@ header.head h1 {
 .b-add_to_list.rewatching .trigger,
 .b-add_to_list.rewatching .option {
     background: #115652;
-    border-color: rgba(var(--block-color), 0.4);
+    border-color: rgba(var(--glass), 0.4);
     color: #d8f8f6;
 }
 
@@ -371,7 +544,7 @@ header.head h1 {
 .b-add_to_list.rewatching.expanded .trigger,
 .b-add_to_list.rewatching .trigger {
     border: 2px solid #cfe0ec26;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     border-radius: 6px;
 }
 
@@ -447,7 +620,7 @@ header.head h1 {
 .p-ranobe-show .other-names,
 .p-animes-show .more-info,
 .p-ranobe-show .more-info {
-    background: rgba(var(--block-color), 0.6) !important;
+    background: rgba(var(--glass), 0.6) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -463,9 +636,9 @@ header.head h1 {
 .p-animes-show .more-info:hover,
 .p-ranobe-show .more-info:hover,
 a.b-anime_status_tag.studio:hover:before {
-    background-color: rgba(var(--hover-buttoms-2), 1) !important;
-    color: white !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    background-color: var(--accent-hover) !important;
+    color: rgb(var(--text-strong)) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     border: none !important;
 }
 }
@@ -474,8 +647,8 @@ a.b-anime_status_tag.studio:hover:before {
 .b-show_more,
 .b-show_more-more .hide-more {
     padding: 2px 0 !important;
-    color: rgba(var(--bright-color), 1) !important;
-    background: rgba(var(--block-color), 0.6) !important;
+    color: rgba(var(--accent), 1) !important;
+    background: rgba(var(--glass), 0.6) !important;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
@@ -490,9 +663,9 @@ a.b-anime_status_tag.studio:hover:before {
 .b-table .actions a:hover,
 .b-show_more:hover,
 .b-show_more-more .hide-more:hover {
-    background-color: rgba(var(--hover-buttoms-2), 0.7) !important;
-    color: white !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent) !important;
+    color: rgb(var(--text-strong)) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     border: none !important;
     animation: none;
 }
@@ -504,8 +677,8 @@ a.b-anime_status_tag.studio:hover:before {
 
 .b-table .actions a {
     padding: 4px 18px !important;
-    color: rgba(var(--bright-color), 1) !important;
-    background: rgba(var(--block-color), 0.6) !important;
+    color: rgba(var(--link), 1) !important;
+    background: rgba(var(--glass), 0.6) !important;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
@@ -517,35 +690,35 @@ a.b-anime_status_tag.studio:hover:before {
     width: 100%;
     padding: 5px 12px !important;
     text-align: center;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
 }
 
 /* жанр, ссылка на него d ghjcjvnht hfcrhsdftittujcz fybv */
 .p-user_rates-index .list-lines tr td .episodes_total:after,
 .p-user_rates-index .list-lines tr td .episodes_total:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .p-user_rates-index .l-content .b-options-floated span:before,
 .p-user_rates-index .l-content .b-options-floated span:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     font-size: 0;
 }
 
 .p-user_rates-index .l-content .b-options-floated span:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* напрямую, хронология франшиза */
 .b-options-floated a,
 .b-options-floated .link {
     font-size: 13px;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     padding: 0 8px 0 8px;
 }
 
 .b-options-floated.mobile-phone_portrait a {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-options-floated a:after,
@@ -596,18 +769,18 @@ a.b-anime_status_tag.studio:hover:before {
 .bar.simple .bar.s2:hover,
 .bar.simple .bar.s1:hover,
 .bar.simple .bar.s0:hover {
-    background: rgba(var(--hover-color), 1);
+    background: rgba(var(--accent), 1);
 }
 }
 
 /* цвет никнеймов */
 a .title span {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     transition: 0.2s all;
 }
 
 a:hover .title span {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .p-dashboards-show .v2 .db-update .name,
@@ -615,7 +788,7 @@ a:hover .title span {
 .b-topic > .inner header .name-date a.name,
 .b-dialog > .inner header .name-date a.name,
 .b-message > .inner header .name-date a.name {
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
     top: 2px;
     position: relative;
     padding-top: 2px;
@@ -635,7 +808,7 @@ a:hover .title span {
 .b-comments .comments-collapser:hover,
 .b-topic > .inner header .name-date a.name:hover,
 .p-user_rates-index .list-lines tr td .episodes_total {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .b-comment > .inner .name-date .name:hover,
@@ -644,7 +817,7 @@ a:hover .title span {
 .b-topic > .inner header .name-date a.name:hover,
 .b-message > .inner header .name-date a.name:hover,
 .b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 /* цвет кнопки троеточие у описания аниме */
@@ -658,7 +831,7 @@ a:hover .title span {
 .p-mangas-show .other-names.click-loader,
 .p-ranobe-show .other-names.click-loader {
     background: none;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     border: none !important;
     margin-top: 0;
     transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -670,7 +843,7 @@ a:hover .title span {
 .p-mangas-show .other-names.click-loader:hover,
 .p-ranobe-show .other-names.click-loader:hover {
     background: none;
-    color: white;
+    color: rgb(var(--text-strong));
 }
 }
 
@@ -680,8 +853,8 @@ a:hover .title span {
     content: "показать";
     font-size: 12px;
     display: block;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
-    background: rgba(var(--block-color), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    background: rgba(var(--glass), 0.6);
     border-radius: 10px;
     padding: 2px 11px;
     transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -692,7 +865,7 @@ a:hover .title span {
 .p-animes-show .other-names.click-loader:hover:before,
 .p-mangas-show .other-names.click-loader:hover:before,
 .p-ranobe-show .other-names.click-loader:hover:before {
-    background-color: rgba(var(--hover-buttoms-2), 1);
+    background-color: var(--accent-hover);
 }
 }
 
@@ -705,13 +878,13 @@ a:hover .title span {
 .b-forum .faye-loader,
 .b-topic .faye-loader,
 .collapsed + .spoiler .hide-expanded {
-    background: rgba(var(--block-color), 0.4);
-    color: rgba(var(--dark-color), 1);
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), 1);
     border: none;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border-radius: 14px;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
 }
 
 /* когда наводишь на загрузку*/
@@ -724,8 +897,8 @@ a:hover .title span {
 .b-forum .faye-loader:hover,
 .b-topic .faye-loader:hover,
 .collapsed + .spoiler .hide-expanded:hover {
-    background: rgba(var(--hover-bottoms-1), 0.8) !important;
-    color: rgba(var(--white-color), 1) !important;
+    background: color-mix(in srgb, var(--glass-active) 80%, transparent) !important;
+    color: rgba(var(--text-strong), 1) !important;
     border: none;
     border-radius: 6px;
 }
@@ -734,21 +907,21 @@ a:hover .title span {
 .b-comments .comments-loader:active,
 .b-comments .comments-hider:active,
 .b-comments .comments-expander:active {
-    background: rgba(var(--block-color), 0.4);
-    color: rgba(var(--dark-color), 1);
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), 1);
     border: none;
 }
 
 /* цвет рейтенга текста */
 
 .b-rate .text-score {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 /* цвет значка отзыв */
 .locale-ru .b-summary_marker:before {
     background-color: #1a421d;
-    border: rgba(var(--block-color), 0.4);
+    border: rgba(var(--glass), 0.4);
     color: #c4e9ed;
 }
 
@@ -762,9 +935,9 @@ a:hover .title span {
 
 @media (hover: hover) and (pointer: fine) {
 .locale-ru .b-offtopic_marker.off:hover:before {
-    border-color: rgba(var(--hover-color), 1);
-    background-color: rgba(var(--hover-color), 1);
-    color: rgba(var(--white-color), 1);
+    border-color: rgba(var(--accent), 1);
+    background-color: rgba(var(--accent), 1);
+    color: rgba(var(--text-strong), 1);
 }
 }
 
@@ -776,9 +949,9 @@ a:hover .title span {
 
 @media (hover: hover) and (pointer: fine) {
 .locale-ru .b-offtopic_marker.active:hover:before {
-    border-color: rgba(var(--hover-color), 1);
-    background-color: rgba(var(--hover-color), 1);
-    color: rgba(var(--white-color), 1);
+    border-color: rgba(var(--accent), 1);
+    background-color: rgba(var(--accent), 1);
+    color: rgba(var(--text-strong), 1);
 }
 }
 
@@ -802,10 +975,10 @@ a:hover .title span {
 
 /* открываюшееся при наводке на героя окно */
 .tooltip-inner {
-    background: none repeat scroll 0 0 rgba(var(--menu-back), 0.9);
+    background: none repeat scroll 0 0 color-mix(in srgb, var(--glass-deep) 90%, transparent);
     border: none;
     color: inherit;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
     border-radius: 12px;
 }
 
@@ -838,7 +1011,7 @@ a:hover .title span {
 
 /* название аниме в списке моем */
 .p-user_rates-index .list-lines tr .name a {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -846,7 +1019,7 @@ a:hover .title span {
 .b-user.detailed .history .line a .event:hover {
     background: none;
     box-shadow: none;
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     text-decoration: none;
     border: none;
 }
@@ -861,17 +1034,17 @@ a:hover .title span {
 /* текст отзывы, комментарии и т.д. под вкладкой У аниме: */
 .b-db_entry > .c-about .additional-links .line-container > .link,
 .b-db_entry > .c-about .additional-links .line-container > a {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-db_entry > .c-about .additional-links .line-container > .link:hover,
 .b-db_entry > .c-about .additional-links .line-container > a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* закрашенные звезды */
 .b-rate .stars.score {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .l-top_menu-v2 .logo-container .logo {
@@ -887,17 +1060,17 @@ a:hover .title span {
 
 /* пустые звезды */
 .b-rate .stars.background {
-    color: rgba(var(--white-color), 0.2);
+    color: rgba(var(--text-strong), 0.2);
 }
 
 /* список аниме и манги */
 .b-stats_bar a.title {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
 .b-stats_bar a.title:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
     box-shadow: none;
     background: none;
 }
@@ -907,24 +1080,24 @@ a:hover .title span {
 .b-stats_bar .stat_names .stat_name a,
 .b-stats_bar .stat_names .stat_name .size:before,
 .b-stats_bar .stat_names .stat_name .size:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 /* под списком кол-во просмотреных прочитанных и т.д. */
 .b-stats_bar .stat_names .stat_name a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-animes-menu .total-rates {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-shiki_editor .body .editor textarea,
@@ -937,12 +1110,12 @@ a:hover .title span {
 .b-input textarea[type="text"],
 .b-input textarea[type="password"],
 .b-input textarea[type="email"] {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     border-radius: 10px;
-    background-color: rgba(var(--block-color), 0.4) !important;
+    background-color: rgba(var(--glass), 0.4) !important;
     border: none !important;
     font-family: "Comfortaa", sans-serif;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
 }
 
 /* цвет кнопки написать */
@@ -962,13 +1135,13 @@ a.start.b-button,
     padding: 7px 12px;
     line-height: 1;
     font-family: "Comfortaa", sans-serif;
-    color: rgba(var(--light-color), 1) !important;
-    background-color: rgba(var(--block-color), 0.5);
+    color: rgba(var(--text), 1) !important;
+    background-color: rgba(var(--glass), 0.5);
     border-radius: 10px !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -986,9 +1159,9 @@ a.start.b-button:hover,
 .b-form input[type="submit"].disabled:hover,
 .block.edit-page.pages a.cancel:hover,
 .b-shiki_editor footer .hide:hover {
-    background-color: rgba(var(--hover-buttoms-2), 0.6);
-    color: #e4e4e4 !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+    color: var(--tone-e4e4e4) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     opacity: 1;
 }
 }
@@ -997,15 +1170,15 @@ a.start.b-button:hover,
     padding: 7px 12px;
     line-height: 1;
     font-family: "Comfortaa", sans-serif;
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
     border-radius: 10px !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
 }
 .b-shiki_editor-v2 .hide:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .b-shiki_editor footer input[type="submit"],
@@ -1014,15 +1187,15 @@ a.start.b-button:hover,
 .b-shiki_editor footer .hide,
 .b-shiki_editor footer .cancel {
     margin: 0 20px 10px 0;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
 .b-comments .comments-loader:hover,
 .b-comments .comments-hider:hover,
 .b-comments .comments-expander:hover {
-    background-color: white;
-    color: white;
+    background-color: rgb(var(--glass-light));
+    color: rgb(var(--text-strong));
 }
 }
 
@@ -1035,7 +1208,7 @@ a.start.b-button:hover,
 
 /* слово развернуть */
 .b-height_shortener .expand {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 
@@ -1043,27 +1216,27 @@ a.start.b-button:hover,
 
 /* Поиск по названию в списке аниме */
 input {
-    color: rgba(var(--light-color), 1);
-    background: rgba(var(--block-color), 0.4);
+    color: rgba(var(--text), 1);
+    background: rgba(var(--glass), 0.4);
 }
 
 /* свернуть списки в списке аниме */
 .b-options-floated .action {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     border: none;
 }
 
 .b-options-floated .action:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-list_switchers .switcher.lines:before:hover,
 .b-list_switchers .switcher.lines:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-list_switchers .switcher.posters:before:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-list_switchers .switcher.posters:after {
@@ -1073,11 +1246,11 @@ input {
     line-height: 20px;
     font-variant: normal;
     text-transform: none;
-    color: white;
+    color: rgb(var(--text-strong));
 }
 
 .p-user_rates-index .stat-categories .category {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     line-height: normal !important;
     margin: 0 0 0 2px;
     padding: 0 7px;
@@ -1087,7 +1260,7 @@ input {
 
 @media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .stat-categories .category:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     transform: scale(1.1);
     box-shadow: none;
     background: none;
@@ -1095,12 +1268,12 @@ input {
 }
 
 .p-user_rates-index .stat-categories .category.active {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* справа выборы фильтров в списке аниме */
 .b-block_list li {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     font-family: "Comfortaa", sans-serif;
@@ -1108,43 +1281,43 @@ input {
 
 /* сводка по разным спискам  */
 .p-user_rates-index .list-groups .summary.lines {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .item-add:before,
 .item-add:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .item-add:hover:before,
 .item-add:hover:after {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 /* оценка, эпизоды и т.д. столбики */
 .p-user_rates-index .l-content .order-control {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-user_rates-index .l-content .order-control:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* стрелка назад */
 header.head h1 a.back:before,
 header.head h2 a.back:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 
 .b-options-floated a:hover,
 .b-options-floated .link:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* цвет тегов в настройки -уведомления*/
 .b-table th {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 
@@ -1154,7 +1327,7 @@ a:hover {
 
 @media (hover: hover) and (pointer: fine) {
 a.name:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
     text-decoration: none !important;
     background: none !important;
     box-shadow: none !important;
@@ -1163,13 +1336,13 @@ a.name:hover {
 
 .b-comment > .inner div.body,
 .b-message > .inner div.body {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     font-size: 13px !important;
 }
 
 /* название в новостях */
 .b-message > .inner header .name-date a.name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-message > .inner header .name-date {
@@ -1181,7 +1354,7 @@ a.name:hover {
 @media (hover: hover) and (pointer: fine) {
 .p-user_rates-index .list-lines .selectable:hover,
 .p-userlist_comparer .comparer table .selectable:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     transform: scale(1.01);
     background: transparent;
 }
@@ -1189,9 +1362,9 @@ a.name:hover {
 
 @media (hover: hover) and (pointer: fine) {
 tr.user_rate.selectable.editable:hover:after {
-    background: rgba(var(--shadows-color), 0.15);
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
     border-radius: 10px;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     transform: scale(1.01);
 }
 }
@@ -1237,13 +1410,13 @@ tr.user_rate.selectable.editable:after {
 }
 
 .b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 /* знак в новостях эпизод*/
 .b-anime_status_tag.episode:before {
     background: #3d249e;
-    color: #e9f1f3;
+    color: var(--tone-e9f1f3);
 }
 
 .b-js-link {
@@ -1266,13 +1439,13 @@ tr.user_rate.selectable.editable:after {
 .p-profiles .profile-head .c-info .c-additionals b,
 .p-profiles .profile-head .c-brief header h1.aliases::after,
 .p-profiles .profile-head .c-brief header .notice a {
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     text-shadow 0s;
 }
 
 .p-profiles .profile-head .c-brief header .notice span:after {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-tooltipped.dotted {
@@ -1281,14 +1454,14 @@ tr.user_rate.selectable.editable:after {
 
 @media (hover: hover) and (pointer: fine) {
 .p-profiles .profile-head .c-info .c-additionals div a:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
     transform: scale(1.1) !important;
 }
 }
 
 .b-spoiler label {
-    color: rgba(var(--light-color), 1);
-    border: 2px dashed rgba(165, 170, 230, 0.2);
+    color: rgba(var(--text), 1);
+    border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
     border-radius: 6px;
     padding: 0 6px;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
@@ -1299,7 +1472,7 @@ tr.user_rate.selectable.editable:after {
 }
 
 .b-spoiler label:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     animation: spoilzero 2s ease infinite;
 }
 
@@ -1309,16 +1482,16 @@ tr.user_rate.selectable.editable:after {
 
 .b-input input,
 .b-input textarea {
-    background: rgba(var(--block-color), 0.4);
-    color: rgba(var(--light-color), 1);
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text), 1);
     border: none !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.07) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
 }
 
 .p-user_rates-index .list-lines tr.edit-form form {
-    background-color: rgba(var(--menu-back), 0.8);
+    background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
     border: none;
-    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
     border-radius: 10px;
 }
 
@@ -1326,28 +1499,28 @@ input,
 select,
 button,
 textarea {
-    background-color: rgba(var(--block-color), 0.4);
+    background-color: rgba(var(--glass), 0.4);
     font-family: "Comfortaa", sans-serif;
     border: none !important;
 }
 
 /* стоп */
 .b-quote {
-    background: rgba(var(--block-color), 0.4) !important;
+    background: rgba(var(--glass), 0.4) !important;
     border: none !important;
-    color: rgba(var(--light-color), 1);
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.07) !important;
+    color: rgba(var(--text), 1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
     border-radius: 6px !important;
     font-style: normal;
 }
 
 .b-comments .comments-collapser,
 .b-spoiler .content .after:before {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-dialog > .inner div.body {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-dialog,
@@ -1359,7 +1532,7 @@ textarea {
 .b-comments .comments-loaded,
 .b-message .comments-loaded,
 .b-user.detailed {
-    border-bottom: 1px solid rgba(var(--light-color), 0.1) !important;
+    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
 }
 
 .b-dialog,
@@ -1397,7 +1570,7 @@ textarea {
 }
 
 .b-user.named_avatar .name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     text-decoration: none !important;
@@ -1405,12 +1578,12 @@ textarea {
 }
 
 .b-user.named_avatar:hover .name {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     text-decoration: none !important;
 }
 
 .b-user.named_avatar:hover img {
-    border-color: rgba(var(--hover-color), 1);
+    border-color: rgba(var(--accent), 1);
     border-radius: 50%;
     text-decoration: none !important;
 }
@@ -1424,83 +1597,83 @@ textarea {
 @media (hover: hover) and (pointer: fine) {
 .b-clubs-menu .admin .b-user:hover {
     transform: scale(1.2);
-    border-color: rgba(var(--hover-color), 1);
-    color: rgba(var(--hover-color), 1);
+    border-color: rgba(var(--accent), 1);
+    color: rgba(var(--accent), 1);
     text-decoration: none !important;
 }
 }
 
 .b-block_list li a {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 
 .b-lang_trigger span {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-user16 {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     font-weight: bold;
 }
 
 .b-user16:hover,
 .b-user.named_avatar img:hover,
 .b-user16:hover a {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 
 .c-actions .new_comment:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .new_comment:hover:before,
 .c-actions .fav-remove:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .new_review:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .new_review:hover:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .fav-add:before {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .c-actions .fav-add:hover:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .edit:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .c-actions .edit:hover:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-video_variant .episode-num,
 .b-video_variant .video-id {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-video_variant a {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-video_variant .episode-hostings,
 .b-video_variant .video-hosting,
 .b-video_variant .video-language {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-video_variant.active a {
@@ -1513,41 +1686,41 @@ textarea {
 
 .p-anime_videos-index .c-anime_video_episodes .title,
 .p-anime_videos-index .c-videos .title {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     font-size: 11px;
 }
 
 .p-anime_videos-index .c-videos .video-variant-switcher {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 
 .b-video_variant .video-author {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .prev .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .episode-num {
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
 }
 
 .b-video_player .cc-player_controls .next .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .increment-user_rate .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .show-options .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .report .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-catalog_entry .cover .misc,
@@ -1618,51 +1791,51 @@ header.head a.edit,
 .p-topics .l-menu .sticky-topics .topic .notice,
 .b-hot_topics .topic {
     font-size: 12px !important;
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .bar.vertical .line .bar-container .value {
-    color: #fff;
+    color: rgb(var(--text-strong));
 }
 
 .b-show_more,
 .b-show_more-more .hide-more {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 
 .b-dialog .to_dialog {
     background: none !important;
     box-shadow: none !important;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-forums .forum .link-with-input .link {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .p-dashboards-show .c-content .options .option {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     border: none !important;
 }
 
 .p-dashboards-show .c-content .options .option.selected {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .p-dashboards-show .c-content .options .option:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .p-dashboards-show .c-content .options .option.active {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-message {
     margin: 10px 0;
     border-top: none;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(var(--light-color), 0.1);
+    border-bottom: 1px solid rgba(var(--text), 0.1);
 }
 
 .b-message:last-child {
@@ -1693,7 +1866,7 @@ header.head a.edit,
 .buttons .item-request-reject,
 .buttons .item-delete-cancel,
 .buttons .item-moderation-cancel {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .buttons .item-reply:before,
@@ -1724,11 +1897,11 @@ header.head a.edit,
 .buttons .item-delete-cancel:hover,
 .buttons .item-moderation-cancel:hover,
 .buttons .item-delete-confirm:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .p-topics header h1 a.reload {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .p-anime_videos-index .c-videos .b-video_variant .video-quality.dvd {
@@ -1738,16 +1911,16 @@ header.head a.edit,
 
 .b-video_player .cc-player_controls .episode-num .video-link a {
     cursor: pointer;
-    border-bottom: 1px dotted rgba(var(--dark-color), 1);
+    border-bottom: 1px dotted rgba(var(--text-2), 1);
 }
 
 .b-video_player .cc-player_controls .create-user_rate .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-spoiler .content .before:before {
     content: "[spoiler]";
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     animation: spoil 2s ease infinite;
 }
 
@@ -1760,7 +1933,7 @@ header.head a.edit,
     border-bottom: 0;
     border-radius: 6px;
     padding: 0 6px;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
 }
 
 .b-video_player .cc-player_controls .episode-num .video-link a {
@@ -1770,7 +1943,7 @@ header.head a.edit,
 @media (hover: hover) and (pointer: fine) {
 .b-video_player .cc-player_controls .episode-num .video-link a:hover {
     background: none !important;
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     border: none;
     box-shadow: none !important;
 }
@@ -1782,51 +1955,51 @@ header.head a.edit,
 }
 
 .b-tag {
-    border-bottom: 1px dashed rgba(var(--bright-color), 1);
-    color: rgba(var(--bright-color), 1);
+    border-bottom: 1px dashed rgba(var(--accent), 1);
+    color: rgba(var(--accent), 1);
 }
 
 
 .b-animes-menu .menu-topics-block a.entry .name:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     text-decoration: none;
 }
 
 .b-animes-menu .menu-topics-block a.entry .name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-animes-menu .menu-topics-block a.entry .date {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-contests .results .cc-result .c-rounds .label {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-db_entry > .c-about .additional-links .key {
     float: left;
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-contests .results a {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 header.head .notice {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-animes_collection-index .pagination .link {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .p-animes_collection-index .pagination .link.disabled {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .linkheadline.midheadline > a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 
@@ -1839,15 +2012,15 @@ header.head .notice {
 }
 
 .p-contests-index .contest a {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .p-contests-index .contest a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-forums .forum .link-with-input .link:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-topic-minified > .inner .status-line .additional {
@@ -1859,20 +2032,20 @@ header.head .notice {
 }
 
 .b-topic > .inner header .name-date .time {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-topics .l-menu .reviews .entry .misc {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
 }
 
 .b-collection_search .field input {
-    border: 0 solid rgba(var(--block-color), 0.4);
-    background-color: rgba(var(--block-color), 0.4) !important;
+    border: 0 solid rgba(var(--glass), 0.4);
+    background-color: rgba(var(--glass), 0.4) !important;
 }
 
 .p-topics header h1 a.reload:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-topics .l-menu .reviews .entry {
@@ -1880,55 +2053,55 @@ header.head .notice {
 }
 
 .p-topics .l-menu .reviews .entry .misc.date {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 
 .p-topics .l-menu .reviews .entry .title,
 .p-topics .l-menu .clubs .entry .title {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     text-decoration: none !important;
 }
 
 .p-topics .l-menu .reviews .entry .title:hover,
 .p-topics .l-menu .clubs .entry:hover .title {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     text-decoration: none !important;
 }
 
 .p-topics .l-menu .clubs .entry .misc {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 .p-topics .l-menu .sticky-topics .topic .title:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-club .name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-club .info .number {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     padding-right: 4px;
 }
 
 .b-club .info .value {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 header.head a.misc {
     font-family: "Comfortaa", sans-serif;
     font-size: 12px !important;
-    background: rgba(var(--block-color), 0.4);
+    background: rgba(var(--glass), 0.4);
     padding: 5px 50px;
     border-radius: 14px;
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     margin: 8px;
     pointer-events: auto;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     display: block;
     width: max-content;
     text-transform: capitalize;
@@ -1936,9 +2109,9 @@ header.head a.misc {
 
 @media (hover: hover) and (pointer: fine) {
 header.head a.misc:hover {
-    background-color: rgba(var(--hover-buttoms-2), 0.6);
-    color: #e4e4e4 !important;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+    color: var(--tone-e4e4e4) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
 }
 }
 
@@ -1947,19 +2120,19 @@ header.head a.misc:hover {
 .b-review_votes:before,
 .b-topic-minified > .inner .status-line .time.changed_at:before,
 .b-topic-preview > .inner .status-line .additional .comments {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-topic .footer-vote {
     border: none;
-    background-color: rgba(var(--block-color), 0.4);
+    background-color: rgba(var(--glass), 0.4);
     padding: 5px 10px 5px 10px;
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     border-radius: 10%;
 }
 
 .b-topic .footer-vote .vote-group .vote {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-topic .footer-vote .vote-group .vote.yes.selected,
@@ -1983,7 +2156,7 @@ header.head a.misc:hover {
     font-family: "shikimori";
     text-align: center;
     width: 20px;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     font-size: 14px;
     border: none !important;
 }
@@ -1996,7 +2169,7 @@ header.head a.misc:hover {
 .buttons .editor-link:hover:before,
 .buttons .editor-strike:hover:before,
 .buttons .editor-underline:hover:before,
-.buttons .editor-bold:hover:before { color: rgba(var(--hover-color), 1); 
+.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1); 
 }
 .buttons .editor-italic,
 .buttons .editor-spoiler,
@@ -2012,12 +2185,12 @@ header.head a.misc:hover {
 }
 
 .buttons .editor-file input:before {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-stats_bar .title,
 .p-profiles-show .profile-content .activity .title {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-tooltipped:not(a) {
@@ -2025,7 +2198,7 @@ header.head a.misc:hover {
 }
 
 .p-profiles-show .lifetime .times .time.checked {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     font-weight: bold;
     white-space: normal;
     min-width: 50px;
@@ -2039,32 +2212,32 @@ header.head a.misc:hover {
 }
 
 .p-profiles-edit .account .change-password a {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
 }
 
 .p-profiles-edit .account .change-password a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-profiles-edit .list .profile-action a:not(.b-button) {
     padding: 0 8px;
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
 .p-profiles-edit .list .profile-action a:not(.b-button):hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
     box-shadow: none !important;
     background: none !important;
 }
 }
 
 time {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 .subheadline .misc-link {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2077,56 +2250,56 @@ time {
 }
 
 .buttons .main-controls a {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .buttons .main-controls a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-profiles-show .about a {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-profiles-show .about a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-user_history-line a:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
     font-weight: bold;
 }
 
 .b-user_history-line a {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     font-weight: bold;
 }
 
 body.localized_names-ru .name-ru:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     text-decoration: none !important;
 }
 
 .b-user_history-line .date {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
 }
 
 .p-user_rates-index .list-lines tr td .new-value input {
     border-radius: 4px;
     border: none;
-    background: rgba(18, 18, 35, 0.4);
+    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
 }
 
 .p-userlist_comparer .comparer table a {
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
 }
 
 .p-userlist_comparer .comparer table .name a {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .p-userlist_comparer .comparer table .name a:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
 }
 
 .b-table tr.border {
@@ -2134,21 +2307,21 @@ body.localized_names-ru .name-ru:hover {
 }
 
 .p-user_rates-index .list-lines tr .index {
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
 }
 
 .b-shiki_editor .body .preview {
-    background: rgba(var(--block-color), 0.4);
+    background: rgba(var(--glass), 0.4);
     border: none !important;
 }
 
 .b-shiki_editor footer .unpreview:not(.link) {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-shiki_editor footer .preview,
 .b-shiki_editor footer .cancel {
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
 }
 
 .b-shiki_editor footer .cancel {
@@ -2160,12 +2333,12 @@ body.localized_names-ru .name-ru:hover {
 }
 
 .b-code-v2 {
-    background: #263238;
-    color: #fff;
+    background: var(--tone-263238);
+    color: rgb(var(--text-strong));
 }
 
 .b-code-v2:before {
-    background-color: #556571;
+    background-color: var(--tone-556571);
     -webkit-border-radius: 0 0 0 10px;
     border-radius: 0 0 0 10px;
     content: attr(data-language);
@@ -2176,41 +2349,41 @@ body.localized_names-ru .name-ru:hover {
 }
 
 code.b-code_inline {
-    background-color: #263238b5;
-    border: 1px solid #263238b5;
+    background-color: color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
     color: #ff678e;
 }
 
 .tooltip-inner .close {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
     background: none;
 }
 
 .tooltip-inner .close:hover {
     background: none;
-    color: #ddd;
+    color: var(--tone-dddddd);
 }
 
 .b-options-floated a span.brackets:after,
 .b-options-floated .link span.brackets:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     content: ")";
 }
 
 .b-options-floated a span.brackets:before,
 .b-options-floated .link span.brackets:before {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     content: "(";
 }
 
 .b-options-floated a:after,
 .b-options-floated .link:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     content: "/";
 }
 
 .p-anime_videos-index .c-video_stats .views_count {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-video_variant .episode-hostings:before,
@@ -2219,88 +2392,88 @@ code.b-code_inline {
 .b-video_variant .video-hosting:after,
 .b-video_variant .video-language:before,
 .b-video_variant .video-language:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-video_player .cc-player_controls .upload .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .edit .icon:before {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .p-anime_videos-index .same-videos .title {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-comment .inner .name-date a.name .normal {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 .b-log_entry a,
 .b-log_entry .link {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-log_entry a:hover,
 .b-log_entry .link:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-log_entry .id-label {
     padding-right: 1px;
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-log_entry .id-label:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-log_entry .change-details .field-changes .label {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 
 .b-shiki_editor footer .about-bb_codes:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     text-decoration: none;
 }
 
 .b-bb_codes-examples .example .title,
 .b-bb_codes-examples .result .title {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-bb_codes-examples .notice {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-bb_codes-examples .example .textarea {
-    background: rgba(var(--block-color), 0.4);
-    border: rgba(var(--block-color), 0.4);
-    color: rgba(var(--light-color), 1);
+    background: rgba(var(--glass), 0.4);
+    border: rgba(var(--glass), 0.4);
+    color: rgba(var(--text), 1);
     border: none !important;
     border-radius: 8px;
 }
 
 .b-bb_codes-examples .result a {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 
 .quoteable:before {
-    color: rgba(var(--bright-color), 1)!important;
+    color: rgba(var(--accent), 1)!important;
 }
 
 .b-bb_codes-examples .example span {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-video .marker,
 .b-image .marker,
 .b-video .name {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     padding: 2px 2px 0 0;
     line-height: 12px;
     margin-left: 0;
@@ -2311,25 +2484,25 @@ code.b-code_inline {
 }
 
 .b-bb_codes-examples .result a:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-bb_codes-examples .example span:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     content: ")";
 }
 
 .b-bb_codes-examples .example span:before {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     content: "(";
 }
 
 .buttons .editor-file {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .buttons .editor-file:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 /* history-yeah */
@@ -2342,16 +2515,16 @@ code.b-code_inline {
     padding-right: 5px;
     text-decoration: none !important;
     border: none !important;
-    background: rgba(var(--shadows-color), 0.15);
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
     border-radius: 10px;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     background 0.2s;
 }
 }
 
 body.localized_names-ru .name-ru {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     font-weight: bold;
     text-decoration: none !important;
     transform: scale(1.05);
@@ -2391,20 +2564,20 @@ body.localized_names-ru .name-ru:before {
 .b-shiki_editor .quotes .link-value,
 .b-shiki_editor .email .link-value,
 .b-shiki_editor .upload .link-value {
-    background: rgba(var(--block-color), 0.4) !important;
-    border-color: rgba(var(--block-color), 0.4) !important;
-    color: rgba(var(--light-color), 1);
+    background: rgba(var(--glass), 0.4) !important;
+    border-color: rgba(var(--glass), 0.4) !important;
+    color: rgba(var(--text), 1);
     line-height: 20px;
     border-radius: 8px;
 }
 
 .p-profiles .profile-head .c-history .entry:hover .title {
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
     text-decoration: none;
 }
 
 .p-profiles .profile-head .c-history .entry a:hover {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
 }
 
 .headline,
@@ -2412,11 +2585,11 @@ body.localized_names-ru .name-ru:before {
 .subheadline {
     border: none;
     border-radius: 13px;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
-    background: rgba(var(--block-color), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.6);
     transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 14px;
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     height: 28px;
     padding: 0 14px 0;
     display: flex;
@@ -2450,11 +2623,11 @@ body.localized_names-ru .name-ru:before {
 .headline > a:before,
 .midheadline > a:before,
 .subheadline > a:before {
-    color: rgba(var(--bright-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
     position: absolute;
     top: 0;
     right: 10px !important;
-    background: linear-gradient(270deg, rgba(var(--dark-color), 1), rgba(var(--dark-color), 0.3));
+    background: linear-gradient(270deg, rgba(var(--text-2), 1), rgba(var(--text-2), 0.3));
     width: 8px;
     margin: 10px 1px;
     height: 8px;
@@ -2467,8 +2640,8 @@ body.localized_names-ru .name-ru:before {
 .headline > a:hover:before,
 .midheadline > a:hover:before,
 .subheadline > a:hover:before {
-    color: rgba(var(--hover-color), 1) !important;
-    background: linear-gradient(270deg, rgba(var(--hover-color), 1), rgba(var(--hover-color), 0.3));
+    color: rgba(var(--link), 1) !important;
+    background: linear-gradient(270deg, rgba(var(--accent), 1), rgba(var(--accent), 0.3));
 }
 }
 
@@ -2476,7 +2649,7 @@ body.localized_names-ru .name-ru:before {
 .midheadline > a,
 .subheadline > a,
 .p-topics .l-menu .sticky-topics .topic {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     transition: 0.2s ease, -webkit-0 .2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
 }
@@ -2486,8 +2659,8 @@ body.localized_names-ru .name-ru:before {
 .midheadline > a:hover,
 .subheadline > a:hover {
     text-decoration: none;
-    color: rgba(var(--hover-color), 1) !important;
-    background: rgba(var(--shadows-color), 0.15);
+    color: rgba(var(--link), 1) !important;
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
     border: none;
 }
 }
@@ -2500,7 +2673,7 @@ body.localized_names-ru .name-ru:before {
 .profile-actions .settings::before,
 .profile-actions .ignore-add::before,
 .profile-actions .ignore-remove::before {
-    color: rgba(var(--light-color), 0.6) !important;
+    color: rgba(var(--text), 0.6) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 24px !important;
 }
@@ -2519,14 +2692,14 @@ a.name {
 @media (hover: hover) and (pointer: fine) {
 .b-user.avatar img:hover {
     border-radius: 50%;
-    border: 2px solid rgba(var(--hover-color), 1);
+    border: 2px solid rgba(var(--accent), 1);
     transform: scale(1.3);
 }
 }
 
 @media (hover: hover) and (pointer: fine) {
 .b-club .logo:hover {
-    border: 2px solid rgba(var(--hover-color), 1);
+    border: 2px solid rgba(var(--accent), 1);
     transform: scale(1.3);
 }
 }
@@ -2541,17 +2714,17 @@ a.name {
 }
 
 .b-db_entry-note .name-container .name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
 }
 
 .b-db_entry-note .name-container .name:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .subheadline-input {
-    background-color: rgba(var(--menu-back), 1) !important;
-    color: rgba(var(--light-color), 1);
-    border: 1px solid rgba(var(--menu-back), 1) !important;
+    background-color: var(--glass-deep) !important;
+    color: rgba(var(--text), 1);
+    border: 1px solid var(--glass-deep) !important;
     border-radius: 4px !important;
     padding: 5px 0 3px 4px !important;
     line-height: 14px !important;
@@ -2561,7 +2734,7 @@ a.name {
 .b-comment > .inner .was_updated div,
 .b-topic > .inner .was_updated div,
 .was_updated div {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-comment > .inner .was_updated,
@@ -2571,7 +2744,7 @@ a.name {
 }
 
 .buttons .item-quote:before {
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .p-profiles-show .cc-favourites .c-column {
@@ -2588,20 +2761,20 @@ a.name {
 
 a:-webkit-any-link {
     text-decoration: none;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .p-moderations-show .b-list .size:after {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .p-moderations-show .b-list .size:before {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
 }
 
 .b-user16:hover a:hover {
     text-decoration: none !important;
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--link), 1);
 }
 
 .b-animes-menu .friend-rate .b-user16 {
@@ -2610,7 +2783,7 @@ a:-webkit-any-link {
 
 .b-animes-menu .friend-rate .b-user16:hover {
     text-decoration: none !important;
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .b-stats_bar.lifetime .bar .first {
@@ -2626,11 +2799,11 @@ img {
 }
 
 .b-separator.inline {
-    color: rgba(var(--light-color), 0.5) !important;
+    color: rgba(var(--text), 0.5) !important;
 }
 
 .p-profiles .profile-head .c-history .entry .misc.date.unprocessed {
-    color: rgba(var(--dark-color), 1) !important;
+    color: rgba(var(--text-2), 1) !important;
     text-align: center;
     text-indent: 0 !important;
     animation: none !important;
@@ -2652,7 +2825,7 @@ img {
 .profile-actions .settings:hover::before,
 .profile-actions .ignore-add:hover::before,
 .profile-actions .ignore-remove:hover::before {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--accent), 1) !important;
     transform: scale(1.3);
 }
 }
@@ -2774,21 +2947,21 @@ img {
 }
 
 .tipsy-inner {
-    background: rgba(23, 23, 23, 0.6) !important;
+    background: color-mix(in srgb, var(--tone-171717) 60%, transparent) !important;
     padding: 9px 17px;
     font-size: 11px;
-    box-shadow: 0 0 5px rgba(var(--shadows-color), 0.1);
+    box-shadow: 0 0 5px color-mix(in srgb, var(--glass-shadow) 10%, transparent);
     transition: 0.1s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     border-radius: 19px;
 }
 
 .tipsy-arrow-s {
-    border-top-color: rgba(12, 12, 12, 0.6);
+    border-top-color: color-mix(in srgb, var(--tone-0c0c0c) 60%, transparent);
 }
 
 .tipsy-arrow {
-    border: 5px dashed rgba(12, 12, 12, 0.6);
+    border: 5px dashed color-mix(in srgb, var(--tone-0c0c0c) 60%, transparent);
 }
 
 .club-actions .invite,
@@ -2806,7 +2979,7 @@ img {
 .club-actions .edit-club:before,
 .club-actions .leave:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--bright-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2815,7 +2988,7 @@ img {
 .club-actions .broadcast:hover:before,
 .club-actions .edit-club:hover:before,
 .club-actions .leave:hover:before {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
     transform: scale(1.3);
 }
 }
@@ -2828,8 +3001,8 @@ img {
 }
 
 .b-comments-notifier {
-    background: rgba(var(--hover-color), 1);
-    color: #f9f9f9;
+    background: rgba(var(--accent), 1);
+    color: var(--tone-f9f9f9);
     line-height: 41px;
     transition: 0.5s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 19px;
@@ -2845,17 +3018,17 @@ img {
 
 @media (hover: hover) and (pointer: fine) {
 .b-comments-notifier:hover {
-    background-color: rgba(var(--hover-color), 1);
+    background-color: rgba(var(--accent), 1);
 }
 }
 
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
-    color: rgba(var(--white-color), 1) !important;
+    color: rgba(var(--text-strong), 1) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
-    color: rgba(var(--hover-color), 1) !important;
+    color: rgba(var(--link), 1) !important;
 }
 
 .avatar img,
@@ -2872,17 +3045,17 @@ body#dashboards_show .l-page {
 }
 
 .p-studios .studio .name {
-    color: rgba(var(--white-color), 1);
+    color: rgba(var(--text-strong), 1);
     width: 150px;
 }
 
 .p-studios .studio .name:hover {
-    color: rgba(var(--hover-color), 1);
+    color: rgba(var(--accent), 1);
 }
 
 .p-studios .studio .animes .num,
 .p-studios .studio .years .num {
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2890,9 +3063,9 @@ body#dashboards_show .l-page {
 .p-dashboards .user_list .history > .title .switch:hover,
 .p-dashboards .user_list .list-type > .title .link:hover,
 .p-dashboards .user_list .history > .title .link:hover {
-    color: rgba(var(--hover-color), 1);
-    box-shadow: 0 0 20px rgba(var(--shadows-color), 0.5);
-    background: rgba(var(--shadows-color), 0.25);
+    color: rgba(var(--accent), 1);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
 }
 }
 
@@ -2900,7 +3073,7 @@ body#dashboards_show .l-page {
 .p-dashboards .user_list .history > .title .switch,
 .p-dashboards .user_list .list-type > .title .link,
 .p-dashboards .user_list .history > .title .link {
-    color: rgba(var(--dark-color), 1);
+    color: rgba(var(--text-2), 1);
     text-decoration: none !important;
     border-bottom: none;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
@@ -2942,8 +3115,8 @@ body#dashboards_show .l-page {
 
 .b-spoiler_block > div,
 .b-quote-v2 {
-    background-color: rgba(var(--block-color), 0.3);
-    border-left: 4px solid rgba(var(--light-color), 0.3);
+    background-color: rgba(var(--glass), 0.3);
+    border-left: 4px solid rgba(var(--text), 0.3);
 }
 
 .b-spoiler_block > div {
@@ -2951,8 +3124,8 @@ body#dashboards_show .l-page {
 }
 
 .b-spoiler_block > span {
-    color: rgba(var(--light-color), 1) !important;
-    background-color: rgba(var(--block-color), 0);
+    color: rgba(var(--text), 1) !important;
+    background-color: rgba(var(--glass), 0);
     display: inline-flex;
     font-size: 13px;
     line-height: 23px;
@@ -2962,35 +3135,35 @@ body#dashboards_show .l-page {
 
     z-index: 3;
     position: relative;
-    border: 2px solid rgba(var(--light-color), 0.2) !important;
+    border: 2px solid rgba(var(--text), 0.2) !important;
     text-transform: lowercase;
 }
 
 .b-spoiler_block.is-opened > span {
     border-radius: 9px 9px 0 0;
-    border-left: 4px solid rgba(var(--light-color), 0.2) !important;
-    border-right: 3px solid rgba(var(--light-color), 0.2) !important;
+    border-left: 4px solid rgba(var(--text), 0.2) !important;
+    border-right: 3px solid rgba(var(--text), 0.2) !important;
 }
 
 .b-spoiler_block > span:active {
-    background-color: rgba(var(--hover-buttoms-2), 0.6);
+    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
 }
 
 .b-spoiler_inline:not(.is-opened) {
-    background-color: rgba(var(--block-color), 1);
+    background-color: rgba(var(--glass), 1);
 }
 
 h2,
 h3,
 h4 {
-    color: rgba(var(--white-color), 0.9);
+    color: rgba(var(--text-strong), 0.9);
 }
 
 h2 + hr,
 h4 + hr,
 h3 + hr,
 h1 + hr {
-    background-image: linear-gradient(to right, rgba(var(--light-color), 0.4), transparent);
+    background-image: linear-gradient(to right, rgba(var(--text), 0.4), transparent);
 }
 
 
@@ -3009,12 +3182,12 @@ h1 + hr {
     margin: 1px 10px 1px 0;
     padding: 0 !important;
     border-radius: 10px;
-    background: rgba(var(--block-color), 0.6);
-    box-shadow: 0 2px 6px 2px rgb(0 0 0 / 10%);
+    background: rgba(var(--glass), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
 }
 
 .menu_group:not(.menu_group-controls) > button:hover {
-    background: rgba(var(--hover-buttoms-2), 0.6);
+    background: color-mix(in srgb, var(--accent-hover) 60%, transparent);
     height: 100%;
 }
 
@@ -3026,7 +3199,7 @@ h1 + hr {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgba(var(--light-color), 1) !important;
+    color: rgba(var(--text), 1) !important;
     padding: 5px;
     width: 30px;
     height: 30px;
@@ -3041,41 +3214,41 @@ h1 + hr {
 }
 @media (hover: hover) and (pointer: fine) {
 .menu_group.menu_group-controls .icon.is-button:hover {
-    background-color: rgba(var(--hover-buttoms-2), 0.6);
-    color: #e4e4e4 !important;
+    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+    color: var(--tone-e4e4e4) !important;
 }
 }
 .menu_group.menu_group-controls .icon.is-button.is-active {
-    color: rgba(var(--hover-color), 1)!important;
+    color: rgba(var(--accent), 1)!important;
     background: none;
 }
 
 .shade {
-    background: rgba(var(--menu-back), 0)!important;
+    background: color-mix(in srgb, var(--glass-deep) 0%, transparent)!important;
 }
 .popup-content {
     border-radius: 12px;
-    background: rgba(var(--menu-back), 1)!important;
-    box-shadow:0 2px 6px 2px rgb(0 0 0 / 30%)
+    background: var(--glass-deep)!important;
+    box-shadow:0 2px 6px 2px rgba(var(--shade), 0.3)
 }
 .b-tip>[data-popper-arrow]:before {
-    background: rgba(var(--menu-back), 1)!important;
+    background: var(--glass-deep)!important;
 }
 
 .ProseMirror {
-    background-color: rgba(var(--block-color), 0.4);
+    background-color: rgba(var(--glass), 0.4);
     border: none;
     border-radius: 12px;
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     padding: 7px 10px;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
 }
 
 @media screen and (min-width: 1024px) {
     @media (hover: hover) and (pointer: fine) {
 .b-spoiler_block > span:hover {
-        background-color: rgba(var(--hover-buttoms-2), 0.6);
-        color: #e4e4e4 !important;
+        background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+        color: var(--tone-e4e4e4) !important;
     }
 }
 }
@@ -3098,7 +3271,7 @@ h1 + hr {
     content: attr(title);
     margin: 0;
     font-family: var(--font-alt);
-    color: rgba(var(--light-color), 1);
+    color: rgba(var(--text), 1);
     line-height: 1.5;
 }
 
@@ -3131,14 +3304,14 @@ h1 + hr {
 }
 
 .p-animes .c-about .watch-online > a.kind:before {
-    color: rgb(var(--white-color));
+    color: rgb(var(--text-strong));
 }
 
 .p-animes .c-about .watch-online > a.kind {
-    background-color: rgb(var(--buttoms-color), 0.7);
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
     border-radius: 15px;
-    border-color: #3e4d5d;
-    color: rgb(var(--light-color));
+    border-color: var(--tone-3e4d5d);
+    color: rgb(var(--text));
     text-align: center;
     padding: 8px 20px;
     min-width: 154px;
@@ -3150,8 +3323,8 @@ h1 + hr {
 
 @media (hover: hover) and (pointer: fine) {
 .p-animes .c-about .watch-online > a.kind:hover {
-    background-color: rgb(var(--hover-buttoms-2));
-    color: #fff !important;
+    background-color: var(--accent-hover);
+    color: rgb(var(--text-strong)) !important;
 }
 }
 

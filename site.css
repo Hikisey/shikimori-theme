@@ -4,64 +4,59 @@
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.19/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.19/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.19/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.19/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_4mob.css");
 
 /* ===================== Палитра ===================== */
-/* Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
+/* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:
+   поменяйте --accent — и перекрасится всё «красное» (кнопки, ник, ссылки под курсором).
+   Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
    Подобрать цвет и узнать его числа можно в любой «color picker».
    Обёртку @media не удаляйте, иначе Шикимори применит стиль только на широких экранах. */
 @media screen and (min-width: 1px) {
   html:root {
-    /* Текст */
-    --white-color: 255, 255, 255;      /* самый яркий текст (заголовки карточек) */
-    --light-color: 236, 240, 247;      /* основной текст — мягко-белый */
-    --dark-color: 170, 178, 192;       /* вторичный текст и подсказки */
-    --dull-color: 140, 148, 160;       /* приглушённый текст */
-    --input-color: 165, 172, 184;      /* текст в полях ввода */
-    --nick-cover: 178, 58, 64;       /* ники */
+    /* Акцент */
+    --accent: 232, 108, 108;           /* главный цвет темы: ссылки, значки, подсветка; из него же кнопки и ник */
+    --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
-    /* Акценты */
-    --bright-color: 232, 108, 108;     /* ссылки и акцент — мягкий алый */
-    --hover-color: 232, 108, 108;      /* цвет при наведении */
-    --buttoms-color: 178, 58, 64;      /* кнопки */
-    --hover-buttoms-2: 214, 82, 82;    /* кнопки при наведении */
-    --hover-bottoms-1: 26, 28, 34;     /* подсветка активных пунктов */
-
-    /* Фоны */
-    --block-color: 30, 34, 42;         /* фон блоков и карточек */
-    --menu-back: 20, 22, 28;           /* тёмные подложки, затемнение обоев */
-    --menu-bar: 18, 20, 26;            /* верхняя панель */
-    --menu-bar-hover: 26, 29, 37;      /* панель под курсором и её выпадающие меню */
-    --popup-color: 38, 43, 54;         /* выпадающие списки и всплывающие окна */
-    --shadows-color: 10, 12, 16;       /* тени */
-
-    /* Оценки */
-    --very-high-rating: 129, 199, 132; /* очень высокая */
-    --high-rating: 156, 204, 101;      /* высокая */
-    --average-rating: 255, 202, 40;    /* средняя */
-    --small-rating: 239, 108, 108;     /* низкая */
-
-    /* Шкалы времени и прогресса */
-    --time-filled: 232, 108, 108;      /* заполненная часть */
-    --time-empty: 34, 38, 46;          /* пустая часть */
-    --anime-inprocess: 128, 246, 255;  /* аниме: смотрю */
-    --anime-complete: 0, 229, 255;     /* аниме: просмотрено */
-    --manga-inprocess: 255, 92, 160;   /* манга: читаю */
-    --manga-complete: 255, 0, 110;     /* манга: прочитано */
-
-    /* Картинки (ссылка на картинку пишется внутри url("...")) */
-    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");  /* обои сайта (ссылка с // — без прокси Шикимори, кешируется) */
-    --bg-zoom: 1.08;                   /* приближение обоев, 1 — без зума */
-    --page-bg: 151, 128, 128;          /* цвет под обоями, пока они грузятся (средний тон обоев) */
+    /* Фон */
+    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");  /* обои на ПК (ссылка с // — без прокси Шикимори, кешируется) */
+    --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp");  /* обои на телефоне */
+    --bg-color: 151, 128, 128;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
+    --bg-color-mobile: 167, 148, 145;  /* то же на телефоне */
+    --bg-zoom: 1.08;                   /* приближение обоев на ПК, 1 — без зума */
+    --bg-blur: 0px;                    /* размытие обоев на ПК, например 4px */
+    --bg-blur-mobile: 1.5px;           /* размытие обоев на телефоне */
+    --bg-dim: .5;                      /* затемнение обоев: 0 — нет, 1 — совсем тёмные */
     --profile-banner: url("https://i.pinimg.com/1200x/84/c5/37/84c5370f7c8a96126765b9e80210850a.jpg");  /* баннер в профиле */
     --profile-banner-height: 300px;    /* высота баннера; картинка не растягивается, лишнее обрезается */
     --profile-banner-glow: .5;         /* яркость свечения под баннером (цвет берётся из картинки), 0 — выключить */
     --profile-banner-position: center; /* какую часть картинки показывать: center, top, bottom или, например, 50% 30% */
 
-    --hundred: 1;                      /* непрозрачность текста, обычно 1 */
+    /* Стекло (блоки, меню, окна) */
+    --glass: 30, 34, 42;               /* цвет стекла; тёмные оттенки панели, меню и окон считаются из него */
+    --glass-light: 255, 255, 255;      /* рамки и блики на стекле */
+    --glass-blur: 5px;                 /* размытие под стеклом (телефон, стрелки лент) */
+
+    /* Текст */
+    --text: 236, 240, 247;             /* основной текст — мягко-белый */
+    --text-2: 170, 178, 192;           /* второстепенный текст и подписи */
+    --text-3: 140, 148, 160;           /* приглушённый текст: даты, счётчики */
+    --text-strong: 255, 255, 255;      /* самый яркий текст (заголовки карточек, текст на кнопках) */
+
+    /* Оценки и шкалы (можно не трогать) */
+    --very-high-rating: 129, 199, 132; /* очень высокая */
+    --high-rating: 156, 204, 101;      /* высокая */
+    --average-rating: 255, 202, 40;    /* средняя */
+    --small-rating: 239, 108, 108;     /* низкая */
+    --time-filled: var(--accent);      /* шкала времени: заполненная часть */
+    --time-empty: 34, 38, 46;          /* шкала времени: пустая часть */
+    --anime-inprocess: 128, 246, 255;  /* аниме: смотрю */
+    --anime-complete: 0, 229, 255;     /* аниме: просмотрено */
+    --manga-inprocess: 255, 92, 160;   /* манга: читаю */
+    --manga-complete: 255, 0, 110;     /* манга: прочитано */
   }
 }
 
