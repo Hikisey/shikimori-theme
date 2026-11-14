@@ -6967,7 +6967,9 @@ label:has(> input[type="checkbox"]) {
     display: flex !important;
     width: fit-content;
     min-height: 26px;
-    align-items: center;
+    /* кружок ставится на линию строки текста (первой, если текст в две строки),
+       а затем сдвигается так, чтобы его центр совпал с серединой строчных букв */
+    align-items: baseline;
     gap: 10px;
     line-height: 1.4;
     cursor: pointer;
@@ -6991,7 +6993,13 @@ html input[type="checkbox"]:not(#u) {
     cursor: pointer;
     transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
 }
-label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) { margin-right: 0 !important; }
+label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
+    margin-right: 0 !important;
+    font: inherit;
+    align-self: baseline;
+    /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
+    transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
+}
 /* галочка внутри — рисуется рамкой и «вырастает» */
 html input[type="checkbox"]:not(#u)::before {
     content: "" !important;

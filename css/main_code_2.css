@@ -1,13 +1,11 @@
 /*2104*/
-/* Название и версия темы в подвале (слева внизу). Поменять — только здесь
-   (или переопределить эти же переменные в своём site.css). */
+/* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
-    --theme-brand: "E-design";
-    --theme-version: "4.37.3";
-    --theme-name: "Modern Dark";
+    --theme-name: "hikisey theme";
+    --theme-version: "1.2.14";
 }
 .l-footer:before {
-    content: var(--theme-brand) " v." var(--theme-version) "   *" var(--theme-name) "*";
+    content: var(--theme-name) " v" var(--theme-version);
     white-space: pre;
 }
 .b-club .name-logo .name {
