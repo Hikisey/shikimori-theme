@@ -7000,35 +7000,29 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
     transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
 }
-/* галочка внутри — рисуется рамкой и «вырастает» */
+/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
+   не зависит от шрифта и высоты строки */
 html input[type="checkbox"]:not(#u)::before {
-    content: "" !important;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 4px !important;
-    height: 8px !important;
-    margin: -6px 0 0 -2.5px !important;
-    padding: 0;
-    font: inherit;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    box-sizing: content-box;
-    background: none;
-    transform: rotate(45deg) scale(0);
-    transform-origin: 50% 60%;
-    opacity: 0;
-    transition: transform .16s ease-in, opacity .14s ease-in;
+    content: none !important;
+    display: none !important;
+}
+html input[type="checkbox"]:not(#u),
+html input[type="checkbox"]:not(#u):focus,
+html input[type="checkbox"]:not(#u):active {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTIuNiA2LjNsMi4zIDIuMyA0LjUtNC45IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS45IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=") !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    background-size: 0 0 !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .16s ease-in !important;
 }
 html input[type="checkbox"]:not(#u):checked {
-    background: rgb(var(--bright-color)) !important;
+    background-color: rgb(var(--bright-color)) !important;
     border-color: rgb(var(--bright-color)) !important;
     box-shadow: 0 0 0 3px rgba(var(--bright-color), .18) !important;
-}
-html input[type="checkbox"]:not(#u):checked::before {
-    transform: rotate(45deg) scale(1);
-    opacity: 1;
-    transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), opacity .15s ease;
+    background-size: 12px 12px !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
 }
 html input[type="checkbox"]:not(#u):focus-visible {
     box-shadow: 0 0 0 3px rgba(var(--bright-color), .3) !important;
