@@ -3533,10 +3533,10 @@ input[type="checkbox"]:active,
 @media screen and (max-width: 767px) {
     /* реклама и пустые служебные блоки не занимают место над заголовком */
     /* из pages/catalog */
-    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
-    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
-    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
-    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
+    section.l-page.l-page aside.l-menu .to-process[data-dynamic$="_ad"],
+    section.l-page.l-page aside.l-menu [class*="b-spns"],
+    section.l-page.l-page aside.l-menu [class*="spns_"],
+    section.l-page.l-page aside.l-menu .c-filters > :empty {
         display: none !important;
     }
     /* из pages/profile */

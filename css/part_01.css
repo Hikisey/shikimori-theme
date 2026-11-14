@@ -270,6 +270,12 @@ html[data-color-mode=light] {
     /* поля ввода и выпадающие списки */
     --field-text: rgb(var(--text));
     --drop-shift: translateY(-4px);
+    --drop-max: 270px;                      /* телефон: наибольшая высота раскрытого списка (поиск + 220px вариантов) */
+    --drop-max-typing: min(220px, 28svh);   /* телефон: варианты списка с поиском помещаются над клавиатурой */
+
+    /* шторка фильтров на телефоне: открытие и закрытие */
+    --sheet-time: .25s;
+    --sheet-shift: 16px;
 
     /* плавность наведения и переходов */
     --ease-out: cubic-bezier(.22, 1, .36, 1);
@@ -1685,13 +1691,12 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 @media screen and (max-width: 767px) {
     /* --- фильтры каталога и списков: карточка по центру экрана --- */
     /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
-    section.l-page.menu-expanded::after {
+    section.l-page.l-page::after {
         content: "";
         position: fixed;
         inset: 0;
         z-index: 900;
         background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
-        animation: shiki-fade .3s ease both;
     }
     /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
     .l-page .menu-toggler {
@@ -1711,7 +1716,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         font-size: 22px !important;
     }
     /* --- панель фильтров: плотное матовое стекло --- */
-    section.l-page.menu-expanded::after {
+    section.l-page.l-page::after {
         background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
     }
     /* --- круглая кнопка фильтра/крестика целиком на экране
@@ -1724,6 +1729,29 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     }
     .l-page.menu-expanded .menu-toggler .toggler {
         box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    }
+    /* затемнение плавно появляется и исчезает вместе с карточкой фильтров
+       (display переключается в конце перехода: allow-discrete) */
+    section.l-page.l-page::after {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--sheet-time) ease, display var(--sheet-time) allow-discrete;
+    }
+    section.l-page.menu-expanded::after {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    @starting-style {
+        section.l-page.menu-expanded::after { opacity: 0; }
+    }
+}
+
+/* старые браузеры без allow-discrete: только появление, как раньше */
+@supports not (transition: opacity 1s allow-discrete) {
+    @media screen and (max-width: 767px) {
+        section.l-page.menu-expanded::after { animation: shiki-fade var(--sheet-time) ease both; }
     }
 }
 

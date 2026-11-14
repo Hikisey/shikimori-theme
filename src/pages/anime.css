@@ -1095,9 +1095,9 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 }
 
 @media screen and (max-width: 767px) {
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > select,
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-ms,
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-score-input {
+    section.l-page.l-page aside.l-menu .c-ms-field > select,
+    section.l-page.l-page aside.l-menu .c-ms-field > .c-ms,
+    section.l-page.l-page aside.l-menu .c-ms-field > .c-score-input {
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;

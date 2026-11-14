@@ -1,4 +1,114 @@
 @media screen and (max-width: 767px) {
+    /* реклама и пустые служебные блоки не занимают место над заголовком */
+    /* из pages/catalog */
+    section.l-page.l-page aside.l-menu .to-process[data-dynamic$="_ad"],
+    section.l-page.l-page aside.l-menu [class*="b-spns"],
+    section.l-page.l-page aside.l-menu [class*="spns_"],
+    section.l-page.l-page aside.l-menu .c-filters > :empty {
+        display: none !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info,
+    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 10px 12px 12px !important;
+        box-sizing: border-box;
+        line-height: normal !important;
+        border-radius: var(--plate-radius-lg);
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
+        backdrop-filter: var(--plate-blur);
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        transform: none !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        line-height: 20px !important;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-2a > .c-column {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+        border-radius: var(--plate-radius-lg);
+        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        backdrop-filter: var(--plate-blur);
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        min-width: 0;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-friends .b-user img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* из pages/anime */
+    .b-db_entry > .c-image .c-actions .b-subposter-action {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        min-height: 54px;
+        margin: 0 !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box;
+        text-align: center !important;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        backdrop-filter: var(--plate-blur);
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+    }
+    /* из pages/anime */
+    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
+        content: attr(data-text);
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: clamp(10.5px, 3vw, 12px);
+        line-height: 1.25;
+        white-space: normal;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        color: rgb(var(--text));
+    }
+}
+
+@media screen and (max-width: 767px) {
     /* второстепенный текст светлее */
     /* из pages/clubs */
     .b-catalog_entry .misc,

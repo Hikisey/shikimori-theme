@@ -263,7 +263,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         overflow: hidden;
         height: 44px !important;
     }
-    section.l-page.menu-expanded aside.l-menu {
+    section.l-page.l-page aside.l-menu {
         background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
     }
     section.l-page aside.l-menu {
@@ -309,8 +309,11 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
 }
 
 @media screen and (max-width: 767px) {
+    /* открыта — показана; вид карточки ниже действует и во время закрытия */
     section.l-page.menu-expanded aside.l-menu {
         display: block !important;
+    }
+    section.l-page.l-page aside.l-menu {
         position: fixed !important;
         z-index: 950 !important;
         top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
@@ -346,11 +349,11 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         scrollbar-width: thin;
         scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
     }
-    section.l-page.menu-expanded aside.l-menu .c-filters {
+    section.l-page.l-page aside.l-menu .c-filters {
         margin: 0 !important;
         padding: 0 !important;
     }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+    section.l-page.l-page aside.l-menu .c-filters-head {
         position: sticky;
         top: 0;
         z-index: 2;
@@ -366,7 +369,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     }
     /* поля внутри стекла тоже полупрозрачные; все значения одного размера
        (при шрифте мельче 16px iOS приближает страницу при фокусе) */
-    section.l-page.menu-expanded aside.l-menu {
+    section.l-page.l-page aside.l-menu {
         --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
         --field-font: 16px;
         --field-height: 40px;
@@ -405,18 +408,23 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         margin-top: 0 !important;
         border-width: 0 !important;
         clip-path: none !important;
-        transform: none !important;
+        max-height: 0;
+        transform: var(--drop-shift) !important;
         opacity: 0 !important;
         visibility: hidden;
         transition: opacity .22s ease, margin-top .32s cubic-bezier(.4, 0, .2, 1),
+                    max-height .32s cubic-bezier(.4, 0, .2, 1), transform .32s cubic-bezier(.4, 0, .2, 1),
                     border-width .32s step-end, visibility 0s linear .32s !important;
     }
     section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
         margin-top: var(--drop-gap) !important;
+        max-height: var(--drop-max);
         border-width: 1px !important;
+        transform: none !important;
         opacity: 1 !important;
         visibility: visible;
         transition: opacity .25s ease .05s, margin-top .3s var(--ease-out),
+                    max-height .3s var(--ease-out), transform .3s var(--ease-out),
                     border-width 0s, visibility 0s !important;
     }
 }
@@ -458,10 +466,10 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         overflow-y: auto;
     }
     /* высота карточки не пересчитывается, когда прячется панель Safari */
-    section.l-page.menu-expanded aside.l-menu:not(#u) {
+    section.l-page.l-page aside.l-menu:not(#u) {
         max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
     }
-    section.l-page.menu-expanded aside.l-menu {
+    section.l-page.l-page aside.l-menu {
         background:
             linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
             color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
@@ -469,7 +477,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
         padding: 0 16px 18px !important;
     }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+    section.l-page.l-page aside.l-menu .c-filters-head {
         margin: 0 -16px 14px !important;
         padding: 15px 16px 12px !important;
         background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
@@ -477,19 +485,82 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         letter-spacing: .04em;
     }
     /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
-    section.l-page.menu-expanded aside.l-menu .c-ms-field {
+    section.l-page.l-page aside.l-menu .c-ms-field {
         display: flex;
         flex-direction: column;
         gap: 6px;
         margin: 0 0 14px !important;
         padding: 0 !important;
     }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-title {
+    section.l-page.l-page aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.l-page aside.l-menu .c-ms-title {
         margin: 0 !important;
         padding: 0 2px !important;
         font-size: 14px !important;
         line-height: 18px !important;
         color: rgb(var(--text-2)) !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* ================================================================
+       Шторка фильтров: плавно появляется и исчезает (прозрачность и
+       сдвиг на --sheet-shift снизу вверх). display переключается в конце
+       закрытия (allow-discrete), начальный вид при открытии — @starting-style.
+       ================================================================ */
+    section.l-page.l-page aside.l-menu {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + var(--sheet-shift)));
+        animation: none;
+        transition: opacity var(--sheet-time) ease,
+                    transform var(--sheet-time) var(--ease-out),
+                    display var(--sheet-time) allow-discrete;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    @starting-style {
+        section.l-page.menu-expanded aside.l-menu {
+            opacity: 0;
+            transform: translate(-50%, calc(-50% + var(--sheet-shift)));
+        }
+    }
+}
+
+/* старые браузеры без allow-discrete: только появление, без пружины */
+@supports not (transition: opacity 1s allow-discrete) {
+    @media screen and (max-width: 767px) {
+        section.l-page.menu-expanded aside.l-menu {
+            opacity: 1;
+            animation: shiki-sheet var(--sheet-time) var(--ease-out) both;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    /* Списки с поиском (Первоисточник, Студия…): строка поиска внизу списка,
+       варианты над ней. Скрипт ставит фокус в поиск, iPhone поднимает строку
+       над клавиатурой — и варианты оказываются над ней, а не под клавиатурой. */
+    section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u),
+    section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
+        display: flex !important;
+        flex-direction: column-reverse;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        border-bottom: 0 !important;
+        border-top: 1px solid rgba(var(--glass-light), .08) !important;
+        scroll-margin-top: calc(var(--drop-max-typing) + 12px);
+        scroll-margin-bottom: 12px;
+    }
+    section.l-page aside.l-menu .c-ms:is([data-search_url], :has(.c-ms-option:nth-of-type(16))) .c-ms-options:not(#u) {
+        max-height: var(--drop-max-typing);
+    }
+    section.l-page.l-page aside.l-menu {
+        scroll-padding-block: 12px;
+    }
+    /* без «пружины» при касании поля: нажатие не уменьшает поле */
+    section.l-page aside.l-menu .c-ms-control:not(#u):active {
+        transform: none !important;
     }
 }

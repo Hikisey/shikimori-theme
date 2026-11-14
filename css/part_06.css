@@ -1,3 +1,153 @@
+.b-collection-topic > .inner .status-line .collection-size,
+.b-topic-minified > .inner .status-line .additional .comments:before,
+.b-review_votes:before,
+.b-topic-minified > .inner .status-line .time.changed_at:before,
+.b-topic-preview > .inner .status-line .additional .comments {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-topic .footer-vote {
+    border: none;
+    background-color: var(--plate-bg);
+    padding: 5px 10px 5px 10px;
+    color: rgba(var(--text), 1);
+    border-radius: 10%;
+}
+
+.b-topic .footer-vote .vote-group .vote {
+    color: rgba(var(--text), 1);
+}
+
+.b-topic .footer-vote .vote-group .vote.yes.selected,
+.b-topic .footer-vote .vote-group .vote.yes:hover,
+.b-topic .footer-vote .vote-group .vote,
+.b-topic .footer-vote .vote-group .vote:hover,
+.b-topic .footer-vote .vote-group .vote.no.selected,
+.b-topic .footer-vote .vote-group .vote.no:hover {
+    border: none;
+}
+
+.b-comment > .inner .was_updated div,
+.b-topic > .inner .was_updated div,
+.was_updated div {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-comment > .inner .was_updated,
+.b-topic > .inner .was_updated,
+.was_updated {
+    margin-left: 58px;
+}
+
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
+    color: rgba(var(--text-strong), 1) !important;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+/*Новый тех ред */
+.p-topics-index .b-shiki_editor-v2 footer .hide {
+    display: inline-block!important;
+}
+
+.p-topics header h1 a.reload {
+    border: none !important;
+}
+
+.b-topic > .inner header img {
+    transition: var(--ease-base);
+    border-radius: var(--plate-radius);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-topic > .inner header img:hover {
+        background: color-mix(in srgb, var(--glass-shadow) 30%, transparent);
+        box-shadow: 0 0 50px color-mix(in srgb, var(--glass-shadow) 30%, transparent) !important;
+        transform: scale(1.1);
+    }
+}
+
+.b-topic > .inner header .name-date {
+    overflow: hidden;
+    white-space: normal;
+    line-height: 1.6;
+    padding-right: 10px;
+}
+
+.b-reviews_navigation aside.markers {
+    top: 13px;
+}
+
+.b-collection-topic > .inner .see-more,
+.b-collection-topic > .inner .see-more .text .inner {
+    background: var(--plate-bg);
+    border: none;
+    transition: 0.3s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-collection-topic > .inner .see-more:hover,
+    .b-collection-topic > .inner .see-more:hover .circle {
+        border: none;
+        box-shadow: none;
+        transition: 1s ease-out;
+    }
+}
+
+.b-form input[type=submit],
+.b-shiki_editor.previewed footer .unpreview,
+.b-poll .poll-actions .vote,
+.b-poll .poll-actions .abstain {
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .line {
+    padding: 0;
+    background: color-mix(in srgb, var(--glass-active) 80%, transparent);
+    height: 9px;
+
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .bar {
+    height: 12px;
+    line-height: 12px;
+    float: left;
+}
+
+.b-poll {
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+
+.b-poll .poll-variants .poll-variant label {
+    font-weight: bold;
+}
+
+.b-poll .poll {
+    margin-bottom: 5px;
+}
+
+.b-poll .poll-variants .poll-variant.result {
+    margin-bottom: 9px;
+}
+
+.b-poll .poll-variants .poll-variant.result .votes-total {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-topic > .editor-container {
+    margin-top: 25px;
+}
+
+.b-topic-minified > .inner .status-line time,
+.b-topic-minified > .inner .status-line .from {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
 .b-poll .bar.simple .bar.s1,
 .b-poll .bar.simple .bar.s2,
 .b-poll .bar.simple .bar.s3,
@@ -2198,7 +2348,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.3.0";
+    --theme-version: "1.3.1";
 }
 
 .l-footer:before {
@@ -2965,168 +3115,4 @@ body * [class*="new_marker"] {
 header.head h1 a.back,
 header.head h2 a.back {
     color: rgba(var(--link), var(--hundred));
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/messages */
-    .b-message .b-catalog_entry:hover,
-    .l-content.swiss .b-catalog_entry:hover,
-    .b-catalog-entry-embedded .b-catalog_entry:hover {
-        background: transparent !important;
-        transform: scale(1);
-        box-shadow: none;
-    }
-}
-
-/* из layout/page */
-body#profiles_show .b-catalog_entry,
-.c-column.user_rate .b-catalog_entry {
-    background: transparent;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/cards */
-    .b-modal .b-catalog_entry:hover {
-        transform: none;
-        background: none !important;
-        z-index: 10;
-        box-shadow: none;
-    }
-}
-
-/* из components/cards */
-.b-modal .b-catalog_entry {
-    transform: none;
-}
-
-/* из components/cards */
-.l-content.swiss .image-cutter {
-    transition: 0.5s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/profile */
-    .p-profiles-show .about a:hover {
-        box-shadow: none;
-        background: none;
-        border: none;
-        opacity: 1;
-    }
-}
-
-/* из pages/messages */
-.b-message > .inner .was_updated {
-    color: rgba(var(--text-2), var(--hundred));
-    margin-left: 58px;
-    transition: var(--ease-base);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/users */
-    .b-user16:hover,
-    .b-user16:hover span,
-    .b-user16 a:hover {
-        box-shadow: none;
-        background: none;
-    }
-}
-
-/* из pages/messages */
-.b-dialog > .inner header .name-date {
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-/* из pages/forum */
-.b-poll .poll .name {
-    font-size: 15px;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из pages/forum */
-.b-poll .poll-variants .poll-variant.result .votes-percent,
-.p-translations .animes a {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/* из components/users */
-.b-menu-line.friend-rate .b-user16 a,
-.friend-rate .b-user16 a {
-    line-height: 10px;
-    vertical-align: middle;
-    height: 30px !important;
-    display: block;
-}
-
-/* из components/users */
-.b-menu-line.friend-rate .b-user16 span,
-.friend-rate .b-user16 span {
-    word-wrap: break-word;
-    white-space: normal;
-    line-height: 15px;
-    display: inline-block;
-    max-width: 100px;
-    vertical-align: middle !important;
-}
-
-/* из components/editor */
-.b-height_shortener .expand:hover span {
-    animation: none !important;
-    border: none;
-}
-
-/* ачивки */
-/* из pages/achievements */
-.b-achievement .c-about a.title {
-    font-size: 14px;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из pages/achievements */
-.b-achievement .c-about .hint {
-    font-size: 12px;
-    font-weight: bold;
-    color: rgba(var(--text), var(--hundred));
-    opacity: 1;
-}
-
-/* из base/base */
-.persisted a.b-link.bubbled-processed {
-    margin-left: 25px;
-    color: rgba(var(--text), var(--hundred)) !important;
-}
-
-/* из base/base */
-.persisted a.b-link.bubbled-processed:hover {
-    color: rgba(var(--link), var(--hundred)) !important;
-}
-
-/* из components/forms */
-.ac_results .name,
-.completable-block .name {
-    font-weight: bold;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/buttons */
-.b-button[disabled],
-.b-button.disabled {
-    cursor: default;
-    pointer-events: none;
-    background-color: var(--plate-bg);
-    border-radius: 4px !important;
-    color: rgba(var(--text), 0.3);
-    padding: 6px 10px 6px 10px;
-    transition: 0.3s ease-out;
-    border: none;
-    font-family: 'Comfortaa', sans-serif;
-    box-shadow: var(--plate-shadow);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/forms */
-    .ac_results .character-suggest .animes div a:hover {
-        background: none !important;
-        box-shadow: none;
-    }
 }

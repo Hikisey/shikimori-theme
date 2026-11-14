@@ -1,3 +1,167 @@
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/messages */
+    .b-message .b-catalog_entry:hover,
+    .l-content.swiss .b-catalog_entry:hover,
+    .b-catalog-entry-embedded .b-catalog_entry:hover {
+        background: transparent !important;
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+/* из layout/page */
+body#profiles_show .b-catalog_entry,
+.c-column.user_rate .b-catalog_entry {
+    background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/cards */
+    .b-modal .b-catalog_entry:hover {
+        transform: none;
+        background: none !important;
+        z-index: 10;
+        box-shadow: none;
+    }
+}
+
+/* из components/cards */
+.b-modal .b-catalog_entry {
+    transform: none;
+}
+
+/* из components/cards */
+.l-content.swiss .image-cutter {
+    transition: 0.5s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/profile */
+    .p-profiles-show .about a:hover {
+        box-shadow: none;
+        background: none;
+        border: none;
+        opacity: 1;
+    }
+}
+
+/* из pages/messages */
+.b-message > .inner .was_updated {
+    color: rgba(var(--text-2), var(--hundred));
+    margin-left: 58px;
+    transition: var(--ease-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/users */
+    .b-user16:hover,
+    .b-user16:hover span,
+    .b-user16 a:hover {
+        box-shadow: none;
+        background: none;
+    }
+}
+
+/* из pages/messages */
+.b-dialog > .inner header .name-date {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* из pages/forum */
+.b-poll .poll .name {
+    font-size: 15px;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/forum */
+.b-poll .poll-variants .poll-variant.result .votes-percent,
+.p-translations .animes a {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/* из components/users */
+.b-menu-line.friend-rate .b-user16 a,
+.friend-rate .b-user16 a {
+    line-height: 10px;
+    vertical-align: middle;
+    height: 30px !important;
+    display: block;
+}
+
+/* из components/users */
+.b-menu-line.friend-rate .b-user16 span,
+.friend-rate .b-user16 span {
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 15px;
+    display: inline-block;
+    max-width: 100px;
+    vertical-align: middle !important;
+}
+
+/* из components/editor */
+.b-height_shortener .expand:hover span {
+    animation: none !important;
+    border: none;
+}
+
+/* ачивки */
+/* из pages/achievements */
+.b-achievement .c-about a.title {
+    font-size: 14px;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/achievements */
+.b-achievement .c-about .hint {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(var(--text), var(--hundred));
+    opacity: 1;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed {
+    margin-left: 25px;
+    color: rgba(var(--text), var(--hundred)) !important;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed:hover {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+/* из components/forms */
+.ac_results .name,
+.completable-block .name {
+    font-weight: bold;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/buttons */
+.b-button[disabled],
+.b-button.disabled {
+    cursor: default;
+    pointer-events: none;
+    background-color: var(--plate-bg);
+    border-radius: 4px !important;
+    color: rgba(var(--text), 0.3);
+    padding: 6px 10px 6px 10px;
+    transition: 0.3s ease-out;
+    border: none;
+    font-family: 'Comfortaa', sans-serif;
+    box-shadow: var(--plate-shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/forms */
+    .ac_results .character-suggest .animes div a:hover {
+        background: none !important;
+        box-shadow: none;
+    }
+}
+
 /* из pages/dashboard */
 .b-status-line .section.main .comments:before,
 .b-news_wall-topic .status-line .comments,
@@ -2659,114 +2823,4 @@ input[type="checkbox"]:active,
 .oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
 .oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
     filter: brightness(1.45) saturate(1.2) !important;
-}
-
-@media screen and (max-width: 767px) {
-    /* реклама и пустые служебные блоки не занимают место над заголовком */
-    /* из pages/catalog */
-    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
-    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
-    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
-    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
-        display: none !important;
-    }
-    /* из pages/profile */
-    html body.p-profiles .profile-head .c-info .c-lists-info,
-    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
-        display: flex !important;
-        flex-direction: column;
-        gap: 10px;
-        width: 100% !important;
-        height: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    /* из pages/profile */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        margin: 0 !important;
-        padding: 10px 12px 12px !important;
-        box-sizing: border-box;
-        line-height: normal !important;
-        border-radius: var(--plate-radius-lg);
-        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
-        backdrop-filter: var(--plate-blur);
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-        transform: none !important;
-    }
-    /* из pages/profile */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        margin: 0 !important;
-        line-height: 20px !important;
-    }
-    /* из pages/profile */
-    body.p-profiles-show .cc-2a > .c-column {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        box-sizing: border-box;
-        border-radius: var(--plate-radius-lg);
-        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        backdrop-filter: var(--plate-blur);
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-        min-width: 0;
-    }
-    /* из pages/profile */
-    body.p-profiles-show .cc-friends .b-user img {
-        width: 30px !important;
-        height: 30px !important;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 !important;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    /* из pages/anime */
-    .b-db_entry > .c-image .c-actions .b-subposter-action {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        position: relative;
-        width: 100% !important;
-        min-width: 0;
-        height: auto !important;
-        min-height: 54px;
-        margin: 0 !important;
-        padding: 8px 4px !important;
-        box-sizing: border-box;
-        text-align: center !important;
-        border-radius: 12px;
-        background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        backdrop-filter: var(--plate-blur);
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-    }
-    /* из pages/anime */
-    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
-        content: attr(data-text);
-        display: block;
-        width: 100% !important;
-        text-align: center !important;
-        font-size: clamp(10.5px, 3vw, 12px);
-        line-height: 1.25;
-        white-space: normal;
-        overflow-wrap: break-word;
-        -webkit-hyphens: auto;
-        hyphens: auto;
-        color: rgb(var(--text));
-    }
 }
