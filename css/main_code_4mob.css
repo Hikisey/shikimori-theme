@@ -5888,10 +5888,10 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
     html body::before,
     html:not(:hover) body::before {
-        transform: scale(1.08);
+        transform: scale(1.04);
         transition: none;
-        filter: blur(4px) brightness(.87);
-        -webkit-filter: blur(4px) brightness(.87);
+        filter: blur(1.5px) brightness(.9);
+        -webkit-filter: blur(1.5px) brightness(.9);
     }
 
     /* --- фильтры каталога и списков: карточка по центру экрана --- */
