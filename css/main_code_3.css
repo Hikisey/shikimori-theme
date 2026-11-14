@@ -462,37 +462,121 @@ body#dashboards_show .cc-news {
     display: inline;
 }
 
+/* --- Галочки: кольцо и галочка нарисованы CSS, поэтому переключение анимируется ---
+   Иконка выровнена по центру строки текста, отступы сохраняют прежнюю высоту строк. appearance: none и настоящий размер
+   нужны Firefox, иначе он не рисует ::before и ::after у полей ввода. */
 .b-input input[type="checkbox"],
 input[type="checkbox"] {
-    margin-right: 24px !important;
-    width: 0px !important;
+    --cb-size: 15px;
+    --cb-ring: 1.6px;
+    --cb-speed: .2s;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    flex: none;
+    width: var(--cb-size) !important;
+    min-width: var(--cb-size);
+    height: var(--cb-size) !important;
+    min-height: 0;
+    margin: 8px 13px 8px 3px !important;
+    padding: 0 !important;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    top: -.08em;
+    cursor: pointer;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 50%;
+    outline: none !important;
 }
 
-.b-input input[type="checkbox"]:before,
-input[type="checkbox"]:before {
-    display: inline-block;
-    content: "\f10c";
-    color: rgba(var(--dark-color), 1);
-    display: inline-block;
-    vertical-align: top;
-    width: 10px;
-    margin: -1px 18px 2px 2px;
-    font: normal normal normal 14px/1 FontAwesome;
-    direction: ltr;
-    line-height: 1;
-    text-transform: none;
-    font-size: 17px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* кольцо */
+.b-input input[type="checkbox"]::before,
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    border: var(--cb-ring) solid rgba(var(--dark-color), 1);
+    border-radius: 50%;
+    background: transparent;
+    transition:
+        border-color var(--cb-speed) ease,
+        background-color var(--cb-speed) ease,
+        box-shadow var(--cb-speed) ease,
+        transform var(--cb-speed) cubic-bezier(.34, 1.56, .64, 1);
 }
 
-input[type="checkbox"]:checked:before,
-.b-input input[type="checkbox"]:checked:before {
-    content: "\f05d";
-    color: rgba(var(--light-color), 1);
-    font-size: 17px;
-    margin: -1px 18px 2px 2px;
+/* галочка: уголок из двух рамок, повёрнутый на 45° */
+.b-input input[type="checkbox"]::after,
+input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-sizing: content-box;
+    width: 3px;
+    height: 6.5px;
+    border: solid rgba(var(--light-color), 1);
+    border-width: 0 var(--cb-ring) var(--cb-ring) 0;
+    border-radius: 0 0 1px 0;
+    opacity: 0;
+    transform: translate(-50%, -62%) rotate(45deg) scale(0);
+    transition:
+        transform var(--cb-speed) cubic-bezier(.34, 1.56, .64, 1),
+        opacity calc(var(--cb-speed) * .6) ease;
+}
+
+input[type="checkbox"]:hover::before {
+    border-color: rgba(var(--bright-color), .85);
+}
+
+input[type="checkbox"]:checked::before {
+    border-color: rgba(var(--light-color), 1);
+    background-color: rgba(var(--light-color), .08);
+}
+
+input[type="checkbox"]:checked::after {
+    opacity: 1;
+    transform: translate(-50%, -62%) rotate(45deg) scale(1);
+}
+
+input[type="checkbox"]:checked:hover::before {
+    border-color: rgba(var(--bright-color), 1);
+}
+
+input[type="checkbox"]:checked:hover::after {
+    border-color: rgba(var(--bright-color), 1);
+}
+
+/* лёгкое «нажатие» */
+input[type="checkbox"]:active::before {
+    transform: scale(.86);
+}
+
+/* фокус с клавиатуры */
+input[type="checkbox"]:focus-visible::before {
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .35);
+}
+
+input[type="checkbox"]:disabled {
+    cursor: default;
+    opacity: .45;
+}
+
+input[type="checkbox"]:disabled::before {
+    border-color: rgba(var(--dull-color), 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    input[type="checkbox"]::before,
+    input[type="checkbox"]::after {
+        transition-duration: 0s;
+    }
 }
 
 .b-video_variant[data-episode="0"] .episode-num {
