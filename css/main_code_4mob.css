@@ -7257,29 +7257,35 @@ html input[type="checkbox"]:not(#u):focus-visible {
   }
 }
 
-/* v1.2.18 — логотипы студий: адаптивно по альфа-каналу, без подложки.
-   Непрозрачные логотипы (bones, Sunrise, Ghibli…) — аккуратные скруглённые карточки с мягким свечением;
-   прозрачные тёмные — светлый контур по форме букв (drop-shadow повторяет альфу картинки). */
+/* v1.2.19 — логотипы студий: чётко, без «мыльного» свечения.
+   Картинка не растягивается больше натурального размера (max-width:100% от колонки, height:auto).
+   Непрозрачные — скруглённые карточки; прозрачные — тонкий 1px контур; чёрные (Madhouse, Shaft, Wit) — белый силуэт без свечения. */
 img.studio-logo,
 .p-studios .studio img.logo {
   max-width: 100%;
+  height: auto;
   padding: 0 !important;
   background: none !important;
   box-shadow: none !important;
   border-radius: 10px;
+  image-rendering: auto;
+  transform: none;
   --logo-tone: opacity(1);
-  filter: var(--logo-tone) drop-shadow(0 0 1px rgba(236, 240, 247, .95)) drop-shadow(0 0 1px rgba(236, 240, 247, .7)) drop-shadow(0 0 7px rgba(236, 240, 247, .28));
-  transition: filter .2s ease;
+  --logo-edge: drop-shadow(0 0 1px rgba(236, 240, 247, .9));
+  filter: var(--logo-tone) var(--logo-edge);
+  transition: transform .2s ease, filter .2s ease;
 }
-/* полностью чёрные/очень тёмные прозрачные логотипы — мягко-белый силуэт */
 img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]),
 .p-studios .studio img.logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]) {
   --logo-tone: brightness(0) invert(.93);
+  --logo-edge: opacity(1);
 }
+/* наведение (только ПК): лёгкий подъём на 3px и мягкая тёмная тень снизу */
 @media (hover: hover) and (pointer: fine) {
   a:hover > img.studio-logo,
   .p-studios .studio a:hover > img.logo {
-    filter: var(--logo-tone) drop-shadow(0 0 1px rgba(var(--bright-color), .95)) drop-shadow(0 0 1px rgba(var(--bright-color), .7)) drop-shadow(0 0 8px rgba(var(--bright-color), .45));
+    transform: translateY(-3px);
+    filter: var(--logo-tone) var(--logo-edge) drop-shadow(0 6px 6px rgba(0, 0, 0, .45));
   }
 }
 
