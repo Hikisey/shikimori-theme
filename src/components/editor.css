@@ -348,7 +348,7 @@
 .b-log_entry .spoiler.collapsed span {
     border: 2px dashed rgba(var(--text), 0.2);
     border-radius: 6px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     padding: 0 4px;
 }
 
@@ -471,7 +471,7 @@ a.b-link.bubbled-processed {
 .b-log_entry a .id-label,
 .b-log_entry .link .id-label {
     color: rgba(var(--accent), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-log_entry a:hover .id-label,

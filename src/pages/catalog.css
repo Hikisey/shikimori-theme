@@ -409,7 +409,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
         grid-template-rows: auto 1fr;
         /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
-        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
+        transition: grid-template-rows .3s var(--ease-out);
     }
     section.l-page aside.l-menu .c-ms-dropdown:not(#u),
     section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
@@ -430,7 +430,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         border-width: 1px !important;
         opacity: 1 !important;
         visibility: visible;
-        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
+        transition: opacity .25s ease .05s, margin-top .3s var(--ease-out),
                     border-width 0s, visibility 0s !important;
     }
 }

@@ -220,7 +220,7 @@
 }
 
 .b-topic > .inner header img {
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     border-radius: var(--plate-radius);
 }
 
@@ -414,7 +414,7 @@
         box-shadow: var(--plate-shadow) !important;
         color: rgba(var(--accent), 1);
         padding: 0px 7px;
-        transition: 0.3s ease;
+        transition: var(--ease-base);
     }
 }
 

@@ -209,9 +209,8 @@
 .b-catalog_entry {
     border-radius: var(--card-radius);
     transform: translateY(0) scale(1);
-    transition:
-        transform .35s cubic-bezier(.22, 1, .36, 1),
-        box-shadow .35s cubic-bezier(.22, 1, .36, 1),
+    transition: transform .35s var(--ease-out),
+        box-shadow .35s var(--ease-out),
         background-color .35s ease !important;
 }
 
@@ -231,7 +230,7 @@
 
 .b-catalog_entry .cover img:not(._),
 .b-catalog_entry .cover .image.image {
-    transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
+    transition: transform .5s var(--ease-out) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {

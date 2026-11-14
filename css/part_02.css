@@ -257,7 +257,7 @@
     text-decoration: none;
     border: 2px solid rgba(var(--glass), 0.4);
     box-shadow: var(--plate-shadow-soft) !important;
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
 }
 
 /* ----- телефон и узкие экраны ----- */
@@ -313,7 +313,7 @@
 .pika-button {
     color: rgba(var(--text-strong), 1);
     background: rgba(var(--text), 0.2);
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -573,7 +573,7 @@
 }
 
 .b-catalog_entry-tooltip .inner .additional-images .link img {
-    transition: 0.3s ease !important;
+    transition: var(--ease-base) !important;
 }
 
 .b-catalog_entry-tooltip .inner .job-title {
@@ -1176,7 +1176,7 @@ header.head .notice {
     background-color: var(--btn-bg) !important;
     border-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
     color: rgba(var(--text-strong), var(--hundred));
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
     box-shadow: var(--plate-shadow) !important;
     border-radius: var(--plate-radius-lg);
 }
@@ -2188,9 +2188,8 @@ video#main-video_html5_api .vjs-big-play-button {
 .b-catalog_entry {
     border-radius: var(--card-radius);
     transform: translateY(0) scale(1);
-    transition:
-        transform .35s cubic-bezier(.22, 1, .36, 1),
-        box-shadow .35s cubic-bezier(.22, 1, .36, 1),
+    transition: transform .35s var(--ease-out),
+        box-shadow .35s var(--ease-out),
         background-color .35s ease !important;
 }
 
@@ -2210,7 +2209,7 @@ video#main-video_html5_api .vjs-big-play-button {
 
 .b-catalog_entry .cover img:not(._),
 .b-catalog_entry .cover .image.image {
-    transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
+    transition: transform .5s var(--ease-out) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2628,7 +2627,7 @@ video#main-video_html5_api .vjs-big-play-button {
 .b-log_entry .spoiler.collapsed span {
     border: 2px dashed rgba(var(--text), 0.2);
     border-radius: 6px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     padding: 0 4px;
 }
 
@@ -2751,7 +2750,7 @@ a.b-link.bubbled-processed {
 .b-log_entry a .id-label,
 .b-log_entry .link .id-label {
     color: rgba(var(--accent), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-log_entry a:hover .id-label,

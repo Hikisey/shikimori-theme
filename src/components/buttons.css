@@ -149,7 +149,7 @@
     background-color: var(--btn-bg) !important;
     border-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
     color: rgba(var(--text-strong), var(--hundred));
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
     box-shadow: var(--plate-shadow) !important;
     border-radius: var(--plate-radius-lg);
 }

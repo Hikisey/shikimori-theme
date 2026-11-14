@@ -98,7 +98,7 @@
     text-decoration: none;
     border: 2px solid rgba(var(--glass), 0.4);
     box-shadow: var(--plate-shadow-soft) !important;
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
 }
 
 /* ----- телефон и узкие экраны ----- */

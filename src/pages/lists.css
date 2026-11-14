@@ -579,7 +579,7 @@ tr.user_rate.selectable.editable:after {
     .p-user_rates-index .list-posters .user_rate {
         position: relative;
         border-radius: var(--plate-radius-lg);
-        transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+        transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
     }
 }
 

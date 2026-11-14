@@ -165,7 +165,7 @@
     margin: 2px !important;
     color: rgba(var(--text), var(--hundred)) !important;
     background: var(--plate-bg-strong) !important;
-    transition: 0.3s ease !important;
+    transition: var(--ease-base) !important;
     border: none !important;
     border-radius: var(--plate-radius);
     font-size: 10px;
@@ -194,12 +194,12 @@
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name,
 .p-dashboards-show .generated-news-line .info .name,
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-news_wall-topic .title {
     color: rgba(var(--text-strong), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .p-dashboards-show .v2 .my-list {

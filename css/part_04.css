@@ -1059,7 +1059,7 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
 
 .c-column.c-control.increment-user_rate.watched {
     background: #205520 !important;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
     position: absolute;
     right: 31.333333%;
@@ -1214,7 +1214,7 @@ a.c-column.c-control.increment-user_rate,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item,
 .l-top_menu-v2 .global-search .search-results .nothing_found {
     border-radius: 18px;
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
 }
 
 .l-top_menu-v2 .global-search .search-results .nothing_found,
@@ -2365,7 +2365,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
         grid-template-rows: auto 1fr;
         /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
-        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
+        transition: grid-template-rows .3s var(--ease-out);
     }
     section.l-page aside.l-menu .c-ms-dropdown:not(#u),
     section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
@@ -2386,7 +2386,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         border-width: 1px !important;
         opacity: 1 !important;
         visibility: visible;
-        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
+        transition: opacity .25s ease .05s, margin-top .3s var(--ease-out),
                     border-width 0s, visibility 0s !important;
     }
 }

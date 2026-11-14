@@ -138,7 +138,7 @@
 .b-contest_match .prev-match,
 .b-contest_match .next-match {
     color: rgba(var(--text-2), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -419,7 +419,7 @@
 }
 
 .b-topic > .inner header img {
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     border-radius: var(--plate-radius);
 }
 
@@ -613,7 +613,7 @@
         box-shadow: var(--plate-shadow) !important;
         color: rgba(var(--accent), 1);
         padding: 0px 7px;
-        transition: 0.3s ease;
+        transition: var(--ease-base);
     }
 }
 
@@ -993,7 +993,7 @@
     margin: 2px !important;
     color: rgba(var(--text), var(--hundred)) !important;
     background: var(--plate-bg-strong) !important;
-    transition: 0.3s ease !important;
+    transition: var(--ease-base) !important;
     border: none !important;
     border-radius: var(--plate-radius);
     font-size: 10px;
@@ -1022,12 +1022,12 @@
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name,
 .p-dashboards-show .generated-news-line .info .name,
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-news_wall-topic .title {
     color: rgba(var(--text-strong), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .p-dashboards-show .v2 .my-list {

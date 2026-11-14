@@ -311,7 +311,7 @@ a:-webkit-any-link {
 
 /* из pages/forum */
 .p-statistics-index .forum-nav .sections a {
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
     color: rgba(var(--text-2), var(--hundred));
 }
 
@@ -324,7 +324,7 @@ a:-webkit-any-link {
 /* из pages/contests */
 .b-contest_match .vs .actions .action span,
 .b-contest_match .vs .actions .action span {
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
     color: rgba(var(--text), var(--hundred));
     background: var(--plate-bg-strong);
     border-radius: 4px;
@@ -598,7 +598,7 @@ body * [class*="new_marker"] {
 /* из components/tooltips */
 .b-catalog_entry-tooltip .inner .line .value {
     color: rgba(var(--text), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 /* из components/cards */
@@ -772,7 +772,7 @@ body#profiles_show .b-catalog_entry,
 .b-message > .inner .was_updated {
     color: rgba(var(--text-2), var(--hundred));
     margin-left: 58px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1408,7 +1408,7 @@ input.ac_input.ac_loading {
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
     border-radius: 22px;
     padding: 2px 0px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 /* из layout/page */
@@ -1559,7 +1559,7 @@ header.head .misc {
 .p-topics .l-menu .sticky-topics .topic .title,
 .p-topics .l-menu .sticky-topics .topic .title:after {
     color: rgba(var(--text-strong), 1);
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
     border: none !important;
 }
 

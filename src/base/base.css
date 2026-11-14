@@ -275,13 +275,13 @@ a.b-mention.bubbled-processed {
 .b-collection_item .drag-handle:before {
     color: rgba(var(--accent), var(--hundred));
     font-size: 18px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-collection_item .delete:before {
     color: #a74323;
     font-size: 18px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 .b-collection_item .drag-handle:hover:before,

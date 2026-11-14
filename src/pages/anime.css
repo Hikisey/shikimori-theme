@@ -896,7 +896,7 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
 
 .c-column.c-control.increment-user_rate.watched {
     background: #205520 !important;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
     position: absolute;
     right: 31.333333%;
@@ -1051,7 +1051,7 @@ a.c-column.c-control.increment-user_rate,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item,
 .l-top_menu-v2 .global-search .search-results .nothing_found {
     border-radius: 18px;
-    transition: 0.2s ease;
+    transition: var(--ease-fast);
 }
 
 .l-top_menu-v2 .global-search .search-results .nothing_found,

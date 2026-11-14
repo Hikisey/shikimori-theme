@@ -93,7 +93,7 @@
 .b-contest_match .prev-match,
 .b-contest_match .next-match {
     color: rgba(var(--text-2), var(--hundred));
-    transition: 0.3s ease;
+    transition: var(--ease-base);
 }
 
 @media (hover: hover) and (pointer: fine) {

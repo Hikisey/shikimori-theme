@@ -490,7 +490,7 @@ body#dashboard_show .b-catalog_entry.b-catalog_entry {
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
     border-radius: 22px;
     padding: 0px 0px 2px 0px;
-    transition: 0.3s ease;
+    transition: var(--ease-base);
     margin: 5px 0px 7px 0px;
 }
 
@@ -605,7 +605,7 @@ body::before {
     transform: scale(var(--bg-zoom));
     filter: blur(var(--bg-blur));
     /* одинаковая анимация на приближение и отдаление */
-    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
+    transition: transform 2.5s var(--ease-out);
     pointer-events: none;
     will-change: transform;
     backface-visibility: hidden;
