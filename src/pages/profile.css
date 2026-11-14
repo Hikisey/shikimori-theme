@@ -601,11 +601,11 @@ body#user_history_index .tooltip-inner {
 }
 
 body.p-profiles .subheadline .misc-links > a:hover:before {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 body.p-profiles .subheadline .misc-links > a:hover:after {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 body.p-profiles .subheadline .misc-links > a {
@@ -619,7 +619,7 @@ body.p-profiles .subheadline .misc-links > a:before {
     text-transform: uppercase;
     padding: 11px 63px 8px 19px;
     background: linear-gradient(to right, rgba(var(--glass), 0) 0%, rgba(var(--glass), 1) 20%, rgba(var(--glass), 1) 100%);
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
     border-radius: var(--plate-radius);
     position: Relative;
     margin-right: -53px;
@@ -1122,7 +1122,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         animation-delay: 2s;
     }
     .p-profiles .subheadline.m13 {
-        height: 28px;
+        height: var(--heading-height);
     }
     .p-profiles .c-history > div {
         height: 44px;

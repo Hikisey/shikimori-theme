@@ -216,7 +216,7 @@ body.localized_names-ru .name-ru {
 .midheadline > a,
 .subheadline > a,
 .p-topics .l-menu .sticky-topics .topic {
-    color: rgba(var(--text-2), 1);
+    color: var(--heading-text);
     transition: 0.2s ease, -webkit-0 .2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
 }
@@ -227,7 +227,7 @@ body.localized_names-ru .name-ru {
     .midheadline > a:hover,
     .subheadline > a:hover {
         text-decoration: none;
-        color: rgba(var(--link), 1) !important;
+        color: var(--heading-link) !important;
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
         border: none;
     }
@@ -1070,7 +1070,7 @@ a.b-menu-line.entry.b-link .time {
 
 /* из components/buttons */
 .subheadline-buttons a:hover {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 /* из components/tabs */
@@ -1078,7 +1078,7 @@ a.b-menu-line.entry.b-link .time {
 .headline .misc-links a,
 .midheadline .misc-links a,
 .subheadline .misc-links a {
-    color: rgba(var(--link), 1)
+    color: var(--heading-link)
 }
 
 /* из components/tabs */
@@ -1086,7 +1086,7 @@ a.b-menu-line.entry.b-link .time {
 .headline .misc-links a:hover,
 .midheadline .misc-links a:hover,
 .subheadline .misc-links a:hover {
-    color: rgba(var(--link), 1)
+    color: var(--heading-link)
 }
 
 /* из components/tabs */

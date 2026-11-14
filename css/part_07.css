@@ -457,7 +457,7 @@ a.b-menu-line.entry.b-link .time {
 
 /* из components/buttons */
 .subheadline-buttons a:hover {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 /* из components/tabs */
@@ -465,7 +465,7 @@ a.b-menu-line.entry.b-link .time {
 .headline .misc-links a,
 .midheadline .misc-links a,
 .subheadline .misc-links a {
-    color: rgba(var(--link), 1)
+    color: var(--heading-link)
 }
 
 /* из components/tabs */
@@ -473,7 +473,7 @@ a.b-menu-line.entry.b-link .time {
 .headline .misc-links a:hover,
 .midheadline .misc-links a:hover,
 .subheadline .misc-links a:hover {
-    color: rgba(var(--link), 1)
+    color: var(--heading-link)
 }
 
 /* из components/tabs */

@@ -102,7 +102,7 @@
     /* цветные заголовки главной — как «Темы дня» */
     html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
         background: var(--plate-bg-strong) !important;
-        color: rgba(var(--text-2), 1) !important;
+        color: var(--heading-text) !important;
     }
     html body .headline:has(> .misc-links) {
         min-height: 36px;
@@ -127,7 +127,7 @@
     html body .headline > .misc-links > a {
         display: block;
         width: 28px;
-        height: 28px;
+        height: var(--heading-height);
         margin: 0 !important;
         padding: 0 !important;
         font-size: 0 !important;
@@ -136,7 +136,7 @@
     html body .headline > .misc-links > a::after {
         display: flex !important;
         width: 28px !important;
-        height: 28px !important;
+        height: var(--heading-height) !important;
         padding: 0 !important;
         box-sizing: border-box;
         border-radius: 9px !important;
@@ -654,7 +654,7 @@ header.head a.misc {
 }
 
 .subheadline .misc-link {
-    color: rgba(var(--text-2), 1);
+    color: var(--heading-text);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -670,13 +670,13 @@ header.head a.misc {
 .midheadline,
 .subheadline {
     border: none;
-    border-radius: 13px;
+    border-radius: var(--heading-radius);
     box-shadow: var(--plate-shadow);
     background: var(--plate-bg-strong);
     transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 14px;
-    color: rgba(var(--text-2), 1);
-    height: 28px;
+    color: var(--heading-text);
+    height: var(--heading-height);
     padding: 0 14px 0;
     display: flex;
     line-height: 1.5;
@@ -703,17 +703,17 @@ header.head a.misc {
     width: 100%;
     padding: 2px 15px 0;
     line-height: 1;
-    border-radius: 13px;
+    border-radius: var(--heading-radius);
 }
 
 .headline > a:before,
 .midheadline > a:before,
 .subheadline > a:before {
-    color: rgba(var(--link), 1) !important;
+    color: var(--heading-link) !important;
     position: absolute;
     top: 0;
     right: 10px !important;
-    background: linear-gradient(270deg, rgba(var(--text-2), 1), rgba(var(--text-2), 0.3));
+    background: var(--heading-dot);
     width: 8px;
     margin: 10px 1px;
     height: 8px;
@@ -726,8 +726,8 @@ header.head a.misc {
     .headline > a:hover:before,
     .midheadline > a:hover:before,
     .subheadline > a:hover:before {
-        color: rgba(var(--link), 1) !important;
-        background: linear-gradient(270deg, rgba(var(--accent), 1), rgba(var(--accent), 0.3));
+        color: var(--heading-link) !important;
+        background: var(--heading-dot-hover);
     }
 }
 
@@ -1143,7 +1143,7 @@ header.head .notice {
     margin: -0.1rem 0 0 0;
     padding-top: 0;
     right: 5px;
-    height: 28px;
+    height: var(--heading-height);
     z-index: 3;
 }
 

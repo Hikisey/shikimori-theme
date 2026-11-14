@@ -332,7 +332,7 @@ body#clubs_edit .b-options-floated .selected:hover {
 body.p-achievements.p-profiles .subheadline-buttons {
     margin-top: -28px;
     right: 0;
-    height: 28px;
+    height: var(--heading-height);
     box-sizing: border-box;
     padding-right: 40px;
 }

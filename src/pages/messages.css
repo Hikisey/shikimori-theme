@@ -331,7 +331,7 @@ body.p-profiles .mass-actions .action a:before,
     width: 18px;
     border-radius: 8px;
     z-index: 2;
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 body.p-profiles .mass-actions .action a:before {
@@ -356,7 +356,7 @@ body.p-profiles .mass-actions .action a:hover:AFTER,
 .headline .misc-links > a:hover:after,
 .midheadline .misc-links > a:hover:after,
 .subheadline .misc-links > a:hover:after {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 /*УЧАСТИЕ В ПРОЕКТАХ Ico off*/

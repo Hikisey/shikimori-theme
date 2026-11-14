@@ -170,7 +170,7 @@
     margin: -0.1rem 0 0 0;
     padding-top: 0;
     right: 5px;
-    height: 28px;
+    height: var(--heading-height);
     z-index: 3;
 }
 

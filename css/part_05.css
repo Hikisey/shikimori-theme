@@ -121,7 +121,7 @@ body.p-profiles .mass-actions .action a:before,
     width: 18px;
     border-radius: 8px;
     z-index: 2;
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 body.p-profiles .mass-actions .action a:before {
@@ -146,7 +146,7 @@ body.p-profiles .mass-actions .action a:hover:AFTER,
 .headline .misc-links > a:hover:after,
 .midheadline .misc-links > a:hover:after,
 .subheadline .misc-links > a:hover:after {
-    color: rgba(var(--link), 1);
+    color: var(--heading-link);
 }
 
 /*УЧАСТИЕ В ПРОЕКТАХ Ico off*/
@@ -585,7 +585,7 @@ header.head a.edit,
 .p-topics .l-menu .sticky-topics .topic .notice,
 .b-hot_topics .topic {
     font-size: 12px !important;
-    color: rgba(var(--text-2), 1);
+    color: var(--heading-text);
 }
 
 .p-user_rates-index .list-lines tr td .new-value input {
@@ -849,7 +849,7 @@ tr.user_rate.selectable.editable:after {
         align-items: center;
         justify-content: center;
         width: 28px !important;
-        height: 28px !important;
+        height: var(--heading-height) !important;
         margin: 0 !important;
         padding: 0 !important;
         border-radius: 8px;
@@ -1374,7 +1374,7 @@ body#clubs_edit .b-options-floated .selected:hover {
 body.p-achievements.p-profiles .subheadline-buttons {
     margin-top: -28px;
     right: 0;
-    height: 28px;
+    height: var(--heading-height);
     box-sizing: border-box;
     padding-right: 40px;
 }

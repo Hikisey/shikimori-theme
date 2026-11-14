@@ -216,7 +216,7 @@ header.head a.edit,
 .p-topics .l-menu .sticky-topics .topic .notice,
 .b-hot_topics .topic {
     font-size: 12px !important;
-    color: rgba(var(--text-2), 1);
+    color: var(--heading-text);
 }
 
 .p-user_rates-index .list-lines tr td .new-value input {
@@ -480,7 +480,7 @@ tr.user_rate.selectable.editable:after {
         align-items: center;
         justify-content: center;
         width: 28px !important;
-        height: 28px !important;
+        height: var(--heading-height) !important;
         margin: 0 !important;
         padding: 0 !important;
         border-radius: 8px;
