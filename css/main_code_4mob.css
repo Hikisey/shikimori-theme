@@ -5888,10 +5888,10 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
     html body::before,
     html:not(:hover) body::before {
-        transform: scale(1.04);
+        transform: scale(1.08);
         transition: none;
-        filter: blur(1.5px) brightness(.9);
-        -webkit-filter: blur(1.5px) brightness(.9);
+        filter: blur(4px) brightness(.87);
+        -webkit-filter: blur(4px) brightness(.87);
     }
 
     /* --- фильтры каталога и списков: карточка по центру экрана --- */
@@ -6182,12 +6182,49 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     html body#profiles_show .profile-content > .cc-2.block > .c-right { order: 1; }
     html body#profiles_show .profile-content > .cc-2.block > .c-right > .block:last-child { margin-bottom: 0 !important; }
     html body#profiles_show .profile-content > .cc-2.block > .c-left { order: 2; margin-top: 14px !important; }
+    /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
+    html body#profiles_show .profile-content .c-left .lifetime {
+        line-height: normal !important;
+        padding-top: 0 !important;
+    }
     html body#profiles_show .profile-content .c-left .lifetime .title {
-        margin: 0 0 8px !important;
-        display: flex;
+        position: static !important;
+        display: flex !important;
+        flex-direction: row-reverse;
         justify-content: space-between;
         align-items: baseline;
         gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 12px !important;
+        padding: 0 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        transform: none !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label,
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        position: static !important;
+        float: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        line-height: 1.3 !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label {
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: left !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        flex: 0 0 auto;
+        text-align: right !important;
+        font-size: 12px !important;
+        white-space: nowrap;
     }
 
     /* друзья и клубы — две стеклянные карточки */
