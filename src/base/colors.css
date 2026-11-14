@@ -1,0 +1,46 @@
+/* ===== base/colors =====
+   цветовые классы bb-кодов и подсветки (.red, .green, …) */
+
+.yellow-fade-animated {
+    background: rgba(var(--glass), 0.1) !important;
+    outline: 10px solid rgba(var(--glass), 0.1) !important;
+    box-shadow: 0 0 50px rgba(var(--glass), 0.6);
+}
+
+.yellow-fade {
+    background: rgba(var(--glass), 0.4) !important;
+    outline: 10px solid rgba(var(--glass), 0.1) !important;
+    box-shadow: 0 0 50px rgba(var(--glass), 0.6);
+}
+
+.inline.orange {
+    color: #f3e3d8 !important;
+    background: #904e1f !important;
+    border-left: 5px solid #f1bc9a !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.blue {
+    color: #c6e3f5 !important;
+    background: #2942c1 !important;
+    border-left: 5px solid #97aeea !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.purple {
+    color: #d0d4f5 !important;
+    background: #5e29c1 !important;
+    border-left: 5px solid #b5b2f3 !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.green {
+    background: #06673a !important;
+    color: #acf9e0 !important;
+    border-left: 5px solid #9cd4c0 !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}

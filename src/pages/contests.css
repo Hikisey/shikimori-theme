@@ -1,0 +1,153 @@
+/* ===== pages/contests =====
+   турниры */
+
+.p-contests .results .cc-result .c-rounds .label {
+    color: rgba(var(--accent), 1);
+}
+
+.p-contests .results a {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-contests-index .contest a {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-contests-index .contest a:hover {
+    color: rgba(var(--link), 1);
+}
+
+.b-contest_match .vs .invitation,
+.b-contest_match .vs .vote-voted,
+.b-contest_match .vs .vote-abstained,
+.b-contest_match .vs .thanks,
+.b-contest_match .vs .hint,
+.b-contest_match .vs .action {
+    color: rgba(var(--text-2), var(--hundred)) !important;
+}
+
+.b-contest_match .vs .label {
+    color: rgba(var(--text), var(--hundred));
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-contest_match .vs .actions .action span:hover {
+        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
+    }
+    .b-contest_match .vs .actions .action span:hover,
+    .b-contest_match .vs .actions .action span:hover {
+        box-shadow: none !important;
+        background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
+        color: var(--tone-e4e4e4) !important;
+        text-decoration: none !important;
+    }
+}
+
+.p-contests .match-day .match-link {
+    position: relative;
+    border-radius: 10px;
+}
+
+.p-contests .match-day .match-link:active {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    background: var(--tone-dddddd) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-contests .match-day .match-link:hover {
+        color: rgba(var(--accent), var(--hundred)) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 20%, transparent);
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.p-contests .match-day .match-link.active {
+    color: rgba(var(--text-2), var(--hundred));
+    width: 100%;
+    background: rgba(230, 174, 87, 0.15);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+
+/* внимание */
+.b-contest_match .warning .red-warning {
+    color: #d46e68;
+}
+
+.p-contests .match-day .match-link .started:before {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.p-contests .match-day > .date .from,
+.p-contests .match-day > .date .to {
+    color: rgba(var(--text), var(--hundred)) !important;
+}
+
+.p-contests .match-day .match-link .created:before {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.p-contests .rating .member .position {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.b-contest_match .prev-match,
+.b-contest_match .next-match {
+    color: rgba(var(--text-2), var(--hundred));
+    transition: 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-contest_match .prev-match:hover,
+    .b-contest_match .next-match:hover {
+        color: rgba(var(--accent), var(--hundred)) !important;
+        transform: scale(1.1);
+    }
+}
+
+/* шкала левая синяя в турнире */
+.b-contest_match .votes-percents .left-part {
+    background-color: #00538c;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-contest_match .votes-percents .right-part {
+    background-color: #710c3a;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-contest_match .votes-percents .right-part:before {
+    border-right: 30px solid #710c3a;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-contest_match .votes-percents .left-part:hover .right-part {
+        background-color: #960047;
+    }
+}
+
+.b-contest_match .votes-percents .left-part:hover .right-part:before {
+    border-right: 30px solid #960047;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-contest_match .votes-percents .left-part:hover {
+        background-color: #0068bd;
+    }
+}
+
+.p-contests-index .contest .date {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.p-contests .match-day .match-link a {
+    color: rgba(var(--text-strong), var(--hundred)) !important;
+}
+
+.p-contests .match-day .matches-num,
+.p-contests .rating .member a {
+    color: rgba(var(--text), var(--hundred)) !important;
+}
+
+.l-top_menu-v2 .menu-icon.contest:after {
+    background: rgba(var(--accent), 1);
+}

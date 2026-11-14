@@ -1,0 +1,138 @@
+/* ===== components/carousels =====
+   ленты, стрелки, пагинация, кнопка «наверх» */
+
+.slide.animes .cc-2a .c-column.m0,
+.slide.mangas .cc-2a .c-column.m0,
+.slide.ranobe .cc-2a .c-column.m0 {
+    width: 48%;
+}
+
+.b-to-top .slide:before {
+    background: color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    height: 100%;
+    width: 40px !important;
+}
+
+.b-to-top.active .slide,
+.b-to-top .arrow {
+    width: 40px !important;
+}
+
+.b-shiki_swiper {
+    border-radius: 12px;
+}
+
+.pika-single {
+    background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    border: none!important;
+    border-radius: 11px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+}
+
+.is-today .pika-button {
+    background: color-mix(in srgb, var(--accent-hover) 80%, transparent);
+    color: rgba(var(--text-strong), 1)
+}
+
+.is-disabled .pika-button {
+    color: rgba(var(--text-strong), 1);
+    background: rgba(var(--text), 0.2);
+}
+
+.pika-button {
+    color: rgba(var(--text-strong), 1);
+    background: rgba(var(--text), 0.2);
+    transition: 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .pika-button:hover,
+    .pika-row.pick-whole-week:hover .pika-button {
+        color: rgba(var(--text-strong), 1);
+        background: rgba(var(--accent), 1);
+    }
+}
+
+.pika-next,
+.pika-prev {
+    background: none !important;
+}
+
+.pika-next:after,
+.pika-prev:after {
+    color: rgba(var(--accent), 1)!important;
+    z-index: 8;
+    text-rendering: auto;
+    font: normal normal normal 18px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pika-next:after {
+    content: '\f054';
+}
+
+.pika-prev:after {
+    content: '\f053';
+}
+
+.pika-label {
+    background: none;
+    color: rgba(var(--accent), 1);
+    border-radius: 4px;
+}
+
+.pika-table abbr {
+    border: none;
+    text-decoration: none;
+    color: rgba(var(--text), 1);
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 8px;
+    text-transform: uppercase;
+    background: color-mix(in srgb, var(--accent-hover) 20%, transparent);
+    padding: 4px 4px 2px;
+    display: inline-flex;
+    height: 15px;
+    align-items: center;
+}
+
+.b-to-top .slide,
+.b-to-top {
+    z-index: 1;
+}
+
+.b-to-top.active .arrow {
+    z-index: 1;
+    top: 70px;
+}
+
+.b-to-top .arrow:before {
+    color: rgba(var(--glass), 0.8);
+    text-shadow: 0px 0px 1px var(--glass-shadow);
+}
+
+@media screen and (max-width: 1290px) {
+    .b-to-top .slide:before {
+        background: color-mix(in srgb, var(--glass-deep) 40%, transparent);
+        height: 100%;
+        width: 40px !important;
+    }
+    .b-to-top.active .slide,
+    .b-to-top .arrow {
+        width: 40px !important;
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 767px) {
+    .slide.animes .cc-2a .c-column.m0 {
+        margin-bottom: 15px !important;
+    }
+}

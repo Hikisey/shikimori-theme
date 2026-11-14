@@ -1,0 +1,58 @@
+/* ===== components/stats =====
+   полоски-шкалы .bar */
+
+/* цвет кликабельных текстов на блоках как Авторы, Избранное и т.д. */
+/* Цвета шкал от темного до светлого - сверху вниз */
+.bar.simple .bar.s3 {
+    background: rgba(var(--small-rating), 1);
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.bar.simple .bar.s2 {
+    background: rgba(var(--average-rating), 1);
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.bar.simple .bar.s1 {
+    background: rgba(var(--high-rating), 1);
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.bar.simple .bar.s0 {
+    background: rgba(var(--very-high-rating), 1);
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.bar.simple .bar {
+    border-radius: 8px;
+}
+
+.bar.horizontal {
+    padding: 0 3px 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .bar.simple .bar.s3:hover,
+    .bar.simple .bar.s2:hover,
+    .bar.simple .bar.s1:hover,
+    .bar.simple .bar.s0:hover {
+        background: rgba(var(--accent), 1);
+    }
+}
+
+.bar.vertical .line .bar-container .value {
+    color: rgb(var(--text-strong));
+}
+
+.bar.vertical {
+    border-bottom: none !important;
+}
+
+/* Activity Graph Fix */
+.bar.vertical .line {
+    border-right: 1px solid transparent;
+}

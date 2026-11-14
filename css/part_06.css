@@ -1,24 +1,1100 @@
-/* ----------- */
-
-
-/*выключить повторные всплывающие постеры*/
-#profiles_show .tooltip-inner {
-    width: 450px;
+/* загрузить еще комментарии */
+.b-comments .comments-loader,
+.b-comments .comments-hider,
+.b-comments .comments-expander,
+.b-comments .faye-loader,
+.collapsed,
+.b-forum .faye-loader,
+.b-topic .faye-loader,
+.collapsed + .spoiler .hide-expanded {
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), 1);
+    border: none;
+    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
 }
 
-#profiles_show .b-catalog_entry-tooltip > a,
-#profiles_show .entry-tooltip_container > .image-link,
-#profiles_show .b-catalog_entry-tooltip .image,
-#profiles_show .b-catalog_entry-tooltip > a {
+@media (hover: hover) and (pointer: fine) {
+    /* когда наводишь на загрузку*/
+    .b-comments .comments-loader:hover,
+    .b-comments .comments-hider:hover,
+    .b-comments .comments-expander:hover,
+    .b-comments .faye-loader:hover,
+    .collapsed:hover,
+    .b-forum .faye-loader:hover,
+    .b-topic .faye-loader:hover,
+    .collapsed + .spoiler .hide-expanded:hover {
+        background: color-mix(in srgb, var(--glass-active) 80%, transparent) !important;
+        color: rgba(var(--text-strong), 1) !important;
+        border: none;
+        border-radius: 6px;
+    }
+}
+
+.b-spoiler .b-poll label {
+    border: none;
+}
+
+.b-forums .forum .link-with-input .link {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-topics header h1 a.reload {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-animes-menu .menu-topics-block a.entry .name:hover {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
+.b-animes-menu .menu-topics-block a.entry .name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-animes-menu .menu-topics-block a.entry .date {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-topic {
+    border: none !important;
+}
+
+.b-forums .forum .link-with-input .link:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.b-topic-minified > .inner .status-line .additional {
+    border: none !important;
+}
+
+.b-topic-minified > .inner .status-line .time.changed_at {
+    border: 1px;
+}
+
+.b-topic > .inner header .name-date .time {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-topics .l-menu .reviews .entry .misc {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.p-topics header h1 a.reload:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-topics .l-menu .reviews .entry {
+    border: none !important;
+}
+
+.p-topics .l-menu .reviews .entry .misc.date {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+.p-topics .l-menu .sticky-topics .topic .title:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-topic > .inner .status-line .collection-size,
+.b-topic-minified > .inner .status-line .additional .comments:before,
+.b-review_votes:before,
+.b-topic-minified > .inner .status-line .time.changed_at:before,
+.b-topic-preview > .inner .status-line .additional .comments {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-topic .footer-vote {
+    border: none;
+    background-color: rgba(var(--glass), 0.4);
+    padding: 5px 10px 5px 10px;
+    color: rgba(var(--text), 1);
+    border-radius: 10%;
+}
+
+.b-topic .footer-vote .vote-group .vote {
+    color: rgba(var(--text), 1);
+}
+
+.b-topic .footer-vote .vote-group .vote.yes.selected,
+.b-topic .footer-vote .vote-group .vote.yes:hover,
+.b-topic .footer-vote .vote-group .vote,
+.b-topic .footer-vote .vote-group .vote:hover,
+.b-topic .footer-vote .vote-group .vote.no.selected,
+.b-topic .footer-vote .vote-group .vote.no:hover {
+    border: none;
+}
+
+.b-comment > .inner .was_updated div,
+.b-topic > .inner .was_updated div,
+.was_updated div {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-comment > .inner .was_updated,
+.b-topic > .inner .was_updated,
+.was_updated {
+    margin-left: 58px;
+}
+
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
+    color: rgba(var(--text-strong), 1) !important;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
+/*Новый тех ред */
+.p-topics-index .b-shiki_editor-v2 footer .hide {
+    display: inline-block!important;
+}
+
+.p-topics header h1 a.reload {
+    border: none !important;
+}
+
+.b-topic > .inner header img {
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-topic > .inner header img:hover {
+        background: color-mix(in srgb, var(--glass-shadow) 30%, transparent);
+        box-shadow: 0 0 50px color-mix(in srgb, var(--glass-shadow) 30%, transparent) !important;
+        transform: scale(1.1);
+    }
+}
+
+.b-topic > .inner header .name-date {
+    overflow: hidden;
+    white-space: normal;
+    line-height: 1.6;
+    padding-right: 10px;
+}
+
+.b-reviews_navigation aside.markers {
+    top: 13px;
+}
+
+.b-collection-topic > .inner .see-more,
+.b-collection-topic > .inner .see-more .text .inner {
+    background: rgba(var(--glass), 0.4);
+    border: none;
+    transition: 0.3s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-collection-topic > .inner .see-more:hover,
+    .b-collection-topic > .inner .see-more:hover .circle {
+        border: none;
+        box-shadow: none;
+        transition: 1s ease-out;
+    }
+}
+
+.b-form input[type=submit],
+.b-shiki_editor.previewed footer .unpreview,
+.b-poll .poll-actions .vote,
+.b-poll .poll-actions .abstain {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .line {
+    padding: 0;
+    background: color-mix(in srgb, var(--glass-active) 80%, transparent);
+    height: 9px;
+
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .bar {
+    height: 12px;
+    line-height: 12px;
+    float: left;
+}
+
+.b-poll {
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+
+.b-poll .poll-variants .poll-variant label {
+    font-weight: bold;
+}
+
+.b-poll .poll {
+    margin-bottom: 5px;
+}
+
+.b-poll .poll-variants .poll-variant.result {
+    margin-bottom: 9px;
+}
+
+.b-poll .poll-variants .poll-variant.result .votes-total {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-topic > .editor-container {
+    margin-top: 25px;
+}
+
+.b-topic-minified > .inner .status-line time,
+.b-topic-minified > .inner .status-line .from {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.b-poll .bar.simple .bar.s1,
+.b-poll .bar.simple .bar.s2,
+.b-poll .bar.simple .bar.s3,
+.b-poll .bar.simple .bar.s0 {
+    background: rgba(var(--high-rating), var(--hundred));
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-details .name-url .to-review {
+    color: rgba(var(--accent), 1);
+}
+
+.p-topics-new .topic-video .form,
+.p-topics-edit .topic-video .form,
+.p-topics-create .topic-video .form,
+.p-topics-update .topic-video .form,
+.p-articles-new .topic-video .form,
+.p-articles-edit .topic-video .form,
+.p-articles-create .topic-video .form,
+.p-articles-update .topic-video .form {
+    border: none;
+    background: rgba(var(--glass), 0.4) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+}
+
+.abstain,
+.vote.hidden {
+    padding: 6px 26px !important;
+}
+
+.misc-links a[href*="/critiques"]:after {
+    content: '\f27a';
+    font-size: 15px;
+}
+
+.b-review_votes .votes-for,
+.b-review_votes .votes-against {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    padding-top: 1px;
+    border-radius: 50%;
+}
+
+.b-review_votes .votes-for {
+    color: #a7d4b4;
+    background: #33753a9e;
+}
+
+.b-review_votes .votes-against {
+    color: #f1d1b5;
+    background: #ab442d9e;
+}
+
+/* Feedback section */
+.b-critique_votes .votes-for {
+    color: #4abc56;
+}
+
+.b-critique_votes .votes-against {
+    color: #ff6d64;
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-details .name-url .name {
+    color: rgb(var(--text-strong)) !important;
+    font-size: 15.5px;
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .user-rate-label {
+    color: var(--glass-shadow);
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .neutral {
+    color: rgb(var(--text-strong));
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .positive {
+    color: #90c295;
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .negative {
+    color: #f1a0a3;
+}
+
+.b-review_opinion_marker input:not(:checked) + span {
+    color: var(--glass-shadow) !important;
+}
+
+.b-collection-topic > .inner .collection-row.is-spoilers .cover .image-cutter {
+    border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menu-topics-block .entry:hover {
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        color: rgba(var(--accent), 1);
+        padding: 0px 7px;
+        transition: 0.3s ease;
+    }
+}
+
+.menu-topics-block .entry {
+    padding: 0px 7px;
+}
+
+.b-collection-topic > .inner .see-more .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.b-collection-topic > .inner .see-more .text .inner {
+    font-size: 15px;
+}
+
+.b-collection-topic > .inner .see-more .text .inner .dots {
+    font-size: 39px;
+}
+
+.spns_special_x300,
+.spns_special_x1170,
+.spns_istari_x300,
+.spns_istari_x1170,
+.voted-for:before,
+.voted-for:after,
+.spns_yd_240x500 {
     display: none;
 }
 
-#profiles_show .b-catalog_entry-tooltip .inner.offset {
+.b-forums .forum .topics {
+    margin-top: 0;
+}
+
+.p-topics .l-menu .sticky-topics .topic:hover .title,
+.p-topics .l-menu .sticky-topics .topic .title:hover:after,
+.p-topics .l-menu .sticky-topics .topic:hover .title:after {
+    text-decoration: none;
+    color: rgba(var(--accent), 1) !important;
+    font-size: 14.5px;
+    border: none !important;
+}
+
+.p-topics .l-menu .sticky-topics .topic {
+    padding: 5px 8px !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-topics .l-menu .sticky-topics .topic:hover {
+        text-decoration: none;
+        color: rgba(var(--accent), 1) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border-radius: 10px;
+        font-size: 14.5px;
+        border: none !important;
+    }
+}
+
+.b-forums div.block {
+    padding: 0px 5px;
+}
+
+.b-review-topic.mini {
+    margin-bottom: 20px;
+}
+
+.b-topic.b-review-topic > .inner header .name {
+    margin-top: 7px;
+    display: inline-block;
+}
+
+/*Блок Отзывы > в разработке*/
+.b-reviews_navigation .navigation-container {
+    height: 28px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.6);
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.b-reviews_navigation .navigation-node {
+    align-items: center;
+}
+
+.b-reviews_navigation .navigation-node-all {
+    background: none;
+    border: none;
+    text-transform: capitalize !important;
+    color: inherit;
+}
+
+.b-reviews_navigation .navigation-node-positive,
+.b-reviews_navigation .navigation-node-neutral,
+.b-reviews_navigation .navigation-node-negative {
+    color: rgba(var(--accent), 1);
+    background: none;
+    border: none;
+    text-transform: capitalize !important;
+}
+
+.b-reviews_navigation .navigation-node.is-active {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.b-reviews_navigation .navigation-node-positive .label,
+.b-reviews_navigation .navigation-node-neutral .label,
+.b-reviews_navigation .navigation-node-negative .label {
+    padding-top: 0.12rem;
+}
+
+.b-reviews_navigation .navigation-node-positive .count,
+.b-reviews_navigation .navigation-node-neutral .count,
+.b-reviews_navigation .navigation-node-negative .count {
+    /*Положительные,Нейтральные,Отрицательные...Размер текста в скобках*/
+    padding-top: 0.2rem;
+    font-size: 13px;
+}
+
+.b-reviews_navigation .navigation-node {
+    /*Отзывы > Размер текста*/
+    font-size: 13px;
+}
+
+.b-reviews_navigation .navigation-node:not(.is-active):not(.is-empty) {
+    padding-top: 0 ;
+}
+
+.b-reviews_navigation .navigation-node-positive:not(.is-active):not(.is-empty):active,
+.b-reviews_navigation .navigation-node-neutral:not(.is-active):not(.is-empty):active,
+.b-reviews_navigation .navigation-node-negative:not(.is-active):not(.is-empty):active,
+.b-reviews_navigation .navigation-node-all:not(.is-active):not(.is-empty):active {
+    color: rgba(var(--accent), var(--hundred)) !important;
+    background: none;
+    border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-reviews_navigation .navigation-node-positive:not(.is-active):not(.is-empty):hover,
+    .b-reviews_navigation .navigation-node-neutral:not(.is-active):not(.is-empty):hover,
+    .b-reviews_navigation .navigation-node-negative:not(.is-active):not(.is-empty):hover,
+    .b-reviews_navigation .navigation-node-all:not(.is-active):not(.is-empty):hover {
+        color: rgba(var(--accent), var(--hundred)) !important;
+        background: none;
+        border: none;
+    }
+}
+
+.b-reviews_navigation a.navigation-node.is-active:hover .label span,
+.b-reviews_navigation a.navigation-node.is-active .label span {
+    /*Все Отзывы >чёрточка off*/
+    text-decoration: none;
+}
+
+.b-reviews_navigation .navigation-node-positive .label:before,
+.b-reviews_navigation .navigation-node-neutral .label:before,
+.b-reviews_navigation .navigation-node-negative .label:before {
+    /*Иконки > off*/
+    display: none;
+}
+
+.b-reviews_navigation .navigation-node .count:before,
+.b-reviews_navigation .navigation-node .count:after {
+    /*Скобки*/
+    display: none;
+}
+
+.b-footer_vote {
+    border-radius: 13px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.5);
+    border: none;
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-review > .inner .review-details .name-url .to-review {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-review > .inner .review-info .user-rate-label {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-review {
+    border-top: none;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .b-topic .item-mobile {
+        top: 3px;
+    }
+    .b-topic-preview > .b-comments,
+    .b-topic-preview > .inner > .body,
+    .b-topic-preview > .inner > footer {
+        padding-left: 10px !important;
+    }
+    .b-topic > .inner header .name-date {
+        overflow: hidden;
+        text-overflow: clip;
+        display: block;
+        line-height: 1.3;
+    }
+    .b-topic > .inner header img {
+        margin: 1px 12px 4px 0;
+        width: 38px;
+    }
+}
+
+/* ===== pages/dashboard =====
+   главная: новости, темы дня, «мой список» */
+
+.p-dashboards-show .v2 .db-update .tags {
+    height: 50px;
+}
+
+.p-dashboards-show .cc-news .c-news_topics .b-topic {
+    margin: 10px 0 !important;
+}
+
+.p-dashboards-show .c-content .options .option {
+    color: rgba(var(--accent), 1);
+    border: none !important;
+}
+
+.p-dashboards-show .c-content .options .option.selected {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.p-dashboards-show .c-content .options .option:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .c-content .options .option.active {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .cc-news .c-generated_news .b-topic {
+    border: 1px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards .user_list .list-type > .title .switch:hover,
+    .p-dashboards .user_list .history > .title .switch:hover,
+    .p-dashboards .user_list .list-type > .title .link:hover,
+    .p-dashboards .user_list .history > .title .link:hover {
+        color: rgba(var(--accent), 1);
+        box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
+    }
+}
+
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .link {
+    color: rgba(var(--text-2), 1);
+    text-decoration: none !important;
+    border-bottom: none;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+/*на Телефоне_контент вылизал фикс > Test*/
+.p-dashboards-show .v2 .db-updates {
+    overflow: hidden;
+}
+
+/*на Телефоне_контент вылизал фикс > Test*/
+.p-dashboards-show .v2 .db-updates .inner,
+.p-dashboards-show .v2 .db-updates .inner > .db-update {
+    margin-bottom: 0;
+}
+
+/* темы дня*/
+.b-hot_topics-v2 {
+    background-color: rgba(var(--glass), 0.6);
+    border-radius: 15px 15px 0 0;
+}
+
+.b-hot_topics-v2 .topic.subject {
+    color: rgba(var(--text), var(--hundred));
+    width: 70px;
+    font-size: 13px !important;
+    bottom: 3px;
+}
+
+.b-hot_topics-v2 .topic {
+    box-sizing: border-box;
+    float: none;
+    margin-right: 10px;
+    position: relative;
+    width: 122px;
+    display: inline-block;
+}
+
+.p-dashboard .l-menu .ongoing .title {
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
+.p-dashboard .l-menu .ongoing .title:hover {
+    color: rgba(var(--accent), var(--hundred));
+    border: none;
+}
+
+.p-dashboard .l-menu .ongoing .key {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.p-dashboard .l-menu .ongoing:hover .title {
+    text-decoration: none;
+}
+
+.p-dashboard .l-menu .ongoing {
+    padding: 3px 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboard .l-menu .ongoing:hover {
+        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        transform: scale(1.05);
+        text-decoration: none !important;
+        border: none !important;
+        border-radius: 10px;
+        padding-left: 4px;
+        padding-right: 5px;
+    }
+}
+
+.p-dashboard .l-menu .ongoing {
+    transition: 0.3s ease-out;
+}
+
+.p-dashboard .l-menu .season {
+    border: none;
+}
+
+.p-dashboard .l-menu .season .title:hover,
+.p-dashboard .l-menu .season:hover .title {
+    color: rgba(var(--accent), var(--hundred));
+    text-decoration: none;
+}
+
+.p-dashboard .l-menu .season .title {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.p-profiles .profile-head .c-info .c-additionals::-webkit-scrollbar,
+.b-hot_topics::-webkit-scrollbar,
+.b-topic-minified > .inner .status-line::-webkit-scrollbar,
+.buttons > div::-webkit-scrollbar,
+.b-code::-webkit-scrollbar,
+.b-shiki_editor .hidden-block::-webkit-scrollbar {
+    height: 8px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboard .l-content .b-catalog_entry:hover {
+        box-shadow: none;
+        background: none !important;
+        transform: scale(1);
+    }
+}
+
+.p-dashboard .l-content .b-catalog_entry,
+.p-dashboard .l-content .b-catalog_entry,
+.p-dashboard .l-menu .ongoing {
+    border-top: none;
+}
+
+.p-dashboards-show .generated-news-line .b-tag {
+    padding: 1px 7px !important;
+    margin: 2px !important;
+    color: rgba(var(--text), var(--hundred)) !important;
+    background: rgba(var(--glass), 0.6) !important;
+    transition: 0.3s ease !important;
+    border: none !important;
+    border-radius: 10px;
+    font-size: 10px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+}
+
+.p-dashboards-show .generated-news-line .info .status-time .kind {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.p-dashboards-show .generated-news-line .info .name:hover,
+.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.p-dashboards-show .generated-news-line .poster img {
+    width: 44px;
+    border-radius: 8px;
+}
+
+.b-topic.b-news_wall-topic.b-news-topic > .inner > a:hover .name-date .name {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-topic.b-news_wall-topic.b-news-topic > .inner > a,
+.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name,
+.p-dashboards-show .generated-news-line .info .name,
+.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
+    transition: 0.3s ease;
+}
+
+.b-news_wall-topic .title {
+    color: rgba(var(--text-strong), var(--hundred));
+    transition: 0.3s ease;
+}
+
+.p-dashboards-show .v2 .my-list {
+    background: rgba(var(--glass), 0.6);
+    border: 0;
+    padding: 4px 13px 11px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    border-radius: 11px;
+}
+
+.p-dashboards-show .v2 .my-list .label {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.p-dashboards-show .v2 .fc-user-sections .tag-link {
+    line-height: 24px;
+    margin: 8px 0 0 10px;
+    padding: 0 12px;
+    border: 0 !important;
+    border-radius: 12px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards-show .v2 .fc-user-sections .tag-link:hover {
+        background-color: var(--accent-hover) !important;
+        color: rgb(var(--text-strong)) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border: none !important;
+    }
+}
+
+.p-dashboards-show .v2 .fc-user-sections .tag-link.manga-tag {
+    color: #d7b2e0;
+    background: linear-gradient(45deg, rgb(95 33 81 / 80%) 0%, #824c76a8 50%, rgb(95 33 81 / 80%));
+}
+
+.p-dashboards-show .v2 .fc-user-sections .tag-link.anime-tag {
+    color: #a7d8b5;
+    background: linear-gradient(45deg, #2c6b41bd 0%, #427153a8 50%, #1e653dc9);
+}
+
+.p-dashboards-show .v2 .fc-user-sections .tag-link.ranobe-tag {
+    color: #97c9e0;
+    background: linear-gradient(45deg, rgb(32 63 93 / 80%) 0%, #3d6175bd 50%, rgb(32 64 93 / 80%));
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links {
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a {
+    font-size: 0;
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a:before {
+    content: '\f2b6';
+    font-family: 'FontAwesome', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0;
+    background: rgba(var(--glass), 0.7);
+    width: 28px;
+    font-size: 12px;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 1px 3px 3px rgba(var(--shade), 0.1);
+    color: rgba(var(--text-strong), 0.7);
+    transition: 0.2s all;
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a:hover:before {
+    color: rgba(var(--link), 1);
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a[href*="/anime"]:before {
+    content: '\f008';
+    background: rgba(159, 255, 189, 0.1);
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a[href*="/manga"]:before {
+    content: '\f02d';
+    background: rgba(255, 142, 191, 0.1);
+}
+
+.p-dashboards-show .v2 .my-list .label .misc-links a[href*="/history"]:before {
+    content: '\f187';
+    background: rgb(132 193 220 / 10%);
+}
+
+.b-hot_topics .topic a .poster {
+    margin-left: -23px;
+    margin-top: -4px;
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+}
+
+.p-dashboards-show .midheadline .b-link {
+    line-height: normal;
+    vertical-align: bottom;
+}
+
+.p-dashboards .animes .others,
+.p-dashboards .mangas .others {
+    margin-top: 10px;
+}
+
+.p-dashboards-show .c-my_list {
+    padding: 5px 10px 0;
+    border: none !important;
+    background: rgba(var(--glass), 0.4);
+}
+
+.p-dashboards-show .cc-news .c-news_topics .b-topic {
+    border-top-width: 1px;
+    padding-top: 10px;
+}
+
+.p-dashboards-show .cc-news .c-news_topics .b-topic {
+    margin-bottom: 30px;
+}
+
+.p-dashboards-show .cc-news .c-generated_news .b-topic {
+    margin-bottom: 5px;
+}
+
+.c-generated_news div.block {
+    margin-bottom: 15px;
+}
+
+/* Content */
+.l-page > div:not(.b-hot_topics-v2) {
+    min-height: 200px;
+}
+
+.b-hot_topics-v2 {
+    border-bottom: unset;
+}
+
+.b-hot_topics-v2 .subject {
+    color: unset;
+}
+
+.b-hot_topics-v2 .b-link:nth-child(9n) {
+    display: none;
+}
+
+@media only screen and (min-width: 1025px) {
+    .p-dashboards-show .v2 .fc-user-sections .tags {
+        margin: 0
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .b-hot_topics {
+        margin-top: 0 ;
+    }
+    .p-dashboards-show .cc-news .c-news_topics .b-topic .name-date a {
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .p-dashboards-show .cc-news .c-news_topics {
+        width: 100% !important;
+    }
+    .p-profiles .profile-head .c-info .c-additionals::-webkit-scrollbar,
+    .b-hot_topics::-webkit-scrollbar,
+    .b-topic-minified > .inner .status-line::-webkit-scrollbar,
+    .buttons > div::-webkit-scrollbar,
+    .b-code::-webkit-scrollbar,
+    .b-shiki_editor .hidden-block::-webkit-scrollbar {
+        height: 3px;
+    }
+    .b-hot_topics .topic:nth-child(5),
+    .b-hot_topics .topic:nth-child(6),
+    .b-hot_topics .topic:nth-child(7),
+    .b-hot_topics .topic:nth-child(8),
+    .b-hot_topics .topic:nth-child(9) {
+        display: block;
+    }
+    .b-hot_topics .topic {
+        width: calc(100% - 89px);
+        padding: 10px;
+    }
+    .b-hot_topics {
+        white-space: normal;
+        overflow-x: auto;
+        height: 55px;
+    }
+    .b-hot_topics .topic.subject:after {
+        content: "\f07d";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 22px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        padding: 0  5px 8px 10px;
+        top: 12px;
+    }
+    .b-hot_topics .topic.subject:before {
+        content: "\f0a6";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 22px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        padding: 0  5px 10px 117px;
+        top: 12px;
+    }
+    .c-news_topics.m0 {
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .p-dashboards-show .v2 .db-updates .inner .db-update {
+        max-height: 130px;
+    }
+    .p-dashboards-show .cc-ongoings .c-column:nth-child(3),
+    .p-dashboards-show .cc-ongoings .c-column:nth-child(2),
+    .p-dashboards-show .cc-ongoings .c-column:nth-child(1) {
+        display: inline-block !important;
+        clear: none;
+    }
+}
+
+/* ===== kits/custom-posters =====
+   свои постеры персонажей и точечные правки отдельных профилей */
+
+/*2104*/
+.name-date a.name[title="morr"]::after,
+.name-date a.name[href*="/morr"]::after,
+.subheadline a[title="morr"]::after,
+.name-date a.name[title="EngiNier"]::after,
+.name-date a.name[href*="/EngiNier"]::after,
+.subheadline a[title="EngiNier"]::after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:after {
+    position: absolute;
+    font-size: 11px;
+    width: 50px;
+    line-height: 23px;
+    margin-top: 0;
+    text-align: center;
     margin-left: 0;
+    color: rgba(var(--text-strong), 1);
+    background: rgba(var(--time-empty), 1) !important;
+    border-radius: 9px;
+    box-shadow: 0 0 5px color-mix(in srgb, var(--glass-shadow) 20%, transparent);
+    z-index: 2;
+    opacity:0;
+    transition: 0.2s;
+}
+
+.name-date a.name[title="morr"]:hover:after,
+.name-date a.name[href*="/morr"]:hover:after,
+.subheadline a[title="morr"]:hover:after,
+.name-date a.name[title="EngiNier"]:hover:after,
+.name-date a.name[href*="/EngiNier"]:hover:after,
+.subheadline a[title="EngiNier"]:hover:after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
+        width: 120px;
+        margin-left: 10px;
+    opacity: 1;
+}
+
+.name-date a.name[title="morr"]:hover:after,
+.name-date a.name[href*="/morr"]:hover:after,
+.subheadline a[title="morr"]:hover:after {
+    content: "Big Boss";
+}
+
+img[alt='morr'] {
+    border: 2px solid #ffad007a !important;
+}
+
+.b-topic > .inner header img[alt="morr"] {
+    border: 2px solid rgba(183, 139, 82, 0.9)!important;
+
+}
+
+/* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
+/* Рори Меркьюри */
+[href*="characters/99661-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/0e/22/2e/0e222e48f108015c047824155679b0ec.jpg");
+}
+
+/* Фумия Томодзаки */
+[href*="characters/165743-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/7e/31/44/7e314431b46844f22b1584314f671642.jpg");
+}
+
+/* ===== kits/about-kits =====
+   наборы для «О себе»: Animes_Mangas, Ssylki, Razmer, k-0-1 и т. п. (не удалять) */
+
+@media screen and (min-width: 50px) {
+    .about .b-catalog_entry .cover {
+        margin: 5px 5px 1rem;
+        padding: 5px;
+        border-radius: 0.7rem;
+        pointer-events: all;
+        background: linear-gradient(transparent 0 , rgba(var(--glass), 0.25)) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1882);
+        -webkit-transition: box-shadow 0.25s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .about .b-catalog_entry .cover:hover {
+            border-radius: 0.6rem;
+            background: linear-gradient(transparent 0 , rgba(var(--glass), 0.35)) !important;
+        }
+    }
 }
 
 /*--------*/
-
 .Ssylki-anime span,
 .Ssylki-anime-v-1 span,
 .Ssylki-anime-v-1-standard span,
@@ -33,61 +1109,12 @@
     font-size: 0;
 }
 
-/*--------*/
-/*1*/
-.about .Blok-0 {
-    display: block;
-    text-align: center;
-}
-
 .about .Animes_Mangas {
     padding: 0.5rem 0 0.2rem 0;
 }
 
-.about .Animes_Mangas .b-catalog_entry,
-.about .Animes_Mangas .b-catalog_entry:last-child {
-    display: inline-block;
-    margin: 0 0 4rem !important;
-    clear: none !important;
-    float: none !important;
-    padding: 0;
-    z-index: 10;
-    background: none !important;
-    box-shadow: none !important;
-    border-radius: 0.25rem;
-    vertical-align: top;
-    pointer-events: all;
-}
-
 .about .Razmer-v2-row-0 > .Animes_Mangas .b-catalog_entry .cover .image-decor .image-cutter {
     padding: 0 0 57.5%;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .title {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: calc(100% + 3rem);
-    text-align: center;
-    padding: 57.5% 0.65rem 0;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
-    font-size: 15px;
-    z-index: -1;
-    opacity: 1;
-    pointer-events: none;
-    background: var(--tone-171616);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    white-space: normal;
-    top: 0;
-    line-height: 1.5;
-    color: #cce0d1;
-    font-weight: bold;
-    border: solid 2px var(--tone-373737);
-    border-radius: 0.25rem;
 }
 
 .about .Animes_Mangas .title.left_aligned span {
@@ -116,20 +1143,6 @@
     display: none;
 }
 
-.about .Animes_Mangas .b-catalog_entry .cover .misc {
-    display: block;
-    line-height: 1;
-    position: absolute;
-    top: 0.7rem;
-    left: -3rem;
-    z-index: 10;
-    font-size: 15px !important;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    pointer-events: none;
-    transition: left .4s ease, opacity .4s ease;
-    opacity: 0;
-}
-
 .about .Animes_Mangas .b-catalog_entry:hover > .cover .misc {
     left: 1rem;
     opacity: 1;
@@ -137,17 +1150,6 @@
 
 .about .Animes_Mangas .b-catalog_entry .cover .misc span {
     padding: 0.25rem;
-}
-
-.about .Animes_Mangas .b-catalog_entry {
-    transition: none;
-    box-shadow: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas .b-catalog_entry:hover {
-    transform: none;
-}
 }
 
 .about .Animes_Mangas .b-catalog_entry .image-decor:before {
@@ -180,9 +1182,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas .b-catalog_entry:hover > a .image-cutter::after {
-    box-shadow: none;
-}
+    .about .Animes_Mangas .b-catalog_entry:hover > a .image-cutter::after {
+        box-shadow: none;
+    }
 }
 
 .about .Animes_Mangas .b-catalog_entry a .image-cutter::before {
@@ -208,43 +1210,12 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas .b-catalog_entry .cover .image-decor:hover .image-cutter {
-    background: none;
-}
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas .b-catalog_entry .cover:hover {
-    box-shadow: none !important;
-    background: none !important;
-}
-}
-
-@keyframes glowing {
-    0%  {
-        background-position: 0 0;
+    .about .Animes_Mangas .b-catalog_entry .cover .image-decor:hover .image-cutter {
+        background: none;
     }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
-
-@media screen and (max-width: 250px) {
-    .about .Animes_Mangas .b-catalog_entry .cover .misc {
-        display: none;
+    .about .Animes_Mangas .b-catalog_entry .cover:hover {
+        box-shadow: none !important;
+        background: none !important;
     }
 }
 
@@ -276,63 +1247,12 @@
     }
 }
 
-/*-------------------------------*/
-
-
-/*Стандарт*/
-.about .Blok-1 {
-    display: block;
-    text-align: center;
-}
-
 .about .Animes_Mangas-1 {
     padding: 0.5rem 0 0.3rem 0;
 }
 
-.about .Animes_Mangas-1 .b-catalog_entry,
-.about .Animes_Mangas-1 .b-catalog_entry:last-child {
-    display: inline-block;
-    margin: 0 0 4rem !important;
-    clear: none !important;
-    float: none !important;
-    padding: 0;
-    z-index: 10;
-    background: none !important;
-    box-shadow: none !important;
-    border-radius: 0.25rem;
-    vertical-align: top;
-    pointer-events: all;
-}
-
 .about .Razmer-v2-row-1 > .Animes_Mangas-1 .b-catalog_entry .cover .image-decor .image-cutter {
     padding: 0 0 130%;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: calc(100% + 3rem);
-    text-align: center;
-    padding: 130% 0.65rem 0;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
-    font-size: 15px;
-    z-index: -1;
-    opacity: 1;
-    pointer-events: none;
-    background: var(--tone-171616);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    white-space: normal;
-    top: 0;
-    line-height: 1.5;
-    color: #cce0d1;
-    font-weight: bold;
-    border: solid 2px var(--tone-373737);
-    border-radius: 0.25rem;
 }
 
 .about .Animes_Mangas-1 .title.left_aligned span {
@@ -361,20 +1281,6 @@
     display: none;
 }
 
-.about .Animes_Mangas-1 .b-catalog_entry .cover .misc {
-    display: block;
-    line-height: 1;
-    position: absolute;
-    top: 0.7rem;
-    left: -3rem;
-    z-index: 10;
-    font-size: 15px !important;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    pointer-events: none;
-    transition: left .4s ease, opacity .4s ease;
-    opacity: 0;
-}
-
 .about .Animes_Mangas-1 .b-catalog_entry:hover > .cover .misc {
     left: 1rem;
     opacity: 1;
@@ -382,17 +1288,6 @@
 
 .about .Animes_Mangas-1 .b-catalog_entry .cover .misc span {
     padding: 0.25rem;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry {
-    transition: none;
-    box-shadow: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas-1 .b-catalog_entry:hover {
-    transform: none;
-}
 }
 
 .about .Animes_Mangas-1 .b-catalog_entry .image-decor:before {
@@ -424,9 +1319,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
-    box-shadow: none;
-}
+    .about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
+        box-shadow: none;
+    }
 }
 
 .about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
@@ -452,32 +1347,12 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
-    background: none;
-}
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
-    box-shadow: none !important;
-    background: none !important;
-}
-}
-
-
-@media screen and (max-width: 250px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry .cover .misc {
-        display: none;
+    .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
+        background: none;
+    }
+    .about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
+        box-shadow: none !important;
+        background: none !important;
     }
 }
 
@@ -531,10 +1406,7 @@
     }
 }
 
-
 /*-------------------------------*/
-
-
 .Ssylki-anime-v-1-standard-blok-1 {
     position: relative;
     margin: 0;
@@ -568,11 +1440,6 @@
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
 }
-
-div.Ssylki-anime-v-1-standard:hover .b-link {
-    opacity: 0;
-}
-
 
 .Ssylki-anime-v-1-standard strong {
     width: 100%;
@@ -801,8 +1668,6 @@ div.Ssylki-anime-v-1-standard:hover .progress-standard {
 }
 
 /*-------------------------------*/
-
-
 .Ssylki-anime-v-1-blok-1 {
     position: relative;
     margin: 0;
@@ -836,11 +1701,6 @@ div.Ssylki-anime-v-1-standard:hover .progress-standard {
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
 }
-
-div.Ssylki-anime-v-1:hover .b-link {
-    opacity: 0;
-}
-
 
 .Ssylki-anime-v-1 strong {
     width: 100%;
@@ -1058,14 +1918,6 @@ div.Ssylki-anime-v-1:hover .progress {
     }
 }
 
-/*-------------------------------*/
-
-
-.magnet {
-    margin-top: 1.5rem;
-    margin-bottom: 2.5%;
-}
-
 .Ssylki-Characters,
 .Ssylki-Characters strong,
 .Ssylki-Characters .b-link,
@@ -1100,10 +1952,10 @@ div.Ssylki-anime-v-1:hover .progress {
 }
 
 @media (hover: hover) and (pointer: fine) {
-div.Ssylki-Characters:hover {
-    transform: rotate(-360deg);
-    background-image: url("/\x/dere.shikimori.one/system/images/original/111569.gif?1610135594");
-}
+    div.Ssylki-Characters:hover {
+        transform: rotate(-360deg);
+        background-image: url("/\x/dere.shikimori.one/system/images/original/111569.gif?1610135594");
+    }
 }
 
 .Ssylki-Characters .b-link {
@@ -1116,10 +1968,6 @@ div.Ssylki-Characters:hover {
     min-height: 2.5rem;
     line-height: 1.45;
     z-index: 15;
-}
-
-div.Ssylki-Characters:hover .b-link {
-    opacity: 1;
 }
 
 .Ssylki-Characters strong {
@@ -1194,23 +2042,6 @@ div.Ssylki-Characters:hover .Text-1:after {
     transition: filter 0.3s ease;
 }
 
-@media screen and (max-width: 1023px) {
-    .Ssylki-Characters .Text-1 {
-        visibility: hidden;
-    }
-
-    .Ssylki-Characters .Text-1:after {
-        visibility: visible;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .magnet {
-        display: none;
-    }
-}
-
-
 .Ssylki-0 {
     position: relative;
     margin: 5px 5px 5px 2px;
@@ -1228,9 +2059,9 @@ div.Ssylki-Characters:hover .Text-1:after {
 }
 
 @media (hover: hover) and (pointer: fine) {
-div.Ssylki-anime:hover {
-    transform: translateY(-5px);
-}
+    div.Ssylki-anime:hover {
+        transform: translateY(-5px);
+    }
 }
 
 .Ssylki-anime .b-link {
@@ -1247,31 +2078,9 @@ div.Ssylki-anime:hover {
     transition: opacity 0.25s ease-in-out;
 }
 
-div.Ssylki-anime:hover .b-link {
-    opacity: 1;
-}
-
-.Ssylki-anime strong::before {
-    content: "";
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(2.8px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.25s ease-in-out;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    border-radius: 0.5rem;
-}
-
 div.Ssylki-anime:hover strong::before {
     opacity: 1;
 }
-
 
 .Ssylki-anime strong {
     width: 100%;
@@ -1321,10 +2130,10 @@ div.Ssylki-anime:hover .Evaluation {
 }
 
 @media (hover: hover) and (pointer: fine) {
-div.Ssylki-anime:hover > strong > a::before {
-    filter: contrast(105%) grayscale(70%);
-    box-shadow: none;
-}
+    div.Ssylki-anime:hover > strong > a::before {
+        filter: contrast(105%) grayscale(70%);
+        box-shadow: none;
+    }
 }
 
 .Ssylki-anime > strong > a::before {
@@ -1374,12 +2183,6 @@ div.Ssylki-anime:hover .Text-2 {
     opacity: 0;
 }
 
-@media screen and (max-width: 248px) {
-    div.Ssylki-anime .Text-2 {
-        opacity: 0;
-    }
-}
-
 @media screen and (min-width: 50px) {
     .Ssylki-anime {
         width: calc(100% / 1);
@@ -1404,35 +2207,9 @@ div.Ssylki-anime:hover .Text-2 {
     }
 }
 
-
 /*------*/
 .k-0-1 .b-catalog_entry .cover {
     margin: 0;
-    padding: 0;
-}
-
-* .about .k-0-1 .c-column,
-* .about .k-0-1 .c-column:last-child,
-* .about .k-0-1 .b-catalog_entry,
-* .about .k-0-1 .b-catalog_entry:last-child,
-* .p-profiles-edit .k-0-1 .c-column,
-* .p-profiles-edit .k-0-1 .c-column:last-child,
-* .p-profiles-edit .k-0-1 .b-catalog_entry,
-* .p-profiles-edit .k-0-1 .b-catalog_entry:last-child,
-* .k-0-1 .cc-4>.c-column,
-* .k-0-1 .cc-6-g0>.c-column,
-* .k-0-1 .cc-6-g0>.c-column:last-child,
-* .b-comments .k-0-1 .c-column,
-* .b-comments .k-0-1 .c-column:last-child,
-* .b-comments .k-0-1 .b-catalog_entry,
-* .b-comments .k-0-1 .b-catalog_entry:last-child,
-* .b-comments .k-0-1 .cc-4>.c-column,
-* .b-comments .k-0-1 .cc-6-g0>.c-column,
-* .b-comments .k-0-1 .cc-6-g0>.c-column:last-child {
-    width: 100% !important;
-    max-width: none !important;
-    max-height: none !important;
-    margin: 0 !important;
     padding: 0;
 }
 
@@ -1555,33 +2332,19 @@ div.Ssylki-anime:hover .Text-2 {
     display: none !important;
 }
 
-.k-0-1 .b-catalog_entry,
-.k-0-1 .b-catalog_entry .cover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-@media (hover: hover) and (pointer: fine) {
-.k-0-1 .b-catalog_entry .cover:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-}
-
 .k-0-1 .Anime-v-0-1 {
     transition: 0s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
     transform: scale(1);
 }
 
 @media (hover: hover) and (pointer: fine) {
-.k-0-1 .Anime-v-0-1:hover {
-    transform: scale(1.025);
-}
+    .k-0-1 .Anime-v-0-1:hover {
+        transform: scale(1.025);
+    }
 }
 
-/*------*/
 @media screen and (min-width: 50px) {
+    /*------*/
     .Anime-v-0-1 {
         width: calc(100% / 1 - 1 * 1%);
     }
@@ -1623,878 +2386,716 @@ div.Ssylki-anime:hover .Text-2 {
     }
 }
 
-/*------*/
+/* ----- телефон и узкие экраны ----- */
 
-/* ===================== Исправления и доработки ===================== */
+@media screen and (max-width: 250px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+        display: none;
+    }
+}
 
-/* --- Карточки аниме: обложка и подложка двигаются вместе --- */
-.b-catalog_entry .cover {
-    transform: none !important;
-    box-shadow: none !important;
+@media screen and (max-width: 1023px) {
+    .Ssylki-Characters .Text-1 {
+        visibility: hidden;
+    }
+    .Ssylki-Characters .Text-1:after {
+        visibility: visible;
+    }
 }
-@media (hover: hover) and (pointer: fine) {
-.b-catalog_entry:hover .cover {
-    transform: none !important;
-    box-shadow: none !important;
+
+@media screen and (max-width: 248px) {
+    div.Ssylki-anime .Text-2 {
+        opacity: 0;
+    }
 }
+
+/* ===== layout/footer =====
+   подвал и подпись «hikisey theme vX.Y.Z» */
+
+/*2104*/
+/* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
+:root {
+    --theme-name: "hikisey theme";
+    --theme-version: "1.2.23";
 }
-.b-catalog_entry {
-    border-radius: 14px;
-    transform: translateY(0) scale(1);
-    transition:
-        transform .35s cubic-bezier(.22, 1, .36, 1),
-        box-shadow .35s cubic-bezier(.22, 1, .36, 1),
-        background-color .35s ease !important;
+
+.l-footer:before {
+    content: var(--theme-name) " v" var(--theme-version);
+    white-space: pre;
 }
-@media (hover: hover) and (pointer: fine) {
-.b-catalog_entry:hover {
-    transform: translateY(-6px) scale(1.03);
-    margin-top: 0;
-    box-shadow:
-        0 16px 32px rgba(var(--shade), 0.5),
-        0 0 0 1px rgba(var(--accent), .35);
-    z-index: 2;
+
+.l-footer {
+    position: relative;
+    margin: 0 0;
+    bottom: 0;
+    padding: 0;
+    background: none;
 }
-}
-/* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
-   наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
-   Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
-@media (hover: hover) and (pointer: fine) {
-.b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
-    content: "";
+
+.l-footer .copyright {
+    font: bold 10px 'Comfortaa';
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    height: 10px;
-    background: transparent;
-}
-}
-/* Лёгкий зум картинки внутри обложки (не выходит за края) */
-.b-catalog_entry .cover {
-    overflow: hidden;
-}
-.b-catalog_entry .cover img,
-.b-catalog_entry .cover .image {
-    transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-.b-catalog_entry:hover .cover img,
-.b-catalog_entry:hover .cover .image {
-    transform: scale(1.06);
-}
-}
-/* Название подсвечивается акцентом */
-.b-catalog_entry .title,
-.b-catalog_entry .name {
-    transition: color .25s ease;
-}
-.b-catalog_entry:hover .title,
-.b-catalog_entry:hover .name {
-    color: rgb(var(--accent)) !important;
+    right: 5px;
+    z-index: 10;
 }
 
-/* --- Верхняя панель: подсветка только того пункта, что под курсором --- */
-.l-top_menu-v2 .menu-icon,
-.l-top_menu-v2 .menu-dropdown > button,
-.l-top_menu-v2 .menu-dropdown > span {
-    border-radius: 8px;
-    transition: background-color .25s ease, color .25s ease !important;
-}
-.l-top_menu-v2 .menu-icon:hover,
-.l-top_menu-v2 .menu-dropdown > button:hover,
-.l-top_menu-v2 .menu-dropdown > span:hover {
-    background-color: rgba(var(--glass-light), .06) !important;
-}
-/* Кнопка раздела/профиля с открытым меню — в тон меню */
-.l-top_menu-v2 .menu-dropdown.active > button,
-.l-top_menu-v2 .menu-dropdown.active > span,
-.l-top_menu-v2 .menu-dropdown:hover > button,
-.l-top_menu-v2 .menu-dropdown:hover > span {
-    background: var(--glass-bar-hover) !important;
-}
-/* Пункты внутри выпадающих меню — мягкая подсветка под курсором */
-.l-top_menu-v2 .submenu > a,
-.l-top_menu-v2 .submenu .submenu-title {
-    background: transparent !important;
-    border-radius: 8px;
-    transition: background-color .2s ease, color .2s ease !important;
-}
-.l-top_menu-v2 .submenu > a:hover {
-    background: rgba(var(--glass-light), .06) !important;
-    color: rgb(var(--text)) !important;
+.l-footer .links {
+    clear: both;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    text-align: center;
+    font: bold 10px 'Comfortaa';
+    z-index: 10;
+
 }
 
-/* --- Читаемость страницы настроек --- */
-/* Подсказки под полями */
-.b-input .hint,
-.hint,
-.b-input .hint *,
-.edit_user .hint,
-.edit_user_preferences .hint {
-    color: rgb(var(--text-2)) !important;
-    opacity: 1 !important;
-}
-/* Подписи полей */
-.b-input label,
-.b-input > label,
-.edit_user label,
-.edit_user_preferences label {
-    color: rgb(var(--text)) !important;
-}
-/* Поля ввода были почти невидимы — тёмный фон, рамка, подсветка при фокусе */
-.b-input input[type="text"],
-.b-input input[type="email"],
-.b-input input[type="url"],
-.b-input input[type="password"],
-.b-input textarea,
-.edit_user input[type="text"],
-.edit_user input[type="url"],
-.edit_user textarea {
-    background: color-mix(in srgb, var(--glass-deep) 85%, transparent) !important;
-    color: rgb(var(--text)) !important;
-    border: 1px solid rgba(var(--glass-light), .10) !important;
-    border-radius: 8px !important;
-    transition: border-color .2s ease, box-shadow .2s ease !important;
-}
-.b-input input:focus,
-.b-input textarea:focus,
-.edit_user input:focus,
-.edit_user textarea:focus {
-    border-color: rgba(var(--accent), .6) !important;
-    box-shadow: 0 0 0 3px rgba(var(--accent), .15) !important;
-    outline: none !important;
-}
-/* --- Мелкие фиксы --- */
-/* Выровнял пункт «Правила» во всплывающем справа меню */
-.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
-    display: none;
-}
-.l-top_menu-v2 .submenu>a.icon-site_rules:after {
-    content: 'Правила';
-}
-/* Ховер в списках аниме/манги растягивается на 2+ строки для длинных названий */
-tr.user_rate.selectable.editable:after {
-    height: calc(100% - 0px);
-}
-/* Список манги на телефоне — без лишних столбцов */
-@media screen and (max-width: 480px) {
-    .p-user_rates-index .list-lines tr .num.hoverable:nth-child(4), .p-user_rates-index .list-lines tr .num.hoverable:nth-child(5), th.num.order-control[data-order="chapters"], th.num.order-control[data-order="volumes"] {
-        display: none !important;
-    }
-    th.num.order-control[data-order="kind"] {
-        display: table-cell !important;
-    }
-}
-/* Скролл в истории для длинных названий */
-.p-profiles .profile-head .c-history .entry:hover .title {
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: color-mix(in srgb, var(--tone-bfc5d0) 25%, transparent) rgba(var(--shade), 0);
-}
-.p-profiles .profile-head .c-history .entry .title {
-    text-overflow: clip;
-}
-/* Вторая строка истории на малых разрешениях */
-.p-profiles .profile-head .c-history .entry .misc {
-    text-overflow: ellipsis !important;
-}
-/* Убран артефакт после названий студий в списке аниме */
-.p-user_rates-index .stat-categories .category:after {
-    display: none;
+.l-footer:before {
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    z-index: 10;
+    color: rgba(var(--text-2), 0.6);
+    font: bold 10px 'Comfortaa';
 }
 
-/* ===================== Оформление ===================== */
-
-/* --- Обои с плавным зумом --- */
-/* Обои сразу приближены (без анимации при загрузке страницы),
-   плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
-html { background: rgb(var(--bg-color)); }
-body { background: none !important; }
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: var(--bg-image) center / cover no-repeat;
-    transform: scale(var(--bg-zoom));
-    filter: blur(var(--bg-blur));
-    /* одинаковая анимация на приближение и отдаление */
-    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
-    pointer-events: none;
-    will-change: transform;
-    backface-visibility: hidden;
-}
-html:not(:hover) body::before {
-    transform: scale(1);
+.l-footer:after {
+    position: absolute;
+    left: 96px;
+    bottom: 0;
+    color: rgba(var(--text-2), 0.6);
+    font: bold 10px 'Comfortaa';
 }
 
-/* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
-/* Рори Меркьюри */
-[href*="characters/99661-"] {
-    --show-default: 0;
-    --custom-image: url("https://i.pinimg.com/736x/0e/22/2e/0e222e48f108015c047824155679b0ec.jpg");
-}
-/* Фумия Томодзаки */
-[href*="characters/165743-"] {
-    --show-default: 0;
-    --custom-image: url("https://i.pinimg.com/736x/7e/31/44/7e314431b46844f22b1584314f671642.jpg");
-}
-
-/* --- Баннер над профилем --- */
-@media (min-width: 1200px) {
-    .p-profiles-show .profile-head:before {
-        content: "";
-        display: block;
-        height: var(--profile-banner-height, 300px);
-        background: var(--profile-banner, none) var(--profile-banner-position, center) / cover no-repeat;
-        margin: -15px;
-        margin-bottom: 5px;
-        border-radius: 15px 15px 0 0;
-    }
-}
-
-/* --- Ачивки в профиле: другой форм-фактор --- */
-@media screen and (min-width: 1200px) {
-    #profiles_show .achievements .cc-2 > .c-column:first-child,
-    #profiles_show .achievements .cc-2 > .c-column:nth-child(2) {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    #profiles_show .achievements .cc-2 > .c-column:nth-child(3),
-    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 7px;
-    }
-    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
-        margin-left: 0;
-        margin-bottom: 0px;
-    }
-    #profiles_show.p-profiles-show .achievements .cc-authors .b-achievement {
-        margin: 15px 0.92% 15px 0.92%;
-    }
-    #profiles_show .achievements .c-column:nth-child(1) .cc-achievements .b-achievement,
-    #profiles_show .achievements .c-column:nth-child(2) .cc-achievements .b-achievement {
-        width: 23.2%;
-    }
-    #profiles_show .cc-franchises {
-        flex-wrap: wrap;
-        justify-content: center;
-        position: relative;
-    }
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge {
-        width: 21.6055%;
-        margin: 3px 2.85% -2.35% 0.5%;
-        right: -4px;
-    }
-    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
-        margin-top: -5px;
-    }
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(5),
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(6),
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(7),
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(8) {
-        display: block;
-    }
-}
-
-/* --- Без анимаций графика активности и истории --- */
-.activity .graph.vertical .line .bar {
-    animation: none;
-}
-.p-profiles .profile-head .c-history .entry .title {
-    animation: none;
-}
-
-/* --- Скругления и плавность --- */
-.b-catalog_entry .cover,
-.b-catalog_entry .image,
-.b-catalog_entry img {
-    border-radius: 12px;
-}
-.b-catalog_entry .cover {
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-.b-block, .block, .c-column .block, .cc-block,
-.b-options-floated, .b-db_entry, .subject-info,
-.profile-head, .l-page .inner-box {
-    border-radius: 14px !important;
-}
-.b-db_entry .c-poster .poster, .b-db_entry img.image {
-    border-radius: 12px;
-}
-.b-link_button, .b-button, button.b-button, .add-to-list, .current {
-    border-radius: 10px !important;
-    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-.b-link_button:hover,
-.b-button:hover {
-    /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
-    box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
-}
-}
-.b-catalog_entry, .b-user, .b-club, .b-achievement, .cc-franchises .b-badge,
-.b-link_button, .b-button, .menu-item, .b-options-floated .item {
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .15s ease;
-}
-
-/* --- Мягкий светлый текст без «кислотной» белизны --- */
-body, .b-text, .text, p, .profile-head .c-brief, .b-forum_message .body {
-    color: rgb(var(--text));
-}
-
-/* --- Ссылки акцентным цветом --- */
-a, .b-link { transition: color .15s ease, opacity .15s ease; }
-a, .b-link, .b-js-link, .link {
-    color: rgb(var(--accent));
-}
-a:hover, .b-link:hover, .b-js-link:hover {
-    color: var(--link-hover) !important;
-}
-
-/* --- Настройки: мелкий текст чуть ярче --- */
-.b-input .hint, .b-input .hint span, .hint, .hint span,
-.edit_user .hint, .edit_user_preferences .hint {
-    color: var(--tone-c4cad4) !important;
-}
-.p-profiles-edit .b-options-floated a,
-.p-profiles-edit .b-options-floated .item,
-.p-profiles-edit .b-options-floated span,
-.p-profiles-edit .section-icon + span {
-    color: var(--tone-d6dbe4) !important;
-}
-
-/* --- Подвал --- */
-.l-footer, .l-footer a, .l-footer .copyright {
-    color: var(--text-input) !important;
-}
 .l-footer:after {
     content: none !important; /* название теперь в .l-footer:before, см. --theme-name */
 }
 
+/* ----- телефон и узкие экраны ----- */
 
-/* --- Настройки: кнопка выбора файла (аватар) в стиле темы --- */
-input[type="file"] {
-    color: rgb(var(--text-2));
-}
-input[type="file"]::file-selector-button {
-    margin-right: 10px;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 8px;
-    background: var(--accent-dim);
-    color: rgb(var(--text));
-    font: inherit;
-    cursor: pointer;
-    transition: background-color .2s ease, transform .15s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-input[type="file"]::file-selector-button:hover {
-    background: var(--accent-hover);
-}
-}
-
-/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
-.p-profiles-edit .account .oauth a,
-.p-profiles-edit .account .oauth .b-link_button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(var(--glass), .95) !important;
-    border: 1px solid rgba(var(--glass-light), .12) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
-    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-.p-profiles-edit .account .oauth a:hover,
-.p-profiles-edit .account .oauth .b-link_button:hover {
-    border-color: rgba(var(--accent), .55) !important;
-    background: var(--glass-popup) !important;
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
-}
-}
-/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
-   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
-   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
-.p-profiles-edit .account .oauth a::before,
-.p-profiles-edit .account .oauth a > * {
-    transition: transform .2s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-.p-profiles-edit .account .oauth a:hover::before,
-.p-profiles-edit .account .oauth a:hover > * {
-    transform: translateY(-2px);
-}
-}
-
-/* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
-body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:after,
-body#clubs_edit .b-options-floated a:after {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 10px !important;
-    background: rgba(var(--glass), .95) !important;
-    border: 1px solid rgba(var(--glass-light), .12) !important;
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
-    color: rgb(var(--text)) !important;
-    box-sizing: border-box;
-    transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
-}
-@media (hover: hover) and (pointer: fine) {
-body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
-body#clubs_edit .b-options-floated a:hover:after {
-    background: var(--glass-popup) !important;
-    border-color: rgba(var(--accent), .55) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent) !important;
-}
-}
-body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:after,
-body#clubs_edit .b-options-floated a.selected:after {
-    background: rgba(var(--accent), .18) !important;
-    border: 1px solid rgba(var(--accent), .7) !important;
-    color: rgb(var(--link)) !important;
-}
-
-/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
-.c-filters .c-filters-head {
-    align-items: center !important;
-    min-height: 32px;
-    height: auto !important;
-    box-sizing: border-box;
-}
-
-/* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
-.b-link_button:active,
-.b-button:active,
-input[type="submit"]:active,
-button:active,
-input[type="file"]::file-selector-button:active,
-.p-profiles-edit .account .oauth a:active {
-    transform: translateY(1px) scale(.97) !important;
-    filter: brightness(.92);
-    box-shadow: inset 0 2px 6px rgba(var(--shade), 0.35) !important;
-    transition-duration: .06s !important;
-}
-body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:active:after,
-body#clubs_edit .b-options-floated a:active:after {
-    transform: translateY(1px) scale(.92) !important;
-    transition-duration: .06s !important;
-}
-
-/* --- Галочки: без плашки слева после клика --- */
-input[type="checkbox"],
-input[type="checkbox"]:focus,
-input[type="checkbox"]:focus-visible,
-input[type="checkbox"]:active,
-.b-input input[type="checkbox"]:focus {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    transform: none !important;
-    filter: none !important;
-}
-
-/* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
-.b-options-floated a,
-.b-options-floated a:active,
-.b-options-floated a:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    transform: none !important;
-    filter: none !important;
-}
-
-/* --- Ник в профиле: обводка под цвет темы --- */
-.p-profiles .profile-head .c-brief header.head h1 {
-    color: rgb(var(--text)) !important;
-    text-shadow: 0 0 1px rgba(var(--accent), .9),
-                 0 2px 10px rgba(var(--accent), .35),
-                 0 2px 4px rgba(var(--shade), 0.6) !important;
-}
-
-/* --- Кнопки сохранения в настройках в стиле темы --- */
-.p-profiles-edit input[type="submit"],
-.p-profiles-edit button[type="submit"],
-.p-profiles-edit .b-button,
-.p-profiles-edit .buttons .b-button,
-.p-profiles-edit .buttons input {
-    background: var(--accent-dim) !important;
-    color: rgb(var(--text)) !important;
-    border: 1px solid rgba(var(--glass-light), .10) !important;
-    border-radius: 8px !important;
-    padding: 7px 16px !important;
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 45%, transparent) !important;
-    text-shadow: none !important;
-    cursor: pointer;
-    transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
-}
-@media (hover: hover) and (pointer: fine) {
-.p-profiles-edit input[type="submit"]:hover,
-.p-profiles-edit button[type="submit"]:hover,
-.p-profiles-edit .b-button:hover,
-.p-profiles-edit .buttons input:hover {
-    background: var(--accent-hover) !important;
-    box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
-}
-}
-
-/* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
-body.p-profiles-edit .tipsy.tipsy-s {
-    transform: translateY(calc(100% + 38px));
-}
-body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
-    top: 0 !important; bottom: auto !important;
-    transform: rotate(180deg);
-}
-
-/* --- Та же анимация выезда для остальных выпадающих меню --- */
-.l-top_menu-v2 .menu-dropdown.active > .submenu,
-.l-top_menu-v2 .menu-dropdown:hover > .submenu,
-.l-top_menu-v2 .menu-dropdown:focus-within > .submenu,
-.b-options-dropdown.active .submenu,
-.b-subposter-actions .submenu,
-.dropdown.active .submenu,
-.dropdown.active .dropdown-menu {
-    animation: shiki-drop var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
-    transform-origin: top center;
-}
-
-/* --- Под баннером мягкое свечение в цвет самой картинки --- */
-@media (min-width: 1200px) {
-    .p-profiles-show .profile-head {
-        position: relative;
-        display: flow-root;
-        isolation: isolate;
-    }
-    .p-profiles-show .profile-head:before {
-        position: relative;
-        z-index: 1;
-        -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
-        mask-image: linear-gradient(to bottom, #000 82%, transparent);
-    }
-    .p-profiles-show .profile-head:after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: calc(var(--profile-banner-height, 300px) - 90px);
-        height: 220px;
-        background: var(--profile-banner) center bottom / cover no-repeat;
-        filter: blur(45px) saturate(1.5);
-        opacity: var(--profile-banner-glow, .5);
-        z-index: 0;
-        pointer-events: none;
-        clear: none;
-        border-radius: 15px;
-        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
-        mask-image: linear-gradient(to bottom, #000 30%, transparent);
-    }
-    .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
-}
-
-
-/* ================================================================
-   ОБЩИЙ КОМПОНЕНТ «поле-список»: все select на сайте и фильтры
-   каталога (Мой список, Статус…). Единственное место со стилями
-   полей-списков: менять вид — только переменными ниже.
-   (:not(#u) поднимает вес над старыми правилами сайта)
-   ================================================================ */
-:root {
-    --ui-ease: cubic-bezier(.22, 1, .36, 1);
-    --ui-press: .08s;      /* нажатие */
-    --ui-release: .28s;    /* возврат */
-    --ui-drop: .24s;       /* выезд списка */
-
-    --field-bg: color-mix(in srgb, var(--glass-deep) 85%, transparent);
-    --field-border: rgba(var(--glass-light), .10);
-    --field-border-hover: rgba(var(--glass-light), .22);
-    --field-radius: 8px;
-    --field-height: 32px;
-    --field-font: 13px;
-    --field-pad: 6px 11px 6px 10px;
-    --field-shadow: 0 2px 6px rgba(var(--shade), 0.2);
-    --field-open-border: rgba(var(--accent), .6);
-    --field-open-ring: 0 0 0 3px rgba(var(--accent), .15);
-    --field-filled-border: rgba(var(--accent), .45);
-    --field-arrow: linear-gradient(45deg, transparent 50%, rgb(var(--text-2)) 50%) calc(100% - 15px) 50% / 5px 5px no-repeat,
-                   linear-gradient(135deg, rgb(var(--text-2)) 50%, transparent 50%) calc(100% - 10px) 50% / 5px 5px no-repeat;
-    --drop-gap: 4px;
-    --drop-radius: 10px;
-    --drop-pad: 4px;
-    --drop-bg: var(--glass-popup);
-    --drop-border: rgba(var(--text), .12);
-    --drop-shadow: 0 12px 30px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
-    --opt-pad: 5px 10px;
-    --opt-radius: 6px;
-    --opt-hover: rgba(var(--accent), .18);
-}
-
-/* выезд списка: без прозрачности (используют меню панели и фильтры) */
-@keyframes shiki-drop {
-    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
-    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
-}
-
-/* --- само поле (select, мультиселект фильтров) --- */
-select:not(#u),
-.c-ms-control:not(#u) {
-    -webkit-appearance: none;
-    appearance: none;
-    box-sizing: border-box;
-    min-height: var(--field-height) !important;
-    height: auto !important;
-    padding: var(--field-pad) !important;
-    font-size: var(--field-font) !important;
-    line-height: 1.4 !important;
-    background: var(--field-bg) !important;
-    border: 1px solid var(--field-border) !important;
-    border-radius: var(--field-radius) !important;
-    box-shadow: var(--field-shadow) !important;
-    color: rgb(var(--text)) !important;
-    outline: none !important;
-    animation: none !important;
-    filter: none !important;
-    transform: none;
-    cursor: pointer;
-    transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease !important;
-}
-/* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
-select:not(#u) {
-    padding-right: 30px !important;
-    background: var(--field-arrow), var(--field-bg) !important;
-}
-.c-ms-control:not(#u) { padding-right: 26px !important; } /* место под .c-ms-caret */
-/* в настройках поля по размеру текста, как «Язык интерфейса» */
-select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
-
-select:not(#u):hover,
-.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
-select:not(#u):focus,
-.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
-.c-ms.is-filled .c-ms-control:not(#u) { border-color: var(--field-filled-border) !important; }
-select:not(#u):open,
-.c-ms-control:not(#u)[aria-expanded="true"] {
-    border-color: var(--field-open-border) !important;
-    box-shadow: var(--field-open-ring) !important;
-}
-select:not(#u):active,
-.c-ms-control:not(#u):active {
-    transform: scale(.98) !important;
-    transition-duration: var(--ui-press) !important;
-}
-
-/* поле оценки в фильтрах — тот же вид, без стрелки */
-.c-score-input {
-    background: var(--field-bg) !important;
-    color: rgb(var(--text)) !important;
-    border: 1px solid var(--field-border) !important;
-    border-radius: var(--field-radius) !important;
-    min-height: 34px;
-    box-sizing: border-box;
-    box-shadow: var(--field-shadow);
-    animation: none !important;
-    transform: none;
-    filter: none;
-    transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
-}
-.c-score-input:hover { border-color: var(--field-border-hover) !important; }
-.c-score-input:focus {
-    border-color: var(--field-open-border) !important;
-    box-shadow: var(--field-open-ring) !important;
-    outline: none !important;
-}
-.c-score.is-filled .c-score-input { border-color: var(--field-filled-border) !important; }
-
-/* --- части мультиселекта --- */
-.c-ms-caret {
-    border-top-color: rgb(var(--text-2)) !important;
-    right: 11px !important;
-    transform: translateY(-50%);
-    transition: transform var(--ui-drop) var(--ui-ease) !important;
-}
-.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
-.c-ms-placeholder,
-.c-ms-title { color: rgb(var(--text-2)) !important; }
-.c-ms-chip { background: var(--accent-dim) !important; border-radius: 6px !important; }
-
-/* --- выпадающий список фильтров --- */
-.c-ms-dropdown:not(#u) {
-    top: calc(100% + var(--drop-gap)) !important;
-    background: var(--drop-bg) !important;
-    border: 1px solid var(--drop-border) !important;
-    border-radius: var(--drop-radius) !important;
-    box-shadow: var(--drop-shadow) !important;
-    backdrop-filter: none !important;
-}
-/* плавный выезд и сворачивание через transition */
-.c-ms-dropdown,
-.c-ms-dropdown:not([hidden]) {
-    opacity: 1 !important;
-    animation: none !important;
-    display: block;
-    transform-origin: top center;
-    clip-path: inset(0 0 0 0 round var(--drop-radius));
-    transform: none;
-    transition: clip-path var(--ui-drop) var(--ui-ease),
-                transform var(--ui-drop) var(--ui-ease),
-                display var(--ui-drop) allow-discrete !important;
-}
-.c-ms-dropdown[hidden] {
-    display: none !important;
-    clip-path: inset(0 0 100% 0 round var(--drop-radius));
-    transform: translateY(-4px);
-}
-@starting-style {
-    .c-ms-dropdown:not([hidden]) {
-        clip-path: inset(0 0 100% 0 round var(--drop-radius));
-        transform: translateY(-4px);
+@media screen and (max-width: 960px) {
+    .l-footer {
+        display: none;
     }
 }
-.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
-.c-ms-option:not(#u) {
-    padding: var(--opt-pad) !important;
-    border-radius: var(--opt-radius);
-    font-size: var(--field-font);
-    color: rgb(var(--text));
-    transition: background-color .15s ease, color .15s ease;
+
+/* ===== overrides/late =====
+   правила, которые обязаны идти после страниц: они перебивают правила других модулей с тем же весом селектора. у каждого помечен модуль, где ему место; при объединении компонентов (следующий шаг) их переносят домой, повышая вес или сливая с перебиваемым правилом */
+
+/* из components/badges */
+.tags > [class*="_status_tag"],
+.tags > * {
+    padding: 0 1px;
 }
+
+/* из components/badges */
+.tags > [class*="_status_tag"]:not([data-text]),
+.tags > .b-tag {
+    padding: 2px 9px;
+}
+
+/* из pages/messages */
+.b-comment > .inner .name-date .name:hover,
+.b-comment > .inner header .name-date a.name:hover,
+.b-dialog > .inner header .name-date a.name:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.b-message > .inner header .name-date a.name:hover,
+.b-message > .inner header .name-date a.name:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
 @media (hover: hover) and (pointer: fine) {
-.c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
-}
-.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
-
-/* при переходе к другому полю открытый список закрывается */
-.c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
-.c-filters:has(.c-score-input:focus) .c-ms-dropdown {
-    display: none !important;
-}
-.c-filters:has(.c-filter-select:focus) .c-ms-control:not(#u)[aria-expanded="true"],
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control:not(#u)[aria-expanded="true"],
-.c-filters:has(.c-score-input:focus) .c-ms-control:not(#u)[aria-expanded="true"] {
-    border-color: var(--field-border) !important;
-    box-shadow: var(--field-shadow) !important;
-}
-.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
-    transform: translateY(-50%) !important;
-}
-
-/* варианты в системном окне (Firefox) */
-select option { background: var(--drop-bg); color: rgb(var(--text)); }
-
-/* --- выезжающий список select (Chromium с base-select) --- */
-@supports (appearance: base-select) {
-    select:not(#u),
-    select:not(#u)::picker(select) { appearance: base-select !important; }
-    select:not(#u) {
-        display: inline-flex !important;
-        align-items: center;
-        gap: 8px;
-        padding-right: 11px !important;
-        background: var(--field-bg) !important; /* стрелку рисует ::picker-icon */
+    /* из base/base */
+    a.name:hover {
+        color: rgba(var(--link), 1) !important;
+        text-decoration: none !important;
+        background: none !important;
+        box-shadow: none !important;
     }
-    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+}
 
-    /* стрелка как у фильтров и так же поворачивается */
-    select:not(#u)::picker-icon {
-        display: block !important;
-        content: "";
-        width: 0 !important;
-        height: 0 !important;
-        min-width: 0 !important;
-        font-size: 0;
-        line-height: 0;
-        overflow: hidden;
-        margin-inline-start: auto;
-        flex: 0 0 auto;
-        box-sizing: content-box;
-        padding: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 5px solid rgb(var(--text-2));
+/* из pages/profile */
+.c-brief header.head .notice,
+.c-brief header.head .misc,
+.c-brief header.head a.edit,
+.p-profiles .profile-head .c-info .c-additionals b,
+.p-profiles .profile-head .c-brief header h1.aliases::after,
+.p-profiles .profile-head .c-brief header .notice a {
+    color: rgba(var(--text), 1) !important;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    text-shadow 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a:hover {
+        color: rgba(var(--link), 1) !important;
+        transform: scale(1.1) !important;
+    }
+}
+
+/* из components/users */
+.b-user16:hover,
+.b-user.named_avatar img:hover,
+.b-user16:hover a {
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* из components/badges */
+.b-tag {
+    border-bottom: 1px dashed rgba(var(--accent), 1);
+    color: rgba(var(--accent), 1);
+}
+
+/* из pages/clubs */
+.p-topics .l-menu .clubs .entry .misc {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+/* из pages/settings */
+.p-profiles-edit .account .change-password a:hover {
+    color: rgba(var(--link), 1);
+}
+
+/* из components/buttons */
+.buttons .main-controls a {
+    color: rgba(var(--link), 1);
+}
+
+/* из pages/profile */
+.p-profiles-show .about a {
+    color: rgba(var(--link), 1);
+}
+
+/* из pages/profile */
+.p-profiles-show .about a:hover {
+    color: rgba(var(--link), 1);
+}
+
+/* из pages/profile */
+.b-user_history-line a {
+    color: rgba(var(--text-strong), 1);
+    font-weight: bold;
+}
+
+/* из pages/lists */
+.p-userlist_comparer .comparer table .name a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
+/* из components/tabs */
+.b-options-floated a span.brackets:after,
+.b-options-floated .link span.brackets:after {
+    color: rgba(var(--text-2), 1);
+    content: ")";
+}
+
+/* из components/tabs */
+.b-options-floated a span.brackets:before,
+.b-options-floated .link span.brackets:before {
+    color: rgba(var(--text-2), 1);
+    content: "(";
+}
+
+/* из components/editor */
+.b-log_entry a,
+.b-log_entry .link {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* из components/editor */
+.b-log_entry a:hover,
+.b-log_entry .link:hover {
+    color: rgba(var(--accent), 1);
+}
+
+/* из components/editor */
+.b-bb_codes-examples .example .title,
+.b-bb_codes-examples .result .title {
+    color: rgba(var(--text-2), 1);
+}
+
+/* из components/editor */
+.b-bb_codes-examples .result a {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* из components/editor */
+.b-bb_codes-examples .result a:hover {
+    color: rgba(var(--link), 1);
+}
+
+/* из layout/page */
+body.localized_names-ru .name-ru {
+    color: rgba(var(--text-strong), 1);
+    font-weight: bold;
+    text-decoration: none !important;
+    transform: scale(1.05);
+}
+
+/* из pages/clubs */
+.p-profiles .profile-head .c-history .entry,
+.p-topics .l-menu .reviews .entry,
+.p-topics .l-menu .clubs .entry {
+    margin-bottom: 0;
+    padding: 0 3px 0;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    background 0s;
+    border-top: none;
+    text-decoration: none !important;
+}
+
+/* из pages/forum */
+.headline > a,
+.midheadline > a,
+.subheadline > a,
+.p-topics .l-menu .sticky-topics .topic {
+    color: rgba(var(--text-2), 1);
+    transition: 0.2s ease, -webkit-0 .2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
+    border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/headings */
+    .headline > a:hover,
+    .midheadline > a:hover,
+    .subheadline > a:hover {
+        text-decoration: none;
+        color: rgba(var(--link), 1) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border: none;
+    }
+}
+
+/* из pages/anime */
+.b-db_entry-note .name-container .name {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* из pages/anime */
+.b-db_entry-note .name-container .name:hover {
+    color: rgba(var(--accent), 1);
+}
+
+/* из base/base */
+a:-webkit-any-link {
+    text-decoration: none;
+    color: rgba(var(--link), 1);
+}
+
+/* из components/users */
+.b-user16:hover a:hover {
+    text-decoration: none !important;
+    color: rgba(var(--link), 1);
+}
+
+/* из pages/settings */
+.profile-actions .mail:before,
+.profile-actions .talk:before,
+.profile-actions .settings:before,
+.profile-actions .ban:before,
+.profile-actions .fav-add::before,
+.profile-actions .fav-remove::before,
+.profile-actions .ignore-add:before,
+.profile-actions .ignore-remove:before {
+    transition: 0s ease, -webkit-0s ease, transform 0.2s, ease color .2s;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/clubs */
+    .club-actions a:hover {
         background: none;
-        transition: rotate var(--ui-drop) var(--ui-ease);
+        box-shadow: none;
     }
-    select:not(#u):open::picker-icon { rotate: 180deg; }
+}
 
-    select:not(#u)::picker(select) {
-        min-width: anchor-size(width);
-        margin: var(--drop-gap) 0 0 0;
-        padding: var(--drop-pad);
-        background: var(--drop-bg);
-        color: rgb(var(--text));
-        border: 1px solid var(--drop-border);
-        border-radius: var(--drop-radius);
-        box-shadow: var(--drop-shadow);
-        font-size: var(--field-font);
-        opacity: 1 !important;
-        animation: none !important;
-        transform: translateY(0) !important;
-        clip-path: inset(0 0 0 0 round var(--drop-radius)) !important;
-        transition: clip-path var(--ui-drop) var(--ui-ease),
-                    transform var(--ui-drop) var(--ui-ease),
-                    display var(--ui-drop) allow-discrete,
-                    overlay var(--ui-drop) allow-discrete !important;
-    }
-    select:not(#u):not(:open)::picker(select) {
-        clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
-        transform: translateY(-4px) !important;
-    }
-    @starting-style {
-        select:not(#u):open::picker(select) {
-            clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
-            transform: translateY(-4px) !important;
-        }
-    }
-    select:not(#u) option {
-        padding: var(--opt-pad) !important;
-        border-radius: var(--opt-radius);
-        background: transparent !important;
-        color: rgb(var(--text));
-        font-size: var(--field-font);
-        outline: none !important;
-        animation: none !important;
-        transform: none !important;
-        transition: background-color .15s ease, color .15s ease;
-    }
-    select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
+/* из pages/catalog */
+.p-studios .studio .name {
+    color: rgba(var(--text-strong), 1);
+    width: 150px;
+}
+
+/* из pages/catalog */
+.p-studios .studio .name:hover {
+    color: rgba(var(--accent), 1);
+}
+
+/* из pages/anime */
+.p-animes .c-about .watch-online > a.kind {
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    border-radius: 15px;
+    border-color: var(--tone-3e4d5d);
+    color: rgb(var(--text));
+    text-align: center;
+    padding: 8px 20px;
+    min-width: 154px;
+    max-width: 200px;
+    font-size: 13px;
+    font-family: var(--font-alt);
+    line-height: 1.3;
+}
+
 @media (hover: hover) and (pointer: fine) {
-select:not(#u) option:hover { background: var(--opt-hover) !important; }
-}
-    select:not(#u) option:checked { color: rgb(var(--accent)); }
-    select:not(#u) option::checkmark { display: none; }
+    /* из pages/anime */
+    .p-animes .c-about .watch-online > a.kind:hover {
+        background-color: var(--accent-hover);
+        color: rgb(var(--text-strong)) !important;
+    }
+    /* из pages/forum */
+    .p-statistics-index .forum-nav .sections a:hover {
+        color: rgba(var(--link), var(--hundred)) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
+        box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+        text-decoration: none !important;
+    }
 }
 
-/* --- Сервисы в настройках: X белым, Facebook ярче --- */
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
-.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
-    filter: invert(1) brightness(1.15) !important;
+/* из pages/forum */
+.p-statistics-index .forum-nav .sections a {
+    transition: 0.2s ease;
+    color: rgba(var(--text-2), var(--hundred));
 }
-.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
-.oauth a:is(.facebook, [href*="auth/facebook"])::before,
-.oauth a:is(.facebook, [href*="auth/facebook"])::after {
-    filter: brightness(1.45) saturate(1.2) !important;
+
+/* из pages/forum */
+.p-statistics-index .forum-nav .sections a.selected {
+    color: rgba(var(--link), var(--hundred)) !important;
+    text-decoration: none !important;
 }
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
-.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
-    filter: brightness(1.45) saturate(1.2) !important;
+
+/* из pages/contests */
+.b-contest_match .vs .actions .action span,
+.b-contest_match .vs .actions .action span {
+    transition: 0.2s ease;
+    color: rgba(var(--text), var(--hundred));
+    background: rgba(var(--glass), 0.6);
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    animation: blimi 6s ease-out infinite;
+    animation-delay: 10s;
+    padding: 5px 10px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
 }
-.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"]) > *,
-.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"])::before {
-    filter: brightness(1.12) saturate(1.1) !important;
+
+/* из pages/catalog */
+.p-recommendations-index .b-header_filters .hint,
+.b-header_filters .filter-line .title {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/* из pages/anime */
+.b-entry-info .line a {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из pages/anime */
+.b-entry-info .line a:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из components/editor */
+.b-height_shortener .expand:hover span,
+.b-log_entry .spoiler.collapse:hover span,
+.b-log_entry .spoiler.collapsed:hover span,
+.b-log_entry .spoiler.collapse span:hover,
+.b-log_entry .spoiler.collapsed span:hover {
+    color: rgba(var(--accent), var(--hundred));
+    animation: spoilzero 2s ease infinite;
+    border-bottom-color: rgba(var(--text), 0.2);
+}
+
+/* из layout/page */
+body * [class*="_status_tag"]:not([data-text]):before,
+body * [class*="_marker"]:not([data-text]):before {
+    content: none;
+}
+
+/* из pages/anime */
+.b-anime_status_tag {
+    border: none !important;
+}
+
+/* из layout/page */
+body * .b-anime_status_tag.other:not([data-text]),
+body * .b-anime_status_tag.other:before {
+    color: var(--tone-d6d6d6);
+    background: linear-gradient(45deg, #feda754d, #fa7e1e4d, #d629764d, #962fbf4d, #4f5bd54d)!important;
+}
+
+/* статус "релиз" */
+/* из layout/page */
+body * .b-anime_status_tag.released:before {
+    background-color: #1A421D;
+    color: #C4E9ED;
+}
+
+/* статус"эпизод" */
+/* из layout/page */
+body * .b-anime_status_tag.episode:before {
+    background: #392589;
+    color: #d5d4ff;
+}
+
+/* статус"новость" */
+/* из layout/page */
+body * .b-anime_status_tag.news:before {
+    background: #984915;
+    color: #f3e5d3;
+}
+
+/* из layout/page */
+body * .b-anime_status_tag.contest:before {
+    content: '🏆︎ турнир' !important;
+    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
+}
+
+/* из layout/page */
+body * .b-anime_status_tag.article:before {
+    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
+}
+
+/* статус "отзыв" */
+/* из layout/page */
+body * .b-anime_status_tag.review:before {
+    content: '★ отзыв' !important;
+    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
+}
+
+/* статус "негативный" */
+/* из layout/page */
+body * .b-anime_status_tag.review-negative:before {
+    background: #933131;
+    content: '👎' !important;
+}
+
+/* статус "негативный" */
+/* из layout/page */
+body * .b-anime_status_tag.review-positive:before {
+    background: #28662e;
+    content: '👍' !important;
+}
+
+/* статус "рецензия" */
+/* из layout/page */
+body * .b-anime_status_tag.critique:before {
+    color: #fae5ee;
+    background: #7c1946;
+}
+
+/* статус "рассылка" */
+/* из layout/page */
+body * .b-anime_status_tag.broadcast:before {
+    background-color: #6d0b37;
+    color: #ffe0ee;
+}
+
+/* статус "онгоин" */
+/* из layout/page */
+body * .b-anime_status_tag.ongoing:before {
+    background: #014493;
+    color: #d7e6f8;
+}
+
+/* статус "игнор" */
+/* из layout/page */
+body * .b-anime_status_tag.ignored:before {
+    background: #96120b;
+    color: #fbdede;
+}
+
+/* статус "анонс" */
+/* из layout/page */
+body * .b-anime_status_tag.anons:before {
+    background: #9c3417;
+    color: #fbe5de;
+}
+
+/* из layout/page */
+body * [class*="broadcast_marker"] {
+    width: 118px;
+}
+
+/* из layout/page */
+body[data-locale=ru] .b-offtopic_marker:before,
+.b-anime_status_tag.offtopic:before {
+    color: #f3dee7;
+    background-color: #671339;
+    border: none;
+}
+
+/* из layout/page */
+body * [class*="new_marker"] {
+    display: none;
+    width: 0;
+}
+
+/* из pages/contests */
+.p-contests .match-day .match-link .c-column.loser a,
+.p-contests .match-day .match-link .c-column.created a {
+    color: rgba(var(--text-3), var(--hundred)) !important;
+}
+
+/****** начало совмест************/
+/* из pages/profile */
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero,
+.b-stats_bar .compatibility .text.high,
+.b-stats_bar .compatibility .text.moderate,
+.b-stats_bar .compatibility .text.full {
+    font-size: 0 !important;
+    line-height: 0;
+    margin-top: 0;
+    display: block;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+/* из components/forms */
+.ac_results li {
+    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
+/* из components/forms */
+.ac_results.menu-suggest .ac_even .name,
+.ac_results.menu-suggest .ac_odd .name,
+.completable-block.menu-suggest .ac_even .name,
+.completable-block.menu-suggest .ac_odd .name {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/tabs */
+.b-options-floated a span.brackets:before,
+.b-options-floated .link span.brackets:before,
+.b-options-floated a span.brackets:after,
+.b-options-floated .link span.brackets:after {
+    font-size: 0;
+}
+
+/* из components/forms */
+.b-input.text.optional.user_rate_text {
+    display: block;
+    width: 100%;
+}
+
+/* из components/forms */
+.b-form a.remove {
+    border: none;
+    color: rgba(var(--text), var(--hundred));
+    padding: 6px 10px 6px 10px !important;
+    background-color: rgba(115, 49, 27, 0.7);
+    border-radius: 11px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/forms */
+    .b-form a.remove:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
+        color: rgba(var(--text-strong), var(--hundred)) !important;
+        box-shadow: none !important;
+    }
+}
+
+/* из layout/footer */
+.l-footer .links a {
+    margin: 5px;
+    color: rgba(var(--link), 0.5);
+}
+
+/* из components/tabs */
+.b-list_switchers .switcher.list.selected,
+.b-list_switchers .switcher.posters.selected,
+.b-list_switchers .switcher.lines.selected {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/* из components/tabs */
+.b-list_switchers .switcher.list:hover,
+.b-list_switchers .switcher.posters:hover,
+.b-list_switchers .switcher.lines:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/* из components/editor */
+.b-comment > .inner header .name-date {
+    white-space: normal;
+    line-height: 1.7;
+}
+
+/* из components/tooltips */
+.tooltip-details .b-comment.shiki-object {
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* из pages/contests */
+.p-contests .suggestion > a,
+.p-contests .variant > a {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/contests */
+.p-contests .suggestion > a {
+    background: none;
+    box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/contests */
+    .p-contests .variant > a:hover {
+        background: none;
+        box-shadow: none;
+    }
+}
+
+/* из pages/contests */
+.b-contests-menu .results,
+.b-contests-menu .grid a {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/*-------------------CATALOG-------------------------*/
+/* из components/cards */
+.b-catalog_entry .cover:hover .title {
+    color: rgba(var(--accent), var(--hundred));
+    text-decoration: none;
+}
+
+/* из components/cards */
+.b-catalog_entry .cover .title {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .line .value {
+    color: rgba(var(--text), var(--hundred));
+    transition: 0.3s ease;
+}
+
+/* из components/cards */
+.b-catalog_entry .cover .misc span {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner a.name {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner a.name:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .additional-images .link .title {
+    color: rgba(var(--text-strong), var(--hundred));
 }

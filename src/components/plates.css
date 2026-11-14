@@ -1,0 +1,18 @@
+/* ===== components/plates =====
+   стеклянные плашки .block */
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 960px) {
+    .cc-2 > .c-column > .block:last-child,
+    .cc-2 > .c-column > .subcontent:last-child {
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cc-2.block {
+        margin-top: 64px;
+    }
+}

@@ -1,0 +1,570 @@
+/* ===== pages/messages =====
+   почта, диалоги, уведомления */
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1) !important;
+    top: 2px;
+    position: relative;
+    padding-top: 2px;
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-comment > .inner header .name-date a.name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    font-size: 16px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    color: rgba(var(--text), 1);
+    font-size: 13px !important;
+}
+
+/* название в новостях */
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-message > .inner header .name-date {
+    line-height: 24px;
+    overflow: visible;
+    white-space: normal;
+}
+
+.b-message > .inner header .name-date a.name:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-messages .mass-actions .action:after {
+    display: none;
+}
+
+.b-dialog > .inner div.body {
+    color: rgba(var(--text), 1);
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .sticky-topics .topic,
+.b-comments .comments-loaded,
+.b-message .comments-loaded,
+.b-user.detailed {
+    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .clubs .entry,
+.p-topics .l-menu .sticky-topics .topic {
+    margin: 4px 0;
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    padding-bottom: 10px !important;
+}
+
+.b-dialog:first-child {
+    padding-top: 15px;
+}
+
+.b-dialog .to_dialog {
+    background: none !important;
+    box-shadow: none !important;
+    color: rgba(var(--accent), 1);
+}
+
+.b-message {
+    margin: 10px 0;
+    border-top: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(var(--text), 0.1);
+}
+
+.b-message:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.b-dialog .b-message {
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+    margin-top: 0;
+}
+
+.b-comments-notifier {
+    background: rgba(var(--accent), 1);
+    color: var(--tone-f9f9f9);
+    line-height: 41px;
+    transition: 0.5s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    font-size: 19px;
+    font-weight: bold;
+    width: 37px;
+    height: 37px;
+    margin: 0;
+    top: 80px !important;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-comments-notifier:hover {
+        background-color: rgba(var(--accent), 1);
+    }
+}
+
+.b-message .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+
+.b-catalog_entry.completed .image-decor:before,
+.b-topic .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #419541 0);
+}
+
+.b-catalog_entry.dropped .image-decor:before,
+.b-topic .b-catalog_entry.dropped .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
+}
+
+.b-catalog_entry.on_hold .image-decor:before,
+.b-topic .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+.b-catalog_entry.planned .image-decor:before,
+.b-topic .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+.b-catalog_entry.rewatching .image-decor:before,
+.b-topic .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #1F6F6A 0);
+}
+
+.b-catalog_entry.watching .image-decor:before,
+.b-topic .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
+}
+
+.b-message > .inner .was_updated:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.tooltip-details .b-message {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.b-message .inner {
+    min-height: 38px;
+}
+
+.b-shiki_editor.previewed .body .preview .b-comment,
+.b-shiki_editor.previewed .body .preview .b-message {
+    border: none !important;
+}
+
+/*почта-Назад-Вперёд → фикс на 100%*/
+.p-messages .b-postloader.collapsed {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    font-size: 11px;
+    padding: 3px 2px 2px 15px;
+    background: rgba(var(--glass), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    width: 135px;
+    height: 15px;
+    border-radius: 9px;
+    position: relative;
+    margin-left: -22px;
+    top: -2px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    content: 'перейти к диалогу';
+}
+
+.b-dialog .to_dialog:before,
+.to-review:before {
+    font: normal normal normal 15px FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    background: rgba(var(--glass), var(--hundred));
+    color: rgba(var(--text-strong), 0.7);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s;
+}
+
+.b-dialog .to_dialog:before {
+    content: '\f0e6';
+}
+
+.b-dialog .to_dialog:hover:after,
+.b-dialog .to_dialog:hover:before,
+.to-review:hover:before,
+.to-review:hover:after {
+    color: rgba(var(--accent), 1);
+}
+
+.b-dialog .to_dialog,
+.to-review {
+    font-size: 0 !important;
+}
+
+.p-messages .mass-actions,
+.b-options-floated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+body.p-profiles .mass-actions .action a,
+body .headline .misc-links a,
+body .midheadline .misc-links a,
+body .subheadline .misc-links a {
+    margin: 0;
+    font-size: 0;
+    position: relative;
+    padding: 0 0 0 13px;
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a,
+body.p-db_entries-works .headline .misc-links a,
+body.p-db_entries-works .midheadline .misc-links a,
+body.p-db_entries-works .subheadline .misc-links a {
+    font-size: inherit !important;
+    right: -3rem;
+}
+
+body.p-profiles .mass-actions .action a:after,
+body.p-profiles .subheadline .misc-links > a:after,
+.headline .misc-links > a:after,
+.midheadline .misc-links > a:after,
+.subheadline .misc-links > a:after {
+    content: '';
+    display: inline-flex !important;
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--text-strong), 0.7);
+    height: 32px;
+    width: 33px;
+    font-family: 'FontAwesome', sans-serif;
+    padding: 0 0 2px 1px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 3px rgba(var(--shade), 0.1);
+    transition: 0.2s all;
+    z-index: 2;
+}
+
+body.p-profiles .mass-actions .action a:before,
+.headline .misc-links > a:before,
+.midheadline .misc-links > a:before,
+.subheadline .misc-links > a:before {
+    content: '';
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    font-size: 11px;
+    letter-spacing: -6px;
+    background: rgba(var(--glass), 0.7);
+    width: 18px;
+    border-radius: 8px;
+    z-index: 2;
+    color: rgba(var(--link), 1);
+}
+
+body.p-profiles .mass-actions .action a:before {
+    content: '\f00c\f00c';
+}
+
+body.p-profiles .mass-actions .action a[href*='/read']:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+body.p-profiles .mass-actions .action a[href*='/dele']:after {
+    content: '\f014';
+    font-size: 18px;
+}
+
+body.p-profiles .mass-actions .action a:hover:before {
+    color: rgba(var(--text), 1);
+}
+
+body.p-profiles .mass-actions .action a:hover:AFTER,
+.headline .misc-links > a:hover:after,
+.midheadline .misc-links > a:hover:after,
+.subheadline .misc-links > a:hover:after {
+    color: rgba(var(--link), 1);
+}
+
+/*УЧАСТИЕ В ПРОЕКТАХ Ico off*/
+body.p-db_entries-works .p-profiles .mass-actions .action a:after,
+body.p-db_entries-works .p-profiles .subheadline .misc-links > a:after,
+.p-db_entries-works .headline .misc-links > a:after,
+.p-db_entries-works .midheadline .misc-links > a:after,
+.p-db_entries-works .subheadline .misc-links > a:after,
+body.p-db_entries-works .p-profiles .mass-actions .action a:before,
+.p-db_entries-works .headline .misc-links > a:before,
+.p-db_entries-works .midheadline .misc-links > a:before,
+.p-db_entries-works .subheadline .misc-links > a:before {
+    display: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    color: rgba(var(--text-strong), 1) !important;
+    border-radius: 50%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
+    content: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.4);
+}
+
+body#messages_index .l-page,
+body#dialogs_index .l-page,
+body#dialogs_show .l-page,
+body.p-user_history .l-page {
+    max-width: 800px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body .inner div.body {
+    margin-left: 40px;
+}
+
+@media only screen and (min-width: 1075px) {
+    .b-comments-notifier[style*="none"] {
+        display: block !important;
+        visibility: hidden;
+        z-index: 9;
+    }
+    .b-comments-notifier:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        height: 56px;
+        margin: auto;
+        background: linear-gradient(to bottom, color-mix(in srgb, var(--glass-deep) calc(var(--hundred) * 100%), transparent) 0 , color-mix(in srgb, var(--glass-deep) 80%, transparent) 80%, color-mix(in srgb, var(--glass-deep) 40%, transparent) 100%);
+        z-index: -1;
+        opacity: 0;
+        visibility: visible;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        box-shadow: 0 1px 20px 10px color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    }
+    .x1000 .b-comments-notifier:after {
+        max-width: 100%;
+    }
+    .b-comments-notifier[style*=": 0"]:after {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .b-comments-notifier {
+        display: none !important;
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 768px) {
+    body.p-db_entries-works .p-profiles .mass-actions .action a,
+    body.p-db_entries-works .headline .misc-links a,
+    body.p-db_entries-works .midheadline .misc-links a,
+    body.p-db_entries-works .subheadline .misc-links a {
+        font-size: 0 !important;
+        right: -3rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .b-dialog > .inner header img {
+        margin: 1px 10px 7px 0 !important;
+        width: 48px !important;
+    }
+    .b-dialog .b-message .inner header img {
+        margin: 7px 7px 4px 0 !important;
+        width: 37px !important;
+    }
+    .b-message > .inner .name-date .time {
+        padding-top: 0;
+        line-height: 14px;
+    }
+    .b-comments-notifier {
+        display: none !important;
+    }
+    .b-comment > .inner div.body,
+    .b-message > .inner div.body,
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-topic.aside-expanded > .inner,
+    .b-dialog.aside-expanded > .inner,
+    .b-message.aside-expanded > .inner,
+    .b-comment.aside-expanded > .inner,
+    .b-topic.aside-expanded > .b-comments {
+        margin-left: 0 ;
+        min-height: 200px;
+    }
+    .b-topic.aside-expanded > .inner aside.buttons,
+    .b-comment.aside-expanded > .inner aside.buttons,
+    .b-dialog.aside-expanded > .inner aside.buttons,
+    .b-message.aside-expanded > .inner aside.buttons {
+        display: block;
+        margin-right: 0 ;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100% !important;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 3;
+        padding: 10px 14px;
+    }
+    .b-message > .inner div.body .b-catalog_entry {
+        max-width: 600px;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 300px;
+        max-width: 600px;
+    }
+    .b-comment > .inner header .name-date a.name,
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name,
+    .b-message > .inner header .name-date a.name {
+        font-size: 14px;
+    }
+    .b-dialog > .inner > header .name-date a.name {
+        font-size: 16px;
+    }
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name {
+        top: 2px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-dialog .to_dialog {
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+    .b-dialog .b-message {
+        margin-left: 0 ;
+    }
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 140px;
+        min-height: 160px;
+    }
+    .b-message > .inner div.body .entry-tooltip_container {
+        min-height: 180px;
+    }
+    .b-message {
+        padding-bottom: 15px;
+    }
+    .block.m0 .b-message {
+        padding-bottom: 10px !important;
+    }
+}

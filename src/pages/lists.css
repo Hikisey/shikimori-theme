@@ -1,0 +1,666 @@
+/* ===== pages/lists =====
+   списки аниме/манги пользователя, сравнение списков */
+
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
+    max-width: 200px;
+}
+
+/* жанр, ссылка на него d ghjcjvnht hfcrhsdftittujcz fybv */
+.p-user_rates-index .list-lines tr td .episodes_total:after,
+.p-user_rates-index .list-lines tr td .episodes_total:before {
+    color: rgba(var(--accent), 1);
+}
+
+.p-user_rates-index .l-content .b-options-floated span:before,
+.p-user_rates-index .l-content .b-options-floated span:after {
+    color: rgba(var(--text-2), 1);
+    font-size: 0;
+}
+
+.p-user_rates-index .l-content .b-options-floated span:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .v2 .db-update .name:hover,
+.b-comment > .inner .name-date .name:hover,
+.b-comments .comments-collapser:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.p-user_rates-index .list-lines tr td .episodes_total {
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* название аниме в списке моем */
+.p-user_rates-index .list-lines tr .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines tr .name a:hover,
+    .b-user.detailed .history .line a .event:hover {
+        background: none;
+        box-shadow: none;
+        color: rgba(var(--accent), 1);
+        text-decoration: none;
+        border: none;
+    }
+}
+
+.p-user_rates-index .list-lines tr.editable {
+    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+.p-user_rates-index .stat-categories .category {
+    color: rgba(var(--accent), 1);
+    line-height: normal !important;
+    margin: 0 0 0 2px;
+    padding: 0 7px;
+    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .stat-categories .category:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.1);
+        box-shadow: none;
+        background: none;
+    }
+}
+
+.p-user_rates-index .stat-categories .category.active {
+    color: rgba(var(--accent), 1);
+}
+
+/* сводка по разным спискам  */
+.p-user_rates-index .list-groups .summary.lines {
+    color: rgba(var(--text-2), 1);
+}
+
+/* оценка, эпизоды и т.д. столбики */
+.p-user_rates-index .l-content .order-control {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .l-content .order-control:hover {
+    color: rgba(var(--accent), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines .selectable:hover,
+    .p-userlist_comparer .comparer table .selectable:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.01);
+        background: transparent;
+    }
+    tr.user_rate.selectable.editable:hover:after {
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        transform: scale(1.01);
+    }
+}
+
+tr.user_rate.selectable.editable:after {
+    content: "";
+    width: 100%;
+    padding-top: 2px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    z-index: -1;
+}
+
+.p-user_rates-index .list-lines .selectable,
+.p-userlist_comparer .comparer table .selectable {
+    transition: 0.15s ease, -webkit-0 .15s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.p-userlist_comparer .comparer table .exact-same,
+.p-userlist_comparer .legend .exact-same {
+    background-color: rgba(0, 160, 35, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .almost-same,
+.p-userlist_comparer .legend .almost-same {
+    background-color: rgba(0, 86, 20, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .slightly-difr,
+.p-userlist_comparer .legend .slightly-difr {
+    background-color: rgba(160, 0, 0, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .abslt-difr,
+.p-userlist_comparer .legend .abslt-difr {
+    background-color: rgba(117, 21, 1, 0.4);
+    border-radius: 4px;
+}
+
+.p-user_rates-index .list-lines tr.edit-form form {
+    background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    border: none;
+    box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
+    border-radius: 10px;
+}
+
+.b-catalog_entry .cover .misc,
+.p-dashboards-show .midheadline .b-link,
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .history > .title .link,
+.p-dashboards .user_list .list-change .note,
+.p-dashboards .c-my_list .list-change .note,
+.bar.vertical .line .x_label,
+.p-dashboards-show .contests .contest .notice,
+.b-forums .forum .topics,
+.name-date .time,
+.p-profiles .profile-head .c-history .entry .misc,
+.p-profiles-show .lifetime .times .time,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.b-comment > .inner header .name-date .time,
+.b-replies,
+.b-options-floated,
+.p-messages .mass-actions .action,
+.p-animes_collection-index .pagination,
+.p-mangas_collection-index .pagination,
+.p-recommendations-index .pagination,
+.p-userlist_comparer-show .pagination,
+.b-rate .score-notice,
+.b-animes-menu .block-list .date,
+.bar.horizontal .line .x_label,
+.b-animes-menu .friend-rate .status,
+.b-summary_marker::before,
+.b-offtopic_marker::before,
+.tipsy,
+header.head .misc,
+header.head a.edit,
+.p-studios .studio .animes,
+.p-studios .studio .years,
+.p-contests .contest-match .vs .help,
+.p-contests .contest-match .vs .next,
+.p-contests .contest-match .vs .finish,
+.p-contests .contest-match .vs .refrain,
+.p-contests .contest-match .vs .refrained,
+.p-contests .match-day .matches-num,
+.b-lang_trigger,
+.b-club .info,
+.b-new_marker::before,
+.b-user.detailed .info .last-online,
+.b-user.detailed .history .line .date,
+.p-recommendations-index .b-header_filters .hint,
+.p-recommendations-favourites .b-header_filters .hint,
+.p-userlist_comparer .comparer table .notice,
+.p-topics .l-menu .calendar .entry .misc,
+.p-topics .l-menu .reviews .entry .misc,
+.p-topics .l-menu .clubs .entry .misc,
+.p-topics .l-menu .contests .contest .notice,
+.p-topics .l-menu .sticked-topics .topic .notice,
+.b-video_player .cc-player_controls .label,
+.b-video_player .cc-player_controls .episode-title .video-link,
+.b-log_entry .date,
+.b-log_entry .spoiler.collapse,
+.b-log_entry .spoiler.collapsed,
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span,
+.b-js-action,
+.b-input .hint,
+.b-review-topic .review-votes_count,
+.p-dashboard .l-menu .ongoing .misc,
+.p-dashboard .l-menu .season .notice,
+.p-topics .l-menu .sticky-topics .topic .notice,
+.b-hot_topics .topic {
+    font-size: 12px !important;
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .list-lines tr td .new-value input {
+    border-radius: 4px;
+    border: none;
+    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
+}
+
+.p-userlist_comparer .comparer table a {
+    color: rgba(var(--text-strong), 1) !important;
+}
+
+.p-userlist_comparer .comparer table .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-user_rates-index .list-lines tr .index {
+    color: rgba(var(--text), 1) !important;
+}
+
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger {
+    font-size: 13px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-animes_collection-index .pagination .link.disabled:hover,
+    .p-mangas_collection-index .pagination .link.disabled:hover,
+    .p-recommendations-index .pagination .link.disabled:hover,
+    .p-userlist_comparer-show .pagination .link.disabled:hover {
+        box-shadow: none;
+        background: transparent;
+        color: rgba(var(--text), var(--hundred)) !important;
+    }
+}
+
+.b-stats_bar .compatibility a[href^='/comparer']:before {
+    display: none;
+}
+
+.p-user_rates-index .list-groups .summary.posters {
+    border: none;
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), var(--hundred));
+    border-radius: 10%;
+}
+
+.p-user_rates-index .list-groups .summary .stat-value:after {
+    font-size: 0;
+}
+
+.p-user_rates-index .list-groups .summary.lines.library {
+    border-top: 1px solid rgba(var(--text-3), var(--hundred));
+}
+
+.b-user_rate-extended .b-catalog_entry {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.b-message > .inner div.body .b-catalog_entry.cc .content .b-user_rate {
+    right: 0;
+    width: 300px;
+}
+
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .plus::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .edit::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .trigger-arrow::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .plus::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .edit::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .trigger-arrow::before {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.p-user_rates-index .list-posters .user_rate .edit-user_rate:before {
+    background: #453065b5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
+        background: transparent;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover:before {
+        background: rgba(var(--accent), 0.7);
+    }
+}
+
+.p-user_rates-index .list-lines tr td .new-value .item-add:before {
+    position: relative;
+    margin: 0 0 0 -15px;
+}
+
+.p-user_rates-index .list-lines tr td .rewatches {
+    color: #2b9cff;
+}
+
+.b-user_rate-history .status-counter {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+.b-user_rate-history .score-time .stars-container .score {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-user_rate-history .score-time .stars-container .background {
+    color: rgba(var(--glass), 0.4);
+}
+
+.user_rates-minified .b-catalog_entry.planned .image-decor::after,
+.user_rates-minified .b-catalog_entry.watching .image-decor::after,
+.user_rates-minified .b-catalog_entry.completed .image-decor::after,
+.user_rates-minified .b-catalog_entry.rewatching .image-decor::after,
+.user_rates-minified .b-catalog_entry.on_hold .image-decor::after,
+.user_rates-minified .b-catalog_entry.dropped .image-decor::after {
+    font-size: 13px;
+    width: 16px;
+    line-height: 16px;
+    right: 0px;
+    bottom: 0px;
+    top: auto;
+    background: none;
+}
+
+.user_rates-minified .b-catalog_entry.planned .image-decor::before,
+.user_rates-minified .b-catalog_entry.watching .image-decor::before,
+.user_rates-minified .b-catalog_entry.completed .image-decor::before,
+.user_rates-minified .b-catalog_entry.rewatching .image-decor::before,
+.user_rates-minified .b-catalog_entry.on_hold .image-decor::before,
+.user_rates-minified .b-catalog_entry.dropped .image-decor::before {
+    border-width: 0px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    height: 26px;
+    width: 26px;
+    line-height: 25px;
+    bottom: 0px;
+    right: 0px;
+    top: auto;
+}
+
+.user_rates-minified .b-catalog_entry.completed .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, #419541 0);
+}
+
+.user_rates-minified .b-catalog_entry.dropped .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, #ca4929 0);
+}
+
+.user_rates-minified .b-catalog_entry.watching .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, #4c30bd 0);
+}
+
+.user_rates-minified .b-catalog_entry.on_hold .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, #c5833d 0);
+}
+
+.user_rates-minified .b-catalog_entry.planned .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, var(--tone-fdfdfd) 0);
+}
+
+.user_rates-minified .b-catalog_entry.rewatching .image-decor::before {
+    background: linear-gradient(135deg, transparent 18px, #1f6f6a 0);
+}
+
+.p-user_rates-index .list-lines tr td .rate-text,
+.b-user_rate .rate-show .note {
+    color: #d6c2a9;
+}
+
+@media only screen and (min-width: 1025px) {
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger,
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option {
+        max-width: 200px;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:before {
+        line-height: 28px;
+        width: 28px;
+        height: 28px;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate {
+        background: transparent;
+        right: 9px;
+        top: 5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .p-animes_collection-index.x1200 .cc-entries > .c-column,
+    .p-mangas_collection-index.x1200 .cc-entries > .c-column,
+    .p-recommendations-index.x1200 .cc-entries > .c-column,
+    .p-userlist_comparer-show.x1200 .cc-entries > .c-column,
+    .p-animes_collection-index.x1000 .cc-entries > .c-column,
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
+    .p-recommendations-index.x1000 .cc-entries > .c-column,
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+        width: 18%;
+        margin-right: 1% !important;
+        margin-left: 1% !important;
+    }
+    .p-animes_collection-index.x1200 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-mangas_collection-index.x1200 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-recommendations-index.x1200 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-userlist_comparer-show.x1200 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-animes_collection-index.x1000 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-recommendations-index.x1000 .cc-entries > .c-column:nth-child(5n + 1),
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column:nth-child(5n + 1) {
+        clear: left;
+    }
+    .p-animes_collection-index.x1000 .cc-entries > .c-column:nth-child(4n + 1),
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column:nth-child(4n + 1),
+    .p-recommendations-index.x1000 .cc-entries > .c-column:nth-child(4n + 1),
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column:nth-child(4n + 1) {
+        clear: none;
+    }
+    .p-animes_collection-index.x1000 .cc-entries > .c-column:nth-child(4n),
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column:nth-child(4n),
+    .p-recommendations-index.x1000 .cc-entries > .c-column:nth-child(4n),
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column:nth-child(4n) {
+        margin-right: auto;
+    }
+}
+
+/* Ховер в списках аниме/манги растягивается на 2+ строки для длинных названий */
+tr.user_rate.selectable.editable:after {
+    height: calc(100% - 0px);
+}
+
+/* Убран артефакт после названий студий в списке аниме */
+.p-user_rates-index .stat-categories .category:after {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .p-user_rates-index .list-groups header { margin-top: 22px; }
+    .p-user_rates-index .list-groups header:first-of-type { margin-top: 0; }
+    .p-user_rates-index .list-groups header .b-options-floated.collapse {
+        height: 38px;
+        display: flex;
+        align-items: center;
+        padding-right: 14px;
+        margin: 0 !important;
+    }
+    /* кнопки «списком / постерами» — по центру полосы, одинаковые квадраты */
+    .p-user_rates-index .l-content > .subheadline-buttons {
+        height: 38px !important;
+        margin: 0 !important;
+        padding: 0 6px 0 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 38px;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 8px;
+        line-height: 1 !important;
+        color: rgba(var(--text), .62) !important;
+        transition: background-color .2s ease, color .2s ease;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::before,
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::after {
+        margin: 0 !important;
+        line-height: 1 !important;
+        position: static !important;
+        color: inherit !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher.selected {
+        color: rgb(var(--accent)) !important;
+        background: rgba(var(--accent), .14);
+    }
+    /* поиск по списку — такая же стеклянная полоса, как заголовки, с лупой слева;
+       одинаковые отступы: «Список аниме» → поиск → первая группа */
+    html body.p-user_rates-index .l-content > .b-collection_search {
+        margin: 12px 0 12px !important;
+        padding: 0 !important;
+    }
+    .p-user_rates-index .b-collection_search .field {
+        position: relative;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .b-collection_search .field::before {
+        content: "\f002";
+        font-family: "FontAwesome", sans-serif;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 13px;
+        line-height: 1;
+        color: rgba(var(--text), .45);
+        pointer-events: none;
+        z-index: 1;
+        transition: color .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field:focus-within::before { color: rgb(var(--accent)); }
+    html body.p-user_rates-index .l-content > .b-collection_search .field input {
+        width: 100% !important;
+        height: 38px !important;
+        box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 14px 0 38px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(var(--glass-light), .07) !important;
+        background-color: rgba(var(--glass), .62) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+        transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field input::placeholder { color: rgba(var(--text), .45); }
+    html body.p-user_rates-index .l-content > .b-collection_search .field input:focus {
+        border-color: rgba(var(--accent), .55) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent), 0 0 0 2px rgba(var(--accent), .16) !important;
+    }
+    .p-user_rates-index .list-groups { margin-top: 0 !important; padding-top: 0 !important; }
+    .p-user_rates-index .list-groups > header:first-child,
+    .p-user_rates-index .list-groups > header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
+    /* карандаш «изменить» (свой список) — маленький стеклянный квадрат */
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate {
+        top: 8px !important;
+        right: 8px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(var(--glass), .65) !important;
+        border: 1px solid rgba(var(--glass-light), .14);
+        box-sizing: border-box;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.2));
+        -webkit-backdrop-filter: blur(6px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        z-index: 4 !important;
+        transition: background-color .2s ease, border-color .2s ease;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate::before {
+        background: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px !important;
+        line-height: 1 !important;
+        color: rgba(var(--text), .9);
+    }
+    /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
+    .p-user_rates-index .list-posters .user_rate {
+        position: relative;
+        border-radius: 14px;
+        transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+    }
+}
+
+@media screen and (min-width: 768px) and (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-posters .user_rate:hover > .b-catalog_entry {
+        transform: none;
+        box-shadow: none;
+    }
+    .p-user_rates-index .list-posters .user_rate:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .3);
+        z-index: 2;
+    }
+    /* v1.2.22: невидимая полоска под поднятой карточкой — наведение не мигает у нижнего края */
+    .p-user_rates-index .list-posters .user_rate:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 10px;
+        background: transparent;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
+        background: rgba(var(--accent), .85) !important;
+        border-color: rgba(var(--accent), 1);
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover::before {
+        background: none !important;
+        color: rgb(var(--text-strong));
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 767px) {
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger,
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option {
+        max-width: 500px;
+    }
+    .p-user_rates-index .list-lines tr.edit-form form {
+        padding: 5px 10px 7px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-db_entry .trigger,
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger,
+    .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .p-user_rates-index .list-lines tr .num {
+        display: table-cell !important;
+    }
+    .p-user_rates-index .list-lines tr .num.hoverable,
+    th.num.order-control[data-order="my"] {
+        display: table-cell !important;
+    }
+    .p-user_rates-index .list-lines tr .num:nth-child(3) {
+        display: table-cell !important;
+    }
+    th.num.order-control[data-order="episodes"],
+    th.num.order-control[data-order="kind"],
+    td.num.hoverable span.current-value[data-field="episodes"],
+    span.misc-value {
+        display: none !important;
+    }
+    .p-user_rates-index .list-lines tr .num {
+        width: auto;
+    }
+    /* Список манги на телефоне — без лишних столбцов */
+    .p-user_rates-index .list-lines tr .num.hoverable:nth-child(4),
+    .p-user_rates-index .list-lines tr .num.hoverable:nth-child(5),
+    th.num.order-control[data-order="chapters"],
+    th.num.order-control[data-order="volumes"] {
+        display: none !important;
+    }
+    th.num.order-control[data-order="kind"] {
+        display: table-cell !important;
+    }
+}

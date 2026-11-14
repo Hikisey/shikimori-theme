@@ -1,0 +1,236 @@
+/* ===== components/headings =====
+   заголовки .headline / .subheadline / .midheadline */
+
+header.head .misc {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* цвет заголовков */
+header.head h2,
+header.head h1 {
+    border-bottom: none;
+    color: rgba(var(--text-strong), 1) !important;
+    font-family: "Comfortaa", sans-serif;
+    display: block;
+}
+
+/* стрелка назад */
+header.head h1 a.back:before,
+header.head h2 a.back:before {
+    color: rgba(var(--text-strong), 1);
+}
+
+header.head .notice {
+    color: rgba(var(--text-2), 1);
+}
+
+.linkheadline.midheadline > a:hover {
+    color: rgba(var(--link), 1);
+}
+
+header.head a.misc {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 12px !important;
+    background: rgba(var(--glass), 0.4);
+    padding: 5px 50px;
+    border-radius: 14px;
+    color: rgba(var(--text), 1);
+    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    margin: 8px;
+    pointer-events: auto;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    display: block;
+    width: max-content;
+    text-transform: capitalize;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    header.head a.misc:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+        color: var(--tone-e4e4e4) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.subheadline .misc-link {
+    color: rgba(var(--text-2), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .subheadline .misc-link:hover {
+        transform: scale(1) !important;
+        background: none !important;
+        box-shadow: none !important;
+        font-size: 12px !important;
+    }
+}
+
+.headline,
+.midheadline,
+.subheadline {
+    border: none;
+    border-radius: 13px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.6);
+    transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    font-size: 14px;
+    color: rgba(var(--text-2), 1);
+    height: 28px;
+    padding: 0 14px 0;
+    display: flex;
+    line-height: 1.5;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    overflow: visible;
+}
+
+.headline > a,
+.midheadline > a,
+.subheadline > a,
+.midheadline .b-link,
+.subheadline .b-link {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: inherit !important;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 2px 15px 0;
+    line-height: 1;
+    border-radius: 13px;
+}
+
+.headline > a:before,
+.midheadline > a:before,
+.subheadline > a:before {
+    color: rgba(var(--link), 1) !important;
+    position: absolute;
+    top: 0;
+    right: 10px !important;
+    background: linear-gradient(270deg, rgba(var(--text-2), 1), rgba(var(--text-2), 0.3));
+    width: 8px;
+    margin: 10px 1px;
+    height: 8px;
+    border-radius: 50%;
+    font-size: 0;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .headline > a:hover:before,
+    .midheadline > a:hover:before,
+    .subheadline > a:hover:before {
+        color: rgba(var(--link), 1) !important;
+        background: linear-gradient(270deg, rgba(var(--accent), 1), rgba(var(--accent), 0.3));
+    }
+}
+
+.subheadline .count:before,
+.subheadline .count:after {
+    font-size: 0;
+}
+
+.subheadline .b-user16 img {
+    margin-top: -6px !important;
+}
+
+header.head p.notice span {
+    background: transparent !important;
+}
+
+/* красное ерорные названия */
+.b-errors .subheadline {
+    background: #632c2ae8;
+    border-left: none;
+    color: #f1b2b2 !important;
+}
+
+.fc-headlines .midheadline.red.linkheadline {
+    background: rgba(16, 130, 67, 0.4);
+    color: #90c7ae;
+}
+
+.fc-headlines .midheadline.blue.linkheadline {
+    background: rgba(193, 37, 138, 0.4);
+    color: #c7a0b9;
+}
+
+.fc-headlines .midheadline.green.linkheadline {
+    background: rgb(35 114 171 / 40%);
+    color: #79bfd4;
+}
+
+header.head .notice {
+    font-size: 13px !important;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    header.head {
+        margin-top: 0 ;
+    }
+    .subheadline.m13 {
+        display: block;
+        position: absolute;
+        right: 24px;
+        top: 65px;
+        background: color-mix(in srgb, var(--glass-deep) 40%, transparent) !important;
+        left: auto;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .subheadline > a {
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header.head .notice {
+        font-size: 12px !important;
+    }
+    .subheadline.m13 {
+        display: block;
+        position: absolute;
+        left: 10px !important;
+        top: 82px;
+        width: 98px;
+        font-size: 12px;
+        background: transparent !important;
+        border: 1.5px solid rgba(var(--text), 0.2) !important;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subheadline.m13 {
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .subheadline.m13 {
+        left: 5px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .l-page > div > header.head {
+        padding: 10px 12px !important;
+        margin-bottom: 10px !important;
+    }
+    /* заголовки разделов — тот же стеклянный «чип» */
+    .l-page .subheadline {
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+    }
+}

@@ -1,0 +1,964 @@
+/* ===== layout/page =====
+   каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column */
+
+body {
+    font-family: var(--font-family) !important;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+    overflow: visible;
+    background-color: rgb(var(--bg-color));
+}
+
+body {
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 1px;
+    width: -moz-available;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: none;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center center !important;
+    background-attachment: fixed;
+}
+
+body:after {
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent);
+}
+
+body.localized_names-ru .name-ru:hover {
+    color: rgba(var(--accent), 1) !important;
+    text-decoration: none !important;
+}
+
+body.localized_names-ru .name-ru:before {
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+.l-page {
+    overflow: visible !important;
+}
+
+body#dashboards_show .l-page {
+    margin: 40px auto 15px;
+}
+
+body[data-locale=ru] .b-summary_marker {
+    width: 55px;
+}
+
+body[data-locale=ru] .b-summary_marker:before {
+    background: #1d4c20;
+    color: #d2ecd4;
+    width: 50px;
+    right: 2px;
+    border: none;
+    line-height: 1.4;
+}
+
+body[data-locale=ru] .b-summary_marker.off:before {
+    color: #6c8065 !important;
+    background: #163c16 !important;
+}
+
+body[data-locale=ru] .b-summary_marker.active:before {
+    background: #1a501c;
+    color: #e3f1e1;
+}
+
+body[data-locale=ru] .b-summary_marker {
+    position: relative;
+}
+
+body[data-locale=ru] .b-new_marker::before,
+body[data-locale=ru] .b-summary_marker::before,
+body[data-locale=ru] .b-offtopic_marker::before,
+body[data-locale=ru] .b-abuse_marker:before {
+    font-size: 12px !important;
+}
+
+body * [class*="_marker"]:before,
+body * [class*="_status_tag"]:before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tone-373c3e);
+    color: var(--tone-e7e7e7);
+    transition: 0.1s ease !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+body * [class*="_marker"]::before,
+body * [class*="_status_tag"]::before {
+    content: '';
+    padding: 2px 9px;
+}
+
+body * [class*="_status_tag"],
+body * [class*="_marker"] {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 2px !important;
+    color: var(--tone-e7e7e7) !important;
+    background: unset!important;
+    box-shadow: none!important;
+    border: none!important;
+    border-radius: 8px;
+}
+
+body * [class*="_status_tag"]:not([data-text]),
+body * [class*="_marker"]:not([data-text]) {
+    transition: 0.1s ease !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    background: var(--tone-373c3e) !important;
+}
+
+body * [class*="_marker"]:not([data-text]) {
+    padding: 0 5px;
+}
+
+body * [class*="_status_tag"]:not([data-text]) {
+    padding: 2px 9px;
+}
+
+/* надпись коллекция на зеленом */
+body * .b-anime_status_tag.collection:before {
+    background: linear-gradient(45deg, #2b684e, #1f5430, #476024) !important;
+}
+
+body * .b-abuse_marker:before {
+    content: 'жалоба' !important;
+    background-color: #7b0d0d;
+    color: #e4c6c6;
+}
+
+body * [class*="broadcast_marker"]:before {
+    content: '📢 рассылка' !important;
+    background-color: #772448;
+    color: var(--tone-eadddd);
+}
+
+body * .b-offtopic_marker {
+    width: 84px;
+    border: none;
+}
+
+body * .b-offtopic_marker:before {
+    width: 65px;
+}
+
+body * [class*="broadcast_marker"]:before {
+    width: 84px !important;
+}
+
+body[data-locale=ru] .b-offtopic_marker.off:before {
+    background-color: #4c0f2f;
+    border: none;
+    color: #7b646d;
+}
+
+body * .inner:hover aside.markers [class*="new_marker"].off {
+    display: inline-flex;
+    width: 75px !important;
+}
+
+body * [class*="new_marker"].active,
+.b-message > .inner:hover aside.markers .b-new_marker.off {
+    display: inline-flex;
+    width: 75px;
+}
+
+body[data-locale=ru] .b-new_marker:before {
+    width: 50px;
+    border: none;
+    color: #dde6ef;
+}
+
+body#pages_bb_codes a.misc[href*='/polls/new?']:after {
+    margin-left: 0;
+}
+
+.b-breadcrumbs > span:after {
+    content: '\f101';
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+body#profiles_show .l-footer {
+    margin: 15px 15px 0;
+    bottom: 7px;
+}
+
+body#profiles_show .b-to-top .slide {
+    height: 20px;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 0;
+    z-index: 999;
+    top: auto;
+}
+
+body#profiles_show .b-to-top .slide:before {
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 50px !important;
+    height: 50px;
+    background: transparent;
+    opacity: 0;
+
+}
+
+body#profiles_show .b-to-top .arrow {
+    top: auto;
+    bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body#animes_collection_index .b-collection_search .b-catalog_entry:hover {
+        transform: scale(1.05);
+    }
+    body#topics_index .b-collection_search .b-catalog_entry:hover {
+        box-shadow: none;
+        background: none !important;
+    }
+}
+
+body#topics_index .b-collection_search .b-catalog_entry {
+    transform: scale(1);
+}
+
+body#profiles_show .subheadline {
+    margin-bottom: 10px;
+}
+
+body#profiles_show .l-page {
+    padding: 0 !important;
+    border-radius: 15px;
+}
+
+body#profiles_show .profile-content {
+    padding: 0 15px 15px 15px;
+}
+
+.l-page {
+    padding: 10px 15px !important;
+    overflow: hidden;
+}
+
+body#profiles_edit .l-page {
+    overflow: visible;
+}
+
+body#polls_show .cc-2 {
+    margin-bottom: 20px;
+}
+
+body#profiles_show .activity .b-nothing_here {
+    line-height: 100px !important;
+}
+
+body#profiles_show .b-clubs .b-nothing_here,
+body#profiles_show .cc-friends .b-nothing_here {
+    line-height: 40px !important;
+}
+
+body#people_show .c-works .b-catalog_entry {
+    padding: 3px 3px;
+    transform: scale(1);
+}
+
+body#people_show .c-works .b-catalog_entry .image-cutter {
+    max-height: 120px;
+}
+
+body#profiles_show .profile-content .cc-2.block {
+    margin-bottom: 0.5rem;
+}
+
+html.turbolinks-progress-bar::before {
+    background: rgba(var(--accent), var(--hundred)) !important;
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+body#profiles_show .b-topic > .editor-container {
+    margin-top: 20px;
+}
+
+body#dialogs_show .b-topic > .editor-container {
+    margin-top: 0;
+}
+
+body#clubs_index .b-club .logo {
+    margin-right: 10px;
+}
+
+body#profiles_edit .b-catalog_entry .cover .image-decor img {
+    border-radius: 14px;
+}
+
+.l-content h3 {
+    line-height: 30px;
+}
+
+body#tests_reset_styles_cache .b-input input {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+body#tests_reset_styles_cache input[type="submit"] {
+    width: 30%;
+}
+
+body#messages_index .block.is-own-profile {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body#messages_index .block.is-own-profile > * {
+    width: 100%;
+    order: 5;
+}
+
+body#messages_index .block.is-own-profile > .b-options-floated {
+    order: 1;
+}
+
+body#messages_index .block.is-own-profile > .mass-actions {
+    order: 2;
+    position: relative;
+    margin-top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 28px;
+    padding-right: 15px;
+}
+
+body#messages_index .block.is-own-profile > .subheadline {
+    order: 3;
+    position: relative;
+    margin-top: -28px;
+}
+
+body#messages_index .block.is-own-profile > .block {
+    order: 4;
+}
+
+body .headline .misc-links,
+body .midheadline .misc-links,
+body .subheadline .misc-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+body#profiles_edit .b-to-top .slide:before {
+    width: 0px;
+}
+
+body#dashboards_show .cc-inner,
+body#dashboards_show .c-forum {
+    display: none;
+}
+
+body#dashboards_show .block2 {
+    margin-bottom: 27px;
+}
+
+body#dashboards_show .cc-news {
+    margin-top: -31px;
+}
+
+body#clubs_index .subheadline,
+body#profiles_clubs .subheadline {
+    width: 100%;
+    text-align: center;
+}
+
+body#clubs_index .b-clubs .b-club,
+body#profiles_clubs .b-clubs .b-club {
+    margin: 5px 5px !important;
+}
+
+body#messages_index .b-comments {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+body#messages_index .b-comments .b-message[data-appear_type="message"] {
+    width: 100%;
+}
+
+body#messages_index .b-comments .b-message.b-generated_news {
+    margin: 0px !important;
+    border: none;
+    border-bottom: 1px solid rgba(var(--text), 0.1);
+}
+
+body#messages_index .b-comments .b-message.b-generated_news .inner div.body {
+    margin-left: 0px;
+}
+
+body#messages_index .b-catalog_entry-tooltip .b-add_to_list {
+    margin: 10px 0 0 0;
+    max-width: 270px;
+    min-width: 170px;
+}
+
+body#messages_index .l-footer .links,
+body#dialogs_index .l-footer .links,
+body#dialogs_show .l-footer .links {
+    font-size: 0 !important;
+    height: 14px;
+}
+
+.c-column.m0 {
+    margin-bottom: 10px !important;
+}
+
+body#profiles_show .b-achievement.badge {
+    border-radius: 9px;
+}
+
+body#profiles_show .cc-franchises .b-badge img,
+body#profiles_show .cc-franchises .b-badge .no-image {
+    border-radius: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-column.c-control.show-options:hover {
+        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.cc-optional_controls .icon,
+.c-column.c-control .icon {
+    height: 29px;
+}
+
+.cc-optional_controls .c-control {
+    background: rgba(var(--glass), 0.5);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
+    border-radius: 22px;
+    padding: 0px 0px 2px 0px;
+    transition: 0.3s ease;
+    margin: 5px 0px 7px 0px;
+}
+
+.x1000 .l-page,
+.x1200 .l-page {
+    max-width: 1200px;
+}
+
+.l-page {
+    min-height: 50px;
+    margin: 0px auto 25px;
+    position: relative;
+}
+
+.x1000 .l-page {
+    margin: 65px auto 25px;
+    border-radius: 8px;
+}
+
+.l-page {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 1025px) {
+    @media (hover: hover) and (pointer: fine) {
+        body[data-locale="ru"] .b-offtopic_marker.off:hover:before,
+        body[data-locale="ru"] .b-offtopic_marker.active:hover:before {
+            color: #ffcfe0;
+            background-color: #ad024f;
+        }
+        body[data-locale="ru"] .b-summary_marker.off:hover:before,
+        body[data-locale="ru"] .b-summary_marker.active:hover:before {
+            color: #eaffe9 !important;
+            background-color: #037d03 !important;
+            border: none;
+        }
+    }
+    body#dialogs_index .b-height_shortener {
+        margin-left: 55px;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .l-page {
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    .l-page {
+        margin: 15px auto 15px;
+        border-radius: 12px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .l-page {
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        box-shadow: none !important;
+    }
+    body:before {
+        content: "";
+        position: fixed;
+        background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+    body#profiles_show .b-clubs {
+        flex-wrap: unset;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .x1000 .l-page,
+    .x1200 .l-page {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body#profiles_show .cc-franchises .b-badge img {
+        box-shadow: 0 0 0 2px rgba(var(--glass), 0.6);
+        padding: 2px;
+        position: relative;
+        height: 76%;
+        width: 107%;
+        max-width: 100rem;
+        max-height: 100rem;
+        min-width: 2rem;
+        min-height: 2rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        object-position: center;
+        transition: 0s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    }
+}
+
+/* ===================== Оформление ===================== */
+/* --- Обои с плавным зумом --- */
+/* Обои сразу приближены (без анимации при загрузке страницы),
+   плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
+html { background: rgb(var(--bg-color)); }
+
+body { background: none !important; }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--bg-image) center / cover no-repeat;
+    transform: scale(var(--bg-zoom));
+    filter: blur(var(--bg-blur));
+    /* одинаковая анимация на приближение и отдаление */
+    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+html:not(:hover) body::before {
+    transform: scale(1);
+}
+
+/* --- Мягкий светлый текст без «кислотной» белизны --- */
+body,
+.b-text,
+.text,
+p,
+.profile-head .c-brief,
+.b-forum_message .body {
+    color: rgb(var(--text));
+}
+
+html input[type="checkbox"]:not(#u) {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px;
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(var(--text), .55) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+}
+
+/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
+   не зависит от шрифта и высоты строки */
+html input[type="checkbox"]:not(#u)::before {
+    content: none !important;
+    display: none !important;
+}
+
+html input[type="checkbox"]:not(#u),
+html input[type="checkbox"]:not(#u):focus,
+html input[type="checkbox"]:not(#u):active {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTIuNiA2LjNsMi4zIDIuMyA0LjUtNC45IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS45IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=") !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    background-size: 0 0 !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .16s ease-in !important;
+}
+
+html input[type="checkbox"]:not(#u):checked {
+    background-color: rgb(var(--accent)) !important;
+    border-color: rgb(var(--accent)) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .18) !important;
+    background-size: 12px 12px !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
+}
+
+html input[type="checkbox"]:not(#u):focus-visible {
+    box-shadow: 0 0 0 3px rgba(var(--accent), .3) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    html input[type="checkbox"]:not(#u):not(:checked):hover {
+        border-color: rgba(var(--accent), .8) !important;
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .l-page {
+        animation: none !important;
+        transition: none !important;
+    }
+    .l-page {
+        padding: 10px !important;
+        margin-top: 5px !important;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body#profiles_show .about.block {
+        margin-top: 20px;
+        clear: left;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cc-2a > .c-column {
+        display: inline-block;
+        margin-right: 0  !important;
+    }
+    .b-breadcrumbs {
+        font-size: 12px !important;
+    }
+    body[data-locale="ru"] .b-summary_marker:before,
+    body[data-locale="ru"] .b-offtopic_marker:before,
+    body[data-locale="ru"] {
+        position: static;
+    }
+    body[data-locale="ru"] .b-offtopic_marker:before {
+        margin-left: 0 ;
+        margin-right: 12px;
+    }
+    body[data-locale="ru"] .b-offtopic_marker {
+        width: 65px;
+        margin: 0;
+    }
+    body[data-locale="ru"] .b-new_marker:before {
+        margin-top: 20px;
+        right: 9px;
+        content: "\f111";
+        width: 20px;
+        color: rgba(var(--accent), var(--hundred));
+        background: none !important;
+        font: normal normal normal 16px/1 FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        box-shadow: none !important;
+        padding: 0;
+    }
+    body[data-locale="ru"] .b-new_marker {
+        margin: 0;
+        width: 20px;
+    }
+    body[data-locale="ru"] .b-summary_marker {
+        margin: 0;
+    }
+    body[data-locale="ru"] .b-summary_marker:before,
+    body[data-locale="ru"] .b-offtopic_marker:before,
+    body[data-locale="ru"] .b-abuse_marker:before {
+        margin-top: 0 ;
+    }
+    body[data-locale="ru"] .b-summary_marker.off:hover:before,
+    body[data-locale="ru"] .b-summary_marker.active:hover:before {
+        border: none;
+    }
+    .c-column.c-right {
+        position: absolute;
+        top: 0;
+    }
+    body#profiles_show .c-column.c-right .b-catalog_entry {
+        padding: 8px !important;
+    }
+    body#profiles_show .profile-content {
+        margin-top: -320px;
+    }
+    body#profiles_show .profile-head {
+        position: relative;
+        top: -320px;
+        height: 320px;
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        border-radius: 0 ;
+        padding: 20px 15px 0 15px !important;
+    }
+    .cc-second {
+        display: none;
+    }
+    body#profiles_show .l-page {
+        margin-top: 326px !important;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    body#profiles_show .l-page {
+        border-radius: 0 ;
+        margin-top: 324px !important;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    body#profiles_show .c-column.c-right .b-catalog_entry {
+        padding: 4px !important;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .cc {
+        margin-bottom: 10px;
+    }
+    .l-page {
+        padding: 10px !important;
+        margin-top: 5px !important;
+        outline: 40px solid color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    body#profiles_show .b-user.avatar img {
+        width: 90%;
+    }
+    body#profiles_show .b-club .logo {
+        width: 100% !important;
+    }
+    body#profiles_show .l-page {
+        border-radius: 0 ;
+        margin-top: 364px !important;
+    }
+    body#profiles_show .profile-head {
+        top: -360px;
+    }
+    body#profiles_show .profile-content {
+        margin-top: -360px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* ================================================================
+       Телефоны (iPhone / Safari и др.): размытый фон, фильтры по центру
+       экрана, подписи без наложения на значки
+       ================================================================ */
+    /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
+    html body::before,
+    html:not(:hover) body::before {
+        transform: scale(1.04);
+        transition: none;
+        filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+        -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+    }
+    /* шапка профиля и содержимое идут обычным потоком: шапка растёт по
+       содержимому и не наезжает на «Друзья», нет пустой полосы */
+    html body#profiles_show .l-page { margin-top: 5px !important; }
+    html body#profiles_show .profile-head {
+        top: 0 !important;
+        height: auto !important;
+        margin-bottom: 0 !important;
+    }
+    html body#profiles_show .profile-content { margin-top: 0 !important; }
+    html body#profiles_show .profile-content > .cc-2.block {
+        display: flex !important;
+        flex-direction: column;
+        height: auto !important;
+        margin-top: 4px !important;
+    }
+    html body#profiles_show .profile-content > .cc-2.block > .c-column {
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+    html body#profiles_show .profile-content > .cc-2.block > .c-right { order: 1; }
+    html body#profiles_show .profile-content > .cc-2.block > .c-right > .block:last-child { margin-bottom: 0 !important; }
+    html body#profiles_show .profile-content > .cc-2.block > .c-left { order: 2; margin-top: 14px !important; }
+    /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
+    html body#profiles_show .profile-content .c-left .lifetime {
+        line-height: normal !important;
+        padding-top: 0 !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 12px !important;
+        padding: 0 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        transform: none !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label,
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        position: static !important;
+        float: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        line-height: 1.3 !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label {
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: left !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        flex: 0 0 auto;
+        text-align: right !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+    /* мягкая тень у текста, который лежит прямо на обоях */
+    .l-page {
+        text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
+    }
+    html body#profiles_show .profile-content .c-left .lifetime,
+    html body#profiles_show .profile-content .c-left .activity {
+        padding: 10px 12px !important;
+        margin-bottom: 10px !important;
+    }
+    /* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
+       Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
+    html { background-color: rgb(var(--bg-color-mobile)) !important; }
+    html body::before {
+        background: var(--bg-image-mobile) center / cover no-repeat;
+        background-color: rgb(var(--bg-color-mobile));
+    }
+    /* ================================================================
+       v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
+       ================================================================ */
+    /* цветные заголовки главной — как «Темы дня» */
+    html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
+        background: rgba(var(--glass), .6) !important;
+        color: rgba(var(--text-2), 1) !important;
+    }
+    html body .headline:has(> .misc-links) {
+        min-height: 36px;
+        height: auto !important;
+        padding: 4px 4px 4px 14px !important;
+        box-sizing: border-box;
+        gap: 10px;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+    }
+    /* кнопки — справа, в одну строку, внутри полосы */
+    html body .headline > .misc-links {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 0 0 auto !important;
+        flex: 0 0 auto;
+    }
+    html body .headline > .misc-links > a {
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+    }
+    html body .headline > .misc-links > a::before { display: none !important; }
+    html body .headline > .misc-links > a::after {
+        display: flex !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+        border-radius: 9px !important;
+        background: rgba(var(--glass-light), .05) !important;
+        border: 1px solid rgba(var(--glass-light), .09);
+        box-shadow: none !important;
+        color: rgba(var(--text), .72) !important;
+        font-size: 13px !important;
+        line-height: 1;
+        transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .12s ease !important;
+    }
+    html body .headline > .misc-links > a:active::after {
+        background: rgba(var(--accent), .18) !important;
+        border-color: rgba(var(--accent), .6);
+        color: rgb(var(--link)) !important;
+        transform: scale(.92);
+        transition-duration: .06s !important;
+    }
+}

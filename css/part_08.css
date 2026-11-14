@@ -1,0 +1,498 @@
+/* из layout/header */
+.l-top_menu-v2 .submenu > a:hover {
+    background: rgba(var(--glass-light), .06) !important;
+    color: rgb(var(--text)) !important;
+}
+
+/* --- Читаемость страницы настроек --- */
+/* Подсказки под полями */
+/* из pages/settings */
+.b-input .hint,
+.hint,
+.b-input .hint *,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: rgb(var(--text-2)) !important;
+    opacity: 1 !important;
+}
+
+/* Поля ввода были почти невидимы — тёмный фон, рамка, подсветка при фокусе */
+/* из components/forms */
+.b-input input[type="text"],
+.b-input input[type="email"],
+.b-input input[type="url"],
+.b-input input[type="password"],
+.b-input textarea,
+.edit_user input[type="text"],
+.edit_user input[type="url"],
+.edit_user textarea {
+    background: color-mix(in srgb, var(--glass-deep) 85%, transparent) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+
+/* из components/forms */
+.b-input input:focus,
+.b-input textarea:focus,
+.edit_user input:focus,
+.edit_user textarea:focus {
+    border-color: rgba(var(--accent), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .15) !important;
+    outline: none !important;
+}
+
+/* --- Мелкие фиксы --- */
+/* Выровнял пункт «Правила» во всплывающем справа меню */
+/* из layout/header */
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
+}
+
+/* из pages/anime */
+.b-db_entry .c-poster .poster,
+.b-db_entry img.image {
+    border-radius: 12px;
+}
+
+/* из components/buttons */
+.b-link_button,
+.b-button,
+button.b-button,
+.add-to-list,
+.current {
+    border-radius: 10px !important;
+    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/buttons */
+    .b-link_button:hover,
+    .b-button:hover {
+        /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+}
+
+/* из pages/achievements */
+.b-catalog_entry,
+.b-user,
+.b-club,
+.b-achievement,
+.cc-franchises .b-badge,
+.b-link_button,
+.b-button,
+.menu-item,
+.b-options-floated .item {
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .15s ease;
+}
+
+/* из base/base */
+a:hover,
+.b-link:hover,
+.b-js-link:hover {
+    color: var(--link-hover) !important;
+}
+
+/* --- Настройки: мелкий текст чуть ярче --- */
+/* из pages/settings */
+.b-input .hint,
+.b-input .hint span,
+.hint,
+.hint span,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: var(--tone-c4cad4) !important;
+}
+
+/* из pages/settings */
+.p-profiles-edit .b-options-floated a,
+.p-profiles-edit .b-options-floated .item,
+.p-profiles-edit .b-options-floated span,
+.p-profiles-edit .section-icon + span {
+    color: var(--tone-d6dbe4) !important;
+}
+
+/* --- Подвал --- */
+/* из layout/footer */
+.l-footer,
+.l-footer a,
+.l-footer .copyright {
+    color: var(--text-input) !important;
+}
+
+/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a,
+.p-profiles-edit .account .oauth .b-link_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--glass), .95) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
+   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
+   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a::before,
+.p-profiles-edit .account .oauth a > * {
+    transition: transform .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .account .oauth a:hover::before,
+    .p-profiles-edit .account .oauth a:hover > * {
+        transform: translateY(-2px);
+    }
+}
+
+/* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
+/* из pages/settings */
+.b-link_button:active,
+.b-button:active,
+input[type="submit"]:active,
+button:active,
+input[type="file"]::file-selector-button:active,
+.p-profiles-edit .account .oauth a:active {
+    transform: translateY(1px) scale(.97) !important;
+    filter: brightness(.92);
+    box-shadow: inset 0 2px 6px rgba(var(--shade), 0.35) !important;
+    transition-duration: .06s !important;
+}
+
+/* --- Галочки: без плашки слева после клика --- */
+/* из components/forms */
+input[type="checkbox"],
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:active,
+.b-input input[type="checkbox"]:focus {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
+/* из components/tabs */
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Кнопки сохранения в настройках в стиле темы --- */
+/* из pages/settings */
+.p-profiles-edit input[type="submit"],
+.p-profiles-edit button[type="submit"],
+.p-profiles-edit .b-button,
+.p-profiles-edit .buttons .b-button,
+.p-profiles-edit .buttons input {
+    background: var(--accent-dim) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    padding: 7px 16px !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 45%, transparent) !important;
+    text-shadow: none !important;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit input[type="submit"]:hover,
+    .p-profiles-edit button[type="submit"]:hover,
+    .p-profiles-edit .b-button:hover,
+    .p-profiles-edit .buttons input:hover {
+        background: var(--accent-hover) !important;
+        box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
+    }
+}
+
+/* из pages/settings */
+body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
+    top: 0 !important; bottom: auto !important;
+    transform: rotate(180deg);
+}
+
+/* плавный выезд и сворачивание через transition */
+/* из components/forms */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: none !important;
+    display: block;
+    transform-origin: top center;
+    clip-path: inset(0 0 0 0 round var(--drop-radius));
+    transform: none;
+    transition: clip-path var(--ui-drop) var(--ui-ease),
+                transform var(--ui-drop) var(--ui-ease),
+                display var(--ui-drop) allow-discrete !important;
+}
+
+/* из components/forms */
+.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
+
+/* --- Сервисы в настройках: X белым, Facebook ярче --- */
+/* из pages/settings */
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
+    filter: invert(1) brightness(1.15) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
+.oauth a:is(.facebook, [href*="auth/facebook"])::before,
+.oauth a:is(.facebook, [href*="auth/facebook"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"]) > *,
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"])::before {
+    filter: brightness(1.12) saturate(1.1) !important;
+}
+
+@media screen and (max-width: 767px) {
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info,
+    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 10px 12px 12px !important;
+        box-sizing: border-box;
+        line-height: normal !important;
+        border-radius: 14px;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        transform: none !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        line-height: 20px !important;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-2a > .c-column {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+        border-radius: 14px;
+        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        min-width: 0;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-friends .b-user img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 !important;
+    }
+    /* из pages/clubs */
+    body.p-profiles-show .cc-2a .b-clubs {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* из pages/anime */
+    .b-db_entry > .c-image .c-actions .b-subposter-action {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        min-height: 54px;
+        margin: 0 !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box;
+        text-align: center !important;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+    }
+    /* из pages/anime */
+    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
+        content: attr(data-text);
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: clamp(10.5px, 3vw, 12px);
+        line-height: 1.25;
+        white-space: normal;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        color: rgb(var(--text));
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* второстепенный текст светлее */
+    /* из pages/clubs */
+    .b-catalog_entry .misc,
+    .b-catalog_entry .misc span,
+    .l-page header.head .notice,
+    .pagination,
+    .pagination span,
+    .pagination .link.disabled,
+    .hint,
+    .b-input .hint,
+    .b-form .hint,
+    .b-nothing_here,
+    .p-profiles .profile-head .c-brief .notice,
+    .p-profiles .profile-head .c-brief .notice span,
+    .p-profiles-show .lifetime .times .time,
+    .p-profiles-show .lifetime .title .label,
+    .p-profiles-show .lifetime .title .value,
+    .b-clubs,
+    .b-clubs .b-nothing_here,
+    .b-entry-info .key {
+        color: var(--text-soft) !important;
+        opacity: 1 !important;
+    }
+    /* из components/carousels */
+    .l-page > div > .pagination {
+        display: flex !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 6px 12px !important;
+        margin-bottom: 10px !important;
+        border-radius: 12px;
+    }
+}
+
+@media (hover: none) {
+    /* Касание карточки на телефоне: короткий отклик нажатия, без «залипания» (hover-эффекты
+       теперь только для мыши, см. @media (hover: hover) and (pointer: fine)). */
+    /* из kits/about-kits */
+    .b-catalog_entry .cover:active,
+    .b-db_entry-variant-photo:active,
+    .about .b-catalog_entry .cover:active {
+        transform: scale(.97);
+        transition: transform .08s ease;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* ================================================================
+       v1.2.11 — список аниме/манги (ПК): заголовки, поиск, переключатели, карандаш
+       ================================================================ */
+    /* заголовки «Список аниме» и групп («Запланировано»…) — стекло с акцентной чертой слева */
+    /* из pages/lists */
+    .p-user_rates-index .l-content > .subheadline,
+    .p-user_rates-index .list-groups header .subheadline {
+        height: 38px !important;
+        min-height: 38px;
+        padding: 0 16px 0 14px !important;
+        box-sizing: border-box;
+        border-radius: 12px !important;
+        background: rgba(var(--glass), .62) !important;
+        border: 1px solid rgba(var(--glass-light), .07) !important;
+        border-left: 3px solid rgb(var(--accent)) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        color: rgba(var(--text), .92) !important;
+        letter-spacing: .04em;
+        display: flex !important;
+        align-items: center;
+    }
+}
+
+/* v1.2.19 — логотипы студий: чётко, без «мыльного» свечения.
+   Картинка не растягивается больше натурального размера (max-width:100% от колонки, height:auto).
+   Непрозрачные — скруглённые карточки; прозрачные — тонкий 1px контур; чёрные (Madhouse, Shaft, Wit) — белый силуэт без свечения. */
+/* из pages/anime */
+img.studio-logo,
+.p-studios .studio img.logo {
+    max-width: 100%;
+    height: auto;
+    padding: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 10px;
+    image-rendering: auto;
+    transform: none;
+    --logo-tone: opacity(1);
+    --logo-edge: drop-shadow(0 0 1px rgba(var(--text), 0.9));
+    filter: var(--logo-tone) var(--logo-edge);
+    transition: transform .2s ease, filter .2s ease;
+}
+
+@media screen and (max-width: 767px) {
+    @supports not (backdrop-filter: blur(1px)) {
+        @supports not (-webkit-backdrop-filter: blur(1px)) {
+            /* --- без поддержки backdrop-filter плашки плотнее, чтобы текст читался --- */
+            /* из pages/profile */
+            html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+            body.p-profiles-show .cc-2a > .c-column,
+            html body#profiles_show .profile-content .c-left .lifetime,
+            html body#profiles_show .profile-content .c-left .activity,
+            .p-profiles .profile-head .c-brief header.head {
+                background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,541 @@
+/* ===== components/forms =====
+   поля, select и мультиселект фильтров (.c-ms), галочки, @starting-style выезда списков */
+
+/* цвет текста */
+.b-input label {
+    display: block;
+    line-height: 1.65;
+}
+
+/* под шкалой в профиле сколько пробыл на сайте */
+/* Поиск по названию в списке аниме */
+input {
+    color: rgba(var(--text), 1);
+    background: rgba(var(--glass), 0.4);
+}
+
+.b-input input,
+.b-input textarea {
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text), 1);
+    border: none !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
+}
+
+input,
+select,
+button,
+textarea {
+    background-color: rgba(var(--glass), 0.4);
+    font-family: "Comfortaa", sans-serif;
+    border: none !important;
+}
+
+.subheadline-input {
+    background-color: var(--glass-deep) !important;
+    color: rgba(var(--text), 1);
+    border: 1px solid var(--glass-deep) !important;
+    border-radius: 4px !important;
+    padding: 5px 0 3px 4px !important;
+    line-height: 14px !important;
+    right: 10px;
+}
+
+.ac_results {
+    border: none;
+    background: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ac_results li:hover {
+        background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
+        color: rgba(var(--text-strong), var(--hundred));
+        border: none;
+    }
+}
+
+option {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-form {
+    width: 100%;
+}
+
+.b-input.select.optional.user_rate_score,
+.b-input.integer.optional.user_rate_episodes,
+.b-input.select.optional.user_rate_status,
+.b-input.integer.optional.user_rate_rewatches {
+    margin: 0 5px 3px;
+    display: inline-block;
+}
+
+textarea#user_rate_text {
+    width: 99%;
+}
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+/* Firefox 19 */
+/* IE 10 */
+::-ms-input-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+/* Firefox 18 */
+::-moz-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+:focus::-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ac_results .character-suggest .animes div a:hover {
+        background: none !important;
+        box-shadow: none;
+    }
+}
+
+.ac_results .animes .name-ru:hover {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.select select {
+    color: rgba(var(--text-strong), var(--hundred)) !important;
+}
+
+.bulma .select:not(.is-multiple):not(.is-loading):after {
+    border-color: rgba(var(--text), var(--hundred)) !important;
+}
+
+.bulma label.label {
+    color: var(--tone-9fa9b5) !important;
+    font: bold 13px "Comfortaa" !important;
+}
+
+.b-form.green-form {
+    background: #20422082;
+    border: none;
+    border-radius: 10px;
+}
+
+.b-form.green-form .m5 {
+    color: #b5deb5;
+}
+
+.b-form.green-form ul.b-list.m10 {
+    color: #69d869;
+}
+
+.vue-tags-input {
+    background: rgba(var(--glass), 0.4) !important
+}
+
+.vue-tags-input .ti-input {
+    background: rgba(var(--glass), 0.4) !important;
+    border: 2px solid rgba(var(--text-2), 0.8) !important;
+}
+
+.ti-input input {
+    color: rgba(var(--text), 1) !important;
+}
+
+.ti-autocomplete {
+    background: rgb(var(--glass)) !important;
+    border: none !important;
+    color: rgb(var(--text));
+}
+
+.vue-tags-input .ti-new-tag-input-wrapper .ti-new-tag-input {
+    color: rgba(var(--text), 1);
+}
+
+.ti-tags .ti-tag {
+    background-color: rgba(var(--glass-light), 0.1);
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-dropzone {
+    background-color: rgba(var(--glass), 0.7) !important;
+    border: 2px dashed rgba(var(--accent), 0.3);
+    transition: 0.2s;
+}
+
+.b-dropzone:before {
+    color: rgba(var(--accent), 1);
+    transition: 0.2s;
+}
+
+.b-dropzone:hover {
+    border-color: rgba(var(--accent), 0.7);
+}
+
+.b-dropzone:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-radio input[type="radio"] + .radio-label {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 20px;
+}
+
+.b-radio input[type="radio"] + .radio-label:before {
+    font-family: 'FontAwesome', sans-serif;
+    content: '\f1db';
+    bordeR: none;
+    margin: 0 14px 0 0;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+}
+
+.b-radio input[type="radio"]:checked + .radio-label:before {
+    width: auto;
+    height: auto;
+    content: '\f058';
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-form .variants .variant a:hover {
+        box-shadow: none !important;
+        background: none !important;
+    }
+}
+
+.b-input input[type="checkbox"],
+input[type="checkbox"] {
+    margin-right: 24px !important;
+    width: 0px !important;
+}
+
+.b-input input[type="checkbox"]:before,
+input[type="checkbox"]:before {
+    content: "\f10c";
+    color: rgba(var(--text-2), 1);
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    margin: -1px 18px 2px 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input[type="checkbox"]:checked:before,
+.b-input input[type="checkbox"]:checked:before {
+    content: "\f05d";
+    color: rgba(var(--text), 1);
+    font-size: 17px;
+    margin: -1px 18px 2px 2px;
+}
+
+.c-column.c-control.show-options:hover .label {
+    color: #d2c1ac !important;
+}
+
+.c-column.c-control.report:hover .label {
+    color: #d2beac !important;
+}
+
+/* Options Page */
+.b-input.boolean {
+    display: table;
+    /*** Comments Fix ****/
+}
+
+.subheadline-input {
+    padding: 4px 0 4px 5px;
+}
+
+/* --- Настройки: кнопка выбора файла (аватар) в стиле темы --- */
+input[type="file"] {
+    color: rgb(var(--text-2));
+}
+
+input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-dim);
+    color: rgb(var(--text));
+    font: inherit;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    input[type="file"]::file-selector-button:hover {
+        background: var(--accent-hover);
+    }
+}
+
+/* --- само поле (select, мультиселект фильтров) --- */
+select:not(#u),
+.c-ms-control:not(#u) {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    min-height: var(--field-height) !important;
+    height: auto !important;
+    padding: var(--field-pad) !important;
+    font-size: var(--field-font) !important;
+    line-height: 1.4 !important;
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    box-shadow: var(--field-shadow) !important;
+    color: rgb(var(--text)) !important;
+    outline: none !important;
+    animation: none !important;
+    filter: none !important;
+    transform: none;
+    cursor: pointer;
+    transition: transform var(--ui-release) var(--ui-ease),
+                border-color .2s ease, box-shadow .2s ease !important;
+}
+
+/* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
+select:not(#u) {
+    padding-right: 30px !important;
+    background: var(--field-arrow), var(--field-bg) !important;
+}
+
+.c-ms-control:not(#u) { padding-right: 26px !important; }
+
+select:not(#u):hover,
+.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
+
+select:not(#u):focus,
+.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
+
+.c-ms.is-filled .c-ms-control:not(#u) { border-color: var(--field-filled-border) !important; }
+
+select:not(#u):open,
+.c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+}
+
+select:not(#u):active,
+.c-ms-control:not(#u):active {
+    transform: scale(.98) !important;
+    transition-duration: var(--ui-press) !important;
+}
+
+/* --- части мультиселекта --- */
+.c-ms-caret {
+    border-top-color: rgb(var(--text-2)) !important;
+    right: 11px !important;
+    transform: translateY(-50%);
+    transition: transform var(--ui-drop) var(--ui-ease) !important;
+}
+
+.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
+
+.c-ms-placeholder,
+.c-ms-title { color: rgb(var(--text-2)) !important; }
+
+.c-ms-chip { background: var(--accent-dim) !important; border-radius: 6px !important; }
+
+/* --- выпадающий список фильтров --- */
+.c-ms-dropdown:not(#u) {
+    top: calc(100% + var(--drop-gap)) !important;
+    background: var(--drop-bg) !important;
+    border: 1px solid var(--drop-border) !important;
+    border-radius: var(--drop-radius) !important;
+    box-shadow: var(--drop-shadow) !important;
+    backdrop-filter: none !important;
+}
+
+.c-ms-dropdown[hidden] {
+    display: none !important;
+    clip-path: inset(0 0 100% 0 round var(--drop-radius));
+    transform: translateY(-4px);
+}
+
+@starting-style {
+    .c-ms-dropdown:not([hidden]) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius));
+        transform: translateY(-4px);
+    }
+}
+
+.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
+
+.c-ms-option:not(#u) {
+    padding: var(--opt-pad) !important;
+    border-radius: var(--opt-radius);
+    font-size: var(--field-font);
+    color: rgb(var(--text));
+    transition: background-color .15s ease, color .15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
+}
+
+/* варианты в системном окне (Firefox) */
+select option { background: var(--drop-bg); color: rgb(var(--text)); }
+
+@supports (appearance: base-select) {
+    /* --- выезжающий список select (Chromium с base-select) --- */
+    select:not(#u),
+    select:not(#u)::picker(select) { appearance: base-select !important; }
+    select:not(#u) {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        padding-right: 11px !important;
+        background: var(--field-bg) !important; /* стрелку рисует ::picker-icon */
+    }
+    /* стрелка как у фильтров и так же поворачивается */
+    select:not(#u)::picker-icon {
+        display: block !important;
+        content: "";
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        margin-inline-start: auto;
+        flex: 0 0 auto;
+        box-sizing: content-box;
+        padding: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid rgb(var(--text-2));
+        background: none;
+        transition: rotate var(--ui-drop) var(--ui-ease);
+    }
+    select:not(#u):open::picker-icon { rotate: 180deg; }
+    select:not(#u)::picker(select) {
+        min-width: anchor-size(width);
+        margin: var(--drop-gap) 0 0 0;
+        padding: var(--drop-pad);
+        background: var(--drop-bg);
+        color: rgb(var(--text));
+        border: 1px solid var(--drop-border);
+        border-radius: var(--drop-radius);
+        box-shadow: var(--drop-shadow);
+        font-size: var(--field-font);
+        opacity: 1 !important;
+        animation: none !important;
+        transform: translateY(0) !important;
+        clip-path: inset(0 0 0 0 round var(--drop-radius)) !important;
+        transition: clip-path var(--ui-drop) var(--ui-ease),
+                    transform var(--ui-drop) var(--ui-ease),
+                    display var(--ui-drop) allow-discrete,
+                    overlay var(--ui-drop) allow-discrete !important;
+    }
+    select:not(#u):not(:open)::picker(select) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+        transform: translateY(-4px) !important;
+    }
+    @starting-style {
+        select:not(#u):open::picker(select) {
+            clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+            transform: translateY(-4px) !important;
+        }
+    }
+    select:not(#u) option {
+        padding: var(--opt-pad) !important;
+        border-radius: var(--opt-radius);
+        background: transparent !important;
+        color: rgb(var(--text));
+        font-size: var(--field-font);
+        outline: none !important;
+        animation: none !important;
+        transform: none !important;
+        transition: background-color .15s ease, color .15s ease;
+    }
+    select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
+
+    @media (hover: hover) and (pointer: fine) {
+        select:not(#u) option:hover { background: var(--opt-hover) !important; }
+    }
+    select:not(#u) option:checked { color: rgb(var(--accent)); }
+    select:not(#u) option::checkmark { display: none; }
+}
+
+/* ================================================================
+   v1.2.13 — галочки: ровно по тексту и плавное включение/выключение
+   ================================================================ */
+/* сама галочка — кружок 18px, текст по центру его высоты */
+label:has(> input[type="checkbox"]) {
+    display: flex !important;
+    width: fit-content;
+    min-height: 26px;
+    /* кружок ставится на линию строки текста (первой, если текст в две строки),
+       а затем сдвигается так, чтобы его центр совпал с серединой строчных букв */
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
+    margin-right: 0 !important;
+    font: inherit;
+    align-self: baseline;
+    /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
+    transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 767px) {
+    .label {
+        line-height: 18px;
+    }
+    .b-main_search .input {
+        height: 33px;
+        padding: 6px 10px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    /* ================================================================
+       v1.2.7 — iPhone: нативные списки, без клавиатуры, обои из кеша
+       ================================================================ */
+    /* Сенсорные экраны: select — обычный системный (колёсико iOS).
+       Новый base-select WebKit 26 на iPhone не открывался и дёргал анимации в настройках. */
+    select:not(#u),
+    select:not(#u)::picker(select) {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    select:not(#u) {
+        display: inline-block !important;
+        padding-right: 30px !important;
+        background: var(--field-arrow), var(--field-bg) !important;
+    }
+    select:not(#u)::picker-icon { display: none !important; }
+    select:not(#u):active { transform: none !important; }
+}

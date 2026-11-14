@@ -1,0 +1,508 @@
+/* ===== pages/catalog =====
+   каталог: фильтры слева, коллекции, поиск */
+
+/* справа выборы фильтров в списке аниме */
+.b-block_list li {
+    color: rgba(var(--text), 1);
+    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.b-block_list li a {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-animes_collection-index .pagination .link {
+    color: rgba(var(--accent), 1);
+}
+
+.p-animes_collection-index .pagination .link.disabled {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input {
+    border: 0 solid rgba(var(--glass), 0.4);
+    background-color: rgba(var(--glass), 0.4) !important;
+}
+
+.p-studios .studio .animes .num,
+.p-studios .studio .years .num {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+
+.b-header_filters .filter-line a.current {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+.x1000 .menu-slide-outer.x199 .l-menu,
+.x1200 .menu-slide-outer.x199 .l-menu,
+.menu-slide-outer.x199 .l-menu,
+.x1000 .menu-slide-outer.x240 .l-menu,
+.x1200 .menu-slide-outer.x240 .l-menu,
+.menu-slide-outer.x240 .l-menu {
+    width: 22.00%;
+}
+
+.l-menu .ongoing .misc .value,
+span.studio {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_search .b-catalog_entry {
+    transform: scale(1.03);
+}
+
+.p-animes_collection-index.x1000 .cc-entries,
+.p-animes_collection-index.x1200 .cc-entries {
+    margin-top: 4px;
+}
+
+.b-collection-filters .block-list li:before,
+.b-collection-filters .b-block_list li:before {
+    content: "\f10c";
+    color: rgba(var(--text-2), 1);
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    margin: 0px 18px 2px 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-block_list li:hover {
+        color: rgba(var(--accent), 1) !important;
+        transition: 0s ease-out;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.b-block_list li.selected {
+    color: rgba(var(--text), 1);
+    transition: 0s ease-out;
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+
+.b-block_list li.selected:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.b-collection-filters .b-block_list li.selected:before {
+    content: "\f05d";
+    color: rgba(var(--text), 1);
+    font-size: 19px;
+    margin: 0px 18px 2px 1px;
+}
+
+.b-collection-filters .block-list li > input,
+.b-collection-filters .b-block_list li > input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.b-collection-filters .b-block_list li:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .filter:before,
+.b-collection-filters .b-block_list .filter:before {
+    display: block;
+    width: auto;
+    font-family: inherit;
+    font-size: 10px;
+    line-height: inherit;
+    text-transform: lowercase;
+}
+
+.b-collection-filters .block-list .filter,
+.b-collection-filters .b-block_list .filter {
+    float: right;
+    position: relative;
+    right: -2px;
+    margin: 0 0 0 0.5rem;
+}
+
+.b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: "Comfortaa";
+    color: rgba(var(--text-2), 1);
+    border-radius: 10px;
+    padding-right: 12px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: "Comfortaa";
+    content: "исключить";
+}
+
+.b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: "Comfortaa";
+    color: rgba(var(--text-2), 1);
+    border-right: 3px solid #af3e0f;
+    border-radius: 10px;
+    padding-right: 9px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: "Comfortaa";
+    content: "добавить";
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before,
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .b-question,
+.b-collection-filters .b-block_list .b-question {
+    display: inline-block !important;
+    vertical-align: top;
+    position: absolute;
+    right: 10px;
+}
+
+.b-list_switchers .switcher.alphabet::after {
+    content: "\f1c2";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-weight: bold;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* место под .c-ms-caret */
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+@supports (appearance: base-select) {
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (min-width: 736px) and (max-width: 880px) {
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 80px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "===";
+        font: bold 20px "Comfortaa" !important;
+        width: 51px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0  12px 0  4px;
+    }
+    ul.b-block_list {
+        height: auto !important;
+        text-align: left !important;
+        line-height: 30px;
+        font-size: 15px !important;
+    }
+    .b-collection-filters .b-block_list li.selected:before,
+    .b-collection-filters .block-list li:before,
+    .b-collection-filters .b-block_list li:before {
+        margin: 0  28px 2px 1px;
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .b-block_list {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .b-block_list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+        position: relative;
+        overflow: hidden;
+        height: 44px !important;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        display: block;
+        position: absolute;
+        height: auto;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 3;
+        padding: 10px 14px;
+        right: 3px;
+        width: 98%;
+    }
+    section.l-page aside.l-menu {
+        display: none;
+    }
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0 ;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 735px) {
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px "Comfortaa" !important;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .b-block_list {
+        width: calc(100% - 64px);
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px "Comfortaa" !important;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.l-page.menu-expanded aside.l-menu {
+        display: block !important;
+        position: fixed !important;
+        z-index: 950 !important;
+        top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: min(calc(100vw - 32px), 440px) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: 70vh;
+        max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+        margin: 0 !important;
+        padding: 0 16px 16px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        transform: translate(-50%, -50%);
+        transform-origin: 50% 50%;
+        /* «жидкое стекло» */
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
+        -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), 0.14) !important;
+        border-radius: 22px !important;
+        outline: none !important;
+        box-shadow:
+            inset 0 1px 0 rgba(var(--glass-light), 0.22),
+            inset 0 0 0 1px color-mix(in srgb, var(--accent-dim) 38%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--accent-dim) 25%, transparent),
+            0 20px 50px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+        animation: shiki-sheet .34s cubic-bezier(.22, 1.2, .36, 1) both;
+        scrollbar-width: thin;
+        scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
+    }
+    /* реклама и пустые служебные блоки не занимают место над заголовком */
+    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
+    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
+    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
+    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
+        display: none !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        margin: 0 -16px 12px !important;
+        padding: 14px 16px 10px !important;
+        background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
+        border-radius: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        color: rgb(var(--accent));
+    }
+    /* поля внутри стекла тоже полупрозрачные; все значения одного размера
+       (при шрифте мельче 16px iOS приближает страницу при фокусе) */
+    section.l-page.menu-expanded aside.l-menu {
+        --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        --field-font: 16px;
+        --field-height: 40px;
+    }
+    section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
+    section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
+    /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
+    section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: var(--drop-gap);
+    }
+    /* ================================================================
+       Телефоны: списки фильтров в карточке плавно раскрываются и
+       сворачиваются, поля ниже едут вместе с ними (высота через строки
+       сетки 0fr ↔ 1fr; список не исчезает, пока не свернётся)
+       ================================================================ */
+    section.l-page aside.l-menu .c-ms {
+        display: grid !important;
+        grid-template-rows: auto 0fr;
+        grid-template-columns: minmax(0, 1fr);
+        /* сворачивание: плавно, без рывка в начале */
+        transition: grid-template-rows .32s cubic-bezier(.4, 0, .2, 1);
+    }
+    section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
+        grid-template-rows: auto 1fr;
+        /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
+        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
+    }
+    section.l-page aside.l-menu .c-ms-dropdown:not(#u),
+    section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
+        display: block !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        margin-top: 0 !important;
+        border-width: 0 !important;
+        clip-path: none !important;
+        transform: none !important;
+        opacity: 0 !important;
+        visibility: hidden;
+        transition: opacity .22s ease, margin-top .32s cubic-bezier(.4, 0, .2, 1),
+                    border-width .32s step-end, visibility 0s linear .32s !important;
+    }
+    section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
+        margin-top: var(--drop-gap) !important;
+        border-width: 1px !important;
+        opacity: 1 !important;
+        visibility: visible;
+        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
+                    border-width 0s, visibility 0s !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    /* Короткие списки (до 15 пунктов) без строки поиска: скрипт ставит в неё фокус,
+       iPhone выдвигает клавиатуру, и карточка фильтров прыгает. */
+    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
+        display: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
+}
+
+@media screen and (max-width: 767px) {
+    /* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        display: block;
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+        background: rgba(var(--glass-light), .03) !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
+    section.l-page aside.l-menu .c-ms-options:not(#u) {
+        margin-top: 0 !important;
+        max-height: 220px;
+        overflow-y: auto;
+    }
+    /* высота карточки не пересчитывается, когда прячется панель Safari */
+    section.l-page.menu-expanded aside.l-menu:not(#u) {
+        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
+        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
+        padding: 0 16px 18px !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        margin: 0 -16px 14px !important;
+        padding: 15px 16px 12px !important;
+        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+        font-size: 15px;
+        letter-spacing: .04em;
+    }
+    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
+    section.l-page.menu-expanded aside.l-menu .c-ms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 14px !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-title {
+        margin: 0 !important;
+        padding: 0 2px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        color: rgb(var(--text-2)) !important;
+    }
+}

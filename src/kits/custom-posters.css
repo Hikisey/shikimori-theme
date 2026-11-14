@@ -1,0 +1,70 @@
+/* ===== kits/custom-posters =====
+   свои постеры персонажей и точечные правки отдельных профилей */
+
+/*2104*/
+.name-date a.name[title="morr"]::after,
+.name-date a.name[href*="/morr"]::after,
+.subheadline a[title="morr"]::after,
+.name-date a.name[title="EngiNier"]::after,
+.name-date a.name[href*="/EngiNier"]::after,
+.subheadline a[title="EngiNier"]::after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:after {
+    position: absolute;
+    font-size: 11px;
+    width: 50px;
+    line-height: 23px;
+    margin-top: 0;
+    text-align: center;
+    margin-left: 0;
+    color: rgba(var(--text-strong), 1);
+    background: rgba(var(--time-empty), 1) !important;
+    border-radius: 9px;
+    box-shadow: 0 0 5px color-mix(in srgb, var(--glass-shadow) 20%, transparent);
+    z-index: 2;
+    opacity:0;
+    transition: 0.2s;
+}
+
+.name-date a.name[title="morr"]:hover:after,
+.name-date a.name[href*="/morr"]:hover:after,
+.subheadline a[title="morr"]:hover:after,
+.name-date a.name[title="EngiNier"]:hover:after,
+.name-date a.name[href*="/EngiNier"]:hover:after,
+.subheadline a[title="EngiNier"]:hover:after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
+        width: 120px;
+        margin-left: 10px;
+    opacity: 1;
+}
+
+.name-date a.name[title="morr"]:hover:after,
+.name-date a.name[href*="/morr"]:hover:after,
+.subheadline a[title="morr"]:hover:after {
+    content: "Big Boss";
+}
+
+img[alt='morr'] {
+    border: 2px solid #ffad007a !important;
+}
+
+.b-topic > .inner header img[alt="morr"] {
+    border: 2px solid rgba(183, 139, 82, 0.9)!important;
+
+}
+
+/* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
+/* Рори Меркьюри */
+[href*="characters/99661-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/0e/22/2e/0e222e48f108015c047824155679b0ec.jpg");
+}
+
+/* Фумия Томодзаки */
+[href*="characters/165743-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/7e/31/44/7e314431b46844f22b1584314f671642.jpg");
+}

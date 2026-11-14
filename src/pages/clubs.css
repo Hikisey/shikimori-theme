@@ -1,0 +1,231 @@
+/* ===== pages/clubs =====
+   клубы */
+
+.b-clubs-menu .admin .b-user {
+    transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    text-decoration: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-clubs-menu .admin .b-user:hover {
+        transform: scale(1.2);
+        border-color: rgba(var(--accent), 1);
+        color: rgba(var(--accent), 1);
+        text-decoration: none !important;
+    }
+}
+
+.p-topics .l-menu .reviews .entry .title,
+.p-topics .l-menu .clubs .entry .title {
+    color: rgba(var(--text-strong), 1);
+    text-decoration: none !important;
+}
+
+.p-topics .l-menu .reviews .entry .title:hover,
+.p-topics .l-menu .clubs .entry:hover .title {
+    color: rgba(var(--accent), 1) !important;
+    text-decoration: none !important;
+}
+
+.b-club .name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-club .info .number {
+    color: rgba(var(--text-2), 1);
+    padding-right: 4px;
+}
+
+.b-club .info .value {
+    color: rgba(var(--text-2), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* history-yeah */
+    .p-profiles .profile-head .c-history .entry:hover,
+    .p-topics .l-menu .reviews .entry:hover,
+    .p-topics .l-menu .clubs .entry:hover {
+        transform: scale(1.03);
+        padding-left: 2px;
+        padding-right: 5px;
+        text-decoration: none !important;
+        border: none !important;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+        background 0.2s;
+    }
+    .b-club .logo:hover {
+        border: 2px solid rgba(var(--accent), 1);
+        transform: scale(1.3);
+    }
+}
+
+.b-clubs.one-line .b-club {
+    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.club-actions .invite,
+.club-actions .upload,
+.club-actions .broadcast,
+.club-actions .edit-club,
+.club-actions .leave {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.club-actions .invite:before,
+.club-actions .upload:before,
+.club-actions .broadcast:before,
+.club-actions .edit-club:before,
+.club-actions .leave:before {
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    color: rgba(var(--accent), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .club-actions .invite:hover:before,
+    .club-actions .upload:hover:before,
+    .club-actions .broadcast:hover:before,
+    .club-actions .edit-club:hover:before,
+    .club-actions .leave:hover:before {
+        color: rgba(var(--accent), 1);
+        transform: scale(1.3);
+    }
+}
+
+.b-club .name-logo .name {
+    transition: 1s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-club .name-logo:hover .name {
+        text-decoration: none;
+        color: rgba(var(--accent), var(--hundred)) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
+        box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    }
+}
+
+.b-menu_logo img,
+.p-clubs-show .l-content .logo img {
+    background: rgba(var(--glass-light), var(--hundred));
+    border-radius: 6px;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+}
+
+.club-actions .upload:after,
+.club-actions .invite:after,
+.club-actions .leave:after {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-contests-menu .b-catalog_entry,
+.b-clubs-menu .b-catalog_entry,
+.inner.p0.offset .b-catalog_entry {
+    padding: 3px 3px;
+    border-radius: 2px;
+}
+
+.b-club .logo {
+    margin: 0 auto;
+}
+
+.cc-4.clubs .b-user16 img {
+    top: 0px;
+    margin-top: 0px;
+}
+
+.b-club .info.author {
+    padding: 0px;
+    margin-top: -7px;
+}
+
+.b-club .logo {
+    width: 52px;
+}
+
+.b-clubs {
+    display: inline-flex;
+    vertical-align: top;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    top: 0px;
+    width: 100%;
+    min-height: 70px;
+    padding: 0px 0px 0px 0px;
+}
+
+.b-clubs .b-club {
+    margin: auto !important;
+}
+
+.p-clubs-images .b-image img,
+.p-clubs-images .b-image:not(.no-zoom),
+.p-clubs-images .b-image,
+.p-clubs-images .grid_sizer,
+.p-db_entries-art .b-image img,
+.p-db_entries-art .b-image:not(.no-zoom),
+.p-db_entries-art .b-image,
+.p-db_entries-art .grid_sizer {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 960px) {
+    .b-club .logo {
+        height: auto;
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .b-clubs.one-line .b-club:nth-child(4n) {
+        display: none;
+    }
+    .b-club .logo {
+        display: block;
+        line-height: 0;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-club .logo {
+        display: block;
+        line-height: 0;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-clubs .b-club {
+        width: 28%;
+        position: relative;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body.p-profiles-show .cc-2a .b-clubs .b-club {
+        width: auto !important;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-2a .b-clubs .b-club img.logo {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

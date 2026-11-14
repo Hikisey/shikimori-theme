@@ -1,0 +1,301 @@
+/* ===== base/animations =====
+   все @keyframes темы */
+
+/* Tabs */
+@keyframes switch-focus--vertical {
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate3d(-50%, -50%, 0) scale(0.95);
+    }
+}
+
+@keyframes switch-tap--vertical {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(2.5);
+    }
+}
+
+@keyframes ripple-unbound {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.32;
+    }
+    100% {
+        opacity: 0;
+        padding-top: 200%;
+        width: 200%;
+    }
+}
+
+/*- - -*/
+@keyframes spoile {
+    0% {
+        color: #5b6ad7;
+    }
+    50% {
+        color: rgba(var(--accent), 1) !important;
+    }
+    100% {
+        color: #5b6ad7;
+    }
+}
+
+@keyframes runningtext {
+    25% {
+        text-indent: -80em;
+    }
+    25.000000001% {
+        text-indent: 25em;
+    }
+    50% {
+        text-indent: 0em;
+    }
+}
+
+@keyframes spoil {
+    50% {
+        color: rgba(var(--accent), 1);
+    }
+}
+
+@keyframes spoilzero {
+    50% {
+        border: 2px dashed rgba(230, 205, 65, 0.3);
+    }
+}
+
+@keyframes spoillerr {
+    50% {
+        border-bottom: 2px dashed rgba(230, 205, 65, 0.3);
+    }
+}
+
+@keyframes activity {
+    0%,
+    100% {
+        transform: translateY(1px);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+@keyframes mail {
+    10% {
+        transform: translateX(0px);
+    }
+    12% {
+        transform: translateX(4px);
+    }
+    14% {
+        transform: translateX(-4px);
+    }
+    16% {
+        transform: translateX(4px);
+    }
+    18% {
+        transform: translateX(-4px);
+    }
+    20% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    75% {
+        transform: scale(1);
+    }
+}
+
+@keyframes mailm {
+    10% {
+        transform: translateX(0px);
+    }
+    12% {
+        transform: translateX(4px);
+    }
+    14% {
+        transform: translateX(-4px);
+    }
+    16% {
+        transform: translateX(4px);
+    }
+    18% {
+        transform: translateX(-4px);
+    }
+    20% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    75% {
+        transform: scale(1);
+    }
+}
+
+@keyframes blimi {
+    25% {
+        color: rgba(var(--accent), 1);
+    }
+    50% {
+        color: rgba(var(--text-2), 1);
+    }
+}
+
+@keyframes animhist {
+    0% {
+        display: block;
+    }
+    50% {
+        display: none;
+    }
+    100% {
+        display: block;
+    }
+}
+
+@keyframes history {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateY(-132px);
+    }
+}
+
+@keyframes rotateload {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateajax {
+    0% {
+        transform: rotate(0deg);
+    }
+    12.49% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(45deg);
+    }
+    24.99% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    37.49% {
+        transform: rotate(90deg);
+    }
+    37.5% {
+        transform: rotate(135deg);
+    }
+    49.99% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    62.49% {
+        transform: rotate(180deg);
+    }
+    62.5% {
+        transform: rotate(225deg);
+    }
+    74.99% {
+        transform: rotate(225deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    87.49% {
+        transform: rotate(270deg);
+    }
+    87.5% {
+        transform: rotate(315deg);
+    }
+    99.99% {
+        transform: rotate(315deg);
+    }
+    99.9999999% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes next {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes prev {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glowing {
+    0%  {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* выезд списка: без прозрачности (используют меню панели и фильтры) */
+@keyframes shiki-drop {
+    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
+    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+}
+
+@keyframes shiki-fade {
+    from { opacity: 0; }
+}
+
+@keyframes shiki-sheet {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 24px)) scale(.9); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes shiki-sheet-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

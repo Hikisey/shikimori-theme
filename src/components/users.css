@@ -1,0 +1,136 @@
+/* ===== components/users =====
+   пользователи и аватары: .b-user, .b-user16, .b-menu-line */
+
+.b-user.named_avatar .name {
+    color: rgba(var(--text-strong), 1);
+    transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    text-decoration: none !important;
+    margin: auto;
+}
+
+.b-user.named_avatar:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none !important;
+}
+
+.b-user.named_avatar:hover img {
+    border-color: rgba(var(--accent), 1);
+    border-radius: 50%;
+    text-decoration: none !important;
+}
+
+.b-user16 {
+    color: rgba(var(--text-strong), 1);
+    font-weight: bold;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-user.avatar img:hover {
+        border-radius: 50%;
+        border: 2px solid rgba(var(--accent), 1);
+        transform: scale(1.3);
+    }
+}
+
+.avatar img,
+.profile img {
+    border-radius: 50%;
+}
+
+.b-user16:hover span {
+    text-decoration: none;
+}
+
+.name-date .b-user16 img {
+    margin-top: 0;
+    top: -3px;
+    padding: 0 2px 2px 0;
+    margin-right: 0 !important;
+    margin-left: -12px !important;
+}
+
+.b-user16 img {
+    position: relative;
+    top: 5px;
+}
+
+.b-user.detailed .info .image-name:hover {
+    text-decoration: none;
+    border: none;
+}
+
+.b-menu-line.friend-rate .b-user16 img,
+.friend-rate .b-user16 img {
+    margin-top: auto;
+    margin-bottom: auto;
+    top: auto;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.friend-rate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 23px;
+}
+
+.b-menu-line .b-link {
+    background: none;
+    box-shadow: none;
+}
+
+.b-user16 img {
+    margin-top: 0px;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    @media (hover: hover) and (pointer: fine) {
+        .userbox img.avatar:hover {
+            transform: scale(1.3);
+            border: 1px solid rgba(var(--accent), var(--hundred)) !important;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .b-user.avatar img {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .userbox img.avatar,
+    .userbox img.avatar {
+        margin-top: 12px !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .b-user.avatar img {
+        display: block;
+        line-height: 0;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-user.avatar img {
+        display: block;
+        line-height: 0;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    a.actor.b-user16 span {
+        font-size: 12px;
+    }
+}

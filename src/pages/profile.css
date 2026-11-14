@@ -1,0 +1,1695 @@
+/* ===== pages/profile =====
+   профиль: шапка, баннер, история, списки-статистика, совместимость, друзья */
+
+.b-shiki_editor footer .about-bb_codes:hover:before {
+    color: rgba(var(--text-2), 1);
+}
+
+* .c-brief header.head h1 {
+    border-bottom: none;
+    color: rgba(var(--text-strong), 1) !important;
+    font-family: Comfortaa, sans-serif;
+    text-shadow: 2px -2px 0 var(--accent-dim), -2px 2px 0 var(--accent-dim),
+    -2px -2px 0 var(--accent-dim), 2px 2px 0 var(--accent-dim),
+    0 -2px 0 var(--accent-dim), 0 2px 0 var(--accent-dim),
+    2px 0 0 var(--accent-dim), -2px 0 0 var(--accent-dim);
+    font-size: 34px;
+    line-height: 38px;
+    pointer-events: none;
+}
+
+/* история-время */
+.p-profiles .profile-head .c-history .entry .misc.date {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+/* история-история */
+.p-profiles .profile-head .c-history .entry .misc {
+    color: rgba(var(--accent), 1) !important;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.activity .bar.simple .bar {
+    border-radius: 8px 8px 0 0;
+}
+
+/* цвета аниме шкалы */
+.b-stats_bar .bar .third {
+    background: rgba(var(--time-empty), 1);
+    opacity: 0.7;
+}
+
+.b-stats_bar.anime .bar .second {
+    background: rgba(var(--anime-inprocess), 1);
+    opacity: 0.7;
+}
+
+.b-stats_bar.anime .bar .first {
+    background: rgba(var(--anime-complete), 1);
+    opacity: 0.7;
+}
+
+/* цвета манга шкалы */
+.b-stats_bar.manga .bar .first {
+    background: rgba(var(--manga-complete), 1);
+    opacity: 0.7;
+}
+
+.b-stats_bar.manga .bar .second {
+    background: rgba(var(--manga-inprocess), 1);
+    opacity: 0.7;
+}
+
+/* список аниме и манги */
+.b-stats_bar a.title {
+    color: rgba(var(--text-strong), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar a.title:hover {
+        color: rgba(var(--link), 1);
+        box-shadow: none;
+        background: none;
+    }
+}
+
+/* под списком кол-во просмотреных прочитанных и т.д. */
+.b-stats_bar .stat_names .stat_name a,
+.b-stats_bar .stat_names .stat_name .size:before,
+.b-stats_bar .stat_names .stat_name .size:after {
+    color: rgba(var(--text-2), 1);
+}
+
+/* под списком кол-во просмотреных прочитанных и т.д. */
+.b-stats_bar .stat_names .stat_name a:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a {
+    color: rgba(var(--link), 1);
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-profiles .profile-head .c-brief header .notice span:after {
+    color: rgba(var(--text), 1);
+}
+
+.b-user_history-line .destroy,
+.buttons .item-reply,
+.buttons .item-moderation,
+.buttons .item-edit,
+.buttons .item-delete,
+.buttons .item-ignore,
+.buttons .item-apply,
+.buttons .item-request-confirm,
+.buttons .item-delete-confirm,
+.buttons .item-cancel,
+.buttons .item-request-reject,
+.buttons .item-delete-cancel,
+.buttons .item-moderation-cancel {
+    color: rgba(var(--accent), 1);
+}
+
+.b-stats_bar .title,
+.p-profiles-show .profile-content .activity .title {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-profiles-show .lifetime .times .time.checked {
+    color: rgba(var(--text-2), 1);
+    font-weight: bold;
+    white-space: normal;
+    min-width: 50px;
+    line-height: 20px;
+}
+
+.p-profiles-show .lifetime .times .time {
+    white-space: normal;
+    min-width: 50px;
+    line-height: 20px;
+}
+
+.b-user_history-line a:hover {
+    color: rgba(var(--link), 1) !important;
+    font-weight: bold;
+}
+
+.b-user_history-line .date {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+.p-profiles .profile-head .c-info .c-additionals div a {
+    font-size: 12px !important;
+}
+
+.b-shiki_editor footer .about-bb_codes:hover {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
+.p-profiles .profile-head .c-history .entry img {
+    float: left;
+    margin: 2px 10px 2px 2px;
+    max-height: 60px;
+    max-width: 40px;
+    border-radius: 10px;
+}
+
+.p-profiles .profile-head .c-history .entry:hover .title {
+    color: rgba(var(--text-strong), 1) !important;
+    text-decoration: none;
+}
+
+.p-profiles .profile-head .c-history .entry a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
+.p-profiles-show .cc-favourites .c-column {
+    width: 11.97%;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 0.5%;
+    position: relative;
+}
+
+.b-stats_bar.lifetime .bar .first {
+    background: rgba(var(--time-filled), 1);
+}
+
+.p-profiles .profile-head .c-history .entry .misc.date.unprocessed {
+    color: rgba(var(--text-2), 1) !important;
+    text-align: center;
+    text-indent: 0 !important;
+    animation: none !important;
+    width: auto;
+}
+
+.p-profiles .profile-head .c-history .entry .misc {
+    animation: runningtext 18s ease-in-out infinite;
+    animation-delay: 2s;
+    text-align: center;
+}
+
+.profile-actions .mail:before,
+.profile-actions .talk:before {
+    content: "\f0e0";
+}
+
+.profile-actions .settings:before {
+    content: "\f085";
+}
+
+.profile-actions .ban:before {
+    content: "\f06a";
+    line-height: 38px !important;
+}
+
+.profile-actions .fav-add::before {
+    content: "\f234";
+}
+
+.profile-actions .fav-remove::before {
+    content: "\f235";
+}
+
+.activity .graph.vertical .line .bar {
+    box-sizing: content-box;
+    transform: translateY(1px);
+    transform-origin: center bottom;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-name: activity;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .activity .graph.vertical .line .bar:hover {
+        animation-name: none;
+        transform: none;
+    }
+}
+
+.activity .graph.vertical .line:nth-of-type(6n + 2) .bar {
+    animation-delay: -0.25s;
+}
+
+.activity .graph.vertical .line:nth-of-type(6n + 4) .bar {
+    animation-delay: -0.5s;
+}
+
+.activity .graph.vertical .line:nth-of-type(6n + 3) .bar {
+    animation-delay: -0.75s;
+}
+
+.activity .graph.vertical .line:nth-of-type(6n + 6) .bar {
+    animation-delay: -1s;
+}
+
+.activity .graph.vertical .line:nth-of-type(6n + 5) .bar {
+    animation-delay: -1.25s;
+}
+
+.p-profiles .profile-head .c-brief header h1.aliases:after {
+    content: none !important;
+}
+
+.p-profiles-show .profile-content .graph.x26 {
+    display: block;
+}
+
+.p-profiles-show.x1000 .profile-content .graph.x26 {
+    display: block;
+}
+
+.p-profiles-show .profile-content .graph.x34 {
+    display: none;
+}
+
+.p-profiles-show.x1000 .profile-content .graph.x34 {
+    display: none;
+}
+
+.p-profiles .profile-head .c-history .entry .title {
+    color: rgba(var(--text-strong), var(--hundred)) !important;
+    text-align: center;
+}
+
+.p-profiles .profile-head .c-history .entry .title:hover {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.p-profiles header.head .misc span,
+.p-profiles header.head .misc a {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.b-user.detailed .info .image-name .name,
+.b-user.detailed .history .line a .event {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-user.detailed .history .line .event {
+    color: rgba(var(--text-3), var(--hundred));
+}
+
+div.compatibility > a:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero:before,
+.b-breadcrumbs > span:after,
+.b-stats_bar .compatibility .text.high:before,
+.b-stats_bar .compatibility .text.moderate:before,
+.b-stats_bar .compatibility .text.full:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div.compatibility > a:before {
+    content: '\f0ec';
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero:before,
+.b-stats_bar .compatibility .text.high:before,
+.b-stats_bar .compatibility .text.moderate:before,
+.b-stats_bar .compatibility .text.full:before {
+    content: '\f2be';
+}
+
+/* задаем параемтры стандарта для всех значков совместимости*/
+.b-stats_bar.manga .compatibility a:before,
+.b-stats_bar.anime .compatibility a:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero:before,
+.b-stats_bar .compatibility .text.high:before,
+.b-stats_bar .compatibility .text.moderate:before,
+.b-stats_bar .compatibility .text.full:before {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-right: 5px;
+}
+
+.b-stats_bar.manga .compatibility a:before {
+    color: rgba(var(--manga-inprocess), var(--hundred));
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+.b-stats_bar.anime .compatibility a:before {
+    color: rgba(var(--anime-inprocess), var(--hundred));
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+/* Красим совместимость*/
+/* нету */
+.b-stats_bar .compatibility span.link-replacement .text.zero:before,
+.b-stats_bar .compatibility .text.zero:before {
+    color: rgba(var(--text-2), var(--hundred));
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar .compatibility .text.zero:hover:before {
+        color: rgba(var(--text-2), var(--hundred));
+        background: transparent !important;
+        transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+    }
+}
+
+/* низкая */
+.b-stats_bar .compatibility span.link-replacement .text.weak:before,
+.b-stats_bar .compatibility .text.weak:before {
+    color: #c3a87e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar .compatibility .text.weak:hover:before {
+        color: #c3a87e;
+        background: transparent !important;
+        transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+    }
+}
+
+/* средняя */
+.b-stats_bar .compatibility span.link-replacement .text.modarate:before,
+.b-stats_bar .compatibility .text.moderate:before {
+    color: #c5c23e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar .compatibility .text.moderate:hover:before {
+        color: #c5c23e;
+        background: transparent !important;
+        transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+    }
+}
+
+/* высокая */
+.b-stats_bar .compatibility span.link-replacement .text.high:before,
+.b-stats_bar .compatibility .text.high:before {
+    color: #96c53e;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar .compatibility .text.high:hover:before {
+        color: #96c53e;
+        background: transparent !important;
+        transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+    }
+}
+
+/* полная */
+.b-stats_bar .compatibility span.link-replacement .text.full:before,
+.b-stats_bar .compatibility .text.full:before {
+    color: #3ec557;
+    background: transparent !important;
+    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-stats_bar .compatibility .text.full:hover:before {
+        color: #3ec557;
+        background: transparent !important;
+        transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
+    }
+    .text.full:hover,
+    .text.moderate:hover,
+    .text.high:hover,
+    .text.weak:hover,
+    .text.zero:hover,
+    .b-stats_bar.manga .compatibility a:hover,
+    .b-stats_bar.anime .compatibility a:hover {
+        transform: scale(1.17);
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+}
+
+/*****рейтинг совместимости******/
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate:before,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate:after {
+    font-size: 0;
+    height: 0;
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+    font-weight: bold;
+    font-size: 9px;
+    opacity: 0.7;
+    line-height: 14px;
+    margin-left: -32px;
+    position: absolute;
+    background: rgba(var(--glass), var(--hundred));
+    height: 12px;
+    color: rgba(var(--text-strong), var(--hundred));
+    border-radius: 2px;
+    padding: 0 2px;
+    margin-top: -13px;
+    pointer-events: none;
+}
+
+.b-stats_bar .stat_names .stat_name .size:before,
+.b-stats_bar .stat_names .stat_name .size:after {
+    display: none;
+}
+
+body#profiles_show .b-shiki_editor footer {
+    padding: 0 0 0 0;
+}
+
+.p-profiles .profile-head .c-history:after {
+    display: none;
+}
+
+.b-user_history-line a {
+    display: block;
+}
+
+.p-profiles-show .lifetime .cuts .cut:after {
+    content: '\f10c';
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    top: -2px;
+    right: 5px;
+    position: relative;
+    font-size: 11px;
+    color: rgba(var(--very-high-rating), var(--hundred));
+    z-index: 10;
+}
+
+.p-profiles-show .lifetime .bar {
+    overflow: visible;
+    border-radius: 3px;
+}
+
+.p-profiles-show .lifetime .cuts .cut {
+    width: 0;
+}
+
+.b-stats_bar.lifetime .bar .first,
+.b-stats_bar.lifetime .bar .third {
+    height: 6px;
+    line-height: 6px;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.p-profiles .profile-head .c-brief header.head .misc {
+    position: absolute;
+    left: -3px;
+    text-align: center;
+    width: 190px;
+    font-size: 11px !important;
+    padding: 0 24px;
+    color: rgba(var(--accent), var(--hundred)) !important;
+    z-index: 1;
+}
+
+.p-profiles .profile-head .c-brief header.head .misc span {
+    border-radius: 15px 15px 0 0;
+
+    white-space: normal;
+    width: 100%;
+}
+
+body#user_history_index .tooltip-inner {
+    margin-left: 0;
+}
+
+.profile-content > .cc-2 .c-column .cc-2a.m30 .cc-friends {
+    min-height: 70px;
+}
+
+#profiles_show .b-catalog_entry .cover .title.two_lined {
+    display: grid;
+    height: 34px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.p-profiles-show .lifetime .title .value {
+    border: none;
+}
+
+.cc-favourites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#profiles_show .subheadline-buttons {
+    margin-top: 3px;
+}
+
+.p-profiles-show .about .item-edit:before,
+.p-profiles-show .about .item-edit:after {
+    margin: 0;
+    height: 100%;
+    font-size: 18px;
+    color: rgba(var(--text-2), var(--hundred));
+    transition: 0.2s ease-out;
+}
+
+.p-profiles-show .about .item-edit:before {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+    background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-profiles-show .about .item-edit:after {
+    display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles-show .about .item-edit:hover:before,
+    .p-profiles-show .about .item-edit:hover:after {
+        color: rgba(var(--text), 1);
+        background: rgba(var(--glass), 1);
+    }
+}
+
+.b-user_history-line .destroy {
+    width: 25px;
+    height: 25px;
+    margin-top: -3px;
+    margin-left: 10px;
+}
+
+.b-user_history-line .destroy:before {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(var(--glass), 0.5);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    opacity: 0.8;
+}
+
+body.p-profiles .subheadline .misc-links > a:hover:before {
+    color: rgba(var(--link), 1);
+}
+
+body.p-profiles .subheadline .misc-links > a:hover:after {
+    color: rgba(var(--link), 1);
+}
+
+body.p-profiles .subheadline .misc-links > a {
+    font-size: 0;
+    margin: 0;
+}
+
+body.p-profiles .subheadline .misc-links > a:before {
+    content: 'Непрочитанное';
+    font-size: 8px;
+    text-transform: uppercase;
+    padding: 11px 63px 8px 19px;
+    background: linear-gradient(to right, rgba(var(--glass), 0) 0%, rgba(var(--glass), 1) 20%, rgba(var(--glass), 1) 100%);
+    color: rgba(var(--link), 1);
+    border-radius: 10px;
+    position: Relative;
+    margin-right: -53px;
+    top: -1px;
+    transition: 0.2s all;
+    right: unset;
+    letter-spacing: unset;
+    font-family: 'Comfortaa', sans-serif;
+    bottom: unset;
+}
+
+.b-shiki_editor footer .about-bb_codes {
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(var(--text-2), 1);
+}
+
+.profile-head {
+    padding: 15px 15px 0 15px;
+}
+
+.p-profiles-show .profile-content .c-right .cc-2a {
+    margin-bottom: 0px !important;
+}
+
+.p-profiles-show .cc-friends {
+    display: inline-flex;
+    vertical-align: top;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 100%;
+}
+
+.p-profiles-show .cc-friends .b-user,
+.p-profiles-show .cc-friends .b-user:last-child {
+    margin: auto 1% !important;
+}
+
+.activity .title {
+    display: none;
+}
+
+.p-profiles .profile-head .c-brief .avatar .profile-actions {
+    display: flex;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.p-profiles .profile-head .c-brief .avatar .profile-actions a {
+    margin: auto;
+}
+
+.p-profiles-show .cc-friends:after {
+    display: none;
+}
+
+.p-profiles-show .lifetime {
+    margin-top: 0px;
+    border-radius: 5%;
+    padding: 0px 10px 10px;
+}
+
+.profile-head .c-info .c-lists-info .b-stats_bar .stat_names .stat_name::after {
+    padding: 0 5px 0 0;
+    content: ",";
+}
+
+.x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar .stat_names .stat_name::after {
+    padding: 0 3px 0 0;
+    content: ",";
+}
+
+.b-stats_bar .bar {
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+}
+
+.b-stats_bar .bar .first,
+.b-stats_bar .bar .second,
+.b-stats_bar .bar .third {
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+}
+
+/* Низкая совместимость */
+div.compatibility > a > .text.weak:before {
+    color: #af8d58;
+}
+
+div.compatibility > span.link-replacement > .text.weak:before {
+    background-color: #f0f4c3;
+    color: #c0ca33;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    div.compatibility > a:hover > .text.weak:before {
+        background-color: #f0f4c3;
+        color: #c0ca33;
+    }
+}
+
+/* Средняя совместимость */
+div.compatibility > a > .text.moderate:before {
+    background-color: #f1f8e9;
+    color: #8bc34a;
+}
+
+div.compatibility > span.link-replacement > .text.moderate:before {
+    background-color: #dcedc8;
+    color: #7cb342;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    div.compatibility > a:hover > .text.moderate:before {
+        background-color: #dcedc8;
+        color: #7cb342;
+    }
+}
+
+/* Высокая совместимость */
+div.compatibility > a > .text.high:before {
+    background-color: #adff2f;
+    color: #adff2f;
+}
+
+div.compatibility > span.link-replacement > .text.high:before {
+    background-color: #c8e6c9;
+    color: #43a047;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    div.compatibility > a:hover > .text.high:before {
+        background-color: #c8e6c9;
+        color: #43a047;
+    }
+}
+
+/* Полная совместимость */
+div.compatibility > a > .text.full:before {
+    background-color: #e1f5fe;
+    color: #03a9f4;
+}
+
+div.compatibility > span.link-replacement > .text.full:before {
+    background-color: #b3e5fc;
+    color: #039be5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    div.compatibility > a:hover > .text.full:before {
+        background-color: #b3e5fc;
+        color: #039be5;
+    }
+}
+
+/*----------*/
+.b-shiki_editor.previewed .b-spoiler label:hover,
+.p-profiles .about.block .b-spoiler label:hover {
+    animation: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+    #profiles_show .cc-3 > .c-column {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .p-profiles .profile-head .c-brief header.head .misc {
+        top: 236px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .p-profiles .profile-head .c-history .entry .title {
+        text-overflow: clip;
+        animation: runningtext 12s ease-in-out infinite;
+        animation-delay: 5s;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .p-profiles-show .cc-favourites .c-column:nth-child(7),
+    .p-profiles-show .cc-favourites .c-column:nth-child(8) {
+        display: none;
+    }
+    .p-profiles-show .cc-friends .b-user:nth-child(n + 11) {
+        display: none;
+    }
+    .p-profiles-show .cc-favourites .c-column:nth-child(n + 7) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .p-profiles-show .cc-friends .b-user:nth-child(n + 11) {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .p-profiles-show .cc-favourites .c-column:nth-child(n + 9) {
+        display: none;
+    }
+}
+
+/* ----------- */
+/*выключить повторные всплывающие постеры*/
+#profiles_show .tooltip-inner {
+    width: 450px;
+}
+
+#profiles_show .b-catalog_entry-tooltip > a,
+#profiles_show .entry-tooltip_container > .image-link,
+#profiles_show .b-catalog_entry-tooltip .image,
+#profiles_show .b-catalog_entry-tooltip > a {
+    display: none;
+}
+
+#profiles_show .b-catalog_entry-tooltip .inner.offset {
+    margin-left: 0;
+}
+
+/*--------*/
+/*1*/
+.about .Blok-0 {
+    display: block;
+    text-align: center;
+}
+
+/*-------------------------------*/
+/*Стандарт*/
+.about .Blok-1 {
+    display: block;
+    text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
+       наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
+       Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
+    .b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 10px;
+        background: transparent;
+    }
+}
+
+/* Скролл в истории для длинных названий */
+.p-profiles .profile-head .c-history .entry:hover .title {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--tone-bfc5d0) 25%, transparent) rgba(var(--shade), 0);
+}
+
+.p-profiles .profile-head .c-history .entry .title {
+    text-overflow: clip;
+}
+
+/* Вторая строка истории на малых разрешениях */
+.p-profiles .profile-head .c-history .entry .misc {
+    text-overflow: ellipsis !important;
+}
+
+@media (min-width: 1200px) {
+    /* --- Баннер над профилем --- */
+    .p-profiles-show .profile-head:before {
+        content: "";
+        display: block;
+        height: var(--profile-banner-height, 300px);
+        background: var(--profile-banner, none) var(--profile-banner-position, center) / cover no-repeat;
+        margin: -15px;
+        margin-bottom: 5px;
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+/* --- Без анимаций графика активности и истории --- */
+.activity .graph.vertical .line .bar {
+    animation: none;
+}
+
+.p-profiles .profile-head .c-history .entry .title {
+    animation: none;
+}
+
+/* --- Ник в профиле: обводка под цвет темы --- */
+.p-profiles .profile-head .c-brief header.head h1 {
+    color: rgb(var(--text)) !important;
+    text-shadow: 0 0 1px rgba(var(--accent), .9),
+                 0 2px 10px rgba(var(--accent), .35),
+                 0 2px 4px rgba(var(--shade), 0.6) !important;
+}
+
+@media (min-width: 1200px) {
+    /* --- Под баннером мягкое свечение в цвет самой картинки --- */
+    .p-profiles-show .profile-head {
+        position: relative;
+        display: flow-root;
+        isolation: isolate;
+    }
+    .p-profiles-show .profile-head:before {
+        position: relative;
+        z-index: 1;
+        -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+        mask-image: linear-gradient(to bottom, #000 82%, transparent);
+    }
+    .p-profiles-show .profile-head:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(var(--profile-banner-height, 300px) - 90px);
+        height: 220px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(45px) saturate(1.5);
+        opacity: var(--profile-banner-glow, .5);
+        z-index: 0;
+        pointer-events: none;
+        clear: none;
+        border-radius: 15px;
+        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+    }
+    .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .p-profiles-favorites .item-edit:after {
+        font-size: 0 ;
+        width: 0;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+        width: 100%;
+        vertical-align: middle;
+        margin-right: 0;
+        clip-path: none;
+        transition: none;
+        transform: none;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime {
+        width: 100%;
+        margin-right: 20%;
+        vertical-align: middle;
+        margin-left: 0 ;
+        clip-path: none;
+        transition: none;
+        transform: none;
+    }
+    .p-profiles .profile-head {
+        margin: 0  0  10px !important;
+    }
+    .b-stats_bar .stat_names {
+        font-size: 10px !important;
+    }
+    .p-profiles .profile-head .c-mobile-actions {
+        display: none !important;
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        bottom: 5px !important;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info {
+        margin-top: 0  !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+        .p-profiles .profile-head:hover .c-info .c-lists-info {
+            margin-top: 0  !important;
+        }
+    }
+    .p-profiles .profile-head .c-history .entry:first-child {
+        border-top: none;
+        margin-top: 0 ;
+        padding-top: 0;
+    }
+    .p-profiles .profile-head .c-history .entry .misc.date.unprocessed {
+        display: table;
+        width: calc(100% - 66px);
+    }
+    .p-profiles .profile-head .c-history .entry .misc {
+        display: none;
+    }
+    .profile-head {
+        padding: 70px 15px 0 15px;
+    }
+    .p-profiles .profile-head .c-brief header.head .misc {
+        top: 290px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .p-profiles-show .lifetime {
+        line-height: 2.65;
+    }
+    .p-profiles .profile-head .c-info .c-additionals {
+        margin-bottom: 9px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+        .p-profiles .profile-head:hover .c-info .c-lists-info {
+            margin-top: 0  !important;
+        }
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        bottom: 50px !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .text.full:hover,
+        .text.moderate:hover,
+        .text.high:hover,
+        .text.weak:hover,
+        .text.zero:hover,
+        .b-stats_bar.manga .compatibility a:hover,
+        .b-stats_bar.anime .compatibility a:hover {
+            transform: scale(1);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .b-stats_bar.manga .compatibility a:before,
+    .b-stats_bar.anime .compatibility a:before,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak:before,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero:before,
+    .b-stats_bar .compatibility .text.high:before,
+    .b-stats_bar .compatibility .text.moderate:before,
+    .b-stats_bar .compatibility .text.full:before {
+        font-size: 25px;
+    }
+    .profile-content > .cc-2 .c-column .cc-2a.m30 {
+        margin-bottom: -1rem !important;
+        transition: none;
+    }
+    /*.p-profiles-show.x1200 .profile-content .c-left, .p-profiles-show.x1000 .profile-content .c-left {
+         width: 100%;
+         margin: 28% auto 13.25rem auto;
+         top: 14.45rem;
+       }*/
+    .p-profiles .cc-2a > .c-column {
+        width: 48% !important;
+        margin: 0 1% !important;
+    }
+    .p-profiles-show .lifetime {
+        margin-top: 0  !important;
+    }
+    .p-profiles .profile-head .c-history .entry:first-child {
+        border-top: none;
+        margin-top: 0 ;
+        padding-top: 0;
+    }
+    .p-profiles .profile-head .c-history .entry .title {
+        width: auto;
+        animation: none !important;
+    }
+    .p-profiles .profile-head .c-history .entry .title,
+    .p-profiles .profile-head .c-history .entry .misc.date.unprocessed {
+        margin: 0 15%;
+    }
+    .p-profiles .profile-head .c-history .entry .title {
+        padding-top: 3px;
+    }
+    .p-profiles .profile-head .c-history .entry .misc.date.unprocessed {
+        width: auto;
+        text-align: center;
+        display: block;
+    }
+    .p-profiles .profile-head .c-history .entry:first-child {
+        animation: animhist 5s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+    .p-profiles .subheadline.m13 {
+        height: 28px;
+    }
+    .p-profiles .c-history > div {
+        height: 44px;
+        overflow: hidden;
+    }
+    .b-stats_bar .stat_names {
+        display: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .x1000 > .l-page div .profile-head:hover .c-info .c-lists-info,
+        .p-profiles .profile-head:hover .c-info .c-lists-info {
+            margin-top: 45px !important;
+        }
+    }
+    .p-profiles .profile-head .c-info .c-lists-info,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info {
+        display: inline-block;
+        width: 100%;
+        height: 700px;
+        margin-top: 45px !important;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+        width: 100%;
+        padding: 0 ;
+        display: inline-block;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime {
+        margin-top: -11px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+        margin-top: -165px;
+    }
+    * .c-brief header.head h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
+    .p-profiles .profile-head .c-brief header {
+        text-align: center;
+        margin-top: 14px !important;
+    }
+    .p-profiles .profile-head .c-brief .avatar img {
+        transform: scale(1.3) !important;
+        width: 80px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .p-profiles .profile-head .c-brief .avatar img:hover {
+            transform: scale(1.3) !important;
+            width: 80px;
+        }
+        .p-profiles .profile-head:hover .c-brief .avatar img {
+            transform: scale(1.3) !important;
+        }
+    }
+    .p-profiles .profile-head .c-brief .avatar {
+        float: none;
+        margin: 0 auto;
+        margin-top: 60px !important;
+        text-align: center;
+    }
+    .b-stats_bar .anime .bar,
+    .b-stats_bar .manga .bar {
+        overflow: visible;
+        height: 38px !important;
+        line-height: 38px !important;
+        margin-bottom: 1px;
+        margin-top: 12px;
+    }
+    .b-stats_bar .bar {
+        height: 16px;
+        line-height: 16px;
+    }
+    .b-stats_bar.anime .bar,
+    .b-stats_bar.manga .bar {
+        overflow: hidden !important;
+        height: 38px !important;
+        line-height: 38px !important;
+        transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+    }
+    .b-stats_bar {
+        line-height: 8px;
+        min-height: 8px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar {
+        height: 35px;
+    }
+    .p-profiles-show .lifetime .title .value {
+        margin-right: 30px;
+    }
+    .p-profiles .profile-head .c-info .c-additionals b {
+        display: none;
+    }
+    .p-profiles .profile-head .c-info .c-additionals div:after {
+        font-size: 0 ;
+    }
+    .p-profiles .profile-head .c-info .c-additionals {
+        position: absolute;
+        top: auto;
+        left: 0;
+        width: 100%;
+        max-height: 60px;
+        text-align: center;
+        overflow-y: hidden;
+        bottom: -3.9rem;
+        margin: 0;
+        transition: margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        position: absolute !important;
+        bottom: 175px !important;
+        right: 2% !important;
+        height: 70px;
+        line-height: 20px;
+        vertical-align: middle;
+        display: inline-block;
+        z-index: 10;
+        pointer-events: auto;
+        width: 120px;
+    }
+    .p-profiles .profile-head .c-info .c-additionals div span {
+        color: rgba(var(--text), var(--hundred)) !important;
+    }
+    .subheadline > a[href*="/history"]:before {
+        display: none;
+    }
+    div.compatibility > a:before {
+        font: normal normal normal 14px/1 FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+    }
+    div.compatibility > a:before {
+        content: "\f0ec";
+    }
+    /* SOVMEST */
+    .b-stats_bar.anime .compatibility a:before {
+        font-size: 26px;
+        color: rgba(var(--anime-inprocess), var(--hundred));
+        opacity: 0.7;
+    }
+    .b-stats_bar.manga .compatibility a:before {
+        font-size: 26px;
+        color: rgba(var(--manga-inprocess), var(--hundred));
+        opacity: 0.7;
+    }
+    .b-stats_bar .compatibility .text.zero:before,
+    .b-stats_bar .compatibility .text.high:before,
+    .b-stats_bar .compatibility .text.moderate:before,
+    .b-stats_bar .compatibility .text.full:before,
+    .b-stats_bar .compatibility .text.weak:before {
+        position: absolute;
+    }
+    /* размещение значков совметсимости 768 px<*/
+    .b-stats_bar.anime .compatibility a:before,
+    .b-stats_bar.anime .compatibility .text.zero:before,
+    .b-stats_bar.anime .compatibility .text.weak:before,
+    .b-stats_bar.anime .compatibility .text.high:before,
+    .b-stats_bar.anime .compatibility .text.moderate:before,
+    .b-stats_bar.anime .compatibility .text.full:before {
+        top: -163px;
+        left: 5px;
+    }
+    .b-stats_bar.manga .compatibility a:before,
+    .b-stats_bar.manga .compatibility .text.zero:before,
+    .b-stats_bar.manga .compatibility .text.weak:before,
+    .b-stats_bar.manga .compatibility .text.high:before,
+    .b-stats_bar.manga .compatibility .text.moderate:before,
+    .b-stats_bar.manga .compatibility .text.full:before {
+        top: -120px;
+        left: 55px;
+    }
+    .b-stats_bar.anime .compatibility .rate {
+        top: 120px;
+        left: 30px;
+    }
+    .b-stats_bar.manga .compatibility .rate {
+        top: -5.91rem !important;
+        left: 79px;
+    }
+    .p-profiles .profile-head .c-brief header.head .misc {
+        width: 100%;
+        text-align: center;
+        top: 280px;
+        margin: 0  !important;
+        left: 0;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime:before {
+        content: "ANIME";
+        position: absolute;
+        top: 115px !important;
+        left: 11px;
+        font-size: 10px;
+        padding: 2px 4px;
+        color: rgba(var(--anime-inprocess), 1);
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga:before {
+        content: "MANGA";
+        position: absolute;
+        top: 115px !important;
+        left: 60px;
+        font-size: 10px;
+        padding: 2px 4px;
+        color: rgba(var(--manga-inprocess), 1);
+    }
+    .lifetime .times {
+        height: 45px;
+    }
+    .lifetime .first {
+        background: #383d8c;
+        height: 6px;
+        border-radius: 3px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+        background: none !important;
+        transition: 0.5s ease, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+    }
+    .p-profiles .profile-head .c-brief header .notice {
+        font-size: 12px !important;
+        min-height: 32px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        top: -137px;
+        width: 26px;
+        margin-top: 0 ;
+        opacity: 0.7;
+        margin-left: -26px;
+        text-align: center;
+        font-size: 10px;
+        line-height: 10px;
+        height: 10px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:hover,
+        .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:hover {
+            clip-path: none;
+            transform: none;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .p-profiles-show .cc-friends .b-user:nth-child(11),
+    .p-profiles-show .cc-friends .b-user:nth-child(12) {
+        display: none !important;
+    }
+    .p-profiles-show .cc-friends .b-user:nth-child(6n + 1) {
+        clear: none;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .profile-head {
+        padding: 15px 15px 0 15px;
+    }
+    .p-profiles .profile-head .c-history {
+        display: block;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime:before {
+        left: 11px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga:before {
+        left: 60px;
+    }
+    .b-stats_bar.anime .compatibility a:before,
+    .b-stats_bar.anime .compatibility .text.zero:before,
+    .b-stats_bar.anime .compatibility .text.weak:before,
+    .b-stats_bar.anime .compatibility .text.high:before,
+    .b-stats_bar.anime .compatibility .text.moderate:before,
+    .b-stats_bar.anime .compatibility .text.full:before {
+        left: 5px;
+    }
+    .b-stats_bar.manga .compatibility a:before,
+    .b-stats_bar.manga .compatibility .text.zero:before,
+    .b-stats_bar.manga .compatibility .text.weak:before,
+    .b-stats_bar.manga .compatibility .text.high:before,
+    .b-stats_bar.manga .compatibility .text.moderate:before,
+    .b-stats_bar.manga .compatibility .text.full:before {
+        left: 55px;
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        right: 0 !important;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        margin-left: -16px;
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        right: 0  !important;
+    }
+    .p-profiles .profile-head .c-brief .avatar img {
+        transform: scale(1.3) !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .p-profiles .profile-head .c-brief .avatar img:hover {
+            transform: scale(1.3) !important;
+        }
+        .p-profiles .profile-head:hover .c-brief .avatar img {
+            transform: scale(1.3) !important;
+        }
+    }
+    .b-stats_bar.anime .compatibility a:before,
+    .b-stats_bar.anime .compatibility .text.zero:before,
+    .b-stats_bar.anime .compatibility .text.weak:before,
+    .b-stats_bar.anime .compatibility .text.high:before,
+    .b-stats_bar.anime .compatibility .text.moderate:before,
+    .b-stats_bar.anime .compatibility .text.full:before {
+        left: 1px;
+    }
+    .b-stats_bar.manga .compatibility a:before,
+    .b-stats_bar.manga .compatibility .text.zero:before,
+    .b-stats_bar.manga .compatibility .text.weak:before,
+    .b-stats_bar.manga .compatibility .text.high:before,
+    .b-stats_bar.manga .compatibility .text.moderate:before,
+    .b-stats_bar.manga .compatibility .text.full:before {
+        left: 51px;
+    }
+    .b-stats_bar.anime .compatibility .rate {
+        left: 20px;
+    }
+    .b-stats_bar.manga .compatibility .rate {
+        left: 69px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime:before {
+        content: "ANIME";
+        position: absolute;
+        top: 70px;
+        font-size: 10px;
+        padding: 2px 4px;
+        color: rgba(var(--anime-inprocess), var(--hundred));
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga:before {
+        content: "MANGA";
+        position: absolute;
+        top: 70px;
+        font-size: 10px;
+        padding: 2px 4px;
+        color: #de2b74;
+    }
+    .p-profiles-show .lifetime .title .value {
+        width: 69px;
+        border: none;
+    }
+    .p-profiles-show .lifetime .title .value {
+        margin-top: -10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime:before {
+        left: 6px;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga:before,
+    .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga:before {
+        left: 53px;
+    }
+    .p-profiles .profile-head .c-brief .avatar .profile-actions {
+        width: 110px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-profiles .profile-head .c-history > * {
+        display: inline-flex !important;
+        flex-wrap: wrap;
+    }
+    .c-history .subheadline {
+        background: none !important;
+        box-shadow: none !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: 0.18rem !important;
+        width: 44px;
+        padding: 0;
+        height: 44px;
+        margin: 0 0 0 5px !important;
+        overflow: visible;
+        transition: none;
+        visibility: hidden;
+        font-size: 0;
+    }
+    .c-history .subheadline > a:before {
+        display: none;
+    }
+    .c-history .subheadline:hover::before {
+        color: rgba(var(--accent), var(--hundred));
+        transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+    }
+    .p-profiles .profile-head .c-history .image-name .title {
+        padding-right: 14px;
+        padding-top: 3px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
+    html body.p-profiles .profile-head .c-brief header.head .misc {
+        position: static !important;
+        top: auto !important;
+        margin: 4px 0 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+    html body.p-profiles .profile-head .c-info {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 14px 0 0 !important;
+        padding: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga { order: 2; }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        margin: 0 0 8px !important;
+        padding: 0 40px 0 0 !important;
+        text-align: left !important;
+        line-height: 18px !important;
+        font-size: 13px !important;
+        opacity: 1 !important;
+        color: rgb(var(--text)) !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
+        position: relative !important;
+        margin: 0 !important;
+        height: 26px !important;
+        line-height: 26px !important;
+        border-radius: 8px;
+        overflow: hidden !important;
+        font-size: 12px;
+    }
+    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
+        display: none !important;
+        content: none !important;
+    }
+    /* совместимость — значок в правом верхнем углу карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
+        position: absolute !important;
+        top: 9px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        height: 20px;
+        margin: 0 !important;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a::before,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text::before {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        font-size: 17px !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 8px 0 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+        text-align: center;
+        font-size: 12px;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
+    html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
+    /* друзья и клубы — две стеклянные карточки */
+    body.p-profiles-show .cc-2a {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 14px 0 !important;
+    }
+    body.p-profiles-show .cc-2a > .c-column > .subheadline {
+        margin: 0 0 8px !important;
+        width: auto !important;
+    }
+    body.p-profiles-show .cc-friends {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        gap: 6px 4px;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-friends .b-user {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center;
+    }
+    html body#profiles_show.p-profiles-show .cc-2a .b-nothing_here {
+        margin: 0 !important;
+        font-size: 12.5px;
+        line-height: 1.4 !important;
+        color: rgb(var(--text-2));
+    }
+    .p-profiles .profile-head .c-brief header.head {
+        width: fit-content !important;
+        max-width: 100%;
+        margin: 10px auto 0 !important;
+        padding: 6px 16px 8px !important;
+        border-radius: 16px;
+    }
+    /* ================================================================
+       v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
+       ================================================================ */
+    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
+    body.p-profiles-show .profile-head {
+        position: relative;
+        z-index: 0;
+    }
+    body.p-profiles-show .profile-head::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
+        width: auto !important;
+        height: var(--profile-banner-height-mobile);
+        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        pointer-events: none;
+    }
+    /* мягкое свечение в цвет картинки под баннером */
+    body.p-profiles-show .profile-head::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: calc(var(--profile-banner-height-mobile) - 70px);
+        left: 8%;
+        right: 8%;
+        display: block !important;
+        width: auto !important;
+        height: 140px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(32px) saturate(1.5);
+        opacity: var(--profile-banner-glow);
+        pointer-events: none;
+    }
+}

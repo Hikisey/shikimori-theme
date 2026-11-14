@@ -1,0 +1,68 @@
+/* ===== components/modals =====
+   окна: просмотр картинок (mfp), bulma-модалки, обратная связь */
+
+.x1200 .b-modal > .inner,
+.b-modal > .inner {
+    max-width: 920px;
+    background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
+}
+
+.wcommunity_wrap {
+    background: var(--tone-282b2f) !important;
+}
+
+.wcommunity_post {
+    color: #e3f1ff !important;
+}
+
+.wcommunity_post_date,
+.wcommunity_post_date {
+    color: #72a4de !important;
+}
+
+.wcommunity_subscribers,
+.post_video_views_count {
+    color: #7d8f9e !important;
+}
+
+.bulma .modal-card-body {
+    background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+    border-radius: 14px;
+}
+
+.bulma span {
+    font: bold 16px 'Comfortaa';
+}
+
+.bulma .play-icon::before {
+    display: none;
+}
+
+/*Боле затемнённый фон. при клики на картинки*/
+.mfp-container {
+    backdrop-filter: blur(calc(var(--glass-blur) * .8));
+    -webkit-backdrop-filter: blur(4px); /* Safari: без var() */
+    background-color: color-mix(in srgb, var(--tone-191717) 94.9%, transparent);
+}
+
+/* mfp-bg */
+.mfp-bg {
+    opacity: 0;
+}
+
+/* Feedback */
+.b-feedback > .hover-activator {
+    height: 0px !important;
+}
+
+.b-feedback > .marker-positioner > .marker-text {
+    font-size: 0px;
+    height: 0px;
+    line-height: 0;
+    padding: 0;
+}
+
+.b-feedback > .marker-positioner {
+    width: 0px;
+}

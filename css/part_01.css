@@ -1,216 +1,220 @@
-/* =====================================================================
-   ПАЛИТРА ТЕМЫ — все цвета берутся отсюда.
-   Цвета пишутся rgb-тройкой «R, G, B» (так работает rgba(var(--x), .5)).
-   Чтобы перекрасить тему, вставьте в «Внешний вид сайта» ПОСЛЕ строк @import:
-     @media screen and (min-width: 1px) { html:root { --accent: 90, 150, 255; } }
-   (обёртка @media обязательна — без неё Шикимори применит стиль только к ПК).
-   Старые имена (--bright-color, --block-color, --page-bg …) тоже понимаются.
-   ===================================================================== */
+/* ===== tokens/palette =====
+   палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
+
 @media screen and (min-width: 1px) {
-  html:root {
-    /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
-    --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
-    --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
-    /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
+    /* =====================================================================
+       ПАЛИТРА ТЕМЫ — все цвета берутся отсюда.
+       Цвета пишутся rgb-тройкой «R, G, B» (так работает rgba(var(--x), .5)).
+       Чтобы перекрасить тему, вставьте в «Внешний вид сайта» ПОСЛЕ строк @import:
+         @media screen and (min-width: 1px) { html:root { --accent: 90, 150, 255; } }
+       (обёртка @media обязательна — без неё Шикимори применит стиль только к ПК).
+       Старые имена (--bright-color, --block-color, --page-bg …) тоже понимаются.
+       ===================================================================== */
+    html:root {
+        /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
+        --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
+        --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
+        /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
 
-    /* ---------- ФОН ---------- */
-    --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
-    --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
-    --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
-    --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
-    --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
-    --bg-blur: 0px;                                 /* размытие обоев на ПК */
-    --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
-    --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
-    --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
-    --profile-banner: none;                         /* баннер профиля: url("…") */
-    --profile-banner-height: 300px;                 /* высота баннера */
-    --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
-    --profile-banner-position: center;              /* какая часть картинки видна */
-    --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
+        /* ---------- ФОН ---------- */
+        --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
+        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
+        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
+        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
+        --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
+        --bg-blur: 0px;                                 /* размытие обоев на ПК */
+        --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
+        --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
+        --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
+        --profile-banner: none;                         /* баннер профиля: url("…") */
+        --profile-banner-height: 300px;                 /* высота баннера */
+        --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
+        --profile-banner-position: center;              /* какая часть картинки видна */
+        --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
 
-    /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
-    --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
-    --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
-    --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
-    --shade: 0, 0, 0;                               /* цвет теней и затемнений */
+        /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
+        --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
+        --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
+        --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
+        --shade: 0, 0, 0;                               /* цвет теней и затемнений */
 
-    /* ---------- ТЕКСТ ---------- */
-    --text: var(--light-color, 236, 240, 247);      /* основной текст */
-    --text-2: var(--dark-color, 170, 178, 192);     /* второстепенный текст, подписи */
-    --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
-    --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
-    --hundred: 1;                                   /* непрозрачность части текста */
+        /* ---------- ТЕКСТ ---------- */
+        --text: var(--light-color, 236, 240, 247);      /* основной текст */
+        --text-2: var(--dark-color, 170, 178, 192);     /* второстепенный текст, подписи */
+        --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
+        --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
+        --hundred: 1;                                   /* непрозрачность части текста */
 
-    /* ---------- СТАТУСЫ И ОЦЕНКИ (по желанию) ---------- */
-    --very-high-rating: 129, 199, 132;
-    --high-rating: 156, 204, 101;
-    --average-rating: 255, 202, 40;
-    --small-rating: 239, 108, 108;
-    --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
-    --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
-    --anime-inprocess: 128, 246, 255;
-    --anime-complete: 0, 229, 255;
-    --manga-inprocess: 255, 92, 160;
-    --manga-complete: 255, 0, 110;
-  }
+        /* ---------- СТАТУСЫ И ОЦЕНКИ (по желанию) ---------- */
+        --very-high-rating: 129, 199, 132;
+        --high-rating: 156, 204, 101;
+        --average-rating: 255, 202, 40;
+        --small-rating: 239, 108, 108;
+        --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
+        --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
+        --anime-inprocess: 128, 246, 255;
+        --anime-complete: 0, 229, 255;
+        --manga-inprocess: 255, 92, 160;
+        --manga-complete: 255, 0, 110;
+    }
+    /* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
+       Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,
+       вычисленные из --accent / --glass / --text / --link (Chrome 119+, Safari 16.4+, Firefox 128+). */
+    html:root {
+        --accent-dim: rgb(178, 58, 64); /* тёмный акцент: кнопки, подложка ника */
+        --accent-hover: rgb(214, 82, 82); /* акцент кнопок под курсором */
+        --glass-deep: rgb(20, 22, 28); /* самое тёмное стекло: меню, затемнение обоев */
+        --glass-bar: rgb(18, 20, 26); /* верхняя панель */
+        --glass-bar-hover: rgb(26, 29, 37); /* пункты панели под курсором */
+        --glass-popup: rgb(38, 43, 54); /* всплывающие окна и подсказки */
+        --glass-active: rgb(26, 28, 34); /* нажатые и выбранные элементы */
+        --glass-shadow: rgb(10, 12, 16); /* тени блоков */
+        --text-input: rgb(165, 172, 184); /* текст в полях ввода */
+        --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
+        /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
+        --tone-6e1515: rgb(110, 21, 21);
+        --tone-010101: rgb(1, 1, 1);
+        --tone-0c0c0c: rgb(12, 12, 12);
+        --tone-121223: rgb(18, 18, 35);
+        --tone-131010: rgb(19, 16, 16);
+        --tone-151414: rgb(21, 20, 20);
+        --tone-171212: rgb(23, 18, 18);
+        --tone-171616: rgb(23, 22, 22);
+        --tone-171717: rgb(23, 23, 23);
+        --tone-191717: rgb(25, 23, 23);
+        --tone-1b1b1b: rgb(27, 27, 27);
+        --tone-1e1e27: rgb(30, 30, 39);
+        --tone-1f1e1e: rgb(31, 30, 30);
+        --tone-1f2123: rgb(31, 33, 35);
+        --tone-212121: rgb(33, 33, 33);
+        --tone-263238: rgb(38, 50, 56);
+        --tone-271f1c: rgb(39, 31, 28);
+        --tone-282b2f: rgb(40, 43, 47);
+        --tone-282d56: rgb(40, 45, 86);
+        --tone-282e33: rgb(40, 46, 51);
+        --tone-2a2f33: rgb(42, 47, 51);
+        --tone-2d2626: rgb(45, 38, 38);
+        --tone-373737: rgb(55, 55, 55);
+        --tone-373c3e: rgb(55, 60, 62);
+        --tone-383838: rgb(56, 56, 56);
+        --tone-3b3a3e: rgb(59, 58, 62);
+        --tone-3e3e3e: rgb(62, 62, 62);
+        --tone-3e4d5d: rgb(62, 77, 93);
+        --tone-444444: rgb(68, 68, 68);
+        --tone-4c4b4b: rgb(76, 75, 75);
+        --tone-54588a: rgb(84, 88, 138);
+        --tone-556571: rgb(85, 101, 113);
+        --tone-6b6965: rgb(107, 105, 101);
+        --tone-6d6d6d: rgb(109, 109, 109);
+        --tone-9fa9b5: rgb(159, 169, 181);
+        --tone-a5aae6: rgb(165, 170, 230);
+        --tone-a8a99f: rgb(168, 169, 159);
+        --tone-b1cdde: rgb(177, 205, 222);
+        --tone-b5a28c: rgb(181, 162, 140);
+        --tone-b7b7b7: rgb(183, 183, 183);
+        --tone-bfc5d0: rgb(191, 197, 208);
+        --tone-c4cad4: rgb(196, 202, 212);
+        --tone-d2d2d2: rgb(210, 210, 210);
+        --tone-d4d2cd: rgb(212, 210, 205);
+        --tone-d6d6d6: rgb(214, 214, 214);
+        --tone-d6dbe4: rgb(214, 219, 228);
+        --tone-dadada: rgb(218, 218, 218);
+        --tone-dadfff: rgb(218, 223, 255);
+        --tone-dcdcdc: rgb(220, 220, 220);
+        --tone-dddddd: rgb(221, 221, 221);
+        --tone-e2e2e2: rgb(226, 226, 226);
+        --tone-e4d7d7: rgb(228, 215, 215);
+        --tone-e4e4e4: rgb(228, 228, 228);
+        --tone-e7e7e7: rgb(231, 231, 231);
+        --tone-e9f1f3: rgb(233, 241, 243);
+        --tone-eadddd: rgb(234, 221, 221);
+        --tone-ebeef1: rgb(235, 238, 241);
+        --tone-f9f9f9: rgb(249, 249, 249);
+        --tone-fdfdfd: rgb(253, 253, 253);
+    }
 }
 
-/* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
-   Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,
-   вычисленные из --accent / --glass / --text / --link (Chrome 119+, Safari 16.4+, Firefox 128+). */
-@media screen and (min-width: 1px) {
-  html:root {
-    --accent-dim: rgb(178, 58, 64); /* тёмный акцент: кнопки, подложка ника */
-    --accent-hover: rgb(214, 82, 82); /* акцент кнопок под курсором */
-    --glass-deep: rgb(20, 22, 28); /* самое тёмное стекло: меню, затемнение обоев */
-    --glass-bar: rgb(18, 20, 26); /* верхняя панель */
-    --glass-bar-hover: rgb(26, 29, 37); /* пункты панели под курсором */
-    --glass-popup: rgb(38, 43, 54); /* всплывающие окна и подсказки */
-    --glass-active: rgb(26, 28, 34); /* нажатые и выбранные элементы */
-    --glass-shadow: rgb(10, 12, 16); /* тени блоков */
-    --text-input: rgb(165, 172, 184); /* текст в полях ввода */
-    --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
-    /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
-    --tone-6e1515: rgb(110, 21, 21);
-    --tone-010101: rgb(1, 1, 1);
-    --tone-0c0c0c: rgb(12, 12, 12);
-    --tone-121223: rgb(18, 18, 35);
-    --tone-131010: rgb(19, 16, 16);
-    --tone-151414: rgb(21, 20, 20);
-    --tone-171212: rgb(23, 18, 18);
-    --tone-171616: rgb(23, 22, 22);
-    --tone-171717: rgb(23, 23, 23);
-    --tone-191717: rgb(25, 23, 23);
-    --tone-1b1b1b: rgb(27, 27, 27);
-    --tone-1e1e27: rgb(30, 30, 39);
-    --tone-1f1e1e: rgb(31, 30, 30);
-    --tone-1f2123: rgb(31, 33, 35);
-    --tone-212121: rgb(33, 33, 33);
-    --tone-263238: rgb(38, 50, 56);
-    --tone-271f1c: rgb(39, 31, 28);
-    --tone-282b2f: rgb(40, 43, 47);
-    --tone-282d56: rgb(40, 45, 86);
-    --tone-282e33: rgb(40, 46, 51);
-    --tone-2a2f33: rgb(42, 47, 51);
-    --tone-2d2626: rgb(45, 38, 38);
-    --tone-373737: rgb(55, 55, 55);
-    --tone-373c3e: rgb(55, 60, 62);
-    --tone-383838: rgb(56, 56, 56);
-    --tone-3b3a3e: rgb(59, 58, 62);
-    --tone-3e3e3e: rgb(62, 62, 62);
-    --tone-3e4d5d: rgb(62, 77, 93);
-    --tone-444444: rgb(68, 68, 68);
-    --tone-4c4b4b: rgb(76, 75, 75);
-    --tone-54588a: rgb(84, 88, 138);
-    --tone-556571: rgb(85, 101, 113);
-    --tone-6b6965: rgb(107, 105, 101);
-    --tone-6d6d6d: rgb(109, 109, 109);
-    --tone-9fa9b5: rgb(159, 169, 181);
-    --tone-a5aae6: rgb(165, 170, 230);
-    --tone-a8a99f: rgb(168, 169, 159);
-    --tone-b1cdde: rgb(177, 205, 222);
-    --tone-b5a28c: rgb(181, 162, 140);
-    --tone-b7b7b7: rgb(183, 183, 183);
-    --tone-bfc5d0: rgb(191, 197, 208);
-    --tone-c4cad4: rgb(196, 202, 212);
-    --tone-d2d2d2: rgb(210, 210, 210);
-    --tone-d4d2cd: rgb(212, 210, 205);
-    --tone-d6d6d6: rgb(214, 214, 214);
-    --tone-d6dbe4: rgb(214, 219, 228);
-    --tone-dadada: rgb(218, 218, 218);
-    --tone-dadfff: rgb(218, 223, 255);
-    --tone-dcdcdc: rgb(220, 220, 220);
-    --tone-dddddd: rgb(221, 221, 221);
-    --tone-e2e2e2: rgb(226, 226, 226);
-    --tone-e4d7d7: rgb(228, 215, 215);
-    --tone-e4e4e4: rgb(228, 228, 228);
-    --tone-e7e7e7: rgb(231, 231, 231);
-    --tone-e9f1f3: rgb(233, 241, 243);
-    --tone-eadddd: rgb(234, 221, 221);
-    --tone-ebeef1: rgb(235, 238, 241);
-    --tone-f9f9f9: rgb(249, 249, 249);
-    --tone-fdfdfd: rgb(253, 253, 253);
-  }
-}
 @supports (color: rgb(from red r g b)) {
-  html:root {
-    --accent-dim: rgb(from rgb(var(--accent)) calc(r * 178 / 232) calc(g * 58 / 108) calc(b * 64 / 108));
-    --accent-hover: rgb(from rgb(var(--accent)) calc(r * 214 / 232) calc(g * 82 / 108) calc(b * 82 / 108));
-    --glass-deep: rgb(from rgb(var(--glass)) calc(r * 20 / 30) calc(g * 22 / 34) calc(b * 28 / 42));
-    --glass-bar: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 20 / 34) calc(b * 26 / 42));
-    --glass-bar-hover: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 29 / 34) calc(b * 37 / 42));
-    --glass-popup: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 43 / 34) calc(b * 54 / 42));
-    --glass-active: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 28 / 34) calc(b * 34 / 42));
-    --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
-    --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
-    --link-hover: rgb(from rgb(var(--link)) calc(r + (255 - r) * 13 / 23) calc(g + (255 - g) * 42 / 147) calc(b + (255 - b) * 42 / 147));
-    --tone-6e1515: rgb(from rgb(var(--accent)) calc(r * 110 / 232) calc(g * 21 / 108) calc(b * 21 / 108));
-    --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
-    --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
-    --tone-121223: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 18 / 34) calc(b * 35 / 42));
-    --tone-131010: rgb(from rgb(var(--glass)) calc(r * 19 / 30) calc(g * 16 / 34) calc(b * 16 / 42));
-    --tone-151414: rgb(from rgb(var(--glass)) calc(r * 21 / 30) calc(g * 20 / 34) calc(b * 20 / 42));
-    --tone-171212: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 18 / 34) calc(b * 18 / 42));
-    --tone-171616: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 22 / 34) calc(b * 22 / 42));
-    --tone-171717: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
-    --tone-191717: rgb(from rgb(var(--glass)) calc(r * 25 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
-    --tone-1b1b1b: rgb(from rgb(var(--glass)) calc(r * 27 / 30) calc(g * 27 / 34) calc(b * 27 / 42));
-    --tone-1e1e27: rgb(from rgb(var(--glass)) r calc(g * 30 / 34) calc(b * 39 / 42));
-    --tone-1f1e1e: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 30 / 34) calc(b * 30 / 42));
-    --tone-1f2123: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 33 / 34) calc(b * 35 / 42));
-    --tone-212121: rgb(from rgb(var(--glass)) calc(r * 33 / 30) calc(g * 33 / 34) calc(b * 33 / 42));
-    --tone-263238: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 50 / 34) calc(b * 56 / 42));
-    --tone-271f1c: rgb(from rgb(var(--glass)) calc(r * 39 / 30) calc(g * 31 / 34) calc(b * 28 / 42));
-    --tone-282b2f: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 43 / 34) calc(b * 47 / 42));
-    --tone-282d56: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 45 / 34) calc(b * 86 / 42));
-    --tone-282e33: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 46 / 34) calc(b * 51 / 42));
-    --tone-2a2f33: rgb(from rgb(var(--glass)) calc(r * 42 / 30) calc(g * 47 / 34) calc(b * 51 / 42));
-    --tone-2d2626: rgb(from rgb(var(--glass)) calc(r * 45 / 30) calc(g * 38 / 34) calc(b * 38 / 42));
-    --tone-373737: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 55 / 34) calc(b * 55 / 42));
-    --tone-373c3e: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 60 / 34) calc(b * 62 / 42));
-    --tone-383838: rgb(from rgb(var(--glass)) calc(r * 56 / 30) calc(g * 56 / 34) calc(b * 56 / 42));
-    --tone-3b3a3e: rgb(from rgb(var(--glass)) calc(r * 59 / 30) calc(g * 58 / 34) calc(b * 62 / 42));
-    --tone-3e3e3e: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 62 / 34) calc(b * 62 / 42));
-    --tone-3e4d5d: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 77 / 34) calc(b * 93 / 42));
-    --tone-444444: rgb(from rgb(var(--glass)) calc(r * 68 / 30) calc(g * 68 / 34) calc(b * 68 / 42));
-    --tone-4c4b4b: rgb(from rgb(var(--glass)) calc(r * 76 / 30) calc(g * 75 / 34) calc(b * 75 / 42));
-    --tone-54588a: rgb(from rgb(var(--glass)) calc(r * 84 / 30) calc(g * 88 / 34) calc(b * 138 / 42));
-    --tone-556571: rgb(from rgb(var(--glass)) calc(r * 85 / 30) calc(g * 101 / 34) calc(b * 113 / 42));
-    --tone-6b6965: rgb(from rgb(var(--glass)) calc(r * 107 / 30) calc(g * 105 / 34) calc(b * 101 / 42));
-    --tone-6d6d6d: rgb(from rgb(var(--glass)) calc(r * 109 / 30) calc(g * 109 / 34) calc(b * 109 / 42));
-    --tone-9fa9b5: rgb(from rgb(var(--text)) calc(r * 159 / 236) calc(g * 169 / 240) calc(b * 181 / 247));
-    --tone-a5aae6: rgb(from rgb(var(--text)) calc(r * 165 / 236) calc(g * 170 / 240) calc(b * 230 / 247));
-    --tone-a8a99f: rgb(from rgb(var(--text)) calc(r * 168 / 236) calc(g * 169 / 240) calc(b * 159 / 247));
-    --tone-b1cdde: rgb(from rgb(var(--text)) calc(r * 177 / 236) calc(g * 205 / 240) calc(b * 222 / 247));
-    --tone-b5a28c: rgb(from rgb(var(--text)) calc(r * 181 / 236) calc(g * 162 / 240) calc(b * 140 / 247));
-    --tone-b7b7b7: rgb(from rgb(var(--text)) calc(r * 183 / 236) calc(g * 183 / 240) calc(b * 183 / 247));
-    --tone-bfc5d0: rgb(from rgb(var(--text)) calc(r * 191 / 236) calc(g * 197 / 240) calc(b * 208 / 247));
-    --tone-c4cad4: rgb(from rgb(var(--text)) calc(r * 196 / 236) calc(g * 202 / 240) calc(b * 212 / 247));
-    --tone-d2d2d2: rgb(from rgb(var(--text)) calc(r * 210 / 236) calc(g * 210 / 240) calc(b * 210 / 247));
-    --tone-d4d2cd: rgb(from rgb(var(--text)) calc(r * 212 / 236) calc(g * 210 / 240) calc(b * 205 / 247));
-    --tone-d6d6d6: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 214 / 240) calc(b * 214 / 247));
-    --tone-d6dbe4: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 219 / 240) calc(b * 228 / 247));
-    --tone-dadada: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 218 / 240) calc(b * 218 / 247));
-    --tone-dadfff: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 223 / 240) calc(b * 255 / 247));
-    --tone-dcdcdc: rgb(from rgb(var(--text)) calc(r * 220 / 236) calc(g * 220 / 240) calc(b * 220 / 247));
-    --tone-dddddd: rgb(from rgb(var(--text)) calc(r * 221 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
-    --tone-e2e2e2: rgb(from rgb(var(--text)) calc(r * 226 / 236) calc(g * 226 / 240) calc(b * 226 / 247));
-    --tone-e4d7d7: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 215 / 240) calc(b * 215 / 247));
-    --tone-e4e4e4: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 228 / 240) calc(b * 228 / 247));
-    --tone-e7e7e7: rgb(from rgb(var(--text)) calc(r * 231 / 236) calc(g * 231 / 240) calc(b * 231 / 247));
-    --tone-e9f1f3: rgb(from rgb(var(--text)) calc(r * 233 / 236) calc(g * 241 / 240) calc(b * 243 / 247));
-    --tone-eadddd: rgb(from rgb(var(--text)) calc(r * 234 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
-    --tone-ebeef1: rgb(from rgb(var(--text)) calc(r * 235 / 236) calc(g * 238 / 240) calc(b * 241 / 247));
-    --tone-f9f9f9: rgb(from rgb(var(--text)) calc(r * 249 / 236) calc(g * 249 / 240) calc(b * 249 / 247));
-    --tone-fdfdfd: rgb(from rgb(var(--text)) calc(r * 253 / 236) calc(g * 253 / 240) calc(b * 253 / 247));
-  }
+    html:root {
+        --accent-dim: rgb(from rgb(var(--accent)) calc(r * 178 / 232) calc(g * 58 / 108) calc(b * 64 / 108));
+        --accent-hover: rgb(from rgb(var(--accent)) calc(r * 214 / 232) calc(g * 82 / 108) calc(b * 82 / 108));
+        --glass-deep: rgb(from rgb(var(--glass)) calc(r * 20 / 30) calc(g * 22 / 34) calc(b * 28 / 42));
+        --glass-bar: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 20 / 34) calc(b * 26 / 42));
+        --glass-bar-hover: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 29 / 34) calc(b * 37 / 42));
+        --glass-popup: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 43 / 34) calc(b * 54 / 42));
+        --glass-active: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 28 / 34) calc(b * 34 / 42));
+        --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
+        --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
+        --link-hover: rgb(from rgb(var(--link)) calc(r + (255 - r) * 13 / 23) calc(g + (255 - g) * 42 / 147) calc(b + (255 - b) * 42 / 147));
+        --tone-6e1515: rgb(from rgb(var(--accent)) calc(r * 110 / 232) calc(g * 21 / 108) calc(b * 21 / 108));
+        --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
+        --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
+        --tone-121223: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 18 / 34) calc(b * 35 / 42));
+        --tone-131010: rgb(from rgb(var(--glass)) calc(r * 19 / 30) calc(g * 16 / 34) calc(b * 16 / 42));
+        --tone-151414: rgb(from rgb(var(--glass)) calc(r * 21 / 30) calc(g * 20 / 34) calc(b * 20 / 42));
+        --tone-171212: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 18 / 34) calc(b * 18 / 42));
+        --tone-171616: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 22 / 34) calc(b * 22 / 42));
+        --tone-171717: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+        --tone-191717: rgb(from rgb(var(--glass)) calc(r * 25 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+        --tone-1b1b1b: rgb(from rgb(var(--glass)) calc(r * 27 / 30) calc(g * 27 / 34) calc(b * 27 / 42));
+        --tone-1e1e27: rgb(from rgb(var(--glass)) r calc(g * 30 / 34) calc(b * 39 / 42));
+        --tone-1f1e1e: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 30 / 34) calc(b * 30 / 42));
+        --tone-1f2123: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 33 / 34) calc(b * 35 / 42));
+        --tone-212121: rgb(from rgb(var(--glass)) calc(r * 33 / 30) calc(g * 33 / 34) calc(b * 33 / 42));
+        --tone-263238: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 50 / 34) calc(b * 56 / 42));
+        --tone-271f1c: rgb(from rgb(var(--glass)) calc(r * 39 / 30) calc(g * 31 / 34) calc(b * 28 / 42));
+        --tone-282b2f: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 43 / 34) calc(b * 47 / 42));
+        --tone-282d56: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 45 / 34) calc(b * 86 / 42));
+        --tone-282e33: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 46 / 34) calc(b * 51 / 42));
+        --tone-2a2f33: rgb(from rgb(var(--glass)) calc(r * 42 / 30) calc(g * 47 / 34) calc(b * 51 / 42));
+        --tone-2d2626: rgb(from rgb(var(--glass)) calc(r * 45 / 30) calc(g * 38 / 34) calc(b * 38 / 42));
+        --tone-373737: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 55 / 34) calc(b * 55 / 42));
+        --tone-373c3e: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 60 / 34) calc(b * 62 / 42));
+        --tone-383838: rgb(from rgb(var(--glass)) calc(r * 56 / 30) calc(g * 56 / 34) calc(b * 56 / 42));
+        --tone-3b3a3e: rgb(from rgb(var(--glass)) calc(r * 59 / 30) calc(g * 58 / 34) calc(b * 62 / 42));
+        --tone-3e3e3e: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 62 / 34) calc(b * 62 / 42));
+        --tone-3e4d5d: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 77 / 34) calc(b * 93 / 42));
+        --tone-444444: rgb(from rgb(var(--glass)) calc(r * 68 / 30) calc(g * 68 / 34) calc(b * 68 / 42));
+        --tone-4c4b4b: rgb(from rgb(var(--glass)) calc(r * 76 / 30) calc(g * 75 / 34) calc(b * 75 / 42));
+        --tone-54588a: rgb(from rgb(var(--glass)) calc(r * 84 / 30) calc(g * 88 / 34) calc(b * 138 / 42));
+        --tone-556571: rgb(from rgb(var(--glass)) calc(r * 85 / 30) calc(g * 101 / 34) calc(b * 113 / 42));
+        --tone-6b6965: rgb(from rgb(var(--glass)) calc(r * 107 / 30) calc(g * 105 / 34) calc(b * 101 / 42));
+        --tone-6d6d6d: rgb(from rgb(var(--glass)) calc(r * 109 / 30) calc(g * 109 / 34) calc(b * 109 / 42));
+        --tone-9fa9b5: rgb(from rgb(var(--text)) calc(r * 159 / 236) calc(g * 169 / 240) calc(b * 181 / 247));
+        --tone-a5aae6: rgb(from rgb(var(--text)) calc(r * 165 / 236) calc(g * 170 / 240) calc(b * 230 / 247));
+        --tone-a8a99f: rgb(from rgb(var(--text)) calc(r * 168 / 236) calc(g * 169 / 240) calc(b * 159 / 247));
+        --tone-b1cdde: rgb(from rgb(var(--text)) calc(r * 177 / 236) calc(g * 205 / 240) calc(b * 222 / 247));
+        --tone-b5a28c: rgb(from rgb(var(--text)) calc(r * 181 / 236) calc(g * 162 / 240) calc(b * 140 / 247));
+        --tone-b7b7b7: rgb(from rgb(var(--text)) calc(r * 183 / 236) calc(g * 183 / 240) calc(b * 183 / 247));
+        --tone-bfc5d0: rgb(from rgb(var(--text)) calc(r * 191 / 236) calc(g * 197 / 240) calc(b * 208 / 247));
+        --tone-c4cad4: rgb(from rgb(var(--text)) calc(r * 196 / 236) calc(g * 202 / 240) calc(b * 212 / 247));
+        --tone-d2d2d2: rgb(from rgb(var(--text)) calc(r * 210 / 236) calc(g * 210 / 240) calc(b * 210 / 247));
+        --tone-d4d2cd: rgb(from rgb(var(--text)) calc(r * 212 / 236) calc(g * 210 / 240) calc(b * 205 / 247));
+        --tone-d6d6d6: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 214 / 240) calc(b * 214 / 247));
+        --tone-d6dbe4: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 219 / 240) calc(b * 228 / 247));
+        --tone-dadada: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 218 / 240) calc(b * 218 / 247));
+        --tone-dadfff: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 223 / 240) calc(b * 255 / 247));
+        --tone-dcdcdc: rgb(from rgb(var(--text)) calc(r * 220 / 236) calc(g * 220 / 240) calc(b * 220 / 247));
+        --tone-dddddd: rgb(from rgb(var(--text)) calc(r * 221 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+        --tone-e2e2e2: rgb(from rgb(var(--text)) calc(r * 226 / 236) calc(g * 226 / 240) calc(b * 226 / 247));
+        --tone-e4d7d7: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 215 / 240) calc(b * 215 / 247));
+        --tone-e4e4e4: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 228 / 240) calc(b * 228 / 247));
+        --tone-e7e7e7: rgb(from rgb(var(--text)) calc(r * 231 / 236) calc(g * 231 / 240) calc(b * 231 / 247));
+        --tone-e9f1f3: rgb(from rgb(var(--text)) calc(r * 233 / 236) calc(g * 241 / 240) calc(b * 243 / 247));
+        --tone-eadddd: rgb(from rgb(var(--text)) calc(r * 234 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+        --tone-ebeef1: rgb(from rgb(var(--text)) calc(r * 235 / 236) calc(g * 238 / 240) calc(b * 241 / 247));
+        --tone-f9f9f9: rgb(from rgb(var(--text)) calc(r * 249 / 236) calc(g * 249 / 240) calc(b * 249 / 247));
+        --tone-fdfdfd: rgb(from rgb(var(--text)) calc(r * 253 / 236) calc(g * 253 / 240) calc(b * 253 / 247));
+    }
 }
 
 /* Цвет ссылок в истории на светлой схеме */
 html[data-color-mode=light] {
-  --link-color: #adbfde;
+    --link-color: #adbfde;
 }
+
+/* ===== base/fonts =====
+   @font-face: шрифты и иконочный шрифт */
 
 @font-face {
     font-family: "Comfortaa";
@@ -248,17 +252,6 @@ html[data-color-mode=light] {
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
-:root {
-    --font-family: "Comfortaa", sans-serif !important;
-    --font-main: "Comfortaa", sans-serif !important;
-    --font-alt: var(--font-family);
-    --font-alt-text-letter-spacing: normal;
-}
-
-body {
-    font-family: var(--font-family) !important;
-}
-
 @font-face {
     font-family: "FontAwesome";
     src: url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
@@ -267,8 +260,1411 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
+    font-display: block;
+}
+
+/* ===== base/base =====
+   база: ссылки, текст, таблицы, полосы прокрутки, служебные мелочи */
+
+:root {
+    --font-family: "Comfortaa", sans-serif !important;
+    --font-main: "Comfortaa", sans-serif !important;
+    --font-alt: var(--font-family);
+    --font-alt-text-letter-spacing: normal;
+}
+
 .css {
     color: color-mix(in srgb, var(--tone-010101) 80%, transparent);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    width: 6px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--text), 0.5);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(var(--text), 0.7);
+    }
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(var(--text), 0.6);
+}
+
+.b-mention,
+.b-mention s {
+    bottom: 1px;
+    position: relative;
+}
+
+/* цвет вкладок под никнеймом */
+.b-link,
+.b-mention,
+.b-mention:before,
+.b-mention s,
+.b-mention span {
+    color: rgba(var(--accent), 1) !important;
+    cursor: pointer;
+    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.b-link:hover,
+.b-mention:hover,
+.b-mention:hover:before,
+.b-mention:hover span,
+.b-mention:hover s {
+    text-decoration: none !important;
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* инфо-описание */
+.line .value {
+    color: rgba(var(--text), 1) !important;
+}
+
+/* инфо тег */
+.line .key {
+    color: rgba(var(--text-2), 1) !important;
+    font-weight: bold;
+}
+
+.b-table .actions a {
+    padding: 4px 18px !important;
+    color: rgba(var(--link), 1) !important;
+    background: rgba(var(--glass), 0.6) !important;
+    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s !important;
+    border: none !important;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* цвет никнеймов */
+a .title span {
+    color: rgba(var(--text-strong), 1);
+    transition: 0.2s all;
+}
+
+a:hover .title span {
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* цвет тегов в настройки -уведомления*/
+.b-table th {
+    color: rgba(var(--text-strong), 1);
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.b-js-link {
+    border: none;
+    padding: 0 8px 0 8px;
+    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+.b-js-link:hover {
+    border: none;
+}
+
+.b-lang_trigger span {
+    color: rgba(var(--text-2), 1);
+}
+
+time {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+.b-table tr.border {
+    border-top: none;
+}
+
+.b-code-v2 {
+    background: var(--tone-263238);
+    color: rgb(var(--text-strong));
+}
+
+.b-code-v2:before {
+    background-color: var(--tone-556571);
+    -webkit-border-radius: 0 0 0 10px;
+    border-radius: 0 0 0 10px;
+    content: attr(data-language);
+    padding: 0 9px;
+    line-height: 25px;
+    right: 0;
+    top: 0;
+}
+
+code.b-code_inline {
+    background-color: color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
+    color: #ff678e;
+}
+
+.quoteable:before {
+    color: rgba(var(--accent), 1)!important;
+}
+
+a.name {
+    font-size: 12px;
+}
+
+.p-moderations-show .b-list .size:after {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-moderations-show .b-list .size:before {
+    color: rgba(var(--text-2), 1);
+}
+
+img {
+    -webkit-filter: brightness(0.9);
+}
+
+.b-separator.inline {
+    color: rgba(var(--text), 0.5) !important;
+}
+
+h2,
+h3,
+h4 {
+    color: rgba(var(--text-strong), 0.9);
+}
+
+h2 + hr,
+h4 + hr,
+h3 + hr,
+h1 + hr {
+    background-image: linear-gradient(to right, rgba(var(--text), 0.4), transparent);
+}
+
+.menubar {
+    background: none !important;
+    padding: 3px 0;
+    border-radius: 12px 12px 0 0;
+}
+
+.menubar .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(var(--text), 1) !important;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-group:before {
+    content: none !important;
+}
+
+.shade {
+    background: color-mix(in srgb, var(--glass-deep) 0%, transparent)!important;
+}
+
+.popup-content {
+    border-radius: 12px;
+    background: var(--glass-deep)!important;
+    box-shadow:0 2px 6px 2px rgba(var(--shade), 0.3)
+}
+
+.b-tip>[data-popper-arrow]:before {
+    background: var(--glass-deep)!important;
+}
+
+.ProseMirror {
+    background-color: rgba(var(--glass), 0.4);
+    border: none;
+    border-radius: 12px;
+    color: rgba(var(--text), 1);
+    padding: 7px 10px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+}
+
+.line .value [class*="status_tag"] {
+    padding: 0 !important;
+}
+
+.line .value [class*="status_tag"]:not([data-text]) {
+    padding: 2px 9px !important;
+}
+
+.b-ajax:after {
+    width: 30px;
+    height: 31px;
+    content: '\f1ce';
+    color: rgba(var(--text), var(--hundred));
+    font: normal normal normal 30px/1 FontAwesome !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: transparent;
+    animation: rotateload 0.7s linear infinite;
+}
+
+.b-source .contributors .key,
+.b-source .mal .key,
+.b-source .source .key {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+a.b-mention.bubbled-processed {
+    top: 0.4px;
+}
+
+*:focus:not(:focus-visible) { outline: none !important; }
+
+.m3 {
+    margin-top: 10px;
+}
+
+.poll .text {
+    font-size: 10px;
+}
+
+.b-collection_item .drag-handle:before {
+    color: rgba(var(--accent), var(--hundred));
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.b-collection_item .delete:before {
+    color: #a74323;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.b-collection_item .drag-handle:hover:before,
+.b-collection_item .delete:hover:before {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-collection_item .drag-handle,
+.b-collection_item .delete {
+    top: 0 !important;
+}
+
+.b-nothing_here {
+    line-height: 40px !important;
+    color: rgba(var(--text-2), var(--hundred)) !important;
+}
+
+.item-mobile {
+    margin-top: -4px;
+}
+
+.body-truncated {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_item .drag-handle {
+    left: 53px;
+}
+
+.persisted {
+    margin-top: 4px;
+}
+
+.b-status-line .section {
+    color: rgba(var(--text-2), var(--hundred));
+    border-left: 1px solid rgba(var(--text-2), 0.3);
+    margin-left: 7px;
+    padding-left: 7px;
+}
+
+.b-status-line .section:first-child {
+    border: none;
+}
+
+.b-status-line .section:not(:last-child):after {
+    display: none;
+}
+
+.b-status-line > div > span:before,
+.b-status-line > div > span {
+    color: rgba(var(--text-2), var(--hundred)) !important;
+}
+
+td {
+    background: transparent !important;
+}
+
+.shortened {
+    padding-right: 4px;
+}
+
+.name-date {
+    overflow: visible;
+}
+
+.to-review:before {
+    content: '\f123';
+}
+
+a[href*="?order="]:after {
+    content: '\f0dc'!important;
+    font-size: 15px;
+}
+
+.fc-user-sections .progress {
+
+    background: color-mix(in srgb, var(--glass-active) 80%, transparent);
+}
+
+.fc-user-sections .progress .completed {
+    background: rgba(var(--high-rating), 1);
+}
+
+.unsaved-content {
+    background: rgb(69 117 69 / 50%);
+    border: 0;
+    border-radius: 14px;
+}
+
+.review-details .review-info {
+    margin-top: 3px;
+}
+
+.b-question:before {
+    content: "\f059";
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 16px;
+    background: transparent;
+    color: rgba(var(--text-2), 0.5);
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+hr {
+    background: linear-gradient(to left, rgba(var(--text), 0.1), rgba(var(--text), 0.3), rgba(var(--text), 0.1));
+}
+
+.c-control.episode-num span {
+    top: 4px;
+    position: relative;
+}
+
+.c-control.episode-num b {
+    padding: 0px 4px 0px 0px;
+    height: 50px !important;
+    top: 5px;
+    position: relative;
+}
+
+.to-top-fix {
+    border: none;
+    background: none;
+}
+
+.review-votes_count {
+    margin-bottom: 20px;
+}
+
+/* Lists Fix */
+.b-list {
+    margin-left: 15px;
+}
+
+.b-list li {
+    position: relative;
+}
+
+.b-list li:before {
+    content: "\f111";
+    display: inline-flex;
+    align-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 2px;
+    font: normal normal normal 7px/1 FontAwesome;
+    color: rgba(var(--accent), 1);
+    background: none;
+    transition: 0s ease, -webkit-0s ease, transform 0.2s, ease color.2s;
+}
+
+.b-list li {
+    list-style: none outside none;
+    margin-bottom: 0;
+}
+
+/* Кнопка быстрого перехода в CSS*/
+.css .b-link[href*="/edit/styles"]:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: fixed;
+    top: 50px;
+    color: var(--tone-dadfff);
+    right: 50%;
+    z-index: 999;
+    font-size: 20px;
+    transition: 0.3s ease-out !important;
+}
+
+.css .b-link[href*="/edit/styles"]:before {
+    margin-right: -554px;
+    content: "\f15c";
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .css .b-link[href*="/edit/styles"]:hover:before {
+        transform: scale(1.3);
+    }
+}
+
+.css .b-link[href*="/edit/styles"] {
+    font-size: 0px;
+}
+
+.cm-searching {
+    background-color: #ffa;
+    background-color: rgba(169, 120, 17, 0.4);
+}
+
+:root {
+    --is-theme-dark: 0;
+    --l-theme-default: 55%;
+}
+
+@media screen and (min-width: 1200px) {
+    .toastify {
+        top: 60px !important;
+        border-radius: 1.5em;
+        filter: brightness(0.9);
+    }
+}
+
+/*-------------------------------*/
+.magnet {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5%;
+}
+
+/* --- Ссылки акцентным цветом --- */
+a,
+.b-link { transition: color .15s ease, opacity .15s ease; }
+
+a,
+.b-link,
+.b-js-link,
+.link {
+    color: rgb(var(--accent));
+}
+
+/* ================================================================
+   ОБЩИЙ КОМПОНЕНТ «поле-список»: все select на сайте и фильтры
+   каталога (Мой список, Статус…). Единственное место со стилями
+   полей-списков: менять вид — только переменными ниже.
+   (:not(#u) поднимает вес над старыми правилами сайта)
+   ================================================================ */
+:root {
+    --ui-ease: cubic-bezier(.22, 1, .36, 1);
+    --ui-press: .08s;      /* нажатие */
+    --ui-release: .28s;    /* возврат */
+    --ui-drop: .24s;       /* выезд списка */
+
+    --field-bg: color-mix(in srgb, var(--glass-deep) 85%, transparent);
+    --field-border: rgba(var(--glass-light), .10);
+    --field-border-hover: rgba(var(--glass-light), .22);
+    --field-radius: 8px;
+    --field-height: 32px;
+    --field-font: 13px;
+    --field-pad: 6px 11px 6px 10px;
+    --field-shadow: 0 2px 6px rgba(var(--shade), 0.2);
+    --field-open-border: rgba(var(--accent), .6);
+    --field-open-ring: 0 0 0 3px rgba(var(--accent), .15);
+    --field-filled-border: rgba(var(--accent), .45);
+    --field-arrow: linear-gradient(45deg, transparent 50%, rgb(var(--text-2)) 50%) calc(100% - 15px) 50% / 5px 5px no-repeat,
+                   linear-gradient(135deg, rgb(var(--text-2)) 50%, transparent 50%) calc(100% - 10px) 50% / 5px 5px no-repeat;
+    --drop-gap: 4px;
+    --drop-radius: 10px;
+    --drop-pad: 4px;
+    --drop-bg: var(--glass-popup);
+    --drop-border: rgba(var(--text), .12);
+    --drop-shadow: 0 12px 30px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+    --opt-pad: 5px 10px;
+    --opt-radius: 6px;
+    --opt-hover: rgba(var(--accent), .18);
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .mobile-slider-next:before,
+    .mobile-slider-next:before {
+        background: linear-gradient(to right, color-mix(in srgb, var(--tone-1e1e27) 0%, transparent), color-mix(in srgb, var(--tone-1e1e27) 75%, transparent) 70%, color-mix(in srgb, var(--tone-1e1e27) 85%, transparent)) !important;
+        filter: brightness(1.5);
+    }
+    .mobile-slider-prev:after,
+    .mobile-slider-next:after {
+        color: var(--tone-1e1e27) !important;
+        text-shadow: 1px 1px 2px var(--tone-1e1e27) !important;
+        filter: brightness(0.8);
+    }
+    .item-summary:before,
+    .item-summary:after {
+        font-family: "Comfortaa", sans-serif;
+        color: #54c762;
+    }
+    .item-mobile.selected[title="Действия"] {
+        opacity: 0;
+    }
+    .b-shiki_wall {
+        max-height: 180px;
+    }
+    .b-main_search ul.popup {
+        background: transparent !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .c-mobile-actions {
+        display: none;
+    }
+    .expanded-options {
+        position: relative;
+        max-width: 500px;
+    }
+    .magnet {
+        display: none;
+    }
+    /* ================================================================
+       Телефоны: читаемость текста поверх обоев
+       ================================================================ */
+    :root {
+        --glass-bg: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        --glass-border: 1px solid rgba(var(--glass-light), .06);
+        --glass-filter: blur(var(--glass-blur)) saturate(110%);
+        --text-soft: rgba(var(--text), .86);
+    }
+}
+
+/* ===== base/animations =====
+   все @keyframes темы */
+
+/* Tabs */
+@keyframes switch-focus--vertical {
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate3d(-50%, -50%, 0) scale(0.95);
+    }
+}
+
+@keyframes switch-tap--vertical {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(2.5);
+    }
+}
+
+@keyframes ripple-unbound {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.32;
+    }
+    100% {
+        opacity: 0;
+        padding-top: 200%;
+        width: 200%;
+    }
+}
+
+/*- - -*/
+@keyframes spoile {
+    0% {
+        color: #5b6ad7;
+    }
+    50% {
+        color: rgba(var(--accent), 1) !important;
+    }
+    100% {
+        color: #5b6ad7;
+    }
+}
+
+@keyframes runningtext {
+    25% {
+        text-indent: -80em;
+    }
+    25.000000001% {
+        text-indent: 25em;
+    }
+    50% {
+        text-indent: 0em;
+    }
+}
+
+@keyframes spoil {
+    50% {
+        color: rgba(var(--accent), 1);
+    }
+}
+
+@keyframes spoilzero {
+    50% {
+        border: 2px dashed rgba(230, 205, 65, 0.3);
+    }
+}
+
+@keyframes spoillerr {
+    50% {
+        border-bottom: 2px dashed rgba(230, 205, 65, 0.3);
+    }
+}
+
+@keyframes activity {
+    0%,
+    100% {
+        transform: translateY(1px);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+@keyframes mail {
+    10% {
+        transform: translateX(0px);
+    }
+    12% {
+        transform: translateX(4px);
+    }
+    14% {
+        transform: translateX(-4px);
+    }
+    16% {
+        transform: translateX(4px);
+    }
+    18% {
+        transform: translateX(-4px);
+    }
+    20% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    75% {
+        transform: scale(1);
+    }
+}
+
+@keyframes mailm {
+    10% {
+        transform: translateX(0px);
+    }
+    12% {
+        transform: translateX(4px);
+    }
+    14% {
+        transform: translateX(-4px);
+    }
+    16% {
+        transform: translateX(4px);
+    }
+    18% {
+        transform: translateX(-4px);
+    }
+    20% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    75% {
+        transform: scale(1);
+    }
+}
+
+@keyframes blimi {
+    25% {
+        color: rgba(var(--accent), 1);
+    }
+    50% {
+        color: rgba(var(--text-2), 1);
+    }
+}
+
+@keyframes animhist {
+    0% {
+        display: block;
+    }
+    50% {
+        display: none;
+    }
+    100% {
+        display: block;
+    }
+}
+
+@keyframes history {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateY(-132px);
+    }
+}
+
+@keyframes rotateload {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateajax {
+    0% {
+        transform: rotate(0deg);
+    }
+    12.49% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(45deg);
+    }
+    24.99% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    37.49% {
+        transform: rotate(90deg);
+    }
+    37.5% {
+        transform: rotate(135deg);
+    }
+    49.99% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    62.49% {
+        transform: rotate(180deg);
+    }
+    62.5% {
+        transform: rotate(225deg);
+    }
+    74.99% {
+        transform: rotate(225deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    87.49% {
+        transform: rotate(270deg);
+    }
+    87.5% {
+        transform: rotate(315deg);
+    }
+    99.99% {
+        transform: rotate(315deg);
+    }
+    99.9999999% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes next {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes prev {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glowing {
+    0%  {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* выезд списка: без прозрачности (используют меню панели и фильтры) */
+@keyframes shiki-drop {
+    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
+    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+}
+
+@keyframes shiki-fade {
+    from { opacity: 0; }
+}
+
+@keyframes shiki-sheet {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 24px)) scale(.9); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes shiki-sheet-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ===== base/colors =====
+   цветовые классы bb-кодов и подсветки (.red, .green, …) */
+
+.yellow-fade-animated {
+    background: rgba(var(--glass), 0.1) !important;
+    outline: 10px solid rgba(var(--glass), 0.1) !important;
+    box-shadow: 0 0 50px rgba(var(--glass), 0.6);
+}
+
+.yellow-fade {
+    background: rgba(var(--glass), 0.4) !important;
+    outline: 10px solid rgba(var(--glass), 0.1) !important;
+    box-shadow: 0 0 50px rgba(var(--glass), 0.6);
+}
+
+.inline.orange {
+    color: #f3e3d8 !important;
+    background: #904e1f !important;
+    border-left: 5px solid #f1bc9a !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.blue {
+    color: #c6e3f5 !important;
+    background: #2942c1 !important;
+    border-left: 5px solid #97aeea !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.purple {
+    color: #d0d4f5 !important;
+    background: #5e29c1 !important;
+    border-left: 5px solid #b5b2f3 !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+.inline.green {
+    background: #06673a !important;
+    color: #acf9e0 !important;
+    border-left: 5px solid #9cd4c0 !important;
+    border-radius: 9px !important;
+    padding: 1px !important;
+}
+
+/* ===== layout/header =====
+   верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск */
+
+.l-top_menu-v2 {
+    position: sticky;
+    top: 0;
+}
+
+.l-top_menu-v2 .active .submenu {
+    max-height: calc(100vh - 46px);
+    overflow: auto;
+}
+
+.l-top_menu-v2 .global-search .search-results::before {
+    background: -webkit-linear-gradient(bottom, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(0deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+}
+
+.l-top_menu-v2 .global-search .search-results::after {
+    background: -webkit-linear-gradient(top, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(180deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+}
+
+.l-top_menu-v2 .logo-container .logo {
+    background: url(https://image.ibb.co/cxV9kV/shiki-logo.png) no-repeat center;
+    height: 32px;
+    margin-top: 8px;
+}
+
+.menu_group:not(.menu_group-controls) {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    margin: 1px 10px 1px 0;
+    padding: 0 !important;
+    border-radius: 10px;
+    background: rgba(var(--glass), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+}
+
+.menu_group:not(.menu_group-controls) > button:hover {
+    background: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+    height: 100%;
+}
+
+.menu_group:not(.menu_group-controls):before {
+    display: none;
+}
+
+.menu_group.menu_group-controls .icon {
+    transition: 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menu_group.menu_group-controls .icon.is-button:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+        color: var(--tone-e4e4e4) !important;
+    }
+}
+
+.menu_group.menu_group-controls .icon.is-button.is-active {
+    color: rgba(var(--accent), 1)!important;
+    background: none;
+}
+
+.x1000 .menu-slide-outer.x199 .l-content,
+.x1200 .menu-slide-outer.x199 .l-content,
+.menu-slide-outer.x199 .l-content,
+.x1000 .menu-slide-outer.x240 .l-content,
+.x1200 .menu-slide-outer.x240 .l-content,
+.menu-slide-outer.x240 .l-content {
+    width: 75.5%;
+    margin-right: 2%;
+}
+
+.l-top_menu-v2 .logo-container .glyph {
+    display: none;
+}
+
+span.submenu-triangle.icon-avatar img {
+    border-radius: 50%;
+}
+
+.l-top_menu-v2 .global-search .search-marker,
+.l-top_menu-v2 .global-search .clear {
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.l-top_menu-v2 .global-search .clear:hover {
+    color: #ab5828b3;
+}
+
+.l-top_menu-v2.is-search-focus .global-search .search-marker {
+    color: rgba(var(--text-strong), 0.7);
+}
+
+.l-top_menu-v2 .global-search .search-results {
+    overflow: hidden;
+    max-height: 90vh;
+    white-space: nowrap;
+    overflow-y: auto;
+
+    max-width: calc(100% - 20px);
+    left: 10px;
+    background-color: color-mix(in srgb, var(--glass-deep) 95%, transparent);
+    border-radius: 0 0 20px 20px;
+    padding: 3px;
+}
+
+.l-top_menu-v2 .global-search .search-results .inner {
+    height: 100%;
+    max-height: 100% !important;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode {
+    border: none;
+    border-radius: 20px;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode:before {
+    width: 32px;
+    background: linear-gradient(
+        to right,
+        rgba(var(--text), 0.5) 0%,
+        rgba(var(--text), 0.5) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+    border-radius: 50% 0 0 50%;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode:hover:before {
+    background: linear-gradient(
+        to right,
+        rgba(var(--accent), 0.7) 0%,
+        rgba(var(--accent), 0.7) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+    border-top-color: rgba(var(--accent), 0.03);
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode.active:before {
+    background: linear-gradient(
+        to right,
+        rgba(var(--text), 0.7) 0%,
+        rgba(var(--text), 0.7) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+}
+
+.l-top_menu-v2 .global-search .search-results .nothing_found {
+    color: var(--tone-b5a28c);
+}
+
+.l-top_menu-v2 .menu-icon.mail:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+    margin: 8px 10px 6px;
+    font-size: 18px;
+    font-family: "Comfortaa";
+    color: rgb(var(--text-strong));
+    background: rgba(var(--accent), 1);
+    border-radius: 6px;
+    animation: mail 5s ease 1;
+    border: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown > span .nickname {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* Верхняя панель: непрозрачная, без мерцания; цвет задают --menu-bar и --menu-bar-hover */
+.l-top_menu-v2 {
+    background: var(--glass-bar) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    border-bottom: 1px solid rgba(var(--glass-light), 0.04) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    will-change: auto !important;
+    transition:
+        background-color .6s cubic-bezier(.22, 1, .36, 1),
+        border-color .6s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+/* При наведении панель слегка светлеет */
+.l-top_menu-v2:hover,
+.l-top_menu-v2:focus-within {
+    background: var(--glass-bar-hover) !important;
+    border-bottom-color: rgba(var(--accent), .18) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown > span {
+    background: none;
+}
+
+.l-top_menu-v2 .global-search {
+    color: rgba(var(--text-2), 1);
+}
+
+/* Выпадающие меню панели — непрозрачные, в цвет панели */
+.l-top_menu-v2 .submenu,
+.l-top_menu-v2 .menu-dropdown .submenu,
+.l-top_menu-v2 .menu-dropdown.active .submenu {
+    background: var(--glass-bar-hover) !important;
+    border: 1px solid rgba(var(--glass-light), 0.05) !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 14px 30px rgba(var(--shade), 0.5) !important;
+    backdrop-filter: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown .submenu {
+    top: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.l-top_menu-v2 .menu-dropdown.active .submenu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.turbolinks-progress-bar {
+    background: rgba(var(--accent), 1) !important;
+}
+
+/* Старая версия верхней панели */
+.l-top_menu,
+.l-top_menu:hover {
+    background: var(--glass-deep) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+    transition: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .l-top_menu-v2 .menu-dropdown.profile {
+        margin-left: 14px;
+    }
+    .l-top_menu-v2 .submenu > .legend {
+        margin-bottom: 3px;
+        padding-top: 3px;
+        padding-left: 15px;
+        font-size: 10px;
+        border-radius: 14px;
+        color: rgba(var(--text), 1);
+        background: rgba(var(--glass), 0.7);
+        box-shadow: 0 2px 6px 1px rgba(var(--shade), 0.15);
+    }
+    .l-top_menu-v2 .submenu {
+        padding-bottom: 4px;
+        border-radius: 0 0 20px 20px;
+    }
+    .l-top_menu-v2 .global-search .search-results {
+        max-width: calc(100% - 20px);
+        left: 10px;
+    }
+    body .l-top_menu-v2 .menu-dropdown .submenu a:hover:before,
+    .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover:after,
+    .l-top_menu-v2 .menu-dropdown.main > span:hover:after,
+    .l-top_menu-v2 .menu-dropdown.main > span:hover:before {
+        color: rgba(var(--accent), 1) !important;
+    }
+    .l-top_menu-v2 .menu-dropdown.profile.active .submenu-triangle img {
+        box-shadow: 0  0  0  3px rgba(var(--accent), 1);
+    }
+    .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover img {
+        box-shadow: 0  0  0  3px rgba(var(--accent), 1) !important;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .l-top_menu-v2 .global-search .clear:active {
+        color: #cc4e05b3;
+    }
+}
+
+.l-top_menu-v2 .menu-icon:hover,
+.l-top_menu-v2 .menu-dropdown > button:hover,
+.l-top_menu-v2 .menu-dropdown > span:hover {
+    background-color: rgba(var(--glass-light), .06) !important;
+}
+
+/* Кнопка раздела/профиля с открытым меню — в тон меню */
+.l-top_menu-v2 .menu-dropdown.active > button,
+.l-top_menu-v2 .menu-dropdown.active > span,
+.l-top_menu-v2 .menu-dropdown:hover > button,
+.l-top_menu-v2 .menu-dropdown:hover > span {
+    background: var(--glass-bar-hover) !important;
+}
+
+.l-top_menu-v2 .submenu>a.icon-site_rules:after {
+    content: 'Правила';
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .l-top_menu-v2 .menu-icon.trigger:before {
+
+        height: 27px;
+        width: 27px;
+        content: '\f0c9';
+        background: none;
+        font-family: 'FontAwesome', sans-serif;
+        color: rgba(var(--text-strong), 1);
+    }
+    .l-top_menu-v2.is-search-mobile .global-search {
+        background: color-mix(in srgb, var(--glass-deep) 95%, transparent);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 -5px 5px -2px color-mix(in srgb, var(--glass-deep) 95%, transparent);
+    }
+    .l-top_menu-v2 .global-search input {
+        padding-left: 58px;
+    }
+    .menu-toggler.ipad-expanded,
+    .l-page .menu-toggler {
+        position: fixed;
+        bottom: 15px;
+        right: 14px;
+        top: auto;
+        margin: 0;
+    }
+    .l-page .menu-toggler .toggler:before {
+        display: none;
+    }
+    .l-page .menu-toggler .toggler:after,
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f0b0";
+        font-size: 23px;
+        color: rgba(var(--text), var(--hundred));
+        font-family: 'FontAwesome', sans-serif;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f054";
+        font-size: 26px;
+        color: rgba(var(--text), var(--hundred));
+        font-family: 'FontAwesome', sans-serif;
+    }
+    .l-page.menu-expanded .l-content {
+        margin-left: 0 ;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .l-top_menu-v2 .menu-icon,
+    .l-top_menu-v2 .menu-dropdown > span {
+        padding: 0 12px;
+    }
+    .l-top_menu-v2 .menu-icon:not(.mobile) {
+        display: flex;
+    }
+    .l-top_menu-v2 .menu-dropdown > span[data-unread_count]:after {
+        display: none;
+    }
+    .x1000 .menu-slide-outer.x199 .l-content,
+    .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+    }
+    .x1200 .menu-slide-outer.x240 .l-content,
+    .menu-slide-outer.x240 .l-content,
+    .x1000 .menu-slide-outer.x240 .l-content,
+    .x1200 .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+        top: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .x1000 .menu-slide-outer.x199 .l-content,
+    .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* --- фильтры каталога и списков: карточка по центру экрана --- */
+    /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
+    section.l-page.menu-expanded::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
+        animation: shiki-fade .3s ease both;
+    }
+    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
+    .l-page .menu-toggler {
+        z-index: 999 !important;
+        bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .l-page .menu-toggler .toggler {
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        transition: background-color .2s ease;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f00d" !important;
+        font-size: 22px !important;
+    }
+    /* --- панель фильтров: плотное матовое стекло --- */
+    section.l-page.menu-expanded::after {
+        background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+    /* --- круглая кнопка фильтра/крестика целиком на экране
+       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
+    .l-page .menu-toggler {
+        width: auto !important;
+        height: auto !important;
+        left: auto !important;
+        right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    }
+}
+
+/* ===== layout/page =====
+   каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column */
+
+body {
+    font-family: var(--font-family) !important;
 }
 
 html {
@@ -309,2236 +1705,8 @@ body:after {
     background-color: color-mix(in srgb, var(--glass-deep) calc(var(--bg-dim) * 100%), transparent);
 }
 
-.l-top_menu-v2 {
-    position: sticky;
-    top: 0;
-}
-
-.l-top_menu-v2 .active .submenu {
-    max-height: calc(100vh - 46px);
-    overflow: auto;
-}
-
-.l-top_menu-v2 .global-search .search-results::before {
-    background: -webkit-linear-gradient(bottom, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
-    background: linear-gradient(0deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
-}
-
-.l-top_menu-v2 .global-search .search-results::after {
-    background: -webkit-linear-gradient(top, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
-    background: linear-gradient(180deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-track {
-    display: none;
-    width: 6px;
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--text), 0.5);
-    border-radius: 8px;
-    transition: 0.2s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(var(--text), 0.7);
-}
-}
-
-::-webkit-scrollbar-thumb:active {
-    background-color: rgba(var(--text), 0.6);
-}
-
-.b-shiki_editor footer .about-bb_codes:hover:before {
-    color: rgba(var(--text-2), 1);
-}
-
-/* цвет текста */
-.b-input label {
-    display: block;
-    line-height: 1.65;
-}
-
-.b-mention,
-.b-mention s {
-    bottom: 1px;
-    position: relative;
-}
-
-/* цвет вкладок под никнеймом */
-.b-link,
-.b-mention,
-.b-mention:before,
-.b-mention s,
-.b-mention span {
-    color: rgba(var(--accent), 1) !important;
-    cursor: pointer;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-
-.b-link:hover,
-.b-mention:hover,
-.b-mention:hover:before,
-.b-mention:hover span,
-.b-mention:hover s {
-    text-decoration: none !important;
-    color: rgba(var(--accent), 1) !important;
-}
-
-header.head .misc {
-    max-width: 100%;
-    width: 100%;
-}
-
-* .c-brief header.head h1 {
-    border-bottom: none;
-    color: rgba(var(--text-strong), 1) !important;
-    font-family: Comfortaa, sans-serif;
-    text-shadow: 2px -2px 0 var(--accent-dim), -2px 2px 0 var(--accent-dim),
-    -2px -2px 0 var(--accent-dim), 2px 2px 0 var(--accent-dim),
-    0 -2px 0 var(--accent-dim), 0 2px 0 var(--accent-dim),
-    2px 0 0 var(--accent-dim), -2px 0 0 var(--accent-dim);
-    font-size: 34px;
-    line-height: 38px;
-    pointer-events: none;
-}
-
-/* цвет заголовков */
-header.head h2,
-header.head h1 {
-    border-bottom: none;
-    color: rgba(var(--text-strong), 1) !important;
-    font-family: "Comfortaa", sans-serif;
-    display: block;
-}
-
-/* цвет описания аниме */
-.b-prgrph,
-.b-spoiler_prgrph {
-    color: rgba(var(--text), 1);
-}
-
-/* цвет смотрю, планы и т.д. */
-.b-db_entry-note .name-container .note .relation,
-.b-db_entry-note .name-container .note .additional {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-/* кнопка смотреть онлайн */
-.b-link_button {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-link_button:hover {
-    background-color: var(--accent-hover) !important;
-    color: rgb(var(--text-strong)) !important;
-    border: none !important;
-}
-}
-
-.b-link_button {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
-    border: none;
-    color: rgba(var(--text-strong), 1) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-}
-
-/* инфо-описание */
-.line .value {
-    color: rgba(var(--text), 1) !important;
-}
-
-/* инфо тег */
-.line .key {
-    color: rgba(var(--text-2), 1) !important;
-    font-weight: bold;
-}
-
-
-/* нет комментариев */
-
-.buttons .cancel {
-    margin-right: 10px !important;
-    margin-left: 10px !important;
-}
-
-
-
-/* история-время */
-.p-profiles .profile-head .c-history .entry .misc.date {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-/* история-история */
-.p-profiles .profile-head .c-history .entry .misc {
-    color: rgba(var(--accent), 1) !important;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.b-add_to_list.completed .trigger,
-.b-add_to_list.completed .option {
-    background: #1c4c20;
-    border-color: rgba(var(--glass), 0.4);
-    color: #c4e9ed;
-}
-
-.b-add_to_list.dropped .trigger,
-.b-add_to_list.dropped .option {
-    background: #77251c;
-    border-color: rgba(var(--glass), 0.4);
-    color: #f2ddcc;
-}
-
-/* кнопка "Отложено" на страничке аниме*/
-.b-add_to_list.on_hold .trigger,
-.b-add_to_list.on_hold .option {
-    background: #864e13;
-    border-color: rgba(var(--glass), 0.4);
-    color: var(--tone-ebeef1);
-}
-
-/* кнопка "Запланировано" на страничке аниме*/
-.b-add_to_list.planned .trigger,
-.b-add_to_list.planned .option {
-    background: #173969;
-    border-color: rgba(var(--glass), 0.4);
-    color: #cfe0ec;
-}
-
-/* кнопка "Смотрю" на страничке аниме*/
-.b-add_to_list.watching .trigger,
-.b-add_to_list.watching .option {
-    background: #382f7b;
-    border-color: rgba(var(--glass), 0.4);
-    color: #d8f8f6;
-}
-
-/* кнопка "Пересмотравиваю" на страничке аниме*/
-.b-add_to_list.rewatching .trigger,
-.b-add_to_list.rewatching .option {
-    background: #115652;
-    border-color: rgba(var(--glass), 0.4);
-    color: #d8f8f6;
-}
-
-.b-add_to_list.planned.expanded .trigger,
-.b-add_to_list.planned .trigger,
-.b-add_to_list.completed.expanded .trigger,
-.b-add_to_list.completed .trigger,
-.b-add_to_list.dropped.expanded .trigger,
-.b-add_to_list.dropped .trigger,
-.b-add_to_list.on_hold.expanded .trigger,
-.b-add_to_list.on_hold .trigger,
-.b-add_to_list.watching.expanded .trigger,
-.b-add_to_list.watching .trigger,
-.b-add_to_list.rewatching.expanded .trigger,
-.b-add_to_list.rewatching .trigger {
-    border: 2px solid #cfe0ec26;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    border-radius: 6px;
-}
-
-.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
-.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
-    max-width: 200px;
-}
-
-.b-catalog_entry-tooltip .b-add_to_list {
-    min-width: 225px;
-}
-
-/* надпись красным "Удалить из списка" */
-.b-add_to_list .expanded-options .remove-trigger .text {
-    color: #ffa09e;
-}
-
-.b-add_to_list .expanded-options {
-    border-radius: 7px;
-}
-
-/* жанр, ссылка на него */
-.tags > *,
-.line .b-tag,
-.tags .b-tag,
-.b-forums .reload,
-.p-animes-show .other-names,
-.p-mangas-show .other-names,
-.p-ranobe-show .other-names,
-.p-mangas-show .more-info,
-.p-animes-show .more-info,
-.p-ranobe-show .more-info {
-    position: relative;
-    padding: 0 1px;
-    margin: 2px !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-    border: none !important;
-    border-radius: 10px;
-}
-
-.tags > [class*="_status_tag"], .tags > * {
-    padding: 0 1px;
-}
-
-.tags > [class*="_status_tag"]:not([data-text]), .tags > .b-tag {
-    padding: 2px 9px;
-}
-
-.p-dashboards-show .v2 .db-update .tags {
-    height: 50px;
-}
-
-.tags > .tag-link,
-.line .b-tag,
-.b-forums .reload,
-.p-animes-show .other-names,
-.p-mangas-show .other-names,
-.p-ranobe-show .other-names,
-.p-mangas-show .more-info,
-.p-animes-show .more-info,
-.p-ranobe-show .more-info {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 12px !important;
-}
-
-.p-animes-show .other-names,
-.p-mangas-show .other-names,
-.p-mangas-show .more-info,
-.p-ranobe-show .other-names,
-.p-animes-show .more-info,
-.p-ranobe-show .more-info {
-    background: rgba(var(--glass), 0.6) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.tags .b-anime_status_tag:hover,
-.tags .b-tag:hover,
-.line .b-tag:hover,
-.line .tag:hover,
-.b-forums .reload:hover,
-.p-animes-show .other-names:hover,
-.p-mangas-show .other-names:hover,
-.p-ranobe-show .other-names:hover,
-.p-mangas-show .more-info:hover,
-.p-animes-show .more-info:hover,
-.p-ranobe-show .more-info:hover,
-a.b-anime_status_tag.studio:hover:before {
-    background-color: var(--accent-hover) !important;
-    color: rgb(var(--text-strong)) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    border: none !important;
-}
-}
-
-.block.genres .b-spoiler label,
-.b-show_more,
-.b-show_more-more .hide-more {
-    padding: 2px 0 !important;
-    color: rgba(var(--accent), 1) !important;
-    background: rgba(var(--glass), 0.6) !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-    border: none !important;
-    border-radius: 10px;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.block.genres .b-spoiler label:hover,
-.b-table .actions a:hover,
-.b-show_more:hover,
-.b-show_more-more .hide-more:hover {
-    background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent) !important;
-    color: rgb(var(--text-strong)) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    border: none !important;
-    animation: none;
-}
-}
-
-.block.genres .b-spoiler {
-    border: none !important;
-}
-
-.b-table .actions a {
-    padding: 4px 18px !important;
-    color: rgba(var(--link), 1) !important;
-    background: rgba(var(--glass), 0.6) !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-    border: none !important;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.b-forums .reload {
-    width: 100%;
-    padding: 5px 12px !important;
-    text-align: center;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-}
-
-/* жанр, ссылка на него d ghjcjvnht hfcrhsdftittujcz fybv */
-.p-user_rates-index .list-lines tr td .episodes_total:after,
-.p-user_rates-index .list-lines tr td .episodes_total:before {
-    color: rgba(var(--accent), 1);
-}
-
-.p-user_rates-index .l-content .b-options-floated span:before,
-.p-user_rates-index .l-content .b-options-floated span:after {
-    color: rgba(var(--text-2), 1);
-    font-size: 0;
-}
-
-.p-user_rates-index .l-content .b-options-floated span:hover {
-    color: rgba(var(--accent), 1);
-}
-
-/* напрямую, хронология франшиза */
-.b-options-floated a,
-.b-options-floated .link {
-    font-size: 13px;
-    color: rgba(var(--accent), 1);
-    padding: 0 8px 0 8px;
-}
-
-.b-options-floated.mobile-phone_portrait a {
-    color: rgba(var(--link), 1);
-}
-
-.b-options-floated a:after,
-.b-options-floated .link:after {
-    display: none;
-}
-
-/* цвет кликабельных текстов на блоках как Авторы, Избранное и т.д. */
-/* Цвета шкал от темного до светлого - сверху вниз */
-.bar.simple .bar.s3 {
-    background: rgba(var(--small-rating), 1);
-    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-.bar.simple .bar.s2 {
-    background: rgba(var(--average-rating), 1);
-    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-.bar.simple .bar.s1 {
-    background: rgba(var(--high-rating), 1);
-    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-.bar.simple .bar.s0 {
-    background: rgba(var(--very-high-rating), 1);
-    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-.bar.simple .bar {
-    border-radius: 8px;
-}
-
-.bar.horizontal {
-    padding: 0 3px 0 0;
-}
-
-.activity .bar.simple .bar {
-    border-radius: 8px 8px 0 0;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.bar.simple .bar.s3:hover,
-.bar.simple .bar.s2:hover,
-.bar.simple .bar.s1:hover,
-.bar.simple .bar.s0:hover {
-    background: rgba(var(--accent), 1);
-}
-}
-
-/* цвет никнеймов */
-a .title span {
-    color: rgba(var(--text-strong), 1);
-    transition: 0.2s all;
-}
-
-a:hover .title span {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-dashboards-show .v2 .db-update .name,
-.b-comment > .inner .name-date .name,
-.b-topic > .inner header .name-date a.name,
-.b-dialog > .inner header .name-date a.name,
-.b-message > .inner header .name-date a.name {
-    color: rgba(var(--text-strong), 1) !important;
-    top: 2px;
-    position: relative;
-    padding-top: 2px;
-}
-
-.p-dashboards-show .v2 .db-update .name,
-.b-comment > .inner .name-date .name,
-.b-comment > .inner header .name-date a.name,
-.b-topic > .inner header .name-date a.name,
-.b-dialog > .inner header .name-date a.name,
-.b-message > .inner header .name-date a.name {
-    font-size: 16px;
-}
-
-.p-dashboards-show .v2 .db-update .name:hover,
-.b-comment > .inner .name-date .name:hover,
-.b-comments .comments-collapser:hover,
-.b-topic > .inner header .name-date a.name:hover,
-.p-user_rates-index .list-lines tr td .episodes_total {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-comment > .inner .name-date .name:hover,
-.b-comment > .inner header .name-date a.name:hover,
-.b-dialog > .inner header .name-date a.name:hover,
-.b-topic > .inner header .name-date a.name:hover,
-.b-message > .inner header .name-date a.name:hover,
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-/* цвет кнопки троеточие у описания аниме */
-.p-animes-show .other-names.click-loader span,
-.p-mangas-show .other-names.click-loader span,
-.p-ranobe-show .other-names.click-loader span {
-    display: none;
-}
-
-.p-animes-show .other-names.click-loader,
-.p-mangas-show .other-names.click-loader,
-.p-ranobe-show .other-names.click-loader {
-    background: none;
-    color: rgba(var(--accent), 1);
-    border: none !important;
-    margin-top: 0;
-    transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-animes-show .other-names.click-loader:hover,
-.p-mangas-show .other-names.click-loader:hover,
-.p-ranobe-show .other-names.click-loader:hover {
-    background: none;
-    color: rgb(var(--text-strong));
-}
-}
-
-.p-animes-show .other-names.click-loader:before,
-.p-mangas-show .other-names.click-loader:before,
-.p-ranobe-show .other-names.click-loader:before {
-    content: "показать";
-    font-size: 12px;
-    display: block;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    background: rgba(var(--glass), 0.6);
-    border-radius: 10px;
-    padding: 2px 11px;
-    transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-animes-show .other-names.click-loader:hover:before,
-.p-mangas-show .other-names.click-loader:hover:before,
-.p-ranobe-show .other-names.click-loader:hover:before {
-    background-color: var(--accent-hover);
-}
-}
-
-/* загрузить еще комментарии */
-.b-comments .comments-loader,
-.b-comments .comments-hider,
-.b-comments .comments-expander,
-.b-comments .faye-loader,
-.collapsed,
-.b-forum .faye-loader,
-.b-topic .faye-loader,
-.collapsed + .spoiler .hide-expanded {
-    background: rgba(var(--glass), 0.4);
-    color: rgba(var(--text-2), 1);
-    border: none;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border-radius: 14px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
-}
-
-/* когда наводишь на загрузку*/
-@media (hover: hover) and (pointer: fine) {
-.b-comments .comments-loader:hover,
-.b-comments .comments-hider:hover,
-.b-comments .comments-expander:hover,
-.b-comments .faye-loader:hover,
-.collapsed:hover,
-.b-forum .faye-loader:hover,
-.b-topic .faye-loader:hover,
-.collapsed + .spoiler .hide-expanded:hover {
-    background: color-mix(in srgb, var(--glass-active) 80%, transparent) !important;
-    color: rgba(var(--text-strong), 1) !important;
-    border: none;
-    border-radius: 6px;
-}
-}
-
-.b-comments .comments-loader:active,
-.b-comments .comments-hider:active,
-.b-comments .comments-expander:active {
-    background: rgba(var(--glass), 0.4);
-    color: rgba(var(--text-2), 1);
-    border: none;
-}
-
-/* цвет рейтенга текста */
-
-.b-rate .text-score {
-    color: rgba(var(--text), 1);
-}
-
-/* цвет значка отзыв */
-.locale-ru .b-summary_marker:before {
-    background-color: #1a421d;
-    border: rgba(var(--glass), 0.4);
-    color: #c4e9ed;
-}
-
-/* цвет значка оффтоп */
-.locale-ru .b-offtopic_marker.off:before,
-.locale-ru .b-offtopic_marker.active.off:before {
-    color: #f6e5ec;
-    border-color: #54263a;
-    background-color: #54263a;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.locale-ru .b-offtopic_marker.off:hover:before {
-    border-color: rgba(var(--accent), 1);
-    background-color: rgba(var(--accent), 1);
-    color: rgba(var(--text-strong), 1);
-}
-}
-
-.locale-ru .b-offtopic_marker.active:before {
-    color: #f6e5ec;
-    border-color: #7c3152;
-    background-color: #7c3152;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.locale-ru .b-offtopic_marker.active:hover:before {
-    border-color: rgba(var(--accent), 1);
-    background-color: rgba(var(--accent), 1);
-    color: rgba(var(--text-strong), 1);
-}
-}
-
-.locale-ru .b-offtopic_marker:before {
-    background-color: #c05986;
-    border: 1px solid #7876bf;
-    color: #f6e5ec;
-}
-
-/* Всплывающие карточки с описанием при наведении (окно с крестиком) скрыты.
-   Вернуть можно блоком в «Внешнем виде сайта» (см. README). */
-.tooltip {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-.tooltip * {
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
-/* открываюшееся при наводке на героя окно */
-.tooltip-inner {
-    background: none repeat scroll 0 0 color-mix(in srgb, var(--glass-deep) 90%, transparent);
-    border: none;
-    color: inherit;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
-    border-radius: 12px;
-}
-
-/* цвета аниме шкалы */
-.b-stats_bar .bar .third {
-    background: rgba(var(--time-empty), 1);
-    opacity: 0.7;
-}
-
-.b-stats_bar.anime .bar .second {
-    background: rgba(var(--anime-inprocess), 1);
-    opacity: 0.7;
-}
-
-.b-stats_bar.anime .bar .first {
-    background: rgba(var(--anime-complete), 1);
-    opacity: 0.7;
-}
-
-/* цвета манга шкалы */
-.b-stats_bar.manga .bar .first {
-    background: rgba(var(--manga-complete), 1);
-    opacity: 0.7;
-}
-
-.b-stats_bar.manga .bar .second {
-    background: rgba(var(--manga-inprocess), 1);
-    opacity: 0.7;
-}
-
-/* название аниме в списке моем */
-.p-user_rates-index .list-lines tr .name a {
-    color: rgba(var(--text-strong), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-user_rates-index .list-lines tr .name a:hover,
-.b-user.detailed .history .line a .event:hover {
-    background: none;
-    box-shadow: none;
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
-    border: none;
-}
-}
-
-.p-user_rates-index .list-lines tr.editable {
-    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
-}
-
-/* оценки справа в аниме */
-
-/* текст отзывы, комментарии и т.д. под вкладкой У аниме: */
-.b-db_entry > .c-about .additional-links .line-container > .link,
-.b-db_entry > .c-about .additional-links .line-container > a {
-    color: rgba(var(--accent), 1);
-}
-
-.b-db_entry > .c-about .additional-links .line-container > .link:hover,
-.b-db_entry > .c-about .additional-links .line-container > a:hover {
-    color: rgba(var(--accent), 1);
-}
-
-/* закрашенные звезды */
-.b-rate .stars.score {
-    color: rgba(var(--text-strong), 1);
-}
-
-.l-top_menu-v2 .logo-container .logo {
-    background: url(https://image.ibb.co/cxV9kV/shiki-logo.png) no-repeat center;
-    height: 32px;
-    margin-top: 8px;
-}
-
-/* при наводке звезды */
-.b-rate .stars.hover {
-    color: #e7a61d;
-}
-
-/* пустые звезды */
-.b-rate .stars.background {
-    color: rgba(var(--text-strong), 0.2);
-}
-
-/* список аниме и манги */
-.b-stats_bar a.title {
-    color: rgba(var(--text-strong), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-stats_bar a.title:hover {
-    color: rgba(var(--link), 1);
-    box-shadow: none;
-    background: none;
-}
-}
-
-/* под списком кол-во просмотреных прочитанных и т.д. */
-.b-stats_bar .stat_names .stat_name a,
-.b-stats_bar .stat_names .stat_name .size:before,
-.b-stats_bar .stat_names .stat_name .size:after {
-    color: rgba(var(--text-2), 1);
-}
-
-/* под списком кол-во просмотреных прочитанных и т.д. */
-.b-stats_bar .stat_names .stat_name a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-animes-menu .total-rates {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a {
-    color: rgba(var(--link), 1);
-}
-
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-shiki_editor .body .editor textarea,
-.b-input input[disabled],
-.b-input input[type="submit"],
-.b-input input[type="text"],
-.b-input input[type="password"],
-.b-input input[type="email"],
-.b-input textarea[type="submit"],
-.b-input textarea[type="text"],
-.b-input textarea[type="password"],
-.b-input textarea[type="email"] {
-    color: rgba(var(--text), 1);
-    border-radius: 10px;
-    background-color: rgba(var(--glass), 0.4) !important;
-    border: none !important;
-    font-family: "Comfortaa", sans-serif;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
-}
-
-/* цвет кнопки написать */
-.b-form input[type="submit"],
-.b-shiki_editor.previewed footer .unpreview,
-.b-poll .poll-actions .vote,
-.b-poll .poll-actions .abstain,
-a.stop.b-button,
-.b-button,
-.b-form .cancel,
-.b-button.preview,
-a.start.b-button,
-.b-form input[type="submit"][disabled],
-.b-form input[type="submit"].disabled,
-.block.edit-page.pages a.cancel,
-.b-shiki_editor footer .hide {
-    padding: 7px 12px;
-    line-height: 1;
-    font-family: "Comfortaa", sans-serif;
-    color: rgba(var(--text), 1) !important;
-    background-color: rgba(var(--glass), 0.5);
-    border-radius: 10px !important;
-    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-form input[type="submit"]:hover,
-.b-shiki_editor footer .preview:hover,
-.b-shiki_editor.previewed footer .unpreview:hover,
-.b-poll .poll-actions .vote:hover,
-.b-poll .poll-actions .abstain:hover,
-a.stop.b-button:hover,
-.b-button:hover,
-.b-form .cancel:hover,
-.b-button.preview:hover,
-a.start.b-button:hover,
-.b-form input[type="submit"][disabled]:hover,
-.b-form input[type="submit"].disabled:hover,
-.block.edit-page.pages a.cancel:hover,
-.b-shiki_editor footer .hide:hover {
-    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
-    color: var(--tone-e4e4e4) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    opacity: 1;
-}
-}
-
-.b-shiki_editor-v2 .hide {
-    padding: 7px 12px;
-    line-height: 1;
-    font-family: "Comfortaa", sans-serif;
-    color: rgba(var(--text), 1) !important;
-    border-radius: 10px !important;
-    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
-}
-.b-shiki_editor-v2 .hide:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-shiki_editor footer input[type="submit"],
-.b-shiki_editor footer .unpreview,
-.b-shiki_editor footer .preview,
-.b-shiki_editor footer .hide,
-.b-shiki_editor footer .cancel {
-    margin: 0 20px 10px 0;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-comments .comments-loader:hover,
-.b-comments .comments-hider:hover,
-.b-comments .comments-expander:hover {
-    background-color: rgb(var(--glass-light));
-    color: rgb(var(--text-strong));
-}
-}
-
-/* полоса оттеняющая, если не развернуто */
-.b-height_shortener .shade {
-    background-image: none;
-    height: 30px;
-    z-index: 0;
-}
-
-/* слово развернуть */
-.b-height_shortener .expand {
-    color: rgba(var(--accent), 1);
-}
-
-
-/* под шкалой в профиле сколько пробыл на сайте */
-
-/* Поиск по названию в списке аниме */
-input {
-    color: rgba(var(--text), 1);
-    background: rgba(var(--glass), 0.4);
-}
-
-/* свернуть списки в списке аниме */
-.b-options-floated .action {
-    color: rgba(var(--accent), 1);
-    border: none;
-}
-
-.b-options-floated .action:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-list_switchers .switcher.lines:before:hover,
-.b-list_switchers .switcher.lines:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-list_switchers .switcher.posters:before:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-list_switchers .switcher.posters:after {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 20px;
-    font-variant: normal;
-    text-transform: none;
-    color: rgb(var(--text-strong));
-}
-
-.p-user_rates-index .stat-categories .category {
-    color: rgba(var(--accent), 1);
-    line-height: normal !important;
-    margin: 0 0 0 2px;
-    padding: 0 7px;
-    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-user_rates-index .stat-categories .category:hover {
-    color: rgba(var(--accent), 1) !important;
-    transform: scale(1.1);
-    box-shadow: none;
-    background: none;
-}
-}
-
-.p-user_rates-index .stat-categories .category.active {
-    color: rgba(var(--accent), 1);
-}
-
-/* справа выборы фильтров в списке аниме */
-.b-block_list li {
-    color: rgba(var(--text), 1);
-    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    font-family: "Comfortaa", sans-serif;
-}
-
-/* сводка по разным спискам  */
-.p-user_rates-index .list-groups .summary.lines {
-    color: rgba(var(--text-2), 1);
-}
-
-.item-add:before,
-.item-add:after {
-    color: rgba(var(--text-2), 1);
-}
-
-.item-add:hover:before,
-.item-add:hover:after {
-    color: rgba(var(--accent), 1) !important;
-}
-
-/* оценка, эпизоды и т.д. столбики */
-.p-user_rates-index .l-content .order-control {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-user_rates-index .l-content .order-control:hover {
-    color: rgba(var(--accent), 1);
-}
-
-/* стрелка назад */
-header.head h1 a.back:before,
-header.head h2 a.back:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-
-.b-options-floated a:hover,
-.b-options-floated .link:hover {
-    color: rgba(var(--accent), 1);
-}
-
-/* цвет тегов в настройки -уведомления*/
-.b-table th {
-    color: rgba(var(--text-strong), 1);
-}
-
-
-a:hover {
-    text-decoration: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-a.name:hover {
-    color: rgba(var(--link), 1) !important;
-    text-decoration: none !important;
-    background: none !important;
-    box-shadow: none !important;
-}
-}
-
-.b-comment > .inner div.body,
-.b-message > .inner div.body {
-    color: rgba(var(--text), 1);
-    font-size: 13px !important;
-}
-
-/* название в новостях */
-.b-message > .inner header .name-date a.name {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-message > .inner header .name-date {
-    line-height: 24px;
-    overflow: visible;
-    white-space: normal;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-user_rates-index .list-lines .selectable:hover,
-.p-userlist_comparer .comparer table .selectable:hover {
-    color: rgba(var(--accent), 1) !important;
-    transform: scale(1.01);
-    background: transparent;
-}
-}
-
-@media (hover: hover) and (pointer: fine) {
-tr.user_rate.selectable.editable:hover:after {
-    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    transform: scale(1.01);
-}
-}
-
-tr.user_rate.selectable.editable:after {
-    content: "";
-    width: 100%;
-    padding-top: 2px;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    z-index: -1;
-}
-
-.p-user_rates-index .list-lines .selectable,
-.p-userlist_comparer .comparer table .selectable {
-    transition: 0.15s ease, -webkit-0 .15s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-.p-userlist_comparer .comparer table .exact-same,
-.p-userlist_comparer .legend .exact-same {
-    background-color: rgba(0, 160, 35, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .almost-same,
-.p-userlist_comparer .legend .almost-same {
-    background-color: rgba(0, 86, 20, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .slightly-difr,
-.p-userlist_comparer .legend .slightly-difr {
-    background-color: rgba(160, 0, 0, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .abslt-difr,
-.p-userlist_comparer .legend .abslt-difr {
-    background-color: rgba(117, 21, 1, 0.4);
-    border-radius: 4px;
-}
-
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--link), 1);
-}
-
-/* знак в новостях эпизод*/
-.b-anime_status_tag.episode:before {
-    background: #3d249e;
-    color: var(--tone-e9f1f3);
-}
-
-.b-js-link {
-    border: none;
-    padding: 0 8px 0 8px;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-js-link:hover {
-    border: none;
-}
-
-.p-messages .mass-actions .action:after {
-    display: none;
-}
-
-.c-brief header.head .notice,
-.c-brief header.head .misc,
-.c-brief header.head a.edit,
-.p-profiles .profile-head .c-info .c-additionals b,
-.p-profiles .profile-head .c-brief header h1.aliases::after,
-.p-profiles .profile-head .c-brief header .notice a {
-    color: rgba(var(--text), 1) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
-    text-shadow 0s;
-}
-
-.p-profiles .profile-head .c-brief header .notice span:after {
-    color: rgba(var(--text), 1);
-}
-
-.b-tooltipped.dotted {
-    border: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-profiles .profile-head .c-info .c-additionals div a:hover {
-    color: rgba(var(--link), 1) !important;
-    transform: scale(1.1) !important;
-}
-}
-
-.b-spoiler label {
-    color: rgba(var(--text), 1);
-    border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
-    border-radius: 6px;
-    padding: 0 6px;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-spoiler {
-    transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-spoiler label:hover {
-    color: rgba(var(--accent), 1);
-    animation: spoilzero 2s ease infinite;
-}
-
-.b-spoiler .b-poll label {
-    border: none;
-}
-
-.b-input input,
-.b-input textarea {
-    background: rgba(var(--glass), 0.4);
-    color: rgba(var(--text), 1);
-    border: none !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-}
-
-.p-user_rates-index .list-lines tr.edit-form form {
-    background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    border: none;
-    box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
-    border-radius: 10px;
-}
-
-input,
-select,
-button,
-textarea {
-    background-color: rgba(var(--glass), 0.4);
-    font-family: "Comfortaa", sans-serif;
-    border: none !important;
-}
-
-/* стоп */
-.b-quote {
-    background: rgba(var(--glass), 0.4) !important;
-    border: none !important;
-    color: rgba(var(--text), 1);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-    border-radius: 6px !important;
-    font-style: normal;
-}
-
-.b-comments .comments-collapser,
-.b-spoiler .content .after:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-dialog > .inner div.body {
-    color: rgba(var(--text), 1);
-}
-
-.b-dialog,
-.p-dashboards-show .cc-news .c-news_topics .b-topic,
-.b-user.detailed,
-.b-comment,
-.b-db_entry-note,
-.p-topics .l-menu .sticky-topics .topic,
-.b-comments .comments-loaded,
-.b-message .comments-loaded,
-.b-user.detailed {
-    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
-}
-
-.b-dialog,
-.p-dashboards-show .cc-news .c-news_topics .b-topic,
-.b-user.detailed,
-.b-comment,
-.b-db_entry-note,
-.p-topics .l-menu .clubs .entry,
-.p-topics .l-menu .sticky-topics .topic {
-    margin: 4px 0;
-    border-top: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.b-comments .comments-loaded,
-.b-message .comments-loaded {
-    padding-bottom: 10px !important;
-}
-
-.b-dialog:first-child {
-    padding-top: 15px;
-}
-
-.b-show_more-more .b-db_entry-note:first-child,
-.cc .b-db_entry-note:last-child,
-.block_m .b-db_entry-note:last-child,
-.b-comments .b-comment:last-child {
-    border-bottom: none !important;
-    padding-bottom: 0;
-}
-
-.p-dashboards-show .cc-news .c-news_topics .b-topic {
-    margin: 10px 0 !important;
-}
-
-.b-user.named_avatar .name {
-    color: rgba(var(--text-strong), 1);
-    transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    text-decoration: none !important;
-    margin: auto;
-}
-
-.b-user.named_avatar:hover .name {
-    color: rgba(var(--accent), 1);
-    text-decoration: none !important;
-}
-
-.b-user.named_avatar:hover img {
-    border-color: rgba(var(--accent), 1);
-    border-radius: 50%;
-    text-decoration: none !important;
-}
-
-.b-clubs-menu .admin .b-user {
-    transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    text-decoration: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-clubs-menu .admin .b-user:hover {
-    transform: scale(1.2);
-    border-color: rgba(var(--accent), 1);
-    color: rgba(var(--accent), 1);
-    text-decoration: none !important;
-}
-}
-
-.b-block_list li a {
-    color: rgba(var(--text-2), 1);
-}
-
-
-.b-lang_trigger span {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-user16 {
-    color: rgba(var(--text-strong), 1);
-    font-weight: bold;
-}
-
-.b-user16:hover,
-.b-user.named_avatar img:hover,
-.b-user16:hover a {
-    color: rgba(var(--accent), 1) !important;
-}
-
-
-.c-actions .new_comment:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .new_comment:hover:before,
-.c-actions .fav-remove:before {
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .new_review:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .new_review:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .fav-add:before {
-    color: rgba(var(--accent), 1);
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.c-actions .fav-add:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .edit:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    color: rgba(var(--accent), 1);
-}
-
-.c-actions .edit:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-video_variant .episode-num,
-.b-video_variant .video-id {
-    color: rgba(var(--text), 1);
-}
-
-.b-video_variant a {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings,
-.b-video_variant .video-hosting,
-.b-video_variant .video-language {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant.active a {
-    border-bottom: none;
-}
-
-.b-video_variant.active a:hover {
-    border-bottom: none;
-}
-
-.p-anime_videos-index .c-anime_video_episodes .title,
-.p-anime_videos-index .c-videos .title {
-    color: rgba(var(--text-strong), 1);
-    font-size: 11px;
-}
-
-.p-anime_videos-index .c-videos .video-variant-switcher {
-    color: rgba(var(--accent), 1);
-}
-
-
-.b-video_variant .video-author {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .prev .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .episode-num {
-    color: rgba(var(--text-strong), 1) !important;
-}
-
-.b-video_player .cc-player_controls .next .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .increment-user_rate .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .show-options .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .report .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-catalog_entry .cover .misc,
-.p-dashboards-show .midheadline .b-link,
-.p-dashboards .user_list .list-type > .title .switch,
-.p-dashboards .user_list .list-type > .title .link,
-.p-dashboards .user_list .history > .title .switch,
-.p-dashboards .user_list .history > .title .link,
-.p-dashboards .user_list .list-change .note,
-.p-dashboards .c-my_list .list-change .note,
-.bar.vertical .line .x_label,
-.p-dashboards-show .contests .contest .notice,
-.b-forums .forum .topics,
-.name-date .time,
-.p-profiles .profile-head .c-history .entry .misc,
-.p-profiles-show .lifetime .times .time,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
-.b-comment > .inner header .name-date .time,
-.b-replies,
-.b-options-floated,
-.p-messages .mass-actions .action,
-.p-animes_collection-index .pagination,
-.p-mangas_collection-index .pagination,
-.p-recommendations-index .pagination,
-.p-userlist_comparer-show .pagination,
-.b-rate .score-notice,
-.b-animes-menu .block-list .date,
-.bar.horizontal .line .x_label,
-.b-animes-menu .friend-rate .status,
-.b-summary_marker::before,
-.b-offtopic_marker::before,
-.tipsy,
-header.head .misc,
-header.head a.edit,
-.p-studios .studio .animes,
-.p-studios .studio .years,
-.p-contests .contest-match .vs .help,
-.p-contests .contest-match .vs .next,
-.p-contests .contest-match .vs .finish,
-.p-contests .contest-match .vs .refrain,
-.p-contests .contest-match .vs .refrained,
-.p-contests .match-day .matches-num,
-.b-lang_trigger,
-.b-club .info,
-.b-new_marker::before,
-.b-user.detailed .info .last-online,
-.b-user.detailed .history .line .date,
-.p-recommendations-index .b-header_filters .hint,
-.p-recommendations-favourites .b-header_filters .hint,
-.p-userlist_comparer .comparer table .notice,
-.p-topics .l-menu .calendar .entry .misc,
-.p-topics .l-menu .reviews .entry .misc,
-.p-topics .l-menu .clubs .entry .misc,
-.p-topics .l-menu .contests .contest .notice,
-.p-topics .l-menu .sticked-topics .topic .notice,
-.b-video_player .cc-player_controls .label,
-.b-video_player .cc-player_controls .episode-title .video-link,
-.b-log_entry .date,
-.b-log_entry .spoiler.collapse,
-.b-log_entry .spoiler.collapsed,
-.b-log_entry .spoiler.collapse span,
-.b-log_entry .spoiler.collapsed span,
-.b-js-action,
-.b-input .hint,
-.b-review-topic .review-votes_count,
-.p-dashboard .l-menu .ongoing .misc,
-.p-dashboard .l-menu .season .notice,
-.p-topics .l-menu .sticky-topics .topic .notice,
-.b-hot_topics .topic {
-    font-size: 12px !important;
-    color: rgba(var(--text-2), 1);
-}
-
-.bar.vertical .line .bar-container .value {
-    color: rgb(var(--text-strong));
-}
-
-.b-show_more,
-.b-show_more-more .hide-more {
-    color: rgba(var(--accent), 1);
-}
-
-
-.b-dialog .to_dialog {
-    background: none !important;
-    box-shadow: none !important;
-    color: rgba(var(--accent), 1);
-}
-
-.b-forums .forum .link-with-input .link {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-dashboards-show .c-content .options .option {
-    color: rgba(var(--accent), 1);
-    border: none !important;
-}
-
-.p-dashboards-show .c-content .options .option.selected {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-dashboards-show .c-content .options .option:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.p-dashboards-show .c-content .options .option.active {
-    color: rgba(var(--accent), 1);
-}
-
-.b-message {
-    margin: 10px 0;
-    border-top: none;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(var(--text), 0.1);
-}
-
-.b-message:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.b-catalog-entry-embedded .b-catalog_entry {
-    padding-bottom: 0 !important;
-}
-
-.b-dialog .b-message {
-    padding-bottom: 0;
-    margin-bottom: 0 !important;
-    margin-top: 0;
-}
-
-.b-user_history-line .destroy,
-.buttons .item-reply,
-.buttons .item-moderation,
-.buttons .item-edit,
-.buttons .item-delete,
-.buttons .item-ignore,
-.buttons .item-apply,
-.buttons .item-request-confirm,
-.buttons .item-delete-confirm,
-.buttons .item-cancel,
-.buttons .item-request-reject,
-.buttons .item-delete-cancel,
-.buttons .item-moderation-cancel {
-    color: rgba(var(--accent), 1);
-}
-
-.buttons .item-reply:before,
-.buttons .item-moderation:before,
-.buttons .item-edit:before,
-.buttons .item-delete:before,
-.buttons .item-ignore:before,
-.buttons .item-apply:before,
-.buttons .item-request-confirm:before,
-.buttons .item-delete-confirm:before,
-.buttons .item-cancel:before,
-.buttons .item-request-reject:before,
-.buttons .item-delete-cancel:before,
-.buttons .item-moderation-cancel:before {
-    font-size: 16px !important;
-}
-
-.buttons .item-ignore:hover,
-.buttons .item-delete:hover,
-.buttons .item-edit:hover,
-.buttons .item-reply:hover,
-.buttons .item-moderation:hover,
-.buttons .item-apply:hover,
-.buttons .item-request-confirm:hover,
-.buttons .item-delete-confirm:hover,
-.buttons .item-cancel:hover,
-.buttons .item-request-reject:hover,
-.buttons .item-delete-cancel:hover,
-.buttons .item-moderation-cancel:hover,
-.buttons .item-delete-confirm:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-topics header h1 a.reload {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .c-videos .b-video_variant .video-quality.dvd {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG-2yy4R8Xi5mO1N_ZurIpznxCgpOuDzpRZGu-K9dUBwrClokYAg) no-repeat !important;
-    display: none;
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    cursor: pointer;
-    border-bottom: 1px dotted rgba(var(--text-2), 1);
-}
-
-.b-video_player .cc-player_controls .create-user_rate .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-spoiler .content .before:before {
-    content: "[spoiler]";
-    color: rgba(var(--accent), 1);
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .after:before {
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .inner,
-.b-spoiler .content .inner-prgrph {
-    border-bottom: 0;
-    border-radius: 6px;
-    padding: 0 6px;
-    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    border: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.b-video_player .cc-player_controls .episode-num .video-link a:hover {
-    background: none !important;
-    color: rgba(var(--text-strong), 1);
-    border: none;
-    box-shadow: none !important;
-}
-}
-
-.b-video_player .cc-player_controls .episode-num input {
-    background: transparent !important;
-    border-color: transparent !important;
-}
-
-.b-tag {
-    border-bottom: 1px dashed rgba(var(--accent), 1);
-    color: rgba(var(--accent), 1);
-}
-
-
-.b-animes-menu .menu-topics-block a.entry .name:hover {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
-}
-
-.b-animes-menu .menu-topics-block a.entry .name {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-animes-menu .menu-topics-block a.entry .date {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-contests .results .cc-result .c-rounds .label {
-    color: rgba(var(--accent), 1);
-}
-
-.b-db_entry > .c-about .additional-links .key {
-    float: left;
-    color: rgba(var(--text-2), 1);
-}
-
-.p-contests .results a {
-    color: rgba(var(--text-2), 1);
-}
-
-header.head .notice {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-animes_collection-index .pagination .link {
-    color: rgba(var(--accent), 1);
-}
-
-.p-animes_collection-index .pagination .link.disabled {
-    color: rgba(var(--text), 1);
-}
-
-.linkheadline.midheadline > a:hover {
-    color: rgba(var(--link), 1);
-}
-
-
-.b-topic {
-    border: none !important;
-}
-
-.p-dashboards-show .cc-news .c-generated_news .b-topic {
-    border: 1px;
-}
-
-.p-contests-index .contest a {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-contests-index .contest a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-forums .forum .link-with-input .link:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-topic-minified > .inner .status-line .additional {
-    border: none !important;
-}
-
-.b-topic-minified > .inner .status-line .time.changed_at {
-    border: 1px;
-}
-
-.b-topic > .inner header .name-date .time {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-topics .l-menu .reviews .entry .misc {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-collection_search .field input {
-    border: 0 solid rgba(var(--glass), 0.4);
-    background-color: rgba(var(--glass), 0.4) !important;
-}
-
-.p-topics header h1 a.reload:hover {
-    color: rgba(var(--link), 1);
-}
-
-.p-topics .l-menu .reviews .entry {
-    border: none !important;
-}
-
-.p-topics .l-menu .reviews .entry .misc.date {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-
-.p-topics .l-menu .reviews .entry .title,
-.p-topics .l-menu .clubs .entry .title {
-    color: rgba(var(--text-strong), 1);
-    text-decoration: none !important;
-}
-
-.p-topics .l-menu .reviews .entry .title:hover,
-.p-topics .l-menu .clubs .entry:hover .title {
-    color: rgba(var(--accent), 1) !important;
-    text-decoration: none !important;
-}
-
-.p-topics .l-menu .clubs .entry .misc {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-.p-topics .l-menu .sticky-topics .topic .title:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-club .name {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-club .info .number {
-    color: rgba(var(--text-2), 1);
-    padding-right: 4px;
-}
-
-.b-club .info .value {
-    color: rgba(var(--text-2), 1);
-}
-
-header.head a.misc {
-    font-family: "Comfortaa", sans-serif;
-    font-size: 12px !important;
-    background: rgba(var(--glass), 0.4);
-    padding: 5px 50px;
-    border-radius: 14px;
-    color: rgba(var(--text), 1);
-    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    margin: 8px;
-    pointer-events: auto;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    display: block;
-    width: max-content;
-    text-transform: capitalize;
-}
-
-@media (hover: hover) and (pointer: fine) {
-header.head a.misc:hover {
-    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
-    color: var(--tone-e4e4e4) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-}
-}
-
-.b-collection-topic > .inner .status-line .collection-size,
-.b-topic-minified > .inner .status-line .additional .comments:before,
-.b-review_votes:before,
-.b-topic-minified > .inner .status-line .time.changed_at:before,
-.b-topic-preview > .inner .status-line .additional .comments {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-topic .footer-vote {
-    border: none;
-    background-color: rgba(var(--glass), 0.4);
-    padding: 5px 10px 5px 10px;
-    color: rgba(var(--text), 1);
-    border-radius: 10%;
-}
-
-.b-topic .footer-vote .vote-group .vote {
-    color: rgba(var(--text), 1);
-}
-
-.b-topic .footer-vote .vote-group .vote.yes.selected,
-.b-topic .footer-vote .vote-group .vote.yes:hover,
-.b-topic .footer-vote .vote-group .vote,
-.b-topic .footer-vote .vote-group .vote:hover,
-.b-topic .footer-vote .vote-group .vote.no.selected,
-.b-topic .footer-vote .vote-group .vote.no:hover {
-    border: none;
-}
-
-.buttons .editor-italic:before,
-.buttons .editor-spoiler:before,
-.buttons .editor-smiley:before,
-.buttons .editor-quote:before,
-.buttons .editor-image:before,
-.buttons .editor-link:before,
-.buttons .editor-strike:before,
-.buttons .editor-underline:before,
-.buttons .editor-bold:before {
-    font-family: "shikimori";
-    text-align: center;
-    width: 20px;
-    color: rgba(var(--accent), 1);
-    font-size: 14px;
-    border: none !important;
-}
-/* Цвет кнопок тесктового редактора в состоянии hover */
-.buttons .editor-italic:hover:before,
-.buttons .editor-spoiler:hover:before,
-.buttons .editor-smiley:hover:before,
-.buttons .editor-quote:hover:before,
-.buttons .editor-image:hover:before,
-.buttons .editor-link:hover:before,
-.buttons .editor-strike:hover:before,
-.buttons .editor-underline:hover:before,
-.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1); 
-}
-.buttons .editor-italic,
-.buttons .editor-spoiler,
-.buttons .editor-smiley,
-.buttons .editor-quote,
-.buttons .editor-image,
-.buttons .editor-link,
-.buttons .editor-strike,
-.buttons .editor-underline,
-.buttons .editor-bold,
-.buttons .editor-file {
-    border: none !important;
-}
-
-.buttons .editor-file input:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-stats_bar .title,
-.p-profiles-show .profile-content .activity .title {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-tooltipped:not(a) {
-    border: none;
-}
-
-.p-profiles-show .lifetime .times .time.checked {
-    color: rgba(var(--text-2), 1);
-    font-weight: bold;
-    white-space: normal;
-    min-width: 50px;
-    line-height: 20px;
-}
-
-.p-profiles-show .lifetime .times .time {
-    white-space: normal;
-    min-width: 50px;
-    line-height: 20px;
-}
-
-.p-profiles-edit .account .change-password a {
-    color: rgba(var(--link), 1) !important;
-}
-
-.p-profiles-edit .account .change-password a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.p-profiles-edit .list .profile-action a:not(.b-button) {
-    padding: 0 8px;
-    color: rgba(var(--link), 1) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-.p-profiles-edit .list .profile-action a:not(.b-button):hover {
-    color: rgba(var(--link), 1) !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-}
-
-time {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-.subheadline .misc-link {
-    color: rgba(var(--text-2), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-.subheadline .misc-link:hover {
-    transform: scale(1) !important;
-    background: none !important;
-    box-shadow: none !important;
-    font-size: 12px !important;
-}
-}
-
-.buttons .main-controls a {
-    color: rgba(var(--link), 1);
-}
-
-.buttons .main-controls a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.p-profiles-show .about a {
-    color: rgba(var(--link), 1);
-}
-
-.p-profiles-show .about a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-user_history-line a:hover {
-    color: rgba(var(--link), 1) !important;
-    font-weight: bold;
-}
-
-.b-user_history-line a {
-    color: rgba(var(--text-strong), 1);
-    font-weight: bold;
-}
-
 body.localized_names-ru .name-ru:hover {
     color: rgba(var(--accent), 1) !important;
-    text-decoration: none !important;
-}
-
-.b-user_history-line .date {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-.p-user_rates-index .list-lines tr td .new-value input {
-    border-radius: 4px;
-    border: none;
-    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
-}
-
-.p-userlist_comparer .comparer table a {
-    color: rgba(var(--text-strong), 1) !important;
-}
-
-.p-userlist_comparer .comparer table .name a {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-userlist_comparer .comparer table .name a:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-.b-table tr.border {
-    border-top: none;
-}
-
-.p-user_rates-index .list-lines tr .index {
-    color: rgba(var(--text), 1) !important;
-}
-
-.b-shiki_editor .body .preview {
-    background: rgba(var(--glass), 0.4);
-    border: none !important;
-}
-
-.b-shiki_editor footer .unpreview:not(.link) {
-    color: rgba(var(--text), 1);
-}
-
-.b-shiki_editor footer .preview,
-.b-shiki_editor footer .cancel {
-    color: rgba(var(--text), 1) !important;
-}
-
-.b-shiki_editor footer .cancel {
-    border: none !important;
-}
-
-.p-profiles .profile-head .c-info .c-additionals div a {
-    font-size: 12px !important;
-}
-
-.b-code-v2 {
-    background: var(--tone-263238);
-    color: rgb(var(--text-strong));
-}
-
-.b-code-v2:before {
-    background-color: var(--tone-556571);
-    -webkit-border-radius: 0 0 0 10px;
-    border-radius: 0 0 0 10px;
-    content: attr(data-language);
-    padding: 0 9px;
-    line-height: 25px;
-    right: 0;
-    top: 0;
-}
-
-code.b-code_inline {
-    background-color: color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
-    border: 1px solid color-mix(in srgb, var(--tone-263238) 70.98%, transparent);
-    color: #ff678e;
-}
-
-.tooltip-inner .close {
-    color: rgba(var(--accent), 1);
-    background: none;
-}
-
-.tooltip-inner .close:hover {
-    background: none;
-    color: var(--tone-dddddd);
-}
-
-.b-options-floated a span.brackets:after,
-.b-options-floated .link span.brackets:after {
-    color: rgba(var(--text-2), 1);
-    content: ")";
-}
-
-.b-options-floated a span.brackets:before,
-.b-options-floated .link span.brackets:before {
-    color: rgba(var(--text-2), 1);
-    content: "(";
-}
-
-.b-options-floated a:after,
-.b-options-floated .link:after {
-    color: rgba(var(--text-2), 1);
-    content: "/";
-}
-
-.p-anime_videos-index .c-video_stats .views_count {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings:before,
-.b-video_variant .episode-hostings:after,
-.b-video_variant .video-hosting:before,
-.b-video_variant .video-hosting:after,
-.b-video_variant .video-language:before,
-.b-video_variant .video-language:after {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_player .cc-player_controls .upload .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .edit .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .same-videos .title {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-comment .inner .name-date a.name .normal {
-    color: rgba(var(--text), 1);
-}
-
-.b-log_entry a,
-.b-log_entry .link {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-log_entry a:hover,
-.b-log_entry .link:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-log_entry .id-label {
-    padding-right: 1px;
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-log_entry .id-label:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-log_entry .change-details .field-changes .label {
-    color: rgba(var(--text-2), 1);
-}
-
-
-.b-shiki_editor footer .about-bb_codes:hover {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
-}
-
-.b-bb_codes-examples .example .title,
-.b-bb_codes-examples .result .title {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .notice {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .example .textarea {
-    background: rgba(var(--glass), 0.4);
-    border: rgba(var(--glass), 0.4);
-    color: rgba(var(--text), 1);
-    border: none !important;
-    border-radius: 8px;
-}
-
-.b-bb_codes-examples .result a {
-    color: rgba(var(--text-strong), 1);
-}
-
-
-.quoteable:before {
-    color: rgba(var(--accent), 1)!important;
-}
-
-.b-bb_codes-examples .example span {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video .marker,
-.b-image .marker,
-.b-video .name {
-    color: rgba(var(--text), 1);
-    padding: 2px 2px 0 0;
-    line-height: 12px;
-    margin-left: 0;
-    margin-bottom: 0;
-    bottom: 0;
-    border-radius: 8px 0 0 0 !important;
-    right: 0;
-}
-
-.b-bb_codes-examples .result a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-bb_codes-examples .example span:after {
-    color: rgba(var(--text-2), 1);
-    content: ")";
-}
-
-.b-bb_codes-examples .example span:before {
-    color: rgba(var(--text-2), 1);
-    content: "(";
-}
-
-.buttons .editor-file {
-    color: rgba(var(--accent), 1);
-}
-
-.buttons .editor-file:hover {
-    color: rgba(var(--accent), 1);
-}
-
-/* history-yeah */
-@media (hover: hover) and (pointer: fine) {
-.p-profiles .profile-head .c-history .entry:hover,
-.p-topics .l-menu .reviews .entry:hover,
-.p-topics .l-menu .clubs .entry:hover {
-    transform: scale(1.03);
-    padding-left: 2px;
-    padding-right: 5px;
-    text-decoration: none !important;
-    border: none !important;
-    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
-    background 0.2s;
-}
-}
-
-body.localized_names-ru .name-ru {
-    color: rgba(var(--text-strong), 1);
-    font-weight: bold;
-    text-decoration: none !important;
-    transform: scale(1.05);
-}
-
-.p-profiles .profile-head .c-history .entry,
-.p-topics .l-menu .reviews .entry,
-.p-topics .l-menu .clubs .entry {
-    margin-bottom: 0;
-    padding: 0 3px 0;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
-    background 0s;
-    border-top: none;
     text-decoration: none !important;
 }
 
@@ -2546,77 +1714,754 @@ body.localized_names-ru .name-ru:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
-.p-profiles .profile-head .c-history .entry img {
-    float: left;
-    margin: 2px 10px 2px 2px;
-    max-height: 60px;
-    max-width: 40px;
-    border-radius: 10px;
+.l-page {
+    overflow: visible !important;
 }
 
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .quotes .link-value,
-.b-shiki_editor .email .link-value,
-.b-shiki_editor .upload .link-value,
-.b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .quotes .link-value,
-.b-shiki_editor .email .link-value,
-.b-shiki_editor .upload .link-value {
-    background: rgba(var(--glass), 0.4) !important;
-    border-color: rgba(var(--glass), 0.4) !important;
-    color: rgba(var(--text), 1);
-    line-height: 20px;
+body#dashboards_show .l-page {
+    margin: 40px auto 15px;
+}
+
+body[data-locale=ru] .b-summary_marker {
+    width: 55px;
+}
+
+body[data-locale=ru] .b-summary_marker:before {
+    background: #1d4c20;
+    color: #d2ecd4;
+    width: 50px;
+    right: 2px;
+    border: none;
+    line-height: 1.4;
+}
+
+body[data-locale=ru] .b-summary_marker.off:before {
+    color: #6c8065 !important;
+    background: #163c16 !important;
+}
+
+body[data-locale=ru] .b-summary_marker.active:before {
+    background: #1a501c;
+    color: #e3f1e1;
+}
+
+body[data-locale=ru] .b-summary_marker {
+    position: relative;
+}
+
+body[data-locale=ru] .b-new_marker::before,
+body[data-locale=ru] .b-summary_marker::before,
+body[data-locale=ru] .b-offtopic_marker::before,
+body[data-locale=ru] .b-abuse_marker:before {
+    font-size: 12px !important;
+}
+
+body * [class*="_marker"]:before,
+body * [class*="_status_tag"]:before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tone-373c3e);
+    color: var(--tone-e7e7e7);
+    transition: 0.1s ease !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+body * [class*="_marker"]::before,
+body * [class*="_status_tag"]::before {
+    content: '';
+    padding: 2px 9px;
+}
+
+body * [class*="_status_tag"],
+body * [class*="_marker"] {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 2px !important;
+    color: var(--tone-e7e7e7) !important;
+    background: unset!important;
+    box-shadow: none!important;
+    border: none!important;
     border-radius: 8px;
 }
 
-.p-profiles .profile-head .c-history .entry:hover .title {
-    color: rgba(var(--text-strong), 1) !important;
-    text-decoration: none;
+body * [class*="_status_tag"]:not([data-text]),
+body * [class*="_marker"]:not([data-text]) {
+    transition: 0.1s ease !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    background: var(--tone-373c3e) !important;
 }
 
-.p-profiles .profile-head .c-history .entry a:hover {
-    color: rgba(var(--link), 1) !important;
+body * [class*="_marker"]:not([data-text]) {
+    padding: 0 5px;
 }
 
-.headline,
-.midheadline,
-.subheadline {
+body * [class*="_status_tag"]:not([data-text]) {
+    padding: 2px 9px;
+}
+
+/* надпись коллекция на зеленом */
+body * .b-anime_status_tag.collection:before {
+    background: linear-gradient(45deg, #2b684e, #1f5430, #476024) !important;
+}
+
+body * .b-abuse_marker:before {
+    content: 'жалоба' !important;
+    background-color: #7b0d0d;
+    color: #e4c6c6;
+}
+
+body * [class*="broadcast_marker"]:before {
+    content: '📢 рассылка' !important;
+    background-color: #772448;
+    color: var(--tone-eadddd);
+}
+
+body * .b-offtopic_marker {
+    width: 84px;
     border: none;
-    border-radius: 13px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-    background: rgba(var(--glass), 0.6);
-    transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    font-size: 14px;
-    color: rgba(var(--text-2), 1);
-    height: 28px;
-    padding: 0 14px 0;
-    display: flex;
-    line-height: 1.5;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-    position: relative;
+}
+
+body * .b-offtopic_marker:before {
+    width: 65px;
+}
+
+body * [class*="broadcast_marker"]:before {
+    width: 84px !important;
+}
+
+body[data-locale=ru] .b-offtopic_marker.off:before {
+    background-color: #4c0f2f;
+    border: none;
+    color: #7b646d;
+}
+
+body * .inner:hover aside.markers [class*="new_marker"].off {
+    display: inline-flex;
+    width: 75px !important;
+}
+
+body * [class*="new_marker"].active,
+.b-message > .inner:hover aside.markers .b-new_marker.off {
+    display: inline-flex;
+    width: 75px;
+}
+
+body[data-locale=ru] .b-new_marker:before {
+    width: 50px;
+    border: none;
+    color: #dde6ef;
+}
+
+body#pages_bb_codes a.misc[href*='/polls/new?']:after {
+    margin-left: 0;
+}
+
+.b-breadcrumbs > span:after {
+    content: '\f101';
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+body#profiles_show .l-footer {
+    margin: 15px 15px 0;
+    bottom: 7px;
+}
+
+body#profiles_show .b-to-top .slide {
+    height: 20px;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 0;
+    z-index: 999;
+    top: auto;
+}
+
+body#profiles_show .b-to-top .slide:before {
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 50px !important;
+    height: 50px;
+    background: transparent;
+    opacity: 0;
+
+}
+
+body#profiles_show .b-to-top .arrow {
+    top: auto;
+    bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body#animes_collection_index .b-collection_search .b-catalog_entry:hover {
+        transform: scale(1.05);
+    }
+    body#topics_index .b-collection_search .b-catalog_entry:hover {
+        box-shadow: none;
+        background: none !important;
+    }
+}
+
+body#topics_index .b-collection_search .b-catalog_entry {
+    transform: scale(1);
+}
+
+body#profiles_show .subheadline {
+    margin-bottom: 10px;
+}
+
+body#profiles_show .l-page {
+    padding: 0 !important;
+    border-radius: 15px;
+}
+
+body#profiles_show .profile-content {
+    padding: 0 15px 15px 15px;
+}
+
+.l-page {
+    padding: 10px 15px !important;
+    overflow: hidden;
+}
+
+body#profiles_edit .l-page {
     overflow: visible;
 }
 
-.headline > a,
-.midheadline > a,
-.subheadline > a,
-.midheadline .b-link,
-.subheadline .b-link {
-    overflow: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: inherit !important;
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
+body#polls_show .cc-2 {
+    margin-bottom: 20px;
+}
+
+body#profiles_show .activity .b-nothing_here {
+    line-height: 100px !important;
+}
+
+body#profiles_show .b-clubs .b-nothing_here,
+body#profiles_show .cc-friends .b-nothing_here {
+    line-height: 40px !important;
+}
+
+body#people_show .c-works .b-catalog_entry {
+    padding: 3px 3px;
+    transform: scale(1);
+}
+
+body#people_show .c-works .b-catalog_entry .image-cutter {
+    max-height: 120px;
+}
+
+body#profiles_show .profile-content .cc-2.block {
+    margin-bottom: 0.5rem;
+}
+
+html.turbolinks-progress-bar::before {
+    background: rgba(var(--accent), var(--hundred)) !important;
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+body#profiles_show .b-topic > .editor-container {
+    margin-top: 20px;
+}
+
+body#dialogs_show .b-topic > .editor-container {
+    margin-top: 0;
+}
+
+body#clubs_index .b-club .logo {
+    margin-right: 10px;
+}
+
+body#profiles_edit .b-catalog_entry .cover .image-decor img {
+    border-radius: 14px;
+}
+
+.l-content h3 {
+    line-height: 30px;
+}
+
+body#tests_reset_styles_cache .b-input input {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+body#tests_reset_styles_cache input[type="submit"] {
+    width: 30%;
+}
+
+body#messages_index .block.is-own-profile {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body#messages_index .block.is-own-profile > * {
     width: 100%;
-    padding: 2px 15px 0;
-    line-height: 1;
-    border-radius: 13px;
+    order: 5;
+}
+
+body#messages_index .block.is-own-profile > .b-options-floated {
+    order: 1;
+}
+
+body#messages_index .block.is-own-profile > .mass-actions {
+    order: 2;
+    position: relative;
+    margin-top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 28px;
+    padding-right: 15px;
+}
+
+body#messages_index .block.is-own-profile > .subheadline {
+    order: 3;
+    position: relative;
+    margin-top: -28px;
+}
+
+body#messages_index .block.is-own-profile > .block {
+    order: 4;
+}
+
+body .headline .misc-links,
+body .midheadline .misc-links,
+body .subheadline .misc-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+body#profiles_edit .b-to-top .slide:before {
+    width: 0px;
+}
+
+body#dashboards_show .cc-inner,
+body#dashboards_show .c-forum {
+    display: none;
+}
+
+body#dashboards_show .block2 {
+    margin-bottom: 27px;
+}
+
+body#dashboards_show .cc-news {
+    margin-top: -31px;
+}
+
+body#clubs_index .subheadline,
+body#profiles_clubs .subheadline {
+    width: 100%;
+    text-align: center;
+}
+
+body#clubs_index .b-clubs .b-club,
+body#profiles_clubs .b-clubs .b-club {
+    margin: 5px 5px !important;
+}
+
+body#messages_index .b-comments {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+body#messages_index .b-comments .b-message[data-appear_type="message"] {
+    width: 100%;
+}
+
+body#messages_index .b-comments .b-message.b-generated_news {
+    margin: 0px !important;
+    border: none;
+    border-bottom: 1px solid rgba(var(--text), 0.1);
+}
+
+body#messages_index .b-comments .b-message.b-generated_news .inner div.body {
+    margin-left: 0px;
+}
+
+body#messages_index .b-catalog_entry-tooltip .b-add_to_list {
+    margin: 10px 0 0 0;
+    max-width: 270px;
+    min-width: 170px;
+}
+
+body#messages_index .l-footer .links,
+body#dialogs_index .l-footer .links,
+body#dialogs_show .l-footer .links {
+    font-size: 0 !important;
+    height: 14px;
+}
+
+.c-column.m0 {
+    margin-bottom: 10px !important;
+}
+
+body#profiles_show .b-achievement.badge {
+    border-radius: 9px;
+}
+
+body#profiles_show .cc-franchises .b-badge img,
+body#profiles_show .cc-franchises .b-badge .no-image {
+    border-radius: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-column.c-control.show-options:hover {
+        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.cc-optional_controls .icon,
+.c-column.c-control .icon {
+    height: 29px;
+}
+
+.cc-optional_controls .c-control {
+    background: rgba(var(--glass), 0.5);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
+    border-radius: 22px;
+    padding: 0px 0px 2px 0px;
+    transition: 0.3s ease;
+    margin: 5px 0px 7px 0px;
+}
+
+.x1000 .l-page,
+.x1200 .l-page {
+    max-width: 1200px;
+}
+
+.l-page {
+    min-height: 50px;
+    margin: 0px auto 25px;
+    position: relative;
+}
+
+.x1000 .l-page {
+    margin: 65px auto 25px;
+    border-radius: 8px;
+}
+
+.l-page {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 1025px) {
+    @media (hover: hover) and (pointer: fine) {
+        body[data-locale="ru"] .b-offtopic_marker.off:hover:before,
+        body[data-locale="ru"] .b-offtopic_marker.active:hover:before {
+            color: #ffcfe0;
+            background-color: #ad024f;
+        }
+        body[data-locale="ru"] .b-summary_marker.off:hover:before,
+        body[data-locale="ru"] .b-summary_marker.active:hover:before {
+            color: #eaffe9 !important;
+            background-color: #037d03 !important;
+            border: none;
+        }
+    }
+    body#dialogs_index .b-height_shortener {
+        margin-left: 55px;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .l-page {
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    .l-page {
+        margin: 15px auto 15px;
+        border-radius: 12px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .l-page {
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        box-shadow: none !important;
+    }
+    body:before {
+        content: "";
+        position: fixed;
+        background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+    body#profiles_show .b-clubs {
+        flex-wrap: unset;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .x1000 .l-page,
+    .x1200 .l-page {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body#profiles_show .cc-franchises .b-badge img {
+        box-shadow: 0 0 0 2px rgba(var(--glass), 0.6);
+        padding: 2px;
+        position: relative;
+        height: 76%;
+        width: 107%;
+        max-width: 100rem;
+        max-height: 100rem;
+        min-width: 2rem;
+        min-height: 2rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        object-position: center;
+        transition: 0s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    }
+}
+
+/* ===================== Оформление ===================== */
+/* --- Обои с плавным зумом --- */
+/* Обои сразу приближены (без анимации при загрузке страницы),
+   плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
+html { background: rgb(var(--bg-color)); }
+
+body { background: none !important; }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--bg-image) center / cover no-repeat;
+    transform: scale(var(--bg-zoom));
+    filter: blur(var(--bg-blur));
+    /* одинаковая анимация на приближение и отдаление */
+    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+html:not(:hover) body::before {
+    transform: scale(1);
+}
+
+/* --- Мягкий светлый текст без «кислотной» белизны --- */
+body,
+.b-text,
+.text,
+p,
+.profile-head .c-brief,
+.b-forum_message .body {
+    color: rgb(var(--text));
+}
+
+html input[type="checkbox"]:not(#u) {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px;
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(var(--text), .55) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+}
+
+/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
+   не зависит от шрифта и высоты строки */
+html input[type="checkbox"]:not(#u)::before {
+    content: none !important;
+    display: none !important;
+}
+
+html input[type="checkbox"]:not(#u),
+html input[type="checkbox"]:not(#u):focus,
+html input[type="checkbox"]:not(#u):active {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTIuNiA2LjNsMi4zIDIuMyA0LjUtNC45IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS45IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=") !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    background-size: 0 0 !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .16s ease-in !important;
+}
+
+html input[type="checkbox"]:not(#u):checked {
+    background-color: rgb(var(--accent)) !important;
+    border-color: rgb(var(--accent)) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .18) !important;
+    background-size: 12px 12px !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
+}
+
+html input[type="checkbox"]:not(#u):focus-visible {
+    box-shadow: 0 0 0 3px rgba(var(--accent), .3) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    html input[type="checkbox"]:not(#u):not(:checked):hover {
+        border-color: rgba(var(--accent), .8) !important;
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .l-page {
+        animation: none !important;
+        transition: none !important;
+    }
+    .l-page {
+        padding: 10px !important;
+        margin-top: 5px !important;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body#profiles_show .about.block {
+        margin-top: 20px;
+        clear: left;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cc-2a > .c-column {
+        display: inline-block;
+        margin-right: 0  !important;
+    }
+    .b-breadcrumbs {
+        font-size: 12px !important;
+    }
+    body[data-locale="ru"] .b-summary_marker:before,
+    body[data-locale="ru"] .b-offtopic_marker:before,
+    body[data-locale="ru"] {
+        position: static;
+    }
+    body[data-locale="ru"] .b-offtopic_marker:before {
+        margin-left: 0 ;
+        margin-right: 12px;
+    }
+    body[data-locale="ru"] .b-offtopic_marker {
+        width: 65px;
+        margin: 0;
+    }
+    body[data-locale="ru"] .b-new_marker:before {
+        margin-top: 20px;
+        right: 9px;
+        content: "\f111";
+        width: 20px;
+        color: rgba(var(--accent), var(--hundred));
+        background: none !important;
+        font: normal normal normal 16px/1 FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        box-shadow: none !important;
+        padding: 0;
+    }
+    body[data-locale="ru"] .b-new_marker {
+        margin: 0;
+        width: 20px;
+    }
+    body[data-locale="ru"] .b-summary_marker {
+        margin: 0;
+    }
+    body[data-locale="ru"] .b-summary_marker:before,
+    body[data-locale="ru"] .b-offtopic_marker:before,
+    body[data-locale="ru"] .b-abuse_marker:before {
+        margin-top: 0 ;
+    }
+    body[data-locale="ru"] .b-summary_marker.off:hover:before,
+    body[data-locale="ru"] .b-summary_marker.active:hover:before {
+        border: none;
+    }
+    .c-column.c-right {
+        position: absolute;
+        top: 0;
+    }
+    body#profiles_show .c-column.c-right .b-catalog_entry {
+        padding: 8px !important;
+    }
+    body#profiles_show .profile-content {
+        margin-top: -320px;
+    }
+    body#profiles_show .profile-head {
+        position: relative;
+        top: -320px;
+        height: 320px;
+        background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
+        border-radius: 0 ;
+        padding: 20px 15px 0 15px !important;
+    }
+    .cc-second {
+        display: none;
+    }
+    body#profiles_show .l-page {
+        margin-top: 326px !important;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    body#profiles_show .l-page {
+        border-radius: 0 ;
+        margin-top: 324px !important;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    body#profiles_show .c-column.c-right .b-catalog_entry {
+        padding: 4px !important;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .cc {
+        margin-bottom: 10px;
+    }
+    .l-page {
+        padding: 10px !important;
+        margin-top: 5px !important;
+        outline: 40px solid color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    body#profiles_show .b-user.avatar img {
+        width: 90%;
+    }
+    body#profiles_show .b-club .logo {
+        width: 100% !important;
+    }
+    body#profiles_show .l-page {
+        border-radius: 0 ;
+        margin-top: 364px !important;
+    }
+    body#profiles_show .profile-head {
+        top: -360px;
+    }
+    body#profiles_show .profile-content {
+        margin-top: -360px;
+    }
 }

@@ -1,0 +1,265 @@
+/* ===== components/buttons =====
+   кнопки .b-link_button, .b-button, button, кнопки действий */
+
+/* кнопка смотреть онлайн */
+.b-link_button {
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-link_button:hover {
+        background-color: var(--accent-hover) !important;
+        color: rgb(var(--text-strong)) !important;
+        border: none !important;
+    }
+}
+
+.b-link_button {
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    border: none;
+    color: rgba(var(--text-strong), 1) !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+}
+
+/* нет комментариев */
+.buttons .cancel {
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+}
+
+.item-add:before,
+.item-add:after {
+    color: rgba(var(--text-2), 1);
+}
+
+.item-add:hover:before,
+.item-add:hover:after {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.buttons .item-reply:before,
+.buttons .item-moderation:before,
+.buttons .item-edit:before,
+.buttons .item-delete:before,
+.buttons .item-ignore:before,
+.buttons .item-apply:before,
+.buttons .item-request-confirm:before,
+.buttons .item-delete-confirm:before,
+.buttons .item-cancel:before,
+.buttons .item-request-reject:before,
+.buttons .item-delete-cancel:before,
+.buttons .item-moderation-cancel:before {
+    font-size: 16px !important;
+}
+
+.buttons .item-ignore:hover,
+.buttons .item-delete:hover,
+.buttons .item-edit:hover,
+.buttons .item-reply:hover,
+.buttons .item-moderation:hover,
+.buttons .item-apply:hover,
+.buttons .item-request-confirm:hover,
+.buttons .item-delete-confirm:hover,
+.buttons .item-cancel:hover,
+.buttons .item-request-reject:hover,
+.buttons .item-delete-cancel:hover,
+.buttons .item-moderation-cancel:hover,
+.buttons .item-delete-confirm:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.buttons .main-controls a:hover {
+    color: rgba(var(--link), 1);
+}
+
+.buttons .item-quote:before {
+    color: rgba(var(--accent), 1);
+}
+
+.buttons .item-delete:before,
+.buttons .item-edit:before,
+.buttons .item-reply:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons .item-delete:before {
+    content: "\f1f8";
+}
+
+.buttons .item-edit:before {
+    content: "\f040";
+}
+
+.buttons .item-reply:before {
+    content: "\f27a";
+}
+
+.buttons .item-ignore.selected.selected {
+    color: #b9533a;
+}
+
+.buttons > div {
+    margin-right: 20px;
+    margin-top: 4px;
+}
+
+.b-link_button.dark.disabled,
+.b-link_button.dark.disabled:active {
+    cursor: default;
+    background-color: #27415a;
+    border: 2px dashed rgba(142, 128, 73, 0.25);
+    color: #bbd5e8 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-link_button.dark.disabled:hover {
+        cursor: default;
+        background-color: #27415a;
+        border: 2px dashed rgba(142, 128, 73, 0.25);
+        color: #bbd5e8 !important;
+    }
+}
+
+.b-button[disabled],
+.b-button.disabled {
+    cursor: default;
+    pointer-events: none;
+    background-color: rgba(var(--glass), 0.4);
+    border-radius: 4px !important;
+    color: rgba(var(--text), 0.3);
+    padding: 6px 10px 6px 10px;
+    transition: 0.3s ease-out;
+    border: none;
+    font-family: 'Comfortaa', sans-serif;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+}
+
+.flat_button {
+    background-color: #355980 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .flat_button:hover {
+        background-color: #416d9c !important;
+    }
+}
+
+.bulma .button.is-info.is-hovered {
+    background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent) !important;
+    color: rgb(var(--text-strong)) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .bulma .button.is-info:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent) !important;
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+
+.bulma .button.is-info {
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    border-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    color: rgba(var(--text-strong), var(--hundred));
+    transition: 0.2s ease;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    border-radius: 14px;
+}
+
+.b-link_button.dark-2 {
+    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border-radius: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-link_button.dark-2:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
+    }
+}
+
+.subheadline-buttons {
+    margin: -0.1rem 0 0 0;
+    padding-top: 0;
+    right: 5px;
+    height: 28px;
+    z-index: 3;
+}
+
+.subheadline-buttons a span {
+    line-height: 1.4;
+}
+
+.c-buttons.cc-3a {
+    margin-top: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-buttons.cc-3a .c-column.c-control.report:hover {
+        background: #9c3e19d6 !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    .c-buttons.cc-3a .c-control:hover {
+        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+.c-buttons.cc-3a {
+    width: 100% !important;
+}
+
+video#main-video_html5_api .vjs-big-play-button {
+    margin-top: -45px !important;
+}
+
+.b-link_button.maxi,
+.create-topic {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .item-delete:after {
+        content: "Удалить" !important;
+    }
+    .item-cancel:after {
+        content: "Отмена" !important;
+    }
+    .item-reply:after {
+        content: "Ответить" !important;
+    }
+    .item-edit:after {
+        content: "Редактировать" !important;
+    }
+    .item-delete-confirm:after {
+        content: "Принять" !important;
+    }
+    .item-delete-cancel:after {
+        content: "Отменить" !important;
+    }
+    .buttons .item-reply:before,
+    .buttons .item-moderation:before,
+    .buttons .item-edit:before,
+    .buttons .item-delete:before,
+    .buttons .item-ignore:before,
+    .buttons .item-apply:before,
+    .buttons .item-request-confirm:before,
+    .buttons .item-delete-confirm:before,
+    .buttons .item-cancel:before,
+    .buttons .item-request-reject:before,
+    .buttons .item-delete-cancel:before,
+    .buttons .item-moderation-cancel:before {
+        font-size: 23px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .buttons > div {
+        margin-right: 0 ;
+    }
+}

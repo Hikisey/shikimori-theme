@@ -1,0 +1,111 @@
+/* ===== components/badges =====
+   статусы и метки: *_status_tag, *_marker, .b-tag */
+
+/* цвет значка отзыв */
+.locale-ru .b-summary_marker:before {
+    background-color: #1a421d;
+    border: rgba(var(--glass), 0.4);
+    color: #c4e9ed;
+}
+
+/* цвет значка оффтоп */
+.locale-ru .b-offtopic_marker.off:before,
+.locale-ru .b-offtopic_marker.active.off:before {
+    color: #f6e5ec;
+    border-color: #54263a;
+    background-color: #54263a;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .locale-ru .b-offtopic_marker.off:hover:before {
+        border-color: rgba(var(--accent), 1);
+        background-color: rgba(var(--accent), 1);
+        color: rgba(var(--text-strong), 1);
+    }
+}
+
+.locale-ru .b-offtopic_marker.active:before {
+    color: #f6e5ec;
+    border-color: #7c3152;
+    background-color: #7c3152;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .locale-ru .b-offtopic_marker.active:hover:before {
+        border-color: rgba(var(--accent), 1);
+        background-color: rgba(var(--accent), 1);
+        color: rgba(var(--text-strong), 1);
+    }
+}
+
+.locale-ru .b-offtopic_marker:before {
+    background-color: #c05986;
+    border: 1px solid #7876bf;
+    color: #f6e5ec;
+}
+
+.line .value .b-tag:before,
+.tags .b-tag:before {
+    background: rgba(var(--glass), 1);
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.line [class*="_status_tag"].other::before {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+[class*="new_marker"].off {
+    width: 0 !important;
+}
+
+.b-new_marker.active:before {
+    background-color: #004b80 !important;
+    border-color: #004b80 !important;
+}
+
+.b-new_marker.off:before {
+    background-color: transparent !important;
+}
+
+.b-new_marker.off:hover:before {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.b-new_marker.off:before {
+    display: none;
+}
+
+.c-info-right .b-tag {
+    text-align: center;
+    color: rgba(var(--text-strong), 1);
+    font: 900 22px "Open Sans";
+    line-height: 35px;
+    border-radius: 18px;
+    margin: 10px 30px !important;
+    height: auto;
+    width: calc(100% - 60px);
+    text-decoration: none;
+    border: 2px solid rgba(var(--glass), 0.4);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    transition: 0.2s ease;
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 767px) {
+    .b-form .b-summary_marker {
+        top: 0 ;
+        right: 11px;
+    }
+}

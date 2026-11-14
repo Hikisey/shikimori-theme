@@ -1,1449 +1,2977 @@
-/* ================================================================
-   Телефоны (iPhone / Safari и др.): размытый фон, фильтры по центру
-   экрана, подписи без наложения на значки
-   ================================================================ */
-@media screen and (max-width: 767px) {
-    /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
-    html body::before,
-    html:not(:hover) body::before {
-        transform: scale(1.04);
-        transition: none;
-        filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
-        -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
-    }
-
-    /* --- фильтры каталога и списков: карточка по центру экрана --- */
-    /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
-    section.l-page.menu-expanded::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: 900;
-        background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
-        animation: shiki-fade .3s ease both;
-    }
-    section.l-page.menu-expanded aside.l-menu {
-        display: block !important;
-        position: fixed !important;
-        z-index: 950 !important;
-        top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: min(calc(100vw - 32px), 440px) !important;
-        max-width: none !important;
-        height: auto !important;
-        max-height: 70vh;
-        max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
-        margin: 0 !important;
-        padding: 0 16px 16px !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch;
-        transform: translate(-50%, -50%);
-        transform-origin: 50% 50%;
-        /* «жидкое стекло» */
-        background:
-            linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
-            color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
-        -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), 0.14) !important;
-        border-radius: 22px !important;
-        outline: none !important;
-        box-shadow:
-            inset 0 1px 0 rgba(var(--glass-light), 0.22),
-            inset 0 0 0 1px color-mix(in srgb, var(--accent-dim) 38%, transparent),
-            0 0 0 1px color-mix(in srgb, var(--accent-dim) 25%, transparent),
-            0 20px 50px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
-        animation: shiki-sheet .34s cubic-bezier(.22, 1.2, .36, 1) both;
-        scrollbar-width: thin;
-        scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
-    }
-    /* реклама и пустые служебные блоки не занимают место над заголовком */
-    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
-    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
-    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
-    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
-        display: none !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-filters {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        margin: 0 -16px 12px !important;
-        padding: 14px 16px 10px !important;
-        background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
-        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
-        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
-        border-radius: 0 !important;
-        width: auto !important;
-        max-width: none !important;
-        box-shadow: none !important;
-        color: rgb(var(--accent));
-    }
-    /* поля внутри стекла тоже полупрозрачные; все значения одного размера
-       (при шрифте мельче 16px iOS приближает страницу при фокусе) */
-    section.l-page.menu-expanded aside.l-menu {
-        --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        --field-font: 16px;
-        --field-height: 40px;
-    }
-    section.l-page aside.l-menu select:not(#u),
-    section.l-page aside.l-menu .c-ms-control:not(#u),
-    section.l-page aside.l-menu .c-ms-placeholder,
-    section.l-page aside.l-menu .c-ms-chips,
-    section.l-page aside.l-menu .c-ms-search,
-    section.l-page aside.l-menu .c-ms-option:not(#u),
-    section.l-page aside.l-menu .c-score-input {
-        font-size: 16px !important;
-        line-height: 1.4 !important;
-        font-family: "Comfortaa", sans-serif !important;
-    }
-    section.l-page aside.l-menu select:not(#u),
-    section.l-page aside.l-menu .c-ms-control:not(#u),
-    section.l-page aside.l-menu .c-score-input {
-        min-height: 40px !important;
-        height: 40px !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-    section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
-    section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
-    /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
-    section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        margin-top: var(--drop-gap);
-    }
-    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
-    .l-page .menu-toggler {
-        z-index: 999 !important;
-        bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
-    }
-    .l-page .menu-toggler .toggler {
-        backdrop-filter: blur(var(--glass-blur));
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        transition: background-color .2s ease;
-    }
-    .l-page.menu-expanded .menu-toggler .toggler {
-        background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
-    }
-    .l-page.menu-expanded .menu-toggler .toggler:after {
-        content: "\f00d" !important;
-        font-size: 22px !important;
-    }
-    /* iOS приближает страницу при фокусе на полях мельче 16px */
-    @supports (-webkit-touch-callout: none) {
-        select:not(#u),
-        .c-ms-search,
-        .c-score-input,
-        input[type="text"],
-        input[type="search"],
-        textarea {
-            font-size: 16px !important;
-        }
-    }
-
-    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
-    html body.p-profiles .profile-head .c-brief header.head .misc {
-        position: static !important;
-        top: auto !important;
-        margin: 4px 0 0 !important;
-        width: 100%;
-        text-align: center;
-    }
-    html body.p-profiles .profile-head .c-info {
-        position: static !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        margin: 14px 0 0 !important;
-        padding: 0 !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info,
-    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
-        display: flex !important;
-        flex-direction: column;
-        gap: 10px;
-        width: 100% !important;
-        height: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        margin: 0 !important;
-        padding: 10px 12px 12px !important;
-        box-sizing: border-box;
-        line-height: normal !important;
-        border-radius: 14px;
-        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
-        backdrop-filter: blur(var(--glass-blur));
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga { order: 2; }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
-        position: static !important;
-        display: block !important;
-        width: auto !important;
-        margin: 0 0 8px !important;
-        padding: 0 40px 0 0 !important;
-        text-align: left !important;
-        line-height: 18px !important;
-        font-size: 13px !important;
-        opacity: 1 !important;
-        color: rgb(var(--text)) !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
-        position: relative !important;
-        margin: 0 !important;
-        height: 26px !important;
-        line-height: 26px !important;
-        border-radius: 8px;
-        overflow: hidden !important;
-        font-size: 12px;
-    }
-    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
-        display: none !important;
-        content: none !important;
-    }
-    /* совместимость — значок в правом верхнем углу карточки */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
-        position: absolute !important;
-        top: 9px !important;
-        right: 12px !important;
-        left: auto !important;
-        bottom: auto !important;
-        display: flex !important;
-        align-items: center;
-        gap: 6px;
-        height: 20px;
-        margin: 0 !important;
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        margin: 0 !important;
-        line-height: 20px !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a::before,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text::before {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        font-size: 17px !important;
-        line-height: 20px !important;
-        margin: 0 !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-additionals {
-        position: static !important;
-        display: block !important;
-        width: auto !important;
-        height: auto !important;
-        margin: 8px 0 0 !important;
-        padding: 0 !important;
-        background: none !important;
-        box-shadow: none !important;
-        text-align: center;
-        font-size: 12px;
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
-    html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
-
-    /* шапка профиля и содержимое идут обычным потоком: шапка растёт по
-       содержимому и не наезжает на «Друзья», нет пустой полосы */
-    html body#profiles_show .l-page { margin-top: 5px !important; }
-    html body#profiles_show .profile-head {
-        top: 0 !important;
-        height: auto !important;
-        margin-bottom: 0 !important;
-    }
-    html body#profiles_show .profile-content { margin-top: 0 !important; }
-    html body#profiles_show .profile-content > .cc-2.block {
-        display: flex !important;
-        flex-direction: column;
-        height: auto !important;
-        margin-top: 4px !important;
-    }
-    html body#profiles_show .profile-content > .cc-2.block > .c-column {
-        position: static !important;
-        width: 100% !important;
-        margin: 0 !important;
-        top: auto !important;
-        bottom: auto !important;
-    }
-    html body#profiles_show .profile-content > .cc-2.block > .c-right { order: 1; }
-    html body#profiles_show .profile-content > .cc-2.block > .c-right > .block:last-child { margin-bottom: 0 !important; }
-    html body#profiles_show .profile-content > .cc-2.block > .c-left { order: 2; margin-top: 14px !important; }
-    /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
-    html body#profiles_show .profile-content .c-left .lifetime {
-        line-height: normal !important;
-        padding-top: 0 !important;
-    }
-    html body#profiles_show .profile-content .c-left .lifetime .title {
-        position: static !important;
-        display: flex !important;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 10px;
-        width: 100% !important;
-        height: auto !important;
-        margin: 0 0 12px !important;
-        padding: 0 !important;
-        line-height: 1.3 !important;
-        text-align: left !important;
-        transform: none !important;
-    }
-    html body#profiles_show .profile-content .c-left .lifetime .title .label,
-    html body#profiles_show .profile-content .c-left .lifetime .title .value {
-        position: static !important;
-        float: none !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        transform: none !important;
-        line-height: 1.3 !important;
-    }
-    html body#profiles_show .profile-content .c-left .lifetime .title .label {
-        flex: 1 1 auto;
-        min-width: 0;
-        text-align: left !important;
-    }
-    html body#profiles_show .profile-content .c-left .lifetime .title .value {
-        flex: 0 0 auto;
-        text-align: right !important;
-        font-size: 12px !important;
-        white-space: nowrap;
-    }
-
-    /* друзья и клубы — две стеклянные карточки */
-    body.p-profiles-show .cc-2a {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin: 14px 0 !important;
-    }
-    body.p-profiles-show .cc-2a > .c-column {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        box-sizing: border-box;
-        border-radius: 14px;
-        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-        min-width: 0;
-    }
-    body.p-profiles-show .cc-2a > .c-column > .subheadline {
-        margin: 0 0 8px !important;
-        width: auto !important;
-    }
-    body.p-profiles-show .cc-friends {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
-        gap: 6px 4px;
-        margin: 0 !important;
-    }
-    body.p-profiles-show .cc-friends .b-user {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center;
-    }
-    body.p-profiles-show .cc-friends .b-user img {
-        width: 30px !important;
-        height: 30px !important;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 !important;
-    }
-    body.p-profiles-show .cc-2a .b-clubs {
-        display: flex !important;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: flex-start;
-    }
-    body.p-profiles-show .cc-2a .b-clubs .b-club {
-        width: auto !important;
-        margin: 0 !important;
-    }
-    body.p-profiles-show .cc-2a .b-clubs .b-club img.logo {
-        width: 44px !important;
-        height: 44px !important;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    html body#profiles_show.p-profiles-show .cc-2a .b-nothing_here {
-        margin: 0 !important;
-        font-size: 12.5px;
-        line-height: 1.4 !important;
-        color: rgb(var(--text-2));
-    }
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .line .value a {
+    color: rgba(var(--link), var(--hundred));
 }
 
-/* --- страница аниме: действия под постером плитками «значок над текстом» --- */
-@media screen and (max-width: 480px) {
-    .b-db_entry > .c-image .c-actions {
-        min-width: 0 !important;
-        flex: 1 1 0 !important;
-    }
-    .b-db_entry > .c-image .c-actions .b-subposter-actions {
-        align-items: stretch !important;
-        gap: 6px;
-    }
-    .b-db_entry > .c-image .c-actions .b-subposter-action {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        position: relative;
-        width: 100% !important;
-        min-width: 0;
-        height: auto !important;
-        min-height: 54px;
-        margin: 0 !important;
-        padding: 8px 4px !important;
-        box-sizing: border-box;
-        text-align: center !important;
-        border-radius: 12px;
-        background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), .06);
-    }
-    .b-db_entry > .c-image .c-actions .b-subposter-action::before {
-        position: static !important;
-        display: block !important;
-        width: auto !important;
-        height: auto !important;
-        font-size: 18px !important;
-        line-height: 1 !important;
-        opacity: 1 !important;
-        color: rgb(var(--accent));
-    }
-    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
-        content: attr(data-text);
-        display: block;
-        width: 100% !important;
-        text-align: center !important;
-        font-size: clamp(10.5px, 3vw, 12px);
-        line-height: 1.25;
-        white-space: normal;
-        overflow-wrap: break-word;
-        -webkit-hyphens: auto;
-        hyphens: auto;
-        color: rgb(var(--text));
-    }
-    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-add:not([data-text])::after { content: attr(data-add_text); }
-    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove:not([data-text])::after { content: attr(data-remove_text); }
-    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove::before {
-        color: var(--accent-hover);
-    }
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .line .value a:hover {
+    color: rgba(var(--link), var(--hundred));
 }
 
-@keyframes shiki-fade {
-    from { opacity: 0; }
-}
-@keyframes shiki-sheet {
-    from { opacity: 0; transform: translate(-50%, calc(-50% + 24px)) scale(.9); }
-    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
-@keyframes shiki-sheet-fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner .rating .text {
+    color: rgba(var(--text), var(--hundred));
 }
 
-/* ================================================================
-   Телефоны: читаемость текста поверх обоев
-   ================================================================ */
-@media screen and (max-width: 767px) {
-    :root {
-        --glass-bg: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        --glass-border: 1px solid rgba(var(--glass-light), .06);
-        --glass-filter: blur(var(--glass-blur)) saturate(110%);
-        --text-soft: rgba(var(--text), .86);
-    }
-    /* мягкая тень у текста, который лежит прямо на обоях */
-    .l-page {
-        text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
-    }
-    .l-page :is(input, select, textarea, button, .c-ms-control, .c-ms-dropdown, aside.l-menu, .b-stats_bar, .cc-2a > .c-column, .b-subposter-action, .b-catalog_entry .cover .image-decor, .b-button, .b-input, .b-entry-info, .b-text_with_paragraphs) {
-        text-shadow: none;
-    }
-
-    /* второстепенный текст светлее */
-    .b-catalog_entry .misc,
-    .b-catalog_entry .misc span,
-    .l-page header.head .notice,
-    .pagination,
-    .pagination span,
-    .pagination .link.disabled,
-    .hint,
-    .b-input .hint,
-    .b-form .hint,
-    .b-nothing_here,
-    .p-profiles .profile-head .c-brief .notice,
-    .p-profiles .profile-head .c-brief .notice span,
-    .p-profiles-show .lifetime .times .time,
-    .p-profiles-show .lifetime .title .label,
-    .p-profiles-show .lifetime .title .value,
-    .b-clubs,
-    .b-clubs .b-nothing_here,
-    .b-entry-info .key {
-        color: var(--text-soft) !important;
-        opacity: 1 !important;
-    }
-
-    /* стеклянные подложки под свободно лежащим текстом */
-    .l-page > div > header.head,
-    .l-page > div > .pagination,
-    .p-profiles .profile-head .c-brief header.head,
-    html body#profiles_show .profile-content .c-left .lifetime,
-    html body#profiles_show .profile-content .c-left .activity,
-    .c-about .b-entry-info,
-    .c-description .b-text_with_paragraphs,
-    body.p-profiles-edit .l-content .block:not(.block .block),
-    body.p-user_preferences .l-content .block:not(.block .block) {
-        background: var(--glass-bg) !important;
-        backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: var(--glass-border);
-        border-radius: 14px;
-        box-sizing: border-box;
-    }
-    .l-page > div > header.head {
-        padding: 10px 12px !important;
-        margin-bottom: 10px !important;
-    }
-    .l-page > div > .pagination {
-        display: flex !important;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 6px;
-        padding: 6px 12px !important;
-        margin-bottom: 10px !important;
-        border-radius: 12px;
-    }
-    .p-profiles .profile-head .c-brief header.head {
-        width: fit-content !important;
-        max-width: 100%;
-        margin: 10px auto 0 !important;
-        padding: 6px 16px 8px !important;
-        border-radius: 16px;
-    }
-    html body#profiles_show .profile-content .c-left .lifetime,
-    html body#profiles_show .profile-content .c-left .activity {
-        padding: 10px 12px !important;
-        margin-bottom: 10px !important;
-    }
-    .c-about .b-entry-info,
-    .c-description .b-text_with_paragraphs {
-        padding: 10px 12px !important;
-    }
-    body.p-profiles-edit .l-content .block:not(.block .block),
-    body.p-user_preferences .l-content .block:not(.block .block) {
-        padding: 10px 12px !important;
-    }
-    /* заголовки разделов — тот же стеклянный «чип» */
-    .l-page .subheadline {
-        backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-    }
+/*test*/
+/* из components/cards */
+.b-catalog_entry,
+.b-catalog_entry .cover .image-decor,
+.b-catalog_entry .cover .image-decor img,
+.b-catalog_entry .cover .image-cutter,
+.b-catalog_entry .cover .image-cutter img {
+    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
 }
 
-/* ================================================================
-   Телефоны: списки фильтров в карточке плавно раскрываются и
-   сворачиваются, поля ниже едут вместе с ними (высота через строки
-   сетки 0fr ↔ 1fr; список не исчезает, пока не свернётся)
-   ================================================================ */
-@media screen and (max-width: 767px) {
-    section.l-page aside.l-menu .c-ms {
-        display: grid !important;
-        grid-template-rows: auto 0fr;
-        grid-template-columns: minmax(0, 1fr);
-        /* сворачивание: плавно, без рывка в начале */
-        transition: grid-template-rows .32s cubic-bezier(.4, 0, .2, 1);
-    }
-    section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
-        grid-template-rows: auto 1fr;
-        /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
-        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
-    }
-    section.l-page aside.l-menu .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
-        display: block !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-        margin-top: 0 !important;
-        border-width: 0 !important;
-        clip-path: none !important;
-        transform: none !important;
-        opacity: 0 !important;
-        visibility: hidden;
-        transition: opacity .22s ease, margin-top .32s cubic-bezier(.4, 0, .2, 1),
-                    border-width .32s step-end, visibility 0s linear .32s !important;
-    }
-    section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
-        margin-top: var(--drop-gap) !important;
-        border-width: 1px !important;
-        opacity: 1 !important;
-        visibility: visible;
-        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
-                    border-width 0s, visibility 0s !important;
-    }
-    /* при переходе к другому полю старый список тоже сворачивается плавно */
-    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms,
-    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms,
-    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) {
-        grid-template-rows: auto 0fr;
-    }
-    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown:not(#u) {
-        opacity: 0 !important;
-        visibility: hidden;
-        margin-top: 0 !important;
-    }
+/* из components/cards */
+.b-catalog_entry .cover .image-decor .image-cutter {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9px;
 }
 
-/* ================================================================
-   v1.2.7 — iPhone: нативные списки, без клавиатуры, обои из кеша
-   ================================================================ */
-
-/* Сенсорные экраны: select — обычный системный (колёсико iOS).
-   Новый base-select WebKit 26 на iPhone не открывался и дёргал анимации в настройках. */
-@media (hover: none) and (pointer: coarse) {
-    select:not(#u),
-    select:not(#u)::picker(select) {
-        -webkit-appearance: none !important;
-        appearance: none !important;
-    }
-    select:not(#u) {
-        display: inline-block !important;
-        padding-right: 30px !important;
-        background: var(--field-arrow), var(--field-bg) !important;
-    }
-    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
-    select:not(#u)::picker-icon { display: none !important; }
-    select:not(#u):active { transform: none !important; }
-
-    /* «Залипающий» hover на iPhone: после первого тапа кнопка оставалась поднятой,
-       и следующие нажатия уже не анимировались. Подъём — только по нажатию. */
-    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
-    body#clubs_edit .b-options-floated a:hover:after {
-        background: rgba(var(--glass), .95) !important;
-        border-color: rgba(var(--glass-light), .12) !important;
-        transform: none;
-        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
-    }
-    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:hover:after,
-    body#clubs_edit .b-options-floated a.selected:hover:after {
-        background: rgba(var(--accent), .18) !important;
-        border-color: rgba(var(--accent), .7) !important;
-    }
-    .p-profiles-edit .account .oauth a:hover,
-    .p-profiles-edit .account .oauth .b-link_button:hover {
-        border-color: rgba(var(--glass-light), .12) !important;
-        background: rgba(var(--glass), .95) !important;
-        transform: none;
-        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
-    }
+/* из components/cards */
+.b-catalog_entry.completed .cover .misc span {
+    color: #99bba7;
 }
 
-@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
-    /* Короткие списки (до 15 пунктов) без строки поиска: скрипт ставит в неё фокус,
-       iPhone выдвигает клавиатуру, и карточка фильтров прыгает. */
-    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
-        display: none !important;
-    }
-    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
-}
-/* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
-@media screen and (max-width: 767px) {
-    section.l-page aside.l-menu .c-ms-search:not(#u) {
-        display: block;
-        width: 100% !important;
-        height: 40px !important;
-        margin: 0 !important;
-        padding: 0 14px !important;
-        box-sizing: border-box !important;
-        background: rgba(var(--glass-light), .03) !important;
-        border: 0 !important;
-        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        color: rgb(var(--text)) !important;
-        outline: none !important;
-    }
-    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
-    section.l-page aside.l-menu .c-ms-options:not(#u) {
-        margin-top: 0 !important;
-        max-height: 220px;
-        overflow-y: auto;
-    }
-    /* высота карточки не пересчитывается, когда прячется панель Safari */
-    section.l-page.menu-expanded aside.l-menu:not(#u) {
-        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
-    }
+/* из components/cards */
+.b-catalog_entry.completed .cover .title span {
+    color: #cce0d1;
 }
 
-/* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
-   Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
-@media screen and (max-width: 767px) {
-    html { background-color: rgb(var(--bg-color-mobile)) !important; }
-    html body::before {
-        background: var(--bg-image-mobile) center / cover no-repeat;
-        background-color: rgb(var(--bg-color-mobile));
-    }
+/* из components/cards */
+.b-catalog_entry.dropped .cover .misc span {
+    color: #c7a7a1;
 }
 
-/* ================================================================
-   v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
-   ================================================================ */
-@media screen and (max-width: 767px) {
-    /* цветные заголовки главной — как «Темы дня» */
-    html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
-        background: rgba(var(--glass), .6) !important;
-        color: rgba(var(--text-2), 1) !important;
-    }
-    html body .headline:has(> .misc-links) {
-        min-height: 36px;
-        height: auto !important;
-        padding: 4px 4px 4px 14px !important;
-        box-sizing: border-box;
-        gap: 10px;
-        backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-    }
-    /* кнопки — справа, в одну строку, внутри полосы */
-    html body .headline > .misc-links {
-        display: flex !important;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 6px;
-        width: auto !important;
-        height: auto !important;
-        margin: 0 0 0 auto !important;
-        flex: 0 0 auto;
-    }
-    html body .headline > .misc-links > a {
-        display: block;
-        width: 28px;
-        height: 28px;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-size: 0 !important;
-    }
-    html body .headline > .misc-links > a::before { display: none !important; }
-    html body .headline > .misc-links > a::after {
-        display: flex !important;
-        width: 28px !important;
-        height: 28px !important;
-        padding: 0 !important;
-        box-sizing: border-box;
-        border-radius: 9px !important;
-        background: rgba(var(--glass-light), .05) !important;
-        border: 1px solid rgba(var(--glass-light), .09);
-        box-shadow: none !important;
-        color: rgba(var(--text), .72) !important;
-        font-size: 13px !important;
-        line-height: 1;
-        transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .12s ease !important;
-    }
-    html body .headline > .misc-links > a:active::after {
-        background: rgba(var(--accent), .18) !important;
-        border-color: rgba(var(--accent), .6);
-        color: rgb(var(--link)) !important;
-        transform: scale(.92);
-        transition-duration: .06s !important;
-    }
+/* из components/cards */
+.b-catalog_entry.dropped .cover .title span {
+    color: var(--tone-e4d7d7);
 }
 
-/* Касание карточки на телефоне: короткий отклик нажатия, без «залипания» (hover-эффекты
-   теперь только для мыши, см. @media (hover: hover) and (pointer: fine)). */
-@media (hover: none) {
-    .b-catalog_entry .cover:active,
-    .b-db_entry-variant-photo:active,
-    .about .b-catalog_entry .cover:active {
-        transform: scale(.97);
-        transition: transform .08s ease;
-    }
+/* из components/cards */
+.b-catalog_entry.on_hold .cover .misc span {
+    color: #a79e8e;
 }
 
-/* ================================================================
-   v1.2.11 — список аниме/манги (ПК): заголовки, поиск, переключатели, карандаш
-   ================================================================ */
-@media screen and (min-width: 768px) {
-    /* заголовки «Список аниме» и групп («Запланировано»…) — стекло с акцентной чертой слева */
-    .p-user_rates-index .l-content > .subheadline,
-    .p-user_rates-index .list-groups header .subheadline {
-        height: 38px !important;
-        min-height: 38px;
-        padding: 0 16px 0 14px !important;
-        box-sizing: border-box;
-        border-radius: 12px !important;
-        background: rgba(var(--glass), .62) !important;
-        border: 1px solid rgba(var(--glass-light), .07) !important;
-        border-left: 3px solid rgb(var(--accent)) !important;
-        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
-        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        color: rgba(var(--text), .92) !important;
-        letter-spacing: .04em;
-        display: flex !important;
-        align-items: center;
-    }
-    .p-user_rates-index .list-groups header { margin-top: 22px; }
-    .p-user_rates-index .list-groups header:first-of-type { margin-top: 0; }
-    .p-user_rates-index .list-groups header .b-options-floated.collapse {
-        height: 38px;
-        display: flex;
-        align-items: center;
-        padding-right: 14px;
-        margin: 0 !important;
-    }
-
-    /* кнопки «списком / постерами» — по центру полосы, одинаковые квадраты */
-    .p-user_rates-index .l-content > .subheadline-buttons {
-        height: 38px !important;
-        margin: 0 !important;
-        padding: 0 6px 0 0 !important;
-        display: flex;
-        align-items: center;
-    }
-    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        height: 38px;
-        margin: 0 !important;
-    }
-    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 28px !important;
-        height: 28px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border-radius: 8px;
-        line-height: 1 !important;
-        color: rgba(var(--text), .62) !important;
-        transition: background-color .2s ease, color .2s ease;
-    }
-    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::before,
-    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::after {
-        margin: 0 !important;
-        line-height: 1 !important;
-        position: static !important;
-        color: inherit !important;
-    }
-    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher.selected {
-        color: rgb(var(--accent)) !important;
-        background: rgba(var(--accent), .14);
-    }
-
-    /* поиск по списку — такая же стеклянная полоса, как заголовки, с лупой слева;
-       одинаковые отступы: «Список аниме» → поиск → первая группа */
-    html body.p-user_rates-index .l-content > .b-collection_search {
-        margin: 12px 0 12px !important;
-        padding: 0 !important;
-    }
-    .p-user_rates-index .b-collection_search .field {
-        position: relative;
-        margin: 0 !important;
-    }
-    .p-user_rates-index .b-collection_search .field::before {
-        content: "\f002";
-        font-family: "FontAwesome", sans-serif;
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 13px;
-        line-height: 1;
-        color: rgba(var(--text), .45);
-        pointer-events: none;
-        z-index: 1;
-        transition: color .2s ease;
-    }
-    .p-user_rates-index .b-collection_search .field:focus-within::before { color: rgb(var(--accent)); }
-    html body.p-user_rates-index .l-content > .b-collection_search .field input {
-        width: 100% !important;
-        height: 38px !important;
-        box-sizing: border-box;
-        margin: 0 !important;
-        padding: 0 14px 0 38px !important;
-        border-radius: 12px !important;
-        border: 1px solid rgba(var(--glass-light), .07) !important;
-        background-color: rgba(var(--glass), .62) !important;
-        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
-        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        color: rgb(var(--text)) !important;
-        outline: none !important;
-        transition: border-color .2s ease, box-shadow .2s ease;
-    }
-    .p-user_rates-index .b-collection_search .field input::placeholder { color: rgba(var(--text), .45); }
-    html body.p-user_rates-index .l-content > .b-collection_search .field input:focus {
-        border-color: rgba(var(--accent), .55) !important;
-        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent), 0 0 0 2px rgba(var(--accent), .16) !important;
-    }
-    .p-user_rates-index .list-groups { margin-top: 0 !important; padding-top: 0 !important; }
-    .p-user_rates-index .list-groups > header:first-child,
-    .p-user_rates-index .list-groups > header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
-
-    /* карандаш «изменить» (свой список) — маленький стеклянный квадрат */
-    .p-user_rates-index .list-posters .user_rate .edit-user_rate {
-        top: 8px !important;
-        right: 8px !important;
-        width: 28px !important;
-        height: 28px !important;
-        border-radius: 8px;
-        overflow: hidden;
-        background: rgba(var(--glass), .65) !important;
-        border: 1px solid rgba(var(--glass-light), .14);
-        box-sizing: border-box;
-        backdrop-filter: blur(calc(var(--glass-blur) * 1.2));
-        -webkit-backdrop-filter: blur(6px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        z-index: 4 !important;
-        transition: background-color .2s ease, border-color .2s ease;
-    }
-    .p-user_rates-index .list-posters .user_rate .edit-user_rate::before {
-        background: none !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        font-size: 15px !important;
-        line-height: 1 !important;
-        color: rgba(var(--text), .9);
-    }
-    /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
-    .p-user_rates-index .list-posters .user_rate {
-        position: relative;
-        border-radius: 14px;
-        transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
-    }
+/* из components/cards */
+.b-catalog_entry.on_hold .cover .title span {
+    color: var(--tone-d4d2cd);
 }
-@media screen and (min-width: 768px) and (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .list-posters .user_rate:hover > .b-catalog_entry {
-        transform: none;
+
+/* из components/cards */
+.b-catalog_entry.planned .cover .misc span {
+    color: #91aacc;
+}
+
+/* из components/cards */
+.b-catalog_entry.planned .cover .title span {
+    color: #cad8e4;
+}
+
+/* из components/cards */
+.b-catalog_entry.rewatching .cover .misc span {
+    color: #93b5a7;
+}
+
+/* из components/cards */
+.b-catalog_entry.rewatching .cover .title span {
+    color: #cce0d9;
+}
+
+/* из components/cards */
+.b-catalog_entry.watching .cover .misc span {
+    color: #9b99c1;
+}
+
+/* из components/cards */
+.b-catalog_entry.watching .cover .title span {
+    color: #d3cce0;
+}
+
+/* из components/headings */
+header.head h1 a.back,
+header.head h2 a.back {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из pages/messages */
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/messages */
+    .b-message .b-catalog_entry:hover,
+    .l-content.swiss .b-catalog_entry:hover,
+    .b-catalog-entry-embedded .b-catalog_entry:hover {
+        background: transparent !important;
+        transform: scale(1);
         box-shadow: none;
     }
-    .p-user_rates-index .list-posters .user_rate:hover {
-        transform: translateY(-6px) scale(1.03);
-        box-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .3);
-        z-index: 2;
-    }
-    /* v1.2.22: невидимая полоска под поднятой карточкой — наведение не мигает у нижнего края */
-    .p-user_rates-index .list-posters .user_rate:hover::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        height: 10px;
-        background: transparent;
-    }
-    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
-        background: rgba(var(--accent), .85) !important;
-        border-color: rgba(var(--accent), 1);
-    }
-    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover::before {
+}
+
+/* из layout/page */
+body#profiles_show .b-catalog_entry,
+.c-column.user_rate .b-catalog_entry {
+    background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/cards */
+    .b-modal .b-catalog_entry:hover {
+        transform: none;
         background: none !important;
-        color: rgb(var(--text-strong));
+        z-index: 10;
+        box-shadow: none;
     }
 }
 
-/* ================================================================
-   v1.2.13 — галочки: ровно по тексту и плавное включение/выключение
-   ================================================================ */
-/* сама галочка — кружок 18px, текст по центру его высоты */
-label:has(> input[type="checkbox"]) {
-    display: flex !important;
-    width: fit-content;
-    min-height: 26px;
-    /* кружок ставится на линию строки текста (первой, если текст в две строки),
-       а затем сдвигается так, чтобы его центр совпал с серединой строчных букв */
-    align-items: baseline;
-    gap: 10px;
-    line-height: 1.4;
-    cursor: pointer;
+/* из components/cards */
+.b-modal .b-catalog_entry {
+    transform: none;
 }
-html input[type="checkbox"]:not(#u) {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    position: relative;
-    flex: 0 0 auto;
-    display: inline-block;
+
+/* из components/cards */
+.l-content.swiss .image-cutter {
+    transition: 0.5s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/profile */
+    .p-profiles-show .about a:hover {
+        box-shadow: none;
+        background: none;
+        border: none;
+        opacity: 1;
+    }
+}
+
+/* из pages/messages */
+.b-message > .inner .was_updated {
+    color: rgba(var(--text-2), var(--hundred));
+    margin-left: 58px;
+    transition: 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/users */
+    .b-user16:hover,
+    .b-user16:hover span,
+    .b-user16 a:hover {
+        box-shadow: none;
+        background: none;
+    }
+}
+
+/* из pages/anime */
+.b-add_to_list .trigger .text:hover,
+.b-add_to_list .option .text:hover {
+    text-decoration: none;
+    color: rgba(var(--accent), var(--hundred));
+}
+
+/* из pages/messages */
+.b-dialog > .inner header .name-date {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* из pages/forum */
+.b-poll .poll .name {
+    font-size: 15px;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/forum */
+.b-poll .poll-variants .poll-variant.result .votes-percent,
+.p-translations .animes a {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из layout/page */
+    .b-breadcrumbs a.b-link:hover {
+        background: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* из components/users */
+.b-menu-line.friend-rate .b-user16 a,
+.friend-rate .b-user16 a {
+    line-height: 10px;
     vertical-align: middle;
-    width: 18px !important;
-    height: 18px !important;
-    min-width: 18px;
-    margin: 0 10px 0 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box;
-    border-radius: 50% !important;
-    border: 1.5px solid rgba(var(--text), .55) !important;
-    background: transparent !important;
+    height: 30px !important;
+    display: block;
+}
+
+/* из components/users */
+.b-menu-line.friend-rate .b-user16 span,
+.friend-rate .b-user16 span {
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 15px;
+    display: inline-block;
+    max-width: 100px;
+    vertical-align: middle !important;
+}
+
+/* из components/editor */
+.b-height_shortener .expand:hover span {
+    animation: none !important;
+    border: none;
+}
+
+/* ачивки */
+/* из pages/achievements */
+.b-achievement .c-about a.title {
+    font-size: 14px;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/achievements */
+.b-achievement .c-about .hint {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(var(--text), var(--hundred));
+    opacity: 1;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed {
+    margin-left: 25px;
+    color: rgba(var(--text), var(--hundred)) !important;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed:hover {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+/* из components/forms */
+.ac_results .name,
+.completable-block .name {
+    font-weight: bold;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/dashboard */
+.b-status-line .section.main .comments:before,
+.b-news_wall-topic .status-line .comments,
+.b-status-line .section.created_at time:before,
+.b-status-line .section.additional .collection-size,
+.b-status-line .section.additional .comments,
+.b-status-line .section.additional .comments:before,
+.b-review_votes span,
+.b-status-line .section.changed_at time:before,
+.b-topic > .inner > header .about > span,
+a.b-menu-line.entry.b-link.person-tooltip .time,
+a.b-menu-line.entry.b-link .time {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+/* из pages/forum */
+.b-critique_votes span,
+.b-critique_votes:before {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+/* из base/base */
+.wall_post_text a,
+.post_video_title {
+    color: #50a0ef !important;
+}
+
+/* из components/forms */
+.b-form .variants .variant a {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/*clubs-Назад-Вперёд → фикс на 100%*/
+/* из pages/clubs */
+.b-clubs.index .b-postloader {
+    width: 100%;
+}
+
+/* из base/base */
+.to-review:after {
+    content: 'к отзыву';
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .generated-news-line .info .name,
+.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .generated-news-line .info .status-time .time,
+.p-dashboards-show .sections a.title,
+.p-dashboards-show .sections .title {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+/* из base/colors */
+.orange {
+    background: rgba(175, 84, 24, 0.4);
+    color: #deb8a1;
+    border: none;
+}
+
+/* из base/colors */
+.purple {
+    background: rgba(108, 46, 175, 0.4);
+    color: #c19ed6;
+    border: none;
+}
+
+/* из base/colors */
+.green {
+    background: rgba(16, 130, 67, 0.4);
+    color: #90c7ae;
+    border: none;
+}
+
+/* из base/colors */
+.blue {
+    background: rgba(29, 77, 167, 0.4);
+    color: #98b6da;
+    border: none;
+}
+
+/* из base/colors */
+.magenta {
+    background: rgba(193, 37, 138, 0.4);
+    color: #c7a0b9;
+    border: none;
+}
+
+/* из base/colors */
+.gray {
+    background: color-mix(in srgb, var(--tone-6d6d6d) 40%, transparent);
+    color: var(--tone-b7b7b7);
+    border: none;
+}
+
+/* из base/colors */
+.powderblue {
+    background: rgba(61, 133, 160, 0.4);
+    color: #91c3d2;
+    border: none;
+}
+
+/* из base/colors */
+.skyblue {
+    background: rgba(28, 127, 185, 0.4);
+    color: #97c5e0;
+    border: none;
+}
+
+/* из base/colors */
+.yellow {
+    background: rgba(167, 139, 39, 0.4);
+    color: #c7c590;
+    border: none;
+}
+
+/* из base/colors */
+.red {
+    background: rgba(175, 38, 38, 0.4);
+    color: #cca1a1;
+    border: none;
+}
+
+/* из base/colors */
+.pink {
+    background: rgba(174, 77, 175, 0.4);
+    color: #c9a3ce;
+    border: none;
+}
+
+/* из base/colors */
+.brown {
+    background: rgba(162, 60, 1, 0.4);
+    color: #d4a882;
+    border: none;
+}
+
+/* из pages/dashboard */
+.b-news_wall-topic .title:hover,
+.b-news_wall-topic > a:hover .title {
+    color: rgba(var(--accent), 1);
+}
+
+/* из base/base */
+.youtube .marker {
+    color: var(--tone-dadada);
+    font-size: 10px;
+    font-weight: 900;
+    background: var(--tone-1b1b1b);
+    border-radius: 10px;
+    padding: 0 8px;
+}
+
+/* из base/base */
+.vk .marker {
+    color: #c7dbec;
+    font-size: 10px;
+    font-weight: 900;
+    background: #293e54;
+    border-radius: 10px;
+    padding: 0 13px;
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .v2 .sections .title,
+.p-dashboards-show .v2 .sections a.title {
+    color: rgba(var(--text-2), 1);
+}
+
+/* из pages/settings */
+.block.edit-page.styles > * {
+    width: 100%;
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .subheadline-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    font-size: 9px !important;
+    transition: 0.2s all;
+}
+
+/* из components/buttons */
+.subheadline-buttons a:hover {
+    color: rgba(var(--link), 1);
+}
+
+/* из components/tabs */
+.b-options-floated a,
+.headline .misc-links a,
+.midheadline .misc-links a,
+.subheadline .misc-links a {
+    color: rgba(var(--link), 1)
+}
+
+/* из components/tabs */
+.b-options-floated a:hover,
+.headline .misc-links a:hover,
+.midheadline .misc-links a:hover,
+.subheadline .misc-links a:hover {
+    color: rgba(var(--link), 1)
+}
+
+/* из components/tabs */
+.b-options-floated .selected,
+.headline .misc-links .selected,
+.midheadline .misc-links .selected,
+.subheadline .misc-links > a.selected {
+    color: rgba(var(--text), 1)
+}
+
+/* из components/buttons */
+.misc-links a[href*="/reviews"]:before {
+    content: '\f005';
+}
+
+/* из pages/profile */
+body.p-profiles .subheadline .misc-links > a:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+/* из components/buttons */
+.misc-links a[href*="/collections"]:after {
+    content: '\f279';
+    font-size: 15px;
+}
+
+/* из components/buttons */
+.misc-links a[href*="/articles"]:after {
+    content: '\f1ea';
+    font-size: 15px;
+}
+
+/* из pages/messages */
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.8);
+}
+
+/* из pages/messages */
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.8);
+}
+
+/* из pages/messages */
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.8);
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .b-list_switchers > *,
+body.p-achievements.p-profiles .b-list_switchers > *:after {
+    display: inline-flex;
+}
+
+/* из pages/lists */
+.b-user_rate-history .title {
+    font-weight: 700;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .v2 .my-list .label .misc-links a,
+.p-dashboards-show .v2 .my-list .label .misc-links a:after {
+    color: rgba(var(--link), var(--hundred));
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .v2 .my-list .label span {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* из pages/forum */
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
+.b-review_opinion_marker.is-neutral input:checked + span {
+    color: rgb(var(--text-strong));
+    background: var(--tone-3b3a3e);
+}
+
+/* из pages/forum */
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
+.b-review_opinion_marker.is-positive input:checked + span {
+    background: #1c4c20;
+    color: #c6dacb;
+}
+
+/* из pages/forum */
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
+.b-review_opinion_marker.is-negative input:checked + span {
+    background: #862a22;
+    color: #ffcfcf;
+}
+
+/* из pages/forum */
+.navigation-node.navigation-node-neutral.is-empty * {
+    color: var(--glass-shadow) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/headings */
+    .subheadline a[title="morr"]:hover:after,
+    .subheadline a[title="morr"]:hover:after {
+        line-height: 20px;
+        padding-top: 2px;
+        margin-top: -2px;
+    }
+}
+
+/* из kits/custom-posters */
+.name-date a.name[title="morr"],
+a.name[href*="/morr"] {
+    color: #fdc47a !important;
+    font-size: 19px !important;
+    line-height: 15px !important;
+}
+
+/* из components/headings */
+.subheadline a[title="morr"] {
+    color: #fdc47a !important;
+}
+
+/* из components/editor */
+.name-date a.name[title="EngiNier"],
+.b-comment>.inner a.name[href*="/EngiNier"],
+.subheadline a[title="EngiNier"] {
+    color: var(--tone-e2e2e2)!important;
+}
+
+/* из components/editor */
+.name-date a.name[title="Cosmo+%E2%98%AD"],
+.b-comment>.inner a.name[href*="/Cosmo+%E2%98%AD"],
+.subheadline a[title="Cosmo+%E2%98%AD"] {
+    color: #9ee0f1!important;
+}
+
+/* из components/users */
+.b-user16 a[title="morr"] {
+    color: #fdc47a !important;
+    font-weight: bold;
+}
+
+/* из components/headings */
+.name-date a.name[title="EngiNier"]:hover:after,
+.name-date a.name[href*="/EngiNier"]:hover:after,
+.subheadline a[title="EngiNier"]:hover:after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
+    content:"Edesign Admin";
+}
+
+/* из components/cards */
+.b-catalog_entry.completed .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #419541 0);
+}
+
+/* из components/cards */
+.b-catalog_entry.dropped .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
+}
+
+/* из components/cards */
+.b-catalog_entry.watching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
+}
+
+/* из components/cards */
+.b-catalog_entry.on_hold .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+/* из components/cards */
+.b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+/* из components/cards */
+.b-catalog_entry.rewatching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #1f6f6a 0);
+}
+
+/* из components/forms */
+.b-form .variants .variant a {
+    font-weight: bold;
+}
+
+/* из components/cards */
+.b-catalog_entry .cover .image-decor > .text:before {
+    background: #b97b43bf;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+/* из pages/forum */
+.b-animes-menu .menu-topics-block .entry:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
+/* из pages/anime */
+.cc-player_controls.cc-2a > .c-column {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .cc-second .c-forum {
+    width: 30.33333%;
+    margin-bottom: 21px;
+    float: right;
+}
+
+/* из pages/clubs */
+.cc-4.clubs .b-user16 span {
+    top: -5px;
+    position: relative;
+}
+
+/* из pages/settings */
+.b-oauth_application .name-logo .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none !important;
+    transition: 1s ease;
+}
+
+/* из pages/settings */
+.b-oauth_application .name-logo:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .cc-news .c-news_topics {
+    margin-right: 25px;
+    width: calc(69% - 25px);
+}
+
+/* из pages/dashboard */
+.p-dashboards-show .cc-news .c-generated_news {
+    width: 30%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/badges */
+    .c-info-right .b-tag:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent);
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+
+/* из components/forms */
+input.ac_input.ac_loading {
+    box-shadow: none;
+    background: none !important;
+}
+
+/* из pages/profile */
+.p-profiles .profile-head .c-info .c-additionals div a {
+    color: rgba(var(--link), 1);
+}
+
+/* из layout/page */
+.cc-8 > .c-column {
+    width: calc(12.5% - 10px);
+    margin: 5px;
+}
+
+/* из pages/achievements */
+.p-profiles-show .achievements .header .title {
+    color: rgba(var(--text-2), 1);
+}
+
+/* из layout/page */
+body#dashboard_show .b-catalog_entry {
+    background: none;
+}
+
+/* из pages/anime */
+.b-video_variant a.broken:before {
+    color: #c6eccb;
+    background: #882600;
+    content: "broken";
+}
+
+/* из pages/anime */
+.b-video_variant a.banned_hosting:before {
+    content: "banned hosting";
+    color: #ecebc6;
+    background: #7d4600;
+}
+
+/* из pages/anime */
+.b-video_variant a.rejected:before {
+    content: "rejected";
+    color: #e1c6ec;
+    background: #821852;
+}
+
+/* из pages/anime */
+.b-video_player .cc-player_controls .episode-num .video-link a {
+    color: rgba(var(--text-2), 0.8);
+}
+
+/* из components/buttons */
+.c-buttons.cc-3a .c-control {
+    background: rgba(var(--glass), 0.5);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
+    border-radius: 22px;
+    padding: 2px 0px;
+    transition: 0.3s ease;
+}
+
+/* из layout/page */
+.c-column.c-control.show-options {
+    float: right;
+    margin-right: 0px;
+}
+
+/* из pages/anime */
+.c-column.c-control.increment-user_rate.watched .label,
+.c-column.c-control.increment-user_rate:hover .label {
+    color: #99bba7;
+}
+
+/* из pages/anime */
+.p-anime_videos-index .c-video_stats .views_count {
+    display: inline-block;
+    width: auto;
+    float: left;
+    line-height: 26px;
+    height: 26px;
+}
+
+/* из pages/anime */
+.p-anime_videos-index .c-video_stats .uploader {
+    display: inline-block;
+    width: auto;
+    line-height: 26px;
+    height: 26px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/tabs */
+    .title .video-variant-switcher:hover {
+        color: var(--tone-e4e4e4) !important;
+        background: rgba(var(--accent), 0.4);
+        font-weight: normal;
+    }
+}
+
+/* из pages/anime */
+.c-videos .b-video_variant:hover a {
+    color: rgba(var(--link), 1);
+}
+
+/* из pages/anime */
+.b-video_variant.active a {
+    color: rgba(var(--link), 1);
+    font-weight: bold;
+}
+
+/* из pages/anime */
+.b-video_variant .video-quality.bd {
+    background: url(/assets/blocks/b-video_variant/bd.png) no-repeat;
+    -webkit-background-size: 56px 12px;
+    background-size: 56px 12px;
+    height: 16px;
+    right: 20px;
+    top: 20px;
+    transform: scale(1.5);
+    z-index: -1;
+    opacity: 0.5;
+    width: 61px;
+    position: absolute;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/anime */
+    .b-video_variant a:hover {
+        border: none;
+        background: none;
+    }
+}
+
+/* из pages/lists */
+.b-catalog_entry .cover .misc,
+.p-dashboards-show .midheadline .b-link,
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .history > .title .link,
+.p-dashboards .user_list .list-change .note,
+.p-dashboards .c-my_list .list-change .note,
+.p-dashboards-show .contests .contest .notice,
+.b-forums .forum .topics,
+.name-date .time,
+.p-profiles .profile-head .c-history .entry .misc,
+.p-profiles-show .lifetime .times .time,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.b-comment > .inner header .name-date .time,
+.b-replies,
+.b-options-floated,
+.p-messages .mass-actions .action,
+.p-animes_collection-index .pagination,
+.p-mangas_collection-index .pagination,
+.p-recommendations-index .pagination,
+.p-userlist_comparer-show .pagination,
+.b-show_more,
+.b-rate .score-notice,
+.b-animes-menu .block-list .date,
+.bar.horizontal .line .x_label,
+.b-animes-menu .friend-rate .status,
+.bar.horizontal .line .bar-container .value,
+.tipsy,
+header.head a.edit,
+.p-studios .studio .animes,
+.p-studios .studio .years,
+.p-contests-index .contest .date,
+.p-contests .contest-match .vs .help,
+.p-contests .contest-match .vs .next,
+.p-contests .contest-match .vs .finish,
+.p-contests .contest-match .vs .refrain,
+.p-contests .contest-match .vs .refrained,
+.p-contests .match-day .matches-num,
+.b-lang_trigger,
+.b-club .info,
+.b-user.detailed .info .last-online,
+.b-user.detailed .history .line .date,
+.p-recommendations-index .b-header_filters .hint,
+.p-recommendations-favourites .b-header_filters .hint,
+.p-userlist_comparer .comparer table .notice,
+.p-topics .l-menu .calendar .entry .misc,
+.p-topics .l-menu .reviews .entry .misc,
+.p-topics .l-menu .clubs .entry .misc,
+.p-topics .l-menu .contests .contest .notice,
+.p-topics .l-menu .sticked-topics .topic .notice,
+.b-video_player .cc-player_controls .label,
+.b-video_player .cc-player_controls .episode-title .video-link,
+.b-log_entry .date,
+.b-log_entry .spoiler.collapse,
+.b-log_entry .spoiler.collapsed,
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span,
+.b-js-action,
+.b-input .hint,
+.b-review-topic .review-votes_count,
+.b-show_more-more .hide-more,
+.p-dashboard .l-menu .ongoing .misc,
+.p-dashboard .l-menu .season .notice,
+.p-topics .l-menu .sticky-topics .topic .notice,
+.b-hot_topics .topic {
+    font-size: 12px !important;
+}
+
+/* из pages/profile */
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+header.head .misc {
+    font-size: 12px;
+    transition: 0.3s ease-out, -webkit-0.3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s;
+}
+
+/* из components/stats */
+.bar.vertical .line .x_label {
+    font-size: 10px !important;
+}
+
+/* из pages/profile */
+.b-stats_bar a.title,
+.b-stats_bar .title {
+    font-size: 15px;
+    margin-bottom: 2px;
+    transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+/* из components/tabs */
+.b-options-floated {
+    height: 28px;
+    width: auto;
+    line-height: 28px;
+    margin-top: 0;
+    z-index: 1;
+}
+
+/* из pages/forum */
+.p-topics .l-menu .sticky-topics .topic,
+.p-topics .l-menu .sticky-topics .topic .title,
+.p-topics .l-menu .sticky-topics .topic .title:after {
+    color: rgba(var(--text-strong), 1);
+    transition: 0.2s ease;
+    border: none !important;
+}
+
+/* из pages/settings */
+.b-user.avatar img,
+.b-user.named_avatar img,
+.b-user.avatar_fixed_margin img,
+.b-user16 img,
+.b-club .logo,
+.b-comment > .inner header img,
+.p-profiles-edit .account .avatar-edit img,
+.b-user.detailed .info .image-name .image,
+.b-message > .inner header img,
+.b-hot_topics .topic a.with-author img,
+.b-dialog > .inner header img,
+.p-topics .l-menu .clubs .entry img,
+.name-logo .logo {
+    border-radius: 50%;
+    border: 2px solid rgba(var(--glass), 0.6);
+    transition: 0s ease, transform 1s ease, border-color 1s ease;
+}
+
+/* из components/carousels */
+.b-to-top.active .slide {
+    width: 70px;
+}
+
+/* из components/editor */
+.b-comment {
+    padding-top: 10px;
+}
+
+/* из components/editor */
+.b-comment .inner {
+    min-height: 50px;
+}
+
+/* из components/editor */
+.b-comment > .inner header .name-date {
+    overflow: visible;
+    margin-left: 60px;
+}
+
+/* из components/headings */
+.headline.linkheadline > a,
+.linkheadline.midheadline > a,
+.linkheadline.subheadline > a,
+.headline.linkheadline > a:hover,
+.linkheadline.midheadline > a:hover,
+.linkheadline.subheadline > a:hover {
+    text-decoration: none;
+}
+
+/* Reviews */
+/* из pages/forum */
+.b-topic.b-review-topic > .inner header img {
+    border-radius: 50%;
+}
+
+/* из layout/page */
+.l-page > div:last-child {
+    min-height: 0;
+}
+
+/* из pages/achievements */
+.p-profiles-index .cc-achievements .b-achievement,
+.p-profiles-index .cc-franchises-genres .c-genres .b-achievement {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    float: none;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(var(--shade), 0.08);
+    transition: box-shadow 0.16s ease;
+    width: calc(26% - 36px);
+    margin: 0 12px 15px !important;
+    min-height: 338px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+}
+
+/* из pages/achievements */
+.b-achievement .c-image .inner {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .b-options-floated {
+    position: absolute;
+    left: 10px;
+    top: -32px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 86px !important;
+    margin: 0 auto;
+    height: 15px;
+    padding: 11px 7px 6px;
+    background: color-mix(in srgb, var(--tone-131010) 78.04%, transparent);
+    color: #887146;
+    box-sizing: content-box;
+    border-radius: 50%/ 33px 33px 0 0;
+}
+
+/* из pages/achievements */
+.block2 .cc-achievements .b-achievement .title {
+    color: #cce0d1;
+}
+
+/* из pages/achievements */
+.c-genres .block2 .cc-achievements .b-achievement .title {
+    color: #f3eabf;
+}
+
+/* IE 10+ */
+/* из pages/achievements */
+body.p-achievements.p-profiles :-ms-input-placeholder {
+    color: #827160 !important;
+    transition: 0.5s ease-out;
+}
+
+/* Firefox 18- */
+/* из pages/achievements */
+body.p-achievements.p-profiles :-moz-placeholder {
+    color: #827160 !important;
+    transition: 0.5s ease-out;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .headline,
+body.p-achievements.p-profiles .subheadline {
+    background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
+    color: #ffe1a7 !important;
+
+    position: relative;
+    z-index: -1;
+    margin-bottom: 25px !important;
+    justify-content: center;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles a.menu-icon:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
+    color: #fff7e8;
+}
+
+/*** ENGI end code ***/
+/******* Spoiler structure by grin3671/Redesighed by Enginier ********/
+/* из components/editor */
+.fullwidth > .b-spoiler > label {
+    display: block !important;
+    padding: 0.47em 6em 0.47em 6em;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    background: rgba(var(--glass), 0.6);
+    border: 0;
+    border-radius: 11px;
+    color: rgba(var(--text-strong), 1);
+    font-size: 1.25em;
+    line-height: 1em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    margin: 5px 0px;
+    position: relative;
+}
+
+/* из components/editor */
+.fullwidth > .b-spoiler > .content > .inner {
+    display: block;
+    min-height: 0;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    animation: 0.24s fadeIn cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* из components/tabs */
+.use-tabs > [data-dynamic] {
+    display: inline-block;
+    padding: 4px 16px;
+    margin: 4px;
+    border: 2px solid;
+    border-radius: 40px;
+    color: hsla(var(--c-tab) var(--l-text-inactive) / 100%);
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
     cursor: pointer;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+    transition: 0.24s ease;
+    user-select: none;
 }
-label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
-    margin-right: 0 !important;
-    font: inherit;
-    align-self: baseline;
-    /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
-    transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
-}
-/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
-   не зависит от шрифта и высоты строки */
-html input[type="checkbox"]:not(#u)::before {
-    content: none !important;
-    display: none !important;
-}
-html input[type="checkbox"]:not(#u),
-html input[type="checkbox"]:not(#u):focus,
-html input[type="checkbox"]:not(#u):active {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTIuNiA2LjNsMi4zIDIuMyA0LjUtNC45IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS45IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=") !important;
-    background-repeat: no-repeat !important;
-    background-position: 50% 50% !important;
-    background-size: 0 0 !important;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
-                background-size .16s ease-in !important;
-}
-html input[type="checkbox"]:not(#u):checked {
-    background-color: rgb(var(--accent)) !important;
-    border-color: rgb(var(--accent)) !important;
-    box-shadow: 0 0 0 3px rgba(var(--accent), .18) !important;
-    background-size: 12px 12px !important;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
-                background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
-}
-html input[type="checkbox"]:not(#u):focus-visible {
-    box-shadow: 0 0 0 3px rgba(var(--accent), .3) !important;
-}
+
 @media (hover: hover) and (pointer: fine) {
-    html input[type="checkbox"]:not(#u):not(:checked):hover {
-        border-color: rgba(var(--accent), .8) !important;
+    /* из components/tabs */
+    .use-tabs > [data-dynamic]:hover {
+        background: hsla(var(--c-tab) var(--l-background) / 8%);
     }
 }
 
-/* ===== v1.2.16 — страница аниме: кадры и видео сразу после описания, горизонтальные ленты ===== */
-/* порядок: блок кадров/видео поднимается сразу под описание (и для гостя — внутри .resources-loader, и для вошедшего — внутри первого .block) */
-.p-db_entries-show .l-content > .block:has(> .b-db_entry),
-.p-db_entries-show .l-content .resources-loader {
-  display: flex !important;
-  flex-direction: column !important;
-}
-.p-db_entries-show .l-content > .block:has(> .b-db_entry) > .b-db_entry { order: -2 !important; }
-.p-db_entries-show .l-content .cc.m0.two-videos,
-.p-db_entries-show .l-content .cc.m0.one-video,
-.p-db_entries-show .l-content .cc.m0.no-video {
-  order: -1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  margin: 6px 0 22px !important;
-}
-.p-db_entries-show .l-content .cc.m0.two-videos::after,
-.p-db_entries-show .l-content .cc.m0.one-video::after,
-.p-db_entries-show .l-content .cc.m0.no-video::after { content: none !important; }
-.p-db_entries-show .cc.m0 > .c-screenshots,
-.p-db_entries-show .cc.m0 > .c-videos {
-  float: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  margin: 0 0 16px !important;
-}
-.p-db_entries-show .cc.m0 > .c-videos { margin-bottom: 0 !important; }
-
-/* лента: одна строка, листается вбок (стрелки на ПК, Shift+колесо, тачпад, свайп), с привязкой к кадрам */
-/* v1.2.17: заголовок и лента — одна стеклянная панель, полоса прокрутки скрыта */
-.p-db_entries-show .cc.m0 > .c-screenshots,
-.p-db_entries-show .cc.m0 > .c-videos {
-  position: relative !important;
-  padding: 4px 0 2px !important;
-  border-radius: 16px !important;
-  background: rgba(var(--glass), 0.55) !important;
-  border: 1px solid rgba(var(--glass-light), 0.06) !important;
-  box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-}
-.p-db_entries-show .cc.m0 > .c-screenshots > .subheadline,
-.p-db_entries-show .cc.m0 > .c-videos > .subheadline {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  margin: 0 !important;
-  width: auto !important;
-}
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc,
-.p-db_entries-show .cc.m0 > .c-videos > .cc {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  gap: 12px;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 12px;
-  -webkit-overflow-scrolling: touch;
-  padding: 6px 12px 12px !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  scrollbar-width: none;
-}
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc::after,
-.p-db_entries-show .cc.m0 > .c-videos > .cc::after { content: none !important; display: none !important; }
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc::-webkit-scrollbar,
-.p-db_entries-show .cc.m0 > .c-videos > .cc::-webkit-scrollbar { display: none; width: 0; height: 0; }
-
-/* карточки 16:9 одинаковой высоты */
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
-  display: block !important;
-  float: none !important;
-  flex: 0 0 auto !important;
-  width: 248px !important;
-  height: auto !important;
-  aspect-ratio: 16 / 9;
-  margin: 0 !important;
-  position: relative !important;
-  overflow: hidden !important;
-  border-radius: 12px !important;
-  scroll-snap-align: start;
-  box-shadow: 0 4px 14px rgba(var(--shade), 0.35);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot img,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  object-fit: cover;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-/* кнопка «плей» по центру */
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link::before {
-  top: 50% !important;
-  left: 50% !important;
-  right: auto !important;
-  bottom: auto !important;
-  width: 44px !important;
-  height: 44px !important;
-  margin: 0 !important;
-  transform: translate(-50%, -50%) !important;
-  border-radius: 50% !important;
-  opacity: .95 !important;
-  content: "" !important;
-  background-color: rgba(var(--accent), .88) !important;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA3LjN2OS40bDcuMy00Ljd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+") !important;
-  background-repeat: no-repeat !important;
-  background-position: 50% 50% !important;
-  background-size: 24px 24px !important;
-  box-shadow: 0 0 0 4px rgba(var(--accent), .22), 0 4px 12px rgba(var(--shade), 0.45) !important;
-  z-index: 2;
-}
-/* подпись снизу на градиенте, метка вида сверху слева */
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .name {
-  top: auto !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  padding: 18px 10px 7px !important;
-  border-radius: 0 !important;
-  background: linear-gradient(to bottom, rgba(var(--shade), 0), rgba(var(--shade), 0.78)) !important;
-  color: rgb(var(--text)) !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  pointer-events: none;
-  z-index: 1;
-}
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker {
-  top: 8px !important;
-  left: 8px !important;
-  right: auto !important;
-  bottom: auto !important;
-  height: 18px !important;
-  line-height: 18px !important;
-  padding: 0 7px !important;
-  border-radius: 9px !important;
-  font-size: 10px !important;
-  background: rgba(var(--accent), .9) !important;
-  color: rgb(var(--text-strong)) !important;
-  z-index: 2;
-}
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker::before { color: rgb(var(--text-strong)) !important; }
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
-  transform-origin: 50% 100%;
-}
-@media (hover: hover) and (pointer: fine) {
-  /* v1.2.22: кадр не сдвигается вверх, а чуть растёт от нижнего края — нижняя кромка стоит
-     на месте, и курсор у неё больше не выпадает из кадра (раньше наведение мигало) */
-  .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot:hover,
-  .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(var(--shade), 0.45), 0 0 0 1px rgba(var(--accent), .55);
-  }
-}
-@media (max-width: 767px) {
-  .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-  .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video { width: 74% !important; }
-  .p-db_entries-show .cc.m0 > .c-screenshots > .cc,
-  .p-db_entries-show .cc.m0 > .c-videos > .cc { gap: 10px; padding: 6px 10px 10px !important; scroll-padding: 0 10px; }
+/* из components/tabs */
+.use-tabs > [data-dynamic]:active {
+    background: hsla(var(--c-tab) var(--l-background) / 16%);
 }
 
-/* v1.2.17 — стрелки на лентах (только ПК с мышью; CSS-карусель Chromium 135+) */
-@supports selector(::scroll-button(*)) {
-  @media (hover: hover) and (pointer: fine) {
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*) {
-      position: absolute;
-      top: calc(50% + 14px);
-      z-index: 5;
-      width: 38px;
-      height: 38px;
-      margin-top: -19px;
-      border-radius: 50%;
-      border: 1px solid rgba(var(--glass-light), 0.14);
-      background-color: rgba(var(--glass), 0.72);
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: 20px 20px;
-      backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
-      -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-      box-shadow: 0 4px 14px rgba(var(--shade), 0.45);
-      color: transparent;
-      cursor: pointer;
-      opacity: .92;
-      transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
-    }
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
-      content: "" / "Назад";
-      left: 8px;
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjUgNmwtNiA2IDYgNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
-    }
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(right) {
-      content: "" / "Вперёд";
-      right: 8px;
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA2bDYgNi02IDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==");
-    }
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):hover {
-      background-color: rgba(var(--accent), .9);
-      border-color: rgba(var(--accent), .9);
-      opacity: 1;
-      transform: scale(1.06);
-    }
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):active { transform: scale(.94); }
-    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
-      opacity: .25;
-      cursor: default;
-      background-color: rgba(var(--glass), 0.6);
-      border-color: rgba(var(--glass-light), 0.08);
-      transform: none;
-    }
-  }
+/* из components/tabs */
+.use-tabs > [data-dynamic].active {
+    color: hsla(var(--c-tab) var(--l-text-active) / 100%);
+    background: hsla(var(--c-tab) var(--l-background) / 12%);
 }
 
-/* v1.2.19 — логотипы студий: чётко, без «мыльного» свечения.
-   Картинка не растягивается больше натурального размера (max-width:100% от колонки, height:auto).
-   Непрозрачные — скруглённые карточки; прозрачные — тонкий 1px контур; чёрные (Madhouse, Shaft, Wit) — белый силуэт без свечения. */
-img.studio-logo,
-.p-studios .studio img.logo {
-  max-width: 100%;
-  height: auto;
-  padding: 0 !important;
-  background: none !important;
-  box-shadow: none !important;
-  border-radius: 10px;
-  image-rendering: auto;
-  transform: none;
-  --logo-tone: opacity(1);
-  --logo-edge: drop-shadow(0 0 1px rgba(var(--text), 0.9));
-  filter: var(--logo-tone) var(--logo-edge);
-  transition: transform .2s ease, filter .2s ease;
-}
-img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]),
-.p-studios .studio img.logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]) {
-  --logo-tone: brightness(0) invert(.93);
-  --logo-edge: opacity(1);
-}
-/* наведение (только ПК): лёгкий подъём на 3px и мягкая тёмная тень снизу */
-@media (hover: hover) and (pointer: fine) {
-  a:hover > img.studio-logo,
-  .p-studios .studio a:hover > img.logo {
-    transform: translateY(-3px);
-    filter: var(--logo-tone) var(--logo-edge) drop-shadow(0 6px 6px rgba(var(--shade), 0.45));
-  }
-}
-
-/* v1.2.18 — «На других сайтах»: иконки сайтов на светлом круглом бейдже (чёрная W Википедии, тёмные MAL/World Art больше не сливаются) */
-.b-external_link > a.b-link::before {
-  width: 20px !important;
-  height: 20px !important;
-  border-radius: 50% !important;
-  background-color: rgba(var(--text), 0.92) !important;
-  background-size: 14px 14px !important;
-  background-position: 50% 50% !important;
-  background-repeat: no-repeat !important;
-  box-shadow: 0 1px 4px rgba(var(--shade), 0.35);
-}
-
-/* ================================================================
-   v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
-   ================================================================ */
-@media screen and (max-width: 767px) {
-    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
-    body.p-profiles-show .profile-head {
-        position: relative;
-        z-index: 0;
+@media (min-width: 960px) {
+    /* из components/tabs */
+    .use-tabs.--vertical > div:not([data-dynamic]) {
+        grid-column: 2;
+        grid-row: 1 / 50; /* max tabs */
+        margin: -8px 0;
+        border-left: 1px solid var(--c-border);
     }
-    body.p-profiles-show .profile-head::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
-        width: auto !important;
-        height: var(--profile-banner-height-mobile);
-        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
+    /* из components/tabs */
+    .use-tabs.--vertical > [data-dynamic] {
+        display: block;
+        grid-column: 1;
+        padding: 8px 16px;
+        margin: 5px;
+        border: none;
         border-radius: 0;
-        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
-        mask-image: linear-gradient(to bottom, #000 62%, transparent);
-        pointer-events: none;
+        text-align: left;
     }
-    /* мягкое свечение в цвет картинки под баннером */
-    body.p-profiles-show .profile-head::after {
-        content: "";
-        position: absolute;
-        z-index: -2;
-        top: calc(var(--profile-banner-height-mobile) - 70px);
-        left: 8%;
-        right: 8%;
-        display: block !important;
-        width: auto !important;
-        height: 140px;
-        background: var(--profile-banner) center bottom / cover no-repeat;
-        filter: blur(32px) saturate(1.5);
-        opacity: var(--profile-banner-glow);
-        pointer-events: none;
+}
+
+/* из components/tabs */
+.use-tabs.--tabline > div:not([data-dynamic]) {
+    margin-top: -1px;
+    border-top: 1px solid var(--c-border);
+}
+
+/* из components/tabs */
+.use-tabs.--tabline > [data-dynamic] {
+    position: relative;
+    padding: 7px 10px;
+    margin: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+/* из components/tabs */
+.use-tabs.--On > div:not([data-dynamic]) {
+    flex: 1 0 98%;
+    min-width: 98%;
+    max-width: 98%;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* из components/tabs */
+.use-tabs.--On > [data-dynamic] {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 6.35px 16px;
+    margin: 0 2px;
+    text-align: center;
+    color: rgba(var(--text-2), 0.9);
+    font-weight: normal;
+    line-height: 1.45;
+    transition: color 0.24s, flex-grow 0.24s, font-size 0s;
+}
+
+/* из components/tabs */
+.use-tabs.--On > [data-dynamic],
+.use-tabs.--On.--centered::before {
+    border-radius: 100px;
+}
+
+/* из components/tabs */
+.use-tabs.--On > [data-dynamic]:active {
+    background: hsla(var(--c-tab) var(--l-background) / 0%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/tabs */
+    .use-tabs.--On > [data-dynamic]:hover {
+        background: hsla(var(--c-tab) var(--l-background) / 0%);
+    }
+}
+
+/* из components/tabs */
+.use-tabs.--On > [data-dynamic].active {
+    color: rgba(var(--text), 1);
+    background: rgba(var(--glass), 0.8);
+    flex-grow: 1.5;
+    font-weight: bold;
+}
+
+/* из components/tabs */
+.use-tabs.--On.--ripple > [data-dynamic]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72%;
+    padding-top: 72%;
+    background: color-mix(in srgb, var(--tone-b1cdde) 10.2%, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    pointer-events: none;
+}
+
+@media screen and (max-width: 960px) {
+    /* из components/tabs */
+    .use-tabs.--On > [data-dynamic] {
+        margin: 0 2px 8px;
+        padding: 5px 16px;
+        line-height: 24px;
+        border: none;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+        background: rgba(var(--glass), 0.6);
+    }
+    /* из components/tabs */
+    .use-tabs.--On > [data-dynamic]:active {
+        background: rgba(var(--glass), 0.4);
     }
 
-    /* --- без поддержки backdrop-filter плашки плотнее, чтобы текст читался --- */
-    @supports not (backdrop-filter: blur(1px)) {
-        @supports not (-webkit-backdrop-filter: blur(1px)) {
-            html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
-            body.p-profiles-show .cc-2a > .c-column,
-            html body#profiles_show .profile-content .c-left .lifetime,
-            html body#profiles_show .profile-content .c-left .activity,
-            .p-profiles .profile-head .c-brief header.head {
-                background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
-            }
+    @media (hover: hover) and (pointer: fine) {
+        /* из components/tabs */
+        .use-tabs.--On > [data-dynamic]:hover {
+            background: rgba(var(--glass), 0.4);
         }
     }
+}
 
-    /* --- панель фильтров: плотное матовое стекло --- */
-    section.l-page.menu-expanded::after {
-        background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+/* из components/tabs */
+.custom-panel > [data-dynamic] {
+    display: inline-flex;
+    padding: 4.51px 18px;
+    margin: 4px;
+    border: 0px solid;
+    border-radius: 100px;
+    color: rgba(var(--text-2), 0.8);
+    background: rgba(var(--glass), 0.4);
+    font-weight: normal;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.24s, flex-grow 0.24s, font-size 0s;
+    user-select: none;
+    flex-grow: 1;
+    justify-content: center;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.149);
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(var(--shade), 0);
+}
+
+/* из components/tabs */
+.custom-panel > [data-dynamic]:active {
+    background: rgba(var(--glass), 0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/tabs */
+    .custom-panel > [data-dynamic]:hover {
+        background: rgba(var(--glass), 0.3);
     }
-    section.l-page.menu-expanded aside.l-menu {
-        background:
-            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
-            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
-        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
-        padding: 0 16px 18px !important;
+}
+
+/* из components/tabs */
+.custom-panel > [data-dynamic].active {
+    color: rgba(var(--text), 1);
+    background: rgba(var(--glass), 0.7);
+}
+
+@media (min-width: 960px) {
+    /* из components/tabs */
+    .custom-panel.--vertical > div:not([data-dynamic]) {
+        grid-column: 2;
+        grid-row: 1 / 50; /* max tabs */
+        margin: -8px 0;
+        border-left: 1px solid var(--c-border);
     }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
-        margin: 0 -16px 14px !important;
-        padding: 15px 16px 12px !important;
-        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
-        font-size: 15px;
-        letter-spacing: .04em;
+    /* из components/tabs */
+    .custom-panel.--vertical > [data-dynamic] {
+        display: block;
+        grid-column: 1;
+        padding: 8px 16px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        text-align: left;
     }
-    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
-    section.l-page.menu-expanded aside.l-menu .c-ms-field {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin: 0 0 14px !important;
-        padding: 0 !important;
+}
+
+/* Ripple */
+/* из components/tabs */
+.custom-panel.--ripple > [data-dynamic] {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(var(--shade), 0);
+}
+
+/* из components/tabs */
+.custom-panel.--tabline > div:not([data-dynamic]) {
+    margin-top: -1px;
+    border-top: 1px solid var(--c-border);
+}
+
+/* из components/tabs */
+.custom-panel.--tabline > [data-dynamic] {
+    position: relative;
+    padding: 7px 10px;
+    margin: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+/* Stretch */
+/* из components/tabs */
+.custom-panel.--stretched > [data-dynamic] {
+    flex-grow: 1;
+}
+
+/* из components/tabs */
+.use-tabs.--Fat.--ripple > [data-dynamic]::after {
+    background: color-mix(in srgb, var(--tone-b1cdde) 10.2%, transparent);
+}
+
+/* из components/tabs */
+.use-tabs.--Fat > [data-dynamic] {
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.4);
+    border-radius: 100px; text-align: center;
+    color: rgba(var(--text-2), 0.9);
+}
+
+/* из components/tabs */
+.use-tabs.--Fat > [data-dynamic].active {
+    color: rgba(var(--text), 1);
+    background: rgba(var(--glass), 0.6);
+    flex-grow: 1.5;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 960px) {
+    /* из components/tabs */
+    .use-tabs.--Fat > [data-dynamic] {
+        margin: 0 2px 8px;
+        padding: 5px 16px;
+        line-height: 24px;
+        flex-grow: 1;
+        flex-shrink: 0;
+        text-align: center;
+        color: rgba(var(--text-2), 0.9);
+        font-weight: normal;
+        border: none;
+        transition: color 0.24s, flex-grow 0.24s, font-size 0s;
     }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-title {
-        margin: 0 !important;
-        padding: 0 2px !important;
-        font-size: 14px !important;
-        line-height: 18px !important;
-        color: rgb(var(--text-2)) !important;
+    /* из components/tabs */
+    .use-tabs.--Fat > [data-dynamic]:active {
+        background: rgba(var(--glass), 0.4);
     }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > select,
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-ms,
-    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-score-input {
-        margin: 0 !important;
+
+    @media (hover: hover) and (pointer: fine) {
+        /* из components/tabs */
+        .use-tabs.--Fat > [data-dynamic]:hover {
+            background: rgba(var(--glass), 0.4);
+        }
+    }
+    /* из components/tabs */
+    .custom-panel > [data-dynamic] {
+        overflow: hidden;
+    }
+}
+
+/* из pages/profile */
+.b-shiki_editor.previewed img.b-poster,
+.p-profiles .about.block img.b-poster {
+    border-radius: 10px;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search .search-marker {
+    display: flex;
+    width: 50px;
+    color: rgba(var(--text), 0.8);
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search .hotkey-marker {
+    border: 1px solid rgba(var(--text), 0.2);
+    color: rgba(var(--text), 0.3);
+    margin: auto 1px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search input.has-value ~ .clear {
+    display: flex;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search .clear {
+    color: rgba(var(--text), 0.3);
+    width: 42px;
+}
+
+/* из layout/header */
+.search-mode,
+input.has-value {
+    color: rgba(var(--text-strong), 1) !important;
+    transition: 0.2s all;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .search-mode,
+body.p-achievements.p-profiles input.has-value {
+    color: rgba(255, 247, 232, 1) !important;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search .search-results .search-mode.active {
+    background: rgba(var(--accent), 0.05);
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search .search-results .nothing_found {
+    border: none !important;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .tags .b-tag,
+body.p-achievements.p-profiles .line .b-tag,
+body.p-achievements.p-profiles .line .tag,
+body.p-achievements.p-profiles .b-forums .reload,
+body.p-achievements.p-profiles .p-animes-show .other-names,
+body.p-achievements.p-profiles .p-mangas-show .other-names,
+body.p-achievements.p-profiles .p-ranobe-show .other-names {
+    color: #c7b083 !important;
+    background: #5233109e !important;
+}
+
+/* из pages/anime */
+.b-db_entry-variant-list_item .image img {
+    border-radius: 4px;
+}
+
+/* из pages/anime */
+a.b-db_entry-variant-list_item .b-link:hover {
+    text-decoration: none;
+}
+
+/* из pages/contests */
+.l-top_menu-v2 .menu-icon.search:before,
+.l-top_menu-v2 .menu-dropdown a,
+.l-top_menu-v2 .menu-dropdown.main > span span,
+a.menu-icon.forum.desktop,
+a.menu-icon.contest,
+.l-top_menu-v2 .icon-profile:before,
+.l-top_menu-v2 .menu-dropdown a:before,
+.l-top_menu-v2 .menu-dropdown > span:after,
+.l-top_menu-v2 .menu-dropdown .submenu-triangle:after {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* из layout/header */
+.l-top_menu-v2 .menu-icon.active,
+.l-top_menu-v2 .menu-dropdown > button a:hover,
+.l-top_menu-v2 .menu-icon:focus,
+.l-top_menu-v2 .menu-dropdown.active > button,
+.l-top_menu-v2 .menu-dropdown > button:focus {
+    background: none;
+}
+
+/* из components/forms */
+.b-form input[type="submit"],
+.b-button {
+    line-height: 13px;
+}
+
+/* из pages/anime */
+.b-db_entry-variant-list_item a.b-link.bubbled-processed {
+    color: rgba(var(--text-strong), 1) !important;
+}
+
+/* из pages/anime */
+a.b-db_entry-variant-list_item span.b-link {
+    color: rgba(var(--text-strong), 1) !important;
+}
+
+/* из pages/anime */
+.b-db_entry-variant-list_item > .info .line .key {
+    color: unset;
+    font-weight: unset;
+    margin-right: unset;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .global-search input {
+    background: unset;
+    color: unset;
+    transition: 0.3s ease-in-out;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .menu-icon.active,
+.l-top_menu-v2 .menu-icon:focus,
+.l-top_menu-v2 .menu-dropdown.active > span,
+.l-top_menu-v2 .menu-dropdown > span:focus {
+    background-color: var(--glass-active);
+}
+
+/* из layout/header */
+.l-top_menu-v2 .menu-dropdown.profile > span {
+    background: none;
+}
+
+/* из layout/header */
+.l-top_menu-v2 .submenu > a.active {
+    background: rgba(var(--text-2), 0.2);
+}
+
+/* из layout/header */
+.l-top_menu-v2 .menu-icon.active,
+.l-top_menu-v2 .menu-icon:focus,
+.l-top_menu-v2 .menu-dropdown > span:focus {
+    background-color: color-mix(in srgb, var(--glass-deep) 30%, transparent);
+}
+
+/* из layout/header */
+span.submenu-triangle.icon-profile {
+    background: transaprent;
+}
+
+/* из pages/anime */
+.b-anime_status_tag.episode,
+.b-anime_status_tag.studio {
+    background-color: rgba(31, 31, 71, 0.9);
+    color: rgba(var(--text-strong), 0.6);
+    cursor: default;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 7px;
+    text-align: center;
+    border-radius: 10px;
+    border: unset;
+}
+
+/* из pages/achievements */
+body.p-achievements.p-profiles .b-anime_status_tag.episode,
+.b-anime_status_tag.studio {
+    color: rgba(255, 247, 232, 0.6);
+}
+
+/*Загрузка!> убирает баг постеров в клубах и на страничках с постерами*/
+/* из pages/clubs */
+.p-clubs-images .ajax-loading,
+.p-clubs-images .ajax-loading.vk-like,
+.p-clubs-images .b-appear_marker.active,
+.p-db_entries-art .ajax-loading,
+.p-db_entries-art .ajax-loading.vk-like,
+.p-db_entries-art .b-appear_marker.active {
+    display: flex;
+    position: fixed !important;
+    top: 3rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    background: none;
+}
+
+@media only screen and (min-width: 768px) {
+    /* из layout/header */
+    .menu-dropdown *,
+    .menu-dropdown *:before,
+    .menu-dropdown *:after,
+    .global-search input *,
+    .global-search input,
+    .global-search inpot *:after,
+    .global-search input *:before {
+        transition: 0s all, background 0.2s, color 0.2s;
+    }
+    /* из layout/header */
+    .menu-dropdown.profile .text {
+        transition: none;
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-news .c-news_topics {
+        margin-right: 25px;
+        width: calc(69% - 25px);
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-news .c-generated_news {
+        width: 30%;
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-second .c-forum {
+        width: 30%;
+        margin-right: 7px !important;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .submenu > a {
+        border-radius: 20px;
+        margin: 0 4px;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .menu-dropdown.main > span {
+        border-radius: 19px;
+        position: relative;
+        width: calc(100% + 30px);
+        left: -15px;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .menu-dropdown.profile > span {
+        border-radius: 19px 0 0 19px;
+        position: relative;
+        width: calc(100% + 15px);
+        margin-left: -15px;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .menu-dropdown.main.active > span,
+    .l-top_menu-v2 .menu-dropdown > span:focus,
+    .l-top_menu-v2 .menu-dropdown.active .submenu-triangle {
+        background-color: rgba(var(--accent), 0.05);
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .menu-icon:hover,
+    .l-top_menu-v2 .menu-dropdown.profile:hover > span {
+        background: none;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover,
+    .l-top_menu-v2 .menu-dropdown.active .submenu-triangle:hover,
+    .l-top_menu-v2 .menu-dropdown > span:hover,
+    .l-top_menu-v2 .submenu > a:hover,
+    .l-top_menu-v2 .submenu > a.active:hover {
+        background: rgba(var(--accent), 0.15);
+        color: rgba(var(--text-strong), var(--hundred)) !important;
+    }
+    /* из pages/achievements */
+    body.p-achievements.p-profiles .l-top_menu-v2 .submenu > a.active,
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover,
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown.active .submenu-triangle:hover,
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown > span:hover,
+    body.p-achievements.p-profiles .l-top_menu-v2 .submenu > a:hover,
+    body.p-achievements.p-profiles .l-top_menu-v2 .submenu > a.active:hover {
+        background: rgba(165, 98, 16, 0.2);
+        color: #fff7e8 !important;
+    }
+    /* из pages/achievements */
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown.main.active > span,
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown > span:focus,
+    body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown.active .submenu-triangle {
+        background-color: rgba(165, 98, 16, 0.1);
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    /* из layout/header */
+    .l-top_menu-v2 .global-search input {
+        padding: 5px 46px 3px;
+        border-radius: 19px;
+        transition: 0s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    /* из layout/header */
+    .l-top_menu-v2:hover .global-search input {
+        background: rgba(var(--text), 0.07);
+    }
+    /* из layout/header */
+    .l-top_menu-v2.is-search-focus .global-search input {
+        background: rgba(var(--text), 0.12);
+        box-shadow: none;
+    }
+    /* из pages/anime */
+    .p-animes-show .cc .c-anime,
+    .p-animes-show .cc .c-manga,
+    .p-mangas-show .cc .c-anime,
+    .p-mangas-show .cc .c-manga,
+    .p-ranobe-show .cc .c-anime,
+    .p-ranobe-show .cc .c-manga {
+        margin: 0 5px !important;
+        width: calc(14.28% - 10px);
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-ongoings .c-column {
+        width: calc(14.28% - 10px);
+        margin: 0 5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    @media (hover: hover) and (pointer: fine) {
+        /* из pages/anime */
+        .b-video_variant a:hover {
+            background: none !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-ongoings .c-column {
+        width: calc(12.5% - 10px) !important;
+        margin: 0 5px !important;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    /* из pages/profile */
+    .p-profiles-show .lifetime .times .time,
+    .p-profiles-show .lifetime .title .value {
+        font-size: 10px !important;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    /* из layout/page */
+    .cc-8 > .c-column {
+        width: calc(14.28% - 10px);
+    }
+    /* из base/base */
+    .item-mobile,
+    .item-mobile:hover {
+        color: rgba(var(--text), var(--hundred));
+        margin-right: 5px;
+    }
+    /* из base/base */
+    .item-offtopic:before,
+    .item-offtopic:after {
+        font-family: "Comfortaa", sans-serif;
+        color: #e42964;
+    }
+    /* из pages/messages */
+    .b-dialog.aside-expanded aside.buttons,
+    .b-comment.aside-expanded aside.buttons,
+    .b-message.aside-expanded > .inner,
+    .b-message.aside-expanded aside.buttons {
+        border: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        /* из base/base */
+        a:hover,
+        .link:hover {
+            transition: none !important;
+            box-shadow: none !important;
+        }
+    }
+    /* из pages/messages */
+    .b-dialog > .inner div.body {
+        margin-left: 10px;
+    }
+    /* из pages/lists */
+    .p-animes_collection-index .cc-entries > .c-column,
+    .p-mangas_collection-index .cc-entries > .c-column,
+    .p-recommendations-index .cc-entries > .c-column,
+    .p-userlist_comparer-show .cc-entries > .c-column,
+    .p-animes_collection-index.x1000 .cc-entries > .c-column,
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
+    .p-recommendations-index.x1000 .cc-entries > .c-column,
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+        margin-right: 3%;
+    }
+    /* из layout/header */
+    .l-page .menu-toggler .toggler {
+        background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
+        border: 2px solid color-mix(in srgb, var(--glass-deep) 5%, transparent);
+        overflow: hidden;
+        padding: 0 ;
+        text-align: center;
+        font-family: "Comfortaa", sans-serif;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из base/base */
+    .item-mobile.selected {
+        z-index: 4;
+        position: relative;
+        color: rgba(var(--accent), var(--hundred));
+    }
+    /* из components/editor */
+    .b-shiki_editor .links.links,
+    .b-shiki_editor .images.links,
+    .b-shiki_editor .quotes.links,
+    .b-shiki_editor .email.links,
+    .b-shiki_editor .upload.links {
+        padding-left: 0;
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+        float: left !important;
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-ongoings .c-column {
+        width: calc(16.66% - 10px);
+        margin: 0 5px;
+    }
+    /* из pages/forum */
+    .b-topic-minified > .inner .status-line {
+        overflow: hidden;
+        white-space: normal;
+        display: block;
+        width: 100%;
+        padding-top: 0 ;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+    /* из pages/messages */
+    .b-message > .inner div.body .b-catalog_entry.cc .cover {
+        width: 43%;
+        margin-right: 10px;
+    }
+    /* из components/editor */
+    .b-comment > .inner header .name-date .time {
+        padding-top: 0 ;
+        height: 18px;
+        line-height: 10px;
+    }
+    /* из components/editor */
+    .b-comment > .inner header img {
+        width: 39px;
+        margin: 0 0  0 7px !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history,
+    .p-profiles .profile-head .c-history.x2,
+    .p-profiles .profile-head .c-history.x3,
+    .x1000 > .l-page div .profile-head .c-history.x2,
+    .x1000 > .l-page div .profile-head .c-history.x3 {
+        background: none;
+        border-radius: 5%;
+        padding: 0  5px 0 ;
+        position: absolute;
+        right: 0  !important;
+        top: auto !important;
+        transition: none !important;
+        transform: translateY(-4.2rem);
+        z-index: auto;
+        width: 100%;
+        margin: 0  0;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history .entry {
+        display: inline-block;
+        width: calc(33.33% - 10px);
+        min-width: calc(33.33% - 10px);
+        margin: 0 5px;
+        height: 44px;
+        background: rgba(var(--glass), 0.5);
+        border-radius: 23px;
+        box-shadow: 0 2px 4px 1px rgba(var(--shade), 0.4) !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history .entry img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin: 2px 10px 2px 2px;
+    }
+    /* из pages/clubs */
+    .b-clubs.one-line .b-club {
+        position: relative;
+        width: auto;
+    }
+    /* из pages/forum */
+    .b-topic > .inner header .name-date {
+        margin-right: 45px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    /* из pages/profile */
+    .p-profiles-show .cc-favourites .c-column {
+        width: 16.5%;
+        margin-right: 0  !important;
+    }
+    /* из pages/profile */
+    .p-profiles-show .cc-favourites .c-column:nth-child(6n) {
+        margin-right: 0;
+    }
+    /* из pages/profile */
+    .p-profiles-show .cc-friends .b-user {
+        position: relative;
+        width: 18%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* из pages/contests */
+    .l-top_menu-v2 a.menu-icon.forum.desktop,
+    .l-top_menu-v2 a.menu-icon.contest {
+        display: none;
+    }
+    /* из layout/header */
+    .l-top_menu-v2 .logo-container .logo {
+        width: 110px;
+    }
+    /* из pages/messages */
+    .b-message > .inner header img {
+        margin: 2px 7px 4px 0;
+        width: 40px;
+    }
+    /* из components/editor */
+    .fullwidth > .b-spoiler > label {
+        white-space: nowrap;
+        padding: 0.47em 6em 0.47em 1em;
+    }
+    /* из pages/profile */
+    .p-profiles-show .cc-friends .b-user {
+        position: relative;
+        width: 13%;
+    }
+    /* из layout/page */
+    .cc-8 > .c-column {
+        width: calc(16.6% - 10px);
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-second .c-forum {
+        width: 100%;
+    }
+    /* из layout/page */
+    .c-column.c-left {
+        transition: none;
+        margin-top: 21.5%;
+        margin-bottom: 13.75rem;
+        bottom: -14.45rem;
+    }
+    /* из pages/catalog */
+    .subheadline.m13 .b-block_list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+        position: relative;
+        overflow: hidden;
+        height: 46px !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history .entry {
+        margin: 0;
+        position: relative;
+        display: block;
+        clear: both;
+        float: none;
         width: 100% !important;
-        box-sizing: border-box !important;
+        animation: history 8s steps(3, end) infinite !important;
+        box-shadow: none !important;
     }
+    /* из pages/profile */
+    .b-stats_bar a.title,
+    .b-stats_bar .title {
+        margin-bottom: 3px;
+        position: absolute;
+        width: 91%;
+        text-align: center;
+        z-index: 2;
+        line-height: 38px;
+        font-size: 16px;
+        opacity: 0.2;
+        transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+    }
+    /* из pages/profile */
+    .p-profiles-show .lifetime .title {
+        line-height: 1.65;
+        width: 100%;
+        margin-top: -40px;
+        text-align: left;
+        opacity: 1;
+    }
+    /* из pages/settings */
+    .profile-actions .mail,
+    .profile-actions .talk,
+    .profile-actions .fav-remove,
+    .profile-actions .ban,
+    .profile-actions .fav-add,
+    .profile-actions .settings,
+    .profile-actions .ignore-add,
+    .profile-actions .ignore-remove {
+        display: inline-block;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: normal;
+        margin: 0  3px;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a,
+    .p-profiles .profile-head .c-info .c-additionals div[data-type="video_changes"] span {
+        font-size: 11px !important;
+        display: block;
+        margin: 0 ;
+        vertical-align: middle;
+        white-space: normal;
+        height: 58px;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a[href*="/summaries"] {
+        width: 60px;
+        display: table-cell;
+        height: 60px;
+        vertical-align: middle;
+        padding: 5px 6px 0  6px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a[href*="/versions"] {
+        width: 65px;
+        display: table-cell;
+        height: 60px;
+        vertical-align: middle;
+        padding: 5px 6px 0  6px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a[href*="/video"],
+    .p-profiles .profile-head .c-info .c-additionals div[data-type="video_changes"] span {
+        display: table-cell;
+        width: 65px;
+        height: 60px;
+        vertical-align: middle;
+        padding: 5px 6px 0  6px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a[href$="/comments"] {
+        width: 110px;
+        margin-bottom: 20px;
+        padding: 13px 10px 10px 10px;
+        height: 60px;
+        vertical-align: middle;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a[href$="/reviews"] {
+        width: 85px;
+        padding: 1.3rem 10px 10px 10px;
+        height: 60px;
+        vertical-align: middle;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+    /* из pages/settings */
+    .profile-actions .mail,
+    .profile-actions .talk,
+    .profile-actions .fav-remove,
+    .profile-actions .ban,
+    .profile-actions .fav-add,
+    .profile-actions .settings,
+    .profile-actions .ignore-add,
+    .profile-actions .ignore-remove {
+        padding: 5px 15px 5px !important;
+        margin: 0;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a,
+    .p-profiles .profile-head .c-info .c-additionals div span {
+        padding: 6px 15px 10px 15px;
+        background: rgba(var(--glass), 0.4);
+        border-radius: 10%;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a {
+        color: rgba(var(--text-2), var(--hundred)) !important;
+    }
+    /* из pages/profile */
+    .subheadline > a[href*="/history"] {
+        color: rgba(var(--text), var(--hundred)) !important;
+    }
+    /* из pages/profile */
+    .c-history .subheadline,
+    .c-history .subheadline > a[href*="/history"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0.15rem 0 0 0;
+        transition: margin 0s, padding 0s, width 0s, border 0s, border-radius 0s, line-height 0s, min-height 0s;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
+        font-size: 0  !important;
+        line-height: 0;
+        margin-top: 0;
+        display: block;
+        position: absolute;
+    }
+    /* из pages/lists */
+    .p-animes_collection-index .cc-entries > .c-column,
+    .p-mangas_collection-index .cc-entries > .c-column,
+    .p-recommendations-index .cc-entries > .c-column,
+    .p-userlist_comparer-show .cc-entries > .c-column,
+    .p-animes_collection-index.x1000 .cc-entries > .c-column,
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
+    .p-recommendations-index.x1000 .cc-entries > .c-column,
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+        margin-right: 1.25%;
+        margin-left: 1.25%;
+    }
+    /* из layout/page */
+    .c-column.block_m {
+        width: 100%;
+    }
+    /* из layout/header */
+    .l-page .menu-slide-outer .menu-slide-inner {
+        width: 100%;
+    }
+    /* из pages/dashboard */
+    .b-hot_topics .topic.subject {
+        color: rgba(var(--text), var(--hundred));
+        font-size: 18px !important;
+        width: 100%;
+        bottom: 3px;
+        padding: 17px 20px 13px 0 ;
+    }
+    /* из pages/profile */
+    .p-profiles-show .lifetime .title {
+        color: rgba(var(--text-2), var(--hundred));
+        font-weight: bold;
+    }
+    /* из pages/anime */
+    .b-add_to_list.watching .trigger,
+    .b-add_to_list.watching .option,
+    .b-add_to_list.rewatching .trigger,
+    .b-add_to_list.rewatching .option {
+        max-width: 100%;
+        width: 100%;
+    }
+    /* из pages/lists */
+    .p-animes-show .c-image .b-user_rate,
+    .p-mangas-show .c-image .b-user_rate,
+    .p-ranobe-show .c-image .b-user_rate {
+        /*max-width: 100%;*/
+        width: 100%;
+    }
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history,
+    .p-profiles .profile-head .c-history.x2,
+    .p-profiles .profile-head .c-history.x3,
+    .x1000 > .l-page div .profile-head .c-history.x2,
+    .x1000 > .l-page div .profile-head .c-history.x3 {
+        top: auto !important;
+        z-index: auto;
+        transition: none !important;
+        transform: translateY(-1.2rem);
+    }
+    /* из pages/lists */
+    .p-user_rates-index .list-lines tr td:first-child a,
+    .b-form a.remove {
+        margin-top: 17px;
+    }
+    /* из pages/catalog */
+    .x1000 .menu-slide-outer.x199 .l-menu,
+    .x1000 .menu-slide-outer.x240 .l-menu,
+    .x1200 .menu-slide-outer.x199 .l-menu,
+    .x1200 .menu-slide-outer.x240 .l-menu,
+    .menu-slide-outer.x199 .l-menu,
+    .menu-slide-outer.x240 .l-menu {
+        width: 100%;
+        padding: 0  10px 0  17px;
+        outline: 55555px solid color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-ongoings .c-column {
+        width: calc(33.33% - 20px);
+        margin: 0 10px;
+    }
+    /* из components/forms */
+    .b-main_search .input input {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
 
-    /* --- круглая кнопка фильтра/крестика целиком на экране
-       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
-    .l-page .menu-toggler {
-        width: auto !important;
-        height: auto !important;
-        left: auto !important;
-        right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+@media screen and (max-width: 650px) {
+    /* из layout/page */
+    .cc-8 > .c-column {
+        width: calc(20% - 10px);
     }
-    .l-page.menu-expanded .menu-toggler .toggler {
-        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    /* из pages/profile */
+    .p-profiles-show .cc-friends .b-user {
+        position: relative;
+        width: 18%;
     }
+    /* из pages/clubs */
+    .b-clubs.one-line .b-club {
+        position: relative;
+        width: auto;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    /* из pages/profile */
+    .p-profiles .profile-head .c-info .c-additionals div a {
+        font-size: 11px !important;
+        font-size: 15px;
+        display: block;
+        padding: 6px 5px 10px 5px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    /* из layout/page */
+    .cc-8 > .c-column {
+        width: calc(33.3% - 10px);
+        margin: 5px;
+    }
+    /* из pages/profile */
+    .p-profiles-show .cc-friends .b-user {
+        width: 18%;
+    }
+    /* из pages/lists */
+    .p-animes_collection-index .cc-entries > .c-column,
+    .p-mangas_collection-index .cc-entries > .c-column,
+    .p-recommendations-index .cc-entries > .c-column,
+    .p-userlist_comparer-show .cc-entries > .c-column,
+    .p-animes_collection-index.x1000 .cc-entries > .c-column,
+    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
+    .p-recommendations-index.x1000 .cc-entries > .c-column,
+    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+    /* из pages/lists */
+    .p-animes_collection-index .cc-entries > .c-column,
+    .p-mangas_collection-index .cc-entries > .c-column,
+    .p-recommendations-index .cc-entries > .c-column,
+    .p-userlist_comparer-show .cc-entries > .c-column {
+        width: 46%;
+    }
+    /* из pages/anime */
+    .c-actions .new_comment,
+    .c-actions .new_review,
+    .c-actions .edit,
+    .c-actions .fav-add,
+    .c-actions .fav-remove {
+        width: 100%;
+        height: 50px;
+        position: relative;
+    }
+    /* из pages/anime */
+    .c-actions .new_comment:before,
+    .c-actions .new_review:before,
+    .c-actions .edit:before,
+    .c-actions .fav-add:before,
+    .c-actions .fav-remove:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 40px;
+        opacity: 0.25;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* из base/base */
+    .was_updated span {
+        font-size: 0 ;
+    }
+    /* из base/base */
+    .was_updated span:before {
+        content: "Изменено";
+        font-size: 12px;
+    }
+    /* из components/users */
+    a.actor.b-user16 span:before {
+        content: none;
+    }
+    /* из components/editor */
+    .b-comments .comments-loader,
+    .b-comments .comments-hider,
+    .b-comments .comments-expander {
+        padding: 5px 4px;
+    }
+    /* из base/base */
+    span.current-value[data-field="chapters"] {
+        display: none;
+    }
+    /* из pages/dashboard */
+    .p-dashboards-show .cc-ongoings .c-column {
+        width: calc(33.33% - 8px);
+        margin: 0 4px !important;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    /* из components/tooltips */
+    span.editor-smiley.b-tooltipped.selected:after {
+        font-family: shikimori;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        text-transform: none;
+        letter-spacing: normal;
+        content: "";
+        text-align: center;
+        position: absolute;
+        bottom: 180px;
+        z-index: 100;
+        background: rgba(43, 42, 97, 0.6);
+        left: 0;
+        padding: 5px 0 ;
+        width: 100%;
+        border-radius: 4px;
+        color: #7685f5;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    /* из pages/anime */
+    .b-add_to_list.watching .trigger,
+    .b-add_to_list.watching .option,
+    .b-add_to_list.rewatching .trigger,
+    .b-add_to_list.rewatching .option {
+        max-width: 500px;
+    }
+    /* из pages/settings */
+    .profile-actions .mail,
+    .profile-actions .talk,
+    .profile-actions .fav-remove,
+    .profile-actions .ban,
+    .profile-actions .fav-add,
+    .profile-actions .settings,
+    .profile-actions .ignore-add,
+    .profile-actions .ignore-remove {
+        padding: 5px 8px 5px !important;
+    }
+    /* из pages/clubs */
+    .b-clubs.one-line .b-club {
+        width: auto;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        width: calc(300px - 36px);
+    }
+    /* из pages/achievements */
+    .p-achievements-index .c-franchises .b-badge {
+        width: 280px;
+        margin-right: 1% !important;
+    }
+}
+
+@media screen and (min-width: 736px) and (max-width: 880px) {
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        width: calc(250px - 36px);
+    }
+    /* из pages/achievements */
+    .b-achievement .c-about a.title {
+        font-size: 12px;
+    }
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        min-height: 314px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 735px) {
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        width: calc(200px - 36px);
+    }
+    /* из pages/achievements */
+    .b-achievement .c-about a.title {
+        font-size: 12px;
+    }
+    /* из pages/achievements */
+    .b-achievement .c-about .hint {
+        font-size: 10px;
+    }
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        min-height: 314px;
+    }
+    /* из pages/catalog */
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* из pages/profile */
+    .p-profiles .profile-head .c-history {
+        display: flex !important;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row-reverse;
+        margin: 6px 0;
+    }
+    /* из pages/profile */
+    .c-history > div {
+        width: 100%;
+    }
+    /* из pages/profile */
+    .c-history .subheadline a {
+        font-size: 0;
+        width: auto;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: auto;
+        display: flex;
+        background: none;
+        margin: 0;
+        bottom: 0;
+        padding: 0;
+        opacity: 0;
+        visibility: visible;
+        transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+    }
+    /* из pages/profile */
+    .c-history .subheadline a:after,
+    .c-history .subheadline::before {
+        background: rgba(var(--glass), 0.4) !important;
+        content: "\f187";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 20px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 60px;
+        position: absolute;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0 ;
+        box-shadow: 0 2px 4px 1px rgba(var(--shade), 0.4) !important;
+        margin: 0;
+    }
+    /* из pages/profile */
+    .c-history .subheadline::before {
+        content: "\f187";
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        width: 100%;
+        max-width: 300px;
+    }
+    /* из pages/achievements */
+    .p-achievements-index .cc-achievements .b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
+        min-height: 274px;
+    }
+    /* из pages/catalog */
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    /* из pages/achievements */
+    .p-achievements-index .c-franchises .b-badge {
+        margin: 6px !important;
+    }
+}
+
+/* из pages/forum */
+.b-footer_vote .vote-group .vote span {
+    color: rgba(var(--text), var(--hundred));
+    border: none;
+}
+
+/* из pages/forum */
+.b-footer_vote .vote-group .vote {
+    color: rgba(var(--text), var(--hundred));
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* из pages/achievements */
+    .p-profiles-show .achievements .cc-authors .b-achievement {
+        width: 27%;
+        margin: 15px 1% -10px 1%;
+        box-shadow: none;
+    }
+    /* из pages/achievements */
+    .p-profiles-show .achievements .cc-authors {
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 50px) {
+    /* Код Cosmo */
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        display: inline-block;
+        margin: 0 !important;
+        padding: 0;
+        float: none !important;
+        clear: none !important;
+        vertical-align: top;
+        background: none !important;
+        box-shadow: none !important;
+        pointer-events: none;
+    }
+    /* из pages/profile */
+    .about .cc-9-g0 > .c-column .cover,
+    .about .cc-8-g0 > .c-column .cover,
+    .about .cc-7-g0 > .c-column .cover,
+    .about .cc-6-g0 > .c-column .cover,
+    .about .cc-5-g0 > .c-column .cover {
+        background: none !important;
+        box-shadow: none !important;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 150px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+
+@media screen and (min-width: 250px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 2) !important;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 3) !important;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 4) !important;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 5) !important;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 6) !important;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 7) !important;
+    }
+}
+
+@media screen and (min-width: 925px) {
+    /* из kits/about-kits */
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 8) !important;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas .b-catalog_entry,
+.about .Animes_Mangas .b-catalog_entry:last-child {
+    display: inline-block;
+    margin: 0 0 4rem !important;
+    clear: none !important;
+    float: none !important;
+    padding: 0;
+    z-index: 10;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 57.5% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .about .Animes_Mangas .b-catalog_entry:hover {
+        transform: none;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+@media screen and (max-width: 250px) {
+    /* из kits/about-kits */
+    .about .Animes_Mangas .b-catalog_entry .cover .misc {
+        display: none;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry,
+.about .Animes_Mangas-1 .b-catalog_entry:last-child {
+    display: inline-block;
+    margin: 0 0 4rem !important;
+    clear: none !important;
+    float: none !important;
+    padding: 0;
+    z-index: 10;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 130% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .about .Animes_Mangas-1 .b-catalog_entry:hover {
+        transform: none;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1-standard:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-Characters:hover .b-link {
+    opacity: 1;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime:hover .b-link {
+    opacity: 1;
+}
+
+/* из kits/about-kits */
+.Ssylki-anime strong::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(2.8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.25s ease-in-out;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    border-radius: 0.5rem;
+}
+
+/* из kits/about-kits */
+* .about .k-0-1 .c-column,
+* .about .k-0-1 .c-column:last-child,
+* .about .k-0-1 .b-catalog_entry,
+* .about .k-0-1 .b-catalog_entry:last-child,
+* .p-profiles-edit .k-0-1 .c-column,
+* .p-profiles-edit .k-0-1 .c-column:last-child,
+* .p-profiles-edit .k-0-1 .b-catalog_entry,
+* .p-profiles-edit .k-0-1 .b-catalog_entry:last-child,
+* .k-0-1 .cc-4>.c-column,
+* .k-0-1 .cc-6-g0>.c-column,
+* .k-0-1 .cc-6-g0>.c-column:last-child,
+* .b-comments .k-0-1 .c-column,
+* .b-comments .k-0-1 .c-column:last-child,
+* .b-comments .k-0-1 .b-catalog_entry,
+* .b-comments .k-0-1 .b-catalog_entry:last-child,
+* .b-comments .k-0-1 .cc-4>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column:last-child {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0;
+}
+
+/* из kits/about-kits */
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    /* из components/cards */
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    /* из components/cards */
+    .b-catalog_entry:hover {
+        transform: translateY(-6px) scale(1.03);
+        margin-top: 0;
+        box-shadow:
+            0 16px 32px rgba(var(--shade), 0.5),
+            0 0 0 1px rgba(var(--accent), .35);
+        z-index: 2;
+    }
+}
+
+/* из components/cards */
+.b-catalog_entry .cover img,
+.b-catalog_entry .cover .image {
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+/* из components/cards */
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+
+/* --- Верхняя панель: подсветка только того пункта, что под курсором --- */
+/* из layout/header */
+.l-top_menu-v2 .menu-icon,
+.l-top_menu-v2 .menu-dropdown > button,
+.l-top_menu-v2 .menu-dropdown > span {
+    border-radius: 8px;
+    transition: background-color .25s ease, color .25s ease !important;
+}
+
+/* Пункты внутри выпадающих меню — мягкая подсветка под курсором */
+/* из layout/header */
+.l-top_menu-v2 .submenu > a,
+.l-top_menu-v2 .submenu .submenu-title {
+    background: transparent !important;
+    border-radius: 8px;
+    transition: background-color .2s ease, color .2s ease !important;
 }

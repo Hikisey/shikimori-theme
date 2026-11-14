@@ -1,0 +1,446 @@
+/* ===== layout/header =====
+   верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск */
+
+.l-top_menu-v2 {
+    position: sticky;
+    top: 0;
+}
+
+.l-top_menu-v2 .active .submenu {
+    max-height: calc(100vh - 46px);
+    overflow: auto;
+}
+
+.l-top_menu-v2 .global-search .search-results::before {
+    background: -webkit-linear-gradient(bottom, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(0deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+}
+
+.l-top_menu-v2 .global-search .search-results::after {
+    background: -webkit-linear-gradient(top, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+    background: linear-gradient(180deg, rgba(var(--glass-light), 0) 0%, color-mix(in srgb, var(--glass-deep) 65%, transparent) 100%);
+}
+
+.l-top_menu-v2 .logo-container .logo {
+    background: url(https://image.ibb.co/cxV9kV/shiki-logo.png) no-repeat center;
+    height: 32px;
+    margin-top: 8px;
+}
+
+.menu_group:not(.menu_group-controls) {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    margin: 1px 10px 1px 0;
+    padding: 0 !important;
+    border-radius: 10px;
+    background: rgba(var(--glass), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+}
+
+.menu_group:not(.menu_group-controls) > button:hover {
+    background: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+    height: 100%;
+}
+
+.menu_group:not(.menu_group-controls):before {
+    display: none;
+}
+
+.menu_group.menu_group-controls .icon {
+    transition: 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menu_group.menu_group-controls .icon.is-button:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+        color: var(--tone-e4e4e4) !important;
+    }
+}
+
+.menu_group.menu_group-controls .icon.is-button.is-active {
+    color: rgba(var(--accent), 1)!important;
+    background: none;
+}
+
+.x1000 .menu-slide-outer.x199 .l-content,
+.x1200 .menu-slide-outer.x199 .l-content,
+.menu-slide-outer.x199 .l-content,
+.x1000 .menu-slide-outer.x240 .l-content,
+.x1200 .menu-slide-outer.x240 .l-content,
+.menu-slide-outer.x240 .l-content {
+    width: 75.5%;
+    margin-right: 2%;
+}
+
+.l-top_menu-v2 .logo-container .glyph {
+    display: none;
+}
+
+span.submenu-triangle.icon-avatar img {
+    border-radius: 50%;
+}
+
+.l-top_menu-v2 .global-search .search-marker,
+.l-top_menu-v2 .global-search .clear {
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.l-top_menu-v2 .global-search .clear:hover {
+    color: #ab5828b3;
+}
+
+.l-top_menu-v2.is-search-focus .global-search .search-marker {
+    color: rgba(var(--text-strong), 0.7);
+}
+
+.l-top_menu-v2 .global-search .search-results {
+    overflow: hidden;
+    max-height: 90vh;
+    white-space: nowrap;
+    overflow-y: auto;
+
+    max-width: calc(100% - 20px);
+    left: 10px;
+    background-color: color-mix(in srgb, var(--glass-deep) 95%, transparent);
+    border-radius: 0 0 20px 20px;
+    padding: 3px;
+}
+
+.l-top_menu-v2 .global-search .search-results .inner {
+    height: 100%;
+    max-height: 100% !important;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode {
+    border: none;
+    border-radius: 20px;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode:before {
+    width: 32px;
+    background: linear-gradient(
+        to right,
+        rgba(var(--text), 0.5) 0%,
+        rgba(var(--text), 0.5) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+    border-radius: 50% 0 0 50%;
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode:hover:before {
+    background: linear-gradient(
+        to right,
+        rgba(var(--accent), 0.7) 0%,
+        rgba(var(--accent), 0.7) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+    border-top-color: rgba(var(--accent), 0.03);
+}
+
+.l-top_menu-v2 .global-search .search-results .search-mode.active:before {
+    background: linear-gradient(
+        to right,
+        rgba(var(--text), 0.7) 0%,
+        rgba(var(--text), 0.7) 30%,
+        rgba(var(--text), 0) 75%,
+        rgba(var(--text), 0) 100%
+    );
+}
+
+.l-top_menu-v2 .global-search .search-results .nothing_found {
+    color: var(--tone-b5a28c);
+}
+
+.l-top_menu-v2 .menu-icon.mail:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+    margin: 8px 10px 6px;
+    font-size: 18px;
+    font-family: "Comfortaa";
+    color: rgb(var(--text-strong));
+    background: rgba(var(--accent), 1);
+    border-radius: 6px;
+    animation: mail 5s ease 1;
+    border: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown > span .nickname {
+    color: rgba(var(--text-strong), 1);
+}
+
+/* Верхняя панель: непрозрачная, без мерцания; цвет задают --menu-bar и --menu-bar-hover */
+.l-top_menu-v2 {
+    background: var(--glass-bar) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    border-bottom: 1px solid rgba(var(--glass-light), 0.04) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    will-change: auto !important;
+    transition:
+        background-color .6s cubic-bezier(.22, 1, .36, 1),
+        border-color .6s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+/* При наведении панель слегка светлеет */
+.l-top_menu-v2:hover,
+.l-top_menu-v2:focus-within {
+    background: var(--glass-bar-hover) !important;
+    border-bottom-color: rgba(var(--accent), .18) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown > span {
+    background: none;
+}
+
+.l-top_menu-v2 .global-search {
+    color: rgba(var(--text-2), 1);
+}
+
+/* Выпадающие меню панели — непрозрачные, в цвет панели */
+.l-top_menu-v2 .submenu,
+.l-top_menu-v2 .menu-dropdown .submenu,
+.l-top_menu-v2 .menu-dropdown.active .submenu {
+    background: var(--glass-bar-hover) !important;
+    border: 1px solid rgba(var(--glass-light), 0.05) !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 14px 30px rgba(var(--shade), 0.5) !important;
+    backdrop-filter: none !important;
+}
+
+.l-top_menu-v2 .menu-dropdown .submenu {
+    top: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.l-top_menu-v2 .menu-dropdown.active .submenu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.turbolinks-progress-bar {
+    background: rgba(var(--accent), 1) !important;
+}
+
+/* Старая версия верхней панели */
+.l-top_menu,
+.l-top_menu:hover {
+    background: var(--glass-deep) !important;
+    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+    transition: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .l-top_menu-v2 .menu-dropdown.profile {
+        margin-left: 14px;
+    }
+    .l-top_menu-v2 .submenu > .legend {
+        margin-bottom: 3px;
+        padding-top: 3px;
+        padding-left: 15px;
+        font-size: 10px;
+        border-radius: 14px;
+        color: rgba(var(--text), 1);
+        background: rgba(var(--glass), 0.7);
+        box-shadow: 0 2px 6px 1px rgba(var(--shade), 0.15);
+    }
+    .l-top_menu-v2 .submenu {
+        padding-bottom: 4px;
+        border-radius: 0 0 20px 20px;
+    }
+    .l-top_menu-v2 .global-search .search-results {
+        max-width: calc(100% - 20px);
+        left: 10px;
+    }
+    body .l-top_menu-v2 .menu-dropdown .submenu a:hover:before,
+    .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover:after,
+    .l-top_menu-v2 .menu-dropdown.main > span:hover:after,
+    .l-top_menu-v2 .menu-dropdown.main > span:hover:before {
+        color: rgba(var(--accent), 1) !important;
+    }
+    .l-top_menu-v2 .menu-dropdown.profile.active .submenu-triangle img {
+        box-shadow: 0  0  0  3px rgba(var(--accent), 1);
+    }
+    .l-top_menu-v2 .menu-dropdown.profile .submenu-triangle:hover img {
+        box-shadow: 0  0  0  3px rgba(var(--accent), 1) !important;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .l-top_menu-v2 .global-search .clear:active {
+        color: #cc4e05b3;
+    }
+}
+
+.l-top_menu-v2 .menu-icon:hover,
+.l-top_menu-v2 .menu-dropdown > button:hover,
+.l-top_menu-v2 .menu-dropdown > span:hover {
+    background-color: rgba(var(--glass-light), .06) !important;
+}
+
+/* Кнопка раздела/профиля с открытым меню — в тон меню */
+.l-top_menu-v2 .menu-dropdown.active > button,
+.l-top_menu-v2 .menu-dropdown.active > span,
+.l-top_menu-v2 .menu-dropdown:hover > button,
+.l-top_menu-v2 .menu-dropdown:hover > span {
+    background: var(--glass-bar-hover) !important;
+}
+
+.l-top_menu-v2 .submenu>a.icon-site_rules:after {
+    content: 'Правила';
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .l-top_menu-v2 .menu-icon.trigger:before {
+
+        height: 27px;
+        width: 27px;
+        content: '\f0c9';
+        background: none;
+        font-family: 'FontAwesome', sans-serif;
+        color: rgba(var(--text-strong), 1);
+    }
+    .l-top_menu-v2.is-search-mobile .global-search {
+        background: color-mix(in srgb, var(--glass-deep) 95%, transparent);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 -5px 5px -2px color-mix(in srgb, var(--glass-deep) 95%, transparent);
+    }
+    .l-top_menu-v2 .global-search input {
+        padding-left: 58px;
+    }
+    .menu-toggler.ipad-expanded,
+    .l-page .menu-toggler {
+        position: fixed;
+        bottom: 15px;
+        right: 14px;
+        top: auto;
+        margin: 0;
+    }
+    .l-page .menu-toggler .toggler:before {
+        display: none;
+    }
+    .l-page .menu-toggler .toggler:after,
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f0b0";
+        font-size: 23px;
+        color: rgba(var(--text), var(--hundred));
+        font-family: 'FontAwesome', sans-serif;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f054";
+        font-size: 26px;
+        color: rgba(var(--text), var(--hundred));
+        font-family: 'FontAwesome', sans-serif;
+    }
+    .l-page.menu-expanded .l-content {
+        margin-left: 0 ;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .l-top_menu-v2 .menu-icon,
+    .l-top_menu-v2 .menu-dropdown > span {
+        padding: 0 12px;
+    }
+    .l-top_menu-v2 .menu-icon:not(.mobile) {
+        display: flex;
+    }
+    .l-top_menu-v2 .menu-dropdown > span[data-unread_count]:after {
+        display: none;
+    }
+    .x1000 .menu-slide-outer.x199 .l-content,
+    .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+    }
+    .x1200 .menu-slide-outer.x240 .l-content,
+    .menu-slide-outer.x240 .l-content,
+    .x1000 .menu-slide-outer.x240 .l-content,
+    .x1200 .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+        top: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .x1000 .menu-slide-outer.x199 .l-content,
+    .menu-slide-outer.x199 .l-content {
+        width: 98% !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* --- фильтры каталога и списков: карточка по центру экрана --- */
+    /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
+    section.l-page.menu-expanded::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
+        animation: shiki-fade .3s ease both;
+    }
+    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
+    .l-page .menu-toggler {
+        z-index: 999 !important;
+        bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .l-page .menu-toggler .toggler {
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        transition: background-color .2s ease;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f00d" !important;
+        font-size: 22px !important;
+    }
+    /* --- панель фильтров: плотное матовое стекло --- */
+    section.l-page.menu-expanded::after {
+        background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+    /* --- круглая кнопка фильтра/крестика целиком на экране
+       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
+    .l-page .menu-toggler {
+        width: auto !important;
+        height: auto !important;
+        left: auto !important;
+        right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    }
+}

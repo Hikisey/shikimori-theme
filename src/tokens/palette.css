@@ -1,0 +1,214 @@
+/* ===== tokens/palette =====
+   палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
+
+@media screen and (min-width: 1px) {
+    /* =====================================================================
+       ПАЛИТРА ТЕМЫ — все цвета берутся отсюда.
+       Цвета пишутся rgb-тройкой «R, G, B» (так работает rgba(var(--x), .5)).
+       Чтобы перекрасить тему, вставьте в «Внешний вид сайта» ПОСЛЕ строк @import:
+         @media screen and (min-width: 1px) { html:root { --accent: 90, 150, 255; } }
+       (обёртка @media обязательна — без неё Шикимори применит стиль только к ПК).
+       Старые имена (--bright-color, --block-color, --page-bg …) тоже понимаются.
+       ===================================================================== */
+    html:root {
+        /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
+        --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
+        --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
+        /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
+
+        /* ---------- ФОН ---------- */
+        --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
+        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
+        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
+        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
+        --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
+        --bg-blur: 0px;                                 /* размытие обоев на ПК */
+        --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
+        --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
+        --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
+        --profile-banner: none;                         /* баннер профиля: url("…") */
+        --profile-banner-height: 300px;                 /* высота баннера */
+        --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
+        --profile-banner-position: center;              /* какая часть картинки видна */
+        --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
+
+        /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
+        --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
+        --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
+        --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
+        --shade: 0, 0, 0;                               /* цвет теней и затемнений */
+
+        /* ---------- ТЕКСТ ---------- */
+        --text: var(--light-color, 236, 240, 247);      /* основной текст */
+        --text-2: var(--dark-color, 170, 178, 192);     /* второстепенный текст, подписи */
+        --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
+        --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
+        --hundred: 1;                                   /* непрозрачность части текста */
+
+        /* ---------- СТАТУСЫ И ОЦЕНКИ (по желанию) ---------- */
+        --very-high-rating: 129, 199, 132;
+        --high-rating: 156, 204, 101;
+        --average-rating: 255, 202, 40;
+        --small-rating: 239, 108, 108;
+        --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
+        --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
+        --anime-inprocess: 128, 246, 255;
+        --anime-complete: 0, 229, 255;
+        --manga-inprocess: 255, 92, 160;
+        --manga-complete: 255, 0, 110;
+    }
+    /* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
+       Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,
+       вычисленные из --accent / --glass / --text / --link (Chrome 119+, Safari 16.4+, Firefox 128+). */
+    html:root {
+        --accent-dim: rgb(178, 58, 64); /* тёмный акцент: кнопки, подложка ника */
+        --accent-hover: rgb(214, 82, 82); /* акцент кнопок под курсором */
+        --glass-deep: rgb(20, 22, 28); /* самое тёмное стекло: меню, затемнение обоев */
+        --glass-bar: rgb(18, 20, 26); /* верхняя панель */
+        --glass-bar-hover: rgb(26, 29, 37); /* пункты панели под курсором */
+        --glass-popup: rgb(38, 43, 54); /* всплывающие окна и подсказки */
+        --glass-active: rgb(26, 28, 34); /* нажатые и выбранные элементы */
+        --glass-shadow: rgb(10, 12, 16); /* тени блоков */
+        --text-input: rgb(165, 172, 184); /* текст в полях ввода */
+        --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
+        /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
+        --tone-6e1515: rgb(110, 21, 21);
+        --tone-010101: rgb(1, 1, 1);
+        --tone-0c0c0c: rgb(12, 12, 12);
+        --tone-121223: rgb(18, 18, 35);
+        --tone-131010: rgb(19, 16, 16);
+        --tone-151414: rgb(21, 20, 20);
+        --tone-171212: rgb(23, 18, 18);
+        --tone-171616: rgb(23, 22, 22);
+        --tone-171717: rgb(23, 23, 23);
+        --tone-191717: rgb(25, 23, 23);
+        --tone-1b1b1b: rgb(27, 27, 27);
+        --tone-1e1e27: rgb(30, 30, 39);
+        --tone-1f1e1e: rgb(31, 30, 30);
+        --tone-1f2123: rgb(31, 33, 35);
+        --tone-212121: rgb(33, 33, 33);
+        --tone-263238: rgb(38, 50, 56);
+        --tone-271f1c: rgb(39, 31, 28);
+        --tone-282b2f: rgb(40, 43, 47);
+        --tone-282d56: rgb(40, 45, 86);
+        --tone-282e33: rgb(40, 46, 51);
+        --tone-2a2f33: rgb(42, 47, 51);
+        --tone-2d2626: rgb(45, 38, 38);
+        --tone-373737: rgb(55, 55, 55);
+        --tone-373c3e: rgb(55, 60, 62);
+        --tone-383838: rgb(56, 56, 56);
+        --tone-3b3a3e: rgb(59, 58, 62);
+        --tone-3e3e3e: rgb(62, 62, 62);
+        --tone-3e4d5d: rgb(62, 77, 93);
+        --tone-444444: rgb(68, 68, 68);
+        --tone-4c4b4b: rgb(76, 75, 75);
+        --tone-54588a: rgb(84, 88, 138);
+        --tone-556571: rgb(85, 101, 113);
+        --tone-6b6965: rgb(107, 105, 101);
+        --tone-6d6d6d: rgb(109, 109, 109);
+        --tone-9fa9b5: rgb(159, 169, 181);
+        --tone-a5aae6: rgb(165, 170, 230);
+        --tone-a8a99f: rgb(168, 169, 159);
+        --tone-b1cdde: rgb(177, 205, 222);
+        --tone-b5a28c: rgb(181, 162, 140);
+        --tone-b7b7b7: rgb(183, 183, 183);
+        --tone-bfc5d0: rgb(191, 197, 208);
+        --tone-c4cad4: rgb(196, 202, 212);
+        --tone-d2d2d2: rgb(210, 210, 210);
+        --tone-d4d2cd: rgb(212, 210, 205);
+        --tone-d6d6d6: rgb(214, 214, 214);
+        --tone-d6dbe4: rgb(214, 219, 228);
+        --tone-dadada: rgb(218, 218, 218);
+        --tone-dadfff: rgb(218, 223, 255);
+        --tone-dcdcdc: rgb(220, 220, 220);
+        --tone-dddddd: rgb(221, 221, 221);
+        --tone-e2e2e2: rgb(226, 226, 226);
+        --tone-e4d7d7: rgb(228, 215, 215);
+        --tone-e4e4e4: rgb(228, 228, 228);
+        --tone-e7e7e7: rgb(231, 231, 231);
+        --tone-e9f1f3: rgb(233, 241, 243);
+        --tone-eadddd: rgb(234, 221, 221);
+        --tone-ebeef1: rgb(235, 238, 241);
+        --tone-f9f9f9: rgb(249, 249, 249);
+        --tone-fdfdfd: rgb(253, 253, 253);
+    }
+}
+
+@supports (color: rgb(from red r g b)) {
+    html:root {
+        --accent-dim: rgb(from rgb(var(--accent)) calc(r * 178 / 232) calc(g * 58 / 108) calc(b * 64 / 108));
+        --accent-hover: rgb(from rgb(var(--accent)) calc(r * 214 / 232) calc(g * 82 / 108) calc(b * 82 / 108));
+        --glass-deep: rgb(from rgb(var(--glass)) calc(r * 20 / 30) calc(g * 22 / 34) calc(b * 28 / 42));
+        --glass-bar: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 20 / 34) calc(b * 26 / 42));
+        --glass-bar-hover: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 29 / 34) calc(b * 37 / 42));
+        --glass-popup: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 43 / 34) calc(b * 54 / 42));
+        --glass-active: rgb(from rgb(var(--glass)) calc(r * 26 / 30) calc(g * 28 / 34) calc(b * 34 / 42));
+        --glass-shadow: rgb(from rgb(var(--glass)) calc(r * 10 / 30) calc(g * 12 / 34) calc(b * 16 / 42));
+        --text-input: rgb(from rgb(var(--text-2)) calc(r * 165 / 170) calc(g * 172 / 178) calc(b * 184 / 192));
+        --link-hover: rgb(from rgb(var(--link)) calc(r + (255 - r) * 13 / 23) calc(g + (255 - g) * 42 / 147) calc(b + (255 - b) * 42 / 147));
+        --tone-6e1515: rgb(from rgb(var(--accent)) calc(r * 110 / 232) calc(g * 21 / 108) calc(b * 21 / 108));
+        --tone-010101: rgb(from rgb(var(--glass)) calc(r * 1 / 30) calc(g * 1 / 34) calc(b * 1 / 42));
+        --tone-0c0c0c: rgb(from rgb(var(--glass)) calc(r * 12 / 30) calc(g * 12 / 34) calc(b * 12 / 42));
+        --tone-121223: rgb(from rgb(var(--glass)) calc(r * 18 / 30) calc(g * 18 / 34) calc(b * 35 / 42));
+        --tone-131010: rgb(from rgb(var(--glass)) calc(r * 19 / 30) calc(g * 16 / 34) calc(b * 16 / 42));
+        --tone-151414: rgb(from rgb(var(--glass)) calc(r * 21 / 30) calc(g * 20 / 34) calc(b * 20 / 42));
+        --tone-171212: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 18 / 34) calc(b * 18 / 42));
+        --tone-171616: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 22 / 34) calc(b * 22 / 42));
+        --tone-171717: rgb(from rgb(var(--glass)) calc(r * 23 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+        --tone-191717: rgb(from rgb(var(--glass)) calc(r * 25 / 30) calc(g * 23 / 34) calc(b * 23 / 42));
+        --tone-1b1b1b: rgb(from rgb(var(--glass)) calc(r * 27 / 30) calc(g * 27 / 34) calc(b * 27 / 42));
+        --tone-1e1e27: rgb(from rgb(var(--glass)) r calc(g * 30 / 34) calc(b * 39 / 42));
+        --tone-1f1e1e: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 30 / 34) calc(b * 30 / 42));
+        --tone-1f2123: rgb(from rgb(var(--glass)) calc(r * 31 / 30) calc(g * 33 / 34) calc(b * 35 / 42));
+        --tone-212121: rgb(from rgb(var(--glass)) calc(r * 33 / 30) calc(g * 33 / 34) calc(b * 33 / 42));
+        --tone-263238: rgb(from rgb(var(--glass)) calc(r * 38 / 30) calc(g * 50 / 34) calc(b * 56 / 42));
+        --tone-271f1c: rgb(from rgb(var(--glass)) calc(r * 39 / 30) calc(g * 31 / 34) calc(b * 28 / 42));
+        --tone-282b2f: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 43 / 34) calc(b * 47 / 42));
+        --tone-282d56: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 45 / 34) calc(b * 86 / 42));
+        --tone-282e33: rgb(from rgb(var(--glass)) calc(r * 40 / 30) calc(g * 46 / 34) calc(b * 51 / 42));
+        --tone-2a2f33: rgb(from rgb(var(--glass)) calc(r * 42 / 30) calc(g * 47 / 34) calc(b * 51 / 42));
+        --tone-2d2626: rgb(from rgb(var(--glass)) calc(r * 45 / 30) calc(g * 38 / 34) calc(b * 38 / 42));
+        --tone-373737: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 55 / 34) calc(b * 55 / 42));
+        --tone-373c3e: rgb(from rgb(var(--glass)) calc(r * 55 / 30) calc(g * 60 / 34) calc(b * 62 / 42));
+        --tone-383838: rgb(from rgb(var(--glass)) calc(r * 56 / 30) calc(g * 56 / 34) calc(b * 56 / 42));
+        --tone-3b3a3e: rgb(from rgb(var(--glass)) calc(r * 59 / 30) calc(g * 58 / 34) calc(b * 62 / 42));
+        --tone-3e3e3e: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 62 / 34) calc(b * 62 / 42));
+        --tone-3e4d5d: rgb(from rgb(var(--glass)) calc(r * 62 / 30) calc(g * 77 / 34) calc(b * 93 / 42));
+        --tone-444444: rgb(from rgb(var(--glass)) calc(r * 68 / 30) calc(g * 68 / 34) calc(b * 68 / 42));
+        --tone-4c4b4b: rgb(from rgb(var(--glass)) calc(r * 76 / 30) calc(g * 75 / 34) calc(b * 75 / 42));
+        --tone-54588a: rgb(from rgb(var(--glass)) calc(r * 84 / 30) calc(g * 88 / 34) calc(b * 138 / 42));
+        --tone-556571: rgb(from rgb(var(--glass)) calc(r * 85 / 30) calc(g * 101 / 34) calc(b * 113 / 42));
+        --tone-6b6965: rgb(from rgb(var(--glass)) calc(r * 107 / 30) calc(g * 105 / 34) calc(b * 101 / 42));
+        --tone-6d6d6d: rgb(from rgb(var(--glass)) calc(r * 109 / 30) calc(g * 109 / 34) calc(b * 109 / 42));
+        --tone-9fa9b5: rgb(from rgb(var(--text)) calc(r * 159 / 236) calc(g * 169 / 240) calc(b * 181 / 247));
+        --tone-a5aae6: rgb(from rgb(var(--text)) calc(r * 165 / 236) calc(g * 170 / 240) calc(b * 230 / 247));
+        --tone-a8a99f: rgb(from rgb(var(--text)) calc(r * 168 / 236) calc(g * 169 / 240) calc(b * 159 / 247));
+        --tone-b1cdde: rgb(from rgb(var(--text)) calc(r * 177 / 236) calc(g * 205 / 240) calc(b * 222 / 247));
+        --tone-b5a28c: rgb(from rgb(var(--text)) calc(r * 181 / 236) calc(g * 162 / 240) calc(b * 140 / 247));
+        --tone-b7b7b7: rgb(from rgb(var(--text)) calc(r * 183 / 236) calc(g * 183 / 240) calc(b * 183 / 247));
+        --tone-bfc5d0: rgb(from rgb(var(--text)) calc(r * 191 / 236) calc(g * 197 / 240) calc(b * 208 / 247));
+        --tone-c4cad4: rgb(from rgb(var(--text)) calc(r * 196 / 236) calc(g * 202 / 240) calc(b * 212 / 247));
+        --tone-d2d2d2: rgb(from rgb(var(--text)) calc(r * 210 / 236) calc(g * 210 / 240) calc(b * 210 / 247));
+        --tone-d4d2cd: rgb(from rgb(var(--text)) calc(r * 212 / 236) calc(g * 210 / 240) calc(b * 205 / 247));
+        --tone-d6d6d6: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 214 / 240) calc(b * 214 / 247));
+        --tone-d6dbe4: rgb(from rgb(var(--text)) calc(r * 214 / 236) calc(g * 219 / 240) calc(b * 228 / 247));
+        --tone-dadada: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 218 / 240) calc(b * 218 / 247));
+        --tone-dadfff: rgb(from rgb(var(--text)) calc(r * 218 / 236) calc(g * 223 / 240) calc(b * 255 / 247));
+        --tone-dcdcdc: rgb(from rgb(var(--text)) calc(r * 220 / 236) calc(g * 220 / 240) calc(b * 220 / 247));
+        --tone-dddddd: rgb(from rgb(var(--text)) calc(r * 221 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+        --tone-e2e2e2: rgb(from rgb(var(--text)) calc(r * 226 / 236) calc(g * 226 / 240) calc(b * 226 / 247));
+        --tone-e4d7d7: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 215 / 240) calc(b * 215 / 247));
+        --tone-e4e4e4: rgb(from rgb(var(--text)) calc(r * 228 / 236) calc(g * 228 / 240) calc(b * 228 / 247));
+        --tone-e7e7e7: rgb(from rgb(var(--text)) calc(r * 231 / 236) calc(g * 231 / 240) calc(b * 231 / 247));
+        --tone-e9f1f3: rgb(from rgb(var(--text)) calc(r * 233 / 236) calc(g * 241 / 240) calc(b * 243 / 247));
+        --tone-eadddd: rgb(from rgb(var(--text)) calc(r * 234 / 236) calc(g * 221 / 240) calc(b * 221 / 247));
+        --tone-ebeef1: rgb(from rgb(var(--text)) calc(r * 235 / 236) calc(g * 238 / 240) calc(b * 241 / 247));
+        --tone-f9f9f9: rgb(from rgb(var(--text)) calc(r * 249 / 236) calc(g * 249 / 240) calc(b * 249 / 247));
+        --tone-fdfdfd: rgb(from rgb(var(--text)) calc(r * 253 / 236) calc(g * 253 / 240) calc(b * 253 / 247));
+    }
+}
+
+/* Цвет ссылок в истории на светлой схеме */
+html[data-color-mode=light] {
+    --link-color: #adbfde;
+}
