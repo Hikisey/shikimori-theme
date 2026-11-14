@@ -7257,20 +7257,40 @@ html input[type="checkbox"]:not(#u):focus-visible {
   }
 }
 
-/* v1.2.17 — логотипы студий: светлая подложка, чтобы тёмные логотипы не сливались с фоном */
+/* v1.2.18 — логотипы студий: адаптивно по альфа-каналу, без подложки.
+   Непрозрачные логотипы (bones, Sunrise, Ghibli…) — аккуратные скруглённые карточки с мягким свечением;
+   прозрачные тёмные — светлый контур по форме букв (drop-shadow повторяет альфу картинки). */
 img.studio-logo,
 .p-studios .studio img.logo {
-  box-sizing: content-box;
   max-width: 100%;
-  padding: 7px 12px;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
   border-radius: 10px;
-  background: rgba(236, 240, 247, .92);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
-  transition: box-shadow .2s ease;
+  --logo-tone: opacity(1);
+  filter: var(--logo-tone) drop-shadow(0 0 1px rgba(236, 240, 247, .95)) drop-shadow(0 0 1px rgba(236, 240, 247, .7)) drop-shadow(0 0 7px rgba(236, 240, 247, .28));
+  transition: filter .2s ease;
+}
+/* полностью чёрные/очень тёмные прозрачные логотипы — мягко-белый силуэт */
+img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]),
+.p-studios .studio img.logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]) {
+  --logo-tone: brightness(0) invert(.93);
 }
 @media (hover: hover) and (pointer: fine) {
   a:hover > img.studio-logo,
   .p-studios .studio a:hover > img.logo {
-    box-shadow: 0 0 0 2px rgba(var(--bright-color), .85), 0 2px 8px rgba(0, 0, 0, .35);
+    filter: var(--logo-tone) drop-shadow(0 0 1px rgba(var(--bright-color), .95)) drop-shadow(0 0 1px rgba(var(--bright-color), .7)) drop-shadow(0 0 8px rgba(var(--bright-color), .45));
   }
+}
+
+/* v1.2.18 — «На других сайтах»: иконки сайтов на светлом круглом бейдже (чёрная W Википедии, тёмные MAL/World Art больше не сливаются) */
+.b-external_link > a.b-link::before {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background-color: rgba(236, 240, 247, .92) !important;
+  background-size: 14px 14px !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
 }
