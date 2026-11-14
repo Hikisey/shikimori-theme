@@ -4,15 +4,11 @@
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme
-   (части 5–8 — через jsDelivr: GitHub raw отдаёт Шикимори не больше 4–6 файлов подряд) */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.4/css/part_04.css");
-@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_05.css");
-@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_06.css");
-@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_07.css");
-@import url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme@v1.3.4/css/part_08.css");
+   (4 части: Шикимори обрабатывает только ~6 первых @import, включая две строки выше) */
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.5/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.5/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.5/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.5/css/part_04.css");
 
 /* ===================== Палитра ===================== */
 /* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:

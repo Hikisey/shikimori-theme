@@ -11,7 +11,7 @@
    не пропало ни одно правило (число { и } до и после);
 3. ищет ссылки, которые после camo «съели» код (tools/shiki_url_check.py);
 4. жёсткие правила: нет слова behavior и @view-transition, нет новых обратных
-   слэшей, каждая часть меньше 100 КБ; считает :hover вне медиазапроса;
+   слэшей, каждая часть не больше 160 КБ и частей не больше 4; считает :hover вне медиазапроса;
 5. с --page: вставляет собранный стиль и палитру из site.css в сохранённую
    страницу Шикимори и делает скриншот (нужен node + playwright-core + chrome).
 """
@@ -50,8 +50,8 @@ def main():
         if nb.count('{') != out.count('{') or nb.count('}') != out.count('}'):
             ok = False
             print(f'ФИЛЬТР: {os.path.basename(p)} — скобок было {nb.count("{")}/{nb.count("}")}, стало {out.count("{")}/{out.count("}")}')
-        if len(src.encode()) > 100_000:
-            ok = False; print(f'РАЗМЕР: {os.path.basename(p)} больше 100 КБ')
+        if len(src.encode()) > 160_000:
+            ok = False; print(f'РАЗМЕР: {os.path.basename(p)} больше 160 КБ')
         for word in ('behavior', 'behaviour', '@view-transition'):
             if word in src.lower():
                 ok = False; print(f'ЗАПРЕТ: «{word}» в {os.path.basename(p)}')
