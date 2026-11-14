@@ -6366,9 +6366,6 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-@media (prefers-reduced-motion: reduce) {
-    section.l-page.menu-expanded aside.l-menu { animation: shiki-sheet-fade .2s ease both !important; }
-}
 
 /* ================================================================
    Телефоны: читаемость текста поверх обоев
@@ -6523,6 +6520,95 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         margin-top: 0 !important;
     }
 }
-@media screen and (max-width: 767px) and (prefers-reduced-motion: reduce) {
-    section.l-page aside.l-menu .c-ms { transition: none; }
+
+/* ================================================================
+   v1.2.7 — iPhone: нативные списки, без клавиатуры, обои из кеша
+   ================================================================ */
+
+/* Сенсорные экраны: select — обычный системный (колёсико iOS).
+   Новый base-select WebKit 26 на iPhone не открывался и дёргал анимации в настройках. */
+@media (hover: none) and (pointer: coarse) {
+    select:not(#u),
+    select:not(#u)::picker(select) {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    select:not(#u) {
+        display: inline-block !important;
+        padding-right: 30px !important;
+        background: var(--field-arrow), var(--field-bg) !important;
+    }
+    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
+    select:not(#u)::picker-icon { display: none !important; }
+    select:not(#u):active { transform: none !important; }
+
+    /* «Залипающий» hover на iPhone: после первого тапа кнопка оставалась поднятой,
+       и следующие нажатия уже не анимировались. Подъём — только по нажатию. */
+    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
+    body#clubs_edit .b-options-floated a:hover:after {
+        background: rgba(var(--block-color), .95) !important;
+        border-color: rgba(var(--white-color), .12) !important;
+        transform: none;
+        box-shadow: 0 4px 14px rgba(var(--shadows-color), .5) !important;
+    }
+    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:hover:after,
+    body#clubs_edit .b-options-floated a.selected:hover:after {
+        background: rgba(var(--bright-color), .18) !important;
+        border-color: rgba(var(--bright-color), .7) !important;
+    }
+    .p-profiles-edit .account .oauth a:hover,
+    .p-profiles-edit .account .oauth .b-link_button:hover {
+        border-color: rgba(var(--white-color), .12) !important;
+        background: rgba(var(--block-color), .95) !important;
+        transform: none;
+        box-shadow: 0 4px 14px rgba(var(--shadows-color), .5);
+    }
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    /* Короткие списки (до 15 пунктов) без строки поиска: скрипт ставит в неё фокус,
+       iPhone выдвигает клавиатуру, и карточка фильтров прыгает. */
+    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
+        display: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
+}
+/* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
+@media screen and (max-width: 767px) {
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        display: block;
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+        background: rgba(var(--white-color), .03) !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(var(--white-color), .08) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: rgb(var(--light-color)) !important;
+        outline: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--light-color), .5); }
+    section.l-page aside.l-menu .c-ms-options:not(#u) {
+        margin-top: 0 !important;
+        max-height: 220px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+    /* высота карточки не пересчитывается, когда прячется панель Safari */
+    section.l-page.menu-expanded aside.l-menu:not(#u) {
+        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+    }
+}
+
+/* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
+   Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
+@media screen and (max-width: 767px) {
+    html { background-color: rgb(var(--page-bg-mobile, 167, 148, 145)) !important; }
+    html body::before {
+        background: var(--bg-image-mobile, url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp")) center / cover no-repeat;
+        background-color: rgb(var(--page-bg-mobile, 167, 148, 145));
+    }
 }
