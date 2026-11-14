@@ -16,11 +16,11 @@
 
 /* открываюшееся при наводке на героя окно */
 .tooltip-inner {
-    background: none repeat scroll 0 0 color-mix(in srgb, var(--glass-deep) 90%, transparent);
+    background: none repeat scroll 0 0 var(--tip-bg);
     border: none;
     color: inherit;
-    box-shadow: var(--plate-shadow-strong);
-    border-radius: 12px;
+    box-shadow: var(--tip-shadow);
+    border-radius: var(--tip-radius);
 }
 
 .b-tooltipped.dotted {
