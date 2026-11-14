@@ -125,14 +125,6 @@
     content: '\f0c0' !important;
 }
 
-.title .video-variant-switcher {
-    background: rgb(var(--shade));
-    padding: 3px 8px;
-    border-radius: var(--plate-radius-lg);
-    box-shadow: var(--plate-shadow-soft) !important;
-    background: var(--plate-bg);
-}
-
 .b-list_switchers .switcher.popularity::after {
     content: "\f164";
     font: normal normal normal 14px/1 FontAwesome;

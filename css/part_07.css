@@ -1,538 +1,3 @@
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/anime */
-    .p-animes .c-about .watch-online > a.kind:hover {
-        background-color: var(--accent-hover);
-        color: rgb(var(--text-strong)) !important;
-    }
-    /* из pages/forum */
-    .p-statistics-index .forum-nav .sections a:hover {
-        color: rgba(var(--link), var(--hundred)) !important;
-        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
-        box-shadow: 0 0 20px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
-        text-decoration: none !important;
-    }
-}
-
-/* из pages/forum */
-.p-statistics-index .forum-nav .sections a {
-    transition: var(--ease-fast);
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-/* из pages/forum */
-.p-statistics-index .forum-nav .sections a.selected {
-    color: rgba(var(--link), var(--hundred)) !important;
-    text-decoration: none !important;
-}
-
-/* из pages/contests */
-.b-contest_match .vs .actions .action span,
-.b-contest_match .vs .actions .action span {
-    transition: var(--ease-fast);
-    color: rgba(var(--text), var(--hundred));
-    background: var(--plate-bg-strong);
-    border-radius: 4px;
-    text-decoration: none;
-    border: none;
-    animation: blimi 6s ease-out infinite;
-    animation-delay: 10s;
-    padding: 5px 10px;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-/* из pages/catalog */
-.p-recommendations-index .b-header_filters .hint,
-.b-header_filters .filter-line .title {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/* из pages/anime */
-.b-entry-info .line a {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из pages/anime */
-.b-entry-info .line a:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/editor */
-.b-height_shortener .expand:hover span,
-.b-log_entry .spoiler.collapse:hover span,
-.b-log_entry .spoiler.collapsed:hover span,
-.b-log_entry .spoiler.collapse span:hover,
-.b-log_entry .spoiler.collapsed span:hover {
-    color: rgba(var(--accent), var(--hundred));
-    animation: spoilzero 2s ease infinite;
-    border-bottom-color: rgba(var(--text), 0.2);
-}
-
-/* из layout/page */
-body * [class*="_status_tag"]:not([data-text]):before,
-body * [class*="_marker"]:not([data-text]):before {
-    content: none;
-}
-
-/* из pages/anime */
-.b-anime_status_tag {
-    border: none !important;
-}
-
-/* из layout/page */
-body * .b-anime_status_tag.other:not([data-text]),
-body * .b-anime_status_tag.other:before {
-    color: var(--tone-d6d6d6);
-    background: linear-gradient(45deg, #feda754d, #fa7e1e4d, #d629764d, #962fbf4d, #4f5bd54d)!important;
-}
-
-/* из layout/page */
-body * [class*="broadcast_marker"]:before {
-    content: '📢 рассылка' !important;
-    background-color: #772448;
-    color: var(--tone-eadddd);
-}
-
-/* статус "релиз" */
-/* из layout/page */
-body * .b-anime_status_tag.released:before {
-    background-color: #1A421D;
-    color: #C4E9ED;
-}
-
-/* статус"эпизод" */
-/* из layout/page */
-body * .b-anime_status_tag.episode:before {
-    background: #392589;
-    color: #d5d4ff;
-}
-
-/* статус"новость" */
-/* из layout/page */
-body * .b-anime_status_tag.news:before {
-    background: #984915;
-    color: #f3e5d3;
-}
-
-/* из layout/page */
-body * .b-anime_status_tag.contest:before {
-    content: '🏆︎ турнир' !important;
-    background: linear-gradient(45deg, #632f86, #662a7d, #471fa7);
-}
-
-/* из layout/page */
-body * .b-anime_status_tag.article:before {
-    background: linear-gradient(45deg, #86412f, #7d2a2a, #a7491f);
-}
-
-/* статус "отзыв" */
-/* из layout/page */
-body * .b-anime_status_tag.review:before {
-    content: '★ отзыв' !important;
-    background: linear-gradient(45deg, #417942, var(--tone-444444), #883737);
-}
-
-/* статус "негативный" */
-/* из layout/page */
-body * .b-anime_status_tag.review-negative:before {
-    background: #933131;
-    content: '👎' !important;
-}
-
-/* статус "негативный" */
-/* из layout/page */
-body * .b-anime_status_tag.review-positive:before {
-    background: #28662e;
-    content: '👍' !important;
-}
-
-/* статус "рецензия" */
-/* из layout/page */
-body * .b-anime_status_tag.critique:before {
-    color: #fae5ee;
-    background: #7c1946;
-}
-
-/* статус "рассылка" */
-/* из layout/page */
-body * .b-anime_status_tag.broadcast:before {
-    background-color: #6d0b37;
-    color: #ffe0ee;
-}
-
-/* из layout/page */
-body * [class*="broadcast_marker"] {
-    width: 118px;
-}
-
-/* из layout/page */
-body[data-locale=ru] .b-offtopic_marker:before,
-.b-anime_status_tag.offtopic:before {
-    color: #f3dee7;
-    background-color: #671339;
-    border: none;
-}
-
-/* из layout/page */
-body * [class*="new_marker"] {
-    display: none;
-    width: 0;
-}
-
-/* из pages/contests */
-.p-contests .match-day .match-link .c-column.loser a,
-.p-contests .match-day .match-link .c-column.created a {
-    color: rgba(var(--text-3), var(--hundred)) !important;
-}
-
-/****** начало совмест************/
-/* из pages/profile */
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.zero,
-.b-stats_bar .compatibility .text.high,
-.b-stats_bar .compatibility .text.moderate,
-.b-stats_bar .compatibility .text.full {
-    font-size: 0 !important;
-    line-height: 0;
-    margin-top: 0;
-    display: block;
-    transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
-}
-
-/* из components/forms */
-.ac_results.menu-suggest .ac_even .name,
-.ac_results.menu-suggest .ac_odd .name,
-.completable-block.menu-suggest .ac_even .name,
-.completable-block.menu-suggest .ac_odd .name {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tabs */
-.b-options-floated a span.brackets:before,
-.b-options-floated .link span.brackets:before,
-.b-options-floated a span.brackets:after,
-.b-options-floated .link span.brackets:after {
-    font-size: 0;
-}
-
-/* из components/forms */
-.b-input.text.optional.user_rate_text {
-    display: block;
-    width: 100%;
-}
-
-/* из components/forms */
-.b-form a.remove {
-    border: none;
-    color: rgba(var(--text), var(--hundred));
-    padding: 6px 10px 6px 10px !important;
-    background-color: rgba(115, 49, 27, 0.7);
-    border-radius: 11px;
-    box-shadow: var(--plate-shadow-strong) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/forms */
-    .b-form a.remove:hover {
-        background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
-        color: rgba(var(--text-strong), var(--hundred)) !important;
-        box-shadow: none !important;
-    }
-}
-
-/* из layout/footer */
-.l-footer .links a {
-    margin: 5px;
-    color: rgba(var(--link), 0.5);
-}
-
-/* из components/tabs */
-.b-list_switchers .switcher.list.selected,
-.b-list_switchers .switcher.posters.selected,
-.b-list_switchers .switcher.lines.selected {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/* из components/tabs */
-.b-list_switchers .switcher.list:hover,
-.b-list_switchers .switcher.posters:hover,
-.b-list_switchers .switcher.lines:hover {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/* из pages/contests */
-.p-contests .suggestion > a,
-.p-contests .variant > a {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из pages/contests */
-.p-contests .suggestion > a {
-    background: none;
-    box-shadow: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/contests */
-    .p-contests .variant > a:hover {
-        background: none;
-        box-shadow: none;
-    }
-}
-
-/* из pages/contests */
-.b-contests-menu .results,
-.b-contests-menu .grid a {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/*-------------------CATALOG-------------------------*/
-/* из components/cards */
-.b-catalog_entry .cover:hover .title {
-    color: rgba(var(--accent), var(--hundred));
-    text-decoration: none;
-}
-
-/* из components/cards */
-.b-catalog_entry .cover .title {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .line .value {
-    color: rgba(var(--text), var(--hundred));
-    transition: var(--ease-base);
-}
-
-/* из components/cards */
-.b-catalog_entry .cover .misc span {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .additional-images .link .title {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .line .value a {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .line .value a:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .rating .text {
-    color: rgba(var(--text), var(--hundred));
-}
-
-/*test*/
-/* из components/cards */
-.b-catalog_entry,
-.b-catalog_entry .cover .image-decor,
-.b-catalog_entry .cover .image-decor img,
-.b-catalog_entry .cover .image-cutter,
-.b-catalog_entry .cover .image-cutter img {
-    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
-}
-
-/* из components/cards */
-.b-catalog_entry .cover .image-decor .image-cutter {
-    display: block;
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 9px;
-}
-
-/* из components/cards */
-.b-catalog_entry.completed .cover .misc span {
-    color: #99bba7;
-}
-
-/* из components/cards */
-.b-catalog_entry.completed .cover .title span {
-    color: #cce0d1;
-}
-
-/* из components/cards */
-.b-catalog_entry.dropped .cover .misc span {
-    color: #c7a7a1;
-}
-
-/* из components/cards */
-.b-catalog_entry.dropped .cover .title span {
-    color: var(--tone-e4d7d7);
-}
-
-/* из components/cards */
-.b-catalog_entry.on_hold .cover .misc span {
-    color: #a79e8e;
-}
-
-/* из components/cards */
-.b-catalog_entry.on_hold .cover .title span {
-    color: var(--tone-d4d2cd);
-}
-
-/* из components/cards */
-.b-catalog_entry.planned .cover .misc span {
-    color: #91aacc;
-}
-
-/* из components/cards */
-.b-catalog_entry.planned .cover .title span {
-    color: #cad8e4;
-}
-
-/* из components/cards */
-.b-catalog_entry.rewatching .cover .misc span {
-    color: #93b5a7;
-}
-
-/* из components/cards */
-.b-catalog_entry.rewatching .cover .title span {
-    color: #cce0d9;
-}
-
-/* из components/cards */
-.b-catalog_entry.watching .cover .misc span {
-    color: #9b99c1;
-}
-
-/* из components/cards */
-.b-catalog_entry.watching .cover .title span {
-    color: #d3cce0;
-}
-
-/* из components/headings */
-header.head h1 a.back,
-header.head h2 a.back {
-    color: rgba(var(--link), var(--hundred));
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/messages */
-    .b-message .b-catalog_entry:hover,
-    .l-content.swiss .b-catalog_entry:hover,
-    .b-catalog-entry-embedded .b-catalog_entry:hover {
-        background: transparent !important;
-        transform: scale(1);
-        box-shadow: none;
-    }
-}
-
-/* из layout/page */
-body#profiles_show .b-catalog_entry,
-.c-column.user_rate .b-catalog_entry {
-    background: transparent;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/cards */
-    .b-modal .b-catalog_entry:hover {
-        transform: none;
-        background: none !important;
-        z-index: 10;
-        box-shadow: none;
-    }
-}
-
-/* из components/cards */
-.b-modal .b-catalog_entry {
-    transform: none;
-}
-
-/* из components/cards */
-.l-content.swiss .image-cutter {
-    transition: 0.5s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/profile */
-    .p-profiles-show .about a:hover {
-        box-shadow: none;
-        background: none;
-        border: none;
-        opacity: 1;
-    }
-}
-
-/* из pages/messages */
-.b-message > .inner .was_updated {
-    color: rgba(var(--text-2), var(--hundred));
-    margin-left: 58px;
-    transition: var(--ease-base);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/users */
-    .b-user16:hover,
-    .b-user16:hover span,
-    .b-user16 a:hover {
-        box-shadow: none;
-        background: none;
-    }
-}
-
-/* из pages/messages */
-.b-dialog > .inner header .name-date {
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-/* из pages/forum */
-.b-poll .poll .name {
-    font-size: 15px;
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из pages/forum */
-.b-poll .poll-variants .poll-variant.result .votes-percent,
-.p-translations .animes a {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-/* из components/users */
-.b-menu-line.friend-rate .b-user16 a,
-.friend-rate .b-user16 a {
-    line-height: 10px;
-    vertical-align: middle;
-    height: 30px !important;
-    display: block;
-}
-
-/* из components/users */
-.b-menu-line.friend-rate .b-user16 span,
-.friend-rate .b-user16 span {
-    word-wrap: break-word;
-    white-space: normal;
-    line-height: 15px;
-    display: inline-block;
-    max-width: 100px;
-    vertical-align: middle !important;
-}
-
-/* из components/editor */
-.b-height_shortener .expand:hover span {
-    animation: none !important;
-    border: none;
-}
-
 /* ачивки */
 /* из pages/achievements */
 .b-achievement .c-about a.title {
@@ -608,12 +73,6 @@ a.b-menu-line.entry.b-link .time {
 .b-critique_votes span,
 .b-critique_votes:before {
     color: rgba(var(--text-2), var(--hundred));
-}
-
-/* из base/base */
-.wall_post_text a,
-.post_video_title {
-    color: #50a0ef !important;
 }
 
 /* из components/forms */
@@ -974,12 +433,6 @@ a.name[href*="/morr"] {
     text-decoration: none;
 }
 
-/* из pages/anime */
-.cc-player_controls.cc-2a > .c-column {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
 /* из pages/dashboard */
 .p-dashboards-show .cc-second .c-forum {
     width: 30.33333%;
@@ -1047,65 +500,6 @@ input.ac_input.ac_loading {
     color: rgba(var(--text-2), 1);
 }
 
-/* из pages/anime */
-.b-video_variant a.broken:before,
-.b-video_variant a.banned_hosting:before,
-.b-video_variant a.rejected:before {
-    font-size: 11px;
-    position: absolute;
-    bottom: 1px;
-    right: 3px;
-    left: auto !important;
-    font-weight: bold;
-    line-height: 15px;
-    height: 15px;
-    border-radius: 19px 0px 16px 0px;
-    padding: 0px 8px 0px 11px;
-    letter-spacing: 2px;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-/* из pages/anime */
-.b-video_variant a.broken:before {
-    color: #c6eccb;
-    background: #882600;
-    content: "broken";
-}
-
-/* из pages/anime */
-.b-video_variant a.banned_hosting:before {
-    content: "banned hosting";
-    color: #ecebc6;
-    background: #7d4600;
-}
-
-/* из pages/anime */
-.b-video_variant a.rejected:before {
-    content: "rejected";
-    color: #e1c6ec;
-    background: #821852;
-}
-
-/* из pages/anime */
-.b-video_player .cc-player_controls .episode-num input {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 30px !important;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0 2px;
-    box-shadow: inset 0 2px 6px 2px rgba(var(--shade), 0.2);
-    width: 50px;
-    height: 35px;
-    margin-right: 0%;
-    margin-top: 7px;
-}
-
-/* из pages/anime */
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    color: rgba(var(--text-2), 0.8);
-}
-
 /* из components/buttons */
 .c-buttons.cc-3a .c-control {
     background: rgba(var(--glass), 0.5);
@@ -1126,41 +520,6 @@ input.ac_input.ac_loading {
     .c-column.c-control.show-options:hover {
         background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
         box-shadow: var(--plate-shadow) !important;
-    }
-}
-
-/* из pages/anime */
-.p-anime_videos-index .c-videos .video-variant-switcher.active {
-    color: var(--tone-e4e4e4) !important;
-    background: rgba(var(--accent), 0.4);
-    font-weight: normal;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/tabs */
-    .title .video-variant-switcher:hover {
-        color: var(--tone-e4e4e4) !important;
-        background: rgba(var(--accent), 0.4);
-        font-weight: normal;
-    }
-}
-
-/* из pages/anime */
-.c-videos .b-video_variant:hover a {
-    color: rgba(var(--link), 1);
-}
-
-/* из pages/anime */
-.b-video_variant.active a {
-    color: rgba(var(--link), 1);
-    font-weight: bold;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/anime */
-    .b-video_variant a:hover {
-        border: none;
-        background: none;
     }
 }
 
@@ -1216,7 +575,6 @@ header.head a.edit,
 .p-topics .l-menu .clubs .entry .misc,
 .p-topics .l-menu .contests .contest .notice,
 .p-topics .l-menu .sticked-topics .topic .notice,
-.b-video_player .cc-player_controls .label,
 .b-video_player .cc-player_controls .episode-title .video-link,
 .b-log_entry .date,
 .b-log_entry .spoiler.collapse,
@@ -2022,14 +1380,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
 }
 
 @media screen and (min-width: 1200px) {
-    @media (hover: hover) and (pointer: fine) {
-        /* из pages/anime */
-        .b-video_variant a:hover {
-            background: none !important;
-            box-shadow: none !important;
-            border: none !important;
-        }
-    }
     /* из pages/dashboard */
     .p-dashboards-show .cc-ongoings .c-column {
         width: calc(12.5% - 10px) !important;
@@ -2954,4 +2304,488 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     border-radius: 0.25rem;
     vertical-align: top;
     pointer-events: all;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 130% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .about .Animes_Mangas-1 .b-catalog_entry:hover {
+        transform: none;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1-standard:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-Characters:hover .b-link {
+    opacity: 1;
+}
+
+/* из kits/about-kits */
+* .about .k-0-1 .c-column,
+* .about .k-0-1 .c-column:last-child,
+* .about .k-0-1 .b-catalog_entry,
+* .about .k-0-1 .b-catalog_entry:last-child,
+* .p-profiles-edit .k-0-1 .c-column,
+* .p-profiles-edit .k-0-1 .c-column:last-child,
+* .p-profiles-edit .k-0-1 .b-catalog_entry,
+* .p-profiles-edit .k-0-1 .b-catalog_entry:last-child,
+* .k-0-1 .cc-4>.c-column,
+* .k-0-1 .cc-6-g0>.c-column,
+* .k-0-1 .cc-6-g0>.c-column:last-child,
+* .b-comments .k-0-1 .c-column,
+* .b-comments .k-0-1 .c-column:last-child,
+* .b-comments .k-0-1 .b-catalog_entry,
+* .b-comments .k-0-1 .b-catalog_entry:last-child,
+* .b-comments .k-0-1 .cc-4>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column:last-child {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0;
+}
+
+/* из kits/about-kits */
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    /* из components/cards */
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* из components/cards */
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+
+/* --- Верхняя панель: подсветка только того пункта, что под курсором --- */
+/* из layout/header */
+.l-top_menu-v2 .menu-icon,
+.l-top_menu-v2 .menu-dropdown > button,
+.l-top_menu-v2 .menu-dropdown > span {
+    border-radius: 8px;
+    transition: background-color .25s ease, color .25s ease !important;
+}
+
+/* --- Читаемость страницы настроек --- */
+/* Подсказки под полями */
+/* из pages/settings */
+.b-input .hint,
+.hint,
+.b-input .hint *,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: rgb(var(--text-2)) !important;
+    opacity: 1 !important;
+}
+
+/* Поля ввода были почти невидимы — тёмный фон, рамка, подсветка при фокусе */
+/* из components/forms */
+.b-input input[type="text"],
+.b-input input[type="email"],
+.b-input input[type="url"],
+.b-input input[type="password"],
+.b-input textarea,
+.edit_user input[type="text"],
+.edit_user input[type="url"],
+.edit_user textarea {
+    background: color-mix(in srgb, var(--glass-deep) 85%, transparent) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    transition: border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
+}
+
+/* из components/forms */
+.b-input input:focus,
+.b-input textarea:focus,
+.edit_user input:focus,
+.edit_user textarea:focus {
+    border-color: rgba(var(--accent), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .15) !important;
+    outline: none !important;
+}
+
+/* --- Мелкие фиксы --- */
+/* Выровнял пункт «Правила» во всплывающем справа меню */
+/* из layout/header */
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
+}
+
+/* из pages/anime */
+.b-db_entry .c-poster .poster,
+.b-db_entry img.image {
+    border-radius: 12px;
+}
+
+/* из components/buttons */
+.b-link_button,
+.b-button,
+button.b-button,
+.add-to-list,
+.current {
+    border-radius: var(--plate-radius) !important;
+    transition: background-color var(--ease-fast), transform .15s ease, box-shadow var(--ease-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/buttons */
+    .b-link_button:hover,
+    .b-button:hover {
+        /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+}
+
+/* из pages/achievements */
+.b-catalog_entry,
+.b-user,
+.b-club,
+.b-achievement,
+.cc-franchises .b-badge,
+.b-link_button,
+.b-button,
+.menu-item,
+.b-options-floated .item {
+    transition: transform var(--ease-fast), box-shadow var(--ease-fast), background-color var(--ease-fast), color .15s ease;
+}
+
+/* из base/base */
+a:hover,
+.b-link:hover,
+.b-js-link:hover {
+    color: var(--link-hover) !important;
+}
+
+/* --- Настройки: мелкий текст чуть ярче --- */
+/* из pages/settings */
+.b-input .hint,
+.b-input .hint span,
+.hint,
+.hint span,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: var(--tone-c4cad4) !important;
+}
+
+/* из pages/settings */
+.p-profiles-edit .b-options-floated a,
+.p-profiles-edit .b-options-floated .item,
+.p-profiles-edit .b-options-floated span,
+.p-profiles-edit .section-icon + span {
+    color: var(--tone-d6dbe4) !important;
+}
+
+/* --- Подвал --- */
+/* из layout/footer */
+.l-footer,
+.l-footer a,
+.l-footer .copyright {
+    color: var(--text-input) !important;
+}
+
+/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a,
+.p-profiles-edit .account .oauth .b-link_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--glass), .95) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    border-radius: var(--plate-radius) !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    transition: border-color var(--ease-fast), transform var(--ease-fast), box-shadow var(--ease-fast), background-color var(--ease-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .account .oauth a:hover,
+    .p-profiles-edit .account .oauth .b-link_button:hover {
+        border-color: rgba(var(--accent), .55) !important;
+        background: var(--glass-popup) !important;
+        box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+    }
+}
+
+/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
+   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
+   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a::before,
+.p-profiles-edit .account .oauth a > * {
+    transition: transform var(--ease-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .account .oauth a:hover::before,
+    .p-profiles-edit .account .oauth a:hover > * {
+        transform: translateY(-2px);
+    }
+}
+
+/* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
+/* из pages/settings */
+.b-link_button:active,
+.b-button:active,
+input[type="submit"]:active,
+button:active,
+input[type="file"]::file-selector-button:active,
+.p-profiles-edit .account .oauth a:active {
+    transform: translateY(1px) scale(.97) !important;
+    filter: brightness(.92);
+    box-shadow: inset 0 2px 6px rgba(var(--shade), 0.35) !important;
+    transition-duration: .06s !important;
+}
+
+/* --- Галочки: без плашки слева после клика --- */
+/* из components/forms */
+input[type="checkbox"],
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:active,
+.b-input input[type="checkbox"]:focus {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
+/* из components/tabs */
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Кнопки сохранения в настройках в стиле темы --- */
+/* из pages/settings */
+.p-profiles-edit input[type="submit"],
+.p-profiles-edit button[type="submit"],
+.p-profiles-edit .b-button,
+.p-profiles-edit .buttons .b-button,
+.p-profiles-edit .buttons input {
+    background: var(--accent-dim) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    padding: 7px 16px !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 45%, transparent) !important;
+    text-shadow: none !important;
+    cursor: pointer;
+    transition: background-color var(--ease-fast), transform .12s ease, box-shadow var(--ease-fast) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit input[type="submit"]:hover,
+    .p-profiles-edit button[type="submit"]:hover,
+    .p-profiles-edit .b-button:hover,
+    .p-profiles-edit .buttons input:hover {
+        background: var(--btn-bg-hover) !important;
+        box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
+    }
+}
+
+/* плавный выезд и сворачивание через transition */
+/* из components/forms */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: none !important;
+    display: block;
+    transform-origin: top center;
+    clip-path: inset(0 0 0 0 round var(--drop-radius));
+    transform: none;
+    transition: clip-path var(--ui-drop) var(--ui-ease),
+                transform var(--ui-drop) var(--ui-ease),
+                display var(--ui-drop) allow-discrete !important;
+}
+
+/* --- Сервисы в настройках: X белым, Facebook ярче --- */
+/* из pages/settings */
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
+    filter: invert(1) brightness(1.15) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
+.oauth a:is(.facebook, [href*="auth/facebook"])::before,
+.oauth a:is(.facebook, [href*="auth/facebook"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
+/* из pages/settings */
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+
+@media screen and (max-width: 767px) {
+    /* реклама и пустые служебные блоки не занимают место над заголовком */
+    /* из pages/catalog */
+    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
+    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
+    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
+    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
+        display: none !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info,
+    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 10px 12px 12px !important;
+        box-sizing: border-box;
+        line-height: normal !important;
+        border-radius: var(--plate-radius-lg);
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
+        backdrop-filter: var(--plate-blur);
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        transform: none !important;
+    }
+    /* из pages/profile */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        line-height: 20px !important;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-2a > .c-column {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+        border-radius: var(--plate-radius-lg);
+        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        backdrop-filter: var(--plate-blur);
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        min-width: 0;
+    }
+    /* из pages/profile */
+    body.p-profiles-show .cc-friends .b-user img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 !important;
+    }
 }

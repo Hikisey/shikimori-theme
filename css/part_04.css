@@ -391,53 +391,13 @@
     color: rgba(var(--accent), 1);
 }
 
-.b-video_variant .episode-num,
-.b-video_variant .video-id {
-    color: rgba(var(--text), 1);
-}
-
-.b-video_variant a {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings,
-.b-video_variant .video-hosting,
 .b-video_variant .video-language {
     color: rgba(var(--text-2), 1);
 }
 
-.b-video_variant.active a {
-    border-bottom: none;
-}
-
-.b-video_variant.active a:hover {
-    border-bottom: none;
-}
-
-.p-anime_videos-index .c-anime_video_episodes .title,
 .p-anime_videos-index .c-videos .title {
     color: rgba(var(--text-strong), 1);
     font-size: 11px;
-}
-
-.p-anime_videos-index .c-videos .video-variant-switcher {
-    color: rgba(var(--accent), 1);
-}
-
-.b-video_variant .video-author {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .prev .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .episode-num {
-    color: rgba(var(--text-strong), 1) !important;
-}
-
-.b-video_player .cc-player_controls .next .icon:before {
-    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .increment-user_rate .icon:before {
@@ -448,26 +408,8 @@
     color: rgba(var(--text-strong), 1);
 }
 
-.b-video_player .cc-player_controls .report .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .c-videos .b-video_variant .video-quality.dvd {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG-2yy4R8Xi5mO1N_ZurIpznxCgpOuDzpRZGu-K9dUBwrClokYAg) no-repeat !important;
-    display: none;
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    cursor: pointer;
-    border-bottom: 1px dotted rgba(var(--text-2), 1);
-}
-
 .b-video_player .cc-player_controls .create-user_rate .icon:before {
     color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    border: none;
 }
 
 .b-db_entry > .c-about .additional-links .key {
@@ -475,29 +417,9 @@
     color: rgba(var(--text-2), 1);
 }
 
-.p-anime_videos-index .c-video_stats .views_count {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings:before,
-.b-video_variant .episode-hostings:after,
-.b-video_variant .video-hosting:before,
-.b-video_variant .video-hosting:after,
 .b-video_variant .video-language:before,
 .b-video_variant .video-language:after {
     color: rgba(var(--text-2), 1);
-}
-
-.b-video_player .cc-player_controls .upload .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .edit .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .same-videos .title {
-    color: rgba(var(--text-strong), 1);
 }
 
 .b-video .marker,
@@ -643,23 +565,6 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 }
 
 /*--------------------------------------------------------*/
-.p-anime_videos-index .c-videos .video-variant-switcher:hover {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-.p-anime_videos-index .c-videos .video-variant-switcher {
-    transition: 0.2s ease-out;
-    border: none;
-}
-
-.b-video_player .cc-player_controls .c-control {
-    transition: none;
-}
-
-.b-video_player .cc-player_controls .c-control:hover {
-    text-decoration: none !important;
-    border: none;
-}
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
     text-decoration: none !important;
@@ -745,190 +650,11 @@ body.p-db_entries-works .subheadline .misc-links {
     justify-content: center;
 }
 
-.b-video_variant[data-episode="0"] .episode-num {
-    font-size: 0px;
-}
-
-.b-video_variant[data-episode="0"] .episode-num:before {
-    content: "#0";
-    font-size: 25px;
-}
-
-.c-anime_video_episodes .episode-kinds,
-.c-anime_video_episodes .episode-hostings {
-    display: none;
-}
-
-.c-anime_video_episodes {
-    text-align: left;
-    padding-bottom: 10px;
-}
-
-.c-anime_video_episodes .b-video_variant {
-    display: inline-block;
-    text-align: center;
-    background-color: rgba(var(--glass), 0.3);
-    width: 69px;
-    line-height: 67px;
-    height: 60px;
-    font-size: 25px;
-    margin: 2px;
-    border-radius: var(--plate-radius-lg);
-    box-shadow: var(--plate-shadow);
-}
-
-.c-anime_video_episodes .b-video_variant.active {
-    background: rgba(var(--accent), 0.5);
-}
-
-.c-anime_video_episodes .b-video_variant .episode-num {
-    color: rgba(var(--text), 0.6);
-}
-
-.c-anime_video_episodes .b-video_variant.active .episode-num {
-    color: var(--tone-d2d2d2);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-anime_video_episodes .b-video_variant:hover {
-        background: rgba(var(--accent), 0.5);
-    }
-}
-
-.c-anime_video_episodes .b-video_variant:hover .episode-num {
-    color: var(--tone-d2d2d2);
-}
-
-.c-anime_video_episodes .b-show_more-more {
-    display: inline;
-}
-
-.c-anime_video_episodes .b-show_more,
-.c-anime_video_episodes .hide-more {
-    display: none;
-}
-
 .c-videos .video-kind.russian,
 .c-videos .video-kind.english,
 .c-videos .video-kind.original,
 .c-videos .video-kind.unknown {
     font-size: 0px;
-}
-
-.c-videos .video-variant-group[data-kind="all"] .video-kind {
-    font-size: 11px;
-    width: 100%;
-    text-align: right;
-    padding-right: 70px;
-    color: rgba(var(--accent), 0.7);
-}
-
-.c-videos .c-videos .video-variant-group[data-kind="all"] .video-kind.russian,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.english,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.original,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.unknown {
-    width: 100%;
-    text-align: right;
-    padding-right: 70px;
-    font-size: 11px;
-    margin-top: 0px;
-    line-height: 18px;
-    color: #8891d4b2;
-}
-
-.c-videos .b-video_variant .video-hosting {
-    display: block;
-    padding: 0px 30px 0px 50px;
-    text-align: left;
-    margin-top: -20px;
-    font-size: 10px;
-}
-
-.b-video_variant.active a:hover .video-hosting,
-.b-video_variant.active a:hover .video-author {
-    color: rgba(var(--accent), 1);
-}
-
-.b-video_variant a:hover .video-hosting {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant a:hover .video-author {
-    color: rgba(var(--text-strong), 1);
-}
-
-.c-videos .video-variant-group[data-kind="raw"] .video-kind.original:after,
-.c-videos .video-variant-group[data-kind="all"] .video-kind.original:after,
-.c-videos .video-variant-group[data-kind="raw"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    font-weight: bold;
-    background: #5f2e43;
-    line-height: 28px;
-    height: 26px;
-    width: 26px;
-    content: "orig";
-    border-radius: 23px;
-    padding: 6px;
-    color: color-mix(in srgb, var(--tone-dcdcdc) 94.9%, transparent);
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.c-videos .video-variant-group[data-kind="subtitles"] .video-kind.russian:after,
-.video-variant-group[data-kind="subtitles"] .b-video_variant .video-kind.english:after,
-c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: var(--tone-2a2f33);
-    line-height: 29px;
-    height: 28px;
-    width: 28px;
-    content: "subs";
-    border-radius: 23px;
-    padding: 5px;
-    color: #c4d3de;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.unknown:after {
-    font-size: 26px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: #4a291f;
-    line-height: 35px;
-    height: 30px;
-    width: 13px;
-    content: "?";
-    border-radius: 23px;
-    padding: 5px 14px 5px 13px;
-    color: #dec4c4;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.c-videos .video-variant-group[data-kind="fandub"] .video-kind.russian:after,
-.video-variant-group[data-kind="fandub"] .b-video_variant .video-kind.english:after,
-.c-videos .video-variant-group[data-kind="fandub"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    font-weight: bold;
-    background: #753c00;
-    line-height: 33px;
-    height: 33px;
-    width: 34px;
-    content: "dubb";
-    border-radius: 23px;
-    padding: 3px 2px 2px 2px;
-    color: rgba(var(--text), 1);
-    box-shadow: var(--plate-shadow) !important;
 }
 
 .c-videos .video-kind.russian:before {
@@ -947,74 +673,6 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     padding: 0px 8px 0px 10px;
     letter-spacing: 2px;
     box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.english:before {
-    font-size: 10px;
-    position: absolute;
-    top: -2px;
-    right: 4px;
-    left: auto !important;
-    color: #c3d7f7;
-    font-weight: bold;
-    background: #00396b;
-    line-height: 13px;
-    height: 15px;
-    content: "eng";
-    border-radius: 0px 19px 0px 16px;
-    padding: 0px 11px 0px 14px;
-    letter-spacing: 2px;
-    font-family: "Comfortaa";
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.unknown:before {
-    font-size: 10px;
-    position: absolute;
-    top: 0px;
-    right: 4px;
-    left: auto !important;
-    color: #ffdbdb;
-    background: #4a291f;
-    line-height: 15px;
-    height: 15px;
-    content: "unknown";
-    border-radius: 0px 19px 0px 16px;
-    padding: 0px 10px 0px 11px;
-    letter-spacing: 2px;
-    font-family: "Comfortaa";
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-author {
-    text-align: left;
-    display: block;
-    padding: 3px 20px 3px 50px !important;
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.c-videos .video-variant-group[data-kind="all"] .video-kind.russian:after,
-.video-variant-group[data-kind="all"] .b-video_variant .video-kind.english:after,
-c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
-    font-size: 14px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: #4d2478;
-    line-height: 31px;
-    height: 28px;
-    width: 28px;
-    content: "ALL";
-    border-radius: 23px;
-    padding: 5px;
-    color: #c4d3de;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_player .player-area iframe {
-    min-height: 220px;
 }
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control {
@@ -1052,11 +710,6 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
     border-radius: 27px;
 }
 
-.b-video_player .cc-player_controls .episode-num .video-link.video-link {
-    height: 20px;
-    line-height: 20px;
-}
-
 .c-column.c-control.increment-user_rate.watched {
     background: #205520 !important;
     transition: var(--ease-base);
@@ -1092,23 +745,6 @@ a.c-column.c-control.increment-user_rate,
     color: #fff7e5;
 }
 
-.b-video_player .cc-player_controls .report:hover .icon:before {
-    color: #fff7e5;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-video_player .cc-player_controls .c-control:hover {
-        background: none;
-        box-shadow: none;
-    }
-}
-
-.b-video_player .cc-player_controls .upload .icon:before,
-.b-video_player .cc-player_controls .edit .icon:before {
-    line-height: 35px;
-}
-
-.b-video_player .cc-player_controls .report .icon:before,
 .b-video_player .cc-player_controls .increment-user_rate .icon:before,
 .b-video_player .cc-player_controls .show-options .icon:before,
 .b-video_player .cc-player_controls .create-user_rate .icon:before {
@@ -1119,23 +755,6 @@ a.c-column.c-control.increment-user_rate,
     width: 100%;
 }
 
-.p-anime_videos-index .c-video_stats .views_count.views_count {
-    display: inline-block;
-    width: auto;
-    float: left;
-    line-height: 26px;
-    height: 26px;
-}
-
-.p-anime_videos-index .c-video_stats .uploader.uploader {
-    display: inline-block;
-    width: auto;
-    line-height: 26px;
-    height: 26px;
-}
-
-.b-video_variant .episode-hostings:after,
-.b-video_variant .video-hosting:after,
 .b-video_variant .video-language:after {
     content: "";
     position: absolute;
@@ -1144,40 +763,6 @@ a.c-column.c-control.increment-user_rate,
     left: 0;
     width: 100%;
     min-height: 42px;
-}
-
-.c-videos .b-video_variant {
-    background: rgba(var(--glass), 0.3);
-    margin: 2px;
-    display: block;
-    min-height: 43px;
-    border-radius: 23px;
-    padding: 2px 0px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-videos .b-video_variant:hover {
-        background: rgba(var(--accent), 0.15);
-    }
-}
-
-.c-videos .b-video_variant.active {
-    background: rgba(var(--accent), 0.25);
-}
-
-.b-video_variant .video-quality.video-quality.bd {
-    background: url(/assets/blocks/b-video_variant/bd.png) no-repeat;
-    -webkit-background-size: 56px 12px;
-    background-size: 56px 12px;
-    height: 16px;
-    right: 20px;
-    top: 20px;
-    transform: scale(1.5);
-    z-index: -1;
-    opacity: 0.5;
-    width: 61px;
-    position: absolute;
 }
 
 .c-genres,
@@ -1260,12 +845,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .b-db_entry-variant-list_item a.b-link.b-link.bubbled-processed {
     color: rgba(var(--text-strong), 1) !important;
-}
-
-@media screen and (min-width: 1200px) {
-    .p-anime_videos-index .c-anime_video_episodes {
-        width: 52%;
-    }
 }
 
 .b-block,
@@ -2402,4 +1981,438 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         display: none !important;
     }
     section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
+}
+
+@media screen and (max-width: 767px) {
+    /* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        display: block;
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+        background: rgba(var(--glass-light), .03) !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
+    section.l-page aside.l-menu .c-ms-options:not(#u) {
+        margin-top: 0 !important;
+        max-height: 220px;
+        overflow-y: auto;
+    }
+    /* высота карточки не пересчитывается, когда прячется панель Safari */
+    section.l-page.menu-expanded aside.l-menu:not(#u) {
+        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
+        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
+        padding: 0 16px 18px !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        margin: 0 -16px 14px !important;
+        padding: 15px 16px 12px !important;
+        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+        font-size: 15px;
+        letter-spacing: .04em;
+    }
+    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
+    section.l-page.menu-expanded aside.l-menu .c-ms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 14px !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-title {
+        margin: 0 !important;
+        padding: 0 2px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        color: rgb(var(--text-2)) !important;
+    }
+}
+
+/* ===== pages/messages =====
+   почта, диалоги, уведомления */
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1) !important;
+    top: 2px;
+    position: relative;
+    padding-top: 2px;
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-comment > .inner header .name-date a.name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    font-size: 16px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    color: rgba(var(--text), 1);
+    font-size: 13px !important;
+}
+
+/* название в новостях */
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-message > .inner header .name-date {
+    line-height: 24px;
+    overflow: visible;
+    white-space: normal;
+}
+
+.b-message > .inner header .name-date a.name:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-messages .mass-actions .action:after {
+    display: none;
+}
+
+.b-dialog > .inner div.body {
+    color: rgba(var(--text), 1);
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .sticky-topics .topic,
+.b-comments .comments-loaded,
+.b-message .comments-loaded,
+.b-user.detailed {
+    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .clubs .entry,
+.p-topics .l-menu .sticky-topics .topic {
+    margin: 4px 0;
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    padding-bottom: 10px !important;
+}
+
+.b-dialog:first-child {
+    padding-top: 15px;
+}
+
+.b-dialog .to_dialog {
+    background: none !important;
+    box-shadow: none !important;
+    color: rgba(var(--accent), 1);
+}
+
+.b-message {
+    margin: 10px 0;
+    border-top: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(var(--text), 0.1);
+}
+
+.b-message:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.b-dialog .b-message {
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+    margin-top: 0;
+}
+
+.b-comments-notifier {
+    background: rgba(var(--accent), 1);
+    color: var(--tone-f9f9f9);
+    line-height: 41px;
+    transition: 0.5s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    font-size: 19px;
+    font-weight: bold;
+    width: 37px;
+    height: 37px;
+    margin: 0;
+    top: 80px !important;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-comments-notifier:hover {
+        background-color: rgba(var(--accent), 1);
+    }
+}
+
+.b-message .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-catalog_entry.completed .image-decor:before,
+.b-topic .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #419541 0);
+}
+
+.b-catalog_entry.dropped .image-decor:before,
+.b-topic .b-catalog_entry.dropped .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
+}
+
+.b-catalog_entry.on_hold .image-decor:before,
+.b-topic .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+.b-catalog_entry.planned .image-decor:before,
+.b-topic .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+.b-catalog_entry.rewatching .image-decor:before,
+.b-topic .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #1F6F6A 0);
+}
+
+.b-catalog_entry.watching .image-decor:before,
+.b-topic .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
+}
+
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.b-message > .inner .was_updated:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.tooltip-details .b-message {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.b-message .inner {
+    min-height: 38px;
+}
+
+.b-shiki_editor.previewed .body .preview .b-comment,
+.b-shiki_editor.previewed .body .preview .b-message {
+    border: none !important;
+}
+
+/*почта-Назад-Вперёд → фикс на 100%*/
+.p-messages .b-postloader.collapsed {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    font-size: 11px;
+    padding: 3px 2px 2px 15px;
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow) !important;
+    width: 135px;
+    height: 15px;
+    border-radius: 9px;
+    position: relative;
+    margin-left: -22px;
+    top: -2px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    content: 'перейти к диалогу';
+}
+
+.b-dialog .to_dialog:before,
+.to-review:before {
+    font: normal normal normal 15px FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    background: rgba(var(--glass), var(--hundred));
+    color: rgba(var(--text-strong), 0.7);
+    box-shadow: var(--plate-shadow) !important;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s;
+}
+
+.b-dialog .to_dialog:before {
+    content: '\f0e6';
+}
+
+.b-dialog .to_dialog:hover:after,
+.b-dialog .to_dialog:hover:before,
+.to-review:hover:before,
+.to-review:hover:after {
+    color: rgba(var(--accent), 1);
+}
+
+.b-dialog .to_dialog,
+.to-review {
+    font-size: 0 !important;
+}
+
+.p-messages .mass-actions,
+.b-options-floated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+body.p-profiles .mass-actions .action a,
+body .headline .misc-links a,
+body .midheadline .misc-links a,
+body .subheadline .misc-links a {
+    margin: 0;
+    font-size: 0;
+    position: relative;
+    padding: 0 0 0 13px;
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a,
+body.p-db_entries-works .headline .misc-links a,
+body.p-db_entries-works .midheadline .misc-links a,
+body.p-db_entries-works .subheadline .misc-links a {
+    font-size: inherit !important;
+    right: -3rem;
+}
+
+body.p-profiles .mass-actions .action a:after,
+body.p-profiles .subheadline .misc-links > a:after,
+.headline .misc-links > a:after,
+.midheadline .misc-links > a:after,
+.subheadline .misc-links > a:after {
+    content: '';
+    display: inline-flex !important;
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--text-strong), 0.7);
+    height: 32px;
+    width: 33px;
+    font-family: 'FontAwesome', sans-serif;
+    padding: 0 0 2px 1px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 3px rgba(var(--shade), 0.1);
+    transition: 0.2s all;
+    z-index: 2;
+}
+
+body.p-profiles .mass-actions .action a:before,
+.headline .misc-links > a:before,
+.midheadline .misc-links > a:before,
+.subheadline .misc-links > a:before {
+    content: '';
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    font-size: 11px;
+    letter-spacing: -6px;
+    background: rgba(var(--glass), 0.7);
+    width: 18px;
+    border-radius: 8px;
+    z-index: 2;
+    color: var(--heading-link);
+}
+
+body.p-profiles .mass-actions .action a:before {
+    content: '\f00c\f00c';
+}
+
+body.p-profiles .mass-actions .action a[href*='/read']:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+body.p-profiles .mass-actions .action a[href*='/dele']:after {
+    content: '\f014';
+    font-size: 18px;
+}
+
+body.p-profiles .mass-actions .action a:hover:before {
+    color: rgba(var(--text), 1);
+}
+
+body.p-profiles .mass-actions .action a:hover:AFTER,
+.headline .misc-links > a:hover:after,
+.midheadline .misc-links > a:hover:after,
+.subheadline .misc-links > a:hover:after {
+    color: var(--heading-link);
+}
+
+/*УЧАСТИЕ В ПРОЕКТАХ Ico off*/
+body.p-db_entries-works .p-profiles .mass-actions .action a:after,
+body.p-db_entries-works .p-profiles .subheadline .misc-links > a:after,
+.p-db_entries-works .headline .misc-links > a:after,
+.p-db_entries-works .midheadline .misc-links > a:after,
+.p-db_entries-works .subheadline .misc-links > a:after,
+body.p-db_entries-works .p-profiles .mass-actions .action a:before,
+.p-db_entries-works .headline .misc-links > a:before,
+.p-db_entries-works .midheadline .misc-links > a:before,
+.p-db_entries-works .subheadline .misc-links > a:before {
+    display: none !important;
 }

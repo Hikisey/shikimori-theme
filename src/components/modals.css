@@ -8,24 +8,6 @@
     box-shadow: var(--plate-shadow-strong);
 }
 
-.wcommunity_wrap {
-    background: var(--tone-282b2f) !important;
-}
-
-.wcommunity_post {
-    color: #e3f1ff !important;
-}
-
-.wcommunity_post_date,
-.wcommunity_post_date {
-    color: #72a4de !important;
-}
-
-.wcommunity_subscribers,
-.post_video_views_count {
-    color: #7d8f9e !important;
-}
-
 .bulma .modal-card-body {
     background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
     border-radius: var(--plate-radius-lg);

@@ -731,18 +731,6 @@ hr {
     background: linear-gradient(to left, rgba(var(--text), 0.1), rgba(var(--text), 0.3), rgba(var(--text), 0.1));
 }
 
-.c-control.episode-num span {
-    top: 4px;
-    position: relative;
-}
-
-.c-control.episode-num b {
-    padding: 0px 4px 0px 0px;
-    height: 50px !important;
-    top: 5px;
-    position: relative;
-}
-
 .to-top-fix {
     border: none;
     background: none;
@@ -1537,19 +1525,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     background: rgba(var(--accent), 1) !important;
 }
 
-/* Старая версия верхней панели */
-.l-top_menu,
-.l-top_menu:hover {
-    background: var(--glass-deep) !important;
-    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    will-change: auto !important;
-    transition: none !important;
-}
-
 @media only screen and (min-width: 768px) {
     .l-top_menu-v2 .menu-dropdown.profile {
         margin-left: 14px;
@@ -2234,20 +2209,6 @@ body#profiles_show .cc-franchises .b-badge .no-image {
 
 body#dashboard_show .b-catalog_entry.b-catalog_entry {
     background: none;
-}
-
-.cc-optional_controls .icon,
-.c-column.c-control .icon {
-    height: 29px;
-}
-
-.cc-optional_controls .c-control {
-    background: rgba(var(--glass), 0.5);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
-    border-radius: 22px;
-    padding: 0px 0px 2px 0px;
-    transition: var(--ease-base);
-    margin: 5px 0px 7px 0px;
 }
 
 .x1000 .l-page,

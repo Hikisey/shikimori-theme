@@ -207,10 +207,6 @@
     width: 100% !important;
 }
 
-video#main-video_html5_api .vjs-big-play-button {
-    margin-top: -45px !important;
-}
-
 .b-link_button.maxi,
 .create-topic {
     font-size: 12px;

@@ -228,53 +228,13 @@
     color: rgba(var(--accent), 1);
 }
 
-.b-video_variant .episode-num,
-.b-video_variant .video-id {
-    color: rgba(var(--text), 1);
-}
-
-.b-video_variant a {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings,
-.b-video_variant .video-hosting,
 .b-video_variant .video-language {
     color: rgba(var(--text-2), 1);
 }
 
-.b-video_variant.active a {
-    border-bottom: none;
-}
-
-.b-video_variant.active a:hover {
-    border-bottom: none;
-}
-
-.p-anime_videos-index .c-anime_video_episodes .title,
 .p-anime_videos-index .c-videos .title {
     color: rgba(var(--text-strong), 1);
     font-size: 11px;
-}
-
-.p-anime_videos-index .c-videos .video-variant-switcher {
-    color: rgba(var(--accent), 1);
-}
-
-.b-video_variant .video-author {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .prev .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .episode-num {
-    color: rgba(var(--text-strong), 1) !important;
-}
-
-.b-video_player .cc-player_controls .next .icon:before {
-    color: rgba(var(--text-strong), 1);
 }
 
 .b-video_player .cc-player_controls .increment-user_rate .icon:before {
@@ -285,26 +245,8 @@
     color: rgba(var(--text-strong), 1);
 }
 
-.b-video_player .cc-player_controls .report .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .c-videos .b-video_variant .video-quality.dvd {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG-2yy4R8Xi5mO1N_ZurIpznxCgpOuDzpRZGu-K9dUBwrClokYAg) no-repeat !important;
-    display: none;
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    cursor: pointer;
-    border-bottom: 1px dotted rgba(var(--text-2), 1);
-}
-
 .b-video_player .cc-player_controls .create-user_rate .icon:before {
     color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    border: none;
 }
 
 .b-db_entry > .c-about .additional-links .key {
@@ -312,29 +254,9 @@
     color: rgba(var(--text-2), 1);
 }
 
-.p-anime_videos-index .c-video_stats .views_count {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant .episode-hostings:before,
-.b-video_variant .episode-hostings:after,
-.b-video_variant .video-hosting:before,
-.b-video_variant .video-hosting:after,
 .b-video_variant .video-language:before,
 .b-video_variant .video-language:after {
     color: rgba(var(--text-2), 1);
-}
-
-.b-video_player .cc-player_controls .upload .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .edit .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.p-anime_videos-index .same-videos .title {
-    color: rgba(var(--text-strong), 1);
 }
 
 .b-video .marker,
@@ -480,23 +402,6 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 }
 
 /*--------------------------------------------------------*/
-.p-anime_videos-index .c-videos .video-variant-switcher:hover {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-.p-anime_videos-index .c-videos .video-variant-switcher {
-    transition: 0.2s ease-out;
-    border: none;
-}
-
-.b-video_player .cc-player_controls .c-control {
-    transition: none;
-}
-
-.b-video_player .cc-player_controls .c-control:hover {
-    text-decoration: none !important;
-    border: none;
-}
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
     text-decoration: none !important;
@@ -582,190 +487,11 @@ body.p-db_entries-works .subheadline .misc-links {
     justify-content: center;
 }
 
-.b-video_variant[data-episode="0"] .episode-num {
-    font-size: 0px;
-}
-
-.b-video_variant[data-episode="0"] .episode-num:before {
-    content: "#0";
-    font-size: 25px;
-}
-
-.c-anime_video_episodes .episode-kinds,
-.c-anime_video_episodes .episode-hostings {
-    display: none;
-}
-
-.c-anime_video_episodes {
-    text-align: left;
-    padding-bottom: 10px;
-}
-
-.c-anime_video_episodes .b-video_variant {
-    display: inline-block;
-    text-align: center;
-    background-color: rgba(var(--glass), 0.3);
-    width: 69px;
-    line-height: 67px;
-    height: 60px;
-    font-size: 25px;
-    margin: 2px;
-    border-radius: var(--plate-radius-lg);
-    box-shadow: var(--plate-shadow);
-}
-
-.c-anime_video_episodes .b-video_variant.active {
-    background: rgba(var(--accent), 0.5);
-}
-
-.c-anime_video_episodes .b-video_variant .episode-num {
-    color: rgba(var(--text), 0.6);
-}
-
-.c-anime_video_episodes .b-video_variant.active .episode-num {
-    color: var(--tone-d2d2d2);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-anime_video_episodes .b-video_variant:hover {
-        background: rgba(var(--accent), 0.5);
-    }
-}
-
-.c-anime_video_episodes .b-video_variant:hover .episode-num {
-    color: var(--tone-d2d2d2);
-}
-
-.c-anime_video_episodes .b-show_more-more {
-    display: inline;
-}
-
-.c-anime_video_episodes .b-show_more,
-.c-anime_video_episodes .hide-more {
-    display: none;
-}
-
 .c-videos .video-kind.russian,
 .c-videos .video-kind.english,
 .c-videos .video-kind.original,
 .c-videos .video-kind.unknown {
     font-size: 0px;
-}
-
-.c-videos .video-variant-group[data-kind="all"] .video-kind {
-    font-size: 11px;
-    width: 100%;
-    text-align: right;
-    padding-right: 70px;
-    color: rgba(var(--accent), 0.7);
-}
-
-.c-videos .c-videos .video-variant-group[data-kind="all"] .video-kind.russian,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.english,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.original,
-.c-videos .video-variant-group[data-kind="all"] .c-videos .video-kind.unknown {
-    width: 100%;
-    text-align: right;
-    padding-right: 70px;
-    font-size: 11px;
-    margin-top: 0px;
-    line-height: 18px;
-    color: #8891d4b2;
-}
-
-.c-videos .b-video_variant .video-hosting {
-    display: block;
-    padding: 0px 30px 0px 50px;
-    text-align: left;
-    margin-top: -20px;
-    font-size: 10px;
-}
-
-.b-video_variant.active a:hover .video-hosting,
-.b-video_variant.active a:hover .video-author {
-    color: rgba(var(--accent), 1);
-}
-
-.b-video_variant a:hover .video-hosting {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-video_variant a:hover .video-author {
-    color: rgba(var(--text-strong), 1);
-}
-
-.c-videos .video-variant-group[data-kind="raw"] .video-kind.original:after,
-.c-videos .video-variant-group[data-kind="all"] .video-kind.original:after,
-.c-videos .video-variant-group[data-kind="raw"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    font-weight: bold;
-    background: #5f2e43;
-    line-height: 28px;
-    height: 26px;
-    width: 26px;
-    content: "orig";
-    border-radius: 23px;
-    padding: 6px;
-    color: color-mix(in srgb, var(--tone-dcdcdc) 94.9%, transparent);
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.c-videos .video-variant-group[data-kind="subtitles"] .video-kind.russian:after,
-.video-variant-group[data-kind="subtitles"] .b-video_variant .video-kind.english:after,
-c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: var(--tone-2a2f33);
-    line-height: 29px;
-    height: 28px;
-    width: 28px;
-    content: "subs";
-    border-radius: 23px;
-    padding: 5px;
-    color: #c4d3de;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.unknown:after {
-    font-size: 26px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: #4a291f;
-    line-height: 35px;
-    height: 30px;
-    width: 13px;
-    content: "?";
-    border-radius: 23px;
-    padding: 5px 14px 5px 13px;
-    color: #dec4c4;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.c-videos .video-variant-group[data-kind="fandub"] .video-kind.russian:after,
-.video-variant-group[data-kind="fandub"] .b-video_variant .video-kind.english:after,
-.c-videos .video-variant-group[data-kind="fandub"] .video-kind.unknown:after {
-    font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    font-weight: bold;
-    background: #753c00;
-    line-height: 33px;
-    height: 33px;
-    width: 34px;
-    content: "dubb";
-    border-radius: 23px;
-    padding: 3px 2px 2px 2px;
-    color: rgba(var(--text), 1);
-    box-shadow: var(--plate-shadow) !important;
 }
 
 .c-videos .video-kind.russian:before {
@@ -784,74 +510,6 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     padding: 0px 8px 0px 10px;
     letter-spacing: 2px;
     box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.english:before {
-    font-size: 10px;
-    position: absolute;
-    top: -2px;
-    right: 4px;
-    left: auto !important;
-    color: #c3d7f7;
-    font-weight: bold;
-    background: #00396b;
-    line-height: 13px;
-    height: 15px;
-    content: "eng";
-    border-radius: 0px 19px 0px 16px;
-    padding: 0px 11px 0px 14px;
-    letter-spacing: 2px;
-    font-family: "Comfortaa";
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-kind.unknown:before {
-    font-size: 10px;
-    position: absolute;
-    top: 0px;
-    right: 4px;
-    left: auto !important;
-    color: #ffdbdb;
-    background: #4a291f;
-    line-height: 15px;
-    height: 15px;
-    content: "unknown";
-    border-radius: 0px 19px 0px 16px;
-    padding: 0px 10px 0px 11px;
-    letter-spacing: 2px;
-    font-family: "Comfortaa";
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_variant .video-author {
-    text-align: left;
-    display: block;
-    padding: 3px 20px 3px 50px !important;
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.c-videos .video-variant-group[data-kind="all"] .video-kind.russian:after,
-.video-variant-group[data-kind="all"] .b-video_variant .video-kind.english:after,
-c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
-    font-size: 14px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-weight: bold;
-    background: #4d2478;
-    line-height: 31px;
-    height: 28px;
-    width: 28px;
-    content: "ALL";
-    border-radius: 23px;
-    padding: 5px;
-    color: #c4d3de;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-video_player .player-area iframe {
-    min-height: 220px;
 }
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control {
@@ -889,11 +547,6 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
     border-radius: 27px;
 }
 
-.b-video_player .cc-player_controls .episode-num .video-link.video-link {
-    height: 20px;
-    line-height: 20px;
-}
-
 .c-column.c-control.increment-user_rate.watched {
     background: #205520 !important;
     transition: var(--ease-base);
@@ -929,23 +582,6 @@ a.c-column.c-control.increment-user_rate,
     color: #fff7e5;
 }
 
-.b-video_player .cc-player_controls .report:hover .icon:before {
-    color: #fff7e5;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-video_player .cc-player_controls .c-control:hover {
-        background: none;
-        box-shadow: none;
-    }
-}
-
-.b-video_player .cc-player_controls .upload .icon:before,
-.b-video_player .cc-player_controls .edit .icon:before {
-    line-height: 35px;
-}
-
-.b-video_player .cc-player_controls .report .icon:before,
 .b-video_player .cc-player_controls .increment-user_rate .icon:before,
 .b-video_player .cc-player_controls .show-options .icon:before,
 .b-video_player .cc-player_controls .create-user_rate .icon:before {
@@ -956,23 +592,6 @@ a.c-column.c-control.increment-user_rate,
     width: 100%;
 }
 
-.p-anime_videos-index .c-video_stats .views_count.views_count {
-    display: inline-block;
-    width: auto;
-    float: left;
-    line-height: 26px;
-    height: 26px;
-}
-
-.p-anime_videos-index .c-video_stats .uploader.uploader {
-    display: inline-block;
-    width: auto;
-    line-height: 26px;
-    height: 26px;
-}
-
-.b-video_variant .episode-hostings:after,
-.b-video_variant .video-hosting:after,
 .b-video_variant .video-language:after {
     content: "";
     position: absolute;
@@ -981,40 +600,6 @@ a.c-column.c-control.increment-user_rate,
     left: 0;
     width: 100%;
     min-height: 42px;
-}
-
-.c-videos .b-video_variant {
-    background: rgba(var(--glass), 0.3);
-    margin: 2px;
-    display: block;
-    min-height: 43px;
-    border-radius: 23px;
-    padding: 2px 0px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-videos .b-video_variant:hover {
-        background: rgba(var(--accent), 0.15);
-    }
-}
-
-.c-videos .b-video_variant.active {
-    background: rgba(var(--accent), 0.25);
-}
-
-.b-video_variant .video-quality.video-quality.bd {
-    background: url(/assets/blocks/b-video_variant/bd.png) no-repeat;
-    -webkit-background-size: 56px 12px;
-    background-size: 56px 12px;
-    height: 16px;
-    right: 20px;
-    top: 20px;
-    transform: scale(1.5);
-    z-index: -1;
-    opacity: 0.5;
-    width: 61px;
-    position: absolute;
 }
 
 .c-genres,
@@ -1097,12 +682,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .b-db_entry-variant-list_item a.b-link.b-link.bubbled-processed {
     color: rgba(var(--text-strong), 1) !important;
-}
-
-@media screen and (min-width: 1200px) {
-    .p-anime_videos-index .c-anime_video_episodes {
-        width: 52%;
-    }
 }
 
 .b-block,

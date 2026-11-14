@@ -76,22 +76,6 @@
     color: rgba(var(--accent), 1) !important;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/anime */
-    .b-video_player .cc-player_controls .episode-num .video-link a:hover {
-        background: none !important;
-        color: rgba(var(--text-strong), 1);
-        border: none;
-        box-shadow: none !important;
-    }
-}
-
-/* из pages/anime */
-.b-video_player .cc-player_controls .episode-num input {
-    background: transparent !important;
-    border-color: transparent !important;
-}
-
 /* из components/badges */
 .b-tag {
     border-bottom: 1px dashed rgba(var(--accent), 1);
@@ -906,12 +890,6 @@ a.b-menu-line.entry.b-link .time {
     color: rgba(var(--text-2), var(--hundred));
 }
 
-/* из base/base */
-.wall_post_text a,
-.post_video_title {
-    color: #50a0ef !important;
-}
-
 /* из components/forms */
 .b-form .variants .variant a {
     color: rgba(var(--link), var(--hundred));
@@ -1270,12 +1248,6 @@ a.name[href*="/morr"] {
     text-decoration: none;
 }
 
-/* из pages/anime */
-.cc-player_controls.cc-2a > .c-column {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
 /* из pages/dashboard */
 .p-dashboards-show .cc-second .c-forum {
     width: 30.33333%;
@@ -1343,65 +1315,6 @@ input.ac_input.ac_loading {
     color: rgba(var(--text-2), 1);
 }
 
-/* из pages/anime */
-.b-video_variant a.broken:before,
-.b-video_variant a.banned_hosting:before,
-.b-video_variant a.rejected:before {
-    font-size: 11px;
-    position: absolute;
-    bottom: 1px;
-    right: 3px;
-    left: auto !important;
-    font-weight: bold;
-    line-height: 15px;
-    height: 15px;
-    border-radius: 19px 0px 16px 0px;
-    padding: 0px 8px 0px 11px;
-    letter-spacing: 2px;
-    box-shadow: var(--plate-shadow) !important;
-}
-
-/* из pages/anime */
-.b-video_variant a.broken:before {
-    color: #c6eccb;
-    background: #882600;
-    content: "broken";
-}
-
-/* из pages/anime */
-.b-video_variant a.banned_hosting:before {
-    content: "banned hosting";
-    color: #ecebc6;
-    background: #7d4600;
-}
-
-/* из pages/anime */
-.b-video_variant a.rejected:before {
-    content: "rejected";
-    color: #e1c6ec;
-    background: #821852;
-}
-
-/* из pages/anime */
-.b-video_player .cc-player_controls .episode-num input {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 30px !important;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0 2px;
-    box-shadow: inset 0 2px 6px 2px rgba(var(--shade), 0.2);
-    width: 50px;
-    height: 35px;
-    margin-right: 0%;
-    margin-top: 7px;
-}
-
-/* из pages/anime */
-.b-video_player .cc-player_controls .episode-num .video-link a {
-    color: rgba(var(--text-2), 0.8);
-}
-
 /* из components/buttons */
 .c-buttons.cc-3a .c-control {
     background: rgba(var(--glass), 0.5);
@@ -1422,41 +1335,6 @@ input.ac_input.ac_loading {
     .c-column.c-control.show-options:hover {
         background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
         box-shadow: var(--plate-shadow) !important;
-    }
-}
-
-/* из pages/anime */
-.p-anime_videos-index .c-videos .video-variant-switcher.active {
-    color: var(--tone-e4e4e4) !important;
-    background: rgba(var(--accent), 0.4);
-    font-weight: normal;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из components/tabs */
-    .title .video-variant-switcher:hover {
-        color: var(--tone-e4e4e4) !important;
-        background: rgba(var(--accent), 0.4);
-        font-weight: normal;
-    }
-}
-
-/* из pages/anime */
-.c-videos .b-video_variant:hover a {
-    color: rgba(var(--link), 1);
-}
-
-/* из pages/anime */
-.b-video_variant.active a {
-    color: rgba(var(--link), 1);
-    font-weight: bold;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/anime */
-    .b-video_variant a:hover {
-        border: none;
-        background: none;
     }
 }
 
@@ -1512,7 +1390,6 @@ header.head a.edit,
 .p-topics .l-menu .clubs .entry .misc,
 .p-topics .l-menu .contests .contest .notice,
 .p-topics .l-menu .sticked-topics .topic .notice,
-.b-video_player .cc-player_controls .label,
 .b-video_player .cc-player_controls .episode-title .video-link,
 .b-log_entry .date,
 .b-log_entry .spoiler.collapse,
@@ -2318,14 +2195,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
 }
 
 @media screen and (min-width: 1200px) {
-    @media (hover: hover) and (pointer: fine) {
-        /* из pages/anime */
-        .b-video_variant a:hover {
-            background: none !important;
-            box-shadow: none !important;
-            border: none !important;
-        }
-    }
     /* из pages/dashboard */
     .p-dashboards-show .cc-ongoings .c-column {
         width: calc(12.5% - 10px) !important;

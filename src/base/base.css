@@ -397,18 +397,6 @@ hr {
     background: linear-gradient(to left, rgba(var(--text), 0.1), rgba(var(--text), 0.3), rgba(var(--text), 0.1));
 }
 
-.c-control.episode-num span {
-    top: 4px;
-    position: relative;
-}
-
-.c-control.episode-num b {
-    padding: 0px 4px 0px 0px;
-    height: 50px !important;
-    top: 5px;
-    position: relative;
-}
-
 .to-top-fix {
     border: none;
     background: none;

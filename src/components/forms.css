@@ -257,10 +257,6 @@ input[type="checkbox"]:checked:before,
     color: #d2c1ac !important;
 }
 
-.c-column.c-control.report:hover .label {
-    color: #d2beac !important;
-}
-
 /* Options Page */
 .b-input.boolean {
     display: table;

@@ -254,19 +254,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     background: rgba(var(--accent), 1) !important;
 }
 
-/* Старая версия верхней панели */
-.l-top_menu,
-.l-top_menu:hover {
-    background: var(--glass-deep) !important;
-    box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    will-change: auto !important;
-    transition: none !important;
-}
-
 @media only screen and (min-width: 768px) {
     .l-top_menu-v2 .menu-dropdown.profile {
         margin-left: 14px;
