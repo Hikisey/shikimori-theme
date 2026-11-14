@@ -5,10 +5,10 @@
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme
    Ссылки ведут на ветку main, поэтому обновления темы приходят сами. */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css?v=2");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_2.css?v=2");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_3.css?v=2");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_4mob.css?v=2");
 
 /* ===================== Палитра ===================== */
 /* Цвета пишутся тремя числами R, G, B через запятую (без rgb()).
