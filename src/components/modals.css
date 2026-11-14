@@ -14,7 +14,7 @@
 }
 
 .bulma span {
-    font: bold 16px 'Comfortaa';
+    font: bold 16px var(--font-family);
 }
 
 .bulma .play-icon::before {

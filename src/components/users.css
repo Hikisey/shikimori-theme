@@ -38,6 +38,14 @@
     border-radius: 50%;
 }
 
+/* «В избранном у»: квадрат аватарки занят до загрузки картинки (они грузятся
+   лениво), иначе при первом открытии блоки правой колонки съезжают вниз */
+.b-favoured .b-user.avatar img {
+    width: 36px; /* картинка x32 + рамка 2px (box-sizing: border-box) — тот же размер, что после загрузки */
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
 .b-user16:hover span {
     text-decoration: none;
 }

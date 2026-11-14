@@ -17,7 +17,7 @@ a.start.b-button,
 .b-shiki_editor footer .hide {
     padding: 7px 12px;
     line-height: 1;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     color: rgba(var(--text), 1) !important;
     background-color: rgba(var(--glass), 0.5);
     border-radius: var(--plate-radius) !important;

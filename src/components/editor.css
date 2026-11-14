@@ -53,14 +53,14 @@
     border-radius: var(--plate-radius);
     background-color: var(--plate-bg) !important;
     border: none !important;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .b-shiki_editor-v2 .hide {
     padding: 7px 12px;
     line-height: 1;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     color: rgba(var(--text), 1) !important;
     border-radius: var(--plate-radius) !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -740,7 +740,7 @@ a.b-link.bubbled-processed {
     .item-spoiler:after,
     .item-offtopic:before,
     .item-offtopic:after {
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         color: rgba(var(--text), var(--hundred));
     }
     .b-shiki_editor aside.markers {

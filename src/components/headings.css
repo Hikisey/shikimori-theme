@@ -11,7 +11,7 @@ header.head h2,
 header.head h1 {
     border-bottom: none;
     color: rgba(var(--text-strong), 1) !important;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     display: block;
 }
 
@@ -30,7 +30,7 @@ header.head .notice {
 }
 
 header.head a.misc {
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     font-size: 12px !important;
     background: var(--plate-bg);
     padding: 5px 50px;

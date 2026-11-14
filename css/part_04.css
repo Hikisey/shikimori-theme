@@ -1363,7 +1363,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.3.7";
+    --theme-version: "1.3.8";
 }
 
 .l-footer:before {
@@ -1380,7 +1380,7 @@ div.Ssylki-anime:hover .Text-2 {
 }
 
 .l-footer .copyright {
-    font: bold 10px 'Comfortaa';
+    font: bold 10px var(--font-family);
     position: absolute;
     right: 5px;
     z-index: 10;
@@ -1393,7 +1393,7 @@ div.Ssylki-anime:hover .Text-2 {
     width: 100%;
     vertical-align: top;
     text-align: center;
-    font: bold 10px 'Comfortaa';
+    font: bold 10px var(--font-family);
     z-index: 10;
 
 }
@@ -1404,7 +1404,7 @@ div.Ssylki-anime:hover .Text-2 {
     bottom: 0;
     z-index: 10;
     color: rgba(var(--text-2), 0.6);
-    font: bold 10px 'Comfortaa';
+    font: bold 10px var(--font-family);
 }
 
 .l-footer:after {
@@ -1412,7 +1412,7 @@ div.Ssylki-anime:hover .Text-2 {
     left: 96px;
     bottom: 0;
     color: rgba(var(--text-2), 0.6);
-    font: bold 10px 'Comfortaa';
+    font: bold 10px var(--font-family);
 }
 
 .l-footer:after {
@@ -2284,7 +2284,7 @@ body#profiles_show .b-catalog_entry,
     padding: 6px 10px 6px 10px;
     transition: 0.3s ease-out;
     border: none;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: var(--font-family);
     box-shadow: var(--plate-shadow);
 }
 
@@ -3641,7 +3641,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     /* из base/base */
     .item-offtopic:before,
     .item-offtopic:after {
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         color: #e42964;
     }
     /* из pages/messages */
@@ -3682,7 +3682,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         overflow: hidden;
         padding: 0 ;
         text-align: center;
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         width: 45px;
         height: 45px;
         line-height: 45px;

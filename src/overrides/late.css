@@ -855,7 +855,7 @@ body#profiles_show .b-catalog_entry,
     padding: 6px 10px 6px 10px;
     transition: 0.3s ease-out;
     border: none;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: var(--font-family);
     box-shadow: var(--plate-shadow);
 }
 
@@ -2212,7 +2212,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     /* из base/base */
     .item-offtopic:before,
     .item-offtopic:after {
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         color: #e42964;
     }
     /* из pages/messages */
@@ -2253,7 +2253,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         overflow: hidden;
         padding: 0 ;
         text-align: center;
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         width: 45px;
         height: 45px;
         line-height: 45px;

@@ -37,6 +37,90 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
+/* ----------------------------------------------------------------
+   Подменные шрифты на время загрузки Comfortaa (первое открытие сайта).
+   Пока Comfortaa качается, текст раскладывается системным шрифтом, а он
+   уже и ниже — когда Comfortaa приходит, строки и всё по центру
+   «дёргаются». Здесь системные шрифты подогнаны под размеры Comfortaa
+   (size-adjust — ширина, ascent/descent — высота строки), поэтому
+   замена шрифта почти ничего не сдвигает. Коэффициенты посчитаны по
+   ширине русского и английского текста интерфейса (tools: fontTools).
+   unicode-range как у Comfortaa: прочие символы (★, японский…) берутся
+   из обычного sans-serif, как раньше. Порядок: Arial/Liberation Sans,
+   DejaVu Sans, Noto Sans — что найдётся в системе.
+   ---------------------------------------------------------------- */
+@font-face {
+    font-family: "Comfortaa Fallback";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans"), local("Arimo"), local("Arimo Regular");
+    size-adjust: 119.2%;
+    ascent-override: 73.9%;
+    descent-override: 19.6%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Comfortaa Fallback";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("LiberationSans-Bold"), local("Arimo Bold");
+    size-adjust: 112.1%;
+    ascent-override: 78.6%;
+    descent-override: 20.9%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Comfortaa Fallback DejaVu";
+    font-style: normal;
+    font-weight: 400;
+    src: local("DejaVu Sans"), local("DejaVuSans");
+    size-adjust: 105.1%;
+    ascent-override: 83.8%;
+    descent-override: 22.3%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Comfortaa Fallback DejaVu";
+    font-style: normal;
+    font-weight: 700;
+    src: local("DejaVu Sans Bold"), local("DejaVuSans-Bold");
+    size-adjust: 95.9%;
+    ascent-override: 91.9%;
+    descent-override: 24.4%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Comfortaa Fallback Noto";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Noto Sans"), local("Noto Sans Regular"), local("NotoSans-Regular");
+    size-adjust: 114.4%;
+    ascent-override: 77.0%;
+    descent-override: 20.5%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Comfortaa Fallback Noto";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Noto Sans Bold"), local("NotoSans-Bold");
+    size-adjust: 108.4%;
+    ascent-override: 81.3%;
+    descent-override: 21.6%;
+    line-gap-override: 0%;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
 @font-face {
     font-family: "FontAwesome";
     src: url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),

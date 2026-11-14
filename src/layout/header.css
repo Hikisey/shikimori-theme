@@ -174,7 +174,7 @@ span.submenu-triangle.icon-avatar img {
     padding: 0px;
     margin: 8px 10px 6px;
     font-size: 18px;
-    font-family: "Comfortaa";
+    font-family: var(--font-family);
     color: rgb(var(--text-strong));
     background: rgba(var(--accent), 1);
     border-radius: 6px;
@@ -470,4 +470,14 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         pointer-events: auto;
         animation: shiki-fade var(--sheet-time) ease backwards;
     }
+}
+
+/* значок форума в верхней панели: ширина значка задана заранее, чтобы при
+   первой загрузке (иконочный шрифт ещё не пришёл, вместо значка узкая
+   буква) соседние значки и поиск не сдвигались, когда шрифт загрузится */
+.l-top_menu-v2 .menu-icon.forum::before,
+.l-top_menu-v2 .menu-icon.mail::before {
+    width: 1em;
+    flex: none;
+    text-align: center;
 }

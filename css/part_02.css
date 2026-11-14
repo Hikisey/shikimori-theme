@@ -53,14 +53,14 @@
     border-radius: var(--plate-radius);
     background-color: var(--plate-bg) !important;
     border: none !important;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .b-shiki_editor-v2 .hide {
     padding: 7px 12px;
     line-height: 1;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     color: rgba(var(--text), 1) !important;
     border-radius: var(--plate-radius) !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -740,7 +740,7 @@ a.b-link.bubbled-processed {
     .item-spoiler:after,
     .item-offtopic:before,
     .item-offtopic:after {
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         color: rgba(var(--text), var(--hundred));
     }
     .b-shiki_editor aside.markers {
@@ -904,7 +904,7 @@ a.b-link.bubbled-processed {
 }
 
 .bulma span {
-    font: bold 16px 'Comfortaa';
+    font: bold 16px var(--font-family);
 }
 
 .bulma .play-icon::before {
@@ -968,7 +968,7 @@ select,
 button,
 textarea {
     background-color: var(--plate-bg);
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     border: none !important;
 }
 
@@ -1066,7 +1066,7 @@ textarea#user_rate_text {
 
 .bulma label.label {
     color: var(--tone-9fa9b5) !important;
-    font: bold 13px "Comfortaa" !important;
+    font: bold 13px var(--font-family) !important;
 }
 
 .b-form.green-form {
@@ -1628,6 +1628,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 
 .b-club .logo {
     width: 52px;
+    aspect-ratio: 1 / 1; /* место под логотип клуба занято до загрузки картинки — блоки ниже не прыгают */
 }
 
 .b-clubs {
@@ -1735,7 +1736,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 * .c-brief header.head h1 {
     border-bottom: none;
     color: rgba(var(--text-strong), 1) !important;
-    font-family: Comfortaa, sans-serif;
+    font-family: var(--font-family);
     text-shadow: 2px -2px 0 var(--accent-dim), -2px 2px 0 var(--accent-dim),
     -2px -2px 0 var(--accent-dim), 2px 2px 0 var(--accent-dim),
     0 -2px 0 var(--accent-dim), 0 2px 0 var(--accent-dim),
@@ -1998,7 +1999,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 
 .p-profiles header.head .misc span,
 .p-profiles header.head .misc a {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: var(--font-family);
 }
 
 .b-user.detailed .info .image-name .name,
@@ -2349,7 +2350,7 @@ body.p-profiles .subheadline .misc-links > a:before {
     transition: 0.2s all;
     right: unset;
     letter-spacing: unset;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: var(--font-family);
     bottom: unset;
 }
 
@@ -4430,7 +4431,7 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     section.l-page aside.l-menu .c-score-input {
         font-size: 16px !important;
         line-height: 1.4 !important;
-        font-family: "Comfortaa", sans-serif !important;
+        font-family: var(--font-family) !important;
     }
     section.l-page aside.l-menu select:not(#u),
     section.l-page aside.l-menu .c-ms-control:not(#u),
@@ -4527,7 +4528,7 @@ a.start.b-button,
 .b-shiki_editor footer .hide {
     padding: 7px 12px;
     line-height: 1;
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     color: rgba(var(--text), 1) !important;
     background-color: rgba(var(--glass), 0.5);
     border-radius: var(--plate-radius) !important;

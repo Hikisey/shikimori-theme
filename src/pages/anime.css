@@ -1013,7 +1013,7 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     section.l-page aside.l-menu .c-score-input {
         font-size: 16px !important;
         line-height: 1.4 !important;
-        font-family: "Comfortaa", sans-serif !important;
+        font-family: var(--font-family) !important;
     }
     section.l-page aside.l-menu select:not(#u),
     section.l-page aside.l-menu .c-ms-control:not(#u),

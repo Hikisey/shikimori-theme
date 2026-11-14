@@ -92,7 +92,7 @@
     border: none;
     text-decoration: none;
     color: rgba(var(--text), 1);
-    font-family: 'Comfortaa', sans-serif;
+    font-family: var(--font-family);
     font-size: 8px;
     text-transform: uppercase;
     background: color-mix(in srgb, var(--accent-hover) 20%, transparent);

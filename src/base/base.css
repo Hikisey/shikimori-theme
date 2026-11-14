@@ -2,8 +2,9 @@
    база: ссылки, текст, таблицы, полосы прокрутки, служебные мелочи */
 
 :root {
-    --font-family: "Comfortaa", sans-serif !important;
-    --font-main: "Comfortaa", sans-serif !important;
+    /* подменные шрифты — base/fonts.css: пока грузится Comfortaa, вёрстка не прыгает */
+    --font-family: "Comfortaa", "Comfortaa Fallback", "Comfortaa Fallback DejaVu", "Comfortaa Fallback Noto", sans-serif !important;
+    --font-main: "Comfortaa", "Comfortaa Fallback", "Comfortaa Fallback DejaVu", "Comfortaa Fallback Noto", sans-serif !important;
     --font-alt: var(--font-family);
     --font-alt-text-letter-spacing: normal;
 }
@@ -548,7 +549,7 @@ a,
     }
     .item-summary:before,
     .item-summary:after {
-        font-family: "Comfortaa", sans-serif;
+        font-family: var(--font-family);
         color: #54c762;
     }
     .item-mobile.selected[title="Действия"] {

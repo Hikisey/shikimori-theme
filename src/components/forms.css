@@ -27,7 +27,7 @@ select,
 button,
 textarea {
     background-color: var(--plate-bg);
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--font-family);
     border: none !important;
 }
 
@@ -125,7 +125,7 @@ textarea#user_rate_text {
 
 .bulma label.label {
     color: var(--tone-9fa9b5) !important;
-    font: bold 13px "Comfortaa" !important;
+    font: bold 13px var(--font-family) !important;
 }
 
 .b-form.green-form {
