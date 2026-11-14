@@ -874,7 +874,7 @@ div.Ssylki-anime-v-1:hover .progress {
     background-size: contain;
     pointer-events: all;
     transform: rotate(360deg);
-    transition: 0s ease, transform 0.3s ease, background 0.3s ease;
+    transition: 0s ease, transform var(--ease-base), background var(--ease-base);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -965,7 +965,7 @@ div.Ssylki-Characters:hover .Text-1:after {
     background-color: var(--tone-151414);
     background-repeat: no-repeat !important;
     border-radius: 0.2rem 0.2rem 0 0;
-    transition: filter 0.3s ease;
+    transition: filter var(--ease-base);
 }
 
 .Ssylki-0 {
@@ -980,7 +980,7 @@ div.Ssylki-Characters:hover .Text-1:after {
     vertical-align: top;
     height: 100%;
     padding: 6px 6px 6px 8px;
-    transition: 0s ease, transform 0.3s ease;
+    transition: 0s ease, transform var(--ease-base);
     overflow: hidden;
 }
 

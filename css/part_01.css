@@ -387,7 +387,7 @@ html[data-color-mode=light] {
 .b-mention span {
     color: rgba(var(--accent), 1) !important;
     cursor: pointer;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
 }
 
@@ -415,7 +415,7 @@ html[data-color-mode=light] {
     padding: 4px 18px !important;
     color: rgba(var(--link), 1) !important;
     background: var(--plate-bg-strong) !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
     border-radius: var(--plate-radius);
@@ -444,7 +444,7 @@ a:hover {
 .b-js-link {
     border: none;
     padding: 0 8px 0 8px;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-js-link:hover {
@@ -1611,7 +1611,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 .l-top_menu-v2 .submenu .submenu-title.submenu-title {
     background: transparent !important;
     border-radius: 8px;
-    transition: background-color .2s ease, color .2s ease !important;
+    transition: background-color var(--ease-fast), color var(--ease-fast) !important;
 }
 
 .l-top_menu-v2 .submenu>a:hover:not(._) {
@@ -1728,7 +1728,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     .l-page .menu-toggler .toggler {
         backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        transition: background-color .2s ease;
+        transition: background-color var(--ease-fast);
     }
     .l-page.menu-expanded .menu-toggler .toggler {
         background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
@@ -1805,7 +1805,7 @@ body.localized_names-ru .name-ru:hover {
 }
 
 body.localized_names-ru .name-ru:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .l-page {
@@ -2398,7 +2398,7 @@ html input[type="checkbox"]:not(#u) {
     border: 1.5px solid rgba(var(--text), .55) !important;
     background: transparent !important;
     cursor: pointer;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+    transition: background-color var(--ease-fast), border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 /* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
@@ -2415,7 +2415,7 @@ html input[type="checkbox"]:not(#u):active {
     background-repeat: no-repeat !important;
     background-position: 50% 50% !important;
     background-size: 0 0 !important;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+    transition: background-color var(--ease-fast), border-color var(--ease-fast), box-shadow var(--ease-fast),
                 background-size .16s ease-in !important;
 }
 
@@ -2424,7 +2424,7 @@ html input[type="checkbox"]:not(#u):checked {
     border-color: rgb(var(--accent)) !important;
     box-shadow: 0 0 0 3px rgba(var(--accent), .18) !important;
     background-size: 12px 12px !important;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+    transition: background-color var(--ease-fast), border-color var(--ease-fast), box-shadow var(--ease-fast),
                 background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
 }
 

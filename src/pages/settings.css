@@ -71,14 +71,14 @@ a.start.b-button,
 .profile-actions .ignore-add::before,
 .profile-actions .ignore-remove::before {
     color: rgba(var(--text), 0.6) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 24px !important;
 }
 
 .profile-actions .ignore-remove::before,
 .profile-actions .fav-remove::before {
     color: #ffc24eab !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 24px !important;
 }
 

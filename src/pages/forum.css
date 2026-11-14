@@ -15,7 +15,7 @@
     position: relative;
     padding: 0 1px;
     margin: 2px !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
     border-radius: var(--plate-radius);
@@ -76,7 +76,7 @@
     background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border-radius: var(--plate-radius-lg);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
@@ -207,7 +207,7 @@
 
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
     color: rgba(var(--text-strong), 1) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 /*Новый тех ред */

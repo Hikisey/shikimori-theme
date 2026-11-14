@@ -169,7 +169,7 @@ div.Ssylki-Characters:hover .b-link {
     color: rgb(var(--text)) !important;
     border: 1px solid rgba(var(--glass-light), .10) !important;
     border-radius: 8px !important;
-    transition: border-color .2s ease, box-shadow .2s ease !important;
+    transition: border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 /* из components/forms */
@@ -202,7 +202,7 @@ button.b-button,
 .add-to-list,
 .current {
     border-radius: var(--plate-radius) !important;
-    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+    transition: background-color var(--ease-fast), transform .15s ease, box-shadow var(--ease-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -224,7 +224,7 @@ button.b-button,
 .b-button,
 .menu-item,
 .b-options-floated .item {
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .15s ease;
+    transition: transform var(--ease-fast), box-shadow var(--ease-fast), background-color var(--ease-fast), color .15s ease;
 }
 
 /* из base/base */
@@ -272,7 +272,7 @@ a:hover,
     border: 1px solid rgba(var(--glass-light), .12) !important;
     border-radius: var(--plate-radius) !important;
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
-    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    transition: border-color var(--ease-fast), transform var(--ease-fast), box-shadow var(--ease-fast), background-color var(--ease-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -291,7 +291,7 @@ a:hover,
 /* из pages/settings */
 .p-profiles-edit .account .oauth a::before,
 .p-profiles-edit .account .oauth a > * {
-    transition: transform .2s ease;
+    transition: transform var(--ease-fast);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -360,7 +360,7 @@ input[type="checkbox"]:active,
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 45%, transparent) !important;
     text-shadow: none !important;
     cursor: pointer;
-    transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
+    transition: background-color var(--ease-fast), transform .12s ease, box-shadow var(--ease-fast) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -602,7 +602,7 @@ img.studio-logo,
     --logo-tone: opacity(1);
     --logo-edge: drop-shadow(0 0 1px rgba(var(--text), 0.9));
     filter: var(--logo-tone) var(--logo-edge);
-    transition: transform .2s ease, filter .2s ease;
+    transition: transform var(--ease-fast), filter var(--ease-fast);
 }
 
 @media screen and (max-width: 767px) {

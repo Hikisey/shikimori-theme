@@ -542,7 +542,7 @@ input[type="file"]::file-selector-button {
     color: var(--field-text);
     font: inherit;
     cursor: pointer;
-    transition: background-color .2s ease, transform .15s ease;
+    transition: background-color var(--ease-fast), transform .15s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -573,7 +573,7 @@ select:not(#u),
     transform: none;
     cursor: pointer;
     transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease !important;
+                border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 /* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
@@ -854,7 +854,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
         border-radius: var(--plate-radius);
         box-shadow: var(--plate-shadow) !important;
-        transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+        transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
         background 0.2s;
     }
     .b-club .logo:hover {
@@ -882,7 +882,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 .club-actions .broadcast:before,
 .club-actions .edit-club:before,
 .club-actions .leave:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -2576,7 +2576,7 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     .c-history .subheadline:hover::before {
         color: rgba(var(--accent), var(--hundred));
-        transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+        transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
     }
     .p-profiles .profile-head .c-history .image-name .title {
         padding-right: 14px;

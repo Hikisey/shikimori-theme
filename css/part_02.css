@@ -146,7 +146,7 @@
         color: rgba(var(--text), .72) !important;
         font-size: 13px !important;
         line-height: 1;
-        transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .12s ease !important;
+        transition: background-color var(--ease-fast), border-color var(--ease-fast), color var(--ease-fast), transform .12s ease !important;
     }
     html body .headline > .misc-links > a:active::after {
         background: rgba(var(--accent), .18) !important;
@@ -429,7 +429,7 @@
             color: transparent;
             cursor: pointer;
             opacity: .92;
-            transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
+            transition: background-color var(--ease-fast), border-color var(--ease-fast), opacity var(--ease-fast), transform var(--ease-fast);
         }
         .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
             content: "" / "Назад";
@@ -534,7 +534,7 @@
     padding: 9px 17px;
     font-size: 11px;
     box-shadow: 0 0 5px color-mix(in srgb, var(--glass-shadow) 10%, transparent);
-    transition: 0.1s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: 0.1s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--text-strong), 1);
     border-radius: 19px;
 }
@@ -727,7 +727,7 @@ header.head a.misc {
     border-radius: var(--heading-radius);
     box-shadow: var(--plate-shadow);
     background: var(--plate-bg-strong);
-    transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-base), -webkit-0 var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 14px;
     color: var(--heading-text);
     height: var(--heading-height);
@@ -773,7 +773,7 @@ header.head a.misc {
     height: 8px;
     border-radius: 50%;
     font-size: 0;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2292,7 +2292,7 @@ video#main-video_html5_api .vjs-big-play-button {
     padding: 2px 0 !important;
     color: rgba(var(--accent), 1) !important;
     background: var(--plate-bg-strong) !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
     border-radius: var(--plate-radius);
@@ -2378,7 +2378,7 @@ video#main-video_html5_api .vjs-big-play-button {
     border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
     border-radius: 6px;
     padding: 0 6px;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-spoiler {

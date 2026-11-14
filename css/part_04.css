@@ -355,7 +355,7 @@
 }
 
 .c-actions .new_comment:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -365,7 +365,7 @@
 }
 
 .c-actions .new_review:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -375,7 +375,7 @@
 
 .c-actions .fav-add:before {
     color: rgba(var(--accent), 1);
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .c-actions .fav-add:hover:before {
@@ -383,7 +383,7 @@
 }
 
 .c-actions .edit:before {
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -1305,7 +1305,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     transform: none;
     filter: none;
     transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+                border-color var(--ease-fast), box-shadow var(--ease-fast), background-color var(--ease-fast) !important;
 }
 
 .c-score-input:hover { border-color: var(--field-border-hover) !important; }
@@ -1426,7 +1426,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     border-radius: 12px !important;
     scroll-snap-align: start;
     box-shadow: 0 4px 14px rgba(var(--shade), 0.35);
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform var(--ease-fast), box-shadow var(--ease-fast);
 }
 
 .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot img,
@@ -1765,14 +1765,14 @@ a.start.b-button,
 .profile-actions .ignore-add::before,
 .profile-actions .ignore-remove::before {
     color: rgba(var(--text), 0.6) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 24px !important;
 }
 
 .profile-actions .ignore-remove::before,
 .profile-actions .fav-remove::before {
     color: #ffc24eab !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 24px !important;
 }
 

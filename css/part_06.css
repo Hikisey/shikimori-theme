@@ -214,7 +214,7 @@
     position: relative;
     padding: 0 1px;
     margin: 2px !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
     border-radius: var(--plate-radius);
@@ -275,7 +275,7 @@
     background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border-radius: var(--plate-radius-lg);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
@@ -406,7 +406,7 @@
 
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
     color: rgba(var(--text-strong), 1) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 /*Новый тех ред */
@@ -876,7 +876,7 @@
     color: rgba(var(--text-2), 1);
     text-decoration: none !important;
     border-bottom: none;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 /*на Телефоне_контент вылизал фикс > Test*/
@@ -2226,7 +2226,7 @@ div.Ssylki-anime-v-1:hover .progress {
     background-size: contain;
     pointer-events: all;
     transform: rotate(360deg);
-    transition: 0s ease, transform 0.3s ease, background 0.3s ease;
+    transition: 0s ease, transform var(--ease-base), background var(--ease-base);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2317,7 +2317,7 @@ div.Ssylki-Characters:hover .Text-1:after {
     background-color: var(--tone-151414);
     background-repeat: no-repeat !important;
     border-radius: 0.2rem 0.2rem 0 0;
-    transition: filter 0.3s ease;
+    transition: filter var(--ease-base);
 }
 
 .Ssylki-0 {
@@ -2332,7 +2332,7 @@ div.Ssylki-Characters:hover .Text-1:after {
     vertical-align: top;
     height: 100%;
     padding: 6px 6px 6px 8px;
-    transition: 0s ease, transform 0.3s ease;
+    transition: 0s ease, transform var(--ease-base);
     overflow: hidden;
 }
 
@@ -2838,7 +2838,7 @@ div.Ssylki-anime:hover .Text-2 {
 .p-profiles .profile-head .c-brief header h1.aliases::after,
 .p-profiles .profile-head .c-brief header .notice a {
     color: rgba(var(--text), 1) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     text-shadow 0s;
 }
 
@@ -2981,7 +2981,7 @@ body.localized_names-ru .name-ru {
 .p-topics .l-menu .clubs .entry {
     margin-bottom: 0;
     padding: 0 3px 0;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     background 0s;
     border-top: none;
     text-decoration: none !important;
@@ -2998,7 +2998,7 @@ body.localized_names-ru .name-ru {
 .subheadline > a,
 .p-topics .l-menu .sticky-topics .topic {
     color: var(--heading-text);
-    transition: 0.2s ease, -webkit-0 .2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
 }
 

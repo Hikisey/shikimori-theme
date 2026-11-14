@@ -74,7 +74,7 @@ header.head a.misc {
     border-radius: var(--heading-radius);
     box-shadow: var(--plate-shadow);
     background: var(--plate-bg-strong);
-    transition: 0.3s ease, -webkit-0 .3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-base), -webkit-0 var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 14px;
     color: var(--heading-text);
     height: var(--heading-height);
@@ -120,7 +120,7 @@ header.head a.misc {
     height: 8px;
     border-radius: 50%;
     font-size: 0;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -1029,7 +1029,7 @@ body#clubs_edit .b-options-floated a:after {
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
     color: rgb(var(--text)) !important;
     box-sizing: border-box;
-    transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
+    transition: border-color var(--ease-fast), transform var(--ease-fast), background-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {

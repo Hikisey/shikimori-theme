@@ -1531,7 +1531,7 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     .c-history .subheadline:hover::before {
         color: rgba(var(--accent), var(--hundred));
-        transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+        transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
     }
     .p-profiles .profile-head .c-history .image-name .title {
         padding-right: 14px;

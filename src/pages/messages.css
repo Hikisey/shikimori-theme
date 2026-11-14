@@ -112,7 +112,7 @@
     background: rgba(var(--accent), 1);
     color: var(--tone-f9f9f9);
     line-height: 41px;
-    transition: 0.5s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: 0.5s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 19px;
     font-weight: bold;
     width: 37px;

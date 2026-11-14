@@ -158,7 +158,7 @@
             color: transparent;
             cursor: pointer;
             opacity: .92;
-            transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
+            transition: background-color var(--ease-fast), border-color var(--ease-fast), opacity var(--ease-fast), transform var(--ease-fast);
         }
         .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
             content: "" / "Назад";

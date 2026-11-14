@@ -13,7 +13,7 @@
     padding: 2px 0 !important;
     color: rgba(var(--accent), 1) !important;
     background: var(--plate-bg-strong) !important;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
     border-radius: var(--plate-radius);
@@ -99,7 +99,7 @@
     border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
     border-radius: 6px;
     padding: 0 6px;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-spoiler {

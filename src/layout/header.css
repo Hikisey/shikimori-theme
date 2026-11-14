@@ -328,7 +328,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 .l-top_menu-v2 .submenu .submenu-title.submenu-title {
     background: transparent !important;
     border-radius: 8px;
-    transition: background-color .2s ease, color .2s ease !important;
+    transition: background-color var(--ease-fast), color var(--ease-fast) !important;
 }
 
 .l-top_menu-v2 .submenu>a:hover:not(._) {
@@ -445,7 +445,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     .l-page .menu-toggler .toggler {
         backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        transition: background-color .2s ease;
+        transition: background-color var(--ease-fast);
     }
     .l-page.menu-expanded .menu-toggler .toggler {
         background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;

@@ -285,7 +285,7 @@ input[type="file"]::file-selector-button {
     color: var(--field-text);
     font: inherit;
     cursor: pointer;
-    transition: background-color .2s ease, transform .15s ease;
+    transition: background-color var(--ease-fast), transform .15s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -316,7 +316,7 @@ select:not(#u),
     transform: none;
     cursor: pointer;
     transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease !important;
+                border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 /* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */

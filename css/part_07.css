@@ -2696,7 +2696,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         padding: 0;
         opacity: 0;
         visibility: visible;
-        transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
+        transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
     }
     /* из pages/profile */
     .c-history .subheadline a:after,

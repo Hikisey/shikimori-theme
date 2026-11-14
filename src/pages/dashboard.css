@@ -48,7 +48,7 @@
     color: rgba(var(--text-2), 1);
     text-decoration: none !important;
     border-bottom: none;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 /*на Телефоне_контент вылизал фикс > Test*/
