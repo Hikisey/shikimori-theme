@@ -612,7 +612,9 @@ select:not(#u):active,
 }
 
 @starting-style {
-    .c-ms-dropdown:not([hidden]) {
+    /* двойной класс: иначе более позднее правило .c-ms-dropdown:not([hidden]) того же веса
+       перебивает начальный вид, и список открывается без анимации */
+    .c-ms-dropdown.c-ms-dropdown:not([hidden]) {
         clip-path: inset(0 0 100% 0 round var(--drop-radius));
         transform: var(--drop-shift);
     }

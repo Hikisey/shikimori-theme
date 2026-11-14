@@ -1,3 +1,59 @@
+.b-dialog .to_dialog:before,
+.to-review:before {
+    font: normal normal normal 15px FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    background: rgba(var(--glass), var(--hundred));
+    color: rgba(var(--text-strong), 0.7);
+    box-shadow: var(--plate-shadow) !important;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s;
+}
+
+.b-dialog .to_dialog:before {
+    content: '\f0e6';
+}
+
+.b-dialog .to_dialog:hover:after,
+.b-dialog .to_dialog:hover:before,
+.to-review:hover:before,
+.to-review:hover:after {
+    color: rgba(var(--accent), 1);
+}
+
+.b-dialog .to_dialog,
+.to-review {
+    font-size: 0 !important;
+}
+
+.p-messages .mass-actions,
+.b-options-floated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+body.p-profiles .mass-actions .action a,
+body .headline .misc-links a,
+body .midheadline .misc-links a,
+body .subheadline .misc-links a {
+    margin: 0;
+    font-size: 0;
+    position: relative;
+    padding: 0 0 0 13px;
+}
+
 body.p-db_entries-works .p-profiles .mass-actions .action a,
 body.p-db_entries-works .headline .misc-links a,
 body.p-db_entries-works .midheadline .misc-links a,
@@ -2459,52 +2515,4 @@ body#clubs_edit .b-options-floated a:active:after {
 .b-animes-menu .menu-topics-block a.entry .name:hover {
     color: rgba(var(--accent), 1);
     text-decoration: none;
-}
-
-.b-animes-menu .menu-topics-block a.entry .name {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-animes-menu .menu-topics-block a.entry .date {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-topic {
-    border: none !important;
-}
-
-.b-forums .forum .link-with-input .link:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-topic-minified > .inner .status-line .additional {
-    border: none !important;
-}
-
-.b-topic-minified > .inner .status-line .time.changed_at {
-    border: 1px;
-}
-
-.b-topic > .inner header .name-date .time {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-topics .l-menu .reviews .entry .misc {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-topics header h1 a.reload:hover {
-    color: rgba(var(--link), 1);
-}
-
-.p-topics .l-menu .reviews .entry {
-    border: none !important;
-}
-
-.p-topics .l-menu .reviews .entry .misc.date {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-.p-topics .l-menu .sticky-topics .topic .title:hover {
-    color: rgba(var(--accent), 1);
 }

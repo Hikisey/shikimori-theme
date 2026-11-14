@@ -1072,19 +1072,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     .c-description .b-text_with_paragraphs {
         padding: 10px 12px !important;
     }
-    /* при переходе к другому полю старый список тоже сворачивается плавно */
-    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms,
-    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms,
-    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) {
-        grid-template-rows: auto 0fr;
-    }
-    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown:not(#u) {
-        opacity: 0 !important;
-        visibility: hidden;
-        margin-top: 0 !important;
-    }
 }
 
 @media (max-width: 767px) {

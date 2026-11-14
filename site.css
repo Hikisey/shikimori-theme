@@ -4,14 +4,14 @@
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* Сама тема: https://github.com/Hikisey/shikimori-theme */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_04.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_05.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_06.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_07.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.1/css/part_08.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_05.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_06.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_07.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.2/css/part_08.css");
 
 /* ===================== Палитра ===================== */
 /* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:

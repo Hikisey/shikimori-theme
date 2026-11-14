@@ -1,3 +1,51 @@
+.b-animes-menu .menu-topics-block a.entry .name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-animes-menu .menu-topics-block a.entry .date {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-topic {
+    border: none !important;
+}
+
+.b-forums .forum .link-with-input .link:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.b-topic-minified > .inner .status-line .additional {
+    border: none !important;
+}
+
+.b-topic-minified > .inner .status-line .time.changed_at {
+    border: 1px;
+}
+
+.b-topic > .inner header .name-date .time {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-topics .l-menu .reviews .entry .misc {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.p-topics header h1 a.reload:hover {
+    color: rgba(var(--link), 1);
+}
+
+.p-topics .l-menu .reviews .entry {
+    border: none !important;
+}
+
+.p-topics .l-menu .reviews .entry .misc.date {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+.p-topics .l-menu .sticky-topics .topic .title:hover {
+    color: rgba(var(--accent), 1);
+}
+
 .b-collection-topic > .inner .status-line .collection-size,
 .b-topic-minified > .inner .status-line .additional .comments:before,
 .b-review_votes:before,
@@ -2348,7 +2396,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.3.1";
+    --theme-version: "1.3.2";
 }
 
 .l-footer:before {
@@ -3064,55 +3112,4 @@ body * [class*="new_marker"] {
 /* из components/cards */
 .b-catalog_entry.dropped .cover .misc span {
     color: #c7a7a1;
-}
-
-/* из components/cards */
-.b-catalog_entry.dropped .cover .title span {
-    color: var(--tone-e4d7d7);
-}
-
-/* из components/cards */
-.b-catalog_entry.on_hold .cover .misc span {
-    color: #a79e8e;
-}
-
-/* из components/cards */
-.b-catalog_entry.on_hold .cover .title span {
-    color: var(--tone-d4d2cd);
-}
-
-/* из components/cards */
-.b-catalog_entry.planned .cover .misc span {
-    color: #91aacc;
-}
-
-/* из components/cards */
-.b-catalog_entry.planned .cover .title span {
-    color: #cad8e4;
-}
-
-/* из components/cards */
-.b-catalog_entry.rewatching .cover .misc span {
-    color: #93b5a7;
-}
-
-/* из components/cards */
-.b-catalog_entry.rewatching .cover .title span {
-    color: #cce0d9;
-}
-
-/* из components/cards */
-.b-catalog_entry.watching .cover .misc span {
-    color: #9b99c1;
-}
-
-/* из components/cards */
-.b-catalog_entry.watching .cover .title span {
-    color: #d3cce0;
-}
-
-/* из components/headings */
-header.head h1 a.back,
-header.head h2 a.back {
-    color: rgba(var(--link), var(--hundred));
 }
