@@ -267,14 +267,14 @@
 /* под шкалой в профиле сколько пробыл на сайте */
 /* Поиск по названию в списке аниме */
 input {
-    color: rgba(var(--text), 1);
+    color: var(--field-text);
     background: var(--plate-bg);
 }
 
 .b-input input,
 .b-input textarea {
     background: var(--plate-bg);
-    color: rgba(var(--text), 1);
+    color: var(--field-text);
     border: none !important;
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
 }
@@ -290,7 +290,7 @@ textarea {
 
 .subheadline-input {
     background-color: var(--glass-deep) !important;
-    color: rgba(var(--text), 1);
+    color: var(--field-text);
     border: 1px solid var(--glass-deep) !important;
     border-radius: 4px !important;
     padding: 5px 0 3px 4px !important;
@@ -409,17 +409,17 @@ textarea#user_rate_text {
 }
 
 .ti-input input {
-    color: rgba(var(--text), 1) !important;
+    color: var(--field-text) !important;
 }
 
 .ti-autocomplete {
     background: rgb(var(--glass)) !important;
     border: none !important;
-    color: rgb(var(--text));
+    color: var(--field-text);
 }
 
 .vue-tags-input .ti-new-tag-input-wrapper .ti-new-tag-input {
-    color: rgba(var(--text), 1);
+    color: var(--field-text);
 }
 
 .ti-tags .ti-tag {
@@ -505,7 +505,7 @@ input[type="checkbox"]:before {
 input[type="checkbox"]:checked:before,
 .b-input input[type="checkbox"]:checked:before {
     content: "\f05d";
-    color: rgba(var(--text), 1);
+    color: var(--field-text);
     font-size: 17px;
     margin: -1px 18px 2px 2px;
 }
@@ -539,7 +539,7 @@ input[type="file"]::file-selector-button {
     border: none;
     border-radius: 8px;
     background: var(--accent-dim);
-    color: rgb(var(--text));
+    color: var(--field-text);
     font: inherit;
     cursor: pointer;
     transition: background-color .2s ease, transform .15s ease;
@@ -566,7 +566,7 @@ select:not(#u),
     border: 1px solid var(--field-border) !important;
     border-radius: var(--field-radius) !important;
     box-shadow: var(--field-shadow) !important;
-    color: rgb(var(--text)) !important;
+    color: var(--field-text) !important;
     outline: none !important;
     animation: none !important;
     filter: none !important;
@@ -632,13 +632,13 @@ select:not(#u):active,
 .c-ms-dropdown.c-ms-dropdown[hidden] {
     display: none !important;
     clip-path: inset(0 0 100% 0 round var(--drop-radius));
-    transform: translateY(-4px);
+    transform: var(--drop-shift);
 }
 
 @starting-style {
     .c-ms-dropdown:not([hidden]) {
         clip-path: inset(0 0 100% 0 round var(--drop-radius));
-        transform: translateY(-4px);
+        transform: var(--drop-shift);
     }
 }
 
@@ -648,7 +648,7 @@ select:not(#u):active,
     padding: var(--opt-pad) !important;
     border-radius: var(--opt-radius);
     font-size: var(--field-font);
-    color: rgb(var(--text));
+    color: var(--field-text);
     transition: background-color .15s ease, color .15s ease;
 }
 
@@ -659,7 +659,7 @@ select:not(#u):active,
 .c-ms-option.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
 
 /* варианты в системном окне (Firefox) */
-select option { background: var(--drop-bg); color: rgb(var(--text)); }
+select option { background: var(--drop-bg); color: var(--field-text); }
 
 @supports (appearance: base-select) {
     /* --- выезжающий список select (Chromium с base-select) --- */
@@ -698,7 +698,7 @@ select option { background: var(--drop-bg); color: rgb(var(--text)); }
         margin: var(--drop-gap) 0 0 0;
         padding: var(--drop-pad);
         background: var(--drop-bg);
-        color: rgb(var(--text));
+        color: var(--field-text);
         border: 1px solid var(--drop-border);
         border-radius: var(--drop-radius);
         box-shadow: var(--drop-shadow);
@@ -714,19 +714,19 @@ select option { background: var(--drop-bg); color: rgb(var(--text)); }
     }
     select:not(#u):not(:open)::picker(select) {
         clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
-        transform: translateY(-4px) !important;
+        transform: var(--drop-shift) !important;
     }
     @starting-style {
         select:not(#u):open::picker(select) {
             clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
-            transform: translateY(-4px) !important;
+            transform: var(--drop-shift) !important;
         }
     }
     select:not(#u) option {
         padding: var(--opt-pad) !important;
         border-radius: var(--opt-radius);
         background: transparent !important;
-        color: rgb(var(--text));
+        color: var(--field-text);
         font-size: var(--field-font);
         outline: none !important;
         animation: none !important;
