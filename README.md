@@ -40,10 +40,11 @@
 @import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css?v=2");
 @import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_2.css?v=2");
 @import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_3.css?v=2");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_4mob.css?v=2");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_4mob.css?v=3");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_5mob.css?v=3");
 ```
 
-Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные четыре подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
+Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные пять подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
 
 ### Обновление до новой версии
 
@@ -66,13 +67,13 @@
    @import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css?check=1");
    ```
 
-   Если превью показывает старую версию файла, значит у Шикимори застрял старый кеш по этой ссылке. Тогда увеличьте число в `?v=2` во всех четырёх ссылках темы в `site.css` (например, на `?v=3`): для Шикимори это новые адреса, и он скачает их заново. Пользователям после этого нужно один раз вставить новый `site.css`.
+   Если превью показывает старую версию файла, значит у Шикимори застрял старый кеш по этой ссылке. Тогда увеличьте число в `?v=2` во всех ссылках темы в `site.css` (например, на `?v=3`): для Шикимори это новые адреса, и он скачает их заново. Пользователям после этого нужно один раз вставить новый `site.css`.
 
 3. Сбросьте кеш для каждого изменённого файла, нажав Submit на странице (ссылки ниже уже с `?v=2`, адрес должен совпадать с тем, что в `site.css`, до символа):
    [main_code_1](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_1.css%3Fv%3D2),
    [main_code_2](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_2.css%3Fv%3D2),
    [main_code_3](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_3.css%3Fv%3D2),
-   [main_code_4mob](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_4mob.css%3Fv%3D2).
+   [main_code_4mob](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_4mob.css%3Fv%3D3), [main_code_5mob](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_5mob.css%3Fv%3D3).
 
 ## Палитра и картинки
 
