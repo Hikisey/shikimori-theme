@@ -357,6 +357,16 @@ html[data-color-mode=light] {
     color: color-mix(in srgb, var(--tone-010101) 80%, transparent);
 }
 
+/* ПК: место под полосу прокрутки занято всегда, и страницы с прокруткой
+   и без неё не сдвигаются по горизонтали при переходе между ними.
+   Прокручивает окно (overflow body передаётся окну), поэтому — на html.
+   На сенсорных экранах полоса поверх страницы, там это не нужно. */
+@media (hover: hover) and (pointer: fine) {
+    html {
+        scrollbar-gutter: stable;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
