@@ -19,11 +19,6 @@ body {
     width: -moz-available;
     overflow-x: hidden;
     overflow-y: auto;
-    background-image: none;
-    background-size: cover !important;
-    background-repeat: no-repeat;
-    background-position: center center !important;
-    background-attachment: fixed;
 }
 
 body:after {
@@ -628,7 +623,6 @@ html input[type="checkbox"]:not(#u) {
     border: 1.5px solid rgba(var(--text), .55) !important;
     background: transparent !important;
     cursor: pointer;
-    transition: background-color var(--ease-fast), border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
 /* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
@@ -847,7 +841,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
     html body#profiles_show .profile-content .c-left .lifetime {
         line-height: normal !important;
-        padding-top: 0 !important;
     }
     html body#profiles_show .profile-content .c-left .lifetime .title {
         position: static !important;

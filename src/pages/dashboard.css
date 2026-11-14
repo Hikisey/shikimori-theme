@@ -155,7 +155,6 @@
 }
 
 .p-dashboard .l-content .b-catalog_entry,
-.p-dashboard .l-content .b-catalog_entry,
 .p-dashboard .l-menu .ongoing {
     border-top: none;
 }
@@ -192,8 +191,7 @@
 
 .b-topic.b-news_wall-topic.b-news-topic > .inner > a,
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name,
-.p-dashboards-show .generated-news-line .info .name,
-.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
+.p-dashboards-show .generated-news-line .info .name {
     transition: var(--ease-base);
 }
 

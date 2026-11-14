@@ -236,7 +236,6 @@
 
 .b-bb_codes-examples .example .textarea {
     background: var(--plate-bg);
-    border: rgba(var(--glass), 0.4);
     color: rgba(var(--text), 1);
     border: none !important;
     border-radius: 8px;
@@ -266,12 +265,6 @@
 
 .b-shiki_editor .images .link-value,
 .b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .quotes .link-value,
-.b-shiki_editor .email .link-value,
-.b-shiki_editor .upload .link-value,
-.b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
 .b-shiki_editor .quotes .link-value,
 .b-shiki_editor .email .link-value,
 .b-shiki_editor .upload .link-value {
@@ -740,9 +733,7 @@ a.b-link.bubbled-processed {
     .item-delete:before,
     .item-request-reject:before,
     .item-delete-confirm:after,
-    .item-delete-cancel:after,
     .item-delete-confirm:before,
-    .item-delete-cancel:before,
     .item-abuse:before,
     .item-abuse:after,
     .item-spoiler:before,

@@ -39,7 +39,6 @@
     /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
     html body#profiles_show .profile-content .c-left .lifetime {
         line-height: normal !important;
-        padding-top: 0 !important;
     }
     html body#profiles_show .profile-content .c-left .lifetime .title {
         position: static !important;
@@ -993,7 +992,6 @@ header.head .notice {
 }
 
 @media screen and (max-width: 767px) {
-    .userbox img.avatar,
     .userbox img.avatar {
         margin-top: 12px !important;
     }
@@ -1090,8 +1088,7 @@ header.head .notice {
 .buttons .item-cancel:hover,
 .buttons .item-request-reject:hover,
 .buttons .item-delete-cancel:hover,
-.buttons .item-moderation-cancel:hover,
-.buttons .item-delete-confirm:hover {
+.buttons .item-moderation-cancel:hover {
     color: rgba(var(--accent), 1) !important;
 }
 
@@ -2244,7 +2241,6 @@ header.head .notice {
     }
     .b-catalog-entry-embedded .b-catalog_entry {
         padding-bottom: 20px !important;
-        background: none;
     }
 }
 
@@ -2503,7 +2499,6 @@ header.head .notice {
 
 .b-bb_codes-examples .example .textarea {
     background: var(--plate-bg);
-    border: rgba(var(--glass), 0.4);
     color: rgba(var(--text), 1);
     border: none !important;
     border-radius: 8px;
@@ -2533,12 +2528,6 @@ header.head .notice {
 
 .b-shiki_editor .images .link-value,
 .b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .quotes .link-value,
-.b-shiki_editor .email .link-value,
-.b-shiki_editor .upload .link-value,
-.b-shiki_editor .links .link-value,
-.b-shiki_editor .images .link-value,
 .b-shiki_editor .quotes .link-value,
 .b-shiki_editor .email .link-value,
 .b-shiki_editor .upload .link-value {

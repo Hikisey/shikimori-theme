@@ -220,8 +220,7 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     .profile-actions .fav-add:before,
     .profile-actions .settings:before,
     .profile-actions .ignore-add:before,
-    .profile-actions .ignore-remove:before,
-    .profile-actions .talk:before {
+    .profile-actions .ignore-remove:before {
         font-size: 30px !important;
     }
     .block.edit-page.misc .c-column {

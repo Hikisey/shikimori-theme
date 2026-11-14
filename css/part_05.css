@@ -1,45 +1,3 @@
-.l-top_menu-v2 .submenu > a.icon-mail span.unread {
-    position: absolute;
-    top: 1px;
-    right: 4px;
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 15px;
-    width: 15px;
-    padding-top: 3px;
-    color: rgba(var(--text-strong), 1) !important;
-    border-radius: 50%;
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
-    content: none !important;
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
-    background: rgba(52, 105, 54, 0.4);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
-    background: rgba(65, 100, 144, 0.4);
-}
-
-.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
-    background: rgba(148, 70, 113, 0.4);
-}
-
-body#messages_index .l-page,
-body#dialogs_index .l-page,
-body#dialogs_show .l-page,
-body.p-user_history .l-page {
-    max-width: 800px;
-}
-
 .b-comment > .inner div.body,
 .b-message > .inner div.body {
     margin-left: 58px;
@@ -878,12 +836,6 @@ tr.user_rate.selectable.editable:after {
 /* ===== pages/achievements =====
    ачивки: страница и блок в профиле */
 
-@media screen and (max-width: 1200px) {
-    body.p-achievements.p-profiles .b-list_switchers {
-        margin-top: 2px !important;
-    }
-}
-
 body.p-achievements.p-profiles .b-ajax:before,
 body.p-achievements.p-profiles .b-ajax,
 body.p-achievements.p-profiles .ac_loading,
@@ -1161,7 +1113,6 @@ body#clubs_edit .b-options-floated a span.brackets {
     font-weight: bolder;
     margin: 0;
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-size: 10px;
     -webkit-box-align: center;
@@ -2147,7 +2098,6 @@ body#clubs_edit .b-options-floated a:active:after {
     .b-contest_match .vs .actions .action span:hover {
         background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
     }
-    .b-contest_match .vs .actions .action span:hover,
     .b-contest_match .vs .actions .action span:hover {
         box-shadow: none !important;
         background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
@@ -2524,4 +2474,59 @@ body#clubs_edit .b-options-floated a:active:after {
         box-shadow: none;
         transition: 1s ease-out;
     }
+}
+
+.b-form input[type=submit],
+.b-shiki_editor.previewed footer .unpreview,
+.b-poll .poll-actions .vote,
+.b-poll .poll-actions .abstain {
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .line {
+    padding: 0;
+    background: color-mix(in srgb, var(--glass-active) 80%, transparent);
+    height: 9px;
+
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.b-poll .poll-variants .poll-variant.result .bar .bar {
+    height: 12px;
+    line-height: 12px;
+    float: left;
+}
+
+.b-poll {
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+
+.b-poll .poll-variants .poll-variant label {
+    font-weight: bold;
+}
+
+.b-poll .poll {
+    margin-bottom: 5px;
+}
+
+.b-poll .poll-variants .poll-variant.result {
+    margin-bottom: 9px;
+}
+
+.b-poll .poll-variants .poll-variant.result .votes-total {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-topic > .editor-container {
+    margin-top: 25px;
+}
+
+.b-topic-minified > .inner .status-line time,
+.b-topic-minified > .inner .status-line .from {
+    color: rgba(var(--text-2), var(--hundred));
 }

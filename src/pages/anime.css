@@ -415,8 +415,7 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 .c-actions .fav-delete:after,
 .c-actions .edit:after,
 .c-actions .moderation:after,
-.c-actions .fav-remove:after,
-.c-actions .new_review:after {
+.c-actions .fav-remove:after {
     color: rgba(var(--text), var(--hundred));
 }
 
@@ -614,11 +613,8 @@ a.c-column.c-control.increment-user_rate,
 .l-top_menu-v2 .global-search .search-results .nothing_found.active,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
 .l-top_menu-v2 .global-search .search-results .search-mode.active,
-.l-top_menu-v2 .global-search .search-results .nothing_found.active,
 .l-top_menu-v2 .global-search .search-results .nothing_found:focus,
-.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:focus,
-.l-top_menu-v2 .global-search .search-results .search-mode.active,
 .l-top_menu-v2 .global-search .search-results .search-mode:focus {
     background: unset;
     border-top-color: unset;

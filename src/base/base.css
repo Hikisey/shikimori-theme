@@ -464,7 +464,6 @@ hr {
 }
 
 .cm-searching {
-    background-color: #ffa;
     background-color: rgba(169, 120, 17, 0.4);
 }
 
@@ -537,7 +536,6 @@ a,
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
-    .mobile-slider-next:before,
     .mobile-slider-next:before {
         background: linear-gradient(to right, color-mix(in srgb, var(--tone-1e1e27) 0%, transparent), color-mix(in srgb, var(--tone-1e1e27) 75%, transparent) 70%, color-mix(in srgb, var(--tone-1e1e27) 85%, transparent)) !important;
         filter: brightness(1.5);

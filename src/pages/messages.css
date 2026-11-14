@@ -38,10 +38,6 @@
     white-space: normal;
 }
 
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--link), 1);
-}
-
 .p-messages .mass-actions .action:after {
     display: none;
 }
@@ -57,8 +53,7 @@
 .b-db_entry-note,
 .p-topics .l-menu .sticky-topics .topic,
 .b-comments .comments-loaded,
-.b-message .comments-loaded,
-.b-user.detailed {
+.b-message .comments-loaded {
     border-bottom: 1px solid rgba(var(--text), 0.1) !important;
 }
 

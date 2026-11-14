@@ -63,8 +63,7 @@
 .buttons .item-cancel:hover,
 .buttons .item-request-reject:hover,
 .buttons .item-delete-cancel:hover,
-.buttons .item-moderation-cancel:hover,
-.buttons .item-delete-confirm:hover {
+.buttons .item-moderation-cancel:hover {
     color: rgba(var(--accent), 1) !important;
 }
 

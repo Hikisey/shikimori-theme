@@ -1,58 +1,3 @@
-.b-form input[type=submit],
-.b-shiki_editor.previewed footer .unpreview,
-.b-poll .poll-actions .vote,
-.b-poll .poll-actions .abstain {
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-poll .poll-variants .poll-variant.result .bar .line {
-    padding: 0;
-    background: color-mix(in srgb, var(--glass-active) 80%, transparent);
-    height: 9px;
-
-    overflow: hidden;
-    position: relative;
-    border-radius: 8px;
-    white-space: nowrap;
-    width: 100%;
-}
-
-.b-poll .poll-variants .poll-variant.result .bar .bar {
-    height: 12px;
-    line-height: 12px;
-    float: left;
-}
-
-.b-poll {
-    padding: 5px 0;
-    margin-bottom: 0;
-}
-
-.b-poll .poll-variants .poll-variant label {
-    font-weight: bold;
-}
-
-.b-poll .poll {
-    margin-bottom: 5px;
-}
-
-.b-poll .poll-variants .poll-variant.result {
-    margin-bottom: 9px;
-}
-
-.b-poll .poll-variants .poll-variant.result .votes-total {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-.b-topic > .editor-container {
-    margin-top: 25px;
-}
-
-.b-topic-minified > .inner .status-line time,
-.b-topic-minified > .inner .status-line .from {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
 .b-poll .bar.simple .bar.s1,
 .b-poll .bar.simple .bar.s2,
 .b-poll .bar.simple .bar.s3,
@@ -523,7 +468,6 @@
 }
 
 .p-dashboard .l-content .b-catalog_entry,
-.p-dashboard .l-content .b-catalog_entry,
 .p-dashboard .l-menu .ongoing {
     border-top: none;
 }
@@ -560,8 +504,7 @@
 
 .b-topic.b-news_wall-topic.b-news-topic > .inner > a,
 .b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name,
-.p-dashboards-show .generated-news-line .info .name,
-.b-topic.b-news_wall-topic.b-news-topic > .inner .name-date .name {
+.p-dashboards-show .generated-news-line .info .name {
     transition: var(--ease-base);
 }
 
@@ -2339,7 +2282,6 @@ div.Ssylki-anime:hover .Text-2 {
 .b-comment > .inner header .name-date a.name:hover,
 .b-dialog > .inner header .name-date a.name:hover,
 .b-topic > .inner header .name-date a.name:hover,
-.b-message > .inner header .name-date a.name:hover,
 .b-message > .inner header .name-date a.name:hover {
     color: rgba(var(--accent), 1) !important;
 }
@@ -2627,7 +2569,6 @@ a:-webkit-any-link {
 }
 
 /* из pages/contests */
-.b-contest_match .vs .actions .action span,
 .b-contest_match .vs .actions .action span {
     transition: var(--ease-fast);
     color: rgba(var(--text), var(--hundred));
@@ -3132,4 +3073,60 @@ body#profiles_show .b-catalog_entry,
 .b-height_shortener .expand:hover span {
     animation: none !important;
     border: none;
+}
+
+/* ачивки */
+/* из pages/achievements */
+.b-achievement .c-about a.title {
+    font-size: 14px;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из pages/achievements */
+.b-achievement .c-about .hint {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(var(--text), var(--hundred));
+    opacity: 1;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed {
+    margin-left: 25px;
+    color: rgba(var(--text), var(--hundred)) !important;
+}
+
+/* из base/base */
+.persisted a.b-link.bubbled-processed:hover {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+/* из components/forms */
+.ac_results .name,
+.completable-block .name {
+    font-weight: bold;
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+/* из components/buttons */
+.b-button[disabled],
+.b-button.disabled {
+    cursor: default;
+    pointer-events: none;
+    background-color: var(--plate-bg);
+    border-radius: 4px !important;
+    color: rgba(var(--text), 0.3);
+    padding: 6px 10px 6px 10px;
+    transition: 0.3s ease-out;
+    border: none;
+    font-family: 'Comfortaa', sans-serif;
+    box-shadow: var(--plate-shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/forms */
+    .ac_results .character-suggest .animes div a:hover {
+        background: none !important;
+        box-shadow: none;
+    }
 }

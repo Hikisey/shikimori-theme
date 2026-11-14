@@ -578,8 +578,7 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 .c-actions .fav-delete:after,
 .c-actions .edit:after,
 .c-actions .moderation:after,
-.c-actions .fav-remove:after,
-.c-actions .new_review:after {
+.c-actions .fav-remove:after {
     color: rgba(var(--text), var(--hundred));
 }
 
@@ -777,11 +776,8 @@ a.c-column.c-control.increment-user_rate,
 .l-top_menu-v2 .global-search .search-results .nothing_found.active,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
 .l-top_menu-v2 .global-search .search-results .search-mode.active,
-.l-top_menu-v2 .global-search .search-results .nothing_found.active,
 .l-top_menu-v2 .global-search .search-results .nothing_found:focus,
-.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:focus,
-.l-top_menu-v2 .global-search .search-results .search-mode.active,
 .l-top_menu-v2 .global-search .search-results .search-mode:focus {
     background: unset;
     border-top-color: unset;
@@ -1493,8 +1489,7 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     .profile-actions .fav-add:before,
     .profile-actions .settings:before,
     .profile-actions .ignore-add:before,
-    .profile-actions .ignore-remove:before,
-    .profile-actions .talk:before {
+    .profile-actions .ignore-remove:before {
         font-size: 30px !important;
     }
     .block.edit-page.misc .c-column {
@@ -1704,7 +1699,6 @@ span.studio {
     content: "добавить";
 }
 
-[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before,
 [data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
     color: rgba(var(--accent), 1);
 }
@@ -1800,14 +1794,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         height: 44px !important;
     }
     section.l-page.menu-expanded aside.l-menu {
-        display: block;
-        position: absolute;
-        height: auto;
         background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-        z-index: 3;
-        padding: 10px 14px;
-        right: 3px;
-        width: 98%;
     }
     section.l-page aside.l-menu {
         display: none;
@@ -1866,7 +1853,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         max-height: 70vh;
         max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
         margin: 0 !important;
-        padding: 0 16px 16px !important;
         box-sizing: border-box !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
@@ -1877,7 +1863,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         background:
             linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
             color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
         -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), 0.14) !important;
         border-radius: 22px !important;
@@ -1899,8 +1884,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         position: sticky;
         top: 0;
         z-index: 2;
-        margin: 0 -16px 12px !important;
-        padding: 14px 16px 10px !important;
         background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
         backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
         -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
@@ -1920,14 +1903,12 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     }
     section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
     section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
     /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
     section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
         position: relative !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
-        margin-top: var(--drop-gap);
     }
     /* ================================================================
        Телефоны: списки фильтров в карточке плавно раскрываются и
@@ -2083,10 +2064,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     white-space: normal;
 }
 
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--link), 1);
-}
-
 .p-messages .mass-actions .action:after {
     display: none;
 }
@@ -2102,8 +2079,7 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
 .b-db_entry-note,
 .p-topics .l-menu .sticky-topics .topic,
 .b-comments .comments-loaded,
-.b-message .comments-loaded,
-.b-user.detailed {
+.b-message .comments-loaded {
     border-bottom: 1px solid rgba(var(--text), 0.1) !important;
 }
 
@@ -2415,4 +2391,46 @@ body.p-db_entries-works .p-profiles .mass-actions .action a:before,
 .p-db_entries-works .midheadline .misc-links > a:before,
 .p-db_entries-works .subheadline .misc-links > a:before {
     display: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    color: rgba(var(--text-strong), 1) !important;
+    border-radius: 50%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
+    content: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.4);
+}
+
+body#messages_index .l-page,
+body#dialogs_index .l-page,
+body#dialogs_show .l-page,
+body.p-user_history .l-page {
+    max-width: 800px;
 }

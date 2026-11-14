@@ -103,7 +103,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    .userbox img.avatar,
     .userbox img.avatar {
         margin-top: 12px !important;
     }

@@ -34,7 +34,6 @@
     .b-contest_match .vs .actions .action span:hover {
         background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
     }
-    .b-contest_match .vs .actions .action span:hover,
     .b-contest_match .vs .actions .action span:hover {
         box-shadow: none !important;
         background-color: color-mix(in srgb, var(--accent-hover) calc(var(--hundred) * 100%), transparent);
