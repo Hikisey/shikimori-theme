@@ -6781,3 +6781,153 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         transition: transform .08s ease;
     }
 }
+
+/* ================================================================
+   v1.2.11 — список аниме/манги (ПК): заголовки, поиск, переключатели, карандаш
+   ================================================================ */
+@media screen and (min-width: 768px) {
+    /* заголовки «Список аниме» и групп («Запланировано»…) — стекло с акцентной чертой слева */
+    .p-user_rates-index .l-content > .subheadline,
+    .p-user_rates-index .list-groups header .subheadline {
+        height: 38px !important;
+        min-height: 38px;
+        padding: 0 16px 0 14px !important;
+        box-sizing: border-box;
+        border-radius: 12px !important;
+        background: rgba(var(--block-color), .62) !important;
+        border: 1px solid rgba(var(--white-color), .07) !important;
+        border-left: 3px solid rgb(var(--bright-color)) !important;
+        box-shadow: 0 6px 18px rgba(var(--shadows-color), .35) !important;
+        -webkit-backdrop-filter: blur(8px) saturate(115%);
+        backdrop-filter: blur(8px) saturate(115%);
+        color: rgba(var(--light-color), .92) !important;
+        letter-spacing: .04em;
+        display: flex !important;
+        align-items: center;
+    }
+    .p-user_rates-index .list-groups header { margin-top: 22px; }
+    .p-user_rates-index .list-groups header:first-of-type { margin-top: 0; }
+    .p-user_rates-index .list-groups header .b-options-floated.collapse {
+        height: 38px;
+        display: flex;
+        align-items: center;
+        padding-right: 14px;
+        margin: 0 !important;
+    }
+
+    /* кнопки «списком / постерами» — по центру полосы, одинаковые квадраты */
+    .p-user_rates-index .l-content > .subheadline-buttons {
+        height: 38px !important;
+        margin: 0 !important;
+        padding: 0 6px 0 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 38px;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 8px;
+        line-height: 1 !important;
+        color: rgba(var(--light-color), .62) !important;
+        transition: background-color .2s ease, color .2s ease;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::before,
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::after {
+        margin: 0 !important;
+        line-height: 1 !important;
+        position: static !important;
+        color: inherit !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher.selected {
+        color: rgb(var(--bright-color)) !important;
+        background: rgba(var(--bright-color), .14);
+    }
+
+    /* поиск по списку — видимое поле со скруглённой рамкой */
+    .p-user_rates-index .b-collection_search {
+        margin: 12px 0 20px !important;
+    }
+    .p-user_rates-index .b-collection_search .field input {
+        height: 38px !important;
+        box-sizing: border-box;
+        padding: 0 14px !important;
+        border-radius: 10px !important;
+        border: 1px solid rgba(var(--white-color), .12) !important;
+        background-color: rgba(var(--block-color), .45) !important;
+        box-shadow: inset 0 1px 3px rgba(var(--shadows-color), .35);
+        color: rgb(var(--light-color)) !important;
+        outline: none !important;
+        transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field input::placeholder { color: rgba(var(--light-color), .45); }
+    .p-user_rates-index .b-collection_search .field input:focus {
+        border-color: rgba(var(--bright-color), .7) !important;
+        background-color: rgba(var(--block-color), .6) !important;
+        box-shadow: 0 0 0 3px rgba(var(--bright-color), .18);
+    }
+
+    /* карандаш «изменить» (свой список) — маленький стеклянный квадрат */
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate {
+        top: 8px !important;
+        right: 8px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(var(--block-color), .65) !important;
+        border: 1px solid rgba(var(--white-color), .14);
+        box-sizing: border-box;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        z-index: 4 !important;
+        transition: background-color .2s ease, border-color .2s ease;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate::before {
+        background: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px !important;
+        line-height: 1 !important;
+        color: rgba(var(--light-color), .9);
+    }
+    /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
+    .p-user_rates-index .list-posters .user_rate {
+        position: relative;
+        border-radius: 14px;
+        transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+    }
+}
+@media screen and (min-width: 768px) and (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-posters .user_rate:hover > .b-catalog_entry {
+        transform: none;
+        box-shadow: none;
+    }
+    .p-user_rates-index .list-posters .user_rate:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, .5), 0 0 0 1px rgba(var(--bright-color), .3);
+        z-index: 2;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
+        background: rgba(var(--bright-color), .85) !important;
+        border-color: rgba(var(--bright-color), 1);
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover::before {
+        background: none !important;
+        color: #fff;
+    }
+}
