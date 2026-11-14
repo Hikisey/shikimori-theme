@@ -1,0 +1,1449 @@
+/* ================================================================
+   Телефоны (iPhone / Safari и др.): размытый фон, фильтры по центру
+   экрана, подписи без наложения на значки
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
+    html body::before,
+    html:not(:hover) body::before {
+        transform: scale(1.04);
+        transition: none;
+        filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+        -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+    }
+
+    /* --- фильтры каталога и списков: карточка по центру экрана --- */
+    /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
+    section.l-page.menu-expanded::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
+        animation: shiki-fade .3s ease both;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        display: block !important;
+        position: fixed !important;
+        z-index: 950 !important;
+        top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: min(calc(100vw - 32px), 440px) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: 70vh;
+        max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+        margin: 0 !important;
+        padding: 0 16px 16px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        transform: translate(-50%, -50%);
+        transform-origin: 50% 50%;
+        /* «жидкое стекло» */
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
+        -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), 0.14) !important;
+        border-radius: 22px !important;
+        outline: none !important;
+        box-shadow:
+            inset 0 1px 0 rgba(var(--glass-light), 0.22),
+            inset 0 0 0 1px color-mix(in srgb, var(--accent-dim) 38%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--accent-dim) 25%, transparent),
+            0 20px 50px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+        animation: shiki-sheet .34s cubic-bezier(.22, 1.2, .36, 1) both;
+        scrollbar-width: thin;
+        scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
+    }
+    /* реклама и пустые служебные блоки не занимают место над заголовком */
+    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
+    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
+    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
+    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
+        display: none !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        margin: 0 -16px 12px !important;
+        padding: 14px 16px 10px !important;
+        background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
+        border-radius: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        color: rgb(var(--accent));
+    }
+    /* поля внутри стекла тоже полупрозрачные; все значения одного размера
+       (при шрифте мельче 16px iOS приближает страницу при фокусе) */
+    section.l-page.menu-expanded aside.l-menu {
+        --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        --field-font: 16px;
+        --field-height: 40px;
+    }
+    section.l-page aside.l-menu select:not(#u),
+    section.l-page aside.l-menu .c-ms-control:not(#u),
+    section.l-page aside.l-menu .c-ms-placeholder,
+    section.l-page aside.l-menu .c-ms-chips,
+    section.l-page aside.l-menu .c-ms-search,
+    section.l-page aside.l-menu .c-ms-option:not(#u),
+    section.l-page aside.l-menu .c-score-input {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        font-family: "Comfortaa", sans-serif !important;
+    }
+    section.l-page aside.l-menu select:not(#u),
+    section.l-page aside.l-menu .c-ms-control:not(#u),
+    section.l-page aside.l-menu .c-score-input {
+        min-height: 40px !important;
+        height: 40px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
+    section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
+    /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
+    section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: var(--drop-gap);
+    }
+    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
+    .l-page .menu-toggler {
+        z-index: 999 !important;
+        bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .l-page .menu-toggler .toggler {
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        transition: background-color .2s ease;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f00d" !important;
+        font-size: 22px !important;
+    }
+    /* iOS приближает страницу при фокусе на полях мельче 16px */
+    @supports (-webkit-touch-callout: none) {
+        select:not(#u),
+        .c-ms-search,
+        .c-score-input,
+        input[type="text"],
+        input[type="search"],
+        textarea {
+            font-size: 16px !important;
+        }
+    }
+
+    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
+    html body.p-profiles .profile-head .c-brief header.head .misc {
+        position: static !important;
+        top: auto !important;
+        margin: 4px 0 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+    html body.p-profiles .profile-head .c-info {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 14px 0 0 !important;
+        padding: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info,
+    html body.p-profiles .profile-head:hover .c-info .c-lists-info {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:hover {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 10px 12px 12px !important;
+        box-sizing: border-box;
+        line-height: normal !important;
+        border-radius: 14px;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga { order: 2; }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        margin: 0 0 8px !important;
+        padding: 0 40px 0 0 !important;
+        text-align: left !important;
+        line-height: 18px !important;
+        font-size: 13px !important;
+        opacity: 1 !important;
+        color: rgb(var(--text)) !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
+        position: relative !important;
+        margin: 0 !important;
+        height: 26px !important;
+        line-height: 26px !important;
+        border-radius: 8px;
+        overflow: hidden !important;
+        font-size: 12px;
+    }
+    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
+        display: none !important;
+        content: none !important;
+    }
+    /* совместимость — значок в правом верхнем углу карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
+        position: absolute !important;
+        top: 9px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        height: 20px;
+        margin: 0 !important;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility > *,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        line-height: 20px !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a::before,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text::before {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        font-size: 17px !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 8px 0 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+        text-align: center;
+        font-size: 12px;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
+    html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
+
+    /* шапка профиля и содержимое идут обычным потоком: шапка растёт по
+       содержимому и не наезжает на «Друзья», нет пустой полосы */
+    html body#profiles_show .l-page { margin-top: 5px !important; }
+    html body#profiles_show .profile-head {
+        top: 0 !important;
+        height: auto !important;
+        margin-bottom: 0 !important;
+    }
+    html body#profiles_show .profile-content { margin-top: 0 !important; }
+    html body#profiles_show .profile-content > .cc-2.block {
+        display: flex !important;
+        flex-direction: column;
+        height: auto !important;
+        margin-top: 4px !important;
+    }
+    html body#profiles_show .profile-content > .cc-2.block > .c-column {
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+    html body#profiles_show .profile-content > .cc-2.block > .c-right { order: 1; }
+    html body#profiles_show .profile-content > .cc-2.block > .c-right > .block:last-child { margin-bottom: 0 !important; }
+    html body#profiles_show .profile-content > .cc-2.block > .c-left { order: 2; margin-top: 14px !important; }
+    /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
+    html body#profiles_show .profile-content .c-left .lifetime {
+        line-height: normal !important;
+        padding-top: 0 !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 12px !important;
+        padding: 0 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        transform: none !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label,
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        position: static !important;
+        float: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        line-height: 1.3 !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .label {
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: left !important;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime .title .value {
+        flex: 0 0 auto;
+        text-align: right !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+
+    /* друзья и клубы — две стеклянные карточки */
+    body.p-profiles-show .cc-2a {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 14px 0 !important;
+    }
+    body.p-profiles-show .cc-2a > .c-column {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+        border-radius: 14px;
+        background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+        min-width: 0;
+    }
+    body.p-profiles-show .cc-2a > .c-column > .subheadline {
+        margin: 0 0 8px !important;
+        width: auto !important;
+    }
+    body.p-profiles-show .cc-friends {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        gap: 6px 4px;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-friends .b-user {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center;
+    }
+    body.p-profiles-show .cc-friends .b-user img {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-2a .b-clubs {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+    body.p-profiles-show .cc-2a .b-clubs .b-club {
+        width: auto !important;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-2a .b-clubs .b-club img.logo {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    html body#profiles_show.p-profiles-show .cc-2a .b-nothing_here {
+        margin: 0 !important;
+        font-size: 12.5px;
+        line-height: 1.4 !important;
+        color: rgb(var(--text-2));
+    }
+}
+
+/* --- страница аниме: действия под постером плитками «значок над текстом» --- */
+@media screen and (max-width: 480px) {
+    .b-db_entry > .c-image .c-actions {
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-actions {
+        align-items: stretch !important;
+        gap: 6px;
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        min-height: 54px;
+        margin: 0 !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box;
+        text-align: center !important;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: 1px solid rgba(var(--glass-light), .06);
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action::before {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        font-size: 18px !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+        color: rgb(var(--accent));
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
+        content: attr(data-text);
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: clamp(10.5px, 3vw, 12px);
+        line-height: 1.25;
+        white-space: normal;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        color: rgb(var(--text));
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-add:not([data-text])::after { content: attr(data-add_text); }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove:not([data-text])::after { content: attr(data-remove_text); }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove::before {
+        color: var(--accent-hover);
+    }
+}
+
+@keyframes shiki-fade {
+    from { opacity: 0; }
+}
+@keyframes shiki-sheet {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 24px)) scale(.9); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes shiki-sheet-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ================================================================
+   Телефоны: читаемость текста поверх обоев
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    :root {
+        --glass-bg: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        --glass-border: 1px solid rgba(var(--glass-light), .06);
+        --glass-filter: blur(var(--glass-blur)) saturate(110%);
+        --text-soft: rgba(var(--text), .86);
+    }
+    /* мягкая тень у текста, который лежит прямо на обоях */
+    .l-page {
+        text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
+    }
+    .l-page :is(input, select, textarea, button, .c-ms-control, .c-ms-dropdown, aside.l-menu, .b-stats_bar, .cc-2a > .c-column, .b-subposter-action, .b-catalog_entry .cover .image-decor, .b-button, .b-input, .b-entry-info, .b-text_with_paragraphs) {
+        text-shadow: none;
+    }
+
+    /* второстепенный текст светлее */
+    .b-catalog_entry .misc,
+    .b-catalog_entry .misc span,
+    .l-page header.head .notice,
+    .pagination,
+    .pagination span,
+    .pagination .link.disabled,
+    .hint,
+    .b-input .hint,
+    .b-form .hint,
+    .b-nothing_here,
+    .p-profiles .profile-head .c-brief .notice,
+    .p-profiles .profile-head .c-brief .notice span,
+    .p-profiles-show .lifetime .times .time,
+    .p-profiles-show .lifetime .title .label,
+    .p-profiles-show .lifetime .title .value,
+    .b-clubs,
+    .b-clubs .b-nothing_here,
+    .b-entry-info .key {
+        color: var(--text-soft) !important;
+        opacity: 1 !important;
+    }
+
+    /* стеклянные подложки под свободно лежащим текстом */
+    .l-page > div > header.head,
+    .l-page > div > .pagination,
+    .p-profiles .profile-head .c-brief header.head,
+    html body#profiles_show .profile-content .c-left .lifetime,
+    html body#profiles_show .profile-content .c-left .activity,
+    .c-about .b-entry-info,
+    .c-description .b-text_with_paragraphs,
+    body.p-profiles-edit .l-content .block:not(.block .block),
+    body.p-user_preferences .l-content .block:not(.block .block) {
+        background: var(--glass-bg) !important;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        border: var(--glass-border);
+        border-radius: 14px;
+        box-sizing: border-box;
+    }
+    .l-page > div > header.head {
+        padding: 10px 12px !important;
+        margin-bottom: 10px !important;
+    }
+    .l-page > div > .pagination {
+        display: flex !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 6px 12px !important;
+        margin-bottom: 10px !important;
+        border-radius: 12px;
+    }
+    .p-profiles .profile-head .c-brief header.head {
+        width: fit-content !important;
+        max-width: 100%;
+        margin: 10px auto 0 !important;
+        padding: 6px 16px 8px !important;
+        border-radius: 16px;
+    }
+    html body#profiles_show .profile-content .c-left .lifetime,
+    html body#profiles_show .profile-content .c-left .activity {
+        padding: 10px 12px !important;
+        margin-bottom: 10px !important;
+    }
+    .c-about .b-entry-info,
+    .c-description .b-text_with_paragraphs {
+        padding: 10px 12px !important;
+    }
+    body.p-profiles-edit .l-content .block:not(.block .block),
+    body.p-user_preferences .l-content .block:not(.block .block) {
+        padding: 10px 12px !important;
+    }
+    /* заголовки разделов — тот же стеклянный «чип» */
+    .l-page .subheadline {
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+    }
+}
+
+/* ================================================================
+   Телефоны: списки фильтров в карточке плавно раскрываются и
+   сворачиваются, поля ниже едут вместе с ними (высота через строки
+   сетки 0fr ↔ 1fr; список не исчезает, пока не свернётся)
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    section.l-page aside.l-menu .c-ms {
+        display: grid !important;
+        grid-template-rows: auto 0fr;
+        grid-template-columns: minmax(0, 1fr);
+        /* сворачивание: плавно, без рывка в начале */
+        transition: grid-template-rows .32s cubic-bezier(.4, 0, .2, 1);
+    }
+    section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
+        grid-template-rows: auto 1fr;
+        /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
+        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
+    }
+    section.l-page aside.l-menu .c-ms-dropdown:not(#u),
+    section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
+        display: block !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        margin-top: 0 !important;
+        border-width: 0 !important;
+        clip-path: none !important;
+        transform: none !important;
+        opacity: 0 !important;
+        visibility: hidden;
+        transition: opacity .22s ease, margin-top .32s cubic-bezier(.4, 0, .2, 1),
+                    border-width .32s step-end, visibility 0s linear .32s !important;
+    }
+    section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
+        margin-top: var(--drop-gap) !important;
+        border-width: 1px !important;
+        opacity: 1 !important;
+        visibility: visible;
+        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
+                    border-width 0s, visibility 0s !important;
+    }
+    /* при переходе к другому полю старый список тоже сворачивается плавно */
+    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms,
+    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms,
+    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) {
+        grid-template-rows: auto 0fr;
+    }
+    section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms-dropdown:not(#u),
+    section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:not(#u),
+    section.l-page aside.l-menu .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown:not(#u) {
+        opacity: 0 !important;
+        visibility: hidden;
+        margin-top: 0 !important;
+    }
+}
+
+/* ================================================================
+   v1.2.7 — iPhone: нативные списки, без клавиатуры, обои из кеша
+   ================================================================ */
+
+/* Сенсорные экраны: select — обычный системный (колёсико iOS).
+   Новый base-select WebKit 26 на iPhone не открывался и дёргал анимации в настройках. */
+@media (hover: none) and (pointer: coarse) {
+    select:not(#u),
+    select:not(#u)::picker(select) {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    select:not(#u) {
+        display: inline-block !important;
+        padding-right: 30px !important;
+        background: var(--field-arrow), var(--field-bg) !important;
+    }
+    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
+    select:not(#u)::picker-icon { display: none !important; }
+    select:not(#u):active { transform: none !important; }
+
+    /* «Залипающий» hover на iPhone: после первого тапа кнопка оставалась поднятой,
+       и следующие нажатия уже не анимировались. Подъём — только по нажатию. */
+    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
+    body#clubs_edit .b-options-floated a:hover:after {
+        background: rgba(var(--glass), .95) !important;
+        border-color: rgba(var(--glass-light), .12) !important;
+        transform: none;
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
+    }
+    body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:hover:after,
+    body#clubs_edit .b-options-floated a.selected:hover:after {
+        background: rgba(var(--accent), .18) !important;
+        border-color: rgba(var(--accent), .7) !important;
+    }
+    .p-profiles-edit .account .oauth a:hover,
+    .p-profiles-edit .account .oauth .b-link_button:hover {
+        border-color: rgba(var(--glass-light), .12) !important;
+        background: rgba(var(--glass), .95) !important;
+        transform: none;
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    }
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    /* Короткие списки (до 15 пунктов) без строки поиска: скрипт ставит в неё фокус,
+       iPhone выдвигает клавиатуру, и карточка фильтров прыгает. */
+    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
+        display: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
+}
+/* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
+@media screen and (max-width: 767px) {
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        display: block;
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+        background: rgba(var(--glass-light), .03) !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
+    section.l-page aside.l-menu .c-ms-options:not(#u) {
+        margin-top: 0 !important;
+        max-height: 220px;
+        overflow-y: auto;
+    }
+    /* высота карточки не пересчитывается, когда прячется панель Safari */
+    section.l-page.menu-expanded aside.l-menu:not(#u) {
+        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+    }
+}
+
+/* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
+   Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
+@media screen and (max-width: 767px) {
+    html { background-color: rgb(var(--bg-color-mobile)) !important; }
+    html body::before {
+        background: var(--bg-image-mobile) center / cover no-repeat;
+        background-color: rgb(var(--bg-color-mobile));
+    }
+}
+
+/* ================================================================
+   v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* цветные заголовки главной — как «Темы дня» */
+    html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
+        background: rgba(var(--glass), .6) !important;
+        color: rgba(var(--text-2), 1) !important;
+    }
+    html body .headline:has(> .misc-links) {
+        min-height: 36px;
+        height: auto !important;
+        padding: 4px 4px 4px 14px !important;
+        box-sizing: border-box;
+        gap: 10px;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+    }
+    /* кнопки — справа, в одну строку, внутри полосы */
+    html body .headline > .misc-links {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 0 0 auto !important;
+        flex: 0 0 auto;
+    }
+    html body .headline > .misc-links > a {
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+    }
+    html body .headline > .misc-links > a::before { display: none !important; }
+    html body .headline > .misc-links > a::after {
+        display: flex !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+        border-radius: 9px !important;
+        background: rgba(var(--glass-light), .05) !important;
+        border: 1px solid rgba(var(--glass-light), .09);
+        box-shadow: none !important;
+        color: rgba(var(--text), .72) !important;
+        font-size: 13px !important;
+        line-height: 1;
+        transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .12s ease !important;
+    }
+    html body .headline > .misc-links > a:active::after {
+        background: rgba(var(--accent), .18) !important;
+        border-color: rgba(var(--accent), .6);
+        color: rgb(var(--link)) !important;
+        transform: scale(.92);
+        transition-duration: .06s !important;
+    }
+}
+
+/* Касание карточки на телефоне: короткий отклик нажатия, без «залипания» (hover-эффекты
+   теперь только для мыши, см. @media (hover: hover) and (pointer: fine)). */
+@media (hover: none) {
+    .b-catalog_entry .cover:active,
+    .b-db_entry-variant-photo:active,
+    .about .b-catalog_entry .cover:active {
+        transform: scale(.97);
+        transition: transform .08s ease;
+    }
+}
+
+/* ================================================================
+   v1.2.11 — список аниме/манги (ПК): заголовки, поиск, переключатели, карандаш
+   ================================================================ */
+@media screen and (min-width: 768px) {
+    /* заголовки «Список аниме» и групп («Запланировано»…) — стекло с акцентной чертой слева */
+    .p-user_rates-index .l-content > .subheadline,
+    .p-user_rates-index .list-groups header .subheadline {
+        height: 38px !important;
+        min-height: 38px;
+        padding: 0 16px 0 14px !important;
+        box-sizing: border-box;
+        border-radius: 12px !important;
+        background: rgba(var(--glass), .62) !important;
+        border: 1px solid rgba(var(--glass-light), .07) !important;
+        border-left: 3px solid rgb(var(--accent)) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        color: rgba(var(--text), .92) !important;
+        letter-spacing: .04em;
+        display: flex !important;
+        align-items: center;
+    }
+    .p-user_rates-index .list-groups header { margin-top: 22px; }
+    .p-user_rates-index .list-groups header:first-of-type { margin-top: 0; }
+    .p-user_rates-index .list-groups header .b-options-floated.collapse {
+        height: 38px;
+        display: flex;
+        align-items: center;
+        padding-right: 14px;
+        margin: 0 !important;
+    }
+
+    /* кнопки «списком / постерами» — по центру полосы, одинаковые квадраты */
+    .p-user_rates-index .l-content > .subheadline-buttons {
+        height: 38px !important;
+        margin: 0 !important;
+        padding: 0 6px 0 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 38px;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 8px;
+        line-height: 1 !important;
+        color: rgba(var(--text), .62) !important;
+        transition: background-color .2s ease, color .2s ease;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::before,
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher::after {
+        margin: 0 !important;
+        line-height: 1 !important;
+        position: static !important;
+        color: inherit !important;
+    }
+    .p-user_rates-index .l-content > .subheadline-buttons .b-list_switchers .switcher.selected {
+        color: rgb(var(--accent)) !important;
+        background: rgba(var(--accent), .14);
+    }
+
+    /* поиск по списку — такая же стеклянная полоса, как заголовки, с лупой слева;
+       одинаковые отступы: «Список аниме» → поиск → первая группа */
+    html body.p-user_rates-index .l-content > .b-collection_search {
+        margin: 12px 0 12px !important;
+        padding: 0 !important;
+    }
+    .p-user_rates-index .b-collection_search .field {
+        position: relative;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .b-collection_search .field::before {
+        content: "\f002";
+        font-family: "FontAwesome", sans-serif;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 13px;
+        line-height: 1;
+        color: rgba(var(--text), .45);
+        pointer-events: none;
+        z-index: 1;
+        transition: color .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field:focus-within::before { color: rgb(var(--accent)); }
+    html body.p-user_rates-index .l-content > .b-collection_search .field input {
+        width: 100% !important;
+        height: 38px !important;
+        box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 14px 0 38px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(var(--glass-light), .07) !important;
+        background-color: rgba(var(--glass), .62) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+        transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field input::placeholder { color: rgba(var(--text), .45); }
+    html body.p-user_rates-index .l-content > .b-collection_search .field input:focus {
+        border-color: rgba(var(--accent), .55) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent), 0 0 0 2px rgba(var(--accent), .16) !important;
+    }
+    .p-user_rates-index .list-groups { margin-top: 0 !important; padding-top: 0 !important; }
+    .p-user_rates-index .list-groups > header:first-child,
+    .p-user_rates-index .list-groups > header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
+
+    /* карандаш «изменить» (свой список) — маленький стеклянный квадрат */
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate {
+        top: 8px !important;
+        right: 8px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(var(--glass), .65) !important;
+        border: 1px solid rgba(var(--glass-light), .14);
+        box-sizing: border-box;
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.2));
+        -webkit-backdrop-filter: blur(6px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        z-index: 4 !important;
+        transition: background-color .2s ease, border-color .2s ease;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate::before {
+        background: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px !important;
+        line-height: 1 !important;
+        color: rgba(var(--text), .9);
+    }
+    /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
+    .p-user_rates-index .list-posters .user_rate {
+        position: relative;
+        border-radius: 14px;
+        transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+    }
+}
+@media screen and (min-width: 768px) and (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-posters .user_rate:hover > .b-catalog_entry {
+        transform: none;
+        box-shadow: none;
+    }
+    .p-user_rates-index .list-posters .user_rate:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .3);
+        z-index: 2;
+    }
+    /* v1.2.22: невидимая полоска под поднятой карточкой — наведение не мигает у нижнего края */
+    .p-user_rates-index .list-posters .user_rate:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 10px;
+        background: transparent;
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
+        background: rgba(var(--accent), .85) !important;
+        border-color: rgba(var(--accent), 1);
+    }
+    .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover::before {
+        background: none !important;
+        color: rgb(var(--text-strong));
+    }
+}
+
+/* ================================================================
+   v1.2.13 — галочки: ровно по тексту и плавное включение/выключение
+   ================================================================ */
+/* сама галочка — кружок 18px, текст по центру его высоты */
+label:has(> input[type="checkbox"]) {
+    display: flex !important;
+    width: fit-content;
+    min-height: 26px;
+    /* кружок ставится на линию строки текста (первой, если текст в две строки),
+       а затем сдвигается так, чтобы его центр совпал с серединой строчных букв */
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+html input[type="checkbox"]:not(#u) {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px;
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(var(--text), .55) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+}
+label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
+    margin-right: 0 !important;
+    font: inherit;
+    align-self: baseline;
+    /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
+    transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
+}
+/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
+   не зависит от шрифта и высоты строки */
+html input[type="checkbox"]:not(#u)::before {
+    content: none !important;
+    display: none !important;
+}
+html input[type="checkbox"]:not(#u),
+html input[type="checkbox"]:not(#u):focus,
+html input[type="checkbox"]:not(#u):active {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTIuNiA2LjNsMi4zIDIuMyA0LjUtNC45IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS45IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=") !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    background-size: 0 0 !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .16s ease-in !important;
+}
+html input[type="checkbox"]:not(#u):checked {
+    background-color: rgb(var(--accent)) !important;
+    border-color: rgb(var(--accent)) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .18) !important;
+    background-size: 12px 12px !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease,
+                background-size .22s cubic-bezier(.34, 1.56, .64, 1) !important;
+}
+html input[type="checkbox"]:not(#u):focus-visible {
+    box-shadow: 0 0 0 3px rgba(var(--accent), .3) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    html input[type="checkbox"]:not(#u):not(:checked):hover {
+        border-color: rgba(var(--accent), .8) !important;
+    }
+}
+
+/* ===== v1.2.16 — страница аниме: кадры и видео сразу после описания, горизонтальные ленты ===== */
+/* порядок: блок кадров/видео поднимается сразу под описание (и для гостя — внутри .resources-loader, и для вошедшего — внутри первого .block) */
+.p-db_entries-show .l-content > .block:has(> .b-db_entry),
+.p-db_entries-show .l-content .resources-loader {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.p-db_entries-show .l-content > .block:has(> .b-db_entry) > .b-db_entry { order: -2 !important; }
+.p-db_entries-show .l-content .cc.m0.two-videos,
+.p-db_entries-show .l-content .cc.m0.one-video,
+.p-db_entries-show .l-content .cc.m0.no-video {
+  order: -1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 6px 0 22px !important;
+}
+.p-db_entries-show .l-content .cc.m0.two-videos::after,
+.p-db_entries-show .l-content .cc.m0.one-video::after,
+.p-db_entries-show .l-content .cc.m0.no-video::after { content: none !important; }
+.p-db_entries-show .cc.m0 > .c-screenshots,
+.p-db_entries-show .cc.m0 > .c-videos {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 0 16px !important;
+}
+.p-db_entries-show .cc.m0 > .c-videos { margin-bottom: 0 !important; }
+
+/* лента: одна строка, листается вбок (стрелки на ПК, Shift+колесо, тачпад, свайп), с привязкой к кадрам */
+/* v1.2.17: заголовок и лента — одна стеклянная панель, полоса прокрутки скрыта */
+.p-db_entries-show .cc.m0 > .c-screenshots,
+.p-db_entries-show .cc.m0 > .c-videos {
+  position: relative !important;
+  padding: 4px 0 2px !important;
+  border-radius: 16px !important;
+  background: rgba(var(--glass), 0.55) !important;
+  border: 1px solid rgba(var(--glass-light), 0.06) !important;
+  box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+.p-db_entries-show .cc.m0 > .c-screenshots > .subheadline,
+.p-db_entries-show .cc.m0 > .c-videos > .subheadline {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+}
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc,
+.p-db_entries-show .cc.m0 > .c-videos > .cc {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 12px;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 12px;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 12px 12px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  scrollbar-width: none;
+}
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc::after,
+.p-db_entries-show .cc.m0 > .c-videos > .cc::after { content: none !important; display: none !important; }
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc::-webkit-scrollbar,
+.p-db_entries-show .cc.m0 > .c-videos > .cc::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+/* карточки 16:9 одинаковой высоты */
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
+  display: block !important;
+  float: none !important;
+  flex: 0 0 auto !important;
+  width: 248px !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  margin: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 14px rgba(var(--shade), 0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot img,
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  object-fit: cover;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* кнопка «плей» по центру */
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link::before {
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 50% !important;
+  opacity: .95 !important;
+  content: "" !important;
+  background-color: rgba(var(--accent), .88) !important;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA3LjN2OS40bDcuMy00Ljd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+") !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
+  background-size: 24px 24px !important;
+  box-shadow: 0 0 0 4px rgba(var(--accent), .22), 0 4px 12px rgba(var(--shade), 0.45) !important;
+  z-index: 2;
+}
+/* подпись снизу на градиенте, метка вида сверху слева */
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .name {
+  top: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 18px 10px 7px !important;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, rgba(var(--shade), 0), rgba(var(--shade), 0.78)) !important;
+  color: rgb(var(--text)) !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  pointer-events: none;
+  z-index: 1;
+}
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker {
+  top: 8px !important;
+  left: 8px !important;
+  right: auto !important;
+  bottom: auto !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  padding: 0 7px !important;
+  border-radius: 9px !important;
+  font-size: 10px !important;
+  background: rgba(var(--accent), .9) !important;
+  color: rgb(var(--text-strong)) !important;
+  z-index: 2;
+}
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker::before { color: rgb(var(--text-strong)) !important; }
+.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
+.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
+  transform-origin: 50% 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  /* v1.2.22: кадр не сдвигается вверх, а чуть растёт от нижнего края — нижняя кромка стоит
+     на месте, и курсор у неё больше не выпадает из кадра (раньше наведение мигало) */
+  .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot:hover,
+  .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(var(--shade), 0.45), 0 0 0 1px rgba(var(--accent), .55);
+  }
+}
+@media (max-width: 767px) {
+  .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
+  .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video { width: 74% !important; }
+  .p-db_entries-show .cc.m0 > .c-screenshots > .cc,
+  .p-db_entries-show .cc.m0 > .c-videos > .cc { gap: 10px; padding: 6px 10px 10px !important; scroll-padding: 0 10px; }
+}
+
+/* v1.2.17 — стрелки на лентах (только ПК с мышью; CSS-карусель Chromium 135+) */
+@supports selector(::scroll-button(*)) {
+  @media (hover: hover) and (pointer: fine) {
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*) {
+      position: absolute;
+      top: calc(50% + 14px);
+      z-index: 5;
+      width: 38px;
+      height: 38px;
+      margin-top: -19px;
+      border-radius: 50%;
+      border: 1px solid rgba(var(--glass-light), 0.14);
+      background-color: rgba(var(--glass), 0.72);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 20px 20px;
+      backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
+      -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+      box-shadow: 0 4px 14px rgba(var(--shade), 0.45);
+      color: transparent;
+      cursor: pointer;
+      opacity: .92;
+      transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
+    }
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
+      content: "" / "Назад";
+      left: 8px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjUgNmwtNiA2IDYgNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+    }
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(right) {
+      content: "" / "Вперёд";
+      right: 8px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA2bDYgNi02IDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==");
+    }
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):hover {
+      background-color: rgba(var(--accent), .9);
+      border-color: rgba(var(--accent), .9);
+      opacity: 1;
+      transform: scale(1.06);
+    }
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):active { transform: scale(.94); }
+    .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
+      opacity: .25;
+      cursor: default;
+      background-color: rgba(var(--glass), 0.6);
+      border-color: rgba(var(--glass-light), 0.08);
+      transform: none;
+    }
+  }
+}
+
+/* v1.2.19 — логотипы студий: чётко, без «мыльного» свечения.
+   Картинка не растягивается больше натурального размера (max-width:100% от колонки, height:auto).
+   Непрозрачные — скруглённые карточки; прозрачные — тонкий 1px контур; чёрные (Madhouse, Shaft, Wit) — белый силуэт без свечения. */
+img.studio-logo,
+.p-studios .studio img.logo {
+  max-width: 100%;
+  height: auto;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 10px;
+  image-rendering: auto;
+  transform: none;
+  --logo-tone: opacity(1);
+  --logo-edge: drop-shadow(0 0 1px rgba(var(--text), 0.9));
+  filter: var(--logo-tone) var(--logo-edge);
+  transition: transform .2s ease, filter .2s ease;
+}
+img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]),
+.p-studios .studio img.logo:is([src*="/studios/original/11."], [src*="/studios/original/44."], [src*="/studios/original/858."]) {
+  --logo-tone: brightness(0) invert(.93);
+  --logo-edge: opacity(1);
+}
+/* наведение (только ПК): лёгкий подъём на 3px и мягкая тёмная тень снизу */
+@media (hover: hover) and (pointer: fine) {
+  a:hover > img.studio-logo,
+  .p-studios .studio a:hover > img.logo {
+    transform: translateY(-3px);
+    filter: var(--logo-tone) var(--logo-edge) drop-shadow(0 6px 6px rgba(var(--shade), 0.45));
+  }
+}
+
+/* v1.2.18 — «На других сайтах»: иконки сайтов на светлом круглом бейдже (чёрная W Википедии, тёмные MAL/World Art больше не сливаются) */
+.b-external_link > a.b-link::before {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background-color: rgba(var(--text), 0.92) !important;
+  background-size: 14px 14px !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 1px 4px rgba(var(--shade), 0.35);
+}
+
+/* ================================================================
+   v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
+    body.p-profiles-show .profile-head {
+        position: relative;
+        z-index: 0;
+    }
+    body.p-profiles-show .profile-head::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
+        width: auto !important;
+        height: var(--profile-banner-height-mobile);
+        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        pointer-events: none;
+    }
+    /* мягкое свечение в цвет картинки под баннером */
+    body.p-profiles-show .profile-head::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: calc(var(--profile-banner-height-mobile) - 70px);
+        left: 8%;
+        right: 8%;
+        display: block !important;
+        width: auto !important;
+        height: 140px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(32px) saturate(1.5);
+        opacity: var(--profile-banner-glow);
+        pointer-events: none;
+    }
+
+    /* --- без поддержки backdrop-filter плашки плотнее, чтобы текст читался --- */
+    @supports not (backdrop-filter: blur(1px)) {
+        @supports not (-webkit-backdrop-filter: blur(1px)) {
+            html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+            body.p-profiles-show .cc-2a > .c-column,
+            html body#profiles_show .profile-content .c-left .lifetime,
+            html body#profiles_show .profile-content .c-left .activity,
+            .p-profiles .profile-head .c-brief header.head {
+                background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+            }
+        }
+    }
+
+    /* --- панель фильтров: плотное матовое стекло --- */
+    section.l-page.menu-expanded::after {
+        background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
+        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
+        padding: 0 16px 18px !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        margin: 0 -16px 14px !important;
+        padding: 15px 16px 12px !important;
+        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+        font-size: 15px;
+        letter-spacing: .04em;
+    }
+    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
+    section.l-page.menu-expanded aside.l-menu .c-ms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 14px !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-title {
+        margin: 0 !important;
+        padding: 0 2px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        color: rgb(var(--text-2)) !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > select,
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-ms,
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-score-input {
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* --- круглая кнопка фильтра/крестика целиком на экране
+       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
+    .l-page .menu-toggler {
+        width: auto !important;
+        height: auto !important;
+        left: auto !important;
+        right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    }
+}

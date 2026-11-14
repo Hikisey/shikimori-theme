@@ -1,0 +1,2500 @@
+/* ----------- */
+
+
+/*выключить повторные всплывающие постеры*/
+#profiles_show .tooltip-inner {
+    width: 450px;
+}
+
+#profiles_show .b-catalog_entry-tooltip > a,
+#profiles_show .entry-tooltip_container > .image-link,
+#profiles_show .b-catalog_entry-tooltip .image,
+#profiles_show .b-catalog_entry-tooltip > a {
+    display: none;
+}
+
+#profiles_show .b-catalog_entry-tooltip .inner.offset {
+    margin-left: 0;
+}
+
+/*--------*/
+
+.Ssylki-anime span,
+.Ssylki-anime-v-1 span,
+.Ssylki-anime-v-1-standard span,
+.Ssylki-Characters span {
+    display: none;
+}
+
+.Ssylki-anime .b-link,
+.Ssylki-anime-v-1 .b-link,
+.Ssylki-anime-v-1-standard .b-link,
+.Ssylki-Characters .b-link {
+    font-size: 0;
+}
+
+/*--------*/
+/*1*/
+.about .Blok-0 {
+    display: block;
+    text-align: center;
+}
+
+.about .Animes_Mangas {
+    padding: 0.5rem 0 0.2rem 0;
+}
+
+.about .Animes_Mangas .b-catalog_entry,
+.about .Animes_Mangas .b-catalog_entry:last-child {
+    display: inline-block;
+    margin: 0 0 4rem !important;
+    clear: none !important;
+    float: none !important;
+    padding: 0;
+    z-index: 10;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+.about .Razmer-v2-row-0 > .Animes_Mangas .b-catalog_entry .cover .image-decor .image-cutter {
+    padding: 0 0 57.5%;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 57.5% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+.about .Animes_Mangas .title.left_aligned span {
+    margin-top: -0.45rem;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .image-decor .image-cutter {
+    position: relative;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .image-decor,
+.about .Animes_Mangas .b-catalog_entry .cover .title {
+    margin: 0 5px;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .image-decor {
+    border: solid 2px transparent;
+    border-bottom: none;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .image-cutter img {
+    z-index: -1;
+    display: none;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+.about .Animes_Mangas .b-catalog_entry:hover > .cover .misc {
+    left: 1rem;
+    opacity: 1;
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover .misc span {
+    padding: 0.25rem;
+}
+
+.about .Animes_Mangas .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas .b-catalog_entry:hover {
+    transform: none;
+}
+}
+
+.about .Animes_Mangas .b-catalog_entry .image-decor:before {
+    z-index: 11;
+    opacity: 90%;
+}
+
+.about .Animes_Mangas .b-catalog_entry .image-decor::after {
+    z-index: 12;
+}
+
+.about .Animes_Mangas .b-catalog_entry a .image-cutter::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 15%;
+    background-color: var(--tone-171616);
+    pointer-events: none;
+    filter: contrast(102%) grayscale(15%);
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
+    transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas .b-catalog_entry:hover > a .image-cutter::after {
+    box-shadow: none;
+}
+}
+
+.about .Animes_Mangas .b-catalog_entry a .image-cutter::before {
+    content: "";
+    display: flex;
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.4s ease-in-out;
+    left: -0.25rem;
+    right: -0.25rem;
+    top: -0.25rem;
+    padding-bottom: 0;
+    bottom: -3.15rem;
+    opacity: 0;
+}
+
+.about .Animes_Mangas .image-decor:hover .image-cutter::before {
+    opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas .b-catalog_entry .cover .image-decor:hover .image-cutter {
+    background: none;
+}
+}
+
+.about .Animes_Mangas .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas .b-catalog_entry .cover:hover {
+    box-shadow: none !important;
+    background: none !important;
+}
+}
+
+@keyframes glowing {
+    0%  {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .about .Animes_Mangas .b-catalog_entry .cover .misc {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1px) {
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
+        width: calc(100% / 2) !important;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
+        width: calc(100% / 3) !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
+    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
+        width: calc(100% / 4) !important;
+    }
+}
+
+/*-------------------------------*/
+
+
+/*Стандарт*/
+.about .Blok-1 {
+    display: block;
+    text-align: center;
+}
+
+.about .Animes_Mangas-1 {
+    padding: 0.5rem 0 0.3rem 0;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry,
+.about .Animes_Mangas-1 .b-catalog_entry:last-child {
+    display: inline-block;
+    margin: 0 0 4rem !important;
+    clear: none !important;
+    float: none !important;
+    padding: 0;
+    z-index: 10;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+    vertical-align: top;
+    pointer-events: all;
+}
+
+.about .Razmer-v2-row-1 > .Animes_Mangas-1 .b-catalog_entry .cover .image-decor .image-cutter {
+    padding: 0 0 130%;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 130% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+.about .Animes_Mangas-1 .title.left_aligned span {
+    margin-top: -1rem;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor .image-cutter {
+    position: relative;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor,
+.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
+    margin: 0 5px;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor {
+    border: solid 2px transparent;
+    border-bottom: none;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .image-cutter img {
+    z-index: -1;
+    display: none;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry:hover > .cover .misc {
+    left: 1rem;
+    opacity: 1;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover .misc span {
+    padding: 0.25rem;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas-1 .b-catalog_entry:hover {
+    transform: none;
+}
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .image-decor:before {
+    z-index: 11;
+    opacity: 90%;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .image-decor::after {
+    z-index: 12;
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--tone-171616);
+    pointer-events: none;
+    filter: contrast(102%) grayscale(15%);
+    transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
+    box-shadow: none;
+}
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
+    content: "";
+    display: flex;
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.4s ease-in-out;
+    left: -0.25rem;
+    right: -0.25rem;
+    top: -0.25rem;
+    padding-bottom: 0;
+    bottom: -3.15rem;
+    opacity: 0;
+}
+
+.about .Animes_Mangas-1 .image-decor:hover .image-cutter::before {
+    opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
+    background: none;
+}
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
+    box-shadow: none !important;
+    background: none !important;
+}
+}
+
+
+@media screen and (max-width: 250px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 150px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 2) !important;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 3) !important;
+    }
+}
+
+@media screen and (min-width: 525px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 4) !important;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 5) !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 6) !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 7) !important;
+
+    }
+}
+
+
+/*-------------------------------*/
+
+
+.Ssylki-anime-v-1-standard-blok-1 {
+    position: relative;
+    margin: 0;
+    text-align: center;
+}
+
+.Ssylki-anime-v-1-standard {
+    position: relative;
+    display: inline-flex;
+    vertical-align: top;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+    margin: 5px 0.5% 3.5rem 0.5%;
+}
+
+.Ssylki-anime-v-1-standard .b-link {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    min-height: 2.5rem;
+    line-height: 1.45;
+    z-index: 1;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background: none;
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
+
+div.Ssylki-anime-v-1-standard:hover .b-link {
+    opacity: 0;
+}
+
+
+.Ssylki-anime-v-1-standard strong {
+    width: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 130%;
+    overflow: hidden;
+}
+
+div.Ssylki-anime-v-1-standard:hover .Evaluation-v1-standard {
+    opacity: 0;
+}
+
+.Ssylki-anime-v-1-standard .Evaluation-v1-standard {
+    position: absolute;
+    top: 0.9rem;
+    left: -0.5rem;
+    padding: 7px 10px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    line-height: 0.8;
+    pointer-events: none;
+    z-index: 8;
+    opacity: 90%;
+    text-align: center;
+    background: var(--tone-6e1515);
+    border-color: var(--tone-6e1515);
+    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
+    color: #d9c9e0;
+    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.Ssylki-anime-v-1-standard .Evaluation-v1-standard::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 6.6px solid transparent;
+    border-top-color: inherit;
+    border-left-width: 8px;
+    border-right-width: 0 ;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+div.Ssylki-anime-v-1-standard:hover::before {
+    opacity: 1;
+}
+
+.Ssylki-anime-v-1-standard::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.4s ease-in-out;
+    bottom: -3.15rem;
+    left: -0.1rem;
+    right: -0.1rem;
+    top: -0.1rem;
+    opacity: 0;
+    border-radius: 0.2rem;
+    margin: auto;
+    display: none;
+}
+
+.Ssylki-anime-v-1-standard > strong > a::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    filter: contrast(102%) grayscale(15%);
+    margin: auto;
+    background-color: var(--tone-151414);
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: cover;
+    border-radius: 0.2rem 0.2rem 0 0;
+    transition: filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.Ssylki-anime-v-1-standard .Text-dno-ramka-standard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: auto;
+    height: calc(100% + 3rem);
+    border: solid 2px transparent;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    background: rgba(var(--glass), 0.15);
+    line-height: 1.5;
+    font-size: 15px;
+    color: #cce0d1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    padding: 129% 0.15rem 0;
+    border-radius: 0.25rem;
+}
+
+.Ssylki-anime-v-1-standard .Fon-standard {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    margin: auto;
+    border-radius: 0.2rem 0.2rem 0 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    padding: 0 10px;
+    font-size: 18px;
+    line-height: 1.15;
+    overflow: hidden;
+    font-family: cursive;
+    background-color: var(--tone-1f1e1e);
+    color: #f58ebb;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
+    transition: opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+div.Ssylki-anime-v-1-standard:hover .Fon-standard {
+    opacity: 1;
+}
+
+.Ssylki-anime-v-1-standard .Fon-standard::after {
+    position: absolute;
+    content: "";
+    background-image: url("//moe.shikimori.one/system/user_images/original/208335/1426717.jpg");
+    width: 100%;
+    height: 100%;
+    filter: blur(4px) contrast(105%) grayscale(50%);
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.502);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.2rem 0.2rem 0 0;
+    z-index: -1;
+}
+
+.Ssylki-anime-v-1-standard .progress-standard {
+    position: absolute;
+    z-index: 31;
+    right: 0.5rem;
+    bottom: 0.3rem;
+    font-weight: bold;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    background: var(--tone-171616);
+    border-radius: 100rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px var(--tone-373737);
+    transform: rotateZ(-25deg);
+    opacity: 80%;
+    overflow: hidden;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+div.Ssylki-anime-v-1-standard:hover .progress-standard {
+    opacity: 0;
+}
+
+@media screen and (min-width: 50px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 1 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 2 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 3 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 680px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 5 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 6 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .Ssylki-anime-v-1-standard {
+        width: calc(100% / 7 - 1 * 1%);
+    }
+}
+
+/*-------------------------------*/
+
+
+.Ssylki-anime-v-1-blok-1 {
+    position: relative;
+    margin: 0;
+    text-align: center;
+}
+
+.Ssylki-anime-v-1 {
+    position: relative;
+    display: inline-flex;
+    vertical-align: top;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+    margin: 5px 0.5% 3.5rem 0.5%;
+}
+
+.Ssylki-anime-v-1 .b-link {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    min-height: 2.5rem;
+    line-height: 1.45;
+    z-index: 1;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background: none;
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
+
+div.Ssylki-anime-v-1:hover .b-link {
+    opacity: 0;
+}
+
+
+.Ssylki-anime-v-1 strong {
+    width: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 60%;
+    overflow: hidden;
+}
+
+div.Ssylki-anime-v-1:hover .Evaluation-v1 {
+    opacity: 0;
+}
+
+.Ssylki-anime-v-1 .Evaluation-v1 {
+    position: absolute;
+    top: 0.9rem;
+    left: -0.5rem;
+    padding: 7px 10px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    line-height: 0.8;
+    pointer-events: none;
+    z-index: 8;
+    opacity: 90%;
+    text-align: center;
+    background: var(--tone-6e1515);
+    border-color: var(--tone-6e1515);
+    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
+    color: #d9c9e0;
+    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.Ssylki-anime-v-1 .Evaluation-v1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 6.6px solid transparent;
+    border-top-color: inherit;
+    border-left-width: 8px;
+    border-right-width: 0 ;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+div.Ssylki-anime-v-1:hover::before {
+    opacity: 1;
+}
+
+.Ssylki-anime-v-1::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.4s ease-in-out;
+    bottom: -3.15rem;
+    left: -0.1rem;
+    right: -0.1rem;
+    top: -0.1rem;
+    opacity: 0;
+    border-radius: 0.2rem;
+    margin: auto;
+    display: none;
+}
+
+.Ssylki-anime-v-1 > strong > a::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    filter: contrast(102%) grayscale(15%);
+    margin: auto;
+    background-color: var(--tone-151414);
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: cover;
+    border-radius: 0.2rem 0.2rem 0 0;
+    transition: filter 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
+}
+
+.Ssylki-anime-v-1 .Text-dno-ramka {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: auto;
+    height: calc(100% + 3rem);
+    border: solid 2px transparent;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    background: rgba(var(--glass), 0.15);
+    line-height: 1.5;
+    font-size: 15px;
+    color: #cce0d1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    padding: 59% 0.15rem 0;
+    border-radius: 0.25rem;
+}
+
+.Ssylki-anime-v-1 .Fon {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    margin: auto;
+    border-radius: 0.2rem 0.2rem 0 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    padding: 15px;
+    font-size: 20px;
+    line-height: 1.15;
+    overflow: hidden;
+    font-family: cursive;
+    background-color: var(--tone-1f1e1e);
+    color: #f58ebb;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
+    transition: opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+div.Ssylki-anime-v-1:hover .Fon {
+    opacity: 1;
+}
+
+.Ssylki-anime-v-1 .Fon::after {
+    position: absolute;
+    content: "";
+    background-image: url("//moe.shikimori.one/system/user_images/original/208335/1426717.jpg");
+    width: 100%;
+    height: 100%;
+    filter: blur(4px) contrast(105%) grayscale(50%);
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.502);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.2rem 0.2rem 0 0;
+    z-index: -1;
+}
+
+.Ssylki-anime-v-1 .progress {
+    position: absolute;
+    z-index: 31;
+    right: 0.5rem;
+    bottom: 0.3rem;
+    font-weight: bold;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    background: var(--tone-171616);
+    border-radius: 100rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px var(--tone-373737);
+    transform: rotateZ(-25deg);
+    opacity: 80%;
+    overflow: hidden;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+div.Ssylki-anime-v-1:hover .progress {
+    opacity: 0;
+}
+
+@media screen and (min-width: 50px) {
+    .Ssylki-anime-v-1 {
+        width: calc(100% / 1 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .Ssylki-anime-v-1 {
+        width: calc(100% / 2 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .Ssylki-anime-v-1 {
+        width: calc(100% / 3 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Ssylki-anime-v-1 {
+        width: calc(100% / 4 - 1 * 1%);
+        margin: 5px 0.37% 3.5rem 0.37%;
+    }
+}
+
+/*-------------------------------*/
+
+
+.magnet {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5%;
+}
+
+.Ssylki-Characters,
+.Ssylki-Characters strong,
+.Ssylki-Characters .b-link,
+.Ssylki-Characters .Text-1,
+.Ssylki-Characters .Text-1:after {
+    clip-path: polygon(50% 0 , 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.Ssylki-3 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    pointer-events: none;
+}
+
+.Ssylki-Characters {
+    display: inline-flex;
+    width: calc(100% / 7);
+    margin: -1.6% -0.5%;
+    padding: 0.7%;
+    overflow: hidden;
+    background-color: rgba(var(--glass), 0.4);
+    background-image: url("/\x/dere.shikimori.one/system/images/original/113449.gif?1614959521");
+    background-size: contain;
+    pointer-events: all;
+    transform: rotate(360deg);
+    transition: 0s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+div.Ssylki-Characters:hover {
+    transform: rotate(-360deg);
+    background-image: url("/\x/dere.shikimori.one/system/images/original/111569.gif?1610135594");
+}
+}
+
+.Ssylki-Characters .b-link {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 2.5rem;
+    line-height: 1.45;
+    z-index: 15;
+}
+
+div.Ssylki-Characters:hover .b-link {
+    opacity: 1;
+}
+
+.Ssylki-Characters strong {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.Ssylki-Characters .Text-1 {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 25%;
+    line-height: 1.45;
+    font-size: 24px;
+    color: #f58ebb;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    z-index: 6;
+    pointer-events: none;
+    font-family: cursive;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+div.Ssylki-Characters:hover .Text-1 {
+    opacity: 0.9;
+}
+
+.Ssylki-Characters .Text-1:after {
+    position: absolute;
+    content: url("/\x/i.ibb.co/tD9K2Lq/Dno-fon.jpg");
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 9.5%);
+    height: calc(100% - 9.5%);
+    margin: auto;
+    filter: blur(4px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+div.Ssylki-Characters:hover .Text-1:after {
+    opacity: 1;
+}
+
+.Ssylki-Characters > strong > a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    filter: contrast(103%) grayscale(5%);
+    margin: auto;
+    background-color: var(--tone-151414);
+    background-repeat: no-repeat !important;
+    border-radius: 0.2rem 0.2rem 0 0;
+    transition: filter 0.3s ease;
+}
+
+@media screen and (max-width: 1023px) {
+    .Ssylki-Characters .Text-1 {
+        visibility: hidden;
+    }
+
+    .Ssylki-Characters .Text-1:after {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .magnet {
+        display: none;
+    }
+}
+
+
+.Ssylki-0 {
+    position: relative;
+    margin: 5px 5px 5px 2px;
+}
+
+.Ssylki-anime {
+    position: relative;
+    display: inline-flex;
+    width: calc(100% / 6);
+    vertical-align: top;
+    height: 100%;
+    padding: 6px 6px 6px 8px;
+    transition: 0s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+div.Ssylki-anime:hover {
+    transform: translateY(-5px);
+}
+}
+
+.Ssylki-anime .b-link {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 2.5rem;
+    line-height: 1.45;
+    overflow: hidden;
+    z-index: 15;
+    transition: opacity 0.25s ease-in-out;
+}
+
+div.Ssylki-anime:hover .b-link {
+    opacity: 1;
+}
+
+.Ssylki-anime strong::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(2.8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.25s ease-in-out;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    border-radius: 0.5rem;
+}
+
+div.Ssylki-anime:hover strong::before {
+    opacity: 1;
+}
+
+
+.Ssylki-anime strong {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: rgba(var(--glass), 0.24);
+    position: relative;
+    z-index: 5;
+    display: block;
+    padding-bottom: 60%;
+}
+
+div.Ssylki-anime:hover .Evaluation {
+    opacity: 0;
+}
+
+.Ssylki-anime .Evaluation {
+    position: absolute;
+    top: 0.9rem;
+    left: 0;
+    padding: 6px 8px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    line-height: 0.8;
+    pointer-events: none;
+    z-index: 8;
+    text-align: center;
+    background: var(--tone-6e1515);
+    border-color: var(--tone-6e1515);
+    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
+    color: #d9c9e0;
+    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
+    transition: opacity 0.25s ease-in-out;
+}
+
+.Ssylki-anime .Evaluation::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 6.6px solid transparent;
+    border-top-color: inherit;
+    border-left-width: 8px;
+    border-right-width: 0 ;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+div.Ssylki-anime:hover > strong > a::before {
+    filter: contrast(105%) grayscale(70%);
+    box-shadow: none;
+}
+}
+
+.Ssylki-anime > strong > a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    filter: contrast(103%) grayscale(5%);
+    margin: auto;
+    background-color: var(--tone-151414);
+    background-repeat: no-repeat !important;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.4rem;
+    transition: filter 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.251);
+}
+
+.Ssylki-anime .Text-2 {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+    display: grid;
+    align-items: flex-end;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #cce0d1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    padding: 0rem 1rem 1.15rem 1rem;
+    pointer-events: none;
+    line-height: 1.5;
+    transition: opacity 0.25s ease-in-out;
+}
+
+div.Ssylki-anime:hover .Text-2 {
+    opacity: 0;
+}
+
+@media screen and (max-width: 248px) {
+    div.Ssylki-anime .Text-2 {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 50px) {
+    .Ssylki-anime {
+        width: calc(100% / 1);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .Ssylki-anime {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .Ssylki-anime {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .Ssylki-anime {
+        width: calc(100% / 4);
+    }
+}
+
+
+/*------*/
+.k-0-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+}
+
+* .about .k-0-1 .c-column,
+* .about .k-0-1 .c-column:last-child,
+* .about .k-0-1 .b-catalog_entry,
+* .about .k-0-1 .b-catalog_entry:last-child,
+* .p-profiles-edit .k-0-1 .c-column,
+* .p-profiles-edit .k-0-1 .c-column:last-child,
+* .p-profiles-edit .k-0-1 .b-catalog_entry,
+* .p-profiles-edit .k-0-1 .b-catalog_entry:last-child,
+* .k-0-1 .cc-4>.c-column,
+* .k-0-1 .cc-6-g0>.c-column,
+* .k-0-1 .cc-6-g0>.c-column:last-child,
+* .b-comments .k-0-1 .c-column,
+* .b-comments .k-0-1 .c-column:last-child,
+* .b-comments .k-0-1 .b-catalog_entry,
+* .b-comments .k-0-1 .b-catalog_entry:last-child,
+* .b-comments .k-0-1 .cc-4>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column:last-child {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.k-0-1 {
+    position: relative;
+    margin: 0;
+    text-align: center;
+}
+
+.Anime-v-0-1 {
+    position: relative;
+    display: inline-flex;
+    vertical-align: top;
+    height: 100%;
+    padding: 5px;
+    overflow: visible;
+    margin: 5px 0.5% 3.5rem 0.5%;
+}
+
+.Anime-v-0-1 strong {
+    width: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 0;
+}
+
+.Anime-v-0-1 .Text-g1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: auto;
+    height: calc(100% + 2.325rem);
+    border: solid 0  transparent;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8),
+    0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    background: rgba(var(--glass), 0.15);
+    line-height: 1.5;
+    font-size: 1em;
+    color: #cce0d1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    padding: 150% 0.15rem 0;
+    border-radius: 0.65rem;
+}
+
+.Anime-v-0-1 .Text-g1 .b-link {
+    padding: 20px;
+}
+
+.Anime-v-0-1 .Evaluation-v-v0 {
+    position: absolute;
+    top: 0.9rem;
+    left: -0.5rem;
+    padding: 7px 10px;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    line-height: 1.25;
+    pointer-events: none;
+    z-index: 8;
+    opacity: 90%;
+    text-align: center;
+    background: var(--tone-212121);
+    border-color: #b9815c;
+    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
+    color: #d9c9e0;
+    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.Anime-v-0-1 .Evaluation-v-v0::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 6.6px solid transparent;
+    border-top-color: inherit;
+    border-left-width: 8px;
+    border-right-width: 0 ;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+.Anime-v-0-1 .progress-d-0-1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    width: 36px;
+    height: 36px;
+    opacity: 80%;
+    z-index: 31;
+    transform: rotateZ(-25deg);
+    border-radius: 100rem;
+    border: solid 2px var(--tone-373737);
+    font-weight: bold;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8),
+    0 -1px 2px rgba(var(--shade), 0.8);
+    background: var(--tone-171616);
+    overflow: hidden;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.k-0-1 .b-catalog_entry .cover .misc,
+.k-0-1 .b-catalog_entry .cover .title,
+.k-0-1 .b-catalog_entry .cover .misc span.right {
+    display: none !important;
+}
+
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.k-0-1 .b-catalog_entry .cover:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+}
+
+.k-0-1 .Anime-v-0-1 {
+    transition: 0s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    transform: scale(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+.k-0-1 .Anime-v-0-1:hover {
+    transform: scale(1.025);
+}
+}
+
+/*------*/
+@media screen and (min-width: 50px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 1 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 2 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 3 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 680px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 5 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 6 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 7 - 1 * 1%);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Anime-v-0-1 {
+        width: calc(100% / 8 - 1 * 1%);
+    }
+}
+
+/*------*/
+
+/* ===================== Исправления и доработки ===================== */
+
+/* --- Карточки аниме: обложка и подложка двигаются вместе --- */
+.b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.b-catalog_entry:hover .cover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+}
+.b-catalog_entry {
+    border-radius: 14px;
+    transform: translateY(0) scale(1);
+    transition:
+        transform .35s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .35s cubic-bezier(.22, 1, .36, 1),
+        background-color .35s ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.b-catalog_entry:hover {
+    transform: translateY(-6px) scale(1.03);
+    margin-top: 0;
+    box-shadow:
+        0 16px 32px rgba(var(--shade), 0.5),
+        0 0 0 1px rgba(var(--accent), .35);
+    z-index: 2;
+}
+}
+/* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
+   наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
+   Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
+@media (hover: hover) and (pointer: fine) {
+.b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px;
+    background: transparent;
+}
+}
+/* Лёгкий зум картинки внутри обложки (не выходит за края) */
+.b-catalog_entry .cover {
+    overflow: hidden;
+}
+.b-catalog_entry .cover img,
+.b-catalog_entry .cover .image {
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.b-catalog_entry:hover .cover img,
+.b-catalog_entry:hover .cover .image {
+    transform: scale(1.06);
+}
+}
+/* Название подсвечивается акцентом */
+.b-catalog_entry .title,
+.b-catalog_entry .name {
+    transition: color .25s ease;
+}
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+
+/* --- Верхняя панель: подсветка только того пункта, что под курсором --- */
+.l-top_menu-v2 .menu-icon,
+.l-top_menu-v2 .menu-dropdown > button,
+.l-top_menu-v2 .menu-dropdown > span {
+    border-radius: 8px;
+    transition: background-color .25s ease, color .25s ease !important;
+}
+.l-top_menu-v2 .menu-icon:hover,
+.l-top_menu-v2 .menu-dropdown > button:hover,
+.l-top_menu-v2 .menu-dropdown > span:hover {
+    background-color: rgba(var(--glass-light), .06) !important;
+}
+/* Кнопка раздела/профиля с открытым меню — в тон меню */
+.l-top_menu-v2 .menu-dropdown.active > button,
+.l-top_menu-v2 .menu-dropdown.active > span,
+.l-top_menu-v2 .menu-dropdown:hover > button,
+.l-top_menu-v2 .menu-dropdown:hover > span {
+    background: var(--glass-bar-hover) !important;
+}
+/* Пункты внутри выпадающих меню — мягкая подсветка под курсором */
+.l-top_menu-v2 .submenu > a,
+.l-top_menu-v2 .submenu .submenu-title {
+    background: transparent !important;
+    border-radius: 8px;
+    transition: background-color .2s ease, color .2s ease !important;
+}
+.l-top_menu-v2 .submenu > a:hover {
+    background: rgba(var(--glass-light), .06) !important;
+    color: rgb(var(--text)) !important;
+}
+
+/* --- Читаемость страницы настроек --- */
+/* Подсказки под полями */
+.b-input .hint,
+.hint,
+.b-input .hint *,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: rgb(var(--text-2)) !important;
+    opacity: 1 !important;
+}
+/* Подписи полей */
+.b-input label,
+.b-input > label,
+.edit_user label,
+.edit_user_preferences label {
+    color: rgb(var(--text)) !important;
+}
+/* Поля ввода были почти невидимы — тёмный фон, рамка, подсветка при фокусе */
+.b-input input[type="text"],
+.b-input input[type="email"],
+.b-input input[type="url"],
+.b-input input[type="password"],
+.b-input textarea,
+.edit_user input[type="text"],
+.edit_user input[type="url"],
+.edit_user textarea {
+    background: color-mix(in srgb, var(--glass-deep) 85%, transparent) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+.b-input input:focus,
+.b-input textarea:focus,
+.edit_user input:focus,
+.edit_user textarea:focus {
+    border-color: rgba(var(--accent), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .15) !important;
+    outline: none !important;
+}
+/* --- Мелкие фиксы --- */
+/* Выровнял пункт «Правила» во всплывающем справа меню */
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
+}
+.l-top_menu-v2 .submenu>a.icon-site_rules:after {
+    content: 'Правила';
+}
+/* Ховер в списках аниме/манги растягивается на 2+ строки для длинных названий */
+tr.user_rate.selectable.editable:after {
+    height: calc(100% - 0px);
+}
+/* Список манги на телефоне — без лишних столбцов */
+@media screen and (max-width: 480px) {
+    .p-user_rates-index .list-lines tr .num.hoverable:nth-child(4), .p-user_rates-index .list-lines tr .num.hoverable:nth-child(5), th.num.order-control[data-order="chapters"], th.num.order-control[data-order="volumes"] {
+        display: none !important;
+    }
+    th.num.order-control[data-order="kind"] {
+        display: table-cell !important;
+    }
+}
+/* Скролл в истории для длинных названий */
+.p-profiles .profile-head .c-history .entry:hover .title {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--tone-bfc5d0) 25%, transparent) rgba(var(--shade), 0);
+}
+.p-profiles .profile-head .c-history .entry .title {
+    text-overflow: clip;
+}
+/* Вторая строка истории на малых разрешениях */
+.p-profiles .profile-head .c-history .entry .misc {
+    text-overflow: ellipsis !important;
+}
+/* Убран артефакт после названий студий в списке аниме */
+.p-user_rates-index .stat-categories .category:after {
+    display: none;
+}
+
+/* ===================== Оформление ===================== */
+
+/* --- Обои с плавным зумом --- */
+/* Обои сразу приближены (без анимации при загрузке страницы),
+   плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
+html { background: rgb(var(--bg-color)); }
+body { background: none !important; }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--bg-image) center / cover no-repeat;
+    transform: scale(var(--bg-zoom));
+    filter: blur(var(--bg-blur));
+    /* одинаковая анимация на приближение и отдаление */
+    transition: transform 2.5s cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+html:not(:hover) body::before {
+    transform: scale(1);
+}
+
+/* --- Свои постеры персонажей (нужен custom_posters.min.css в «Внешнем виде сайта») --- */
+/* Рори Меркьюри */
+[href*="characters/99661-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/0e/22/2e/0e222e48f108015c047824155679b0ec.jpg");
+}
+/* Фумия Томодзаки */
+[href*="characters/165743-"] {
+    --show-default: 0;
+    --custom-image: url("https://i.pinimg.com/736x/7e/31/44/7e314431b46844f22b1584314f671642.jpg");
+}
+
+/* --- Баннер над профилем --- */
+@media (min-width: 1200px) {
+    .p-profiles-show .profile-head:before {
+        content: "";
+        display: block;
+        height: var(--profile-banner-height, 300px);
+        background: var(--profile-banner, none) var(--profile-banner-position, center) / cover no-repeat;
+        margin: -15px;
+        margin-bottom: 5px;
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+/* --- Ачивки в профиле: другой форм-фактор --- */
+@media screen and (min-width: 1200px) {
+    #profiles_show .achievements .cc-2 > .c-column:first-child,
+    #profiles_show .achievements .cc-2 > .c-column:nth-child(2) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #profiles_show .achievements .cc-2 > .c-column:nth-child(3),
+    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 7px;
+    }
+    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
+        margin-left: 0;
+        margin-bottom: 0px;
+    }
+    #profiles_show.p-profiles-show .achievements .cc-authors .b-achievement {
+        margin: 15px 0.92% 15px 0.92%;
+    }
+    #profiles_show .achievements .c-column:nth-child(1) .cc-achievements .b-achievement,
+    #profiles_show .achievements .c-column:nth-child(2) .cc-achievements .b-achievement {
+        width: 23.2%;
+    }
+    #profiles_show .cc-franchises {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+    }
+    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge {
+        width: 21.6055%;
+        margin: 3px 2.85% -2.35% 0.5%;
+        right: -4px;
+    }
+    #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
+        margin-top: -5px;
+    }
+    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(5),
+    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(6),
+    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(7),
+    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge:nth-child(8) {
+        display: block;
+    }
+}
+
+/* --- Без анимаций графика активности и истории --- */
+.activity .graph.vertical .line .bar {
+    animation: none;
+}
+.p-profiles .profile-head .c-history .entry .title {
+    animation: none;
+}
+
+/* --- Скругления и плавность --- */
+.b-catalog_entry .cover,
+.b-catalog_entry .image,
+.b-catalog_entry img {
+    border-radius: 12px;
+}
+.b-catalog_entry .cover {
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.b-block, .block, .c-column .block, .cc-block,
+.b-options-floated, .b-db_entry, .subject-info,
+.profile-head, .l-page .inner-box {
+    border-radius: 14px !important;
+}
+.b-db_entry .c-poster .poster, .b-db_entry img.image {
+    border-radius: 12px;
+}
+.b-link_button, .b-button, button.b-button, .add-to-list, .current {
+    border-radius: 10px !important;
+    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.b-link_button:hover,
+.b-button:hover {
+    /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+}
+}
+.b-catalog_entry, .b-user, .b-club, .b-achievement, .cc-franchises .b-badge,
+.b-link_button, .b-button, .menu-item, .b-options-floated .item {
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .15s ease;
+}
+
+/* --- Мягкий светлый текст без «кислотной» белизны --- */
+body, .b-text, .text, p, .profile-head .c-brief, .b-forum_message .body {
+    color: rgb(var(--text));
+}
+
+/* --- Ссылки акцентным цветом --- */
+a, .b-link { transition: color .15s ease, opacity .15s ease; }
+a, .b-link, .b-js-link, .link {
+    color: rgb(var(--accent));
+}
+a:hover, .b-link:hover, .b-js-link:hover {
+    color: var(--link-hover) !important;
+}
+
+/* --- Настройки: мелкий текст чуть ярче --- */
+.b-input .hint, .b-input .hint span, .hint, .hint span,
+.edit_user .hint, .edit_user_preferences .hint {
+    color: var(--tone-c4cad4) !important;
+}
+.p-profiles-edit .b-options-floated a,
+.p-profiles-edit .b-options-floated .item,
+.p-profiles-edit .b-options-floated span,
+.p-profiles-edit .section-icon + span {
+    color: var(--tone-d6dbe4) !important;
+}
+
+/* --- Подвал --- */
+.l-footer, .l-footer a, .l-footer .copyright {
+    color: var(--text-input) !important;
+}
+.l-footer:after {
+    content: none !important; /* название теперь в .l-footer:before, см. --theme-name */
+}
+
+
+/* --- Настройки: кнопка выбора файла (аватар) в стиле темы --- */
+input[type="file"] {
+    color: rgb(var(--text-2));
+}
+input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-dim);
+    color: rgb(var(--text));
+    font: inherit;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .15s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+input[type="file"]::file-selector-button:hover {
+    background: var(--accent-hover);
+}
+}
+
+/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
+.p-profiles-edit .account .oauth a,
+.p-profiles-edit .account .oauth .b-link_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--glass), .95) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.p-profiles-edit .account .oauth a:hover,
+.p-profiles-edit .account .oauth .b-link_button:hover {
+    border-color: rgba(var(--accent), .55) !important;
+    background: var(--glass-popup) !important;
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+}
+/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
+   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
+   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
+.p-profiles-edit .account .oauth a::before,
+.p-profiles-edit .account .oauth a > * {
+    transition: transform .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.p-profiles-edit .account .oauth a:hover::before,
+.p-profiles-edit .account .oauth a:hover > * {
+    transform: translateY(-2px);
+}
+}
+
+/* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:after,
+body#clubs_edit .b-options-floated a:after {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    background: rgba(var(--glass), .95) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
+    color: rgb(var(--text)) !important;
+    box-sizing: border-box;
+    transition: border-color .2s ease, transform .2s ease, background-color .2s ease, box-shadow .2s ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:hover:after,
+body#clubs_edit .b-options-floated a:hover:after {
+    background: var(--glass-popup) !important;
+    border-color: rgba(var(--accent), .55) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent) !important;
+}
+}
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a.selected:after,
+body#clubs_edit .b-options-floated a.selected:after {
+    background: rgba(var(--accent), .18) !important;
+    border: 1px solid rgba(var(--accent), .7) !important;
+    color: rgb(var(--link)) !important;
+}
+
+/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
+.b-link_button:active,
+.b-button:active,
+input[type="submit"]:active,
+button:active,
+input[type="file"]::file-selector-button:active,
+.p-profiles-edit .account .oauth a:active {
+    transform: translateY(1px) scale(.97) !important;
+    filter: brightness(.92);
+    box-shadow: inset 0 2px 6px rgba(var(--shade), 0.35) !important;
+    transition-duration: .06s !important;
+}
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:active:after,
+body#clubs_edit .b-options-floated a:active:after {
+    transform: translateY(1px) scale(.92) !important;
+    transition-duration: .06s !important;
+}
+
+/* --- Галочки: без плашки слева после клика --- */
+input[type="checkbox"],
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:active,
+.b-input input[type="checkbox"]:focus {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
+.b-options-floated a,
+.b-options-floated a:active,
+.b-options-floated a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- Ник в профиле: обводка под цвет темы --- */
+.p-profiles .profile-head .c-brief header.head h1 {
+    color: rgb(var(--text)) !important;
+    text-shadow: 0 0 1px rgba(var(--accent), .9),
+                 0 2px 10px rgba(var(--accent), .35),
+                 0 2px 4px rgba(var(--shade), 0.6) !important;
+}
+
+/* --- Кнопки сохранения в настройках в стиле темы --- */
+.p-profiles-edit input[type="submit"],
+.p-profiles-edit button[type="submit"],
+.p-profiles-edit .b-button,
+.p-profiles-edit .buttons .b-button,
+.p-profiles-edit .buttons input {
+    background: var(--accent-dim) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    padding: 7px 16px !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 45%, transparent) !important;
+    text-shadow: none !important;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+.p-profiles-edit input[type="submit"]:hover,
+.p-profiles-edit button[type="submit"]:hover,
+.p-profiles-edit .b-button:hover,
+.p-profiles-edit .buttons input:hover {
+    background: var(--accent-hover) !important;
+    box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
+}
+}
+
+/* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
+body.p-profiles-edit .tipsy.tipsy-s {
+    transform: translateY(calc(100% + 38px));
+}
+body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
+    top: 0 !important; bottom: auto !important;
+    transform: rotate(180deg);
+}
+
+/* --- Та же анимация выезда для остальных выпадающих меню --- */
+.l-top_menu-v2 .menu-dropdown.active > .submenu,
+.l-top_menu-v2 .menu-dropdown:hover > .submenu,
+.l-top_menu-v2 .menu-dropdown:focus-within > .submenu,
+.b-options-dropdown.active .submenu,
+.b-subposter-actions .submenu,
+.dropdown.active .submenu,
+.dropdown.active .dropdown-menu {
+    animation: shiki-drop var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
+    transform-origin: top center;
+}
+
+/* --- Под баннером мягкое свечение в цвет самой картинки --- */
+@media (min-width: 1200px) {
+    .p-profiles-show .profile-head {
+        position: relative;
+        display: flow-root;
+        isolation: isolate;
+    }
+    .p-profiles-show .profile-head:before {
+        position: relative;
+        z-index: 1;
+        -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+        mask-image: linear-gradient(to bottom, #000 82%, transparent);
+    }
+    .p-profiles-show .profile-head:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(var(--profile-banner-height, 300px) - 90px);
+        height: 220px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(45px) saturate(1.5);
+        opacity: var(--profile-banner-glow, .5);
+        z-index: 0;
+        pointer-events: none;
+        clear: none;
+        border-radius: 15px;
+        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+    }
+    .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
+}
+
+
+/* ================================================================
+   ОБЩИЙ КОМПОНЕНТ «поле-список»: все select на сайте и фильтры
+   каталога (Мой список, Статус…). Единственное место со стилями
+   полей-списков: менять вид — только переменными ниже.
+   (:not(#u) поднимает вес над старыми правилами сайта)
+   ================================================================ */
+:root {
+    --ui-ease: cubic-bezier(.22, 1, .36, 1);
+    --ui-press: .08s;      /* нажатие */
+    --ui-release: .28s;    /* возврат */
+    --ui-drop: .24s;       /* выезд списка */
+
+    --field-bg: color-mix(in srgb, var(--glass-deep) 85%, transparent);
+    --field-border: rgba(var(--glass-light), .10);
+    --field-border-hover: rgba(var(--glass-light), .22);
+    --field-radius: 8px;
+    --field-height: 32px;
+    --field-font: 13px;
+    --field-pad: 6px 11px 6px 10px;
+    --field-shadow: 0 2px 6px rgba(var(--shade), 0.2);
+    --field-open-border: rgba(var(--accent), .6);
+    --field-open-ring: 0 0 0 3px rgba(var(--accent), .15);
+    --field-filled-border: rgba(var(--accent), .45);
+    --field-arrow: linear-gradient(45deg, transparent 50%, rgb(var(--text-2)) 50%) calc(100% - 15px) 50% / 5px 5px no-repeat,
+                   linear-gradient(135deg, rgb(var(--text-2)) 50%, transparent 50%) calc(100% - 10px) 50% / 5px 5px no-repeat;
+    --drop-gap: 4px;
+    --drop-radius: 10px;
+    --drop-pad: 4px;
+    --drop-bg: var(--glass-popup);
+    --drop-border: rgba(var(--text), .12);
+    --drop-shadow: 0 12px 30px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+    --opt-pad: 5px 10px;
+    --opt-radius: 6px;
+    --opt-hover: rgba(var(--accent), .18);
+}
+
+/* выезд списка: без прозрачности (используют меню панели и фильтры) */
+@keyframes shiki-drop {
+    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
+    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+}
+
+/* --- само поле (select, мультиселект фильтров) --- */
+select:not(#u),
+.c-ms-control:not(#u) {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    min-height: var(--field-height) !important;
+    height: auto !important;
+    padding: var(--field-pad) !important;
+    font-size: var(--field-font) !important;
+    line-height: 1.4 !important;
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    box-shadow: var(--field-shadow) !important;
+    color: rgb(var(--text)) !important;
+    outline: none !important;
+    animation: none !important;
+    filter: none !important;
+    transform: none;
+    cursor: pointer;
+    transition: transform var(--ui-release) var(--ui-ease),
+                border-color .2s ease, box-shadow .2s ease !important;
+}
+/* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
+select:not(#u) {
+    padding-right: 30px !important;
+    background: var(--field-arrow), var(--field-bg) !important;
+}
+.c-ms-control:not(#u) { padding-right: 26px !important; } /* место под .c-ms-caret */
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+
+select:not(#u):hover,
+.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
+select:not(#u):focus,
+.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
+.c-ms.is-filled .c-ms-control:not(#u) { border-color: var(--field-filled-border) !important; }
+select:not(#u):open,
+.c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+}
+select:not(#u):active,
+.c-ms-control:not(#u):active {
+    transform: scale(.98) !important;
+    transition-duration: var(--ui-press) !important;
+}
+
+/* поле оценки в фильтрах — тот же вид, без стрелки */
+.c-score-input {
+    background: var(--field-bg) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    min-height: 34px;
+    box-sizing: border-box;
+    box-shadow: var(--field-shadow);
+    animation: none !important;
+    transform: none;
+    filter: none;
+    transition: transform var(--ui-release) var(--ui-ease),
+                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+}
+.c-score-input:hover { border-color: var(--field-border-hover) !important; }
+.c-score-input:focus {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+    outline: none !important;
+}
+.c-score.is-filled .c-score-input { border-color: var(--field-filled-border) !important; }
+
+/* --- части мультиселекта --- */
+.c-ms-caret {
+    border-top-color: rgb(var(--text-2)) !important;
+    right: 11px !important;
+    transform: translateY(-50%);
+    transition: transform var(--ui-drop) var(--ui-ease) !important;
+}
+.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
+.c-ms-placeholder,
+.c-ms-title { color: rgb(var(--text-2)) !important; }
+.c-ms-chip { background: var(--accent-dim) !important; border-radius: 6px !important; }
+
+/* --- выпадающий список фильтров --- */
+.c-ms-dropdown:not(#u) {
+    top: calc(100% + var(--drop-gap)) !important;
+    background: var(--drop-bg) !important;
+    border: 1px solid var(--drop-border) !important;
+    border-radius: var(--drop-radius) !important;
+    box-shadow: var(--drop-shadow) !important;
+    backdrop-filter: none !important;
+}
+/* плавный выезд и сворачивание через transition */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: none !important;
+    display: block;
+    transform-origin: top center;
+    clip-path: inset(0 0 0 0 round var(--drop-radius));
+    transform: none;
+    transition: clip-path var(--ui-drop) var(--ui-ease),
+                transform var(--ui-drop) var(--ui-ease),
+                display var(--ui-drop) allow-discrete !important;
+}
+.c-ms-dropdown[hidden] {
+    display: none !important;
+    clip-path: inset(0 0 100% 0 round var(--drop-radius));
+    transform: translateY(-4px);
+}
+@starting-style {
+    .c-ms-dropdown:not([hidden]) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius));
+        transform: translateY(-4px);
+    }
+}
+.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
+.c-ms-option:not(#u) {
+    padding: var(--opt-pad) !important;
+    border-radius: var(--opt-radius);
+    font-size: var(--field-font);
+    color: rgb(var(--text));
+    transition: background-color .15s ease, color .15s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
+}
+.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
+
+/* при переходе к другому полю открытый список закрывается */
+.c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
+.c-filters:has(.c-score-input:focus) .c-ms-dropdown {
+    display: none !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control:not(#u)[aria-expanded="true"],
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control:not(#u)[aria-expanded="true"],
+.c-filters:has(.c-score-input:focus) .c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-border) !important;
+    box-shadow: var(--field-shadow) !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+/* варианты в системном окне (Firefox) */
+select option { background: var(--drop-bg); color: rgb(var(--text)); }
+
+/* --- выезжающий список select (Chromium с base-select) --- */
+@supports (appearance: base-select) {
+    select:not(#u),
+    select:not(#u)::picker(select) { appearance: base-select !important; }
+    select:not(#u) {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        padding-right: 11px !important;
+        background: var(--field-bg) !important; /* стрелку рисует ::picker-icon */
+    }
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+
+    /* стрелка как у фильтров и так же поворачивается */
+    select:not(#u)::picker-icon {
+        display: block !important;
+        content: "";
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        margin-inline-start: auto;
+        flex: 0 0 auto;
+        box-sizing: content-box;
+        padding: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid rgb(var(--text-2));
+        background: none;
+        transition: rotate var(--ui-drop) var(--ui-ease);
+    }
+    select:not(#u):open::picker-icon { rotate: 180deg; }
+
+    select:not(#u)::picker(select) {
+        min-width: anchor-size(width);
+        margin: var(--drop-gap) 0 0 0;
+        padding: var(--drop-pad);
+        background: var(--drop-bg);
+        color: rgb(var(--text));
+        border: 1px solid var(--drop-border);
+        border-radius: var(--drop-radius);
+        box-shadow: var(--drop-shadow);
+        font-size: var(--field-font);
+        opacity: 1 !important;
+        animation: none !important;
+        transform: translateY(0) !important;
+        clip-path: inset(0 0 0 0 round var(--drop-radius)) !important;
+        transition: clip-path var(--ui-drop) var(--ui-ease),
+                    transform var(--ui-drop) var(--ui-ease),
+                    display var(--ui-drop) allow-discrete,
+                    overlay var(--ui-drop) allow-discrete !important;
+    }
+    select:not(#u):not(:open)::picker(select) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+        transform: translateY(-4px) !important;
+    }
+    @starting-style {
+        select:not(#u):open::picker(select) {
+            clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+            transform: translateY(-4px) !important;
+        }
+    }
+    select:not(#u) option {
+        padding: var(--opt-pad) !important;
+        border-radius: var(--opt-radius);
+        background: transparent !important;
+        color: rgb(var(--text));
+        font-size: var(--field-font);
+        outline: none !important;
+        animation: none !important;
+        transform: none !important;
+        transition: background-color .15s ease, color .15s ease;
+    }
+    select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
+@media (hover: hover) and (pointer: fine) {
+select:not(#u) option:hover { background: var(--opt-hover) !important; }
+}
+    select:not(#u) option:checked { color: rgb(var(--accent)); }
+    select:not(#u) option::checkmark { display: none; }
+}
+
+/* --- Сервисы в настройках: X белым, Facebook ярче --- */
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"]) > *,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::before,
+.oauth a:is(.twitter, .x, [href*="auth/twitter"], [href*="auth/x"])::after {
+    filter: invert(1) brightness(1.15) !important;
+}
+.oauth a:is(.facebook, [href*="auth/facebook"]) > *,
+.oauth a:is(.facebook, [href*="auth/facebook"])::before,
+.oauth a:is(.facebook, [href*="auth/facebook"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"]) > *,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::before,
+.oauth a:is(.vkontakte, .vk, [href*="auth/vkontakte"], [href*="auth/vk"])::after {
+    filter: brightness(1.45) saturate(1.2) !important;
+}
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"]) > *,
+.oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"])::before {
+    filter: brightness(1.12) saturate(1.1) !important;
+}
