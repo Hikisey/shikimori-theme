@@ -1,6 +1,6 @@
-# hikisey theme — архитектура проекта
+# shiki glass — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.3.11**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.4.0**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,7 +26,7 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.3.11 (подвал сайта: «hikisey theme v1.3.11»), 4 части по ≤ 150 КБ |
+| **текущая версия** | v1.4.0 (подвал сайта: «shiki glass v1.4.0»), 4 части по ≤ 150 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
 | **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются 4 частями `css/part_NN.css` по ≤ 150 КБ |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
@@ -58,9 +58,10 @@ flowchart LR
 | `tools/shiki_compile.py` | эмуляция фильтра шикимори (SanitizeEvilCss + camo): что останется от css после загрузки |
 | `tools/shiki_url_check.py` | проверка, что после camo ни одна ссылка не «съела» соседний код |
 | `site.css` | готовый стиль для вставки: 2 сторонних импорта, импорты частей темы с тегом, палитра с комментариями, дополнительные блоки |
-| `README.md` | коротко для пользователей: установка, палитра, пример |
-| `bg.webp`, `bg_m.webp` | обои для пк (около 750 КБ) и лёгкие для телефона (900×1440, около 180 КБ) |
-| `docs/screenshot.jpg`, `docs/example_override.jpg` | скриншоты для README |
+| `README.md` | для пользователей: установка, как сменить цвета и обои, скриншоты |
+| `bg.webp`, `bg_m.webp` | обои по умолчанию (алый вариант): пк (около 750 КБ) и телефон (900×1440, около 180 КБ) |
+| `bg_blue.webp`, `bg_blue_m.webp` | обои для примера с синим акцентом в README (CC0, Kanchenjunga South Peak) |
+| `docs/screenshot.jpg`, `docs/home.jpg`, `docs/catalog.jpg`, `docs/profile.jpg`, `docs/phone.jpg`, `docs/example_override.jpg` | скриншоты для README (синий пример) |
 | `docs/ARCHITECTURE.md` | этот документ |
 | `AGENTS.md` | короткая навигация и жёсткие правила для правок (для ai-ассистентов и людей) |
 
@@ -104,7 +105,7 @@ flowchart LR
 | `pages/dashboard.css` | 450 | 11.7 | главная: новости, темы дня, «мой список» |
 | `kits/custom-posters.css` | 70 | 2.3 | свои постеры персонажей и точечные правки отдельных профилей |
 | `kits/about-kits.css` | 1357 | 32.6 | наборы для «О себе»: Animes_Mangas, Ssylki, Razmer, k-0-1 и т. п. (не удалять) |
-| `layout/footer.css` | 70 | 1.4 | подвал и подпись «hikisey theme vX.Y.Z» |
+| `layout/footer.css` | 70 | 1.4 | подвал и подпись «shiki glass vX.Y.Z» |
 | `overrides/late.css` | 3741 | 104.1 | правила, которые обязаны идти после страниц: они перебивают правила других модулей с тем же весом селектора. у каждого помечен модуль, где ему место |
 | **всего** | **18986** | **538.7** | |
 
@@ -227,16 +228,16 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.11/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.0/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 4 импорта темы (все с raw.githubusercontent)
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.11/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.11/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.11/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.3.11/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.0/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.0/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.0/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.0/css/part_04.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.
@@ -356,4 +357,5 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.9 | «Сортировка» раздвигает фильтры, как остальные списки: это обычный `<select>` с `appearance: base-select`, его окно `::picker(select)` живёт в верхнем слое и в поток не встаёт, поэтому на ПК, пока select `:open`, у его `.c-ms-field` растёт `padding-bottom` ровно на высоту окна (число пунктов через `:has(option:nth-child(n))` × 28px + поля и рамки), с теми же `--drop-time`/`--drop-ease`/`--drop-ease-close`; окно всегда вниз (`position-try-fallbacks: none`). На сенсорных экранах — системный список, без изменений |
 | v1.3.10 | выпадающие списки темнее: `--drop-bg` (base.css) = `color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep))` вместо `--glass-popup` — списки фильтров (`.c-ms-dropdown`), окно «Сортировки» и всех select (`::picker(select)`, `option`) теперь rgb(26, 29, 37) вместо rgb(38, 43, 54) и не выбиваются из тёмной панели; остальное без изменений |
 | v1.3.11 | обои не отъезжают, когда курсор над открытым списком select: окно `::picker(select)` в верхнем слое, и `html:not(:hover) body::before { transform: scale(1) }` (page.css) срабатывал; добавлено `html:has(select:open) body::before { transform: scale(var(--bg-zoom)) }` для ≥ 768px (касается «Сортировки» и всех select, в том числе в настройках) |
+| v1.4.0 | тема переименована в shiki glass (репозиторий Hikisey/shikimori-theme без изменений); новые скриншоты; в README — как сменить цвета, стекло, обои и баннер (пример с синим акцентом и отдельными обоями `bg_blue.webp`) |
 | v1.2.22 | наведение без «мигания» у нижнего края: плитки сервисов в настройках стоят на месте (поднимается значок), под поднятыми карточками — невидимая полоска, кадры и видео растут от нижнего края, кнопки без сдвига на 1px; подсказки `.tipsy` не перехватывают курсор |

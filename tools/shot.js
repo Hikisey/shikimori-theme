@@ -16,7 +16,7 @@ const chrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromiu
   const b = await pw.chromium.launch({ executablePath: chrome, args: ['--no-sandbox'] });
   const ctx = dev === 'phone'
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
-    : { viewport: { width: 1280, height: 900 } };
+    : { viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2 };
   const p = await (await b.newContext(ctx)).newPage();
   await p.setContent(html, { waitUntil: 'load', timeout: 60000 }).catch(() => {});
   await p.waitForTimeout(1500);
