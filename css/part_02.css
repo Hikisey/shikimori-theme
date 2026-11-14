@@ -2186,7 +2186,7 @@ video#main-video_html5_api .vjs-big-play-button {
 }
 
 .b-catalog_entry {
-    border-radius: var(--plate-radius-lg);
+    border-radius: var(--card-radius);
     transform: translateY(0) scale(1);
     transition:
         transform .35s cubic-bezier(.22, 1, .36, 1),
@@ -2196,11 +2196,9 @@ video#main-video_html5_api .vjs-big-play-button {
 
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry.b-catalog_entry:hover {
-        transform: translateY(-6px) scale(1.03);
+        transform: var(--card-lift);
         margin-top: 0;
-        box-shadow:
-            0 16px 32px rgba(var(--shade), 0.5),
-            0 0 0 1px rgba(var(--accent), .35);
+        box-shadow: var(--card-hover-shadow);
         z-index: 2;
     }
 }
@@ -2218,7 +2216,7 @@ video#main-video_html5_api .vjs-big-play-button {
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry:hover .cover img,
     .b-catalog_entry:hover .cover .image {
-        transform: scale(1.06);
+        transform: var(--card-zoom);
     }
 }
 
@@ -2232,7 +2230,7 @@ video#main-video_html5_api .vjs-big-play-button {
 .b-catalog_entry .cover,
 .b-catalog_entry .image,
 .b-catalog_entry img {
-    border-radius: 12px;
+    border-radius: var(--card-image-radius);
 }
 
 .b-catalog_entry .cover {

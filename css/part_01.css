@@ -2083,7 +2083,7 @@ body#clubs_index .b-club .logo {
 }
 
 body#profiles_edit .b-catalog_entry .cover .image-decor img {
-    border-radius: var(--plate-radius-lg);
+    border-radius: var(--card-radius);
 }
 
 .l-content h3 {
