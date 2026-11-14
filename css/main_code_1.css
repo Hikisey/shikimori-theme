@@ -25,6 +25,7 @@
     --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
     --profile-banner: none;                         /* баннер профиля: url("…") */
     --profile-banner-height: 300px;                 /* высота баннера */
+    --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
     --profile-banner-position: center;              /* какая часть картинки видна */
     --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
 

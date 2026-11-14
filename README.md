@@ -17,7 +17,7 @@
 
 Нужно только скопировать один файл в настройки профиля.
 
-1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
+1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
 2. Выделите весь текст (Ctrl+A) и скопируйте его (Ctrl+C).
 3. На Шикимори откройте свой профиль, затем «Настройки» и вкладку «Внешний вид сайта». Прямая ссылка: `https://shikimori.one/ВАШ_НИК/edit/styles`.
 4. Удалите всё, что уже есть в поле стиля, и вставьте скопированный текст (Ctrl+V).
@@ -37,17 +37,17 @@
 ```css
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/css/main_code_4mob.css");
 ```
 
 Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные четыре подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
 
 ### Обновление до новой версии
 
-В ссылках указана версия `v1.2.20`, поэтому Шикимори не подсовывает старые файлы из кеша. Когда выйдет новая версия, замените `v1.2.20` на её номер во всех четырёх ссылках темы и сохраните.
+В ссылках указана версия `v1.2.21`, поэтому Шикимори не подсовывает старые файлы из кеша. Когда выйдет новая версия, замените `v1.2.21` на её номер во всех четырёх ссылках темы и сохраните.
 
 Ставьте только релизные версии со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Ветка `main` предназначена для разработки и тестов: она может меняться в любой момент и быть временно сломанной, поэтому не подключайте ссылки с `main` вместо номера версии.
 
@@ -69,9 +69,10 @@
 | | `--bg-brightness-mobile` | яркость обоев на телефоне | `.9` |
 | | `--profile-banner` | баннер профиля, `url("…")` | нет |
 | | `--profile-banner-height` / `-position` / `-glow` | высота баннера, видимая часть, свечение под ним | `300px` / `center` / `.5` |
+| | `--profile-banner-height-mobile` | высота баннера на телефоне | `170px` |
 | Стекло | `--glass` | цвет стекла блоков; тёмные оттенки панели, меню и окон считаются из него | `30, 34, 42` |
 | | `--glass-light` | рамки и блики на стекле | `255, 255, 255` |
-| | `--glass-blur` | размытие под стеклом (телефон, стрелки лент) | `5px` |
+| | `--glass-blur` | размытие под стеклом (телефон, стрелки лент); в Safari размытие фиксированное, см. заметки | `5px` |
 | Текст | `--text` | основной текст | `236, 240, 247` |
 | | `--text-2` | второстепенный текст, подписи | `170, 178, 192` |
 | | `--text-3` | приглушённый текст: даты, счётчики | `140, 148, 160` |
@@ -104,7 +105,7 @@
 }
 ```
 
-![Пример: синий акцент и свои обои](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.20/docs/example_override.jpg)
+![Пример: синий акцент и свои обои](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.21/docs/example_override.jpg)
 
 Обёртка `@media` обязательна. Без неё Шикимори применит ваш CSS только на экранах шире 1024px.
 
@@ -148,5 +149,7 @@
 ## Заметки
 
 - Выплывающие списки с анимацией работают в браузерах на Chromium (Chrome, Edge, Яндекс Браузер, Opera). В Firefox списки открываются обычным системным окном, остальная тема работает.
+- Баннер профиля показывается и на телефоне: во всю ширину сверху, аватар и ник ложатся на его нижний край. Высота задаётся `--profile-banner-height-mobile`.
+- В Safari (iPhone, Mac) у `-webkit-backdrop-filter` есть ошибка: он не понимает `var()`. Поэтому для Safari сила размытия стекла записана числом, и `--glass-blur` меняет её только в Chrome и Firefox.
 - Символ `@` в адресах `url(...)` Шикимори вырезает, поэтому ссылки на картинки должны быть без него.
 - Если после вставки ничего не поменялось, сохраните настройки и обновите страницу с Ctrl+Shift+R.

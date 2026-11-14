@@ -2,7 +2,7 @@
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "hikisey theme";
-    --theme-version: "1.2.20";
+    --theme-version: "1.2.21";
 }
 .l-footer:before {
     content: var(--theme-name) " v" var(--theme-version);
@@ -3850,6 +3850,7 @@ body.p-achievements.p-profiles .b-list_switchers > *:hover:after {
 /*Боле затемнённый фон. при клики на картинки*/
 .mfp-container {
     backdrop-filter: blur(calc(var(--glass-blur) * .8));
+    -webkit-backdrop-filter: blur(4px); /* Safari: без var() */
     background-color: color-mix(in srgb, var(--tone-191717) 94.9%, transparent);
 }
 

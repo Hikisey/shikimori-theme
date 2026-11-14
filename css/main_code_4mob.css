@@ -6027,8 +6027,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         background:
             linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
             color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
-        -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
         backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
+        -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), 0.14) !important;
         border-radius: 22px !important;
         outline: none !important;
@@ -6059,8 +6059,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         margin: 0 -16px 12px !important;
         padding: 14px 16px 10px !important;
         background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
-        -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
         backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
         border-radius: 0 !important;
         width: auto !important;
@@ -6111,8 +6111,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
     }
     .l-page .menu-toggler .toggler {
-        -webkit-backdrop-filter: blur(var(--glass-blur));
         backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         transition: background-color .2s ease;
     }
     .l-page.menu-expanded .menu-toggler .toggler {
@@ -6173,8 +6173,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         line-height: normal !important;
         border-radius: 14px;
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
-        -webkit-backdrop-filter: blur(var(--glass-blur));
         backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         transform: none !important;
     }
@@ -6338,8 +6338,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         box-sizing: border-box;
         border-radius: 14px;
         background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        -webkit-backdrop-filter: blur(var(--glass-blur));
         backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         min-width: 0;
     }
@@ -6418,8 +6418,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         text-align: center !important;
         border-radius: 12px;
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        -webkit-backdrop-filter: blur(var(--glass-blur));
         backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
     }
     .b-db_entry > .c-image .c-actions .b-subposter-action::before {
@@ -6516,8 +6516,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
     body.p-profiles-edit .l-content .block:not(.block .block),
     body.p-user_preferences .l-content .block:not(.block .block) {
         background: var(--glass-bg) !important;
-        -webkit-backdrop-filter: var(--glass-filter);
         backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: var(--glass-border);
         border-radius: 14px;
         box-sizing: border-box;
@@ -6558,8 +6558,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
     }
     /* заголовки разделов — тот же стеклянный «чип» */
     .l-page .subheadline {
-        -webkit-backdrop-filter: var(--glass-filter);
         backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
     }
 }
 
@@ -6725,8 +6725,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         padding: 4px 4px 4px 14px !important;
         box-sizing: border-box;
         gap: 10px;
-        -webkit-backdrop-filter: var(--glass-filter);
         backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
     }
     /* кнопки — справа, в одну строку, внутри полосы */
     html body .headline > .misc-links {
@@ -6799,8 +6799,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         border: 1px solid rgba(var(--glass-light), .07) !important;
         border-left: 3px solid rgb(var(--accent)) !important;
         box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
-        -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
         backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         color: rgba(var(--text), .92) !important;
         letter-spacing: .04em;
         display: flex !important;
@@ -6891,8 +6891,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         border: 1px solid rgba(var(--glass-light), .07) !important;
         background-color: rgba(var(--glass), .62) !important;
         box-shadow: 0 6px 18px color-mix(in srgb, var(--glass-shadow) 35%, transparent) !important;
-        -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
         backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         color: rgb(var(--text)) !important;
         outline: none !important;
         transition: border-color .2s ease, box-shadow .2s ease;
@@ -6917,8 +6917,8 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         background: rgba(var(--glass), .65) !important;
         border: 1px solid rgba(var(--glass-light), .14);
         box-sizing: border-box;
-        -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.2));
         backdrop-filter: blur(calc(var(--glass-blur) * 1.2));
+        -webkit-backdrop-filter: blur(6px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         z-index: 4 !important;
         transition: background-color .2s ease, border-color .2s ease;
     }
@@ -7224,7 +7224,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
       background-position: 50% 50%;
       background-size: 20px 20px;
       backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
-      -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
+      -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
       box-shadow: 0 4px 14px rgba(var(--shade), 0.45);
       color: transparent;
       cursor: pointer;
@@ -7300,4 +7300,115 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
   background-position: 50% 50% !important;
   background-repeat: no-repeat !important;
   box-shadow: 0 1px 4px rgba(var(--shade), 0.35);
+}
+
+/* ================================================================
+   v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
+    body.p-profiles-show .profile-head {
+        position: relative;
+        z-index: 0;
+    }
+    body.p-profiles-show .profile-head::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
+        width: auto !important;
+        height: var(--profile-banner-height-mobile);
+        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        pointer-events: none;
+    }
+    /* мягкое свечение в цвет картинки под баннером */
+    body.p-profiles-show .profile-head::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: calc(var(--profile-banner-height-mobile) - 70px);
+        left: 8%;
+        right: 8%;
+        display: block !important;
+        width: auto !important;
+        height: 140px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(32px) saturate(1.5);
+        opacity: var(--profile-banner-glow);
+        pointer-events: none;
+    }
+
+    /* --- без поддержки backdrop-filter плашки плотнее, чтобы текст читался --- */
+    @supports not (backdrop-filter: blur(1px)) {
+        @supports not (-webkit-backdrop-filter: blur(1px)) {
+            html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar,
+            body.p-profiles-show .cc-2a > .c-column,
+            html body#profiles_show .profile-content .c-left .lifetime,
+            html body#profiles_show .profile-content .c-left .activity,
+            .p-profiles .profile-head .c-brief header.head {
+                background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+            }
+        }
+    }
+
+    /* --- панель фильтров: плотное матовое стекло --- */
+    section.l-page.menu-expanded::after {
+        background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
+        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
+        padding: 0 16px 18px !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        margin: 0 -16px 14px !important;
+        padding: 15px 16px 12px !important;
+        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+        font-size: 15px;
+        letter-spacing: .04em;
+    }
+    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
+    section.l-page.menu-expanded aside.l-menu .c-ms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 14px !important;
+        padding: 0 !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.menu-expanded aside.l-menu .c-ms-title {
+        margin: 0 !important;
+        padding: 0 2px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        color: rgb(var(--text-2)) !important;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > select,
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-ms,
+    section.l-page.menu-expanded aside.l-menu .c-ms-field > .c-score-input {
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* --- круглая кнопка фильтра/крестика целиком на экране
+       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
+    .l-page .menu-toggler {
+        width: auto !important;
+        height: auto !important;
+        left: auto !important;
+        right: calc(14px + env(safe-area-inset-right, 0px)) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+    }
 }
