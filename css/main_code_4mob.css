@@ -5930,8 +5930,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         background:
             linear-gradient(160deg, rgba(255, 255, 255, .13) 0%, rgba(255, 255, 255, .04) 32%, rgba(255, 255, 255, 0) 60%),
             rgba(var(--menu-bar), .5) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(180%);
-        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(125%);
+        backdrop-filter: blur(12px) saturate(125%);
         border: 1px solid rgba(255, 255, 255, .14) !important;
         border-radius: 22px !important;
         outline: none !important;
@@ -5962,8 +5962,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         margin: 0 -16px 12px !important;
         padding: 14px 16px 10px !important;
         background: rgba(var(--menu-bar), .45);
-        -webkit-backdrop-filter: blur(18px) saturate(160%);
-        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%);
+        backdrop-filter: blur(8px) saturate(115%);
         border-bottom: 1px solid rgba(var(--buttoms-color), .45);
         border-radius: 0 !important;
         width: auto !important;
@@ -6014,8 +6014,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
     }
     .l-page .menu-toggler .toggler {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         transition: background-color .2s ease;
     }
     .l-page.menu-expanded .menu-toggler .toggler {
@@ -6076,8 +6076,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         line-height: normal !important;
         border-radius: 14px;
         background: rgba(var(--menu-back), .55) !important;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         border: 1px solid rgba(var(--white-color), .06);
         transform: none !important;
     }
@@ -6241,8 +6241,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         box-sizing: border-box;
         border-radius: 14px;
         background: rgba(var(--menu-back), .5);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         border: 1px solid rgba(var(--white-color), .06);
         min-width: 0;
     }
@@ -6321,8 +6321,8 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
         text-align: center !important;
         border-radius: 12px;
         background: rgba(var(--menu-back), .55);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         border: 1px solid rgba(var(--white-color), .06);
     }
     .b-db_entry > .c-image .c-actions .b-subposter-action::before {
@@ -6377,7 +6377,7 @@ select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
     :root {
         --glass-bg: rgba(var(--menu-back), .55);
         --glass-border: 1px solid rgba(var(--white-color), .06);
-        --glass-blur: blur(10px) saturate(130%);
+        --glass-blur: blur(5px) saturate(110%);
         --text-soft: rgba(var(--light-color), .86);
     }
     /* мягкая тень у текста, который лежит прямо на обоях */
