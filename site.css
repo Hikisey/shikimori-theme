@@ -22,7 +22,7 @@
     --link: var(--accent);             /* цвет ссылок; можно задать отдельно, например 120, 170, 255 */
 
     /* Фон */
-    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");  /* обои на ПК (ссылка с // — без прокси Шикимори, кешируется) */
+    --bg-image: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");  /* обои на ПК (Шикимори всё равно загружает их через свой прокси картинок — и с //, и с https://) */
     --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp");  /* обои на телефоне */
     --bg-color: 151, 128, 128;         /* цвет под обоями, пока они грузятся (средний тон обоев) */
     --bg-color-mobile: 167, 148, 145;  /* то же на телефоне */
