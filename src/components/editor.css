@@ -12,11 +12,11 @@
 .b-show_more-more .hide-more {
     padding: 2px 0 !important;
     color: rgba(var(--accent), 1) !important;
-    background: rgba(var(--glass), 0.6) !important;
+    background: var(--plate-bg-strong) !important;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     display: inline-block;
     width: 100%;
     text-align: center;
@@ -29,7 +29,7 @@
     .b-show_more-more .hide-more:hover {
         background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent) !important;
         color: rgb(var(--text-strong)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         border: none !important;
         animation: none;
     }
@@ -50,11 +50,11 @@
 .b-input textarea[type="password"],
 .b-input textarea[type="email"] {
     color: rgba(var(--text), 1);
-    border-radius: 10px;
-    background-color: rgba(var(--glass), 0.4) !important;
+    border-radius: var(--plate-radius);
+    background-color: var(--plate-bg) !important;
     border: none !important;
     font-family: "Comfortaa", sans-serif;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .b-shiki_editor-v2 .hide {
@@ -62,11 +62,11 @@
     line-height: 1;
     font-family: "Comfortaa", sans-serif;
     color: rgba(var(--text), 1) !important;
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    box-shadow: var(--plate-shadow-soft);
 }
 
 .b-shiki_editor-v2 .hide:hover {
@@ -79,7 +79,7 @@
 .b-shiki_editor footer .hide,
 .b-shiki_editor footer .cancel {
     margin: 0 20px 10px 0;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 /* полоса оттеняющая, если не развернуто */
@@ -113,7 +113,7 @@
 
 /* стоп */
 .b-quote {
-    background: rgba(var(--glass), 0.4) !important;
+    background: var(--plate-bg) !important;
     border: none !important;
     color: rgba(var(--text), 1);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
@@ -196,7 +196,7 @@
 }
 
 .b-shiki_editor .body .preview {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     border: none !important;
 }
 
@@ -235,7 +235,7 @@
 }
 
 .b-bb_codes-examples .example .textarea {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     border: rgba(var(--glass), 0.4);
     color: rgba(var(--text), 1);
     border: none !important;
@@ -275,7 +275,7 @@
 .b-shiki_editor .quotes .link-value,
 .b-shiki_editor .email .link-value,
 .b-shiki_editor .upload .link-value {
-    background: rgba(var(--glass), 0.4) !important;
+    background: var(--plate-bg) !important;
     border-color: rgba(var(--glass), 0.4) !important;
     color: rgba(var(--text), 1);
     line-height: 20px;
@@ -383,7 +383,7 @@ input[type="number"],
 .ac_loading:before,
 .b-shiki_editor .b-ajax,
 .b-shiki_editor.b-ajax {
-    background: rgba(var(--glass), 0.4) !important;
+    background: var(--plate-bg) !important;
     box-shadow: 0 0 20px rgba(var(--glass), 0.5);
 }
 

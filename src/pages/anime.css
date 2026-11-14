@@ -66,7 +66,7 @@
 .b-add_to_list.rewatching.expanded .trigger,
 .b-add_to_list.rewatching .trigger {
     border: 2px solid #cfe0ec26;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
     border-radius: 6px;
 }
 
@@ -89,7 +89,7 @@
 .p-ranobe-show .other-names,
 .p-animes-show .more-info,
 .p-ranobe-show .more-info {
-    background: rgba(var(--glass), 0.6) !important;
+    background: var(--plate-bg-strong) !important;
 }
 
 /* цвет кнопки троеточие у описания аниме */
@@ -125,9 +125,9 @@
     content: "показать";
     font-size: 12px;
     display: block;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    background: rgba(var(--glass), 0.6);
-    border-radius: 10px;
+    box-shadow: var(--plate-shadow) !important;
+    background: var(--plate-bg-strong);
+    border-radius: var(--plate-radius);
     padding: 2px 11px;
     transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
@@ -537,7 +537,7 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 }
 
 .b-db_entry > .c-image img {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
+    box-shadow: var(--plate-shadow-strong);
 }
 
 .p-people-show .c-works,
@@ -610,8 +610,8 @@ body.p-db_entries-works .subheadline .misc-links {
     height: 60px;
     font-size: 25px;
     margin: 2px;
-    border-radius: 14px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    border-radius: var(--plate-radius-lg);
+    box-shadow: var(--plate-shadow);
 }
 
 .c-anime_video_episodes .b-video_variant.active {
@@ -710,7 +710,7 @@ body.p-db_entries-works .subheadline .misc-links {
     border-radius: 23px;
     padding: 6px;
     color: color-mix(in srgb, var(--tone-dcdcdc) 94.9%, transparent);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .c-videos .video-variant-group[data-kind="subtitles"] .video-kind.russian:after,
@@ -729,7 +729,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     border-radius: 23px;
     padding: 5px;
     color: #c4d3de;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-video_variant .video-kind.unknown:after {
@@ -746,7 +746,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     border-radius: 23px;
     padding: 5px 14px 5px 13px;
     color: #dec4c4;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .c-videos .video-variant-group[data-kind="fandub"] .video-kind.russian:after,
@@ -765,7 +765,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     border-radius: 23px;
     padding: 3px 2px 2px 2px;
     color: rgba(var(--text), 1);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .c-videos .video-kind.russian:before {
@@ -783,7 +783,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     border-radius: 0px 19px 0px 16px;
     padding: 0px 8px 0px 10px;
     letter-spacing: 2px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-video_variant .video-kind.english:before {
@@ -802,7 +802,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     padding: 0px 11px 0px 14px;
     letter-spacing: 2px;
     font-family: "Comfortaa";
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-video_variant .video-kind.unknown:before {
@@ -820,7 +820,7 @@ c-videos .video-variant-group[data-kind="subtitles"] .video-kind.unknown:after {
     padding: 0px 10px 0px 11px;
     letter-spacing: 2px;
     font-family: "Comfortaa";
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-video_variant .video-author {
@@ -847,7 +847,7 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
     border-radius: 23px;
     padding: 5px;
     color: #c4d3de;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-video_player .player-area iframe {
@@ -861,8 +861,8 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control.prev,
 .b-video_player .cc-player_controls .cc-navigation > .c-control.next {
-    background: rgba(var(--glass), 0.6);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow);
     border-radius: 24px;
     padding: 4px 0px;
     margin-top: 5px;
@@ -885,7 +885,7 @@ c-videos .video-variant-group[data-kind="all"] .video-kind.unknown:after {
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
     width: 40%;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     border-radius: 27px;
 }
 
@@ -1114,7 +1114,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 .subject-info,
 .profile-head,
 .l-page .inner-box {
-    border-radius: 14px !important;
+    border-radius: var(--plate-radius-lg) !important;
 }
 
 /* --- Та же анимация выезда для остальных выпадающих меню --- */
@@ -1212,7 +1212,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     border-radius: 16px !important;
     background: rgba(var(--glass), 0.55) !important;
     border: 1px solid rgba(var(--glass-light), 0.06) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .p-db_entries-show .cc.m0 > .c-screenshots > .subheadline,
@@ -1403,7 +1403,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
         .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
             opacity: .25;
             cursor: default;
-            background-color: rgba(var(--glass), 0.6);
+            background-color: var(--plate-bg-strong);
             border-color: rgba(var(--glass-light), 0.08);
             transform: none;
         }

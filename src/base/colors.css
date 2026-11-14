@@ -8,7 +8,7 @@
 }
 
 .yellow-fade {
-    background: rgba(var(--glass), 0.4) !important;
+    background: var(--plate-bg) !important;
     outline: 10px solid rgba(var(--glass), 0.1) !important;
     box-shadow: 0 0 50px rgba(var(--glass), 0.6);
 }

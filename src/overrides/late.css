@@ -27,7 +27,7 @@
 .b-comments .comments-loader:active,
 .b-comments .comments-hider:active,
 .b-comments .comments-expander:active {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
 }
@@ -326,14 +326,14 @@ a:-webkit-any-link {
 .b-contest_match .vs .actions .action span {
     transition: 0.2s ease;
     color: rgba(var(--text), var(--hundred));
-    background: rgba(var(--glass), 0.6);
+    background: var(--plate-bg-strong);
     border-radius: 4px;
     text-decoration: none;
     border: none;
     animation: blimi 6s ease-out infinite;
     animation-delay: 10s;
     padding: 5px 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* из pages/catalog */
@@ -525,7 +525,7 @@ body * [class*="new_marker"] {
     padding: 6px 10px 6px 10px !important;
     background-color: rgba(115, 49, 27, 0.7);
     border-radius: 11px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3) !important;
+    box-shadow: var(--plate-shadow-strong) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -867,14 +867,14 @@ body#profiles_show .b-catalog_entry,
 .b-button.disabled {
     cursor: default;
     pointer-events: none;
-    background-color: rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg);
     border-radius: 4px !important;
     color: rgba(var(--text), 0.3);
     padding: 6px 10px 6px 10px;
     transition: 0.3s ease-out;
     border: none;
     font-family: 'Comfortaa', sans-serif;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1032,7 +1032,7 @@ a.b-menu-line.entry.b-link .time {
     font-size: 10px;
     font-weight: 900;
     background: var(--tone-1b1b1b);
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     padding: 0 8px;
 }
 
@@ -1042,7 +1042,7 @@ a.b-menu-line.entry.b-link .time {
     font-size: 10px;
     font-weight: 900;
     background: #293e54;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     padding: 0 13px;
 }
 
@@ -1358,7 +1358,7 @@ input.ac_input.ac_loading {
     border-radius: 19px 0px 16px 0px;
     padding: 0px 8px 0px 11px;
     letter-spacing: 2px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* из pages/anime */
@@ -1421,7 +1421,7 @@ input.ac_input.ac_loading {
     /* из layout/page */
     .c-column.c-control.show-options:hover {
         background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
 }
 
@@ -1632,7 +1632,7 @@ header.head .misc {
     width: calc(26% - 36px);
     margin: 0 12px 15px !important;
     min-height: 338px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
 }
 
 /* из pages/achievements */
@@ -1716,8 +1716,8 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 .fullwidth > .b-spoiler > label {
     display: block !important;
     padding: 0.47em 6em 0.47em 6em;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    background: rgba(var(--glass), 0.6);
+    box-shadow: var(--plate-shadow) !important;
+    background: var(--plate-bg-strong);
     border: 0;
     border-radius: 11px;
     color: rgba(var(--text-strong), 1);
@@ -1878,18 +1878,18 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
         padding: 5px 16px;
         line-height: 24px;
         border: none;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-        background: rgba(var(--glass), 0.6);
+        box-shadow: var(--plate-shadow);
+        background: var(--plate-bg-strong);
     }
     /* из components/tabs */
     .use-tabs.--On > [data-dynamic]:active {
-        background: rgba(var(--glass), 0.4);
+        background: var(--plate-bg);
     }
 
     @media (hover: hover) and (pointer: fine) {
         /* из components/tabs */
         .use-tabs.--On > [data-dynamic]:hover {
-            background: rgba(var(--glass), 0.4);
+            background: var(--plate-bg);
         }
     }
 }
@@ -1902,7 +1902,7 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
     border: 0px solid;
     border-radius: 100px;
     color: rgba(var(--text-2), 0.8);
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     font-weight: normal;
     line-height: 24px;
     text-align: center;
@@ -1987,8 +1987,8 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 
 /* из components/tabs */
 .use-tabs.--Fat > [data-dynamic] {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-    background: rgba(var(--glass), 0.4);
+    box-shadow: var(--plate-shadow);
+    background: var(--plate-bg);
     border-radius: 100px; text-align: center;
     color: rgba(var(--text-2), 0.9);
 }
@@ -1996,7 +1996,7 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 /* из components/tabs */
 .use-tabs.--Fat > [data-dynamic].active {
     color: rgba(var(--text), 1);
-    background: rgba(var(--glass), 0.6);
+    background: var(--plate-bg-strong);
     flex-grow: 1.5;
     font-weight: bold;
 }
@@ -2017,13 +2017,13 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
     }
     /* из components/tabs */
     .use-tabs.--Fat > [data-dynamic]:active {
-        background: rgba(var(--glass), 0.4);
+        background: var(--plate-bg);
     }
 
     @media (hover: hover) and (pointer: fine) {
         /* из components/tabs */
         .use-tabs.--Fat > [data-dynamic]:hover {
-            background: rgba(var(--glass), 0.4);
+            background: var(--plate-bg);
         }
     }
     /* из components/tabs */
@@ -2035,7 +2035,7 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 /* из pages/profile */
 .b-shiki_editor.previewed img.b-poster,
 .p-profiles .about.block img.b-poster {
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 /* из layout/header */
@@ -2184,7 +2184,7 @@ a.b-db_entry-variant-list_item span.b-link {
     font-size: 12px;
     padding: 0 7px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     border: unset;
 }
 
@@ -2250,7 +2250,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .l-top_menu-v2 .menu-dropdown > span:focus,
     .l-top_menu-v2 .menu-dropdown.active .submenu-triangle {
         background-color: rgba(var(--accent), 0.05);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+        box-shadow: var(--plate-shadow);
     }
     /* из layout/header */
     .l-top_menu-v2 .menu-icon:hover,
@@ -2393,7 +2393,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         height: 45px;
         line-height: 45px;
         border-radius: 50%;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из base/base */
     .item-mobile.selected {
@@ -2608,7 +2608,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         height: 60px;
         vertical-align: middle;
         padding: 5px 6px 0  6px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из pages/profile */
     .p-profiles .profile-head .c-info .c-additionals div a[href*="/versions"] {
@@ -2617,7 +2617,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         height: 60px;
         vertical-align: middle;
         padding: 5px 6px 0  6px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из pages/profile */
     .p-profiles .profile-head .c-info .c-additionals div a[href*="/video"],
@@ -2627,7 +2627,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         height: 60px;
         vertical-align: middle;
         padding: 5px 6px 0  6px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из pages/profile */
     .p-profiles .profile-head .c-info .c-additionals div a[href$="/comments"] {
@@ -2636,7 +2636,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         padding: 13px 10px 10px 10px;
         height: 60px;
         vertical-align: middle;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из pages/profile */
     .p-profiles .profile-head .c-info .c-additionals div a[href$="/reviews"] {
@@ -2644,7 +2644,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         padding: 1.3rem 10px 10px 10px;
         height: 60px;
         vertical-align: middle;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
     /* из pages/settings */
     .profile-actions .mail,
@@ -2662,7 +2662,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-profiles .profile-head .c-info .c-additionals div a,
     .p-profiles .profile-head .c-info .c-additionals div span {
         padding: 6px 15px 10px 15px;
-        background: rgba(var(--glass), 0.4);
+        background: var(--plate-bg);
         border-radius: 10%;
     }
     /* из pages/profile */
@@ -2901,7 +2901,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         width: 100%;
         border-radius: 4px;
         color: #7685f5;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
 }
 
@@ -2997,7 +2997,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     /* из pages/profile */
     .c-history .subheadline a:after,
     .c-history .subheadline::before {
-        background: rgba(var(--glass), 0.4) !important;
+        background: var(--plate-bg) !important;
         content: "\f187";
         font: normal normal normal 14px/1 FontAwesome;
         font-size: 20px;
@@ -3455,7 +3455,7 @@ div.Ssylki-Characters:hover .b-link {
 button.b-button,
 .add-to-list,
 .current {
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
 
@@ -3524,7 +3524,7 @@ a:hover,
     justify-content: center;
     background: rgba(var(--glass), .95) !important;
     border: 1px solid rgba(var(--glass-light), .12) !important;
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
     transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
@@ -3697,9 +3697,9 @@ input[type="checkbox"]:active,
         padding: 10px 12px 12px !important;
         box-sizing: border-box;
         line-height: normal !important;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         transform: none !important;
@@ -3719,9 +3719,9 @@ input[type="checkbox"]:active,
         margin: 0 !important;
         padding: 10px !important;
         box-sizing: border-box;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         min-width: 0;
@@ -3755,7 +3755,7 @@ input[type="checkbox"]:active,
         text-align: center !important;
         border-radius: 12px;
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
     }
@@ -3850,7 +3850,7 @@ img.studio-logo,
     padding: 0 !important;
     background: none !important;
     box-shadow: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     image-rendering: auto;
     transform: none;
     --logo-tone: opacity(1);

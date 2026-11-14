@@ -213,6 +213,57 @@ html[data-color-mode=light] {
     --link-color: #adbfde;
 }
 
+/* ===== tokens/components =====
+   токены компонентов: общие значения плашек, заголовков, кнопок, стрелок лент, карточек и анимаций наведения.
+   Меняются в одном месте и действуют на все одинаковые элементы.
+   Свои значения можно задать в site.css внутри html:root { ... } — они перекроют эти. */
+
+:root {
+    /* плашки (стеклянные блоки) */
+    --plate-bg: rgba(var(--glass), 0.4);
+    --plate-bg-strong: rgba(var(--glass), 0.6);
+    --plate-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    --plate-shadow-soft: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    --plate-shadow-strong: 0 2px 6px 2px rgba(var(--shade), 0.3);
+    --plate-blur: blur(var(--glass-blur)); /* только для backdrop-filter; в -webkit-backdrop-filter всегда фиксированное значение */
+    --plate-radius: 10px;
+    --plate-radius-lg: 14px;
+
+    /* заголовки .headline / .midheadline / .subheadline */
+    --heading-radius: 13px;
+    --heading-height: 28px;
+    --heading-text: rgba(var(--text-2), 1);
+    --heading-link: rgba(var(--link), 1);
+    --heading-dot: linear-gradient(270deg, rgba(var(--text-2), 1), rgba(var(--text-2), 0.3));
+    --heading-dot-hover: linear-gradient(270deg, rgba(var(--accent), 1), rgba(var(--accent), 0.3));
+
+    /* кнопки */
+    --btn-bg: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    --btn-bg-hover: var(--accent-hover);
+    --btn-text: rgba(var(--text-strong), 1);
+
+    /* стрелки лент (скриншоты, видео и другие карусели) */
+    --arrow-size: 38px;
+    --arrow-bg: rgba(var(--glass), 0.72);
+    --arrow-bg-hover: rgba(var(--accent), .9);
+    --arrow-border: rgba(var(--glass-light), 0.14);
+    --arrow-shadow: 0 4px 14px rgba(var(--shade), 0.45);
+    --arrow-icon-size: 20px 20px;
+    --arrow-inset: 8px;
+
+    /* карточки аниме и манги .b-catalog_entry */
+    --card-radius: 14px;
+    --card-image-radius: 12px;
+    --card-lift: translateY(-6px) scale(1.03);
+    --card-hover-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .35);
+    --card-zoom: scale(1.06);
+
+    /* плавность наведения и переходов */
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    --ease-fast: 0.2s ease;
+    --ease-base: 0.3s ease;
+}
+
 /* ===== base/fonts =====
    @font-face: шрифты и иконочный шрифт */
 
@@ -350,11 +401,11 @@ html[data-color-mode=light] {
 .b-table .actions a {
     padding: 4px 18px !important;
     color: rgba(var(--link), 1) !important;
-    background: rgba(var(--glass), 0.6) !important;
+    background: var(--plate-bg-strong) !important;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     text-align: center;
 }
 
@@ -485,7 +536,7 @@ h1 + hr {
 .popup-content {
     border-radius: 12px;
     background: var(--glass-deep)!important;
-    box-shadow:0 2px 6px 2px rgba(var(--shade), 0.3)
+    box-shadow: var(--plate-shadow-strong)
 }
 
 .b-tip>[data-popper-arrow]:before {
@@ -493,12 +544,12 @@ h1 + hr {
 }
 
 .ProseMirror {
-    background-color: rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg);
     border: none;
     border-radius: 12px;
     color: rgba(var(--text), 1);
     padding: 7px 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    box-shadow: var(--plate-shadow-soft);
 }
 
 .line .value [class*="status_tag"] {
@@ -642,7 +693,7 @@ a[href*="?order="]:after {
 .unsaved-content {
     background: rgb(69 117 69 / 50%);
     border: 0;
-    border-radius: 14px;
+    border-radius: var(--plate-radius-lg);
 }
 
 .review-details .review-info {
@@ -1180,7 +1231,7 @@ a,
 }
 
 .yellow-fade {
-    background: rgba(var(--glass), 0.4) !important;
+    background: var(--plate-bg) !important;
     outline: 10px solid rgba(var(--glass), 0.1) !important;
     box-shadow: 0 0 50px rgba(var(--glass), 0.6);
 }
@@ -1254,9 +1305,9 @@ a,
     height: 36px;
     margin: 1px 10px 1px 0;
     padding: 0 !important;
-    border-radius: 10px;
-    background: rgba(var(--glass), 0.6);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    border-radius: var(--plate-radius);
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow-soft);
 }
 
 .menu_group:not(.menu_group-controls) > button:hover {
@@ -1496,7 +1547,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         padding-top: 3px;
         padding-left: 15px;
         font-size: 10px;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         color: rgba(var(--text), 1);
         background: rgba(var(--glass), 0.7);
         box-shadow: 0 2px 6px 1px rgba(var(--shade), 0.15);
@@ -1663,7 +1714,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
     }
     .l-page .menu-toggler .toggler {
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         transition: background-color .2s ease;
     }
@@ -2032,7 +2083,7 @@ body#clubs_index .b-club .logo {
 }
 
 body#profiles_edit .b-catalog_entry .cover .image-decor img {
-    border-radius: 14px;
+    border-radius: var(--plate-radius-lg);
 }
 
 .l-content h3 {
@@ -2041,7 +2092,7 @@ body#profiles_edit .b-catalog_entry .cover .image-decor img {
 
 body#tests_reset_styles_cache .b-input input {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 body#tests_reset_styles_cache input[type="submit"] {
@@ -2204,7 +2255,7 @@ body#dashboard_show .b-catalog_entry.b-catalog_entry {
 }
 
 .l-page {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3);
+    box-shadow: var(--plate-shadow-strong);
     border-radius: 8px;
 }
 

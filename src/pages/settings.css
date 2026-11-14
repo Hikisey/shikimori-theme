@@ -20,11 +20,11 @@ a.start.b-button,
     font-family: "Comfortaa", sans-serif;
     color: rgba(var(--text), 1) !important;
     background-color: rgba(var(--glass), 0.5);
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    box-shadow: var(--plate-shadow-soft);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -44,7 +44,7 @@ a.start.b-button,
     .b-shiki_editor footer .hide:hover {
         background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
         color: var(--tone-e4e4e4) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         opacity: 1;
     }
 }
@@ -241,7 +241,7 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
         backdrop-filter: var(--glass-filter);
         -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: var(--glass-border);
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         box-sizing: border-box;
     }
     body.p-profiles-edit .l-content .block:not(.block .block),

@@ -95,8 +95,8 @@
     }
     tr.user_rate.selectable.editable:hover:after {
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
         transform: scale(1.01);
     }
 }
@@ -145,7 +145,7 @@ tr.user_rate.selectable.editable:after {
     background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
     border: none;
     box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 .b-catalog_entry .cover .misc,
@@ -258,7 +258,7 @@ header.head a.edit,
 
 .p-user_rates-index .list-groups .summary.posters {
     border: none;
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), var(--hundred));
     border-radius: 10%;
 }
@@ -578,7 +578,7 @@ tr.user_rate.selectable.editable:after {
     /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
     .p-user_rates-index .list-posters .user_rate {
         position: relative;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
     }
 }

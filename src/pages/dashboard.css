@@ -64,7 +64,7 @@
 
 /* темы дня*/
 .b-hot_topics-v2 {
-    background-color: rgba(var(--glass), 0.6);
+    background-color: var(--plate-bg-strong);
     border-radius: 15px 15px 0 0;
 }
 
@@ -109,11 +109,11 @@
 @media (hover: hover) and (pointer: fine) {
     .p-dashboard .l-menu .ongoing:hover {
         background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         transform: scale(1.05);
         text-decoration: none !important;
         border: none !important;
-        border-radius: 10px;
+        border-radius: var(--plate-radius);
         padding-left: 4px;
         padding-right: 5px;
     }
@@ -164,12 +164,12 @@
     padding: 1px 7px !important;
     margin: 2px !important;
     color: rgba(var(--text), var(--hundred)) !important;
-    background: rgba(var(--glass), 0.6) !important;
+    background: var(--plate-bg-strong) !important;
     transition: 0.3s ease !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     font-size: 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .p-dashboards-show .generated-news-line .info .status-time .kind {
@@ -203,10 +203,10 @@
 }
 
 .p-dashboards-show .v2 .my-list {
-    background: rgba(var(--glass), 0.6);
+    background: var(--plate-bg-strong);
     border: 0;
     padding: 4px 13px 11px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     border-radius: 11px;
 }
 
@@ -226,7 +226,7 @@
     .p-dashboards-show .v2 .fc-user-sections .tag-link:hover {
         background-color: var(--accent-hover) !important;
         color: rgb(var(--text-strong)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         border: none !important;
     }
 }
@@ -315,7 +315,7 @@
 .p-dashboards-show .c-my_list {
     padding: 5px 10px 0;
     border: none !important;
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
 }
 
 .p-dashboards-show .cc-news .c-news_topics .b-topic {

@@ -550,7 +550,7 @@ body.p-achievements.p-profiles .block.m0:before {
     color: #ffe1a7;
     margin-bottom: 13px;
     background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
     border-radius: 15px;
     border: 2px solid #38291f;
 }
@@ -1023,7 +1023,7 @@ body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-
 body#clubs_edit .b-options-floated a:after {
     width: 42px !important;
     height: 42px !important;
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     background: rgba(var(--glass), .95) !important;
     border: 1px solid rgba(var(--glass-light), .12) !important;
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;

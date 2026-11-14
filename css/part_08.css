@@ -1,20 +1,3 @@
-/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
-   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
-   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
-/* из pages/settings */
-.p-profiles-edit .account .oauth a::before,
-.p-profiles-edit .account .oauth a > * {
-    transition: transform .2s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* из pages/settings */
-    .p-profiles-edit .account .oauth a:hover::before,
-    .p-profiles-edit .account .oauth a:hover > * {
-        transform: translateY(-2px);
-    }
-}
-
 /* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
 /* из pages/settings */
 .b-link_button:active,
@@ -156,9 +139,9 @@ input[type="checkbox"]:active,
         padding: 10px 12px 12px !important;
         box-sizing: border-box;
         line-height: normal !important;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         transform: none !important;
@@ -178,9 +161,9 @@ input[type="checkbox"]:active,
         margin: 0 !important;
         padding: 10px !important;
         box-sizing: border-box;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         background: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
         min-width: 0;
@@ -214,7 +197,7 @@ input[type="checkbox"]:active,
         text-align: center !important;
         border-radius: 12px;
         background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         border: 1px solid rgba(var(--glass-light), .06);
     }
@@ -309,7 +292,7 @@ img.studio-logo,
     padding: 0 !important;
     background: none !important;
     box-shadow: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     image-rendering: auto;
     transform: none;
     --logo-tone: opacity(1);

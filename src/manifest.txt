@@ -1,5 +1,6 @@
 # порядок подключения модулей: сверху вниз = порядок каскада
 tokens/palette.css
+tokens/components.css
 base/fonts.css
 base/base.css
 base/animations.css

@@ -18,7 +18,7 @@
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 .tags > .tag-link,
@@ -52,7 +52,7 @@
     a.b-anime_status_tag.studio:hover:before {
         background-color: var(--accent-hover) !important;
         color: rgb(var(--text-strong)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         border: none !important;
     }
 }
@@ -61,7 +61,7 @@
     width: 100%;
     padding: 5px 12px !important;
     text-align: center;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* загрузить еще комментарии */
@@ -73,12 +73,12 @@
 .b-forum .faye-loader,
 .b-topic .faye-loader,
 .collapsed + .spoiler .hide-expanded {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
-    border-radius: 14px;
+    border-radius: var(--plate-radius-lg);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
 }
 
@@ -174,7 +174,7 @@
 
 .b-topic .footer-vote {
     border: none;
-    background-color: rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg);
     padding: 5px 10px 5px 10px;
     color: rgba(var(--text), 1);
     border-radius: 10%;
@@ -221,7 +221,7 @@
 
 .b-topic > .inner header img {
     transition: 0.3s ease;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -245,7 +245,7 @@
 
 .b-collection-topic > .inner .see-more,
 .b-collection-topic > .inner .see-more .text .inner {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     border: none;
     transition: 0.3s ease-out;
 }
@@ -263,7 +263,7 @@
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
 .b-poll .poll-actions .abstain {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-poll .poll-variants .poll-variant.result .bar .line {
@@ -334,8 +334,8 @@
 .p-articles-create .topic-video .form,
 .p-articles-update .topic-video .form {
     border: none;
-    background: rgba(var(--glass), 0.4) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    background: var(--plate-bg) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .abstain,
@@ -410,8 +410,8 @@
 @media (hover: hover) and (pointer: fine) {
     .menu-topics-block .entry:hover {
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
         color: rgba(var(--accent), 1);
         padding: 0px 7px;
         transition: 0.3s ease;
@@ -468,8 +468,8 @@
         text-decoration: none;
         color: rgba(var(--accent), 1) !important;
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-        border-radius: 10px;
+        box-shadow: var(--plate-shadow) !important;
+        border-radius: var(--plate-radius);
         font-size: 14.5px;
         border: none !important;
     }
@@ -491,8 +491,8 @@
 /*Блок Отзывы > в разработке*/
 .b-reviews_navigation .navigation-container {
     height: 28px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-    background: rgba(var(--glass), 0.6);
+    box-shadow: var(--plate-shadow);
+    background: var(--plate-bg-strong);
     border-radius: 3rem;
     overflow: hidden;
 }
@@ -586,7 +586,7 @@
 
 .b-footer_vote {
     border-radius: 13px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     background: rgba(var(--glass), 0.5);
     border: none;
     color: rgba(var(--text), var(--hundred));

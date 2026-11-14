@@ -35,9 +35,9 @@
     height: 36px;
     margin: 1px 10px 1px 0;
     padding: 0 !important;
-    border-radius: 10px;
-    background: rgba(var(--glass), 0.6);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
+    border-radius: var(--plate-radius);
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow-soft);
 }
 
 .menu_group:not(.menu_group-controls) > button:hover {
@@ -277,7 +277,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         padding-top: 3px;
         padding-left: 15px;
         font-size: 10px;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         color: rgba(var(--text), 1);
         background: rgba(var(--glass), 0.7);
         box-shadow: 0 2px 6px 1px rgba(var(--shade), 0.15);
@@ -444,7 +444,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
     }
     .l-page .menu-toggler .toggler {
-        backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: var(--plate-blur);
         -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
         transition: background-color .2s ease;
     }

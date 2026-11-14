@@ -1,15 +1,9 @@
-/*почта-Назад-Вперёд → фикс на 100%*/
-.p-messages .b-postloader.collapsed {
-    width: 100%;
-    margin-top: 5px;
-}
-
 .b-dialog .to_dialog:after,
 .to-review:after {
     font-size: 11px;
     padding: 3px 2px 2px 15px;
-    background: rgba(var(--glass), 0.6);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow) !important;
     width: 135px;
     height: 15px;
     border-radius: 9px;
@@ -35,7 +29,7 @@
     border-radius: 50%;
     background: rgba(var(--glass), var(--hundred));
     color: rgba(var(--text-strong), 0.7);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
     width: 28px;
     height: 28px;
     display: inline-flex;
@@ -470,8 +464,8 @@ body.p-user_history .l-page {
     }
     tr.user_rate.selectable.editable:hover:after {
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
         transform: scale(1.01);
     }
 }
@@ -520,7 +514,7 @@ tr.user_rate.selectable.editable:after {
     background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
     border: none;
     box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 .b-catalog_entry .cover .misc,
@@ -633,7 +627,7 @@ header.head a.edit,
 
 .p-user_rates-index .list-groups .summary.posters {
     border: none;
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), var(--hundred));
     border-radius: 10%;
 }
@@ -953,7 +947,7 @@ tr.user_rate.selectable.editable:after {
     /* в списке поднимается вся ячейка — карандаш едет вместе с карточкой */
     .p-user_rates-index .list-posters .user_rate {
         position: relative;
-        border-radius: 14px;
+        border-radius: var(--plate-radius-lg);
         transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s cubic-bezier(.22, 1, .36, 1);
     }
 }
@@ -1598,7 +1592,7 @@ body.p-achievements.p-profiles .block.m0:before {
     color: #ffe1a7;
     margin-bottom: 13px;
     background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
     border-radius: 15px;
     border: 2px solid #38291f;
 }
@@ -2071,7 +2065,7 @@ body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-
 body#clubs_edit .b-options-floated a:after {
     width: 42px !important;
     height: 42px !important;
-    border-radius: 10px !important;
+    border-radius: var(--plate-radius) !important;
     background: rgba(var(--glass), .95) !important;
     border: 1px solid rgba(var(--glass-light), .12) !important;
     box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent) !important;
@@ -2329,11 +2323,11 @@ body#clubs_edit .b-options-floated a:active:after {
 
 .p-contests .match-day .match-link {
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 .p-contests .match-day .match-link:active {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
     background: var(--tone-dddddd) !important;
 }
 
@@ -2341,7 +2335,7 @@ body#clubs_edit .b-options-floated a:active:after {
     .p-contests .match-day .match-link:hover {
         color: rgba(var(--accent), var(--hundred)) !important;
         background: color-mix(in srgb, var(--glass-shadow) 20%, transparent);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
     }
 }
 
@@ -2349,7 +2343,7 @@ body#clubs_edit .b-options-floated a:active:after {
     color: rgba(var(--text-2), var(--hundred));
     width: 100%;
     background: rgba(230, 174, 87, 0.15);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* внимание */
@@ -2456,7 +2450,7 @@ body#clubs_edit .b-options-floated a:active:after {
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 .tags > .tag-link,
@@ -2490,7 +2484,7 @@ body#clubs_edit .b-options-floated a:active:after {
     a.b-anime_status_tag.studio:hover:before {
         background-color: var(--accent-hover) !important;
         color: rgb(var(--text-strong)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         border: none !important;
     }
 }
@@ -2499,7 +2493,7 @@ body#clubs_edit .b-options-floated a:active:after {
     width: 100%;
     padding: 5px 12px !important;
     text-align: center;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* загрузить еще комментарии */
@@ -2511,11 +2505,11 @@ body#clubs_edit .b-options-floated a:active:after {
 .b-forum .faye-loader,
 .b-topic .faye-loader,
 .collapsed + .spoiler .hide-expanded {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
     transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
-    border-radius: 14px;
+    border-radius: var(--plate-radius-lg);
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
 }

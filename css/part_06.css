@@ -90,7 +90,7 @@
 
 .b-topic .footer-vote {
     border: none;
-    background-color: rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg);
     padding: 5px 10px 5px 10px;
     color: rgba(var(--text), 1);
     border-radius: 10%;
@@ -137,7 +137,7 @@
 
 .b-topic > .inner header img {
     transition: 0.3s ease;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -161,7 +161,7 @@
 
 .b-collection-topic > .inner .see-more,
 .b-collection-topic > .inner .see-more .text .inner {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     border: none;
     transition: 0.3s ease-out;
 }
@@ -179,7 +179,7 @@
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
 .b-poll .poll-actions .abstain {
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 .b-poll .poll-variants .poll-variant.result .bar .line {
@@ -250,8 +250,8 @@
 .p-articles-create .topic-video .form,
 .p-articles-update .topic-video .form {
     border: none;
-    background: rgba(var(--glass), 0.4) !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    background: var(--plate-bg) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .abstain,
@@ -326,8 +326,8 @@
 @media (hover: hover) and (pointer: fine) {
     .menu-topics-block .entry:hover {
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
         color: rgba(var(--accent), 1);
         padding: 0px 7px;
         transition: 0.3s ease;
@@ -384,8 +384,8 @@
         text-decoration: none;
         color: rgba(var(--accent), 1) !important;
         background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-        border-radius: 10px;
+        box-shadow: var(--plate-shadow) !important;
+        border-radius: var(--plate-radius);
         font-size: 14.5px;
         border: none !important;
     }
@@ -407,8 +407,8 @@
 /*Блок Отзывы > в разработке*/
 .b-reviews_navigation .navigation-container {
     height: 28px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
-    background: rgba(var(--glass), 0.6);
+    box-shadow: var(--plate-shadow);
+    background: var(--plate-bg-strong);
     border-radius: 3rem;
     overflow: hidden;
 }
@@ -502,7 +502,7 @@
 
 .b-footer_vote {
     border-radius: 13px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     background: rgba(var(--glass), 0.5);
     border: none;
     color: rgba(var(--text), var(--hundred));
@@ -609,7 +609,7 @@
 
 /* темы дня*/
 .b-hot_topics-v2 {
-    background-color: rgba(var(--glass), 0.6);
+    background-color: var(--plate-bg-strong);
     border-radius: 15px 15px 0 0;
 }
 
@@ -654,11 +654,11 @@
 @media (hover: hover) and (pointer: fine) {
     .p-dashboard .l-menu .ongoing:hover {
         background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         transform: scale(1.05);
         text-decoration: none !important;
         border: none !important;
-        border-radius: 10px;
+        border-radius: var(--plate-radius);
         padding-left: 4px;
         padding-right: 5px;
     }
@@ -709,12 +709,12 @@
     padding: 1px 7px !important;
     margin: 2px !important;
     color: rgba(var(--text), var(--hundred)) !important;
-    background: rgba(var(--glass), 0.6) !important;
+    background: var(--plate-bg-strong) !important;
     transition: 0.3s ease !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: var(--plate-radius);
     font-size: 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
 }
 
 .p-dashboards-show .generated-news-line .info .status-time .kind {
@@ -748,10 +748,10 @@
 }
 
 .p-dashboards-show .v2 .my-list {
-    background: rgba(var(--glass), 0.6);
+    background: var(--plate-bg-strong);
     border: 0;
     padding: 4px 13px 11px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     border-radius: 11px;
 }
 
@@ -771,7 +771,7 @@
     .p-dashboards-show .v2 .fc-user-sections .tag-link:hover {
         background-color: var(--accent-hover) !important;
         color: rgb(var(--text-strong)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        box-shadow: var(--plate-shadow) !important;
         border: none !important;
     }
 }
@@ -860,7 +860,7 @@
 .p-dashboards-show .c-my_list {
     padding: 5px 10px 0;
     border: none !important;
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
 }
 
 .p-dashboards-show .cc-news .c-news_topics .b-topic {
@@ -1938,7 +1938,7 @@ div.Ssylki-anime-v-1:hover .progress {
     margin: -1.6% -0.5%;
     padding: 0.7%;
     overflow: hidden;
-    background-color: rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg);
     background-image: url("/\x/dere.shikimori.one/system/images/original/113449.gif?1614959521");
     background-size: contain;
     pointer-events: all;
@@ -2101,7 +2101,7 @@ div.Ssylki-anime:hover strong::before {
 .Ssylki-anime strong {
     width: 100%;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
+    box-shadow: var(--plate-shadow);
     background: rgba(var(--glass), 0.24);
     position: relative;
     z-index: 5;
@@ -2525,7 +2525,7 @@ div.Ssylki-anime:hover .Text-2 {
 .b-comments .comments-loader:active,
 .b-comments .comments-hider:active,
 .b-comments .comments-expander:active {
-    background: rgba(var(--glass), 0.4);
+    background: var(--plate-bg);
     color: rgba(var(--text-2), 1);
     border: none;
 }
@@ -2824,14 +2824,14 @@ a:-webkit-any-link {
 .b-contest_match .vs .actions .action span {
     transition: 0.2s ease;
     color: rgba(var(--text), var(--hundred));
-    background: rgba(var(--glass), 0.6);
+    background: var(--plate-bg-strong);
     border-radius: 4px;
     text-decoration: none;
     border: none;
     animation: blimi 6s ease-out infinite;
     animation-delay: 10s;
     padding: 5px 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    box-shadow: var(--plate-shadow) !important;
 }
 
 /* из pages/catalog */
@@ -3023,7 +3023,7 @@ body * [class*="new_marker"] {
     padding: 6px 10px 6px 10px !important;
     background-color: rgba(115, 49, 27, 0.7);
     border-radius: 11px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.3) !important;
+    box-shadow: var(--plate-shadow-strong) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -3097,4 +3097,14 @@ body * [class*="new_marker"] {
 .b-catalog_entry-tooltip .inner .line .value {
     color: rgba(var(--text), var(--hundred));
     transition: 0.3s ease;
+}
+
+/* из components/cards */
+.b-catalog_entry .cover .misc span {
+    color: rgba(var(--text-2), var(--hundred));
+}
+
+/* из components/tooltips */
+.b-catalog_entry-tooltip .inner a.name {
+    color: rgba(var(--text-strong), var(--hundred));
 }
