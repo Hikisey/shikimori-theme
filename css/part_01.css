@@ -955,7 +955,9 @@ a,
     --drop-gap: 4px;
     --drop-radius: 10px;
     --drop-pad: 4px;
-    --drop-bg: var(--glass-popup);
+    /* выпадающие списки (фильтры, «Сортировка», все select): тёмное стекло, как поля и панель.
+       Раньше был --glass-popup — заметно светлее и с синевой, список выбивался из темы */
+    --drop-bg: color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep));
     --drop-border: rgba(var(--text), .12);
     --drop-shadow: 0 12px 30px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
     --opt-pad: 5px 10px;
