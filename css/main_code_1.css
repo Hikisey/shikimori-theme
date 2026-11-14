@@ -87,12 +87,8 @@ body {
 
 @font-face {
     font-family: "FontAwesome";
-    src: url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
-    src: url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
-    url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
-    url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
-    url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
-    url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+    src: url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+    url("/\x/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -115,7 +111,6 @@ body {
     width: -moz-available;
     overflow-x: hidden;
     overflow-y: auto;
-    color: rgba(var(--light-color), 1);
     background-image: none;
     background-size: cover !important;
     background-repeat: no-repeat;
@@ -191,7 +186,6 @@ body:after {
 
 /* цвет текста */
 .b-input label {
-    color: rgba(var(--dark-color), 1);
     display: block;
     line-height: 1.65;
 }
@@ -214,10 +208,6 @@ body:after {
     min-height 0s;
 }
 
-.b-mention:hover s {
-    text-decoration: none !important;
-    color: rgba(var(--hover-color), 1) !important;
-}
 
 .b-link:hover,
 .b-mention:hover,
@@ -270,12 +260,6 @@ header.head h1 {
 /* кнопка смотреть онлайн */
 .b-link_button {
     background-color: rgba(var(--buttoms-color), 0.7) !important;
-    color: rgba(var(--white-color), 1) !important;
-    transition: 0.2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 14px;
-    border: none;
 }
 
 .b-link_button:hover {
@@ -302,31 +286,15 @@ header.head h1 {
     font-weight: bold;
 }
 
-textarea {
-    border: none !important;
-}
 
 /* нет комментариев */
-.b-nothing_here {
-    color: rgba(var(--dark-color), 1);
-}
 
 .buttons .cancel {
     margin-right: 10px !important;
     margin-left: 10px !important;
 }
 
-.b-form .cancel {
-    background-color: rgba(var(--block-color), 0.4);
-    border-radius: 6px;
-    padding: 6px 10px 6px 10px;
-}
 
-.b-form .cancel:hover {
-    background-color: rgba(var(--hover-buttoms-2), 1);
-    color: rgba(var(--white-color), 1) !important;
-    box-shadow: none !important;
-}
 
 /* история-время */
 .p-profiles .profile-head .c-history .entry .misc.date {
@@ -336,7 +304,6 @@ textarea {
 /* история-история */
 .p-profiles .profile-head .c-history .entry .misc {
     color: rgba(var(--bright-color), 1) !important;
-    text-overflow: clip !important;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -757,9 +724,6 @@ a:hover .title span {
 }
 
 /* цвет рейтенга текста */
-.b-rate .score-notice {
-    color: rgba(var(--dark-color), 1);
-}
 
 .b-rate .text-score {
     color: rgba(var(--light-color), 1);
@@ -871,9 +835,6 @@ a:hover .title span {
 }
 
 /* оценки справа в аниме */
-.bar.horizontal .line .x_label {
-    color: rgba(var(--light-color), 1);
-}
 
 /* текст отзывы, комментарии и т.д. под вкладкой У аниме: */
 .b-db_entry > .c-about .additional-links .line-container > .link,
@@ -1049,19 +1010,12 @@ a.start.b-button:hover,
     color: rgba(var(--bright-color), 1);
 }
 
-.b-height_shortener .expand:hover {
-    color: rgba(var(--hover-color), 1);
-}
 
 /* под шкалой в профиле сколько пробыл на сайте */
-.bar.vertical .line .x_label {
-    color: #5b6ad7;
-}
 
 /* Поиск по названию в списке аниме */
 input {
     color: rgba(var(--light-color), 1);
-    border: rgba(var(--block-color), 0.4);
     background: rgba(var(--block-color), 0.4);
 }
 
@@ -1152,9 +1106,6 @@ header.head h2 a.back:before {
     color: rgba(var(--white-color), 1);
 }
 
-header.head a.misc:hover {
-    color: rgba(var(--hover-color), 1);
-}
 
 .b-options-floated a:hover,
 .b-options-floated .link:hover {
@@ -1166,13 +1117,8 @@ header.head a.misc:hover {
     color: rgba(var(--white-color), 1);
 }
 
-a {
-    color: rgba(var(--white-color), 1);
-    transition: 0s ease, transform 0.3s ease, color 0.3s ease;
-}
 
 a:hover {
-    color: rgba(var(--hover-color), 1) !important;
     text-decoration: none !important;
 }
 
@@ -1217,7 +1163,6 @@ tr.user_rate.selectable.editable:hover:after {
 tr.user_rate.selectable.editable:after {
     content: "";
     width: 100%;
-    height: 22px;
     padding-top: 2px;
     position: absolute;
     left: 0;
@@ -1266,14 +1211,12 @@ tr.user_rate.selectable.editable:after {
 }
 
 .b-js-link {
-    color: rgba(var(--bright-color), 1);
     border: none;
     padding: 0 8px 0 8px;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-js-link:hover {
-    color: rgba(var(--hover-color), 1);
     border: none;
 }
 
@@ -1451,9 +1394,6 @@ textarea {
     color: rgba(var(--dark-color), 1);
 }
 
-.b-shiki_editor footer .about-bb_codes {
-    color: rgba(var(--dark-color), 1);
-}
 
 .b-lang_trigger span {
     color: rgba(var(--dark-color), 1);
@@ -1470,9 +1410,6 @@ textarea {
     color: rgba(var(--hover-color), 1) !important;
 }
 
-.b-comment > .inner header .name-date .time {
-    color: rgba(var(--bright-color), 1);
-}
 
 .c-actions .new_comment:before {
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
@@ -1527,7 +1464,6 @@ textarea {
 }
 
 .b-video_variant.active a {
-    color: #1f75fe;
     border-bottom: none;
 }
 
@@ -1545,9 +1481,6 @@ textarea {
     color: rgba(var(--bright-color), 1);
 }
 
-.p-anime_videos-index .c-videos .video-variant-switcher.active {
-    color: #1f75fe;
-}
 
 .b-video_variant .video-author {
     color: rgba(var(--white-color), 1);
@@ -1655,15 +1588,10 @@ header.head a.edit,
 .b-show_more,
 .b-show_more-more .hide-more {
     color: rgba(var(--bright-color), 1);
-    font-size: 12px !important;
 }
 
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a {
-    font-size: 12px;
-}
 
 .b-dialog .to_dialog {
-    font-size: 12px !important;
     background: none !important;
     box-shadow: none !important;
     color: rgba(var(--bright-color), 1);
@@ -1704,7 +1632,6 @@ header.head a.edit,
 
 .b-catalog-entry-embedded .b-catalog_entry {
     padding-bottom: 0 !important;
-    background: none;
 }
 
 .b-dialog .b-message {
@@ -1770,7 +1697,6 @@ header.head a.edit,
 }
 
 .b-video_player .cc-player_controls .episode-num .video-link a {
-    color: rgba(var(--dark-color), 1);
     cursor: pointer;
     border-bottom: 1px dotted rgba(var(--dark-color), 1);
 }
@@ -1818,9 +1744,6 @@ header.head a.edit,
     color: rgba(var(--bright-color), 1);
 }
 
-.b-source .contributors .key {
-    color: rgba(var(--dark-color), 1);
-}
 
 .b-animes-menu .menu-topics-block a.entry .name:hover {
     color: rgba(var(--hover-color), 1);
@@ -1864,9 +1787,6 @@ header.head .notice {
     color: rgba(var(--hover-color), 1);
 }
 
-.b-topic-minified > .inner .status-line .additional .comments:before {
-    color: rgba(var(--bright-color), 1);
-}
 
 .b-topic {
     border: none !important;
@@ -1921,9 +1841,6 @@ header.head .notice {
     color: rgba(var(--dark-color), 1) !important;
 }
 
-.midheadline > a:hover {
-    color: rgba(var(--hover-color), 1);
-}
 
 .p-topics .l-menu .reviews .entry .title,
 .p-topics .l-menu .clubs .entry .title {
@@ -2296,9 +2213,6 @@ code.b-code_inline {
     color: rgba(var(--dark-color), 1);
 }
 
-.b-log_entry .spoiler.collapsed span:hover {
-    color: rgba(var(--hover-color), 1);
-}
 
 .b-shiki_editor footer .about-bb_codes:hover {
     color: rgba(var(--hover-color), 1);
@@ -2326,9 +2240,6 @@ code.b-code_inline {
     color: rgba(var(--white-color), 1);
 }
 
-.b-bb_codes-examples .result a:hover {
-    color: rgba(var(--hover-color), 1);
-}
 
 .quoteable:before {
     color: rgba(var(--bright-color), 1)!important;
@@ -2650,7 +2561,6 @@ a:-webkit-any-link {
 
 .b-image img {
     vertical-align: top;
-    transition: 0s ease, transform 0.3s, opacity 0.25s ease, filter 0.25s ease;
 }
 
 img {
@@ -2887,7 +2797,6 @@ img {
 
 .l-page {
     overflow: visible !important;
-    border-radius: 12px;
 }
 
 body#dashboards_show .l-page {
@@ -2928,69 +2837,22 @@ body#dashboards_show .l-page {
 }
 
 @media screen and (max-width: 1200px) {
-    body.p-achievements.p-profiles .block.m0:before {
-        content: "★ ▬▬ ACHIEVEMENTS ▬▬ ★";
-        font-size: 32px;
-    }
 
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        width: calc(300px - 36px);
-    }
 
-    .p-achievements-index .cc-achievements,
-    .p-achievements-index .cc-franchises-genres .c-genres .cc-achievements,
-    .c-franchises .cc {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
 
-    .b-achievement .c-about .title {
-        height: 33px;
-        line-height: 18px !important;
-        display: table-cell;
-        vertical-align: middle;
-    }
 
-    .p-achievements-index .c-franchises .b-badge {
-        width: 280px;
-        margin-right: 1% !important;
-    }
 
     body.p-achievements.p-profiles .b-list_switchers {
         margin-top: 2px !important;
     }
 
-    .p-profiles-show .cc-favourites .c-column:nth-child(n + 9) {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 736px) and (max-width: 880px) {
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        width: calc(250px - 36px);
-    }
 
-    .p-achievements-index .cc-achievements .b-achievement .c-about .text {
-        font-size: 11px;
-    }
 
-    .b-achievement .c-about {
-        padding: 14px;
-    }
 
-    .b-achievement .c-about a.title {
-        font-size: 12px;
-    }
 
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        min-height: 314px;
-    }
 
     span.switcher.b-tooltipped.popularity,
     span.switcher.b-tooltipped.alphabet {
@@ -3005,88 +2867,7 @@ body#dashboards_show .l-page {
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 735px) {
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        width: calc(200px - 36px);
-    }
 
-    .p-achievements-index .cc-achievements .b-achievement .c-about .text {
-        font-size: 11px;
-    }
-
-    .b-achievement .c-about {
-        padding: 12px;
-    }
-
-    .b-achievement .c-about a.title {
-        font-size: 12px;
-    }
-
-    .b-achievement .c-about .hint {
-        font-size: 10px;
-    }
-
-    .b-achievement .c-about .percent {
-        float: right;
-        font-size: 12px;
-    }
-
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        min-height: 314px;
-    }
-
-    span.switcher.b-tooltipped.popularity,
-    span.switcher.b-tooltipped.alphabet {
-        width: 30px;
-    }
-
-    .b-list_switchers .switcher.popularity:before,
-    .b-list_switchers .switcher.alphabet:before {
-        content: "";
-        font: bold 20px "Comfortaa" !important;
-        width: 50px;
-    }
-}
-
-@media screen and (max-width: 599px) {
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    body.p-achievements.p-profiles .block.m0:before {
-        content: "★ ACHIEVEMENTS ★";
-        font-size: 32px;
-    }
-
-    .p-achievements-index .cc-achievements .b-achievement,
-    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement {
-        min-height: 274px;
-    }
-
-    span.switcher.b-tooltipped.popularity,
-    span.switcher.b-tooltipped.alphabet {
-        width: 30px;
-    }
-
-    .b-list_switchers .switcher.popularity:before,
-    .b-list_switchers .switcher.alphabet:before {
-        content: "";
-        font: bold 20px "Comfortaa" !important;
-        width: 50px;
-    }
-
-    .p-achievements-index .c-franchises .b-badge {
-        margin: 6px !important;
-    }
-
-    .p-achievements-index .c-franchises .b-badge[data-progress="100"]:after {
-        background: linear-gradient(135deg, transparent 280px, #483d1c 0);
-    }
-}
 
 
 .b-spoiler_block > div,
@@ -3142,9 +2923,6 @@ h1 + hr {
     background-image: linear-gradient(to right, rgba(var(--light-color), 0.4), transparent);
 }
 
-p {
-    color: rgba(var(--light-color), 1);
-}
 
 .menubar {
     background: none !important;

@@ -138,8 +138,6 @@
     }
 }
 
-@media screen and (min-width: 861px) {
-}
 
 @media only screen and (min-width: 1025px) {
     .p-dashboards-show .v2 .fc-user-sections .tags {
@@ -833,12 +831,6 @@
         display: inline-block !important;
     }
 
-    .b-shiki_editor .images {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
 
     .b-shiki_editor .links.links,
     .b-shiki_editor .images.links,
@@ -1415,7 +1407,6 @@
         width: 100%;
         padding: 0 ;
         display: inline-block;
-        margin-top: 190px;
     }
 
     .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime,
@@ -1433,9 +1424,6 @@
         line-height: 38px;
     }
 
-    header.head .notice {
-        font-size: 10px !important;
-    }
 
     .p-profiles .profile-head .c-brief header {
         text-align: center;
@@ -1531,9 +1519,6 @@
         display: none;
     }
 
-    .p-profiles .profile-head .c-info .c-additionals div a {
-        font-size: 15px;
-    }
 
     .p-profiles .profile-head .c-info .c-additionals div:after {
         font-size: 0 ;
@@ -1543,18 +1528,6 @@
         display: none;
     }
 
-    .p-profiles .profile-head .c-brief .avatar .profile-actions {
-        position: absolute !important;
-        bottom: 175px !important;
-        right: 5% !important;
-        height: 70px;
-        line-height: 30px;
-        vertical-align: middle;
-        display: inline-block;
-        z-index: 10;
-        pointer-events: auto;
-        width: 30%;
-    }
 
     .profile-actions .mail,
     .profile-actions .talk,
@@ -1594,7 +1567,6 @@
     .p-profiles .profile-head .c-info .c-additionals div[data-type="video_changes"] span {
         font-size: 11px !important;
         display: block;
-        padding: 6px 15px 10px 15px;
         margin: 0 ;
         vertical-align: middle;
         white-space: normal;
@@ -1688,7 +1660,6 @@
         padding: 6px 15px 10px 15px;
         background: rgba(var(--block-color), 0.4);
         border-radius: 10%;
-        color: rgba(var(--dark-color), var(--hundred)) !important;
     }
 
     .p-profiles .profile-head .c-info .c-additionals div a {
@@ -1822,10 +1793,6 @@
         width: 100% !important;
     }
 
-    .x1000 .menu-slide-outer.x240 .l-content,
-    .x1200 .menu-slide-outer.x199 .l-content {
-        width: 98% !important;
-    }
 
     .x1000 .menu-slide-outer.x199 .l-content,
     .menu-slide-outer.x199 .l-content {
@@ -2181,9 +2148,6 @@
         transform: translateY(-1.2rem);
     }
 
-    body#profiles_show .profile-content {
-        margin-top: -320px;
-    }
 
     body#profiles_show .profile-content {
         margin-top: -320px;
@@ -2547,17 +2511,11 @@
         left: -20px;
     }
 
-    th.num.order-control[data-order="episodes"] {
-        display: none;
-    }
 
     .p-user_rates-index .list-lines tr .num {
         display: table-cell !important;
     }
 
-    span.current-value[data-field="chapters"] {
-        display: block;
-    }
 
     .was_updated span {
         font-size: 0 ;
@@ -2681,9 +2639,6 @@
         transform: scale(1.3) !important;
     }
 
-    .subheadline.m13 {
-        left: 8px;
-    }
 
     .b-stats_bar.anime .compatibility a:before,
     .b-stats_bar.anime .compatibility .text.zero:before,
@@ -2716,7 +2671,6 @@
         content: "ANIME";
         position: absolute;
         top: 70px;
-        left: 11px;
         font-size: 10px;
         padding: 2px 4px;
         color: rgba(var(--anime-inprocess), var(--hundred));
@@ -2727,7 +2681,6 @@
         content: "MANGA";
         position: absolute;
         top: 70px;
-        left: 58px;
         font-size: 10px;
         padding: 2px 4px;
         color: #de2b74;
@@ -3634,10 +3587,8 @@
     z-index: 10;
     font-size: 15px !important;
     text-shadow: 1px 0 2px #000000cc, -1px 0 2px #000000cc, 0 1px 2px #000000cc, 0 -1px 2px #000000cc;
-    will-change: transform;
     pointer-events: none;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
+    transition: left .4s ease, opacity .4s ease;
     opacity: 0;
 }
 
@@ -3873,10 +3824,8 @@
     z-index: 10;
     font-size: 15px !important;
     text-shadow: 1px 0 2px #000000cc, -1px 0 2px #000000cc, 0 1px 2px #000000cc, 0 -1px 2px #000000cc;
-    will-change: transform;
     pointer-events: none;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
+    transition: left .4s ease, opacity .4s ease;
     opacity: 0;
 }
 
@@ -3971,17 +3920,6 @@
     background: none !important;
 }
 
-@keyframes glowing {
-    0%  {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
 
 @media screen and (max-width: 250px) {
     .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry .cover .misc {
@@ -4081,17 +4019,6 @@ div.Ssylki-anime-v-1-standard:hover .b-link {
     opacity: 0;
 }
 
-@keyframes glowing {
-    0%  {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
 
 .Ssylki-anime-v-1-standard strong {
     width: 100%;
@@ -4360,17 +4287,6 @@ div.Ssylki-anime-v-1:hover .b-link {
     opacity: 0;
 }
 
-@keyframes glowing {
-    0%  {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
 
 .Ssylki-anime-v-1 strong {
     width: 100%;
@@ -4798,17 +4714,6 @@ div.Ssylki-anime:hover strong::before {
     opacity: 1;
 }
 
-@keyframes glowing {
-    0%  {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
 
 .Ssylki-anime strong {
     width: 100%;
@@ -5167,7 +5072,6 @@ div.Ssylki-anime:hover .Text-2 {
         transform .35s cubic-bezier(.22, 1, .36, 1),
         box-shadow .35s cubic-bezier(.22, 1, .36, 1),
         background-color .35s ease !important;
-    will-change: transform;
 }
 .b-catalog_entry:hover {
     transform: translateY(-6px) scale(1.03);
@@ -5180,7 +5084,6 @@ div.Ssylki-anime:hover .Text-2 {
 /* Лёгкий зум картинки внутри обложки (не выходит за края) */
 .b-catalog_entry .cover {
     overflow: hidden;
-    border-radius: 12px;
 }
 .b-catalog_entry .cover img,
 .b-catalog_entry .cover .image {
@@ -5210,7 +5113,7 @@ div.Ssylki-anime:hover .Text-2 {
 .l-top_menu-v2 .menu-icon:hover,
 .l-top_menu-v2 .menu-dropdown > button:hover,
 .l-top_menu-v2 .menu-dropdown > span:hover {
-    background-color: rgba(255, 255, 255, .06) !important;
+    background-color: rgba(var(--white-color), .06) !important;
 }
 /* Кнопка раздела/профиля с открытым меню — в тон меню */
 .l-top_menu-v2 .menu-dropdown.active > button,
@@ -5227,30 +5130,8 @@ div.Ssylki-anime:hover .Text-2 {
     transition: background-color .2s ease, color .2s ease !important;
 }
 .l-top_menu-v2 .submenu > a:hover {
-    background: rgba(255, 255, 255, .06) !important;
+    background: rgba(var(--white-color), .06) !important;
     color: rgb(var(--light-color)) !important;
-}
-
-/* --- Выпадающие списки в фильтрах каталога — непрозрачные --- */
-.c-ms-dropdown,
-.c-ms-options,
-.c-filter-select .c-ms-dropdown,
-.c-filter-select .c-ms-options {
-    background: rgb(var(--popup-color)) !important;
-    border: 1px solid rgba(var(--light-color), .12) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 12px 30px rgba(var(--shadows-color), .6) !important;
-    backdrop-filter: none !important;
-}
-.c-ms-options li,
-.c-ms-dropdown li,
-.c-ms-options label,
-.c-ms-dropdown label {
-    color: rgb(var(--light-color)) !important;
-}
-.c-ms-options li:hover,
-.c-ms-dropdown li:hover {
-    background: rgba(var(--bright-color), .18) !important;
 }
 
 /* --- Читаемость страницы настроек --- */
@@ -5276,32 +5157,23 @@ div.Ssylki-anime:hover .Text-2 {
 .b-input input[type="url"],
 .b-input input[type="password"],
 .b-input textarea,
-.b-input select,
 .edit_user input[type="text"],
 .edit_user input[type="url"],
-.edit_user textarea,
-.edit_user select {
+.edit_user textarea {
     background: rgba(var(--menu-back), .85) !important;
     color: rgb(var(--light-color)) !important;
-    border: 1px solid rgba(255, 255, 255, .10) !important;
+    border: 1px solid rgba(var(--white-color), .10) !important;
     border-radius: 8px !important;
     transition: border-color .2s ease, box-shadow .2s ease !important;
 }
 .b-input input:focus,
 .b-input textarea:focus,
-.b-input select:focus,
 .edit_user input:focus,
 .edit_user textarea:focus {
     border-color: rgba(var(--bright-color), .6) !important;
     box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
     outline: none !important;
 }
-/* Варианты в выпадающих select — непрозрачные */
-select option {
-    background: rgb(var(--menu-bar-hover, var(--popup-color)));
-    color: rgb(var(--light-color));
-}
-
 /* --- Мелкие фиксы --- */
 /* Выровнял пункт «Правила» во всплывающем справа меню */
 .l-top_menu-v2 .submenu>a.icon-site_rules span.text {
@@ -5383,7 +5255,7 @@ html:not(:hover) body::before {
         content: "";
         display: block;
         height: var(--profile-banner-height, 300px);
-        background: var(--profile-banner, url("https://psv4.userapi.com/s/v1/d/vB8_HNnN2BnAuodxegKOCjDrc9jdovvyU94PZ8T8idd2SGG_CpxRAn6JLaEAWomgqXo0XGs46sqn8x_emEDEAftzNV5LoYakuO17V8ek6sKZfN4PEyO74g/Sad-banner.gif")) var(--profile-banner-position, center) / cover no-repeat;
+        background: var(--profile-banner, none) var(--profile-banner-position, center) / cover no-repeat;
         margin: -15px;
         margin-bottom: 5px;
         border-radius: 15px 15px 0 0;
@@ -5406,12 +5278,7 @@ html:not(:hover) body::before {
     }
     #profiles_show .achievements .cc-2 > .c-column:nth-child(4) {
         margin-left: 0;
-        margin-top: 0;
         margin-bottom: 0px;
-    }
-    #profiles_show.p-profiles-show .achievements .cc-franchises .b-badge {
-        margin: 3px 2.85% -3.65% 0.5%;
-        right: -5px;
     }
     #profiles_show.p-profiles-show .achievements .cc-authors .b-achievement {
         margin: 15px 0.92% 15px 0.92%;
@@ -5506,7 +5373,7 @@ a:hover, .b-link:hover, .b-js-link:hover {
 
 /* --- Подвал --- */
 .l-footer, .l-footer a, .l-footer .copyright {
-    color: rgb(165, 172, 184) !important;
+    color: rgb(var(--input-color)) !important;
 }
 .l-footer:after {
     content: "*Modern Dark*" !important;
@@ -5540,7 +5407,7 @@ input[type="file"]::file-selector-button:hover {
     align-items: center;
     justify-content: center;
     background: rgba(var(--block-color), .95) !important;
-    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border: 1px solid rgba(var(--white-color), .12) !important;
     border-radius: 10px !important;
     box-shadow: 0 4px 14px rgba(var(--shadows-color), .5);
     transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
@@ -5553,34 +5420,6 @@ input[type="file"]::file-selector-button:hover {
     box-shadow: 0 8px 20px rgba(var(--shadows-color), .6);
 }
 
-/* --- Настройки: выпадающие списки (язык, пол, дата) — как текстовые поля --- */
-.p-profiles-edit select,
-.p-profiles-edit .b-input select {
-    -webkit-appearance: none;
-    appearance: none;
-    padding: 6px 30px 6px 10px !important;
-    background-color: rgba(20, 22, 28, .85) !important;
-    background-image: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%),
-                      linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) !important;
-    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50% !important;
-    background-size: 5px 5px, 5px 5px !important;
-    background-repeat: no-repeat !important;
-    color: rgb(var(--light-color)) !important;
-    border: 1px solid rgba(255, 255, 255, .10) !important;
-    border-radius: 8px !important;
-    box-shadow: none !important;
-    cursor: pointer;
-    transition: border-color .2s ease, box-shadow .2s ease !important;
-}
-.p-profiles-edit select:hover {
-    border-color: rgba(255, 255, 255, .22) !important;
-}
-.p-profiles-edit select:focus {
-    border-color: rgba(var(--bright-color), .6) !important;
-    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
-    outline: none !important;
-}
-
 /* --- Настройки: кнопки разделов сверху — квадраты со скруглёнными углами --- */
 body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated a:after,
 body#clubs_edit .b-options-floated a:after {
@@ -5588,7 +5427,7 @@ body#clubs_edit .b-options-floated a:after {
     height: 42px !important;
     border-radius: 10px !important;
     background: rgba(var(--block-color), .95) !important;
-    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border: 1px solid rgba(var(--white-color), .12) !important;
     box-shadow: 0 4px 14px rgba(var(--shadows-color), .5) !important;
     color: rgb(var(--light-color)) !important;
     box-sizing: border-box;
@@ -5616,59 +5455,7 @@ body#clubs_edit .b-options-floated a.selected:after {
     box-sizing: border-box;
 }
 
-/* --- Фильтры каталога: поля как текстовые, рамка не пропадает --- */
-.c-filter-select,
-.c-ms-control,
-.c-score-input {
-    background-color: rgba(20, 22, 28, .85) !important;
-    color: rgb(var(--light-color)) !important;
-    border: 1px solid rgba(255, 255, 255, .10) !important;
-    border-radius: 8px !important;
-    min-height: 34px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
-    transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease, background-color .2s ease !important;
-}
-.c-filter-select {
-    -webkit-appearance: none;
-    appearance: none;
-    padding: 6px 30px 6px 10px !important;
-    cursor: pointer;
-    background-image: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%),
-                      linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) !important;
-    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50% !important;
-    background-size: 5px 5px, 5px 5px !important;
-    background-repeat: no-repeat !important;
-}
-.c-filter-select option { background: rgb(var(--popup-color)); color: rgb(var(--light-color)); }
-.c-ms-control { padding: 4px 26px 4px 10px !important; }
-.c-ms-caret { border-top-color: rgb(var(--dark-color)) !important; right: 11px !important; transform: translateY(-50%); transition: transform .2s ease; }
-.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
-.c-ms-placeholder { color: rgb(var(--dark-color)) !important; }
-.c-ms-title { color: rgb(var(--dark-color)) !important; }
-
-.c-filter-select:hover,
-.c-ms-control:hover,
-.c-score-input:hover {
-    border-color: rgba(255, 255, 255, .22) !important;
-}
-/* открыт / в фокусе — алая рамка, она остаётся при любом числе кликов */
-.c-filter-select:focus,
-.c-ms-control:focus,
-.c-ms-control[aria-expanded="true"],
-.c-score-input:focus {
-    border-color: rgba(var(--bright-color), .6) !important;
-    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
-    outline: none !important;
-}
-.c-ms.is-filled .c-ms-control,
-.c-score.is-filled .c-score-input {
-    border-color: rgba(var(--bright-color), .45) !important;
-}
-.c-ms-chip { background: rgba(var(--buttoms-color), 1) !important; border-radius: 6px !important; }
-
 /* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
-.c-ms-control:active,
 .b-link_button:active,
 .b-button:active,
 input[type="submit"]:active,
@@ -5702,51 +5489,6 @@ input[type="checkbox"]:active,
     filter: none !important;
 }
 
-/* --- Подсветка полей только пока список открыт / с клавиатуры, после выбора гаснет --- */
-.b-input select:focus:not(:focus-visible),
-.p-profiles-edit select:focus:not(:focus-visible),
-.c-filter-select:focus:not(:focus-visible),
-.c-ms-control:focus:not(:focus-visible):not([aria-expanded="true"]) {
-    border-color: rgba(255, 255, 255, .10) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
-}
-
-/* --- Выпадающие списки (обычные select): без рамки фокуса после выбора --- */
-.c-filter-select:focus,
-.c-filter-select:focus-visible,
-.b-input select:focus,
-.b-input select:focus-visible,
-.p-profiles-edit select:focus,
-.p-profiles-edit select:focus-visible {
-    border-color: rgba(255, 255, 255, .10) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
-    outline: none !important;
-}
-/* подсветка, только пока список раскрыт (браузеры с поддержкой :open) */
-.c-filter-select:open,
-.b-input select:open,
-.p-profiles-edit select:open {
-    border-color: rgba(var(--bright-color), .6) !important;
-    box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
-}
-
-/* --- Фильтры: при переходе к другому полю открытый список закрывается --- */
-.c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
-.c-filters:has(.c-score-input:focus) .c-ms-dropdown {
-    display: none !important;
-}
-.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"],
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"],
-.c-filters:has(.c-score-input:focus) .c-ms-control[aria-expanded="true"] {
-    border-color: rgba(255, 255, 255, .10) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
-}
-.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
-    transform: translateY(-50%) !important;
-}
-
 /* --- Кнопки разделов настроек: без квадрата вокруг при нажатии --- */
 .b-options-floated a,
 .b-options-floated a:active,
@@ -5756,72 +5498,6 @@ input[type="checkbox"]:active,
     background: transparent !important;
     transform: none !important;
     filter: none !important;
-}
-
-/* --- Сортировка: короткий «отскок» при клике вместо залипания --- */
-@keyframes shiki-press {
-    0%   { transform: scale(1); }
-    35%  { transform: translateY(1px) scale(.97); filter: brightness(.92); }
-    100% { transform: scale(1); }
-}
-.c-filter-select:active { transform: none !important; filter: none !important; }
-.c-filter-select:focus { animation: shiki-press .28s cubic-bezier(.22,1,.36,1); }
-
-/* --- Выпадающие списки фильтров плавно выезжают --- */
-@keyframes shiki-drop {
-    from { opacity: 0; transform: translateY(-6px) scaleY(.96); }
-    to   { opacity: 1; transform: none; }
-}
-.c-ms-dropdown:not([hidden]) {
-    transform-origin: top center;
-    animation: shiki-drop .22s cubic-bezier(.22,1,.36,1);
-}
-
-/* Обычный select: выезжающий список (браузеры на Chromium с поддержкой base-select) */
-@supports (appearance: base-select) {
-    .c-filter-select,
-    .c-filter-select::picker(select) {
-        appearance: base-select;
-    }
-    .c-filter-select::picker-icon { display: none; }
-    .c-filter-select::picker(select) {
-        background: rgb(var(--popup-color));
-        color: rgb(var(--light-color));
-        border: 1px solid rgba(var(--light-color), .12);
-        border-radius: 10px;
-        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
-        padding: 4px;
-        margin-top: 4px;
-        opacity: 1;
-        transform: none;
-        transition: opacity .22s cubic-bezier(.22,1,.36,1), transform .22s cubic-bezier(.22,1,.36,1), display .22s allow-discrete, overlay .22s allow-discrete;
-    }
-    .c-filter-select:not(:open)::picker(select) {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    @starting-style {
-        .c-filter-select:open::picker(select) { opacity: 0; transform: translateY(-6px); }
-    }
-    .c-filter-select option {
-        padding: 5px 10px;
-        border-radius: 6px;
-        background: transparent;
-    }
-    .c-filter-select option:hover { background: rgba(var(--bright-color), .18); }
-    .c-filter-select option:checked { color: rgb(var(--bright-color)); }
-    .c-filter-select option::checkmark { display: none; }
-}
-
-/* --- Сортировка: «отскок» при открытии, без залипания и без отскока на отпускании --- */
-.c-filter-select:focus { animation: none !important; }
-.c-filter-select:open { animation: shiki-press .28s cubic-bezier(.22,1,.36,1); }
-@supports (appearance: base-select) {
-    .c-filter-select option:focus,
-    .c-filter-select option:focus-visible {
-        outline: none !important;
-        background: rgba(var(--bright-color), .18);
-    }
 }
 
 /* --- Ник в профиле: обводка под цвет темы --- */
@@ -5840,7 +5516,7 @@ input[type="checkbox"]:active,
 .p-profiles-edit .buttons input {
     background: rgb(var(--buttoms-color)) !important;
     color: rgb(var(--light-color)) !important;
-    border: 1px solid rgba(255, 255, 255, .10) !important;
+    border: 1px solid rgba(var(--white-color), .10) !important;
     border-radius: 8px !important;
     padding: 7px 16px !important;
     box-shadow: 0 4px 14px rgba(var(--shadows-color), .45) !important;
@@ -5854,105 +5530,6 @@ input[type="checkbox"]:active,
 .p-profiles-edit .buttons input:hover {
     background: rgb(var(--hover-buttoms-2)) !important;
     box-shadow: 0 6px 18px rgba(var(--bright-color), .25) !important;
-}
-
-/* ================================================================
-   ЕДИНАЯ анимация для всех полей-списков (фильтры, сортировка, настройки)
-   Всё ниже перекрывает прежние отдельные правила.
-   ================================================================ */
-:root {
-    --ui-ease: cubic-bezier(.22, 1, .36, 1);
-    --ui-press: .08s;      /* нажатие */
-    --ui-release: .28s;    /* возврат */
-    --ui-drop: .24s;       /* выезд списка */
-}
-.c-filter-select,
-.c-ms-control,
-.c-score-input,
-.b-input select,
-.p-profiles-edit select {
-    animation: none !important;
-    transform: none;
-    filter: none;
-    transition: transform var(--ui-release) var(--ui-ease),
-                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
-}
-.c-filter-select:focus,
-.c-filter-select:open { animation: none !important; }
-/* нажатие: одинаково для всех, без залипания */
-.c-filter-select:active,
-.c-ms-control:active,
-.b-input select:active,
-.p-profiles-edit select:active {
-    transform: scale(.98) !important;
-    filter: none !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .3) !important;
-    transition-duration: var(--ui-press) !important;
-}
-
-/* выезд списка: без прозрачности, чтобы поля под ним не просвечивали */
-@keyframes shiki-drop {
-    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
-    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
-}
-.c-ms-dropdown:not([hidden]) {
-    opacity: 1 !important;
-    animation: shiki-drop var(--ui-drop) var(--ui-ease) !important;
-}
-@supports (appearance: base-select) {
-    .b-input select,
-    .b-input select::picker(select),
-    .p-profiles-edit select,
-    .p-profiles-edit select::picker(select) {
-        appearance: base-select;
-    }
-    .b-input select::picker-icon,
-    .p-profiles-edit select::picker-icon { display: none; }
-    .c-filter-select::picker(select),
-    .b-input select::picker(select),
-    .p-profiles-edit select::picker(select) {
-        background: rgb(var(--popup-color));
-        color: rgb(var(--light-color));
-        border: 1px solid rgba(var(--light-color), .12);
-        border-radius: 10px;
-        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
-        padding: 4px;
-        margin-top: 4px;
-        opacity: 1 !important;
-        transform: none;
-        clip-path: inset(0 0 0 0 round 10px);
-        transition: clip-path var(--ui-drop) var(--ui-ease), transform var(--ui-drop) var(--ui-ease),
-                    display var(--ui-drop) allow-discrete, overlay var(--ui-drop) allow-discrete !important;
-    }
-    .c-filter-select:not(:open)::picker(select),
-    .b-input select:not(:open)::picker(select),
-    .p-profiles-edit select:not(:open)::picker(select) {
-        opacity: 1 !important;
-        clip-path: inset(0 0 100% 0 round 10px);
-        transform: translateY(-4px);
-    }
-    @starting-style {
-        .c-filter-select:open::picker(select),
-        .b-input select:open::picker(select),
-        .p-profiles-edit select:open::picker(select) {
-            clip-path: inset(0 0 100% 0 round 10px);
-            transform: translateY(-4px);
-        }
-    }
-    .b-input select option,
-    .p-profiles-edit select option {
-        padding: 5px 10px; border-radius: 6px; background: transparent;
-    }
-    .b-input select option:hover,
-    .p-profiles-edit select option:hover,
-    .b-input select option:focus,
-    .p-profiles-edit select option:focus {
-        background: rgba(var(--bright-color), .18); outline: none !important;
-    }
-    .b-input select option:checked,
-    .p-profiles-edit select option:checked { color: rgb(var(--bright-color)); }
-    .b-input select option::checkmark,
-    .p-profiles-edit select option::checkmark { display: none; }
 }
 
 /* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
@@ -5971,33 +5548,9 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
 .b-options-dropdown.active .submenu,
 .b-subposter-actions .submenu,
 .dropdown.active .submenu,
-.dropdown.active .dropdown-menu,
-.c-ms-dropdown:not([hidden]) {
+.dropdown.active .dropdown-menu {
     animation: shiki-drop var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
     transform-origin: top center;
-}
-
-/* --- Списки фильтров: плавное сворачивание (и выезд) через transition --- */
-.c-ms-dropdown,
-.c-ms-dropdown:not([hidden]) {
-    animation: none !important;
-    display: block;
-    clip-path: inset(0 0 0 0 round 10px);
-    transform: none;
-    transition: clip-path var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                display var(--ui-drop, .24s) allow-discrete !important;
-}
-.c-ms-dropdown[hidden] {
-    display: none !important;
-    clip-path: inset(0 0 100% 0 round 10px);
-    transform: translateY(-4px);
-}
-@starting-style {
-    .c-ms-dropdown:not([hidden]) {
-        clip-path: inset(0 0 100% 0 round 10px);
-        transform: translateY(-4px);
-    }
 }
 
 /* --- Под баннером мягкое свечение в цвет самой картинки --- */
@@ -6034,140 +5587,211 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow {
     .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
 }
 
+
 /* ================================================================
-   ВСЕ выпадающие списки сайта (select) — один общий стиль и анимация,
-   такие же, как у фильтров. Работает на любой странице, включая настройки.
+   ОБЩИЙ КОМПОНЕНТ «поле-список»: все select на сайте и фильтры
+   каталога (Мой список, Статус…). Единственное место со стилями
+   полей-списков: менять вид — только переменными ниже.
+   (:not(#u) поднимает вес над старыми правилами сайта)
    ================================================================ */
-select {
+:root {
+    --ui-ease: cubic-bezier(.22, 1, .36, 1);
+    --ui-press: .08s;      /* нажатие */
+    --ui-release: .28s;    /* возврат */
+    --ui-drop: .24s;       /* выезд списка */
+
+    --field-bg: rgba(var(--menu-back), .85);
+    --field-border: rgba(var(--white-color), .10);
+    --field-border-hover: rgba(var(--white-color), .22);
+    --field-radius: 8px;
+    --field-height: 32px;
+    --field-font: 13px;
+    --field-pad: 6px 11px 6px 10px;
+    --field-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    --field-open-border: rgba(var(--bright-color), .6);
+    --field-open-ring: 0 0 0 3px rgba(var(--bright-color), .15);
+    --field-filled-border: rgba(var(--bright-color), .45);
+    --field-arrow: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%) calc(100% - 15px) 50% / 5px 5px no-repeat,
+                   linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) calc(100% - 10px) 50% / 5px 5px no-repeat;
+    --drop-gap: 4px;
+    --drop-radius: 10px;
+    --drop-pad: 4px;
+    --drop-bg: rgb(var(--popup-color));
+    --drop-border: rgba(var(--light-color), .12);
+    --drop-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
+    --opt-pad: 5px 10px;
+    --opt-radius: 6px;
+    --opt-hover: rgba(var(--bright-color), .18);
+}
+
+/* выезд списка: без прозрачности (используют меню панели и фильтры) */
+@keyframes shiki-drop {
+    from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
+    to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
+}
+
+/* --- само поле (select, мультиселект фильтров) --- */
+select:not(#u),
+.c-ms-control:not(#u) {
     -webkit-appearance: none;
     appearance: none;
-    min-height: 32px;
-    padding: 5px 30px 5px 10px !important;
-    background-color: rgba(20, 22, 28, .85) !important;
-    background-image: linear-gradient(45deg, transparent 50%, rgb(var(--dark-color)) 50%),
-                      linear-gradient(135deg, rgb(var(--dark-color)) 50%, transparent 50%) !important;
-    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50% !important;
-    background-size: 5px 5px, 5px 5px !important;
-    background-repeat: no-repeat !important;
+    box-sizing: border-box;
+    min-height: var(--field-height) !important;
+    height: auto !important;
+    padding: var(--field-pad) !important;
+    font-size: var(--field-font) !important;
+    line-height: 1.4 !important;
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    box-shadow: var(--field-shadow) !important;
     color: rgb(var(--light-color)) !important;
-    border: 1px solid rgba(255, 255, 255, .10) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
     outline: none !important;
-    cursor: pointer;
     animation: none !important;
+    filter: none !important;
     transform: none;
-    transition: transform var(--ui-release, .28s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
+    cursor: pointer;
+    transition: transform var(--ui-release) var(--ui-ease),
                 border-color .2s ease, box-shadow .2s ease !important;
 }
-select:hover { border-color: rgba(255, 255, 255, .22) !important; }
-select:focus, select:focus-visible {
-    border-color: rgba(255, 255, 255, .10) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
+/* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
+select:not(#u) {
+    padding-right: 30px !important;
+    background: var(--field-arrow), var(--field-bg) !important;
 }
-select:active {
-    transform: scale(.98) !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .3) !important;
-    transition-duration: var(--ui-press, .08s) !important;
-}
-select option { background: rgb(var(--popup-color)); color: rgb(var(--light-color)); }
+.c-ms-control:not(#u) { padding-right: 26px !important; } /* место под .c-ms-caret */
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
 
-@supports (appearance: base-select) {
-    select, select::picker(select) { appearance: base-select; }
-    select::picker-icon { display: none; }
-    select:open {
-        border-color: rgba(var(--bright-color), .6) !important;
-        box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
-    }
-    select::picker(select) {
-        background: rgb(var(--popup-color));
-        color: rgb(var(--light-color));
-        border: 1px solid rgba(var(--light-color), .12);
-        border-radius: 10px;
-        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
-        padding: 4px;
-        margin-top: 4px;
-        opacity: 1 !important;
-        clip-path: inset(0 0 0 0 round 10px);
-        transform: none;
-        transition: clip-path var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                    transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                    display var(--ui-drop, .24s) allow-discrete,
-                    overlay var(--ui-drop, .24s) allow-discrete !important;
-    }
-    select:not(:open)::picker(select) {
-        clip-path: inset(0 0 100% 0 round 10px);
+select:not(#u):hover,
+.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
+select:not(#u):focus,
+.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
+.c-ms.is-filled .c-ms-control:not(#u) { border-color: var(--field-filled-border) !important; }
+select:not(#u):open,
+.c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+}
+select:not(#u):active,
+.c-ms-control:not(#u):active {
+    transform: scale(.98) !important;
+    transition-duration: var(--ui-press) !important;
+}
+
+/* поле оценки в фильтрах — тот же вид, без стрелки */
+.c-score-input {
+    background: var(--field-bg) !important;
+    color: rgb(var(--light-color)) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    min-height: 34px;
+    box-sizing: border-box;
+    box-shadow: var(--field-shadow);
+    animation: none !important;
+    transform: none;
+    filter: none;
+    transition: transform var(--ui-release) var(--ui-ease),
+                border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+}
+.c-score-input:hover { border-color: var(--field-border-hover) !important; }
+.c-score-input:focus {
+    border-color: var(--field-open-border) !important;
+    box-shadow: var(--field-open-ring) !important;
+    outline: none !important;
+}
+.c-score.is-filled .c-score-input { border-color: var(--field-filled-border) !important; }
+
+/* --- части мультиселекта --- */
+.c-ms-caret {
+    border-top-color: rgb(var(--dark-color)) !important;
+    right: 11px !important;
+    transform: translateY(-50%);
+    transition: transform var(--ui-drop) var(--ui-ease) !important;
+}
+.c-ms-control[aria-expanded="true"] .c-ms-caret { transform: translateY(-50%) rotate(180deg); }
+.c-ms-placeholder,
+.c-ms-title { color: rgb(var(--dark-color)) !important; }
+.c-ms-chip { background: rgb(var(--buttoms-color)) !important; border-radius: 6px !important; }
+
+/* --- выпадающий список фильтров --- */
+.c-ms-dropdown:not(#u) {
+    top: calc(100% + var(--drop-gap)) !important;
+    background: var(--drop-bg) !important;
+    border: 1px solid var(--drop-border) !important;
+    border-radius: var(--drop-radius) !important;
+    box-shadow: var(--drop-shadow) !important;
+    backdrop-filter: none !important;
+}
+/* плавный выезд и сворачивание через transition */
+.c-ms-dropdown,
+.c-ms-dropdown:not([hidden]) {
+    opacity: 1 !important;
+    animation: none !important;
+    display: block;
+    transform-origin: top center;
+    clip-path: inset(0 0 0 0 round var(--drop-radius));
+    transform: none;
+    transition: clip-path var(--ui-drop) var(--ui-ease),
+                transform var(--ui-drop) var(--ui-ease),
+                display var(--ui-drop) allow-discrete !important;
+}
+.c-ms-dropdown[hidden] {
+    display: none !important;
+    clip-path: inset(0 0 100% 0 round var(--drop-radius));
+    transform: translateY(-4px);
+}
+@starting-style {
+    .c-ms-dropdown:not([hidden]) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius));
         transform: translateY(-4px);
     }
-    @starting-style {
-        select:open::picker(select) {
-            clip-path: inset(0 0 100% 0 round 10px);
-            transform: translateY(-4px);
-        }
-    }
-    select option {
-        padding: 5px 10px;
-        border-radius: 6px;
-        background: transparent;
-        outline: none !important;
-    }
-    select option:hover,
-    select option:focus,
-    select option:focus-visible { background: rgba(var(--bright-color), .18); outline: none !important; }
-    select option:checked { color: rgb(var(--bright-color)); }
-    select option::checkmark { display: none; }
 }
-
-/* ================================================================
-   Сортировка = остальные фильтры = настройки: один вид и одна анимация
-   (:not(#u) поднимает вес правила над старыми правилами сайта/темы)
-   ================================================================ */
-.c-ms-caret {
-    transition: transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)) !important;
-    border-top-color: rgb(var(--dark-color)) !important;
-}
-.c-ms-dropdown {
-    top: calc(100% + 4px) !important;
-    background: rgb(var(--popup-color)) !important;
-    border: 1px solid rgba(var(--light-color), .12) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 12px 30px rgba(var(--shadows-color), .6) !important;
-}
-.c-ms-options { padding: 4px !important; }
-.c-ms-option {
-    padding: 5px 10px !important;
-    border-radius: 6px;
+.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
+.c-ms-option:not(#u) {
+    padding: var(--opt-pad) !important;
+    border-radius: var(--opt-radius);
+    font-size: var(--field-font);
+    color: rgb(var(--light-color));
     transition: background-color .15s ease, color .15s ease;
 }
-.c-ms-option:hover { background: rgba(var(--bright-color), .18) !important; }
+.c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
 .c-ms-option.is-on { color: rgb(var(--bright-color)) !important; }
 
+/* при переходе к другому полю открытый список закрывается */
+.c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
+.c-filters:has(.c-score-input:focus) .c-ms-dropdown {
+    display: none !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control:not(#u)[aria-expanded="true"],
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control:not(#u)[aria-expanded="true"],
+.c-filters:has(.c-score-input:focus) .c-ms-control:not(#u)[aria-expanded="true"] {
+    border-color: var(--field-border) !important;
+    box-shadow: var(--field-shadow) !important;
+}
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+/* варианты в системном окне (Firefox) */
+select option { background: var(--drop-bg); color: rgb(var(--light-color)); }
+
+/* --- выезжающий список select (Chromium с base-select) --- */
 @supports (appearance: base-select) {
     select:not(#u),
     select:not(#u)::picker(select) { appearance: base-select !important; }
     select:not(#u) {
-        display: inline-flex;
+        display: inline-flex !important;
         align-items: center;
         gap: 8px;
-        min-height: 32px;
-        padding: 6px 11px 6px 10px !important;
-        background: rgba(20, 22, 28, .85) !important;
-        border: 1px solid rgba(255, 255, 255, .10) !important;
-        border-radius: 8px !important;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
-        color: rgb(var(--light-color)) !important;
-        outline: none !important;
+        padding-right: 11px !important;
+        background: var(--field-bg) !important; /* стрелку рисует ::picker-icon */
     }
-    select:not(#u):hover { border-color: rgba(255, 255, 255, .22) !important; }
-    select:not(#u):focus:not(:open) {
-        border-color: rgba(255, 255, 255, .10) !important;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, .2) !important;
-    }
-    select:not(#u):open {
-        border-color: rgba(var(--bright-color), .6) !important;
-        box-shadow: 0 0 0 3px rgba(var(--bright-color), .15) !important;
-    }
-    /* стрелка такая же, как у фильтров, и так же поворачивается */
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+
+    /* стрелка как у фильтров и так же поворачивается */
     select:not(#u)::picker-icon {
         display: block !important;
         content: "";
@@ -6185,149 +5809,10 @@ select option { background: rgb(var(--popup-color)); color: rgb(var(--light-colo
         border-right: 4px solid transparent;
         border-top: 5px solid rgb(var(--dark-color));
         background: none;
-        transition: rotate var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1));
+        transition: rotate var(--ui-drop) var(--ui-ease);
     }
     select:not(#u):open::picker-icon { rotate: 180deg; }
-    select:not(#u)::picker(select) {
-        min-width: anchor-size(width);
-        margin: 4px 0 0 0;
-        padding: 4px;
-        background: rgb(var(--popup-color));
-        color: rgb(var(--light-color));
-        border: 1px solid rgba(var(--light-color), .12);
-        border-radius: 10px;
-        box-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
-        font-size: 13px;
-    }
-    select:not(#u) option {
-        padding: 5px 10px !important;
-        border-radius: 6px;
-        background: transparent !important;
-        color: rgb(var(--light-color));
-        transition: background-color .15s ease, color .15s ease;
-    }
-    select:not(#u) option:hover,
-    select:not(#u) option:focus-visible { background: rgba(var(--bright-color), .18) !important; }
-    select:not(#u) option:checked { color: rgb(var(--bright-color)); }
-}
 
-/* ================================================================
-   Анимация списков select = анимация фильтров (Мой список, Статус…)
-   Перекрывает все прежние правила выезда для select.
-   ================================================================ */
-@supports (appearance: base-select) {
-    select:not(#u)::picker(select) {
-        opacity: 1 !important;
-        animation: none !important;
-        transform: translateY(0) !important;
-        clip-path: inset(0 0 0 0 round 10px) !important;
-        transition: clip-path var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                    transform var(--ui-drop, .24s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                    display var(--ui-drop, .24s) allow-discrete,
-                    overlay var(--ui-drop, .24s) allow-discrete !important;
-    }
-    select:not(#u):not(:open)::picker(select) {
-        clip-path: inset(0 0 100% 0 round 10px) !important;
-        transform: translateY(-4px) !important;
-    }
-    @starting-style {
-        select:not(#u):open::picker(select) {
-            opacity: 1 !important;
-            clip-path: inset(0 0 100% 0 round 10px) !important;
-            transform: translateY(-4px) !important;
-        }
-    }
-    select:not(#u),
-    select:not(#u):focus,
-    select:not(#u):open { animation: none !important; filter: none !important; }
-    select:not(#u) option { animation: none !important; transform: none !important; }
-}
-
-/* ================================================================
-   ОБЩИЙ КОМПОНЕНТ «поле-список»: один набор переменных для всех
-   select на сайте и для фильтров каталога (Мой список, Статус…).
-   Менять вид — только здесь, в переменных.
-   (:not(#u) поднимает вес над старыми правилами сайта и темы)
-   ================================================================ */
-:root {
-    --field-bg: rgba(20, 22, 28, .85);
-    --field-border: rgba(255, 255, 255, .10);
-    --field-border-hover: rgba(255, 255, 255, .22);
-    --field-radius: 8px;
-    --field-height: 32px;
-    --field-font: 13px;
-    --field-pad: 6px 11px 6px 10px;
-    --field-shadow: 0 2px 6px rgba(0, 0, 0, .2);
-    --field-open-border: rgba(var(--bright-color), .6);
-    --field-open-ring: 0 0 0 3px rgba(var(--bright-color), .15);
-    --drop-gap: 4px;
-    --drop-radius: 10px;
-    --drop-pad: 4px;
-    --drop-bg: rgb(var(--popup-color));
-    --drop-border: rgba(var(--light-color), .12);
-    --drop-shadow: 0 12px 30px rgba(var(--shadows-color), .6);
-    --opt-pad: 5px 10px;
-    --opt-radius: 6px;
-    --opt-hover: rgba(var(--bright-color), .18);
-}
-
-/* --- само поле --- */
-select:not(#u),
-.c-ms-control:not(#u) {
-    box-sizing: border-box;
-    min-height: var(--field-height) !important;
-    height: auto !important;
-    padding: var(--field-pad) !important;
-    font-size: var(--field-font) !important;
-    line-height: 1.4 !important;
-    background: var(--field-bg) !important;
-    border: 1px solid var(--field-border) !important;
-    border-radius: var(--field-radius) !important;
-    box-shadow: var(--field-shadow) !important;
-    color: rgb(var(--light-color)) !important;
-    outline: none !important;
-    animation: none !important;
-    filter: none !important;
-    cursor: pointer;
-    transition: transform var(--ui-release, .28s) var(--ui-ease, cubic-bezier(.22,1,.36,1)),
-                border-color .2s ease, box-shadow .2s ease !important;
-}
-/* в настройках поля по размеру текста, как «Язык интерфейса» */
-select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
-select:not(#u):hover,
-.c-ms-control:not(#u):hover { border-color: var(--field-border-hover) !important; }
-select:not(#u):focus,
-.c-ms-control:not(#u):focus { border-color: var(--field-border) !important; box-shadow: var(--field-shadow) !important; }
-select:not(#u):open,
-.c-ms-control:not(#u)[aria-expanded="true"] {
-    border-color: var(--field-open-border) !important;
-    box-shadow: var(--field-open-ring) !important;
-}
-select:not(#u):active,
-.c-ms-control:not(#u):active {
-    transform: scale(.98) !important;
-    transition-duration: var(--ui-press, .08s) !important;
-}
-
-/* --- выпадающий список фильтров --- */
-.c-ms-dropdown:not(#u) {
-    top: calc(100% + var(--drop-gap)) !important;
-    background: var(--drop-bg) !important;
-    border: 1px solid var(--drop-border) !important;
-    border-radius: var(--drop-radius) !important;
-    box-shadow: var(--drop-shadow) !important;
-}
-.c-ms-options:not(#u) { padding: var(--drop-pad) !important; }
-.c-ms-option:not(#u) { padding: var(--opt-pad) !important; border-radius: var(--opt-radius); font-size: var(--field-font); }
-.c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
-
-@supports (appearance: base-select) {
-    select:not(#u),
-    select:not(#u)::picker(select) { appearance: base-select !important; }
-    select:not(#u) { display: inline-flex !important; align-items: center; gap: 8px; }
-    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
-
-    /* --- выпадающий список select: тот же вид --- */
     select:not(#u)::picker(select) {
         min-width: anchor-size(width);
         margin: var(--drop-gap) 0 0 0;
@@ -6338,6 +5823,24 @@ select:not(#u):active,
         border-radius: var(--drop-radius);
         box-shadow: var(--drop-shadow);
         font-size: var(--field-font);
+        opacity: 1 !important;
+        animation: none !important;
+        transform: translateY(0) !important;
+        clip-path: inset(0 0 0 0 round var(--drop-radius)) !important;
+        transition: clip-path var(--ui-drop) var(--ui-ease),
+                    transform var(--ui-drop) var(--ui-ease),
+                    display var(--ui-drop) allow-discrete,
+                    overlay var(--ui-drop) allow-discrete !important;
+    }
+    select:not(#u):not(:open)::picker(select) {
+        clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+        transform: translateY(-4px) !important;
+    }
+    @starting-style {
+        select:not(#u):open::picker(select) {
+            clip-path: inset(0 0 100% 0 round var(--drop-radius)) !important;
+            transform: translateY(-4px) !important;
+        }
     }
     select:not(#u) option {
         padding: var(--opt-pad) !important;
@@ -6345,6 +5848,10 @@ select:not(#u):active,
         background: transparent !important;
         color: rgb(var(--light-color));
         font-size: var(--field-font);
+        outline: none !important;
+        animation: none !important;
+        transform: none !important;
+        transition: background-color .15s ease, color .15s ease;
     }
     select:not(#u) option:hover,
     select:not(#u) option:focus-visible { background: var(--opt-hover) !important; }
@@ -6371,4 +5878,229 @@ select:not(#u):active,
 .oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"]) > *,
 .oauth a:is(.yandex, .google, .google_oauth2, [href*="auth/yandex"], [href*="auth/google"])::before {
     filter: brightness(1.12) saturate(1.1) !important;
+}
+
+/* ================================================================
+   Телефоны (iPhone / Safari и др.): размытый фон, фильтры по центру
+   экрана, подписи без наложения на значки
+   ================================================================ */
+@media screen and (max-width: 767px) {
+    /* обои: лёгкое размытие и затемнение, чтобы текст читался */
+    html body::before,
+    html:not(:hover) body::before {
+        transform: scale(1.12);
+        transition: none;
+        filter: blur(6px) brightness(.72);
+        -webkit-filter: blur(6px) brightness(.72);
+    }
+    /* полупрозрачная подложка под содержимым страницы */
+    .l-page {
+        background-color: rgba(var(--menu-back), .38) !important;
+        border-radius: 14px;
+    }
+
+    /* --- фильтры каталога и списков: карточка по центру экрана --- */
+    section.l-page.menu-expanded::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background: rgba(var(--shadows-color), .55);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
+        backdrop-filter: blur(12px) saturate(120%);
+        animation: shiki-fade .2s ease both;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        display: block !important;
+        position: fixed !important;
+        z-index: 950 !important;
+        top: calc(50% - 7px) !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: min(calc(100vw - 24px), 460px) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: calc(100vh - 140px);
+        max-height: calc(100dvh - 140px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+        margin: 0 !important;
+        padding: 14px 16px 16px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        transform: translate(-50%, -50%);
+        background: rgba(var(--menu-bar), .82) !important;
+        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        backdrop-filter: blur(18px) saturate(140%);
+        border: 1px solid rgba(var(--buttoms-color), .55) !important;
+        border-radius: 18px !important;
+        outline: none !important;
+        box-shadow: 0 18px 50px rgba(var(--shadows-color), .7), 0 0 0 4px rgba(var(--buttoms-color), .12) !important;
+        animation: shiki-sheet .24s cubic-bezier(.22, 1, .36, 1) both;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(var(--buttoms-color), .6) transparent;
+    }
+    section.l-page.menu-expanded aside.l-menu .c-filters-head {
+        position: sticky;
+        top: -14px;
+        z-index: 2;
+        margin: -14px -16px 12px !important;
+        padding: 14px 16px 10px !important;
+        background: rgba(var(--menu-bar), .96);
+        border-bottom: 1px solid rgba(var(--buttoms-color), .45);
+        border-radius: 17px 17px 0 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        color: rgb(var(--bright-color));
+    }
+    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
+    /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
+    section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: var(--drop-gap);
+    }
+    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
+    .l-page .menu-toggler {
+        z-index: 999 !important;
+        bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .l-page .menu-toggler .toggler {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        transition: background-color .2s ease;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler {
+        background: rgba(var(--buttoms-color), .92) !important;
+    }
+    .l-page.menu-expanded .menu-toggler .toggler:after {
+        content: "\f00d" !important;
+        font-size: 22px !important;
+    }
+    /* iOS приближает страницу при фокусе на полях мельче 16px */
+    @supports (-webkit-touch-callout: none) {
+        select:not(#u),
+        .c-ms-search,
+        .c-score-input,
+        input[type="text"],
+        input[type="search"],
+        textarea {
+            font-size: 16px !important;
+        }
+    }
+
+    /* --- профиль: «Список аниме» над полосой, а не поверх цифр --- */
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar {
+        height: auto !important;
+        position: relative;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime {
+        margin-top: 10px !important;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
+        position: static !important;
+        display: block;
+        width: auto !important;
+        margin: 0 0 6px 2px !important;
+        text-align: left !important;
+        line-height: 1.3 !important;
+        font-size: 13px !important;
+        opacity: .9 !important;
+        color: rgb(var(--light-color));
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
+        margin-top: 0 !important;
+        border-radius: 10px;
+    }
+    /* подпись ANIME/MANGA и значок совместимости — ниже кнопки «История» */
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime::before,
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga::before {
+        transform: translateY(12px);
+        line-height: 1.2;
+    }
+    .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:not(:has(.compatibility))::before {
+        display: none !important;
+    }
+    .b-stats_bar .compatibility a::before,
+    .b-stats_bar .compatibility .text::before {
+        transform: translateY(16px);
+    }
+}
+
+/* --- страница аниме: действия под постером плитками «значок над текстом» --- */
+@media screen and (max-width: 480px) {
+    .b-db_entry > .c-image .c-actions {
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-actions {
+        align-items: stretch !important;
+        gap: 6px;
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        min-height: 54px;
+        margin: 0 !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box;
+        text-align: center !important;
+        border-radius: 12px;
+        background: rgba(var(--menu-back), .55);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(var(--white-color), .06);
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action::before {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        font-size: 18px !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+        color: rgb(var(--bright-color));
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action::after {
+        content: attr(data-text);
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: clamp(10.5px, 3vw, 12px);
+        line-height: 1.25;
+        white-space: normal;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        color: rgb(var(--light-color));
+    }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-add:not([data-text])::after { content: attr(data-add_text); }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove:not([data-text])::after { content: attr(data-remove_text); }
+    .b-db_entry > .c-image .c-actions .b-subposter-action.fav-remove::before {
+        color: rgb(var(--hover-buttoms-2));
+    }
+}
+
+@keyframes shiki-fade {
+    from { opacity: 0; }
+}
+@keyframes shiki-sheet {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 14px)) scale(.97); }
+}
+@media (prefers-reduced-motion: reduce) {
+    section.l-page.menu-expanded::after,
+    section.l-page.menu-expanded aside.l-menu { animation: none !important; }
 }

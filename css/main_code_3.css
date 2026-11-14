@@ -458,9 +458,6 @@ body#dashboards_show .cc-news {
     border-radius: 50%;
 }
 
-.c-anime_video_episodes .b-show_more-more {
-    display: inline;
-}
 
 .b-input input[type="checkbox"],
 input[type="checkbox"] {
@@ -470,7 +467,6 @@ input[type="checkbox"] {
 
 .b-input input[type="checkbox"]:before,
 input[type="checkbox"]:before {
-    display: inline-block;
     content: "\f10c";
     color: rgba(var(--dark-color), 1);
     display: inline-block;
@@ -1723,7 +1719,6 @@ header.head .notice {
     min-height: 50px;
     margin: 0px auto 25px;
     position: relative;
-    border-radius: 0px;
 }
 
 .x1000 .l-page {
@@ -2058,9 +2053,6 @@ body.p-achievements.p-profiles .block.m0:before {
     display: block !important;
 }
 
-body.p-achievements.p-profiles .l-page {
-    background: linear-gradient(to right, rgba(var(--menu-back), 0.6), rgba(var(--menu-back), 0.6), rgba(var(--menu-back), 0.6));
-}
 
 .block2 .cc-achievements .b-achievement {
     background: rgba(23, 76, 32, 0.5);
@@ -2468,10 +2460,8 @@ body.p-achievements.p-profiles .l-top_menu-v2 {
     font-family: "Material Icons";
     font-style: normal;
     font-weight: 400;
-    src: url("https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNZ.ttf")
-            format("truetype"),
-        url("https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2")
-            format("woff2");
+    src: url("https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
+    font-display: block;
 }
 
 .use-tabs.--On [data-icon]::before {
@@ -3256,7 +3246,6 @@ body.p-achievements.p-profiles input.has-value {
     ) !important;
 }
 .l-top_menu-v2 .global-search .search-results .nothing_found {
-    color: rgba(var(--dark-color), 1);
     border: none !important;
 }
 body.p-achievements.p-profiles .l-top_menu-v2 .global-search .search-results .search-mode.active {
