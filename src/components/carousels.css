@@ -133,6 +133,60 @@
     }
 }
 
+/* стрелки лент: скриншоты и видео на странице аниме/манги */
+@supports selector(::scroll-button(*)) {
+    @media (hover: hover) and (pointer: fine) {
+        /* стрелки лент (только ПК с мышью; CSS-карусель Chromium 135+).
+           Общий компонент: чтобы добавить стрелки другой ленте, допишите её прокручиваемый блок в :is(...);
+           размеры и цвета задаются токенами --arrow-* в tokens/components.css */
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*) {
+            position: absolute;
+            top: calc(50% + 14px);
+            z-index: 5;
+            width: var(--arrow-size);
+            height: var(--arrow-size);
+            margin-top: -19px;
+            border-radius: 50%;
+            border: 1px solid var(--arrow-border);
+            background-color: var(--arrow-bg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: var(--arrow-icon-size);
+            backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
+            -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+            box-shadow: var(--arrow-shadow);
+            color: transparent;
+            cursor: pointer;
+            opacity: .92;
+            transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
+            content: "" / "Назад";
+            left: var(--arrow-inset);
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjUgNmwtNiA2IDYgNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(right) {
+            content: "" / "Вперёд";
+            right: var(--arrow-inset);
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA2bDYgNi02IDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==");
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):hover {
+            background-color: var(--arrow-bg-hover);
+            border-color: var(--arrow-bg-hover);
+            opacity: 1;
+            transform: scale(1.06);
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):active { transform: scale(.94); }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
+            opacity: .25;
+            cursor: default;
+            background-color: var(--plate-bg-strong);
+            border-color: rgba(var(--glass-light), 0.08);
+            transform: none;
+        }
+    }
+}
+
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 767px) {

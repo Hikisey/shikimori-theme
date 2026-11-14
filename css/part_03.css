@@ -1,3 +1,154 @@
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 1023px) {
+    .item-cancel,
+    .item-reply,
+    .item-edit,
+    .item-ignore,
+    .item-delete-cancel,
+    .item-moderation,
+    .item-moderation-cancel,
+    .item-delete,
+    .item-request-reject,
+    .item-cancel:after,
+    .item-reply:after,
+    .item-edit:after,
+    .item-ignore:after,
+    .item-delete-cancel:after,
+    .item-moderation:after,
+    .item-moderation-cancel:after,
+    .item-delete:after,
+    .item-request-reject:after,
+    .item-cancel:before,
+    .item-reply:before,
+    .item-edit:before,
+    .item-ignore:before,
+    .item-delete-cancel:before,
+    .item-moderation:before,
+    .item-moderation-cancel:before,
+    .item-delete:before,
+    .item-request-reject:before,
+    .item-delete-confirm:after,
+    .item-delete-cancel:after,
+    .item-delete-confirm:before,
+    .item-delete-cancel:before,
+    .item-abuse:before,
+    .item-abuse:after,
+    .item-spoiler:before,
+    .item-spoiler:after,
+    .item-offtopic:before,
+    .item-offtopic:after {
+        font-family: "Comfortaa", sans-serif;
+        color: rgba(var(--text), var(--hundred));
+    }
+    .b-shiki_editor aside.markers {
+        float: right;
+        height: 20px;
+        margin-right: 10px;
+        margin-top: 4px;
+    }
+    .b-shiki_editor aside.buttons {
+        white-space: nowrap;
+        width: 80%;
+        float: left !important;
+    }
+    .editor-controls {
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .buttons .editor-quote {
+        display: inline-block !important;
+    }
+    .b-shiki_editor .links.links p,
+    .b-shiki_editor .images.links p,
+    .b-shiki_editor .quotes.links p,
+    .b-shiki_editor .email.links p,
+    .b-shiki_editor .upload.links p {
+        width: 100%;
+        height: 46px;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .b-shiki_editor .links,
+    .b-shiki_editor .images,
+    .b-shiki_editor .quotes,
+    .b-shiki_editor .email,
+    .b-shiki_editor .upload {
+        width: 100%;
+        height: 46px;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .b-shiki_editor .links input,
+    .b-shiki_editor .images input,
+    .b-shiki_editor .quotes input,
+    .b-shiki_editor .email input,
+    .b-shiki_editor .upload input {
+        margin-top: 8px;
+    }
+    .b-shiki_editor .hidden-block {
+        width: 100%;
+        max-width: 460px;
+    }
+    .b-comment > .inner header .name-date {
+        margin-left: 55px !important;
+    }
+    .buttons .editor-italic:before,
+    .buttons .editor-spoiler:before,
+    .buttons .editor-smiley:before,
+    .buttons .editor-quote:before,
+    .buttons .editor-image:before,
+    .buttons .editor-link:before,
+    .buttons .editor-strike:before,
+    .buttons .editor-underline:before,
+    .buttons .editor-bold:before {
+        font-size: 22px !important;
+    }
+    .CodeMirror-dialog-top {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .fullwidth>.b-spoiler>label:not(._) {
+        white-space: nowrap;
+        padding: 0.47em 6em 0.47em 1em;
+    }
+    .buttons .editor-italic,
+    .buttons .editor-spoiler,
+    .buttons .editor-smiley,
+    .buttons .editor-quote,
+    .buttons .editor-image,
+    .buttons .editor-link,
+    .buttons .editor-strike,
+    .buttons .editor-underline,
+    .buttons .editor-bold,
+    .buttons .editor-file {
+        margin-left: 0 ;
+        padding: 7px 13px;
+    }
+    .buttons .editor-bold {
+        padding: 7px 13px;
+    }
+    .b-shiki_editor aside.buttons {
+        white-space: normal;
+    }
+    .editor-controls {
+        white-space: normal;
+        overflow-x: auto;
+        height: 50px;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 0  !important;
+    }
+    .editor-container .b-summary_marker {
+        width: 10px !important;
+    }
+    .editor-container .b-summary_marker:before {
+        margin-left: -34px;
+    }
+}
+
 @media screen and (max-width: 480px) and (orientation: portrait) {
     .b-shiki_editor aside.buttons {
         width: 70%;
@@ -2431,252 +2582,4 @@ div.compatibility > span.link-replacement > .text.full:before {
         padding-right: 14px;
         padding-top: 3px;
     }
-}
-
-@media screen and (max-width: 767px) {
-    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
-    html body.p-profiles .profile-head .c-brief header.head .misc {
-        position: static !important;
-        top: auto !important;
-        margin: 4px 0 0 !important;
-        width: 100%;
-        text-align: center;
-    }
-    html body.p-profiles .profile-head .c-info {
-        position: static !important;
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        margin: 14px 0 0 !important;
-        padding: 0 !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga { order: 2; }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
-        position: static !important;
-        display: block !important;
-        width: auto !important;
-        margin: 0 0 8px !important;
-        padding: 0 40px 0 0 !important;
-        text-align: left !important;
-        line-height: 18px !important;
-        font-size: 13px !important;
-        opacity: 1 !important;
-        color: rgb(var(--text)) !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
-        position: relative !important;
-        margin: 0 !important;
-        height: 26px !important;
-        line-height: 26px !important;
-        border-radius: 8px;
-        overflow: hidden !important;
-        font-size: 12px;
-    }
-    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
-        display: none !important;
-        content: none !important;
-    }
-    /* совместимость — значок в правом верхнем углу карточки */
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
-        position: absolute !important;
-        top: 9px !important;
-        right: 12px !important;
-        left: auto !important;
-        bottom: auto !important;
-        display: flex !important;
-        align-items: center;
-        gap: 6px;
-        height: 20px;
-        margin: 0 !important;
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a::before,
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text::before {
-        position: static !important;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        font-size: 17px !important;
-        line-height: 20px !important;
-        margin: 0 !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-additionals {
-        position: static !important;
-        display: block !important;
-        width: auto !important;
-        height: auto !important;
-        margin: 8px 0 0 !important;
-        padding: 0 !important;
-        background: none !important;
-        box-shadow: none !important;
-        text-align: center;
-        font-size: 12px;
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
-    html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
-    /* друзья и клубы — две стеклянные карточки */
-    body.p-profiles-show .cc-2a {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin: 14px 0 !important;
-    }
-    body.p-profiles-show .cc-2a > .c-column > .subheadline {
-        margin: 0 0 8px !important;
-        width: auto !important;
-    }
-    body.p-profiles-show .cc-friends {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
-        gap: 6px 4px;
-        margin: 0 !important;
-    }
-    body.p-profiles-show .cc-friends .b-user {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center;
-    }
-    html body#profiles_show.p-profiles-show .cc-2a .b-nothing_here {
-        margin: 0 !important;
-        font-size: 12.5px;
-        line-height: 1.4 !important;
-        color: rgb(var(--text-2));
-    }
-    .p-profiles .profile-head .c-brief header.head.head {
-        width: fit-content !important;
-        max-width: 100%;
-        margin: 10px auto 0 !important;
-        padding: 6px 16px 8px !important;
-        border-radius: 16px;
-    }
-    /* ================================================================
-       v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
-       ================================================================ */
-    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
-    body.p-profiles-show .profile-head {
-        position: relative;
-        z-index: 0;
-    }
-    body.p-profiles-show .profile-head::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
-        width: auto !important;
-        height: var(--profile-banner-height-mobile);
-        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
-        border-radius: 0;
-        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
-        mask-image: linear-gradient(to bottom, #000 62%, transparent);
-        pointer-events: none;
-    }
-    /* мягкое свечение в цвет картинки под баннером */
-    body.p-profiles-show .profile-head::after {
-        content: "";
-        position: absolute;
-        z-index: -2;
-        top: calc(var(--profile-banner-height-mobile) - 70px);
-        left: 8%;
-        right: 8%;
-        display: block !important;
-        width: auto !important;
-        height: 140px;
-        background: var(--profile-banner) center bottom / cover no-repeat;
-        filter: blur(32px) saturate(1.5);
-        opacity: var(--profile-banner-glow);
-        pointer-events: none;
-    }
-}
-
-/* ===== pages/anime =====
-   страница аниме/манги/персонажа: описание, постер, кадры и видео, плеер, «добавить в список» */
-
-/* цвет смотрю, планы и т.д. */
-.b-db_entry-note .name-container .note .relation,
-.b-db_entry-note .name-container .note .additional {
-    color: rgba(var(--text-2), 1) !important;
-}
-
-.b-add_to_list.completed .trigger,
-.b-add_to_list.completed .option {
-    background: #1c4c20;
-    border-color: rgba(var(--glass), 0.4);
-    color: #c4e9ed;
-}
-
-.b-add_to_list.dropped .trigger,
-.b-add_to_list.dropped .option {
-    background: #77251c;
-    border-color: rgba(var(--glass), 0.4);
-    color: #f2ddcc;
-}
-
-/* кнопка "Отложено" на страничке аниме*/
-.b-add_to_list.on_hold .trigger,
-.b-add_to_list.on_hold .option {
-    background: #864e13;
-    border-color: rgba(var(--glass), 0.4);
-    color: var(--tone-ebeef1);
-}
-
-/* кнопка "Запланировано" на страничке аниме*/
-.b-add_to_list.planned .trigger,
-.b-add_to_list.planned .option {
-    background: #173969;
-    border-color: rgba(var(--glass), 0.4);
-    color: #cfe0ec;
-}
-
-/* кнопка "Смотрю" на страничке аниме*/
-.b-add_to_list.watching .trigger,
-.b-add_to_list.watching .option {
-    background: #382f7b;
-    border-color: rgba(var(--glass), 0.4);
-    color: #d8f8f6;
-}
-
-/* кнопка "Пересмотравиваю" на страничке аниме*/
-.b-add_to_list.rewatching .trigger,
-.b-add_to_list.rewatching .option {
-    background: #115652;
-    border-color: rgba(var(--glass), 0.4);
-    color: #d8f8f6;
-}
-
-.b-add_to_list.planned.expanded .trigger,
-.b-add_to_list.planned .trigger,
-.b-add_to_list.completed.expanded .trigger,
-.b-add_to_list.completed .trigger,
-.b-add_to_list.dropped.expanded .trigger,
-.b-add_to_list.dropped .trigger,
-.b-add_to_list.on_hold.expanded .trigger,
-.b-add_to_list.on_hold .trigger,
-.b-add_to_list.watching.expanded .trigger,
-.b-add_to_list.watching .trigger,
-.b-add_to_list.rewatching.expanded .trigger,
-.b-add_to_list.rewatching .trigger {
-    border: 2px solid #cfe0ec26;
-    box-shadow: var(--plate-shadow) !important;
-    border-radius: 6px;
-}
-
-.b-catalog_entry-tooltip .b-add_to_list {
-    min-width: 225px;
-}
-
-/* надпись красным "Удалить из списка" */
-.b-add_to_list .expanded-options .remove-trigger .text {
-    color: #ffa09e;
-}
-
-.b-add_to_list .expanded-options {
-    border-radius: 7px;
 }

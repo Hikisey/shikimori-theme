@@ -404,6 +404,60 @@
     }
 }
 
+/* стрелки лент: скриншоты и видео на странице аниме/манги */
+@supports selector(::scroll-button(*)) {
+    @media (hover: hover) and (pointer: fine) {
+        /* стрелки лент (только ПК с мышью; CSS-карусель Chromium 135+).
+           Общий компонент: чтобы добавить стрелки другой ленте, допишите её прокручиваемый блок в :is(...);
+           размеры и цвета задаются токенами --arrow-* в tokens/components.css */
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*) {
+            position: absolute;
+            top: calc(50% + 14px);
+            z-index: 5;
+            width: var(--arrow-size);
+            height: var(--arrow-size);
+            margin-top: -19px;
+            border-radius: 50%;
+            border: 1px solid var(--arrow-border);
+            background-color: var(--arrow-bg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: var(--arrow-icon-size);
+            backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
+            -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+            box-shadow: var(--arrow-shadow);
+            color: transparent;
+            cursor: pointer;
+            opacity: .92;
+            transition: background-color .2s ease, border-color .2s ease, opacity .2s ease, transform .2s ease;
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
+            content: "" / "Назад";
+            left: var(--arrow-inset);
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjUgNmwtNiA2IDYgNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(right) {
+            content: "" / "Вперёд";
+            right: var(--arrow-inset);
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA2bDYgNi02IDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==");
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):hover {
+            background-color: var(--arrow-bg-hover);
+            border-color: var(--arrow-bg-hover);
+            opacity: 1;
+            transform: scale(1.06);
+        }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):active { transform: scale(.94); }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
+            opacity: .25;
+            cursor: default;
+            background-color: var(--plate-bg-strong);
+            border-color: rgba(var(--glass-light), 0.08);
+            transform: none;
+        }
+    }
+}
+
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 767px) {
@@ -2934,156 +2988,5 @@ a.b-link.bubbled-processed {
     .b-comment .b-height_shortener {
         margin-left: 55px;
         position: relative;
-    }
-}
-
-/* ----- телефон и узкие экраны ----- */
-
-@media screen and (max-width: 1023px) {
-    .item-cancel,
-    .item-reply,
-    .item-edit,
-    .item-ignore,
-    .item-delete-cancel,
-    .item-moderation,
-    .item-moderation-cancel,
-    .item-delete,
-    .item-request-reject,
-    .item-cancel:after,
-    .item-reply:after,
-    .item-edit:after,
-    .item-ignore:after,
-    .item-delete-cancel:after,
-    .item-moderation:after,
-    .item-moderation-cancel:after,
-    .item-delete:after,
-    .item-request-reject:after,
-    .item-cancel:before,
-    .item-reply:before,
-    .item-edit:before,
-    .item-ignore:before,
-    .item-delete-cancel:before,
-    .item-moderation:before,
-    .item-moderation-cancel:before,
-    .item-delete:before,
-    .item-request-reject:before,
-    .item-delete-confirm:after,
-    .item-delete-cancel:after,
-    .item-delete-confirm:before,
-    .item-delete-cancel:before,
-    .item-abuse:before,
-    .item-abuse:after,
-    .item-spoiler:before,
-    .item-spoiler:after,
-    .item-offtopic:before,
-    .item-offtopic:after {
-        font-family: "Comfortaa", sans-serif;
-        color: rgba(var(--text), var(--hundred));
-    }
-    .b-shiki_editor aside.markers {
-        float: right;
-        height: 20px;
-        margin-right: 10px;
-        margin-top: 4px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: nowrap;
-        width: 80%;
-        float: left !important;
-    }
-    .editor-controls {
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .buttons .editor-quote {
-        display: inline-block !important;
-    }
-    .b-shiki_editor .links.links p,
-    .b-shiki_editor .images.links p,
-    .b-shiki_editor .quotes.links p,
-    .b-shiki_editor .email.links p,
-    .b-shiki_editor .upload.links p {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links,
-    .b-shiki_editor .images,
-    .b-shiki_editor .quotes,
-    .b-shiki_editor .email,
-    .b-shiki_editor .upload {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links input,
-    .b-shiki_editor .images input,
-    .b-shiki_editor .quotes input,
-    .b-shiki_editor .email input,
-    .b-shiki_editor .upload input {
-        margin-top: 8px;
-    }
-    .b-shiki_editor .hidden-block {
-        width: 100%;
-        max-width: 460px;
-    }
-    .b-comment > .inner header .name-date {
-        margin-left: 55px !important;
-    }
-    .buttons .editor-italic:before,
-    .buttons .editor-spoiler:before,
-    .buttons .editor-smiley:before,
-    .buttons .editor-quote:before,
-    .buttons .editor-image:before,
-    .buttons .editor-link:before,
-    .buttons .editor-strike:before,
-    .buttons .editor-underline:before,
-    .buttons .editor-bold:before {
-        font-size: 22px !important;
-    }
-    .CodeMirror-dialog-top {
-        margin-top: 80px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fullwidth>.b-spoiler>label:not(._) {
-        white-space: nowrap;
-        padding: 0.47em 6em 0.47em 1em;
-    }
-    .buttons .editor-italic,
-    .buttons .editor-spoiler,
-    .buttons .editor-smiley,
-    .buttons .editor-quote,
-    .buttons .editor-image,
-    .buttons .editor-link,
-    .buttons .editor-strike,
-    .buttons .editor-underline,
-    .buttons .editor-bold,
-    .buttons .editor-file {
-        margin-left: 0 ;
-        padding: 7px 13px;
-    }
-    .buttons .editor-bold {
-        padding: 7px 13px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: normal;
-    }
-    .editor-controls {
-        white-space: normal;
-        overflow-x: auto;
-        height: 50px;
-    }
-    .b-shiki_editor aside.buttons .editor-spoiler {
-        margin-left: 0  !important;
-    }
-    .editor-container .b-summary_marker {
-        width: 10px !important;
-    }
-    .editor-container .b-summary_marker:before {
-        margin-left: -34px;
     }
 }

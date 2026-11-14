@@ -1,3 +1,307 @@
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    text-align: center;
+    padding: 130% 0.65rem 0;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
+    font-size: 15px;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    background: var(--tone-171616);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    top: 0;
+    line-height: 1.5;
+    color: #cce0d1;
+    font-weight: bold;
+    border: solid 2px var(--tone-373737);
+    border-radius: 0.25rem;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover .misc {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 0.7rem;
+    left: -3rem;
+    z-index: 10;
+    font-size: 15px !important;
+    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
+    pointer-events: none;
+    transition: left .4s ease, opacity .4s ease;
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry {
+    transition: none;
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .about .Animes_Mangas-1 .b-catalog_entry:hover {
+        transform: none;
+    }
+}
+
+/* из kits/about-kits */
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1-standard:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-anime-v-1:hover .b-link {
+    opacity: 0;
+}
+
+/* из kits/about-kits */
+div.Ssylki-Characters:hover .b-link {
+    opacity: 1;
+}
+
+/* из kits/about-kits */
+* .about .k-0-1 .c-column,
+* .about .k-0-1 .c-column:last-child,
+* .about .k-0-1 .b-catalog_entry,
+* .about .k-0-1 .b-catalog_entry:last-child,
+* .p-profiles-edit .k-0-1 .c-column,
+* .p-profiles-edit .k-0-1 .c-column:last-child,
+* .p-profiles-edit .k-0-1 .b-catalog_entry,
+* .p-profiles-edit .k-0-1 .b-catalog_entry:last-child,
+* .k-0-1 .cc-4>.c-column,
+* .k-0-1 .cc-6-g0>.c-column,
+* .k-0-1 .cc-6-g0>.c-column:last-child,
+* .b-comments .k-0-1 .c-column,
+* .b-comments .k-0-1 .c-column:last-child,
+* .b-comments .k-0-1 .b-catalog_entry,
+* .b-comments .k-0-1 .b-catalog_entry:last-child,
+* .b-comments .k-0-1 .cc-4>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column,
+* .b-comments .k-0-1 .cc-6-g0>.c-column:last-child {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0;
+}
+
+/* из kits/about-kits */
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из kits/about-kits */
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    /* из components/cards */
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* из components/cards */
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+
+/* --- Верхняя панель: подсветка только того пункта, что под курсором --- */
+/* из layout/header */
+.l-top_menu-v2 .menu-icon,
+.l-top_menu-v2 .menu-dropdown > button,
+.l-top_menu-v2 .menu-dropdown > span {
+    border-radius: 8px;
+    transition: background-color .25s ease, color .25s ease !important;
+}
+
+/* --- Читаемость страницы настроек --- */
+/* Подсказки под полями */
+/* из pages/settings */
+.b-input .hint,
+.hint,
+.b-input .hint *,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: rgb(var(--text-2)) !important;
+    opacity: 1 !important;
+}
+
+/* Поля ввода были почти невидимы — тёмный фон, рамка, подсветка при фокусе */
+/* из components/forms */
+.b-input input[type="text"],
+.b-input input[type="email"],
+.b-input input[type="url"],
+.b-input input[type="password"],
+.b-input textarea,
+.edit_user input[type="text"],
+.edit_user input[type="url"],
+.edit_user textarea {
+    background: color-mix(in srgb, var(--glass-deep) 85%, transparent) !important;
+    color: rgb(var(--text)) !important;
+    border: 1px solid rgba(var(--glass-light), .10) !important;
+    border-radius: 8px !important;
+    transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+
+/* из components/forms */
+.b-input input:focus,
+.b-input textarea:focus,
+.edit_user input:focus,
+.edit_user textarea:focus {
+    border-color: rgba(var(--accent), .6) !important;
+    box-shadow: 0 0 0 3px rgba(var(--accent), .15) !important;
+    outline: none !important;
+}
+
+/* --- Мелкие фиксы --- */
+/* Выровнял пункт «Правила» во всплывающем справа меню */
+/* из layout/header */
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
+}
+
+/* из pages/anime */
+.b-db_entry .c-poster .poster,
+.b-db_entry img.image {
+    border-radius: 12px;
+}
+
+/* из components/buttons */
+.b-link_button,
+.b-button,
+button.b-button,
+.add-to-list,
+.current {
+    border-radius: var(--plate-radius) !important;
+    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из components/buttons */
+    .b-link_button:hover,
+    .b-button:hover {
+        /* v1.2.22: без сдвига на 1px — у нижнего края наведение мигало */
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--glass-shadow) 45%, transparent);
+    }
+}
+
+/* из pages/achievements */
+.b-catalog_entry,
+.b-user,
+.b-club,
+.b-achievement,
+.cc-franchises .b-badge,
+.b-link_button,
+.b-button,
+.menu-item,
+.b-options-floated .item {
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .15s ease;
+}
+
+/* из base/base */
+a:hover,
+.b-link:hover,
+.b-js-link:hover {
+    color: var(--link-hover) !important;
+}
+
+/* --- Настройки: мелкий текст чуть ярче --- */
+/* из pages/settings */
+.b-input .hint,
+.b-input .hint span,
+.hint,
+.hint span,
+.edit_user .hint,
+.edit_user_preferences .hint {
+    color: var(--tone-c4cad4) !important;
+}
+
+/* из pages/settings */
+.p-profiles-edit .b-options-floated a,
+.p-profiles-edit .b-options-floated .item,
+.p-profiles-edit .b-options-floated span,
+.p-profiles-edit .section-icon + span {
+    color: var(--tone-d6dbe4) !important;
+}
+
+/* --- Подвал --- */
+/* из layout/footer */
+.l-footer,
+.l-footer a,
+.l-footer .copyright {
+    color: var(--text-input) !important;
+}
+
+/* --- Настройки: подключённые и неподключённые сервисы — видимые плитки --- */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a,
+.p-profiles-edit .account .oauth .b-link_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--glass), .95) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    border-radius: var(--plate-radius) !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .account .oauth a:hover,
+    .p-profiles-edit .account .oauth .b-link_button:hover {
+        border-color: rgba(var(--accent), .55) !important;
+        background: var(--glass-popup) !important;
+        box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+    }
+}
+
+/* v1.2.22: плитка сервиса стоит на месте, поднимается только значок внутри.
+   Раньше поднималась вся плитка, у нижнего края курсор выпадал из неё,
+   курсор мигал между «рукой» и стрелкой, а подсказка «Подключить авторизацию…» пропадала. */
+/* из pages/settings */
+.p-profiles-edit .account .oauth a::before,
+.p-profiles-edit .account .oauth a > * {
+    transition: transform .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .account .oauth a:hover::before,
+    .p-profiles-edit .account .oauth a:hover > * {
+        transform: translateY(-2px);
+    }
+}
+
 /* --- Тактильный отклик: кнопки и поля слегка «проваливаются» при нажатии --- */
 /* из pages/settings */
 .b-link_button:active,
