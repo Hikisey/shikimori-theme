@@ -65,7 +65,7 @@ input[type="checkbox"]:active,
     .p-profiles-edit button[type="submit"]:hover,
     .p-profiles-edit .b-button:hover,
     .p-profiles-edit .buttons input:hover {
-        background: var(--accent-hover) !important;
+        background: var(--btn-bg-hover) !important;
         box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
     }
 }

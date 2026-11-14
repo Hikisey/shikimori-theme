@@ -281,7 +281,7 @@ a:-webkit-any-link {
 
 /* из pages/anime */
 .p-animes .c-about .watch-online > a.kind {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    background-color: var(--btn-bg);
     border-radius: 15px;
     border-color: var(--tone-3e4d5d);
     color: rgb(var(--text));
@@ -3623,7 +3623,7 @@ input[type="checkbox"]:active,
     .p-profiles-edit button[type="submit"]:hover,
     .p-profiles-edit .b-button:hover,
     .p-profiles-edit .buttons input:hover {
-        background: var(--accent-hover) !important;
+        background: var(--btn-bg-hover) !important;
         box-shadow: 0 6px 18px rgba(var(--accent), .25) !important;
     }
 }

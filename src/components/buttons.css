@@ -3,21 +3,21 @@
 
 /* кнопка смотреть онлайн */
 .b-link_button {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    background-color: var(--btn-bg) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .b-link_button:hover {
-        background-color: var(--accent-hover) !important;
-        color: rgb(var(--text-strong)) !important;
+        background-color: var(--btn-bg-hover) !important;
+        color: var(--btn-text) !important;
         border: none !important;
     }
 }
 
 .b-link_button {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    background-color: var(--btn-bg);
     border: none;
-    color: rgba(var(--text-strong), 1) !important;
+    color: var(--btn-text) !important;
     box-shadow: var(--plate-shadow);
 }
 
@@ -146,7 +146,7 @@
 }
 
 .bulma .button.is-info {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    background-color: var(--btn-bg) !important;
     border-color: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
     color: rgba(var(--text-strong), var(--hundred));
     transition: 0.2s ease;
@@ -155,7 +155,7 @@
 }
 
 .b-link_button.dark-2 {
-    background-color: color-mix(in srgb, var(--accent-dim) 70%, transparent);
+    background-color: var(--btn-bg);
     color: rgba(var(--text-strong), var(--hundred));
     border-radius: 6px;
 }
