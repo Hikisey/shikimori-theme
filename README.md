@@ -17,7 +17,7 @@
 
 Нужно только скопировать один файл в настройки профиля.
 
-1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
+1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
 2. Выделите весь текст (Ctrl+A) и скопируйте его (Ctrl+C).
 3. На Шикимори откройте свой профиль, затем «Настройки» и вкладку «Внешний вид сайта». Прямая ссылка: `https://shikimori.one/ВАШ_НИК/edit/styles`.
 4. Удалите всё, что уже есть в поле стиля, и вставьте скопированный текст (Ctrl+V).
@@ -37,43 +37,17 @@
 ```css
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css?v=2");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_2.css?v=2");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_3.css?v=2");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_4mob.css?v=3");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_5mob.css?v=3");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.1/css/main_code_4mob.css");
 ```
 
-Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные пять подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
+Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные четыре подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
 
 ### Обновление до новой версии
 
-Обновления приходят сами. Ссылки ведут на ветку `main`, поэтому менять в них ничего не нужно.
-
-Шикимори не подключает файлы темы напрямую: он скачивает их, когда вы сохраняете стиль, и хранит готовый результат у себя. После выхода новой версии автор сбрасывает кеш Шикимори, и тема обновляется при следующем открытии страницы. Скачанный файл Шикимори держит в кеше до 8 часов, поэтому повторное сохранение стиля без сброса кеша может вернуть старую версию.
-
-Если новая версия не появилась:
-
-- Обновите страницу с Ctrl+Shift+R.
-- Если стиль ещё со старыми ссылками (`v1.1` в адресах), один раз вставьте свежий [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/site.css) целиком. Свою палитру перед этим лучше скопировать, чтобы вернуть её после вставки.
-- Если после сохранения вверху появилось сообщение об ошибке импорта, Шикимори не смог скачать файлы темы. Верните прежний стиль и попробуйте позже.
-
-### Для автора: выпуск обновления
-
-1. Отправьте изменения в ветку `main` и подождите 5 минут: столько GitHub держит старый файл в кеше.
-2. Проверьте, что Шикимори сейчас может скачать файлы. Во «Внешнем виде сайта» добавьте в начало стиля строку ниже и подождите предпросмотра, не сохраняя. Если появилось сообщение об ошибке импорта, сброс кеша пока делать нельзя: стиль у всех пересоберётся без темы.
-
-   ```css
-   @import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/main/css/main_code_1.css?check=1");
-   ```
-
-   Если превью показывает старую версию файла, значит у Шикимори застрял старый кеш по этой ссылке. Тогда увеличьте число в `?v=2` во всех ссылках темы в `site.css` (например, на `?v=3`): для Шикимори это новые адреса, и он скачает их заново. Пользователям после этого нужно один раз вставить новый `site.css`.
-
-3. Сбросьте кеш для каждого изменённого файла, нажав Submit на странице (ссылки ниже уже с `?v=2`, адрес должен совпадать с тем, что в `site.css`, до символа):
-   [main_code_1](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_1.css%3Fv%3D2),
-   [main_code_2](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_2.css%3Fv%3D2),
-   [main_code_3](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_3.css%3Fv%3D2),
-   [main_code_4mob](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_4mob.css%3Fv%3D3), [main_code_5mob](https://shikimori.one/tests/reset_styles_cache?url=https%3A%2F%2Fraw.githubusercontent.com%2FHikisey%2Fshikimori-theme%2Fmain%2Fcss%2Fmain_code_5mob.css%3Fv%3D3).
+В ссылках указана версия `v1.1`, поэтому Шикимори не подсовывает старые файлы из кеша. Когда выйдет новая версия, замените `v1.1` на её номер во всех четырёх ссылках темы и сохраните.
 
 ## Палитра и картинки
 
