@@ -1139,6 +1139,10 @@ body#clubs_edit .b-options-floated a:active:after {
     .b-achievement .c-about {
         padding: 14px;
     }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 314px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 735px) {
@@ -1148,9 +1152,16 @@ body#clubs_edit .b-options-floated a:active:after {
     .b-achievement .c-about {
         padding: 12px;
     }
+    .b-achievement .c-about .hint.hint {
+        font-size: 10px;
+    }
     .b-achievement .c-about .percent {
         float: right;
         font-size: 12px;
+    }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 314px;
     }
 }
 
@@ -1158,6 +1169,13 @@ body#clubs_edit .b-options-floated a:active:after {
     body.p-achievements.p-profiles .block.m0:before {
         content: "★ ACHIEVEMENTS ★";
         font-size: 32px;
+    }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 274px;
+    }
+    .p-achievements-index .c-franchises .b-badge.b-badge {
+        margin: 6px !important;
     }
     .p-achievements-index .c-franchises .b-badge[data-progress="100"]:after {
         background: linear-gradient(135deg, transparent 280px, #483d1c 0);

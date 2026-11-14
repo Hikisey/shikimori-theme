@@ -53,17 +53,13 @@ a.start.b-button,
     color: rgba(var(--link), 1) !important;
 }
 
+.p-profiles-edit .account .change-password a:hover {
+    color: rgba(var(--link), 1);
+}
+
 .p-profiles-edit .list .profile-action a:not(.b-button) {
     padding: 0 8px;
     color: rgba(var(--link), 1) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-edit .list .profile-action a:not(.b-button):hover {
-        color: rgba(var(--link), 1) !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
 }
 
 .profile-actions .mail::before,
@@ -98,6 +94,21 @@ a.start.b-button,
         color: rgba(var(--accent), 1) !important;
         transform: scale(1.3);
     }
+}
+
+.profile-actions .mail:before,
+.profile-actions .talk:before,
+.profile-actions .settings:before,
+.profile-actions .ban:before,
+.profile-actions .fav-add::before,
+.profile-actions .fav-remove::before,
+.profile-actions .ignore-add:before,
+.profile-actions .ignore-remove:before {
+    transition: 0s ease, -webkit-0s ease, transform 0.2s, ease color .2s;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 
 .profile-actions .ignore-add:before {
@@ -184,18 +195,19 @@ a.start.b-button,
     color: rgb(var(--text)) !important;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-edit .account .oauth a:hover,
-    .p-profiles-edit .account .oauth .b-link_button:hover {
-        border-color: rgba(var(--accent), .55) !important;
-        background: var(--glass-popup) !important;
-        box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
-    }
-}
-
 /* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
 body.p-profiles-edit .tipsy.tipsy-s {
     transform: translateY(calc(100% + 38px));
+}
+
+body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
+    top: 0 !important; bottom: auto !important;
+    transform: rotate(180deg);
+}
+
+.oauth a:is(.yandex,.google,.google_oauth2,[href*="auth/yandex"],[href*="auth/google"])>*:not(._),
+.oauth a:is(.yandex,.google,.google_oauth2,[href*="auth/yandex"],[href*="auth/google"]):not(._)::before {
+    filter: brightness(1.12) saturate(1.1) !important;
 }
 
 /* ----- телефон и узкие экраны ----- */

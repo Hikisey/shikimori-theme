@@ -210,10 +210,6 @@
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
-.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
 /*Новый тех ред */
 .p-topics-index .b-shiki_editor-v2 footer .hide {
     display: inline-block!important;

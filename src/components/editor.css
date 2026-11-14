@@ -39,14 +39,6 @@
     border: none !important;
 }
 
-.b-comments .comments-loader:active,
-.b-comments .comments-hider:active,
-.b-comments .comments-expander:active {
-    background: rgba(var(--glass), 0.4);
-    color: rgba(var(--text-2), 1);
-    border: none;
-}
-
 .b-shiki_editor .body .editor textarea,
 .b-input input[disabled],
 .b-input input[type="submit"],
@@ -88,15 +80,6 @@
 .b-shiki_editor footer .cancel {
     margin: 0 20px 10px 0;
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-comments .comments-loader:hover,
-    .b-comments .comments-hider:hover,
-    .b-comments .comments-expander:hover {
-        background-color: rgb(var(--glass-light));
-        color: rgb(var(--text-strong));
-    }
 }
 
 /* полоса оттеняющая, если не развернуто */
@@ -436,6 +419,11 @@ input[type="number"],
 
 .b-shiki_editor .links {
     height: 63px;
+}
+
+.b-comment>.inner header .name-date.name-date {
+    white-space: normal;
+    line-height: 1.7;
 }
 
 .block .b-comment.shiki-object:last-child {
@@ -833,6 +821,10 @@ a.b-link.bubbled-processed {
 }
 
 @media screen and (max-width: 767px) {
+    .fullwidth>.b-spoiler>label:not(._) {
+        white-space: nowrap;
+        padding: 0.47em 6em 0.47em 1em;
+    }
     .buttons .editor-italic,
     .buttons .editor-spoiler,
     .buttons .editor-smiley,
@@ -889,6 +881,11 @@ a.b-link.bubbled-processed {
 }
 
 @media screen and (max-width: 480px) {
+    .b-comments .comments-loader.comments-loader,
+    .b-comments .comments-hider.comments-hider,
+    .b-comments .comments-expander.comments-expander {
+        padding: 5px 4px;
+    }
     .b-comments .comments-loader.click-loader {
         padding: 5px 30px 5px 30px;
     }

@@ -617,6 +617,10 @@ td {
     overflow: visible;
 }
 
+.to-review.to-review:after {
+    content: 'к отзыву';
+}
+
 .to-review:before {
     content: '\f123';
 }
@@ -1370,6 +1374,10 @@ span.submenu-triangle.icon-avatar img {
     );
 }
 
+.l-top_menu-v2 .global-search .search-results .nothing_found.nothing_found {
+    border: none !important;
+}
+
 .l-top_menu-v2 .global-search .search-results .nothing_found {
     color: var(--tone-b5a28c);
 }
@@ -1444,6 +1452,10 @@ span.submenu-triangle.icon-avatar img {
     border-radius: 0 0 12px 12px !important;
     box-shadow: 0 14px 30px rgba(var(--shade), 0.5) !important;
     backdrop-filter: none !important;
+}
+
+span.submenu-triangle.submenu-triangle.icon-profile {
+    background: transaprent;
 }
 
 .l-top_menu-v2 .menu-dropdown .submenu {
@@ -1531,6 +1543,19 @@ span.submenu-triangle.icon-avatar img {
     background: var(--glass-bar-hover) !important;
 }
 
+/* Пункты внутри выпадающих меню — мягкая подсветка под курсором */
+.l-top_menu-v2 .submenu>a:not(._),
+.l-top_menu-v2 .submenu .submenu-title.submenu-title {
+    background: transparent !important;
+    border-radius: 8px;
+    transition: background-color .2s ease, color .2s ease !important;
+}
+
+.l-top_menu-v2 .submenu>a:hover:not(._) {
+    background: rgba(var(--glass-light), .06) !important;
+    color: rgb(var(--text)) !important;
+}
+
 .l-top_menu-v2 .submenu>a.icon-site_rules:after {
     content: 'Правила';
 }
@@ -1595,6 +1620,9 @@ span.submenu-triangle.icon-avatar img {
     .l-top_menu-v2 .menu-dropdown > span[data-unread_count]:after {
         display: none;
     }
+    .l-top_menu-v2 .logo-container .logo.logo {
+        width: 110px;
+    }
     .x1000 .menu-slide-outer.x199 .l-content,
     .menu-slide-outer.x199 .l-content {
         width: 98% !important;
@@ -1605,6 +1633,9 @@ span.submenu-triangle.icon-avatar img {
     .x1200 .menu-slide-outer.x199 .l-content {
         width: 98% !important;
         top: 5px;
+    }
+    .l-page .menu-slide-outer .menu-slide-inner.menu-slide-inner {
+        width: 100%;
     }
 }
 
@@ -1819,10 +1850,22 @@ body * .b-abuse_marker:before {
     color: #e4c6c6;
 }
 
-body * [class*="broadcast_marker"]:before {
-    content: '📢 рассылка' !important;
-    background-color: #772448;
-    color: var(--tone-eadddd);
+/* статус "онгоин" */
+body * .b-anime_status_tag.b-anime_status_tag.ongoing:before {
+    background: #014493;
+    color: #d7e6f8;
+}
+
+/* статус "игнор" */
+body * .b-anime_status_tag.b-anime_status_tag.ignored:before {
+    background: #96120b;
+    color: #fbdede;
+}
+
+/* статус "анонс" */
+body * .b-anime_status_tag.b-anime_status_tag.anons:before {
+    background: #9c3417;
+    color: #fbe5de;
 }
 
 body * .b-offtopic_marker {
@@ -1958,6 +2001,13 @@ body#people_show .c-works .b-catalog_entry {
 
 body#people_show .c-works .b-catalog_entry .image-cutter {
     max-height: 120px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-breadcrumbs a.b-link.b-link:hover {
+        background: none !important;
+        box-shadow: none !important;
+    }
 }
 
 body#profiles_show .profile-content .cc-2.block {
@@ -2119,11 +2169,8 @@ body#profiles_show .cc-franchises .b-badge .no-image {
     border-radius: 6px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .c-column.c-control.show-options:hover {
-        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    }
+body#dashboard_show .b-catalog_entry.b-catalog_entry {
+    background: none;
 }
 
 .cc-optional_controls .icon,

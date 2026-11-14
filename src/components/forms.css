@@ -46,6 +46,12 @@ textarea {
     background: none;
 }
 
+.ac_results li:not(._) {
+    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .ac_results li:hover {
         background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
@@ -103,13 +109,6 @@ textarea#user_rate_text {
 
 :focus::-ms-input-placeholder {
     opacity: 0.5;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .ac_results .character-suggest .animes div a:hover {
-        background: none !important;
-        box-shadow: none;
-    }
 }
 
 .ac_results .animes .name-ru:hover {
@@ -373,7 +372,7 @@ select:not(#u):active,
     backdrop-filter: none !important;
 }
 
-.c-ms-dropdown[hidden] {
+.c-ms-dropdown.c-ms-dropdown[hidden] {
     display: none !important;
     clip-path: inset(0 0 100% 0 round var(--drop-radius));
     transform: translateY(-4px);
@@ -399,6 +398,8 @@ select:not(#u):active,
 @media (hover: hover) and (pointer: fine) {
     .c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
 }
+
+.c-ms-option.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
 
 /* варианты в системном окне (Firefox) */
 select option { background: var(--drop-bg); color: rgb(var(--text)); }

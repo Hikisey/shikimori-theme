@@ -1,3 +1,40 @@
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-shiki_editor aside.buttons {
+        width: 70%;
+        float: left !important;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 35px;
+    }
+    .b-shiki_editor .links,
+    .b-shiki_editor .images,
+    .b-shiki_editor .quotes,
+    .b-shiki_editor .email,
+    .b-shiki_editor .upload {
+        height: 43px;
+    }
+    .b-comments {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .b-comments .comments-loader.comments-loader,
+    .b-comments .comments-hider.comments-hider,
+    .b-comments .comments-expander.comments-expander {
+        padding: 5px 4px;
+    }
+    .b-comments .comments-loader.click-loader {
+        padding: 5px 30px 5px 30px;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    .b-shiki_editor .hidden-block {
+        margin-bottom: 40px;
+    }
+}
+
 /* ===== components/modals =====
    окна: просмотр картинок (mfp), bulma-модалки, обратная связь */
 
@@ -115,6 +152,12 @@ textarea {
     background: none;
 }
 
+.ac_results li:not(._) {
+    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .ac_results li:hover {
         background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
@@ -172,13 +215,6 @@ textarea#user_rate_text {
 
 :focus::-ms-input-placeholder {
     opacity: 0.5;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .ac_results .character-suggest .animes div a:hover {
-        background: none !important;
-        box-shadow: none;
-    }
 }
 
 .ac_results .animes .name-ru:hover {
@@ -442,7 +478,7 @@ select:not(#u):active,
     backdrop-filter: none !important;
 }
 
-.c-ms-dropdown[hidden] {
+.c-ms-dropdown.c-ms-dropdown[hidden] {
     display: none !important;
     clip-path: inset(0 0 100% 0 round var(--drop-radius));
     transform: translateY(-4px);
@@ -468,6 +504,8 @@ select:not(#u):active,
 @media (hover: hover) and (pointer: fine) {
     .c-ms-option:not(#u):hover { background: var(--opt-hover) !important; }
 }
+
+.c-ms-option.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
 
 /* варианты в системном окне (Firefox) */
 select option { background: var(--drop-bg); color: rgb(var(--text)); }
@@ -607,256 +645,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     }
     select:not(#u)::picker-icon { display: none !important; }
     select:not(#u):active { transform: none !important; }
-}
-
-/* ===== pages/settings =====
-   настройки профиля и аккаунта, сервисы входа */
-
-/* цвет кнопки написать */
-.b-form input[type="submit"],
-.b-shiki_editor.previewed footer .unpreview,
-.b-poll .poll-actions .vote,
-.b-poll .poll-actions .abstain,
-a.stop.b-button,
-.b-button,
-.b-form .cancel,
-.b-button.preview,
-a.start.b-button,
-.b-form input[type="submit"][disabled],
-.b-form input[type="submit"].disabled,
-.block.edit-page.pages a.cancel,
-.b-shiki_editor footer .hide {
-    padding: 7px 12px;
-    line-height: 1;
-    font-family: "Comfortaa", sans-serif;
-    color: rgba(var(--text), 1) !important;
-    background-color: rgba(var(--glass), 0.5);
-    border-radius: 10px !important;
-    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border: none!important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-form input[type="submit"]:hover,
-    .b-shiki_editor footer .preview:hover,
-    .b-shiki_editor.previewed footer .unpreview:hover,
-    .b-poll .poll-actions .vote:hover,
-    .b-poll .poll-actions .abstain:hover,
-    a.stop.b-button:hover,
-    .b-button:hover,
-    .b-form .cancel:hover,
-    .b-button.preview:hover,
-    a.start.b-button:hover,
-    .b-form input[type="submit"][disabled]:hover,
-    .b-form input[type="submit"].disabled:hover,
-    .block.edit-page.pages a.cancel:hover,
-    .b-shiki_editor footer .hide:hover {
-        background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
-        color: var(--tone-e4e4e4) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-        opacity: 1;
-    }
-}
-
-.p-profiles-edit .account .change-password a {
-    color: rgba(var(--link), 1) !important;
-}
-
-.p-profiles-edit .list .profile-action a:not(.b-button) {
-    padding: 0 8px;
-    color: rgba(var(--link), 1) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-edit .list .profile-action a:not(.b-button):hover {
-        color: rgba(var(--link), 1) !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
-}
-
-.profile-actions .mail::before,
-.profile-actions .talk::before,
-.profile-actions .fav-remove::before,
-.profile-actions .ban::before,
-.profile-actions .fav-add::before,
-.profile-actions .settings::before,
-.profile-actions .ignore-add::before,
-.profile-actions .ignore-remove::before {
-    color: rgba(var(--text), 0.6) !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    font-size: 24px !important;
-}
-
-.profile-actions .ignore-remove::before,
-.profile-actions .fav-remove::before {
-    color: #ffc24eab !important;
-    transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-    font-size: 24px !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .profile-actions .mail:hover::before,
-    .profile-actions .talk:hover::before,
-    .profile-actions .fav-remove:hover::before,
-    .profile-actions .ban:hover::before,
-    .profile-actions .fav-add:hover::before,
-    .profile-actions .settings:hover::before,
-    .profile-actions .ignore-add:hover::before,
-    .profile-actions .ignore-remove:hover::before {
-        color: rgba(var(--accent), 1) !important;
-        transform: scale(1.3);
-    }
-}
-
-.profile-actions .ignore-add:before {
-    content: "\f2a8";
-}
-
-.profile-actions .ignore-remove:before {
-    content: "\f25b";
-}
-
-.cc-2.block.b-edit_styles .c-column:nth-child(2n+1),
-.cc-2.block.b-edit_styles .c-column:last-child {
-    width: 100%;
-}
-
-.b-edit_styles .page_border,
-.page_background_color,
-.body_background {
-    display: none;
-}
-
-.profile-actions .mail,
-.profile-actions .talk,
-.profile-actions .fav-remove,
-.profile-actions .ban,
-.profile-actions .fav-add,
-.profile-actions .settings,
-.profile-actions .ignore-add,
-.profile-actions .ignore-remove {
-    background: transparent !important;
-    box-shadow: none;
-}
-
-.block.edit-page.styles {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.block.edit-page.styles > .block {
-    order: 3;
-}
-
-.block.edit-page.styles > .subheadline {
-    order: 1;
-}
-
-.block.edit-page.styles > .cc-2.block.b-edit_styles {
-    order: 2;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-oauth_application .name-logo:hover .logo {
-        border: 2px solid rgba(var(--accent), 1);
-        transform: scale(1.1);
-    }
-}
-
-.b-edit_styles .edit_style .style_css .CodeMirror,
-.b-edit_styles .new_style .style_css .CodeMirror {
-    border: 1px solid rgb(var(--shade));
-}
-
-@media only screen and (min-width: 1025px) {
-    .b-edit_styles .edit_style .style_css label:after {
-        content: "Для корректной работы используйте F11";
-        margin-left: 10px;
-        font-size: 12px;
-    }
-    .b-edit_styles .edit_style .style_css .CodeMirror.CodeMirror-fullscreen,
-    .b-edit_styles .new_style .style_css .CodeMirror.CodeMirror-fullscreen {
-        z-index: 20;
-        height: 100vh !important;
-        top: 0 ;
-        width: 1250px;
-        margin: 0 auto;
-    }
-}
-
-/* Подписи полей */
-.b-input label,
-.b-input > label,
-.edit_user label,
-.edit_user_preferences label {
-    color: rgb(var(--text)) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-edit .account .oauth a:hover,
-    .p-profiles-edit .account .oauth .b-link_button:hover {
-        border-color: rgba(var(--accent), .55) !important;
-        background: var(--glass-popup) !important;
-        box-shadow: 0 8px 20px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
-    }
-}
-
-/* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
-body.p-profiles-edit .tipsy.tipsy-s {
-    transform: translateY(calc(100% + 38px));
-}
-
-/* ----- телефон и узкие экраны ----- */
-
-@media screen and (max-width: 767px) {
-    .profile-actions .mail:before,
-    .profile-actions .talk:before,
-    .profile-actions .fav-remove:before,
-    .profile-actions .ban:before,
-    .profile-actions .fav-add:before,
-    .profile-actions .settings:before,
-    .profile-actions .ignore-add:before,
-    .profile-actions .ignore-remove:before,
-    .profile-actions .talk:before {
-        font-size: 30px !important;
-    }
-    .block.edit-page.misc .c-column {
-        width: 100%;
-    }
-    /* стеклянные подложки под свободно лежащим текстом */
-    .l-page > div > header.head,
-    .l-page > div > .pagination,
-    .p-profiles .profile-head .c-brief header.head,
-    html body#profiles_show .profile-content .c-left .lifetime,
-    html body#profiles_show .profile-content .c-left .activity,
-    .c-about .b-entry-info,
-    .c-description .b-text_with_paragraphs,
-    body.p-profiles-edit .l-content .block:not(.block .block),
-    body.p-user_preferences .l-content .block:not(.block .block) {
-        background: var(--glass-bg) !important;
-        backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: var(--glass-border);
-        border-radius: 14px;
-        box-sizing: border-box;
-    }
-    body.p-profiles-edit .l-content .block:not(.block .block),
-    body.p-user_preferences .l-content .block:not(.block .block) {
-        padding: 10px 12px !important;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) {
-    .p-profiles-edit .account .oauth a:hover,
-    .p-profiles-edit .account .oauth .b-link_button:hover {
-        border-color: rgba(var(--glass-light), .12) !important;
-        background: rgba(var(--glass), .95) !important;
-        transform: none;
-        box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
-    }
 }
 
 /* ===== pages/clubs =====
@@ -1078,7 +866,20 @@ body.p-profiles-edit .tipsy.tipsy-s {
     }
 }
 
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .b-clubs.one-line .b-club.b-club {
+        width: auto;
+        margin: auto !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
+    body.p-profiles-show .cc-2a .b-clubs.b-clubs {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
     body.p-profiles-show .cc-2a .b-clubs .b-club {
         width: auto !important;
         margin: 0 !important;
@@ -1226,11 +1027,6 @@ body.p-profiles-edit .tipsy.tipsy-s {
     line-height: 20px;
 }
 
-.b-user_history-line a:hover {
-    color: rgba(var(--link), 1) !important;
-    font-weight: bold;
-}
-
 .b-user_history-line .date {
     color: rgba(var(--text-2), 1) !important;
 }
@@ -1255,10 +1051,6 @@ body.p-profiles-edit .tipsy.tipsy-s {
 .p-profiles .profile-head .c-history .entry:hover .title {
     color: rgba(var(--text-strong), 1) !important;
     text-decoration: none;
-}
-
-.p-profiles .profile-head .c-history .entry a:hover {
-    color: rgba(var(--link), 1) !important;
 }
 
 .p-profiles-show .cc-favourites .c-column {
@@ -1910,6 +1702,13 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
+@media only screen and (max-width: 1100px) {
+    .p-profiles-show .lifetime .times .time.time,
+    .p-profiles-show .lifetime .title .value.value {
+        font-size: 10px !important;
+    }
+}
+
 @media screen and (max-width: 960px) {
     .p-profiles-show .cc-favourites .c-column:nth-child(7),
     .p-profiles-show .cc-favourites .c-column:nth-child(8) {
@@ -2119,6 +1918,12 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     .p-profiles .profile-head .c-history .entry .misc {
         display: none;
+    }
+    .p-profiles .profile-head .c-history .entry img:not(._) {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin: 2px 10px 2px 2px;
     }
     .profile-head {
         padding: 70px 15px 0 15px;
@@ -2614,6 +2419,10 @@ div.compatibility > span.link-replacement > .text.full:before {
     .c-history .subheadline > a:before {
         display: none;
     }
+    .c-history .subheadline.subheadline::before {
+        content: "\f187";
+        visibility: visible;
+    }
     .c-history .subheadline:hover::before {
         color: rgba(var(--accent), var(--hundred));
         transition: 0.2s ease, margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s;
@@ -2622,4 +2431,252 @@ div.compatibility > span.link-replacement > .text.full:before {
         padding-right: 14px;
         padding-top: 3px;
     }
+}
+
+@media screen and (max-width: 767px) {
+    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
+    html body.p-profiles .profile-head .c-brief header.head .misc {
+        position: static !important;
+        top: auto !important;
+        margin: 4px 0 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+    html body.p-profiles .profile-head .c-info {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 14px 0 0 !important;
+        padding: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga { order: 2; }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > a.title,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar > .title {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        margin: 0 0 8px !important;
+        padding: 0 40px 0 0 !important;
+        text-align: left !important;
+        line-height: 18px !important;
+        font-size: 13px !important;
+        opacity: 1 !important;
+        color: rgb(var(--text)) !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .bar {
+        position: relative !important;
+        margin: 0 !important;
+        height: 26px !important;
+        line-height: 26px !important;
+        border-radius: 8px;
+        overflow: hidden !important;
+        font-size: 12px;
+    }
+    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
+        display: none !important;
+        content: none !important;
+    }
+    /* совместимость — значок в правом верхнем углу карточки */
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
+        position: absolute !important;
+        top: 9px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        height: 20px;
+        margin: 0 !important;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a::before,
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text::before {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        font-size: 17px !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 8px 0 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+        text-align: center;
+        font-size: 12px;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
+    html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
+    /* друзья и клубы — две стеклянные карточки */
+    body.p-profiles-show .cc-2a {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 14px 0 !important;
+    }
+    body.p-profiles-show .cc-2a > .c-column > .subheadline {
+        margin: 0 0 8px !important;
+        width: auto !important;
+    }
+    body.p-profiles-show .cc-friends {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        gap: 6px 4px;
+        margin: 0 !important;
+    }
+    body.p-profiles-show .cc-friends .b-user {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center;
+    }
+    html body#profiles_show.p-profiles-show .cc-2a .b-nothing_here {
+        margin: 0 !important;
+        font-size: 12.5px;
+        line-height: 1.4 !important;
+        color: rgb(var(--text-2));
+    }
+    .p-profiles .profile-head .c-brief header.head.head {
+        width: fit-content !important;
+        max-width: 100%;
+        margin: 10px auto 0 !important;
+        padding: 6px 16px 8px !important;
+        border-radius: 16px;
+    }
+    /* ================================================================
+       v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
+       ================================================================ */
+    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
+    body.p-profiles-show .profile-head {
+        position: relative;
+        z-index: 0;
+    }
+    body.p-profiles-show .profile-head::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
+        width: auto !important;
+        height: var(--profile-banner-height-mobile);
+        background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        pointer-events: none;
+    }
+    /* мягкое свечение в цвет картинки под баннером */
+    body.p-profiles-show .profile-head::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: calc(var(--profile-banner-height-mobile) - 70px);
+        left: 8%;
+        right: 8%;
+        display: block !important;
+        width: auto !important;
+        height: 140px;
+        background: var(--profile-banner) center bottom / cover no-repeat;
+        filter: blur(32px) saturate(1.5);
+        opacity: var(--profile-banner-glow);
+        pointer-events: none;
+    }
+}
+
+/* ===== pages/anime =====
+   страница аниме/манги/персонажа: описание, постер, кадры и видео, плеер, «добавить в список» */
+
+/* цвет смотрю, планы и т.д. */
+.b-db_entry-note .name-container .note .relation,
+.b-db_entry-note .name-container .note .additional {
+    color: rgba(var(--text-2), 1) !important;
+}
+
+.b-add_to_list.completed .trigger,
+.b-add_to_list.completed .option {
+    background: #1c4c20;
+    border-color: rgba(var(--glass), 0.4);
+    color: #c4e9ed;
+}
+
+.b-add_to_list.dropped .trigger,
+.b-add_to_list.dropped .option {
+    background: #77251c;
+    border-color: rgba(var(--glass), 0.4);
+    color: #f2ddcc;
+}
+
+/* кнопка "Отложено" на страничке аниме*/
+.b-add_to_list.on_hold .trigger,
+.b-add_to_list.on_hold .option {
+    background: #864e13;
+    border-color: rgba(var(--glass), 0.4);
+    color: var(--tone-ebeef1);
+}
+
+/* кнопка "Запланировано" на страничке аниме*/
+.b-add_to_list.planned .trigger,
+.b-add_to_list.planned .option {
+    background: #173969;
+    border-color: rgba(var(--glass), 0.4);
+    color: #cfe0ec;
+}
+
+/* кнопка "Смотрю" на страничке аниме*/
+.b-add_to_list.watching .trigger,
+.b-add_to_list.watching .option {
+    background: #382f7b;
+    border-color: rgba(var(--glass), 0.4);
+    color: #d8f8f6;
+}
+
+/* кнопка "Пересмотравиваю" на страничке аниме*/
+.b-add_to_list.rewatching .trigger,
+.b-add_to_list.rewatching .option {
+    background: #115652;
+    border-color: rgba(var(--glass), 0.4);
+    color: #d8f8f6;
+}
+
+.b-add_to_list.planned.expanded .trigger,
+.b-add_to_list.planned .trigger,
+.b-add_to_list.completed.expanded .trigger,
+.b-add_to_list.completed .trigger,
+.b-add_to_list.dropped.expanded .trigger,
+.b-add_to_list.dropped .trigger,
+.b-add_to_list.on_hold.expanded .trigger,
+.b-add_to_list.on_hold .trigger,
+.b-add_to_list.watching.expanded .trigger,
+.b-add_to_list.watching .trigger,
+.b-add_to_list.rewatching.expanded .trigger,
+.b-add_to_list.rewatching .trigger {
+    border: 2px solid #cfe0ec26;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    border-radius: 6px;
+}
+
+.b-catalog_entry-tooltip .b-add_to_list {
+    min-width: 225px;
+}
+
+/* надпись красным "Удалить из списка" */
+.b-add_to_list .expanded-options .remove-trigger .text {
+    color: #ffa09e;
+}
+
+.b-add_to_list .expanded-options {
+    border-radius: 7px;
 }

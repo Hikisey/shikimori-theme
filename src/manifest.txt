@@ -19,13 +19,13 @@ components/cards.css
 components/editor.css
 components/modals.css
 components/forms.css
-pages/settings.css
 pages/clubs.css
 pages/profile.css
-pages/messages.css
 pages/anime.css
-pages/lists.css
+pages/settings.css
 pages/catalog.css
+pages/messages.css
+pages/lists.css
 pages/achievements.css
 pages/contests.css
 pages/forum.css

@@ -1,21 +1,3 @@
-/* загрузить еще комментарии */
-.b-comments .comments-loader,
-.b-comments .comments-hider,
-.b-comments .comments-expander,
-.b-comments .faye-loader,
-.collapsed,
-.b-forum .faye-loader,
-.b-topic .faye-loader,
-.collapsed + .spoiler .hide-expanded {
-    background: rgba(var(--glass), 0.4);
-    color: rgba(var(--text-2), 1);
-    border: none;
-    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border-radius: 14px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
-}
-
 @media (hover: hover) and (pointer: fine) {
     /* когда наводишь на загрузку*/
     .b-comments .comments-loader:hover,
@@ -142,10 +124,6 @@
 .b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a {
     color: rgba(var(--text-strong), 1) !important;
     transition: 0.2s ease, -webkit-0 .2s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
-    color: rgba(var(--link), 1) !important;
 }
 
 /*Новый тех ред */
@@ -919,6 +897,20 @@
     display: none;
 }
 
+@media only screen and (min-width: 768px) {
+    .p-dashboards-show .cc-news .c-news_topics.c-news_topics {
+        margin-right: 25px;
+        width: calc(69% - 25px);
+    }
+    .p-dashboards-show .cc-news .c-generated_news.c-generated_news {
+        width: 30%;
+    }
+    .p-dashboards-show .cc-second .c-forum.c-forum {
+        width: 30%;
+        margin-right: 7px !important;
+    }
+}
+
 @media only screen and (min-width: 1025px) {
     .p-dashboards-show .v2 .fc-user-sections .tags {
         margin: 0
@@ -937,6 +929,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .p-dashboards-show .cc-second .c-forum.c-forum {
+        width: 100%;
+    }
     .p-dashboards-show .cc-news .c-news_topics {
         width: 100% !important;
     }
@@ -2078,6 +2073,27 @@ div.Ssylki-Characters:hover .Text-1:after {
     transition: opacity 0.25s ease-in-out;
 }
 
+div.Ssylki-anime:hover .b-link.b-link {
+    opacity: 1;
+}
+
+.Ssylki-anime strong:not(._)::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(2.8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.25s ease-in-out;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    border-radius: 0.5rem;
+}
+
 div.Ssylki-anime:hover strong::before {
     opacity: 1;
 }
@@ -2505,7 +2521,23 @@ div.Ssylki-anime:hover .Text-2 {
     color: rgba(var(--accent), 1) !important;
 }
 
+/* из components/editor */
+.b-comments .comments-loader:active,
+.b-comments .comments-hider:active,
+.b-comments .comments-expander:active {
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), 1);
+    border: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
+    /* из components/editor */
+    .b-comments .comments-loader:hover,
+    .b-comments .comments-hider:hover,
+    .b-comments .comments-expander:hover {
+        background-color: rgb(var(--glass-light));
+        color: rgb(var(--text-strong));
+    }
     /* из base/base */
     a.name:hover {
         color: rgba(var(--link), 1) !important;
@@ -2542,6 +2574,22 @@ div.Ssylki-anime:hover .Text-2 {
     color: rgba(var(--accent), 1) !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/anime */
+    .b-video_player .cc-player_controls .episode-num .video-link a:hover {
+        background: none !important;
+        color: rgba(var(--text-strong), 1);
+        border: none;
+        box-shadow: none !important;
+    }
+}
+
+/* из pages/anime */
+.b-video_player .cc-player_controls .episode-num input {
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
 /* из components/badges */
 .b-tag {
     border-bottom: 1px dashed rgba(var(--accent), 1);
@@ -2553,9 +2601,13 @@ div.Ssylki-anime:hover .Text-2 {
     color: rgba(var(--text-2), 1) !important;
 }
 
-/* из pages/settings */
-.p-profiles-edit .account .change-password a:hover {
-    color: rgba(var(--link), 1);
+@media (hover: hover) and (pointer: fine) {
+    /* из pages/settings */
+    .p-profiles-edit .list .profile-action a:not(.b-button):hover {
+        color: rgba(var(--link), 1) !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
 }
 
 /* из components/buttons */
@@ -2571,6 +2623,12 @@ div.Ssylki-anime:hover .Text-2 {
 /* из pages/profile */
 .p-profiles-show .about a:hover {
     color: rgba(var(--link), 1);
+}
+
+/* из pages/profile */
+.b-user_history-line a:hover {
+    color: rgba(var(--link), 1) !important;
+    font-weight: bold;
 }
 
 /* из pages/profile */
@@ -2646,6 +2704,11 @@ body.localized_names-ru .name-ru {
     text-decoration: none !important;
 }
 
+/* из pages/profile */
+.p-profiles .profile-head .c-history .entry a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
 /* из pages/forum */
 .headline > a,
 .midheadline > a,
@@ -2690,28 +2753,17 @@ a:-webkit-any-link {
     color: rgba(var(--link), 1);
 }
 
-/* из pages/settings */
-.profile-actions .mail:before,
-.profile-actions .talk:before,
-.profile-actions .settings:before,
-.profile-actions .ban:before,
-.profile-actions .fav-add::before,
-.profile-actions .fav-remove::before,
-.profile-actions .ignore-add:before,
-.profile-actions .ignore-remove:before {
-    transition: 0s ease, -webkit-0s ease, transform 0.2s, ease color .2s;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
 @media (hover: hover) and (pointer: fine) {
     /* из pages/clubs */
     .club-actions a:hover {
         background: none;
         box-shadow: none;
     }
+}
+
+/* из pages/forum */
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
+    color: rgba(var(--link), 1) !important;
 }
 
 /* из pages/catalog */
@@ -2827,6 +2879,13 @@ body * .b-anime_status_tag.other:before {
     background: linear-gradient(45deg, #feda754d, #fa7e1e4d, #d629764d, #962fbf4d, #4f5bd54d)!important;
 }
 
+/* из layout/page */
+body * [class*="broadcast_marker"]:before {
+    content: '📢 рассылка' !important;
+    background-color: #772448;
+    color: var(--tone-eadddd);
+}
+
 /* статус "релиз" */
 /* из layout/page */
 body * .b-anime_status_tag.released:before {
@@ -2894,27 +2953,6 @@ body * .b-anime_status_tag.broadcast:before {
     color: #ffe0ee;
 }
 
-/* статус "онгоин" */
-/* из layout/page */
-body * .b-anime_status_tag.ongoing:before {
-    background: #014493;
-    color: #d7e6f8;
-}
-
-/* статус "игнор" */
-/* из layout/page */
-body * .b-anime_status_tag.ignored:before {
-    background: #96120b;
-    color: #fbdede;
-}
-
-/* статус "анонс" */
-/* из layout/page */
-body * .b-anime_status_tag.anons:before {
-    background: #9c3417;
-    color: #fbe5de;
-}
-
 /* из layout/page */
 body * [class*="broadcast_marker"] {
     width: 118px;
@@ -2954,13 +2992,6 @@ body * [class*="new_marker"] {
     margin-top: 0;
     display: block;
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
-}
-
-/* из components/forms */
-.ac_results li {
-    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
-    color: rgba(var(--text-strong), var(--hundred));
-    border: none;
 }
 
 /* из components/forms */
@@ -3024,18 +3055,6 @@ body * [class*="new_marker"] {
     color: rgba(var(--accent), var(--hundred));
 }
 
-/* из components/editor */
-.b-comment > .inner header .name-date {
-    white-space: normal;
-    line-height: 1.7;
-}
-
-/* из components/tooltips */
-.tooltip-details .b-comment.shiki-object {
-    border: none !important;
-    padding: 0 !important;
-}
-
 /* из pages/contests */
 .p-contests .suggestion > a,
 .p-contests .variant > a {
@@ -3078,24 +3097,4 @@ body * [class*="new_marker"] {
 .b-catalog_entry-tooltip .inner .line .value {
     color: rgba(var(--text), var(--hundred));
     transition: 0.3s ease;
-}
-
-/* из components/cards */
-.b-catalog_entry .cover .misc span {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
-}
-
-/* из components/tooltips */
-.b-catalog_entry-tooltip .inner .additional-images .link .title {
-    color: rgba(var(--text-strong), var(--hundred));
 }

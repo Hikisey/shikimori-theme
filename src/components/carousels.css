@@ -102,6 +102,10 @@
     align-items: center;
 }
 
+.b-to-top.active .slide.slide {
+    width: 70px;
+}
+
 .b-to-top .slide,
 .b-to-top {
     z-index: 1;
@@ -134,5 +138,15 @@
 @media screen and (max-width: 767px) {
     .slide.animes .cc-2a .c-column.m0 {
         margin-bottom: 15px !important;
+    }
+    .l-page>div>.pagination.pagination {
+        display: flex !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 6px 12px !important;
+        margin-bottom: 10px !important;
+        border-radius: 12px;
     }
 }

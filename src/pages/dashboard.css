@@ -352,6 +352,20 @@
     display: none;
 }
 
+@media only screen and (min-width: 768px) {
+    .p-dashboards-show .cc-news .c-news_topics.c-news_topics {
+        margin-right: 25px;
+        width: calc(69% - 25px);
+    }
+    .p-dashboards-show .cc-news .c-generated_news.c-generated_news {
+        width: 30%;
+    }
+    .p-dashboards-show .cc-second .c-forum.c-forum {
+        width: 30%;
+        margin-right: 7px !important;
+    }
+}
+
 @media only screen and (min-width: 1025px) {
     .p-dashboards-show .v2 .fc-user-sections .tags {
         margin: 0
@@ -370,6 +384,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .p-dashboards-show .cc-second .c-forum.c-forum {
+        width: 100%;
+    }
     .p-dashboards-show .cc-news .c-news_topics {
         width: 100% !important;
     }

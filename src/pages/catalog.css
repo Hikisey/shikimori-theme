@@ -284,6 +284,10 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
 }
 
 @media screen and (min-width: 600px) and (max-width: 735px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
     .b-list_switchers .switcher.popularity:before,
     .b-list_switchers .switcher.alphabet:before {
         content: "";
@@ -300,6 +304,10 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
 }
 
 @media screen and (max-width: 599px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
     .b-list_switchers .switcher.popularity:before,
     .b-list_switchers .switcher.alphabet:before {
         content: "";
@@ -347,13 +355,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         animation: shiki-sheet .34s cubic-bezier(.22, 1.2, .36, 1) both;
         scrollbar-width: thin;
         scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
-    }
-    /* реклама и пустые служебные блоки не занимают место над заголовком */
-    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
-    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
-    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
-    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
-        display: none !important;
     }
     section.l-page.menu-expanded aside.l-menu .c-filters {
         margin: 0 !important;

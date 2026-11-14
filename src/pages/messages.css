@@ -175,6 +175,14 @@
     background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
 }
 
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+
 .b-message > .inner .was_updated:hover {
     color: rgba(var(--accent), var(--hundred));
 }

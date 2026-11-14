@@ -1,3 +1,621 @@
+/*почта-Назад-Вперёд → фикс на 100%*/
+.p-messages .b-postloader.collapsed {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    font-size: 11px;
+    padding: 3px 2px 2px 15px;
+    background: rgba(var(--glass), 0.6);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    width: 135px;
+    height: 15px;
+    border-radius: 9px;
+    position: relative;
+    margin-left: -22px;
+    top: -2px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    content: 'перейти к диалогу';
+}
+
+.b-dialog .to_dialog:before,
+.to-review:before {
+    font: normal normal normal 15px FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    background: rgba(var(--glass), var(--hundred));
+    color: rgba(var(--text-strong), 0.7);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s;
+}
+
+.b-dialog .to_dialog:before {
+    content: '\f0e6';
+}
+
+.b-dialog .to_dialog:hover:after,
+.b-dialog .to_dialog:hover:before,
+.to-review:hover:before,
+.to-review:hover:after {
+    color: rgba(var(--accent), 1);
+}
+
+.b-dialog .to_dialog,
+.to-review {
+    font-size: 0 !important;
+}
+
+.p-messages .mass-actions,
+.b-options-floated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+body.p-profiles .mass-actions .action a,
+body .headline .misc-links a,
+body .midheadline .misc-links a,
+body .subheadline .misc-links a {
+    margin: 0;
+    font-size: 0;
+    position: relative;
+    padding: 0 0 0 13px;
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a,
+body.p-db_entries-works .headline .misc-links a,
+body.p-db_entries-works .midheadline .misc-links a,
+body.p-db_entries-works .subheadline .misc-links a {
+    font-size: inherit !important;
+    right: -3rem;
+}
+
+body.p-profiles .mass-actions .action a:after,
+body.p-profiles .subheadline .misc-links > a:after,
+.headline .misc-links > a:after,
+.midheadline .misc-links > a:after,
+.subheadline .misc-links > a:after {
+    content: '';
+    display: inline-flex !important;
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--text-strong), 0.7);
+    height: 32px;
+    width: 33px;
+    font-family: 'FontAwesome', sans-serif;
+    padding: 0 0 2px 1px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 3px rgba(var(--shade), 0.1);
+    transition: 0.2s all;
+    z-index: 2;
+}
+
+body.p-profiles .mass-actions .action a:before,
+.headline .misc-links > a:before,
+.midheadline .misc-links > a:before,
+.subheadline .misc-links > a:before {
+    content: '';
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    font-size: 11px;
+    letter-spacing: -6px;
+    background: rgba(var(--glass), 0.7);
+    width: 18px;
+    border-radius: 8px;
+    z-index: 2;
+    color: rgba(var(--link), 1);
+}
+
+body.p-profiles .mass-actions .action a:before {
+    content: '\f00c\f00c';
+}
+
+body.p-profiles .mass-actions .action a[href*='/read']:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+body.p-profiles .mass-actions .action a[href*='/dele']:after {
+    content: '\f014';
+    font-size: 18px;
+}
+
+body.p-profiles .mass-actions .action a:hover:before {
+    color: rgba(var(--text), 1);
+}
+
+body.p-profiles .mass-actions .action a:hover:AFTER,
+.headline .misc-links > a:hover:after,
+.midheadline .misc-links > a:hover:after,
+.subheadline .misc-links > a:hover:after {
+    color: rgba(var(--link), 1);
+}
+
+/*УЧАСТИЕ В ПРОЕКТАХ Ico off*/
+body.p-db_entries-works .p-profiles .mass-actions .action a:after,
+body.p-db_entries-works .p-profiles .subheadline .misc-links > a:after,
+.p-db_entries-works .headline .misc-links > a:after,
+.p-db_entries-works .midheadline .misc-links > a:after,
+.p-db_entries-works .subheadline .misc-links > a:after,
+body.p-db_entries-works .p-profiles .mass-actions .action a:before,
+.p-db_entries-works .headline .misc-links > a:before,
+.p-db_entries-works .midheadline .misc-links > a:before,
+.p-db_entries-works .subheadline .misc-links > a:before {
+    display: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    color: rgba(var(--text-strong), 1) !important;
+    border-radius: 50%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
+    content: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.4);
+}
+
+body#messages_index .l-page,
+body#dialogs_index .l-page,
+body#dialogs_show .l-page,
+body.p-user_history .l-page {
+    max-width: 800px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body .inner div.body {
+    margin-left: 40px;
+}
+
+@media only screen and (min-width: 1075px) {
+    .b-comments-notifier[style*="none"] {
+        display: block !important;
+        visibility: hidden;
+        z-index: 9;
+    }
+    .b-comments-notifier:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        height: 56px;
+        margin: auto;
+        background: linear-gradient(to bottom, color-mix(in srgb, var(--glass-deep) calc(var(--hundred) * 100%), transparent) 0 , color-mix(in srgb, var(--glass-deep) 80%, transparent) 80%, color-mix(in srgb, var(--glass-deep) 40%, transparent) 100%);
+        z-index: -1;
+        opacity: 0;
+        visibility: visible;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        box-shadow: 0 1px 20px 10px color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    }
+    .x1000 .b-comments-notifier:after {
+        max-width: 100%;
+    }
+    .b-comments-notifier[style*=": 0"]:after {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .b-comments-notifier {
+        display: none !important;
+    }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (max-width: 768px) {
+    body.p-db_entries-works .p-profiles .mass-actions .action a,
+    body.p-db_entries-works .headline .misc-links a,
+    body.p-db_entries-works .midheadline .misc-links a,
+    body.p-db_entries-works .subheadline .misc-links a {
+        font-size: 0 !important;
+        right: -3rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .b-dialog > .inner header img {
+        margin: 1px 10px 7px 0 !important;
+        width: 48px !important;
+    }
+    .b-dialog .b-message .inner header img {
+        margin: 7px 7px 4px 0 !important;
+        width: 37px !important;
+    }
+    .b-message > .inner .name-date .time {
+        padding-top: 0;
+        line-height: 14px;
+    }
+    .b-comments-notifier {
+        display: none !important;
+    }
+    .b-comment > .inner div.body,
+    .b-message > .inner div.body,
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-topic.aside-expanded > .inner,
+    .b-dialog.aside-expanded > .inner,
+    .b-message.aside-expanded > .inner,
+    .b-comment.aside-expanded > .inner,
+    .b-topic.aside-expanded > .b-comments {
+        margin-left: 0 ;
+        min-height: 200px;
+    }
+    .b-topic.aside-expanded > .inner aside.buttons,
+    .b-comment.aside-expanded > .inner aside.buttons,
+    .b-dialog.aside-expanded > .inner aside.buttons,
+    .b-message.aside-expanded > .inner aside.buttons {
+        display: block;
+        margin-right: 0 ;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100% !important;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 3;
+        padding: 10px 14px;
+    }
+    .b-message > .inner div.body .b-catalog_entry {
+        max-width: 600px;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 300px;
+        max-width: 600px;
+    }
+    .b-comment > .inner header .name-date a.name,
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name,
+    .b-message > .inner header .name-date a.name {
+        font-size: 14px;
+    }
+    .b-dialog > .inner > header .name-date a.name {
+        font-size: 16px;
+    }
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name {
+        top: 2px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-dialog .to_dialog {
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+    .b-dialog .b-message {
+        margin-left: 0 ;
+    }
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 140px;
+        min-height: 160px;
+    }
+    .b-message > .inner div.body .entry-tooltip_container {
+        min-height: 180px;
+    }
+    .b-message {
+        padding-bottom: 15px;
+    }
+    .block.m0 .b-message {
+        padding-bottom: 10px !important;
+    }
+}
+
+/* ===== pages/lists =====
+   списки аниме/манги пользователя, сравнение списков */
+
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
+    max-width: 200px;
+}
+
+/* жанр, ссылка на него d ghjcjvnht hfcrhsdftittujcz fybv */
+.p-user_rates-index .list-lines tr td .episodes_total:after,
+.p-user_rates-index .list-lines tr td .episodes_total:before {
+    color: rgba(var(--accent), 1);
+}
+
+.p-user_rates-index .l-content .b-options-floated span:before,
+.p-user_rates-index .l-content .b-options-floated span:after {
+    color: rgba(var(--text-2), 1);
+    font-size: 0;
+}
+
+.p-user_rates-index .l-content .b-options-floated span:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .v2 .db-update .name:hover,
+.b-comment > .inner .name-date .name:hover,
+.b-comments .comments-collapser:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.p-user_rates-index .list-lines tr td .episodes_total {
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* название аниме в списке моем */
+.p-user_rates-index .list-lines tr .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines tr .name a:hover,
+    .b-user.detailed .history .line a .event:hover {
+        background: none;
+        box-shadow: none;
+        color: rgba(var(--accent), 1);
+        text-decoration: none;
+        border: none;
+    }
+}
+
+.p-user_rates-index .list-lines tr.editable {
+    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+.p-user_rates-index .stat-categories .category {
+    color: rgba(var(--accent), 1);
+    line-height: normal !important;
+    margin: 0 0 0 2px;
+    padding: 0 7px;
+    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .stat-categories .category:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.1);
+        box-shadow: none;
+        background: none;
+    }
+}
+
+.p-user_rates-index .stat-categories .category.active {
+    color: rgba(var(--accent), 1);
+}
+
+/* сводка по разным спискам  */
+.p-user_rates-index .list-groups .summary.lines {
+    color: rgba(var(--text-2), 1);
+}
+
+/* оценка, эпизоды и т.д. столбики */
+.p-user_rates-index .l-content .order-control {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .l-content .order-control:hover {
+    color: rgba(var(--accent), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines .selectable:hover,
+    .p-userlist_comparer .comparer table .selectable:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.01);
+        background: transparent;
+    }
+    tr.user_rate.selectable.editable:hover:after {
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+        transform: scale(1.01);
+    }
+}
+
+tr.user_rate.selectable.editable:after {
+    content: "";
+    width: 100%;
+    padding-top: 2px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    z-index: -1;
+}
+
+.p-user_rates-index .list-lines .selectable,
+.p-userlist_comparer .comparer table .selectable {
+    transition: 0.15s ease, -webkit-0 .15s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+.p-userlist_comparer .comparer table .exact-same,
+.p-userlist_comparer .legend .exact-same {
+    background-color: rgba(0, 160, 35, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .almost-same,
+.p-userlist_comparer .legend .almost-same {
+    background-color: rgba(0, 86, 20, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .slightly-difr,
+.p-userlist_comparer .legend .slightly-difr {
+    background-color: rgba(160, 0, 0, 0.4);
+    border-radius: 4px;
+}
+
+.p-userlist_comparer .comparer table .abslt-difr,
+.p-userlist_comparer .legend .abslt-difr {
+    background-color: rgba(117, 21, 1, 0.4);
+    border-radius: 4px;
+}
+
+.p-user_rates-index .list-lines tr.edit-form form {
+    background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    border: none;
+    box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
+    border-radius: 10px;
+}
+
+.b-catalog_entry .cover .misc,
+.p-dashboards-show .midheadline .b-link,
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .history > .title .link,
+.p-dashboards .user_list .list-change .note,
+.p-dashboards .c-my_list .list-change .note,
+.bar.vertical .line .x_label,
+.p-dashboards-show .contests .contest .notice,
+.b-forums .forum .topics,
+.name-date .time,
+.p-profiles .profile-head .c-history .entry .misc,
+.p-profiles-show .lifetime .times .time,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.b-comment > .inner header .name-date .time,
+.b-replies,
+.b-options-floated,
+.p-messages .mass-actions .action,
+.p-animes_collection-index .pagination,
+.p-mangas_collection-index .pagination,
+.p-recommendations-index .pagination,
+.p-userlist_comparer-show .pagination,
+.b-rate .score-notice,
+.b-animes-menu .block-list .date,
+.bar.horizontal .line .x_label,
+.b-animes-menu .friend-rate .status,
+.b-summary_marker::before,
+.b-offtopic_marker::before,
+.tipsy,
+header.head .misc,
+header.head a.edit,
+.p-studios .studio .animes,
+.p-studios .studio .years,
+.p-contests .contest-match .vs .help,
+.p-contests .contest-match .vs .next,
+.p-contests .contest-match .vs .finish,
+.p-contests .contest-match .vs .refrain,
+.p-contests .contest-match .vs .refrained,
+.p-contests .match-day .matches-num,
+.b-lang_trigger,
+.b-club .info,
+.b-new_marker::before,
+.b-user.detailed .info .last-online,
+.b-user.detailed .history .line .date,
+.p-recommendations-index .b-header_filters .hint,
+.p-recommendations-favourites .b-header_filters .hint,
+.p-userlist_comparer .comparer table .notice,
+.p-topics .l-menu .calendar .entry .misc,
+.p-topics .l-menu .reviews .entry .misc,
+.p-topics .l-menu .clubs .entry .misc,
+.p-topics .l-menu .contests .contest .notice,
+.p-topics .l-menu .sticked-topics .topic .notice,
+.b-video_player .cc-player_controls .label,
+.b-video_player .cc-player_controls .episode-title .video-link,
+.b-log_entry .date,
+.b-log_entry .spoiler.collapse,
+.b-log_entry .spoiler.collapsed,
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span,
+.b-js-action,
+.b-input .hint,
+.b-review-topic .review-votes_count,
+.p-dashboard .l-menu .ongoing .misc,
+.p-dashboard .l-menu .season .notice,
+.p-topics .l-menu .sticky-topics .topic .notice,
+.b-hot_topics .topic {
+    font-size: 12px !important;
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .list-lines tr td .new-value input {
+    border-radius: 4px;
+    border: none;
+    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
+}
+
+.p-userlist_comparer .comparer table a {
+    color: rgba(var(--text-strong), 1) !important;
+}
+
+.p-userlist_comparer .comparer table .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-user_rates-index .list-lines tr .index {
+    color: rgba(var(--text), 1) !important;
+}
+
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger {
+    font-size: 13px;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .p-animes_collection-index .pagination .link.disabled:hover,
     .p-mangas_collection-index .pagination .link.disabled:hover,
@@ -373,6 +991,12 @@ tr.user_rate.selectable.editable:after {
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 767px) {
+    .p-animes-show .c-image .b-user_rate.b-user_rate,
+    .p-mangas-show .c-image .b-user_rate.b-user_rate,
+    .p-ranobe-show .c-image .b-user_rate.b-user_rate {
+        /*max-width: 100%;*/
+        width: 100%;
+    }
     .b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger,
     .b-db_entry-note .name-container .b-user_rate .b-add_to_list .option {
         max-width: 500px;
@@ -419,515 +1043,6 @@ tr.user_rate.selectable.editable:after {
     }
     th.num.order-control[data-order="kind"] {
         display: table-cell !important;
-    }
-}
-
-/* ===== pages/catalog =====
-   каталог: фильтры слева, коллекции, поиск */
-
-/* справа выборы фильтров в списке аниме */
-.b-block_list li {
-    color: rgba(var(--text), 1);
-    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    font-family: "Comfortaa", sans-serif;
-}
-
-.b-block_list li a {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-animes_collection-index .pagination .link {
-    color: rgba(var(--accent), 1);
-}
-
-.p-animes_collection-index .pagination .link.disabled {
-    color: rgba(var(--text), 1);
-}
-
-.b-collection_search .field input {
-    border: 0 solid rgba(var(--glass), 0.4);
-    background-color: rgba(var(--glass), 0.4) !important;
-}
-
-.p-studios .studio .animes .num,
-.p-studios .studio .years .num {
-    color: rgba(var(--text), 1);
-}
-
-.b-collection_search .field input::-webkit-input-placeholder {
-    color: color-mix(in srgb, var(--glass-shadow) 60%, transparent);
-}
-
-.b-header_filters .filter-line a.current {
-    color: rgba(var(--link), var(--hundred)) !important;
-}
-
-.x1000 .menu-slide-outer.x199 .l-menu,
-.x1200 .menu-slide-outer.x199 .l-menu,
-.menu-slide-outer.x199 .l-menu,
-.x1000 .menu-slide-outer.x240 .l-menu,
-.x1200 .menu-slide-outer.x240 .l-menu,
-.menu-slide-outer.x240 .l-menu {
-    width: 22.00%;
-}
-
-.l-menu .ongoing .misc .value,
-span.studio {
-    color: rgba(var(--text), var(--hundred));
-}
-
-.b-collection_search .b-catalog_entry {
-    transform: scale(1.03);
-}
-
-.p-animes_collection-index.x1000 .cc-entries,
-.p-animes_collection-index.x1200 .cc-entries {
-    margin-top: 4px;
-}
-
-.b-collection-filters .block-list li:before,
-.b-collection-filters .b-block_list li:before {
-    content: "\f10c";
-    color: rgba(var(--text-2), 1);
-    display: inline-block;
-    vertical-align: top;
-    width: 10px;
-    margin: 0px 18px 2px 2px;
-    font: normal normal normal 14px/1 FontAwesome;
-    direction: ltr;
-    line-height: 1;
-    text-transform: none;
-    font-size: 17px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-block_list li:hover {
-        color: rgba(var(--accent), 1) !important;
-        transition: 0s ease-out;
-        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    }
-}
-
-.b-block_list li.selected {
-    color: rgba(var(--text), 1);
-    transition: 0s ease-out;
-    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-}
-
-.b-block_list li.selected:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-collection-filters .b-block_list li.selected:before {
-    content: "\f05d";
-    color: rgba(var(--text), 1);
-    font-size: 19px;
-    margin: 0px 18px 2px 1px;
-}
-
-.b-collection-filters .block-list li > input,
-.b-collection-filters .b-block_list li > input {
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 0;
-    border: 0;
-    opacity: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.b-collection-filters .b-block_list li:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-collection-filters .block-list .filter:before,
-.b-collection-filters .b-block_list .filter:before {
-    display: block;
-    width: auto;
-    font-family: inherit;
-    font-size: 10px;
-    line-height: inherit;
-    text-transform: lowercase;
-}
-
-.b-collection-filters .block-list .filter,
-.b-collection-filters .b-block_list .filter {
-    float: right;
-    position: relative;
-    right: -2px;
-    margin: 0 0 0 0.5rem;
-}
-
-.b-collection-filters .b-block_list .filter.item-add:before {
-    font-family: "Comfortaa";
-    color: rgba(var(--text-2), 1);
-    border-radius: 10px;
-    padding-right: 12px;
-}
-
-[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
-    font-family: "Comfortaa";
-    content: "исключить";
-}
-
-.b-collection-filters .b-block_list .filter.item-minus::before {
-    font-family: "Comfortaa";
-    color: rgba(var(--text-2), 1);
-    border-right: 3px solid #af3e0f;
-    border-radius: 10px;
-    padding-right: 9px;
-}
-
-[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus::before {
-    font-family: "Comfortaa";
-    content: "добавить";
-}
-
-[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before,
-[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-collection-filters .block-list .b-question,
-.b-collection-filters .b-block_list .b-question {
-    display: inline-block !important;
-    vertical-align: top;
-    position: absolute;
-    right: 10px;
-}
-
-.b-list_switchers .switcher.alphabet::after {
-    content: "\f1c2";
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 14px;
-    font-weight: bold;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
-.c-filters .c-filters-head {
-    align-items: center !important;
-    min-height: 32px;
-    height: auto !important;
-    box-sizing: border-box;
-}
-
-/* место под .c-ms-caret */
-/* в настройках поля по размеру текста, как «Язык интерфейса» */
-select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
-
-.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
-.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
-    transform: translateY(-50%) !important;
-}
-
-@supports (appearance: base-select) {
-    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
-}
-
-/* ----- телефон и узкие экраны ----- */
-
-@media screen and (min-width: 736px) and (max-width: 880px) {
-    span.switcher.b-tooltipped.popularity,
-    span.switcher.b-tooltipped.alphabet {
-        width: 80px;
-    }
-    .b-list_switchers .switcher.popularity:before,
-    .b-list_switchers .switcher.alphabet:before {
-        content: "===";
-        font: bold 20px "Comfortaa" !important;
-        width: 51px;
-    }
-}
-
-@media screen and (max-width: 1023px) {
-    .p-animes_collection-index.x1000 .cc-entries,
-    .p-animes_collection-index.x1200 .cc-entries {
-        padding: 0  12px 0  4px;
-    }
-    ul.b-block_list {
-        height: auto !important;
-        text-align: left !important;
-        line-height: 30px;
-        font-size: 15px !important;
-    }
-    .b-collection-filters .b-block_list li.selected:before,
-    .b-collection-filters .block-list li:before,
-    .b-collection-filters .b-block_list li:before {
-        margin: 0  28px 2px 1px;
-        line-height: 30px;
-        font-size: 25px;
-    }
-    .b-block_list {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .b-block_list {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-top: 6px;
-        position: relative;
-        overflow: hidden;
-        height: 44px !important;
-    }
-    section.l-page.menu-expanded aside.l-menu {
-        display: block;
-        position: absolute;
-        height: auto;
-        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-        z-index: 3;
-        padding: 10px 14px;
-        right: 3px;
-        width: 98%;
-    }
-    section.l-page aside.l-menu {
-        display: none;
-    }
-    .p-animes_collection-index.x1000 .cc-entries,
-    .p-animes_collection-index.x1200 .cc-entries {
-        padding: 0 ;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 735px) {
-    .b-list_switchers .switcher.popularity:before,
-    .b-list_switchers .switcher.alphabet:before {
-        content: "";
-        font: bold 20px "Comfortaa" !important;
-        width: 50px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .b-block_list {
-        width: calc(100% - 64px);
-        margin-top: 0;
-    }
-}
-
-@media screen and (max-width: 599px) {
-    .b-list_switchers .switcher.popularity:before,
-    .b-list_switchers .switcher.alphabet:before {
-        content: "";
-        font: bold 20px "Comfortaa" !important;
-        width: 50px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    section.l-page.menu-expanded aside.l-menu {
-        display: block !important;
-        position: fixed !important;
-        z-index: 950 !important;
-        top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: min(calc(100vw - 32px), 440px) !important;
-        max-width: none !important;
-        height: auto !important;
-        max-height: 70vh;
-        max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
-        margin: 0 !important;
-        padding: 0 16px 16px !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch;
-        transform: translate(-50%, -50%);
-        transform-origin: 50% 50%;
-        /* «жидкое стекло» */
-        background:
-            linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
-            color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 2.4)) saturate(125%);
-        -webkit-backdrop-filter: blur(12px) saturate(125%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border: 1px solid rgba(var(--glass-light), 0.14) !important;
-        border-radius: 22px !important;
-        outline: none !important;
-        box-shadow:
-            inset 0 1px 0 rgba(var(--glass-light), 0.22),
-            inset 0 0 0 1px color-mix(in srgb, var(--accent-dim) 38%, transparent),
-            0 0 0 1px color-mix(in srgb, var(--accent-dim) 25%, transparent),
-            0 20px 50px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
-        animation: shiki-sheet .34s cubic-bezier(.22, 1.2, .36, 1) both;
-        scrollbar-width: thin;
-        scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
-    }
-    /* реклама и пустые служебные блоки не занимают место над заголовком */
-    section.l-page.menu-expanded aside.l-menu .to-process[data-dynamic$="_ad"],
-    section.l-page.menu-expanded aside.l-menu [class*="b-spns"],
-    section.l-page.menu-expanded aside.l-menu [class*="spns_"],
-    section.l-page.menu-expanded aside.l-menu .c-filters > :empty {
-        display: none !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-filters {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        margin: 0 -16px 12px !important;
-        padding: 14px 16px 10px !important;
-        background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
-        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
-        -webkit-backdrop-filter: blur(8px) saturate(115%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
-        border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
-        border-radius: 0 !important;
-        width: auto !important;
-        max-width: none !important;
-        box-shadow: none !important;
-        color: rgb(var(--accent));
-    }
-    /* поля внутри стекла тоже полупрозрачные; все значения одного размера
-       (при шрифте мельче 16px iOS приближает страницу при фокусе) */
-    section.l-page.menu-expanded aside.l-menu {
-        --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
-        --field-font: 16px;
-        --field-height: 40px;
-    }
-    section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
-    section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field { margin-bottom: 12px; }
-    /* списки фильтра раскрываются внутри карточки, а не поверх соседних полей */
-    section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        margin-top: var(--drop-gap);
-    }
-    /* ================================================================
-       Телефоны: списки фильтров в карточке плавно раскрываются и
-       сворачиваются, поля ниже едут вместе с ними (высота через строки
-       сетки 0fr ↔ 1fr; список не исчезает, пока не свернётся)
-       ================================================================ */
-    section.l-page aside.l-menu .c-ms {
-        display: grid !important;
-        grid-template-rows: auto 0fr;
-        grid-template-columns: minmax(0, 1fr);
-        /* сворачивание: плавно, без рывка в начале */
-        transition: grid-template-rows .32s cubic-bezier(.4, 0, .2, 1);
-    }
-    section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
-        grid-template-rows: auto 1fr;
-        /* раскрытие: как раньше, быстрый выезд с мягкой остановкой */
-        transition: grid-template-rows .3s cubic-bezier(.22, 1, .36, 1);
-    }
-    section.l-page aside.l-menu .c-ms-dropdown:not(#u),
-    section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
-        display: block !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-        margin-top: 0 !important;
-        border-width: 0 !important;
-        clip-path: none !important;
-        transform: none !important;
-        opacity: 0 !important;
-        visibility: hidden;
-        transition: opacity .22s ease, margin-top .32s cubic-bezier(.4, 0, .2, 1),
-                    border-width .32s step-end, visibility 0s linear .32s !important;
-    }
-    section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
-        margin-top: var(--drop-gap) !important;
-        border-width: 1px !important;
-        opacity: 1 !important;
-        visibility: visible;
-        transition: opacity .25s ease .05s, margin-top .3s cubic-bezier(.22, 1, .36, 1),
-                    border-width 0s, visibility 0s !important;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) {
-    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
-}
-
-@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
-    /* Короткие списки (до 15 пунктов) без строки поиска: скрипт ставит в неё фокус,
-       iPhone выдвигает клавиатуру, и карточка фильтров прыгает. */
-    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
-        display: none !important;
-    }
-    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
-}
-
-@media screen and (max-width: 767px) {
-    /* строка поиска в длинных списках — во всю ширину, с тонкой линией снизу */
-    section.l-page aside.l-menu .c-ms-search:not(#u) {
-        display: block;
-        width: 100% !important;
-        height: 40px !important;
-        margin: 0 !important;
-        padding: 0 14px !important;
-        box-sizing: border-box !important;
-        background: rgba(var(--glass-light), .03) !important;
-        border: 0 !important;
-        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        color: rgb(var(--text)) !important;
-        outline: none !important;
-    }
-    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
-    section.l-page aside.l-menu .c-ms-options:not(#u) {
-        margin-top: 0 !important;
-        max-height: 220px;
-        overflow-y: auto;
-    }
-    /* высота карточки не пересчитывается, когда прячется панель Safari */
-    section.l-page.menu-expanded aside.l-menu:not(#u) {
-        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
-    }
-    section.l-page.menu-expanded aside.l-menu {
-        background:
-            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
-            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
-        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
-        -webkit-backdrop-filter: blur(18px) saturate(130%); /* Safari: без var() */
-        padding: 0 16px 18px !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-filters-head {
-        margin: 0 -16px 14px !important;
-        padding: 15px 16px 12px !important;
-        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
-        font-size: 15px;
-        letter-spacing: .04em;
-    }
-    /* одинаковые отступы: подпись — 6px — поле — 14px — следующая подпись */
-    section.l-page.menu-expanded aside.l-menu .c-ms-field {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin: 0 0 14px !important;
-        padding: 0 !important;
-    }
-    section.l-page.menu-expanded aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
-    section.l-page.menu-expanded aside.l-menu .c-ms-title {
-        margin: 0 !important;
-        padding: 0 2px !important;
-        font-size: 14px !important;
-        line-height: 18px !important;
-        color: rgb(var(--text-2)) !important;
     }
 }
 
@@ -2072,6 +2187,10 @@ body#clubs_edit .b-options-floated a:active:after {
     .b-achievement .c-about {
         padding: 14px;
     }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 314px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 735px) {
@@ -2081,9 +2200,16 @@ body#clubs_edit .b-options-floated a:active:after {
     .b-achievement .c-about {
         padding: 12px;
     }
+    .b-achievement .c-about .hint.hint {
+        font-size: 10px;
+    }
     .b-achievement .c-about .percent {
         float: right;
         font-size: 12px;
+    }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 314px;
     }
 }
 
@@ -2091,6 +2217,13 @@ body#clubs_edit .b-options-floated a:active:after {
     body.p-achievements.p-profiles .block.m0:before {
         content: "★ ACHIEVEMENTS ★";
         font-size: 32px;
+    }
+    .p-achievements-index .cc-achievements .b-achievement.b-achievement,
+    .p-achievements-index .cc-franchises-genres .c-genres .b-achievement.b-achievement {
+        min-height: 274px;
+    }
+    .p-achievements-index .c-franchises .b-badge.b-badge {
+        margin: 6px !important;
     }
     .p-achievements-index .c-franchises .b-badge[data-progress="100"]:after {
         background: linear-gradient(135deg, transparent 280px, #483d1c 0);
@@ -2367,4 +2500,22 @@ body#clubs_edit .b-options-floated a:active:after {
     padding: 5px 12px !important;
     text-align: center;
     box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
+}
+
+/* загрузить еще комментарии */
+.b-comments .comments-loader,
+.b-comments .comments-hider,
+.b-comments .comments-expander,
+.b-comments .faye-loader,
+.collapsed,
+.b-forum .faye-loader,
+.b-topic .faye-loader,
+.collapsed + .spoiler .hide-expanded {
+    background: rgba(var(--glass), 0.4);
+    color: rgba(var(--text-2), 1);
+    border: none;
+    transition: 0.3s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05) !important;
 }

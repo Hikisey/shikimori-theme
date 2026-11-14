@@ -217,7 +217,20 @@
     }
 }
 
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .b-clubs.one-line .b-club.b-club {
+        width: auto;
+        margin: auto !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
+    body.p-profiles-show .cc-2a .b-clubs.b-clubs {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
     body.p-profiles-show .cc-2a .b-clubs .b-club {
         width: auto !important;
         margin: 0 !important;

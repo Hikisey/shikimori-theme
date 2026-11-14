@@ -1004,6 +1004,27 @@ div.Ssylki-Characters:hover .Text-1:after {
     transition: opacity 0.25s ease-in-out;
 }
 
+div.Ssylki-anime:hover .b-link.b-link {
+    opacity: 1;
+}
+
+.Ssylki-anime strong:not(._)::before {
+    content: "";
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(2.8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.25s ease-in-out;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    border-radius: 0.5rem;
+}
+
 div.Ssylki-anime:hover strong::before {
     opacity: 1;
 }

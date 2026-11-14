@@ -527,6 +527,10 @@
     justify-content: center;
 }
 
+.use-tabs.--Fat.--ripple>[data-dynamic]:not(._)::after {
+    background: color-mix(in srgb, var(--tone-b1cdde) 10.2%, transparent);
+}
+
 .use-tabs.--Fat.--centered {
     font-size: 14px;
 }

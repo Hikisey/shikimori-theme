@@ -52,6 +52,10 @@
     border-bottom: none !important;
 }
 
+.bar.vertical .line .x_label.x_label {
+    font-size: 10px !important;
+}
+
 /* Activity Graph Fix */
 .bar.vertical .line {
     border-right: 1px solid transparent;

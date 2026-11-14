@@ -157,10 +157,22 @@ body * .b-abuse_marker:before {
     color: #e4c6c6;
 }
 
-body * [class*="broadcast_marker"]:before {
-    content: '📢 рассылка' !important;
-    background-color: #772448;
-    color: var(--tone-eadddd);
+/* статус "онгоин" */
+body * .b-anime_status_tag.b-anime_status_tag.ongoing:before {
+    background: #014493;
+    color: #d7e6f8;
+}
+
+/* статус "игнор" */
+body * .b-anime_status_tag.b-anime_status_tag.ignored:before {
+    background: #96120b;
+    color: #fbdede;
+}
+
+/* статус "анонс" */
+body * .b-anime_status_tag.b-anime_status_tag.anons:before {
+    background: #9c3417;
+    color: #fbe5de;
 }
 
 body * .b-offtopic_marker {
@@ -296,6 +308,13 @@ body#people_show .c-works .b-catalog_entry {
 
 body#people_show .c-works .b-catalog_entry .image-cutter {
     max-height: 120px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-breadcrumbs a.b-link.b-link:hover {
+        background: none !important;
+        box-shadow: none !important;
+    }
 }
 
 body#profiles_show .profile-content .cc-2.block {
@@ -457,11 +476,8 @@ body#profiles_show .cc-franchises .b-badge .no-image {
     border-radius: 6px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .c-column.c-control.show-options:hover {
-        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2) !important;
-    }
+body#dashboard_show .b-catalog_entry.b-catalog_entry {
+    background: none;
 }
 
 .cc-optional_controls .icon,
