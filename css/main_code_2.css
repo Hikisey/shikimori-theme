@@ -1,6 +1,14 @@
 /*2104*/
+/* Название и версия темы в подвале (слева внизу). Поменять — только здесь
+   (или переопределить эти же переменные в своём site.css). */
+:root {
+    --theme-brand: "E-design";
+    --theme-version: "4.37.3";
+    --theme-name: "Modern Dark";
+}
 .l-footer:before {
-    content: 'E-design v.4.37.3';
+    content: var(--theme-brand) " v." var(--theme-version) "   *" var(--theme-name) "*";
+    white-space: pre;
 }
 .b-club .name-logo .name {
     transition: 1s ease;

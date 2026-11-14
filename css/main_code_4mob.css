@@ -5460,7 +5460,7 @@ a:hover, .b-link:hover, .b-js-link:hover {
     color: rgb(var(--input-color)) !important;
 }
 .l-footer:after {
-    content: "*Modern Dark*" !important;
+    content: none !important; /* название теперь в .l-footer:before, см. --theme-name */
 }
 
 
@@ -6956,5 +6956,77 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
     .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover::before {
         background: none !important;
         color: #fff;
+    }
+}
+
+/* ================================================================
+   v1.2.13 — галочки: ровно по тексту и плавное включение/выключение
+   ================================================================ */
+/* сама галочка — кружок 18px, текст по центру его высоты */
+label:has(> input[type="checkbox"]) {
+    display: flex !important;
+    width: fit-content;
+    min-height: 26px;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+html input[type="checkbox"]:not(#u) {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px;
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(var(--light-color), .55) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+}
+label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) { margin-right: 0 !important; }
+/* галочка внутри — рисуется рамкой и «вырастает» */
+html input[type="checkbox"]:not(#u)::before {
+    content: "" !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px !important;
+    height: 8px !important;
+    margin: -6px 0 0 -2.5px !important;
+    padding: 0;
+    font: inherit;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    box-sizing: content-box;
+    background: none;
+    transform: rotate(45deg) scale(0);
+    transform-origin: 50% 60%;
+    opacity: 0;
+    transition: transform .16s ease-in, opacity .14s ease-in;
+}
+html input[type="checkbox"]:not(#u):checked {
+    background: rgb(var(--bright-color)) !important;
+    border-color: rgb(var(--bright-color)) !important;
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .18) !important;
+}
+html input[type="checkbox"]:not(#u):checked::before {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), opacity .15s ease;
+}
+html input[type="checkbox"]:not(#u):focus-visible {
+    box-shadow: 0 0 0 3px rgba(var(--bright-color), .3) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    html input[type="checkbox"]:not(#u):not(:checked):hover {
+        border-color: rgba(var(--bright-color), .8) !important;
     }
 }
