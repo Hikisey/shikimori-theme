@@ -6,7 +6,7 @@
 от нарезки не меняется: part_01 + part_02 + … == модули подряд.
 
     python3 tools/build.py                   # пересобрать css/
-    python3 tools/build.py --version 1.3.2  # заодно поставить версию в подвал
+    python3 tools/build.py --version 1.3.3  # заодно поставить версию в подвал
     python3 tools/build.py --out /tmp/x      # собрать в другую папку (css/ не трогать)
 
 Шикимори на v1.2.21–v1.2.22 не смог импортировать файл ~231 КБ, поэтому
@@ -79,7 +79,7 @@ def split(s, limit):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--version', help='версия для подвала, например 1.3.2')
+    ap.add_argument('--version', help='версия для подвала, например 1.3.3')
     ap.add_argument('--max', type=int, default=80_000, help='наибольший размер части в байтах (по умолчанию 80000)')
     ap.add_argument('--out', default=os.path.join(ROOT, 'css'))
     a = ap.parse_args()

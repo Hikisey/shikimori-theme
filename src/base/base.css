@@ -583,3 +583,32 @@ a,
         --text-soft: rgba(var(--text), .86);
     }
 }
+
+/* ================================================================
+   iPhone и другие сенсорные экраны: текст не выделяется долгим
+   нажатием (интерфейс ведёт себя как приложение). Поля ввода,
+   редактор и contenteditable остаются выделяемыми — иначе нельзя
+   печатать и править текст. Меню ссылок и картинок по долгому
+   нажатию оставлено (открыть в новой вкладке, сохранить картинку).
+   ================================================================ */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+    a[href],
+    img {
+        -webkit-touch-callout: default;
+    }
+    input,
+    textarea,
+    [contenteditable]:not([contenteditable="false"]),
+    [contenteditable]:not([contenteditable="false"]) *,
+    .CodeMirror,
+    .CodeMirror * {
+        -webkit-user-select: text;
+        user-select: text;
+        -webkit-touch-callout: default;
+    }
+}

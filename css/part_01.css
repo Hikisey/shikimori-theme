@@ -270,8 +270,8 @@ html[data-color-mode=light] {
     /* поля ввода и выпадающие списки */
     --field-text: rgb(var(--text));
     --drop-shift: translateY(-4px);
-    --drop-time: .3s;                                  /* раскрытие и сворачивание списков фильтров */
-    --drop-ease-close: cubic-bezier(.4, 0, .2, 1);     /* сворачивание: плавно, без рывка в начале */
+    --drop-time: var(--ui-drop);   /* списки фильтров: та же длительность, что у «Сортировки» (base.css) */
+    --drop-ease: var(--ui-ease);   /* и та же кривая, без перелёта; в обе стороны */
     --drop-max-typing: min(320px, 45svh);              /* телефон: высота вариантов в списке с поиском (уходит под клавиатуру и листается) */
 
     /* шторка фильтров на телефоне: открытие и закрытие */
@@ -927,6 +927,35 @@ a,
     }
 }
 
+/* ================================================================
+   iPhone и другие сенсорные экраны: текст не выделяется долгим
+   нажатием (интерфейс ведёт себя как приложение). Поля ввода,
+   редактор и contenteditable остаются выделяемыми — иначе нельзя
+   печатать и править текст. Меню ссылок и картинок по долгому
+   нажатию оставлено (открыть в новой вкладке, сохранить картинку).
+   ================================================================ */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+    a[href],
+    img {
+        -webkit-touch-callout: default;
+    }
+    input,
+    textarea,
+    [contenteditable]:not([contenteditable="false"]),
+    [contenteditable]:not([contenteditable="false"]) *,
+    .CodeMirror,
+    .CodeMirror * {
+        -webkit-user-select: text;
+        user-select: text;
+        -webkit-touch-callout: default;
+    }
+}
+
 /* ===== base/animations =====
    все @keyframes темы */
 
@@ -1219,9 +1248,10 @@ a,
     from { opacity: 0; }
 }
 
+/* шторка фильтров на телефоне: появление снизу вверх, без масштаба и перелёта */
 @keyframes shiki-sheet {
-    from { opacity: 0; transform: translate(-50%, calc(-50% + 24px)) scale(.9); }
-    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    from { opacity: 0; transform: translate(-50%, calc(-50% + var(--sheet-shift))); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 @keyframes shiki-sheet-fade {
@@ -1733,8 +1763,9 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     .l-page.menu-expanded .menu-toggler .toggler {
         box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
     }
-    /* затемнение плавно появляется и исчезает вместе с карточкой фильтров
-       (display переключается в конце перехода: allow-discrete) */
+    /* затемнение плавно появляется и исчезает вместе с карточкой фильтров:
+       появление — @keyframes (работает в любом Safari), исчезание —
+       transition с display allow-discrete */
     section.l-page.l-page::after {
         display: none;
         opacity: 0;
@@ -1745,16 +1776,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         display: block;
         opacity: 1;
         pointer-events: auto;
-    }
-    @starting-style {
-        section.l-page.menu-expanded::after { opacity: 0; }
-    }
-}
-
-/* старые браузеры без allow-discrete: только появление, как раньше */
-@supports not (transition: opacity 1s allow-discrete) {
-    @media screen and (max-width: 767px) {
-        section.l-page.menu-expanded::after { animation: shiki-fade var(--sheet-time) ease both; }
+        animation: shiki-fade var(--sheet-time) ease backwards;
     }
 }
 
