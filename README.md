@@ -17,7 +17,7 @@
 
 Нужно только скопировать один файл в настройки профиля.
 
-1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.11/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
+1. Откройте файл [`site.css`](https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.12/site.css). Это готовый стиль: подключение темы и палитра с пояснениями.
 2. Выделите весь текст (Ctrl+A) и скопируйте его (Ctrl+C).
 3. На Шикимори откройте свой профиль, затем «Настройки» и вкладку «Внешний вид сайта». Прямая ссылка: `https://shikimori.one/ВАШ_НИК/edit/styles`.
 4. Удалите всё, что уже есть в поле стиля, и вставьте скопированный текст (Ctrl+V).
@@ -37,17 +37,17 @@
 ```css
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.11/css/main_code_1.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.11/css/main_code_2.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.11/css/main_code_3.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.11/css/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.12/css/main_code_1.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.12/css/main_code_2.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.12/css/main_code_3.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.2.12/css/main_code_4mob.css");
 ```
 
 Первые две строки делают тёмным редактор кода в настройках и включают замену постеров персонажей. Остальные четыре подключают саму тему. Без палитры тема тоже работает, цвета по умолчанию уже заданы.
 
 ### Обновление до новой версии
 
-В ссылках указана версия `v1.2.11`, поэтому Шикимори не подсовывает старые файлы из кеша. Когда выйдет новая версия, замените `v1.2.11` на её номер во всех четырёх ссылках темы и сохраните.
+В ссылках указана версия `v1.2.12`, поэтому Шикимори не подсовывает старые файлы из кеша. Когда выйдет новая версия, замените `v1.2.12` на её номер во всех четырёх ссылках темы и сохраните.
 
 Ставьте только релизные версии со страницы [Releases](https://github.com/Hikisey/shikimori-theme/releases). Ветка `main` предназначена для разработки и тестов: она может меняться в любой момент и быть временно сломанной, поэтому не подключайте ссылки с `main` вместо номера версии.
 

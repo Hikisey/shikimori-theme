@@ -6855,28 +6855,55 @@ select:not(#u) option:hover { background: var(--opt-hover) !important; }
         background: rgba(var(--bright-color), .14);
     }
 
-    /* поиск по списку — видимое поле со скруглённой рамкой */
-    .p-user_rates-index .b-collection_search {
-        margin: 12px 0 20px !important;
+    /* поиск по списку — такая же стеклянная полоса, как заголовки, с лупой слева;
+       одинаковые отступы: «Список аниме» → поиск → первая группа */
+    html body.p-user_rates-index .l-content > .b-collection_search {
+        margin: 12px 0 12px !important;
+        padding: 0 !important;
     }
-    .p-user_rates-index .b-collection_search .field input {
+    .p-user_rates-index .b-collection_search .field {
+        position: relative;
+        margin: 0 !important;
+    }
+    .p-user_rates-index .b-collection_search .field::before {
+        content: "\f002";
+        font-family: "FontAwesome", sans-serif;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 13px;
+        line-height: 1;
+        color: rgba(var(--light-color), .45);
+        pointer-events: none;
+        z-index: 1;
+        transition: color .2s ease;
+    }
+    .p-user_rates-index .b-collection_search .field:focus-within::before { color: rgb(var(--bright-color)); }
+    html body.p-user_rates-index .l-content > .b-collection_search .field input {
+        width: 100% !important;
         height: 38px !important;
         box-sizing: border-box;
-        padding: 0 14px !important;
-        border-radius: 10px !important;
-        border: 1px solid rgba(var(--white-color), .12) !important;
-        background-color: rgba(var(--block-color), .45) !important;
-        box-shadow: inset 0 1px 3px rgba(var(--shadows-color), .35);
+        margin: 0 !important;
+        padding: 0 14px 0 38px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(var(--white-color), .07) !important;
+        background-color: rgba(var(--block-color), .62) !important;
+        box-shadow: 0 6px 18px rgba(var(--shadows-color), .35) !important;
+        -webkit-backdrop-filter: blur(8px) saturate(115%);
+        backdrop-filter: blur(8px) saturate(115%);
         color: rgb(var(--light-color)) !important;
         outline: none !important;
-        transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+        transition: border-color .2s ease, box-shadow .2s ease;
     }
     .p-user_rates-index .b-collection_search .field input::placeholder { color: rgba(var(--light-color), .45); }
-    .p-user_rates-index .b-collection_search .field input:focus {
-        border-color: rgba(var(--bright-color), .7) !important;
-        background-color: rgba(var(--block-color), .6) !important;
-        box-shadow: 0 0 0 3px rgba(var(--bright-color), .18);
+    html body.p-user_rates-index .l-content > .b-collection_search .field input:focus {
+        border-color: rgba(var(--bright-color), .55) !important;
+        box-shadow: 0 6px 18px rgba(var(--shadows-color), .35), 0 0 0 2px rgba(var(--bright-color), .16) !important;
     }
+    .p-user_rates-index .list-groups { margin-top: 0 !important; padding-top: 0 !important; }
+    .p-user_rates-index .list-groups > header:first-child,
+    .p-user_rates-index .list-groups > header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
 
     /* карандаш «изменить» (свой список) — маленький стеклянный квадрат */
     .p-user_rates-index .list-posters .user_rate .edit-user_rate {
