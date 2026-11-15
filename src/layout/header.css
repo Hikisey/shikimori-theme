@@ -334,7 +334,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 
         height: 27px;
         width: 27px;
-        content: '\f0c9';
+        content: '\\f0c9';
         background: none;
         font-family: 'FontAwesome', sans-serif;
         color: rgba(var(--text-strong), 1);
@@ -360,13 +360,13 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     }
     .l-page .menu-toggler .toggler:after,
     .l-page.menu-expanded .menu-toggler .toggler:after {
-        content: "\f0b0";
+        content: "\\f0b0";
         font-size: 23px;
         color: rgba(var(--text), var(--hundred));
         font-family: 'FontAwesome', sans-serif;
     }
     .l-page.menu-expanded .menu-toggler .toggler:after {
-        content: "\f054";
+        content: "\\f054";
         font-size: 26px;
         color: rgba(var(--text), var(--hundred));
         font-family: 'FontAwesome', sans-serif;
@@ -437,7 +437,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         background: color-mix(in srgb, var(--accent-dim) 92%, transparent) !important;
     }
     .l-page.menu-expanded .menu-toggler .toggler:after {
-        content: "\f00d" !important;
+        content: "\\f00d" !important;
         font-size: 22px !important;
     }
     /* --- панель фильтров: плотное матовое стекло --- */
@@ -502,4 +502,80 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         border-color: rgba(var(--accent), .55);
         color: rgba(var(--accent), 1);
     }
+}
+
+/* --- знак вопроса в стиле кнопки / (random-anime-btn) --- */
+.l-top_menu-v2 .search-marker,
+.l-top_menu-v2 .menu-icon.help,
+.l-top_menu-v2 a[title*="?"],
+.l-top_menu-v2 .icon[title*="?"] {
+    border: 1px solid rgba(var(--glass-light), .18) !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: color-mix(in srgb, var(--glass-deep) 40%, transparent) !important;
+    color: rgb(var(--text-2)) !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    font-size: 14px;
+}
+
+.l-top_menu-v2 .search-marker:hover,
+.l-top_menu-v2 .menu-icon.help:hover {
+    border-color: rgba(var(--accent), .55) !important;
+    color: rgba(var(--accent), 1) !important;
+}
+
+/* --- кнопка «Скрыть» внутри плашки новостей --- */
+.site_news .subheadline-buttons,
+.block2.site_news .subheadline-buttons {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    height: auto !important;
+    z-index: 5;
+}
+
+.site_news .headline,
+.block2.site_news .headline {
+    position: relative;
+    padding-right: 80px;
+}
+
+.site_news .subheadline-buttons a,
+.site_news .subheadline-buttons .b-link,
+.site_news .subheadline-buttons button {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    border-radius: 10px !important;
+    background: color-mix(in srgb, var(--accent) 65%, transparent) !important;
+    color: rgb(var(--text-strong)) !important;
+    box-shadow: var(--plate-shadow-soft) !important;
+    border: none !important;
+}
+
+/* маркеры RIP только на shikimori.rip (на .io не показываем) */
+body.p-dashboards .b-comment .name:after,
+.b-comment .name:after {
+    content: none; /* по умолчанию нет */
+}
+
+/* если на странице есть признак RIP — показываем */
+[data-site="rip"] .b-comment .name:after,
+body[class*="rip"] .b-comment .name:after {
+    content: " RIP";
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 5px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--accent) 70%, transparent);
+    color: rgb(var(--text-strong));
+    vertical-align: middle;
 }
