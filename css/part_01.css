@@ -1879,6 +1879,29 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     text-align: center;
 }
 
+/* --- шапка: случайное аниме и пункты меню RIP --- */
+.l-top_menu-v2 .global-search .random-anime-btn,
+.l-top_menu-v2.is-search-mobile .random-anime-btn-mobile {
+    border: 1px solid rgba(var(--glass-light), .18);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    color: rgb(var(--text-2));
+}
+
+.l-top_menu-v2 .submenu > a.icon-visual_novel:before,
+.l-top_menu-v2 .submenu > a.icon-useful:before {
+    color: inherit;
+    background-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .l-top_menu-v2 .global-search .random-anime-btn:hover,
+    .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile:hover {
+        border-color: rgba(var(--accent), .55);
+        color: rgba(var(--accent), 1);
+    }
+}
+
 /* ===== layout/page =====
    каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column */
 
