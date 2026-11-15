@@ -3968,9 +3968,3 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     .watch-online :is(.b-link_button, .watch-online-play):hover,
     .watch-online > a.kind:hover { background: var(--btn-bg-hover) !important; color: var(--btn-text) !important; }
 }
-.p-user_rates-index .l-menu .mini-charts :is(.bar, .bar-container .bar, .bar.simple .bar) {
-    background: color-mix(in srgb, rgb(var(--accent)) 72%, rgb(var(--shade))) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .l-menu .mini-charts :is(.bar, .bar-container .bar):hover { background: rgba(var(--accent), 1) !important; }
-}
