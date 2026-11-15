@@ -14,3 +14,7 @@ https://commons.wikimedia.org/wiki/File:Pink_and_purple_skyline_%28Unsplash%29.j
 
 «Purple and pink cloudy sky», Jeremy Bishop, Unsplash, CC0.
 https://commons.wikimedia.org/wiki/File:Purple_and_pink_cloudy_sky_(Unsplash).jpg
+
+## bg_purple_sky.webp, bg_purple_sky_m.webp
+
+«Sublime purple night sky», Vincentiu Solomon, Unsplash, CC0.
