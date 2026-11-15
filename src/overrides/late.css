@@ -3958,3 +3958,26 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     .watch-online :is(.b-link_button, .watch-online-play):hover,
     .watch-online > a.kind:hover { background: var(--btn-bg-hover) !important; color: var(--btn-text) !important; }
 }
+
+/* v1.6.5: «Сохранить» у CSS под редактором, не fixed в углу */
+.b-edit_styles .editor-container { display: flex; flex-direction: column; }
+.b-edit_styles .editor-container > .buttons.m15 {
+    position: sticky !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 10px;
+    margin: 12px 0 0 auto !important;
+    order: 20;
+    z-index: 6;
+}
+.b-edit_styles .editor-container > .buttons:not(.m15) { display: none !important; }
+.p-profiles-edit .b-edit_styles .editor-container :is(input, button)[type="submit"] {
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 0 !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles-edit .b-edit_styles .editor-container :is(input, button)[type="submit"]:hover {
+        background: var(--btn-bg-hover) !important;
+    }
+}

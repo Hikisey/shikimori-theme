@@ -121,13 +121,18 @@ def main():
     texts = [open(p, encoding='utf-8').read().rstrip('\n') + '\n\n' for p in mods]
     s = ''.join(texts)
     top_level_cuts(s)  # проверка скобок
-    parts = pack(texts, a.max)
+    vm = re.search(r'--theme-version: "([^"]*)"', s)
+    ver = vm.group(1) if vm else 'X.Y.Z'
+    banner = f'/* shiki glass v{ver} — тема и обновления: https://github.com/Hikisey/shikimori-theme */\n'
+    pack_limit = a.max - len(banner.encode())
+    parts = pack(texts, pack_limit)
     os.makedirs(a.out, exist_ok=True)
     for old in glob.glob(os.path.join(a.out, 'part_*.css')):
         os.remove(old)
     names = []
     for k, p in enumerate(parts, 1):
         name = f'part_{k:02d}.css'
+        p = banner + p
         open(os.path.join(a.out, name), 'w', encoding='utf-8').write(p)
         size = len(p.encode())
         print(f'{name}  {size:6d} байт  {p.count(chr(10)):5d} строк')
