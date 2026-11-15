@@ -3844,12 +3844,20 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
 }
 
 /* v1.6.0 rip плееры */
+.players-loader .subheadline { display: flex !important; align-items: center; }
+.players-loader .subheadline-buttons { position: static; margin: 0 0 0 auto; }
 #toggle-players {
-    background: var(--btn-bg) !important;
-    color: var(--btn-text) !important;
+    background: transparent !important;
+    color: rgba(var(--accent), 1) !important;
     border: 0 !important;
-    box-shadow: var(--plate-shadow-soft);
+    box-shadow: none !important;
+    height: var(--heading-height);
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 600;
 }
+#players select:not(#u),
+.players-loader select:not(#u) { display: none !important; }
 #players .player-dropdown__trigger,
 #players .player-dropdown__list {
     background: color-mix(in srgb, var(--glass-deep) 96%, #07080a) !important;
@@ -3876,7 +3884,7 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     color: rgb(var(--text-strong)) !important;
 }
 @media (hover: hover) and (pointer: fine) {
-    #toggle-players:hover { background: var(--btn-bg-hover) !important; }
+    #toggle-players:hover { background: transparent !important; color: rgba(var(--accent), 1) !important; }
     #players .player-dropdown__option:hover {
         background: color-mix(in srgb, rgb(var(--accent)) 14%, rgba(var(--glass), .45)) !important;
         color: rgb(var(--text-strong)) !important;
