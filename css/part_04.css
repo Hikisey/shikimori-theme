@@ -1363,7 +1363,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.3";
+    --theme-version: "1.6.4";
 }
 
 .l-footer:before {
@@ -5285,39 +5285,21 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     font-size: 12px;
     font-weight: 600;
 }
+#players .player-dropdown,
+.players-loader .player-dropdown { display: none !important; }
 #players select:not(#u),
-.players-loader select:not(#u) { display: none !important; }
-#players .player-dropdown__trigger,
-#players .player-dropdown__list {
-    background: color-mix(in srgb, var(--glass-deep) 96%, #07080a) !important;
-    border-color: rgba(var(--glass-light), .14) !important;
-    color: rgb(var(--text)) !important;
+.players-loader select:not(#u) {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8px;
 }
-#players .player-dropdown__list {
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    z-index: 8;
-}
-#players .player-dropdown__caret { border-top-color: rgb(var(--text-2)); }
-#players .player-dropdown__list { touch-action: pan-y; -webkit-overflow-scrolling: touch; }
-#players .player-dropdown__cell {
-    border-right-color: rgba(var(--glass-light), .12) !important;
-    color: rgb(var(--text)) !important;
-}
-#players .player-dropdown__option + .player-dropdown__option {
-    border-top: 1px solid rgba(var(--glass-light), .10);
-}
-#players .player-dropdown__option:is(.is-selected, .selected, .active, [aria-selected="true"]),
-#players .player-dropdown__option:active {
-    background: color-mix(in srgb, rgb(var(--accent)) 18%, rgba(var(--glass), .55)) !important;
-    color: rgb(var(--text-strong)) !important;
+#players select:not(#u):is(:focus, :open),
+.players-loader select:not(#u):is(:focus, :open) {
+    border-color: rgba(var(--accent), .55) !important;
+    box-shadow: 0 0 0 2px rgba(var(--accent), .28) !important;
 }
 @media (hover: hover) and (pointer: fine) {
     #toggle-players:hover { background: transparent !important; color: rgba(var(--accent), 1) !important; }
-    #players .player-dropdown__option:hover {
-        background: color-mix(in srgb, rgb(var(--accent)) 14%, rgba(var(--glass), .45)) !important;
-        color: rgb(var(--text-strong)) !important;
-    }
 }
 
 /* v1.6.1 */
