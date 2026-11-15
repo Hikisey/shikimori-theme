@@ -384,7 +384,7 @@
 }
 
 .b-review-topic.is-review_review_author_details > .inner .review-info .user-rate-label {
-    color: var(--glass-shadow);
+    color: color-mix(in srgb, rgb(var(--text-2)) 25%, rgb(var(--text)));
 }
 
 .b-review-topic.is-review_review_author_details > .inner .review-info .neutral {
@@ -597,7 +597,7 @@
 }
 
 .b-review > .inner .review-info .user-rate-label {
-    color: rgba(var(--text), var(--hundred));
+    color: color-mix(in srgb, rgb(var(--text-2)) 25%, rgb(var(--text)));
 }
 
 .b-review {
@@ -646,15 +646,38 @@
         border: none !important;
         padding-bottom: 0 !important;
     }
-    html :is(.b-comment > .inner header, .b-review > .inner .review-details, .b-review-topic > .inner .review-details, .b-topic.b-review-topic > .inner header) {
+    html :is(.b-comment > .inner header, .b-review > .inner .review-details, .b-review-topic > .inner header, .b-topic.b-review-topic > .inner header) {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 6px 8px;
         position: relative;
         padding-right: 36px;
         box-sizing: border-box;
         min-height: 32px;
+        width: 100%;
+        max-width: 100%;
+    }
+    /* отзыв: в шапке аватар + ник + «к отзыву»; статус и «в списке» строкой ниже */
+    html :is(.b-review-topic, .b-topic.b-review-topic) > .inner header {
+        align-items: flex-start;
+    }
+    html :is(.b-review-topic, .b-topic.b-review-topic) > .inner header .review-details,
+    html .b-review > .inner .review-details {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px 8px;
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        max-width: 100%;
+        padding-right: 0;
+    }
+    html :is(.b-review, .b-review-topic) .review-details :is(.b-status-line, .review-info) {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
     }
     html :is(.b-comment > .inner header, .b-review > .inner .review-details, .b-review-topic > .inner header, .b-topic.b-review-topic > .inner header) img {
         width: 32px !important;
@@ -663,12 +686,21 @@
         flex-shrink: 0;
     }
     html :is(.b-comment > .inner header .name-date, .b-review > .inner .review-details .name-url, .b-review-topic > .inner .review-details .name-url, .b-topic.b-review-topic > .inner header .name-date) {
+        display: flex !important;
+        align-items: center;
+        flex-wrap: nowrap;
         margin-left: 0 !important;
         flex: 1 1 auto;
         min-width: 0;
         overflow: visible !important;
-        white-space: normal !important;
+        white-space: nowrap !important;
         line-height: 1.3 !important;
+    }
+    html :is(.b-review, .b-review-topic) .review-details .name-url .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
     }
     html :is(.b-comment > .inner div.body, .b-review > .inner .body, .b-review-topic > .inner .body) {
         margin-left: 0 !important;
@@ -678,6 +710,8 @@
         position: absolute !important;
         top: 0 !important;
         right: 0 !important;
+        left: auto !important;
+        width: auto !important;
         margin: 0 !important;
         z-index: 2;
     }
@@ -689,8 +723,9 @@
         display: inline-flex;
         align-items: center;
         vertical-align: middle;
+        flex-shrink: 0;
         margin: 0 0 0 4px;
-        max-width: 100%;
+        max-width: none;
     }
     html .to-review:after {
         width: auto !important;

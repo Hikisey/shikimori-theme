@@ -5,10 +5,10 @@
 
 /* shiki glass: https://github.com/Hikisey/shikimori-theme
    (4 части: Шикимори обрабатывает только ~6 первых @import, включая две строки выше) */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.1/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.1/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.1/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.1/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.2/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.2/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.2/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.4.2/css/part_04.css");
 
 /* ===================== Палитра ===================== */
 /* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:
@@ -55,10 +55,10 @@
     --small-rating: 239, 108, 108;     /* низкая */
     --time-filled: var(--accent);      /* шкала времени: заполненная часть */
     --time-empty: 34, 38, 46;          /* шкала времени: пустая часть */
-    --anime-inprocess: 128, 246, 255;  /* аниме: смотрю */
-    --anime-complete: 0, 229, 255;     /* аниме: просмотрено */
-    --manga-inprocess: 255, 92, 160;   /* манга: читаю */
-    --manga-complete: 255, 0, 110;     /* манга: прочитано */
+    --anime-inprocess: var(--accent);  /* аниме: смотрю (по умолчанию из акцента) */
+    --anime-complete: var(--accent);   /* аниме: просмотрено */
+    --manga-inprocess: var(--accent);  /* манга: читаю */
+    --manga-complete: var(--accent);   /* манга: прочитано */
   }
 }
 

@@ -52,10 +52,10 @@
         --small-rating: 239, 108, 108;
         --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
         --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
-        --anime-inprocess: 128, 246, 255;
-        --anime-complete: 0, 229, 255;
-        --manga-inprocess: 255, 92, 160;
-        --manga-complete: 255, 0, 110;
+        --anime-inprocess: var(--accent);
+        --anime-complete: var(--accent);
+        --manga-inprocess: var(--accent);
+        --manga-complete: var(--accent);
     }
     /* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
        Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,

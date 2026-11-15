@@ -34,31 +34,36 @@
     border-radius: 8px 8px 0 0;
 }
 
-/* цвета аниме шкалы */
+/* цвета шкал списков — из акцента, чтобы не выбивались из темы */
 .b-stats_bar .bar .third {
     background: rgba(var(--time-empty), 1);
-    opacity: 0.7;
+    background: color-mix(in srgb, var(--glass-deep) 72%, rgb(var(--shade)));
+    opacity: 1;
 }
 
 .b-stats_bar.anime .bar .second {
     background: rgba(var(--anime-inprocess), 1);
-    opacity: 0.7;
+    background: color-mix(in srgb, rgb(var(--anime-inprocess)) 52%, rgb(var(--shade)));
+    opacity: 1;
 }
 
 .b-stats_bar.anime .bar .first {
     background: rgba(var(--anime-complete), 1);
-    opacity: 0.7;
+    background: color-mix(in srgb, rgb(var(--anime-complete)) 88%, rgb(var(--shade)));
+    opacity: 1;
 }
 
 /* цвета манга шкалы */
 .b-stats_bar.manga .bar .first {
     background: rgba(var(--manga-complete), 1);
-    opacity: 0.7;
+    background: color-mix(in srgb, rgb(var(--manga-complete)) 88%, rgb(var(--shade)));
+    opacity: 1;
 }
 
 .b-stats_bar.manga .bar .second {
     background: rgba(var(--manga-inprocess), 1);
-    opacity: 0.7;
+    background: color-mix(in srgb, rgb(var(--manga-inprocess)) 52%, rgb(var(--shade)));
+    opacity: 1;
 }
 
 /* список аниме и манги */
@@ -696,6 +701,7 @@ body.p-profiles .subheadline .misc-links > a:before {
     line-height: 16px;
     margin-bottom: 6px;
     border-radius: var(--plate-radius);
+    overflow: hidden;
 }
 
 .b-stats_bar .bar .first,
@@ -704,6 +710,9 @@ body.p-profiles .subheadline .misc-links > a:before {
     font-size: 12px;
     height: 16px;
     line-height: 16px;
+    color: rgb(var(--text-strong));
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(var(--shade), .8);
 }
 
 /* Низкая совместимость */
@@ -1705,10 +1714,30 @@ div.compatibility > span.link-replacement > .text.full:before {
         position: relative;
         z-index: 1;
     }
+    /* v1.4.2 — «История»: стекло и читаемый текст; колонка выше баннера */
+    html body.p-profiles-show .profile-head .c-history {
+        z-index: 2;
+    }
+    html body.p-profiles-show .profile-head .c-history .subheadline,
+    html body.p-profiles-show .profile-head .c-history .subheadline.m13 {
+        background: color-mix(in srgb, var(--glass-deep) 78%, transparent) !important;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
+        border: var(--glass-border) !important;
+        box-shadow: var(--plate-shadow-soft);
+        color: rgb(var(--text-strong)) !important;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgba(var(--shade), .7);
+        z-index: 2;
+    }
+    html body.p-profiles-show .profile-head .c-history .subheadline :is(a, a:before) {
+        color: rgb(var(--text-strong)) !important;
+        text-shadow: 0 1px 2px rgba(var(--shade), .7);
+    }
 }
 
 @media screen and (max-width: 1023px) {
-    /* v1.4.1 — телефон: ярче текст, колонка действий справа от ника */
+    /* v1.4.2 — телефон: ярче текст, колонка действий, центр аватара */
     html body.p-profiles-show .profile-head .c-brief header :is(.notice, .notice span, .misc, .misc span) {
         color: color-mix(in srgb, rgb(var(--text-2)) 35%, rgb(var(--text))) !important;
     }
@@ -1719,7 +1748,8 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     html body.p-profiles-show .profile-head .c-brief {
         position: relative;
-        padding-right: 48px;
+        padding-left: 52px;
+        padding-right: 52px;
         box-sizing: border-box;
     }
     html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions {
@@ -1728,7 +1758,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         bottom: 0 !important;
         right: 0 !important;
         left: auto !important;
-        width: 40px !important;
+        width: 44px !important;
         height: auto !important;
         display: flex !important;
         flex-direction: column;
@@ -1745,8 +1775,8 @@ div.compatibility > span.link-replacement > .text.full:before {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 36px !important;
-        height: 36px !important;
+        width: 44px !important;
+        height: 44px !important;
         margin: 0 !important;
         padding: 0 !important;
         box-sizing: border-box;
@@ -1766,7 +1796,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         inset: auto !important;
         margin: 0 !important;
         transform: none !important;
-        font-size: 16px !important;
+        font-size: 20px !important;
         line-height: 1 !important;
         opacity: 1 !important;
         color: rgb(var(--text)) !important;
@@ -1775,13 +1805,13 @@ div.compatibility > span.link-replacement > .text.full:before {
         height: auto !important;
     }
     html body.p-profiles-show .profile-head .c-info {
-        padding-right: 48px !important;
-        margin-top: 52px !important;
+        padding-right: 52px !important;
+        margin-top: 60px !important;
         box-sizing: border-box;
         overflow: visible !important;
     }
     html body.p-profiles-show .profile-head .c-info:has(.b-stats_bar.manga .compatibility) {
-        margin-top: 96px !important;
+        margin-top: 112px !important;
     }
     html body.p-profiles-show .profile-head .c-info .c-lists-info,
     html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar {
@@ -1794,9 +1824,9 @@ div.compatibility > span.link-replacement > .text.full:before {
         position: absolute !important;
         top: auto !important;
         bottom: calc(100% + 8px) !important;
-        right: -48px !important;
+        right: -52px !important;
         left: auto !important;
-        width: 40px;
+        width: 44px;
         height: auto !important;
         display: flex !important;
         flex-direction: column;
@@ -1807,7 +1837,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         transform: none !important;
     }
     html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar.manga .compatibility {
-        bottom: calc(100% + 52px) !important;
+        bottom: calc(100% + 60px) !important;
     }
     html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar > :is(a.title, .title) {
         padding-right: 0 !important;
