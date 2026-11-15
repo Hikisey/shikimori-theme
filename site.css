@@ -1,4 +1,4 @@
-/* shiki glass v1.6.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Тёмный редактор кода в настройках и замена постеров персонажей.
    Эти две строки нужны здесь: внутри файлов темы Шикимори их вырезает. */
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
@@ -75,4 +75,102 @@
 /* Вернуть всплывающие карточки с описанием при наведении на аниме (окно с крестиком):
 .tooltip { visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
 .tooltip * { visibility: inherit !important; pointer-events: auto !important; }
+*/
+
+/* ===================== Правки v1.6.7 ===================== */
+/* 1. Кнопка «Скрыть» встраивается в плашку новостей */
+.site_news .subheadline-buttons,
+.block2.site_news .subheadline-buttons {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  height: auto;
+  z-index: 2;
+}
+.site_news .headline,
+.block2.site_news .headline {
+  position: relative;
+  padding-right: 90px;
+}
+.site_news .subheadline-buttons a,
+.site_news .subheadline-buttons .b-link {
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+  border-radius: 12px !important;
+  background: color-mix(in srgb, var(--accent) 75%, transparent) !important;
+  color: rgb(var(--text-strong)) !important;
+  box-shadow: var(--plate-shadow-soft) !important;
+}
+
+/* 2. Кнопки «ТОЛЬКО RIP» и «Написать новость» */
+.p-dashboards-show .cc-news .c-news_topics .options,
+.news-controls,
+[class*="only-rip"],
+.b-link[href*="new_news"],
+.b-link:contains("Написать") {
+  border-radius: 12px !important;
+  background: var(--plate-bg-strong) !important;
+  color: rgba(var(--text), 1) !important;
+  border: 1px solid rgba(var(--glass-light), 0.12) !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  transition: var(--ease-fast);
+}
+.p-dashboards-show .cc-news .c-news_topics .options .option.selected,
+[class*="only-rip"].active {
+  background: color-mix(in srgb, var(--accent) 80%, transparent) !important;
+  color: rgb(var(--text-strong)) !important;
+}
+
+/* 3. Знак вопроса в стиле иконки / (random-anime-btn) */
+.l-top_menu-v2 .menu-icon.help,
+.l-top_menu-v2 .menu-icon[title*="?"],
+.l-top_menu-v2 a[href*="help"],
+.l-top_menu-v2 .icon-help,
+.l-top_menu-v2 button[title*="Помощь"],
+.l-top_menu-v2 .menu-icon:has(+ .random-anime-btn) {
+  border: 1px solid rgba(var(--glass-light), .18) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: color-mix(in srgb, var(--glass-deep) 40%, transparent) !important;
+  color: rgb(var(--text-2)) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+}
+.l-top_menu-v2 .menu-icon.help:hover,
+.l-top_menu-v2 a[href*="help"]:hover {
+  border-color: rgba(var(--accent), .55) !important;
+  color: rgba(var(--accent), 1) !important;
+}
+
+/* 4. Маркеры RIP / SHIKI в комментариях */
+body[class*="rip"] .b-comment .name:after,
+.p-topics .b-comment .name:after,
+.p-animes .b-comment .name:after,
+.p-mangas .b-comment .name:after,
+.b-comment .name:after {
+  content: " RIP";
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 70%, transparent);
+  color: rgb(var(--text-strong));
+  vertical-align: middle;
+  line-height: 1.4;
+}
+/* На оригинальном сайте (если нужен маркер SHIKI — раскомментируй блок выше и включи этот) */
+/*
+body:not([class*="rip"]) .b-comment .name:after {
+  content: " SHIKI";
+  background: color-mix(in srgb, #4a90e2 70%, transparent);
+}
 */
