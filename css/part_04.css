@@ -1363,7 +1363,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.4.0";
+    --theme-version: "1.4.1";
 }
 
 .l-footer:before {
@@ -5166,5 +5166,15 @@ img.studio-logo,
                 background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    /* v1.4.1 — перебить padding кнопок профиля из блока выше */
+    html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }

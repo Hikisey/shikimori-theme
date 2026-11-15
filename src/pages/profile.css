@@ -1653,11 +1653,12 @@ div.compatibility > span.link-replacement > .text.full:before {
     body.p-profiles-show .profile-head {
         position: relative;
         z-index: 0;
+        isolation: isolate;
     }
     body.p-profiles-show .profile-head::before {
         content: "";
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         top: 0;
         left: 0;
         right: 0;
@@ -1666,15 +1667,21 @@ div.compatibility > span.link-replacement > .text.full:before {
         height: var(--profile-banner-height-mobile);
         background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
         border-radius: 0;
-        -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
-        mask-image: linear-gradient(to bottom, #000 62%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, #000 40%, rgba(0, 0, 0, .65) 62%, rgba(0, 0, 0, .2) 85%, transparent);
+        mask-image: linear-gradient(to bottom, #000 40%, rgba(0, 0, 0, .65) 62%, rgba(0, 0, 0, .2) 85%, transparent);
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
         pointer-events: none;
     }
     /* мягкое свечение в цвет картинки под баннером */
     body.p-profiles-show .profile-head::after {
         content: "";
         position: absolute;
-        z-index: -2;
+        z-index: 0;
         top: calc(var(--profile-banner-height-mobile) - 70px);
         left: 8%;
         right: 8%;
@@ -1684,6 +1691,125 @@ div.compatibility > span.link-replacement > .text.full:before {
         background: var(--profile-banner) center bottom / cover no-repeat;
         filter: blur(32px) saturate(1.5);
         opacity: var(--profile-banner-glow);
+        -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        mask-image: linear-gradient(to bottom, #000 30%, transparent);
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
         pointer-events: none;
+    }
+    body.p-profiles-show .profile-head > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    /* v1.4.1 — телефон: ярче текст, колонка действий справа от ника */
+    html body.p-profiles-show .profile-head .c-brief header :is(.notice, .notice span, .misc, .misc span) {
+        color: color-mix(in srgb, rgb(var(--text-2)) 35%, rgb(var(--text))) !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-additionals,
+    html body.p-profiles-show .profile-head .c-info .c-additionals :is(a, span) {
+        color: color-mix(in srgb, rgb(var(--text-2)) 25%, rgb(var(--text))) !important;
+        text-shadow: 0 1px 8px rgba(var(--shade), .55);
+    }
+    html body.p-profiles-show .profile-head .c-brief {
+        position: relative;
+        padding-right: 48px;
+        box-sizing: border-box;
+    }
+    html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+        width: 40px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        padding: 0 0 2px !important;
+        margin: 0 !important;
+        line-height: 0;
+        z-index: 3;
+        pointer-events: auto;
+    }
+    html body.p-profiles-show .profile-head :is(.c-brief .avatar .profile-actions a, .c-info .c-lists-info .b-stats_bar .compatibility a, .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement) {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 36px !important;
+        height: 36px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+        border-radius: var(--plate-radius);
+        background: var(--glass-bg) !important;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
+        border: var(--glass-border);
+        box-shadow: var(--plate-shadow-soft);
+        font-size: 0 !important;
+        line-height: 0 !important;
+        position: static !important;
+        inset: auto !important;
+    }
+    html body.p-profiles-show .profile-head :is(.c-brief .avatar .profile-actions a, .c-info .c-lists-info .b-stats_bar .compatibility a, .c-info .c-lists-info .b-stats_bar .compatibility .text)::before {
+        position: static !important;
+        inset: auto !important;
+        margin: 0 !important;
+        transform: none !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+        color: rgb(var(--text)) !important;
+        background: none !important;
+        width: auto !important;
+        height: auto !important;
+    }
+    html body.p-profiles-show .profile-head .c-info {
+        padding-right: 48px !important;
+        margin-top: 52px !important;
+        box-sizing: border-box;
+        overflow: visible !important;
+    }
+    html body.p-profiles-show .profile-head .c-info:has(.b-stats_bar.manga .compatibility) {
+        margin-top: 96px !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar {
+        overflow: visible !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar {
+        position: relative;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
+        position: absolute !important;
+        top: auto !important;
+        bottom: calc(100% + 8px) !important;
+        right: -48px !important;
+        left: auto !important;
+        width: 40px;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar.manga .compatibility {
+        bottom: calc(100% + 52px) !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar > :is(a.title, .title) {
+        padding-right: 0 !important;
     }
 }

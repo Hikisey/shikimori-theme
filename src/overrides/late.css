@@ -3739,3 +3739,13 @@ img.studio-logo,
         }
     }
 }
+
+@media screen and (max-width: 1023px) {
+    /* v1.4.1 — перебить padding кнопок профиля из блока выше */
+    html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}

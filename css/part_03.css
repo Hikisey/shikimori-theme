@@ -3911,6 +3911,134 @@ body#clubs_edit .b-options-floated a:active:after {
     }
 }
 
+@media screen and (max-width: 1023px) {
+    /* v1.4.1 — телефон: комментарии и отзывы стеклянными карточками */
+    html :is(.b-comment, .b-review, .b-topic.b-review-topic, .b-review-topic.mini) {
+        background: var(--plate-bg);
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
+        border: var(--glass-border) !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        border-radius: var(--plate-radius-lg);
+        box-shadow: var(--plate-shadow-soft);
+        margin: 0 0 10px !important;
+        padding: 12px !important;
+        box-sizing: border-box;
+    }
+    html :is(.b-comments, .b-message) .comments-loaded {
+        border: none !important;
+        padding-bottom: 0 !important;
+    }
+    html :is(.b-comment > .inner header, .b-review > .inner .review-details, .b-review-topic > .inner .review-details, .b-topic.b-review-topic > .inner header) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+        position: relative;
+        padding-right: 36px;
+        box-sizing: border-box;
+        min-height: 32px;
+    }
+    html :is(.b-comment > .inner header, .b-review > .inner .review-details, .b-review-topic > .inner header, .b-topic.b-review-topic > .inner header) img {
+        width: 32px !important;
+        height: 32px !important;
+        margin: 0 8px 0 0 !important;
+        flex-shrink: 0;
+    }
+    html :is(.b-comment > .inner header .name-date, .b-review > .inner .review-details .name-url, .b-review-topic > .inner .review-details .name-url, .b-topic.b-review-topic > .inner header .name-date) {
+        margin-left: 0 !important;
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: visible !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+    }
+    html :is(.b-comment > .inner div.body, .b-review > .inner .body, .b-review-topic > .inner .body) {
+        margin-left: 0 !important;
+        color: rgb(var(--text));
+    }
+    html :is(.b-comment, .b-review, .b-review-topic, .b-topic) .item-mobile {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        z-index: 2;
+    }
+    html .b-height_shortener .expand:before {
+        content: none !important;
+        display: none !important;
+    }
+    html .to-review {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+        margin: 0 0 0 4px;
+        max-width: 100%;
+    }
+    html .to-review:after {
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        padding: 3px 10px 3px 16px !important;
+        margin-left: -16px !important;
+        line-height: 1.35;
+        box-sizing: border-box;
+    }
+    html :is(.b-comment, .b-review, .b-review-topic, .b-topic) :is(.b-code-v2, .b-code, pre) {
+        background: color-mix(in srgb, var(--glass-deep) 88%, transparent) !important;
+        color: rgb(var(--text)) !important;
+        border-radius: var(--plate-radius);
+        border: var(--glass-border);
+        padding: 10px 12px;
+        overflow-x: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 12.5px;
+        line-height: 1.45;
+        white-space: pre;
+    }
+    html :is(.b-comment, .b-review, .b-review-topic, .b-topic) code.b-code_inline {
+        background: color-mix(in srgb, var(--glass-deep) 88%, transparent) !important;
+        color: rgb(var(--text)) !important;
+        border: var(--glass-border);
+        border-radius: 6px;
+        padding: 1px 6px;
+    }
+    html :is(.b-comment, .b-review, .b-review-topic, .b-topic) :is(.b-quote, .b-quote-v2) {
+        background: color-mix(in srgb, var(--plate-bg) 80%, transparent) !important;
+        border: none !important;
+        border-left: 3px solid rgb(var(--accent)) !important;
+        border-radius: 0 var(--plate-radius) var(--plate-radius) 0 !important;
+        padding: 8px 10px !important;
+        box-shadow: none !important;
+        color: rgb(var(--text)) !important;
+    }
+    html .b-height_shortener .expand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto !important;
+        margin: 8px 0 0;
+        font-size: 0;
+    }
+    html .b-height_shortener .expand:after {
+        position: static !important;
+        left: auto !important;
+        display: inline-block;
+        padding: 4px 16px;
+        line-height: 1.3;
+        border-radius: 999px;
+        background: var(--glass-bg) !important;
+        box-shadow: var(--plate-shadow-soft);
+        color: rgb(var(--accent));
+        font-size: 13px;
+    }
+    html .b-height_shortener .shade {
+        background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--glass-deep) 45%, transparent));
+    }
+}
+
 /* ===== pages/dashboard =====
    главная: новости, темы дня, «мой список» */
 
