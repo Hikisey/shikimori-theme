@@ -316,22 +316,22 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     section.l-page.l-page aside.l-menu {
         position: fixed !important;
         z-index: 950 !important;
-        top: calc(50% + (env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2) !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
+        top: max(16px, env(safe-area-inset-top, 0px)) !important;
+        bottom: max(16px, env(safe-area-inset-bottom, 0px)) !important;
+        left: 16px !important;
+        right: 16px !important;
         width: min(calc(100vw - 32px), 440px) !important;
         max-width: none !important;
         height: auto !important;
         max-height: 70vh;
         max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
-        margin: 0 !important;
+        margin: auto !important;
         box-sizing: border-box !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
-        transform: translate(-50%, -50%);
-        transform-origin: 50% 50%;
+        touch-action: pan-y;
+        transform: none !important;
         /* «жидкое стекло» */
         background:
             linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
@@ -463,16 +463,16 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
        ================================================================ */
     section.l-page.l-page aside.l-menu {
         opacity: 0;
-        transform: translate(-50%, calc(-50% + var(--sheet-shift)));
+        transform: none !important;
         animation: none;
         transition: opacity var(--sheet-time) ease,
-                    transform var(--sheet-time) var(--ease-out),
                     display var(--sheet-time) allow-discrete;
     }
     section.l-page.menu-expanded aside.l-menu {
         opacity: 1;
-        transform: translate(-50%, -50%);
-        animation: shiki-sheet var(--sheet-time) var(--ease-out) backwards;
+        transform: none !important;
+        animation: shiki-sheet-fade var(--sheet-time) ease backwards;
+        touch-action: pan-y;
     }
 }
 
