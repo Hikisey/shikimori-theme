@@ -1363,7 +1363,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.5.0";
+    --theme-version: "1.5.1";
 }
 
 .l-footer:before {
@@ -5107,4 +5107,121 @@ img.studio-logo,
     .b-collection-filters :is(.range-selector_reset, .season-selector_remove):hover {
         color: rgba(var(--accent), 1);
     }
+}
+
+/* --- v1.5.1: мой список на телефоне, фильтры при нажатии, почта, назад --- */
+
+@media screen and (max-width: 1023px) {
+    .p-dashboards-show .v2 .my-list {
+        background: color-mix(in srgb, var(--glass-deep) 82%, transparent);
+        border: 1px solid rgba(var(--glass-light), .16);
+        box-shadow: var(--plate-shadow-strong);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+    }
+    .p-dashboards-show .v2 .my-list,
+    .p-dashboards-show .v2 .my-list .label,
+    .p-dashboards-show .v2 .my-list .label span,
+    .p-dashboards-show .v2 .my-list .notice,
+    .p-dashboards-show .v2 .my-list .misc,
+    .p-dashboards-show .v2 .my-list .date,
+    .p-dashboards-show .history .notice,
+    .p-dashboards-show .history .misc,
+    .p-dashboards-show .c-history .entry .misc,
+    .p-dashboards-show .v2 .f-user .notice,
+    .p-profiles .profile-head .c-history .entry .misc,
+    .p-profiles .profile-head .c-history .entry .date {
+        color: rgba(var(--text), .88);
+        opacity: 1;
+    }
+}
+
+.l-menu .b-block_list li,
+.b-collection-filters .b-block_list li,
+.c-filters .c-ms-option:not(#u) {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent !important;
+}
+.l-menu .b-block_list li:active,
+.l-menu .b-block_list li.selected,
+.b-collection-filters .b-block_list li:active,
+.b-collection-filters .b-block_list li.selected,
+.c-filters .c-ms-option:not(#u):active,
+.c-filters .c-ms-option:not(#u).is-on {
+    background: color-mix(in srgb, rgb(var(--accent)) 18%, rgba(var(--glass), .55)) !important;
+    color: rgb(var(--text-strong)) !important;
+    border-radius: var(--plate-radius);
+    box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .l-menu .b-block_list li:hover,
+    .b-collection-filters .b-block_list li:hover,
+    .c-filters .c-ms-option:not(#u):hover {
+        background: color-mix(in srgb, rgb(var(--accent)) 14%, rgba(var(--glass), .45)) !important;
+        color: rgb(var(--text-strong)) !important;
+        border-radius: var(--plate-radius);
+        box-shadow: none !important;
+    }
+}
+
+body.p-profiles:not(.p-achievements):not(.p-user_history):not(.p-user_rates) .b-options-floated,
+body#clubs_edit .b-options-floated,
+body#messages_index .b-options-floated,
+body#dialogs_index .b-options-floated,
+body#dialogs_show .b-options-floated,
+body.p-messages .b-options-floated,
+body.p-dialogs .b-options-floated {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    line-height: normal !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px 12px;
+    margin: 0 0 16px !important;
+    float: none;
+    overflow: visible;
+}
+body#messages_index .l-content > .subheadline,
+body#dialogs_index .l-content > .subheadline,
+body#dialogs_show .l-content > .subheadline,
+body.p-messages .l-content > .subheadline,
+body.p-dialogs .l-content > .subheadline {
+    clear: both;
+    position: relative;
+    z-index: 0;
+    margin-top: 4px;
+}
+
+header.head :is(h1, h2) a.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    font-size: 0;
+    line-height: 1;
+    position: relative;
+    margin-left: 0;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+header.head :is(h1, h2) a.back:before {
+    position: static;
+    left: auto;
+    top: auto;
+    font-size: 18px;
+    line-height: 1;
+    flex: none;
+}
+header.head :is(h1, h2) a.back:after {
+    position: static;
+    margin: 0 !important;
+    font-size: 12px;
+    line-height: 1;
+    color: rgba(var(--text-strong), 1);
 }

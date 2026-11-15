@@ -756,7 +756,8 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .p-db_entries-show .l-content .cc.m0.two-videos,
 .p-db_entries-show .l-content .cc.m0.one-video,
-.p-db_entries-show .l-content .cc.m0.no-video {
+.p-db_entries-show .l-content .cc.m0.no-video,
+.p-db_entries-show .l-content .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos) {
     order: -1 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -766,7 +767,8 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .p-db_entries-show .l-content .cc.m0.two-videos::after,
 .p-db_entries-show .l-content .cc.m0.one-video::after,
-.p-db_entries-show .l-content .cc.m0.no-video::after { content: none !important; }
+.p-db_entries-show .l-content .cc.m0.no-video::after,
+.p-db_entries-show .l-content .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos)::after { content: none !important; }
 
 .p-db_entries-show .cc.m0 > .c-screenshots,
 .p-db_entries-show .cc.m0 > .c-videos {
@@ -799,8 +801,8 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     width: auto !important;
 }
 
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc,
-.p-db_entries-show .cc.m0 > .c-videos > .cc {
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll),
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) {
     display: flex !important;
     flex-wrap: nowrap !important;
     gap: 12px;
@@ -817,15 +819,15 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     scrollbar-width: none;
 }
 
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc::after,
-.p-db_entries-show .cc.m0 > .c-videos > .cc::after { content: none !important; display: none !important; }
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll)::after,
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll)::after { content: none !important; display: none !important; }
 
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc::-webkit-scrollbar,
-.p-db_entries-show .cc.m0 > .c-videos > .cc::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll)::-webkit-scrollbar,
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll)::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 /* карточки 16:9 одинаковой высоты */
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot,
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video {
     display: block !important;
     float: none !important;
     flex: 0 0 auto !important;
@@ -841,8 +843,8 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     transition: transform var(--ease-fast), box-shadow var(--ease-fast);
 }
 
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot img,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link img {
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot img,
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .video-link img {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
@@ -853,14 +855,14 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     box-shadow: none !important;
 }
 
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link {
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .video-link {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
 }
 
 /* кнопка «плей» по центру */
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .video-link::before {
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .video-link::before {
     top: 50% !important;
     left: 50% !important;
     right: auto !important;
@@ -882,7 +884,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 }
 
 /* подпись снизу на градиенте, метка вида сверху слева */
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .name {
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .name {
     top: auto !important;
     right: 0 !important;
     bottom: 0 !important;
@@ -902,7 +904,7 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     z-index: 1;
 }
 
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker {
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .marker {
     top: 8px !important;
     left: 8px !important;
     right: auto !important;
@@ -917,18 +919,18 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     z-index: 2;
 }
 
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video .marker::before { color: rgb(var(--text-strong)) !important; }
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .marker::before { color: rgb(var(--text-strong)) !important; }
 
-.p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-.p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video {
+.p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot,
+.p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video {
     transform-origin: 50% 100%;
 }
 
 @media (hover: hover) and (pointer: fine) {
     /* v1.2.22: кадр не сдвигается вверх, а чуть растёт от нижнего края — нижняя кромка стоит
        на месте, и курсор у неё больше не выпадает из кадра (раньше наведение мигало) */
-    .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot:hover,
-    .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video:hover {
+    .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot:hover,
+    .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video:hover {
         transform: scale(1.03);
         box-shadow: 0 8px 20px rgba(var(--shade), 0.45), 0 0 0 1px rgba(var(--accent), .55);
     }
@@ -1075,10 +1077,10 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 }
 
 @media (max-width: 767px) {
-    .p-db_entries-show .cc.m0 > .c-screenshots > .cc > .c-screenshot,
-    .p-db_entries-show .cc.m0 > .c-videos > .cc > .b-video { width: 74% !important; }
-    .p-db_entries-show .cc.m0 > .c-screenshots > .cc,
-    .p-db_entries-show .cc.m0 > .c-videos > .cc { gap: 10px; padding: 6px 10px 10px !important; scroll-padding: 0 10px; }
+    .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot,
+    .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video { width: 74% !important; }
+    .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll),
+    .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) { gap: 10px; padding: 6px 10px 10px !important; scroll-padding: 0 10px; }
 }
 
 @media screen and (max-width: 767px) {

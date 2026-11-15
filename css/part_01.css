@@ -1888,7 +1888,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     color: rgb(var(--text-2));
 }
 
-.l-top_menu-v2 .submenu > a.icon-visual_novel:before,
 .l-top_menu-v2 .submenu > a.icon-useful:before {
     color: inherit;
     background-color: currentColor;
