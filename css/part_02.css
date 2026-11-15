@@ -3614,9 +3614,9 @@ div.compatibility > span.link-replacement > .text.full:before {
 /* кнопка "Смотрю" на страничке аниме*/
 .b-add_to_list.watching .trigger,
 .b-add_to_list.watching .option {
-    background: #382f7b;
-    border-color: rgba(var(--glass), 0.4);
-    color: #d8f8f6;
+    background: color-mix(in srgb, rgb(var(--accent)) 38%, var(--glass-deep));
+    border-color: rgba(var(--accent), 0.45);
+    color: rgb(var(--text-strong));
 }
 
 /* кнопка "Пересмотравиваю" на страничке аниме*/

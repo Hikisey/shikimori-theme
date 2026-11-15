@@ -3217,8 +3217,8 @@ img.studio-logo,
 .p-studios .studio img.logo {
     max-width: 100%;
     height: auto;
-    padding: 0 !important;
-    background: none !important;
+    padding: 5px 7px !important;
+    background: rgba(var(--text), .90) !important;
     box-shadow: none !important;
     border-radius: var(--plate-radius);
     image-rendering: auto;
@@ -3733,54 +3733,69 @@ body.p-dialogs .l-content > .subheadline {
 }
 
 header.head :is(h1, h2) {
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: center !important;
     gap: 0 8px;
 }
 header.head :is(h1, h2) a.back {
-    display: inline-flex;
-    align-items: center;
-    align-self: center;
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: center !important;
     gap: 6px;
-    width: auto;
+    width: auto !important;
     min-width: 0;
-    height: auto;
-    font-size: 0;
-    line-height: 1;
+    height: 30px;
+    font-size: 0 !important;
+    line-height: 1 !important;
     position: relative;
-    margin-left: 0;
-    margin-right: 4px;
+    margin: 0 4px 0 0;
     vertical-align: middle;
-    color: rgba(var(--link), 1);
+    color: rgba(var(--link), 1) !important;
 }
 header.head :is(h1, h2) a.back:before {
-    position: static;
+    position: static !important;
     left: auto;
-    top: auto;
-    font-size: 24px;
-    line-height: 1;
+    top: auto !important;
+    font-size: 30px !important;
+    font-weight: 700;
+    line-height: 1 !important;
     flex: none;
-    color: rgba(var(--link), 1);
+    color: rgba(var(--link), 1) !important;
 }
 header.head :is(h1, h2) a.back:after {
-    position: static;
+    position: static !important;
     margin: 0 !important;
-    font-size: 12px;
-    line-height: 1;
-    color: rgba(var(--link), 1);
+    font-size: 13px !important;
+    font-weight: 600;
+    line-height: 1 !important;
+    color: rgba(var(--link), 1) !important;
 }
 header.head :is(h1, h2) > :is(.misc, a.misc) {
     flex: 1 0 100%;
 }
 
-.p-user_tools .b-useful_card,
-.p-user_tools .b-useful_card .body {
+.p-user_tools .b-useful_card {
     background: var(--plate-bg) !important;
     border: 1px solid rgba(var(--glass-light), .10);
     border-radius: var(--plate-radius-lg);
     color: rgb(var(--text));
     box-shadow: var(--plate-shadow);
+    overflow: hidden;
+}
+.p-user_tools .b-useful_card .poster,
+.p-user_tools .b-useful_card .poster img {
+    border-radius: var(--plate-radius-lg) var(--plate-radius-lg) 0 0;
+    border: 0;
+    margin-bottom: 0;
+}
+.p-user_tools .b-useful_card .body {
+    background: var(--plate-bg) !important;
+    border: 0;
+    border-radius: 0 0 var(--plate-radius-lg) var(--plate-radius-lg);
+    box-shadow: none;
+    color: rgb(var(--text));
+    margin-top: 0;
 }
 .p-user_tools .b-useful_card .title a {
     color: rgb(var(--text-strong));
@@ -3823,6 +3838,9 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     .p-user_tools .b-useful_filter:hover {
         border-color: var(--field-border-hover) !important;
     }
+    .p-user_tools .b-useful_card:hover {
+        transform: none;
+    }
 }
 
 /* v1.6.0 rip плееры */
@@ -3834,9 +3852,14 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
 }
 #players .player-dropdown__trigger,
 #players .player-dropdown__list {
-    background: color-mix(in srgb, var(--glass-deep) 90%, transparent) !important;
+    background: color-mix(in srgb, var(--glass-deep) 96%, #07080a) !important;
     border-color: rgba(var(--glass-light), .14) !important;
     color: rgb(var(--text)) !important;
+}
+#players .player-dropdown__list {
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    z-index: 8;
 }
 #players .player-dropdown__caret { border-top-color: rgb(var(--text-2)); }
 #players .player-dropdown__list { touch-action: pan-y; -webkit-overflow-scrolling: touch; }
@@ -3858,4 +3881,96 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
         background: color-mix(in srgb, rgb(var(--accent)) 14%, rgba(var(--glass), .45)) !important;
         color: rgb(var(--text-strong)) !important;
     }
+}
+
+/* v1.6.1 */
+.block-rip-settings,
+.block-rip-account-type {
+    background: var(--plate-bg) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    border-radius: var(--plate-radius-lg);
+    box-shadow: var(--plate-shadow);
+    color: rgb(var(--text)) !important;
+}
+.block-rip-title { color: rgb(var(--text-strong)) !important; }
+.block-rip-settings :is(h2, h3, h4, p, li, label, span),
+.block-rip-account-type :is(h3, p),
+.block-rip-list li,
+.block-rip-actions,
+.block-rip-actions :is(p, div, span) { color: rgb(var(--text)) !important; }
+.block-rip-info {
+    background: color-mix(in srgb, rgb(var(--accent)) 12%, rgba(var(--glass), .45)) !important;
+    border: 1px solid rgba(var(--accent), .28) !important;
+    border-radius: var(--plate-radius);
+    color: rgb(var(--text)) !important;
+}
+.block-rip-settings :is(input, textarea, select):not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    background: var(--field-bg) !important;
+    border: 1px solid var(--field-border) !important;
+    border-radius: var(--field-radius) !important;
+    color: var(--field-text) !important;
+}
+.block-rip-account-type.is-active {
+    background: color-mix(in srgb, rgb(var(--accent)) 16%, rgba(var(--glass), .5)) !important;
+    border-color: rgba(var(--accent), .55) !important;
+    color: rgb(var(--text-strong)) !important;
+}
+.block-rip-account-type.is-active :is(h3, p) { color: rgb(var(--text-strong)) !important; }
+.block-rip-badge { background: rgba(88, 176, 124, .92) !important; color: #f4fff8 !important; }
+.block-rip-sync .btn-rip-save,
+.block-rip-actions .btn-rip-save {
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 0 !important;
+    transform: none !important;
+}
+.block-rip-list li::before { color: rgba(var(--accent), 1) !important; }
+@media (hover: hover) and (pointer: fine) {
+    .block-rip-account-type:hover:not(.is-active) {
+        background: color-mix(in srgb, rgb(var(--accent)) 10%, rgba(var(--glass), .4)) !important;
+        border-color: rgba(var(--accent), .35) !important;
+    }
+    .block-rip-sync .btn-rip-save:hover,
+    .block-rip-actions .btn-rip-save:hover {
+        background: var(--btn-bg-hover) !important;
+        color: var(--btn-text) !important;
+        transform: none !important;
+    }
+}
+.p-db_entries-show .l-content .cc.m0:has(> .c-screenshots, > .c-videos),
+.p-db_entries-show .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos) { order: -1 !important; }
+.p-db_entries-show .resources-loader > :is(.cc-characters, .cc-themes) { order: 2; }
+.b-anime_theme :is(.episodes, .sequence, .artists),
+.shiki-votes,
+.mal-based,
+.b-rate .score-notice,
+.b-entry-info .key { color: rgb(var(--text-2)) !important; }
+.b-anime_theme :is(.title, .info) { color: rgb(var(--text)) !important; }
+.b-rate :is(.score-value, .text-score) {
+    color: rgb(var(--text-strong)) !important; font-family: var(--font-family) !important;
+}
+.watch-online :is(.b-link_button, .watch-online-play),
+.watch-online > a.kind {
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 0 !important;
+    white-space: nowrap;
+    font-size: 0 !important;
+}
+.watch-online :is(.b-link_button, .watch-online-play):before,
+.watch-online > a.kind:before {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--btn-text) !important;
+}
+.watch-online :is(.b-link_button, .watch-online-play):after { content: none !important; display: none !important; }
+@media (hover: hover) and (pointer: fine) {
+    .watch-online :is(.b-link_button, .watch-online-play):hover,
+    .watch-online > a.kind:hover { background: var(--btn-bg-hover) !important; color: var(--btn-text) !important; }
+}
+.p-user_rates-index .l-menu .mini-charts :is(.bar, .bar-container .bar, .bar.simple .bar) {
+    background: color-mix(in srgb, rgb(var(--accent)) 72%, rgb(var(--shade))) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .l-menu .mini-charts :is(.bar, .bar-container .bar):hover { background: rgba(var(--accent), 1) !important; }
 }
