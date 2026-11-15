@@ -1363,7 +1363,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.4.2";
+    --theme-version: "1.4.3";
 }
 
 .l-footer:before {
@@ -5179,5 +5179,86 @@ img.studio-logo,
     }
     html body.p-profiles-show .profile-head :is(.c-history, .c-history.x2, .c-history.x3) {
         z-index: 2 !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* v1.4.3 — «Список аниме» и «N комментариев» в один ряд, без сдвига от колонки иконок */
+    html body.p-profiles-show .profile-head .c-info {
+        display: flex !important;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 10px;
+        position: relative !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info {
+        display: contents !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+        flex: 1 1 100%;
+        order: 3;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-additionals {
+        display: flex !important;
+        flex: 0 0 6.75rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        width: 6.75rem !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+        order: 2;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-additionals > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+        margin: 0 !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-additionals :is(a, span),
+    html body.p-profiles-show .profile-head .c-info .c-additionals div a[href$="/comments"],
+    html body.p-profiles-show .profile-head .c-info .c-additionals div a[href$="/reviews"] {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+        max-width: none;
+        min-width: 0;
+        height: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 8px 10px !important;
+        box-sizing: border-box;
+        border-radius: var(--plate-radius-lg) !important;
+        background: color-mix(in srgb, var(--glass-deep) 55%, transparent) !important;
+        backdrop-filter: var(--glass-filter);
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
+        border: 1px solid rgba(var(--glass-light), .06);
+        box-shadow: none !important;
+        line-height: 1.25 !important;
+        text-align: center;
+        white-space: normal;
+    }
+    /* ⇄: containing block — карточка (backdrop-filter), сдвигаем к правому краю ряда */
+    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar.anime .compatibility,
+    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar:first-child .compatibility {
+        right: calc(-10px - 6.75rem) !important;
+    }
+    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar.manga .compatibility {
+        right: 0 !important;
     }
 }
