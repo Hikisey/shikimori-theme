@@ -212,6 +212,30 @@
     text-transform: uppercase;
 }
 
+/* --- главная: кнопки плашек новостей «Скрыть» и «Написать новость» --- */
+/* обе — .b-link_button.dark.mini: выравниваем высоту, размер и стеклянный вид */
+.subheadline-buttons .b-link_button.mini {
+    font-size: 11px;
+    line-height: 1.55;
+    padding: 4px 12px;
+    height: auto;
+    border-radius: 10px;
+    letter-spacing: .3px;
+    text-transform: none;
+    font-weight: 600;
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 1px solid rgba(var(--glass-light), .14) !important;
+    box-shadow: var(--plate-shadow-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .subheadline-buttons .b-link_button.mini:hover {
+        background: var(--btn-bg-hover) !important;
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {

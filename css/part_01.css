@@ -1,4 +1,4 @@
-/* shiki glass v1.6.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -1881,12 +1881,21 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 }
 
 /* --- шапка: случайное аниме и пункты меню RIP --- */
+/* кнопка «?» — как круг «/» (hotkey-marker) слева от неё */
 .l-top_menu-v2 .global-search .random-anime-btn,
 .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile {
-    border: 1px solid rgba(var(--glass-light), .18);
-    border-radius: 6px;
-    background: color-mix(in srgb, var(--glass-deep) 40%, transparent);
-    color: rgb(var(--text-2));
+    border: 1px solid rgba(var(--text), .2);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: none;
+    color: rgba(var(--text), .3);
+    margin: auto 2px;
+    font-size: 13px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .l-top_menu-v2 .submenu > a.icon-useful:before {
@@ -3982,6 +3991,30 @@ header.head .notice {
 .create-topic {
     font-size: 12px;
     text-transform: uppercase;
+}
+
+/* --- главная: кнопки плашек новостей «Скрыть» и «Написать новость» --- */
+/* обе — .b-link_button.dark.mini: выравниваем высоту, размер и стеклянный вид */
+.subheadline-buttons .b-link_button.mini {
+    font-size: 11px;
+    line-height: 1.55;
+    padding: 4px 12px;
+    height: auto;
+    border-radius: 10px;
+    letter-spacing: .3px;
+    text-transform: none;
+    font-weight: 600;
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 1px solid rgba(var(--glass-light), .14) !important;
+    box-shadow: var(--plate-shadow-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .subheadline-buttons .b-link_button.mini:hover {
+        background: var(--btn-bg-hover) !important;
+        color: rgb(var(--text-strong)) !important;
+    }
 }
 
 /* ----- телефон и узкие экраны ----- */
