@@ -486,7 +486,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 /* кнопка «?» — как круг «/» (hotkey-marker) слева от неё */
 .l-top_menu-v2 .global-search .random-anime-btn,
 .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile {
-    border: 1px solid rgba(var(--text), .2);
+    border: 1px solid rgba(var(--text), .2) !important; /* у button тема снимает рамку с !important */
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -508,7 +508,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 @media (hover: hover) and (pointer: fine) {
     .l-top_menu-v2 .global-search .random-anime-btn:hover,
     .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile:hover {
-        border-color: rgba(var(--accent), .55);
+        border-color: rgba(var(--accent), .55) !important;
         color: rgba(var(--accent), 1);
     }
 }

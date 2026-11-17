@@ -1884,7 +1884,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 /* кнопка «?» — как круг «/» (hotkey-marker) слева от неё */
 .l-top_menu-v2 .global-search .random-anime-btn,
 .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile {
-    border: 1px solid rgba(var(--text), .2);
+    border: 1px solid rgba(var(--text), .2) !important; /* у button тема снимает рамку с !important */
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -1906,7 +1906,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 @media (hover: hover) and (pointer: fine) {
     .l-top_menu-v2 .global-search .random-anime-btn:hover,
     .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile:hover {
-        border-color: rgba(var(--accent), .55);
+        border-color: rgba(var(--accent), .55) !important;
         color: rgba(var(--accent), 1);
     }
 }
@@ -3993,30 +3993,6 @@ header.head .notice {
     text-transform: uppercase;
 }
 
-/* --- главная: кнопки плашек новостей «Скрыть» и «Написать новость» --- */
-/* обе — .b-link_button.dark.mini: выравниваем высоту, размер и стеклянный вид */
-.subheadline-buttons .b-link_button.mini {
-    font-size: 11px;
-    line-height: 1.55;
-    padding: 4px 12px;
-    height: auto;
-    border-radius: 10px;
-    letter-spacing: .3px;
-    text-transform: none;
-    font-weight: 600;
-    background: var(--btn-bg) !important;
-    color: var(--btn-text) !important;
-    border: 1px solid rgba(var(--glass-light), .14) !important;
-    box-shadow: var(--plate-shadow-soft);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .subheadline-buttons .b-link_button.mini:hover {
-        background: var(--btn-bg-hover) !important;
-        color: rgb(var(--text-strong)) !important;
-    }
-}
-
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
@@ -5039,4 +5015,197 @@ header.head .notice {
         right: 110px;
         width: 270px;
     }
+}
+
+/* ===== components/editor =====
+   комментарии, редактор .b-shiki_editor, спойлеры, цитаты, код */
+
+/* цвет описания аниме */
+.b-prgrph,
+.b-spoiler_prgrph {
+    color: rgba(var(--text), 1);
+}
+
+.block.genres .b-spoiler label,
+.b-show_more,
+.b-show_more-more .hide-more {
+    padding: 2px 0 !important;
+    color: rgba(var(--accent), 1) !important;
+    background: var(--plate-bg-strong) !important;
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s !important;
+    border: none !important;
+    border-radius: var(--plate-radius);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .block.genres .b-spoiler label:hover,
+    .b-table .actions a:hover,
+    .b-show_more:hover,
+    .b-show_more-more .hide-more:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent) !important;
+        color: rgb(var(--text-strong)) !important;
+        box-shadow: var(--plate-shadow) !important;
+        border: none !important;
+        animation: none;
+    }
+}
+
+.block.genres .b-spoiler {
+    border: none !important;
+}
+
+.b-shiki_editor .body .editor textarea,
+.b-input input[disabled],
+.b-input input[type="submit"],
+.b-input input[type="text"],
+.b-input input[type="password"],
+.b-input input[type="email"],
+.b-input textarea[type="submit"],
+.b-input textarea[type="text"],
+.b-input textarea[type="password"],
+.b-input textarea[type="email"] {
+    color: rgba(var(--text), 1);
+    border-radius: var(--plate-radius);
+    background-color: var(--plate-bg) !important;
+    border: none !important;
+    font-family: var(--font-family);
+    box-shadow: var(--plate-shadow-soft) !important;
+}
+
+.b-shiki_editor-v2 .hide {
+    padding: 7px 12px;
+    line-height: 1;
+    font-family: var(--font-family);
+    color: rgba(var(--text), 1) !important;
+    border-radius: var(--plate-radius) !important;
+    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    border: none!important;
+    box-shadow: var(--plate-shadow-soft);
+}
+
+.b-shiki_editor-v2 .hide:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.b-shiki_editor footer input[type="submit"],
+.b-shiki_editor footer .unpreview,
+.b-shiki_editor footer .preview,
+.b-shiki_editor footer .hide,
+.b-shiki_editor footer .cancel {
+    margin: 0 20px 10px 0;
+    box-shadow: var(--plate-shadow-soft) !important;
+}
+
+/* полоса оттеняющая, если не развернуто */
+.b-height_shortener .shade {
+    background-image: none;
+    height: 30px;
+    z-index: 0;
+}
+
+/* слово развернуть */
+.b-height_shortener .expand {
+    color: rgba(var(--accent), 1);
+}
+
+.b-spoiler label {
+    color: rgba(var(--text), 1);
+    border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
+    border-radius: 6px;
+    padding: 0 6px;
+    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+.b-spoiler {
+    transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+}
+
+.b-spoiler label:hover {
+    color: rgba(var(--accent), 1);
+    animation: spoilzero 2s ease infinite;
+}
+
+/* стоп */
+.b-quote {
+    background: var(--plate-bg) !important;
+    border: none !important;
+    color: rgba(var(--text), 1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
+    border-radius: 6px !important;
+    font-style: normal;
+}
+
+.b-comments .comments-collapser,
+.b-spoiler .content .after:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-show_more,
+.b-show_more-more .hide-more {
+    color: rgba(var(--accent), 1);
+}
+
+.b-spoiler .content .before:before {
+    content: "[spoiler]";
+    color: rgba(var(--accent), 1);
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .after:before {
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .inner,
+.b-spoiler .content .inner-prgrph {
+    border-bottom: 0;
+    border-radius: 6px;
+    padding: 0 6px;
+    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
+}
+
+.buttons .editor-italic:before,
+.buttons .editor-spoiler:before,
+.buttons .editor-smiley:before,
+.buttons .editor-quote:before,
+.buttons .editor-image:before,
+.buttons .editor-link:before,
+.buttons .editor-strike:before,
+.buttons .editor-underline:before,
+.buttons .editor-bold:before {
+    font-family: "shikimori";
+    text-align: center;
+    width: 20px;
+    color: rgba(var(--accent), 1);
+    font-size: 14px;
+    border: none !important;
+}
+
+/* Цвет кнопок тесктового редактора в состоянии hover */
+.buttons .editor-italic:hover:before,
+.buttons .editor-spoiler:hover:before,
+.buttons .editor-smiley:hover:before,
+.buttons .editor-quote:hover:before,
+.buttons .editor-image:hover:before,
+.buttons .editor-link:hover:before,
+.buttons .editor-strike:hover:before,
+.buttons .editor-underline:hover:before,
+.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
+}
+
+.buttons .editor-italic,
+.buttons .editor-spoiler,
+.buttons .editor-smiley,
+.buttons .editor-quote,
+.buttons .editor-image,
+.buttons .editor-link,
+.buttons .editor-strike,
+.buttons .editor-underline,
+.buttons .editor-bold,
+.buttons .editor-file {
+    border: none !important;
 }

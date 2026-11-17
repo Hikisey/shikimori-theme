@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Сборка темы: модули из src/ (порядок — src/manifest.txt) -> css/part_NN.css.
 
-Модули в порядке манифеста раскладываются по частям целиком: часть
-набирается модулями, пока не превысит --max байт (по умолчанию 150 000).
-Модуль больше --max (такого сейчас нет) режется между правилами верхнего
-уровня. Каскад от нарезки не меняется: part_01 + part_02 + … == модули подряд.
+Модули склеиваются в порядке манифеста, и поток режется на части между
+правилами верхнего уровня: часть набирается, пока не превысит --max байт
+(по умолчанию 155 000). Модуль может начаться в одной части и кончиться в
+следующей. Каскад от нарезки не меняется: part_01 + part_02 + … == модули подряд.
 
     python3 tools/build.py                   # пересобрать css/
     python3 tools/build.py --version 1.4.0  # заодно поставить версию в подвал
@@ -81,28 +81,10 @@ def split(s, limit):
     return [p.strip('\n') + '\n' for p in parts if p.strip()]
 
 
-def pack(mods_text, limit):
-    """Части из целых модулей подряд; модуль больше limit режется между правилами."""
-    parts, cur = [], ''
-    for t in mods_text:
-        if cur and len((cur + t).encode()) > limit:
-            parts.append(cur)
-            cur = ''
-        if len(t.encode()) > limit:
-            pieces = split(t, limit)
-            parts.extend(pieces[:-1])
-            cur = pieces[-1]
-        else:
-            cur += t
-    if cur.strip():
-        parts.append(cur)
-    return [p.strip('\n') + '\n' for p in parts if p.strip()]
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--version', help='версия для подвала, например 1.4.0')
-    ap.add_argument('--max', type=int, default=150_000, help='наибольший размер части в байтах (по умолчанию 150000)')
+    ap.add_argument('--max', type=int, default=155_000, help='наибольший размер части в байтах (по умолчанию 155000)')
     ap.add_argument('--out', default=os.path.join(ROOT, 'css'))
     a = ap.parse_args()
     if a.max > HARD_LIMIT:
@@ -125,7 +107,7 @@ def main():
     ver = vm.group(1) if vm else 'X.Y.Z'
     banner = f'/* shiki glass v{ver} — тема и обновления: https://github.com/Hikisey/shikimori-theme */\n'
     pack_limit = a.max - len(banner.encode())
-    parts = pack(texts, pack_limit)
+    parts = split(s, pack_limit)
     os.makedirs(a.out, exist_ok=True)
     for old in glob.glob(os.path.join(a.out, 'part_*.css')):
         os.remove(old)

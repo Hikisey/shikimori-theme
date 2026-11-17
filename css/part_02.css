@@ -1,197 +1,4 @@
 /* shiki glass v1.6.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
-/* ===== components/editor =====
-   комментарии, редактор .b-shiki_editor, спойлеры, цитаты, код */
-
-/* цвет описания аниме */
-.b-prgrph,
-.b-spoiler_prgrph {
-    color: rgba(var(--text), 1);
-}
-
-.block.genres .b-spoiler label,
-.b-show_more,
-.b-show_more-more .hide-more {
-    padding: 2px 0 !important;
-    color: rgba(var(--accent), 1) !important;
-    background: var(--plate-bg-strong) !important;
-    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s !important;
-    border: none !important;
-    border-radius: var(--plate-radius);
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .block.genres .b-spoiler label:hover,
-    .b-table .actions a:hover,
-    .b-show_more:hover,
-    .b-show_more-more .hide-more:hover {
-        background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent) !important;
-        color: rgb(var(--text-strong)) !important;
-        box-shadow: var(--plate-shadow) !important;
-        border: none !important;
-        animation: none;
-    }
-}
-
-.block.genres .b-spoiler {
-    border: none !important;
-}
-
-.b-shiki_editor .body .editor textarea,
-.b-input input[disabled],
-.b-input input[type="submit"],
-.b-input input[type="text"],
-.b-input input[type="password"],
-.b-input input[type="email"],
-.b-input textarea[type="submit"],
-.b-input textarea[type="text"],
-.b-input textarea[type="password"],
-.b-input textarea[type="email"] {
-    color: rgba(var(--text), 1);
-    border-radius: var(--plate-radius);
-    background-color: var(--plate-bg) !important;
-    border: none !important;
-    font-family: var(--font-family);
-    box-shadow: var(--plate-shadow-soft) !important;
-}
-
-.b-shiki_editor-v2 .hide {
-    padding: 7px 12px;
-    line-height: 1;
-    font-family: var(--font-family);
-    color: rgba(var(--text), 1) !important;
-    border-radius: var(--plate-radius) !important;
-    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-    border: none!important;
-    box-shadow: var(--plate-shadow-soft);
-}
-
-.b-shiki_editor-v2 .hide:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-shiki_editor footer input[type="submit"],
-.b-shiki_editor footer .unpreview,
-.b-shiki_editor footer .preview,
-.b-shiki_editor footer .hide,
-.b-shiki_editor footer .cancel {
-    margin: 0 20px 10px 0;
-    box-shadow: var(--plate-shadow-soft) !important;
-}
-
-/* полоса оттеняющая, если не развернуто */
-.b-height_shortener .shade {
-    background-image: none;
-    height: 30px;
-    z-index: 0;
-}
-
-/* слово развернуть */
-.b-height_shortener .expand {
-    color: rgba(var(--accent), 1);
-}
-
-.b-spoiler label {
-    color: rgba(var(--text), 1);
-    border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
-    border-radius: 6px;
-    padding: 0 6px;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-spoiler {
-    transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-}
-
-.b-spoiler label:hover {
-    color: rgba(var(--accent), 1);
-    animation: spoilzero 2s ease infinite;
-}
-
-/* стоп */
-.b-quote {
-    background: var(--plate-bg) !important;
-    border: none !important;
-    color: rgba(var(--text), 1);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-    border-radius: 6px !important;
-    font-style: normal;
-}
-
-.b-comments .comments-collapser,
-.b-spoiler .content .after:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-show_more,
-.b-show_more-more .hide-more {
-    color: rgba(var(--accent), 1);
-}
-
-.b-spoiler .content .before:before {
-    content: "[spoiler]";
-    color: rgba(var(--accent), 1);
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .after:before {
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .inner,
-.b-spoiler .content .inner-prgrph {
-    border-bottom: 0;
-    border-radius: 6px;
-    padding: 0 6px;
-    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
-}
-
-.buttons .editor-italic:before,
-.buttons .editor-spoiler:before,
-.buttons .editor-smiley:before,
-.buttons .editor-quote:before,
-.buttons .editor-image:before,
-.buttons .editor-link:before,
-.buttons .editor-strike:before,
-.buttons .editor-underline:before,
-.buttons .editor-bold:before {
-    font-family: "shikimori";
-    text-align: center;
-    width: 20px;
-    color: rgba(var(--accent), 1);
-    font-size: 14px;
-    border: none !important;
-}
-
-/* Цвет кнопок тесктового редактора в состоянии hover */
-.buttons .editor-italic:hover:before,
-.buttons .editor-spoiler:hover:before,
-.buttons .editor-smiley:hover:before,
-.buttons .editor-quote:hover:before,
-.buttons .editor-image:hover:before,
-.buttons .editor-link:hover:before,
-.buttons .editor-strike:hover:before,
-.buttons .editor-underline:hover:before,
-.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
-}
-
-.buttons .editor-italic,
-.buttons .editor-spoiler,
-.buttons .editor-smiley,
-.buttons .editor-quote,
-.buttons .editor-image,
-.buttons .editor-link,
-.buttons .editor-strike,
-.buttons .editor-underline,
-.buttons .editor-bold,
-.buttons .editor-file {
-    border: none !important;
-}
-
 .buttons .editor-file input:before {
     color: rgba(var(--accent), 1);
 }
@@ -889,23 +696,23 @@ a.b-link.bubbled-processed {
     }
 }
 
-/* --- метка «RIP» у комментариев с shikimori.rip --- */
-/* на шикимори.rip нативные комменты несут .b-from_rip_marker; синхронизированные
-   с .io — .b-shiki_sync_marker (им метку не ставим) */
-.b-comment:has(.b-from_rip_marker) .name:after {
+/* --- метка «rip» у комментариев, написанных на shikimori.rip --- */
+/* у своих комментариев rip ставит .b-from_rip_marker, у пришедших с шикимори — .b-shiki_sync_marker */
+.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
     content: "rip";
     display: inline-block;
     margin-left: 7px;
-    padding: 1px 7px;
+    padding: 0 6px;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .5px;
     text-transform: uppercase;
-    line-height: 1.5;
+    line-height: 15px;
     border-radius: 6px;
-    background: color-mix(in srgb, var(--accent) 70%, transparent);
-    color: rgb(var(--text-strong));
-    vertical-align: middle;
+    background: rgba(var(--accent), .18);
+    border: 1px solid rgba(var(--accent), .45);
+    color: rgba(var(--accent), 1);
+    vertical-align: 1px;
 }
 
 /* ===== components/modals =====
@@ -4687,6 +4494,49 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 }
 
+/* --- shikimori.rip: теги «Платформы», «Темы», «Тех./Эро тэги» и «Показать все» на страницах новелл --- */
+.line .value :is(.b-platform-tag, .b-genre-tag) {
+    display: inline-flex;
+    align-items: center;
+    margin: 2px;
+    padding: 2px 12px;
+    border-radius: var(--plate-radius);
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--accent), 1);
+    line-height: 16px;
+}
+
+.line .value .more-toggle {
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+    margin: 2px;
+    padding: 2px 12px;
+    border: 1px dashed rgba(var(--text), .25);
+    border-radius: var(--plate-radius);
+    background: transparent;
+    color: rgba(var(--text-2), 1);
+    line-height: 16px;
+    cursor: pointer;
+    transition: color var(--ease-fast), border-color var(--ease-fast);
+}
+
+.line .value .more-toggle:active {
+    color: rgba(var(--accent), 1);
+    border-color: rgba(var(--accent), .6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .line .value :is(.b-platform-tag, .b-genre-tag):hover {
+        background: color-mix(in srgb, var(--accent-dim) 45%, transparent);
+        color: rgba(var(--text-strong), 1);
+    }
+    .line .value .more-toggle:hover {
+        color: rgba(var(--accent), 1);
+        border-color: rgba(var(--accent), .6);
+    }
+}
+
 /* ===== pages/settings =====
    настройки профиля и аккаунта, сервисы входа */
 
@@ -4945,5 +4795,315 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
         background: rgba(var(--glass), .95) !important;
         transform: none;
         box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
+    }
+}
+
+/* ===== pages/catalog =====
+   каталог: фильтры слева, коллекции, поиск */
+
+/* справа выборы фильтров в списке аниме */
+.b-block_list li {
+    color: rgba(var(--text), 1);
+    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+    font-family: var(--font-family);
+}
+
+.b-block_list li a {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-animes_collection-index .pagination .link {
+    color: rgba(var(--accent), 1);
+}
+
+.p-animes_collection-index .pagination .link.disabled {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input {
+    border: 0 solid rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg) !important;
+}
+
+.p-studios .studio .animes .num,
+.p-studios .studio .years .num {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+
+.b-header_filters .filter-line a.current {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+.x1000 .menu-slide-outer.x199 .l-menu,
+.x1200 .menu-slide-outer.x199 .l-menu,
+.menu-slide-outer.x199 .l-menu,
+.x1000 .menu-slide-outer.x240 .l-menu,
+.x1200 .menu-slide-outer.x240 .l-menu,
+.menu-slide-outer.x240 .l-menu {
+    width: 22.00%;
+}
+
+.l-menu .ongoing .misc .value,
+span.studio {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_search .b-catalog_entry {
+    transform: scale(1.03);
+}
+
+.p-animes_collection-index.x1000 .cc-entries,
+.p-animes_collection-index.x1200 .cc-entries {
+    margin-top: 4px;
+}
+
+.b-collection-filters .block-list li:before,
+.b-collection-filters .b-block_list li:before {
+    content: "\f10c";
+    color: rgba(var(--text-2), 1);
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    margin: 0px 18px 2px 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-block_list li:hover {
+        color: rgba(var(--accent), 1) !important;
+        transition: 0s ease-out;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
+    }
+}
+
+.b-block_list li.selected {
+    color: rgba(var(--text), 1);
+    transition: 0s ease-out;
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+    border-radius: var(--plate-radius);
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-block_list li.selected:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.b-collection-filters .b-block_list li.selected:before {
+    content: "\f05d";
+    color: rgba(var(--text), 1);
+    font-size: 19px;
+    margin: 0px 18px 2px 1px;
+}
+
+.b-collection-filters .block-list li > input,
+.b-collection-filters .b-block_list li > input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.b-collection-filters .b-block_list li:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .filter:before,
+.b-collection-filters .b-block_list .filter:before {
+    display: block;
+    width: auto;
+    font-family: inherit;
+    font-size: 10px;
+    line-height: inherit;
+    text-transform: lowercase;
+}
+
+.b-collection-filters .block-list .filter,
+.b-collection-filters .b-block_list .filter {
+    float: right;
+    position: relative;
+    right: -2px;
+    margin: 0 0 0 0.5rem;
+}
+
+.b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-radius: var(--plate-radius);
+    padding-right: 12px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    content: "исключить";
+}
+
+.b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-right: 3px solid #af3e0f;
+    border-radius: var(--plate-radius);
+    padding-right: 9px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    content: "добавить";
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .b-question,
+.b-collection-filters .b-block_list .b-question {
+    display: inline-block !important;
+    vertical-align: top;
+    position: absolute;
+    right: 10px;
+}
+
+.b-list_switchers .switcher.alphabet::after {
+    content: "\f1c2";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-weight: bold;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* место под .c-ms-caret */
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+@supports (appearance: base-select) {
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (min-width: 736px) and (max-width: 880px) {
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 80px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "===";
+        font: bold 20px var(--font-family) !important;
+        width: 51px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0  12px 0  4px;
+    }
+    ul.b-block_list {
+        height: auto !important;
+        text-align: left !important;
+        line-height: 30px;
+        font-size: 15px !important;
+    }
+    .b-collection-filters .b-block_list li.selected:before,
+    .b-collection-filters .block-list li:before,
+    .b-collection-filters .b-block_list li:before {
+        margin: 0  28px 2px 1px;
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .b-block_list {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .b-block_list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+        position: relative;
+        overflow: hidden;
+        height: 44px !important;
+    }
+    section.l-page.l-page aside.l-menu {
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    section.l-page aside.l-menu {
+        display: none;
+    }
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0 ;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 735px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .b-block_list {
+        width: calc(100% - 64px);
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
     }
 }

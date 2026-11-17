@@ -3983,3 +3983,52 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
         background: var(--btn-bg-hover) !important;
     }
 }
+
+/* v1.6.7: главная shikimori.rip — «Написать новость» и «Скрыть»/«Показать» у «Новостей сайта»
+   (из components/buttons: перебивает .p-dashboards-show .subheadline-buttons a выше) */
+.p-dashboards-show .v2 .block2 > .subheadline-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    top: 0;
+    margin: 0;
+    right: 4px;
+    height: var(--heading-height);
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
+    display: flex;
+    margin: 0;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 20px;
+    margin: 0;
+    padding: 0 10px;
+    border: 1px solid rgba(var(--text), .16) !important;
+    border-radius: 10px;
+    background: rgba(var(--text), .07) !important;
+    box-shadow: none;
+    color: rgba(var(--text), .85) !important;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 11px !important;
+    letter-spacing: .2px;
+    text-transform: none;
+    cursor: pointer;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
+    line-height: 20px;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
+    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    color: rgba(var(--text-strong), 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
+        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+        border-color: rgba(var(--accent), .5) !important;
+        color: rgba(var(--text-strong), 1) !important;
+    }
+}

@@ -1092,3 +1092,46 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
         box-sizing: border-box !important;
     }
 }
+
+/* --- shikimori.rip: теги «Платформы», «Темы», «Тех./Эро тэги» и «Показать все» на страницах новелл --- */
+.line .value :is(.b-platform-tag, .b-genre-tag) {
+    display: inline-flex;
+    align-items: center;
+    margin: 2px;
+    padding: 2px 12px;
+    border-radius: var(--plate-radius);
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--accent), 1);
+    line-height: 16px;
+}
+
+.line .value .more-toggle {
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+    margin: 2px;
+    padding: 2px 12px;
+    border: 1px dashed rgba(var(--text), .25);
+    border-radius: var(--plate-radius);
+    background: transparent;
+    color: rgba(var(--text-2), 1);
+    line-height: 16px;
+    cursor: pointer;
+    transition: color var(--ease-fast), border-color var(--ease-fast);
+}
+
+.line .value .more-toggle:active {
+    color: rgba(var(--accent), 1);
+    border-color: rgba(var(--accent), .6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .line .value :is(.b-platform-tag, .b-genre-tag):hover {
+        background: color-mix(in srgb, var(--accent-dim) 45%, transparent);
+        color: rgba(var(--text-strong), 1);
+    }
+    .line .value .more-toggle:hover {
+        color: rgba(var(--accent), 1);
+        border-color: rgba(var(--accent), .6);
+    }
+}

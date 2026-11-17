@@ -1,536 +1,4 @@
 /* shiki glass v1.6.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
-/* ===== kits/about-kits =====
-   наборы для «О себе»: Animes_Mangas, Ssylki, Razmer, k-0-1 и т. п. (не удалять) */
-
-@media screen and (min-width: 50px) {
-    .about .b-catalog_entry .cover {
-        margin: 5px 5px 1rem;
-        padding: 5px;
-        border-radius: 0.7rem;
-        pointer-events: all;
-        background: linear-gradient(transparent 0 , rgba(var(--glass), 0.25)) !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.1882);
-        -webkit-transition: box-shadow 0.25s ease;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .about .b-catalog_entry .cover:hover {
-            border-radius: 0.6rem;
-            background: linear-gradient(transparent 0 , rgba(var(--glass), 0.35)) !important;
-        }
-    }
-}
-
-/*--------*/
-.Ssylki-anime span,
-.Ssylki-anime-v-1 span,
-.Ssylki-anime-v-1-standard span,
-.Ssylki-Characters span {
-    display: none;
-}
-
-.Ssylki-anime .b-link,
-.Ssylki-anime-v-1 .b-link,
-.Ssylki-anime-v-1-standard .b-link,
-.Ssylki-Characters .b-link {
-    font-size: 0;
-}
-
-.about .Animes_Mangas {
-    padding: 0.5rem 0 0.2rem 0;
-}
-
-.about .Razmer-v2-row-0 > .Animes_Mangas .b-catalog_entry .cover .image-decor .image-cutter {
-    padding: 0 0 57.5%;
-}
-
-.about .Animes_Mangas .title.left_aligned span {
-    margin-top: -0.45rem;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .image-decor .image-cutter {
-    position: relative;
-    overflow: visible;
-    pointer-events: none;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .image-decor,
-.about .Animes_Mangas .b-catalog_entry .cover .title {
-    margin: 0 5px;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .image-decor {
-    border: solid 2px transparent;
-    border-bottom: none;
-    border-radius: 0.25rem 0.25rem 0 0;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .image-cutter img {
-    z-index: -1;
-    display: none;
-}
-
-.about .Animes_Mangas .b-catalog_entry:hover > .cover .misc {
-    left: 1rem;
-    opacity: 1;
-}
-
-.about .Animes_Mangas .b-catalog_entry .cover .misc span {
-    padding: 0.25rem;
-}
-
-.about .Animes_Mangas .b-catalog_entry .image-decor:before {
-    z-index: 11;
-    opacity: 90%;
-}
-
-.about .Animes_Mangas .b-catalog_entry .image-decor::after {
-    z-index: 12;
-}
-
-.about .Animes_Mangas .b-catalog_entry a .image-cutter::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-radius: 0.2rem 0.2rem 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 15%;
-    background-color: var(--tone-171616);
-    pointer-events: none;
-    filter: contrast(102%) grayscale(15%);
-    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
-    transition: box-shadow 0.4s ease;
-    -webkit-transition: box-shadow 0.4s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas .b-catalog_entry:hover > a .image-cutter::after {
-        box-shadow: none;
-    }
-}
-
-.about .Animes_Mangas .b-catalog_entry a .image-cutter::before {
-    content: "";
-    display: flex;
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(3px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.4s ease-in-out;
-    left: -0.25rem;
-    right: -0.25rem;
-    top: -0.25rem;
-    padding-bottom: 0;
-    bottom: -3.15rem;
-    opacity: 0;
-}
-
-.about .Animes_Mangas .image-decor:hover .image-cutter::before {
-    opacity: 1;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas .b-catalog_entry .cover .image-decor:hover .image-cutter {
-        background: none;
-    }
-    .about .Animes_Mangas .b-catalog_entry .cover:hover {
-        box-shadow: none !important;
-        background: none !important;
-    }
-}
-
-@media screen and (min-width: 1px) {
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-
-@media screen and (min-width: 600px) {
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
-        width: calc(100% / 2) !important;
-    }
-}
-
-@media screen and (min-width: 700px) {
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
-        width: calc(100% / 3) !important;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry,
-    .about .Razmer-v2-row-0 .Animes_Mangas .b-catalog_entry:last-child {
-        width: calc(100% / 4) !important;
-    }
-}
-
-.about .Animes_Mangas-1 {
-    padding: 0.5rem 0 0.3rem 0;
-}
-
-.about .Razmer-v2-row-1 > .Animes_Mangas-1 .b-catalog_entry .cover .image-decor .image-cutter {
-    padding: 0 0 130%;
-}
-
-.about .Animes_Mangas-1 .title.left_aligned span {
-    margin-top: -1rem;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor .image-cutter {
-    position: relative;
-    overflow: visible;
-    pointer-events: none;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor,
-.about .Animes_Mangas-1 .b-catalog_entry .cover .title {
-    margin: 0 5px;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor {
-    border: solid 2px transparent;
-    border-bottom: none;
-    border-radius: 0.25rem 0.25rem 0 0;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .image-cutter img {
-    z-index: -1;
-    display: none;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry:hover > .cover .misc {
-    left: 1rem;
-    opacity: 1;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .cover .misc span {
-    padding: 0.25rem;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .image-decor:before {
-    z-index: 11;
-    opacity: 90%;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry .image-decor::after {
-    z-index: 12;
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-radius: 0.2rem 0.2rem 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: var(--tone-171616);
-    pointer-events: none;
-    filter: contrast(102%) grayscale(15%);
-    transition: box-shadow 0.4s ease;
-    -webkit-transition: box-shadow 0.4s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
-        box-shadow: none;
-    }
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
-    content: "";
-    display: flex;
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(3px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.4s ease-in-out;
-    left: -0.25rem;
-    right: -0.25rem;
-    top: -0.25rem;
-    padding-bottom: 0;
-    bottom: -3.15rem;
-    opacity: 0;
-}
-
-.about .Animes_Mangas-1 .image-decor:hover .image-cutter::before {
-    opacity: 1;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
-        background: none;
-    }
-    .about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
-        box-shadow: none !important;
-        background: none !important;
-    }
-}
-
-@media screen and (min-width: 150px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-
-@media screen and (min-width: 300px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 2) !important;
-    }
-}
-
-@media screen and (min-width: 350px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 3) !important;
-    }
-}
-
-@media screen and (min-width: 525px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 4) !important;
-    }
-}
-
-@media screen and (min-width: 767px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 5) !important;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 6) !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 7) !important;
-
-    }
-}
-
-/*-------------------------------*/
-.Ssylki-anime-v-1-standard-blok-1 {
-    position: relative;
-    margin: 0;
-    text-align: center;
-}
-
-.Ssylki-anime-v-1-standard {
-    position: relative;
-    display: inline-flex;
-    vertical-align: top;
-    height: 100%;
-    padding: 0;
-    overflow: visible;
-    margin: 5px 0.5% 3.5rem 0.5%;
-}
-
-.Ssylki-anime-v-1-standard .b-link {
-    position: absolute;
-    display: flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-    min-height: 2.5rem;
-    line-height: 1.45;
-    z-index: 1;
-    border-radius: 0.2rem 0.2rem 0 0;
-    background: none;
-    overflow: hidden;
-    transition: opacity 0.4s ease;
-    -webkit-transition: opacity 0.4s ease;
-}
-
-.Ssylki-anime-v-1-standard strong {
-    width: 100%;
-    border-radius: 0.25rem;
-    position: relative;
-    z-index: 5;
-    padding-bottom: 130%;
-    overflow: hidden;
-}
-
-div.Ssylki-anime-v-1-standard:hover .Evaluation-v1-standard {
-    opacity: 0;
-}
-
-.Ssylki-anime-v-1-standard .Evaluation-v1-standard {
-    position: absolute;
-    top: 0.9rem;
-    left: -0.5rem;
-    padding: 7px 10px;
-    border-radius: 0 5px 5px 0;
-    font-size: 14px;
-    line-height: 0.8;
-    pointer-events: none;
-    z-index: 8;
-    opacity: 90%;
-    text-align: center;
-    background: var(--tone-6e1515);
-    border-color: var(--tone-6e1515);
-    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
-    color: #d9c9e0;
-    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
-    transition: opacity 0.4s ease-in-out;
-}
-
-.Ssylki-anime-v-1-standard .Evaluation-v1-standard::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    border: 6.6px solid transparent;
-    border-top-color: inherit;
-    border-left-width: 8px;
-    border-right-width: 0 ;
-    filter: brightness(0.6);
-    z-index: -1;
-}
-
-div.Ssylki-anime-v-1-standard:hover::before {
-    opacity: 1;
-}
-
-.Ssylki-anime-v-1-standard::before {
-    content: "";
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(3px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.4s ease-in-out;
-    bottom: -3.15rem;
-    left: -0.1rem;
-    right: -0.1rem;
-    top: -0.1rem;
-    opacity: 0;
-    border-radius: 0.2rem;
-    margin: auto;
-    display: none;
-}
-
-.Ssylki-anime-v-1-standard > strong > a::before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    filter: contrast(102%) grayscale(15%);
-    margin: auto;
-    background-color: var(--tone-151414);
-    background-repeat: no-repeat;
-    background-position: 50% 20%;
-    background-size: cover;
-    border-radius: 0.2rem 0.2rem 0 0;
-    transition: filter 0.4s ease, box-shadow 0.4s ease;
-}
-
-.Ssylki-anime-v-1-standard .Text-dno-ramka-standard {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 4;
-    margin: auto;
-    height: calc(100% + 3rem);
-    border: solid 2px transparent;
-    text-align: center;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    white-space: normal;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
-    background: rgba(var(--glass), 0.15);
-    line-height: 1.5;
-    font-size: 15px;
-    color: #cce0d1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    padding: 129% 0.15rem 0;
-    border-radius: 0.25rem;
-}
-
-.Ssylki-anime-v-1-standard .Fon-standard {
-    position: absolute;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    margin: auto;
-    border-radius: 0.2rem 0.2rem 0 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 6;
-    padding: 0 10px;
-    font-size: 18px;
-    line-height: 1.15;
-    overflow: hidden;
-    font-family: cursive;
-    background-color: var(--tone-1f1e1e);
-    color: #f58ebb;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    pointer-events: none;
-    opacity: 0;
-    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
-    transition: opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-}
-
-div.Ssylki-anime-v-1-standard:hover .Fon-standard {
-    opacity: 1;
-}
-
-.Ssylki-anime-v-1-standard .Fon-standard::after {
-    position: absolute;
-    content: "";
-    background-image: url("//moe.shikimori.one/system/user_images/original/208335/1426717.jpg");
-    width: 100%;
-    height: 100%;
-    filter: blur(4px) contrast(105%) grayscale(50%);
-    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.502);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 0.2rem 0.2rem 0 0;
-    z-index: -1;
-}
-
 .Ssylki-anime-v-1-standard .progress-standard {
     position: absolute;
     z-index: 31;
@@ -5411,5 +4879,54 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
 @media (hover: hover) and (pointer: fine) {
     .p-profiles-edit .b-edit_styles .editor-container :is(input, button)[type="submit"]:hover {
         background: var(--btn-bg-hover) !important;
+    }
+}
+
+/* v1.6.7: главная shikimori.rip — «Написать новость» и «Скрыть»/«Показать» у «Новостей сайта»
+   (из components/buttons: перебивает .p-dashboards-show .subheadline-buttons a выше) */
+.p-dashboards-show .v2 .block2 > .subheadline-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    top: 0;
+    margin: 0;
+    right: 4px;
+    height: var(--heading-height);
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
+    display: flex;
+    margin: 0;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 20px;
+    margin: 0;
+    padding: 0 10px;
+    border: 1px solid rgba(var(--text), .16) !important;
+    border-radius: 10px;
+    background: rgba(var(--text), .07) !important;
+    box-shadow: none;
+    color: rgba(var(--text), .85) !important;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 11px !important;
+    letter-spacing: .2px;
+    text-transform: none;
+    cursor: pointer;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
+    line-height: 20px;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
+    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    color: rgba(var(--text-strong), 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
+        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+        border-color: rgba(var(--accent), .5) !important;
+        color: rgba(var(--text-strong), 1) !important;
     }
 }

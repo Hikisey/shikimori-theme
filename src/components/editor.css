@@ -888,21 +888,21 @@ a.b-link.bubbled-processed {
     }
 }
 
-/* --- метка «RIP» у комментариев с shikimori.rip --- */
-/* на шикимори.rip нативные комменты несут .b-from_rip_marker; синхронизированные
-   с .io — .b-shiki_sync_marker (им метку не ставим) */
-.b-comment:has(.b-from_rip_marker) .name:after {
+/* --- метка «rip» у комментариев, написанных на shikimori.rip --- */
+/* у своих комментариев rip ставит .b-from_rip_marker, у пришедших с шикимори — .b-shiki_sync_marker */
+.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
     content: "rip";
     display: inline-block;
     margin-left: 7px;
-    padding: 1px 7px;
+    padding: 0 6px;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .5px;
     text-transform: uppercase;
-    line-height: 1.5;
+    line-height: 15px;
     border-radius: 6px;
-    background: color-mix(in srgb, var(--accent) 70%, transparent);
-    color: rgb(var(--text-strong));
-    vertical-align: middle;
+    background: rgba(var(--accent), .18);
+    border: 1px solid rgba(var(--accent), .45);
+    color: rgba(var(--accent), 1);
+    vertical-align: 1px;
 }
