@@ -26,7 +26,7 @@
   <tr>
     <td width="33%"><img src="docs/home.jpg" alt="Главная"><p align="center"><sub>Главная</sub></p></td>
     <td width="33%"><img src="docs/catalog.jpg" alt="Каталог с фильтром"><p align="center"><sub>Каталог</sub></p></td>
-    <td width="33%"><img src="docs/profile.jpg" alt="Профиль"><p align="center"><sub>Профиль</sub></p></td>
+    <td width="33%"><img src="docs/profile.jpg" alt="Профиль hikisey на shikimori.io"><p align="center"><sub>Профиль</sub></p></td>
   </tr>
 </table>
 
