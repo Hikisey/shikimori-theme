@@ -3387,33 +3387,46 @@ img.studio-logo,
     position: relative;
 }
 
-.b-catalog_entry .image-decor .collection_score {
+.b-catalog_entry .image-decor .collection_score:not(#u) {
     display: flex;
-    align-items: center;
     position: absolute;
     right: 6px;
     bottom: 6px;
     z-index: 2;
-    padding: 1px 7px 2px;
-    gap: 4px;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--glass-deep) 84%, transparent);
-    color: rgb(var(--text-strong));
-    border: 1px solid rgba(var(--glass-light), .14);
-    box-shadow: 0 2px 8px rgba(var(--shade), .4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    font-size: 12px;
-    line-height: 17px;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
 }
 
-.b-catalog_entry .image-decor :is(.collection_score_mal_icon, .collection_score_shiki_icon) {
-    width: 14px;
-    height: 14px;
-    margin-left: 2px;
-    flex: none;
-    opacity: .95;
-    filter: brightness(1.15);
+/* общее правило body * [class*="_marker"] красит маркер в серую плашку — перебиваем */
+body .b-catalog_entry .collection_score .collection_score_marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin: 0 !important;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--glass-deep) 82%, transparent) !important;
+    border: 1px solid rgba(var(--glass-light), .12) !important;
+    box-shadow: 0 2px 8px rgba(var(--shade), .35) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgb(var(--text-strong)) !important;
+    font-size: 11px !important;
+    font-weight: 600;
+    line-height: 15px !important;
+    font-variant-numeric: tabular-nums;
+}
+
+.b-catalog_entry .collection_score .score_marker_star {
+    color: rgb(var(--accent));
+    font-size: 10px;
+}
+
+.b-catalog_entry .collection_score_mal_icon {
+    display: none !important;
 }
 
 .b-catalog_entry > .collection_score,
@@ -3991,7 +4004,8 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     align-items: center;
     gap: 6px;
     top: 0;
-    margin: 0;
+    margin: 0 !important;
+    padding: 0;
     right: 4px;
     height: var(--heading-height);
 }
@@ -4003,23 +4017,23 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    height: 20px;
+    height: 24px;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 14px;
     border: 1px solid rgba(var(--text), .16) !important;
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(var(--text), .07) !important;
     box-shadow: none;
     color: rgba(var(--text), .85) !important;
     font-weight: 600;
-    line-height: 20px;
-    font-size: 11px !important;
+    line-height: 22px;
+    font-size: 12px !important;
     letter-spacing: .2px;
     text-transform: none;
     cursor: pointer;
 }
 .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
-    line-height: 20px;
+    line-height: 22px;
 }
 .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
     background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
@@ -4031,4 +4045,17 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
         border-color: rgba(var(--accent), .5) !important;
         color: rgba(var(--text-strong), 1) !important;
     }
+}
+
+/* v1.6.8: .b-appear_marker — служебный невидимый маркер «прочитано».
+   Общее body * [class*="_marker"] делало из него серую полоску с отступами,
+   а когда сайт снимал маркер при наведении, страница прыгала. */
+body * .b-appear_marker:not(#u) {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+}
+body * .b-appear_marker.active:not(#u) {
+    display: block;
 }
