@@ -1,4 +1,93 @@
-/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+.b-collection-filters .block-list li:before,
+.b-collection-filters .b-block_list li:before {
+    content: "\f10c";
+    color: rgba(var(--text-2), 1);
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    margin: 0px 18px 2px 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-block_list li:hover {
+        color: rgba(var(--accent), 1) !important;
+        transition: 0s ease-out;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
+    }
+}
+
+.b-block_list li.selected {
+    color: rgba(var(--text), 1);
+    transition: 0s ease-out;
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+    border-radius: var(--plate-radius);
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-block_list li.selected:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.b-collection-filters .b-block_list li.selected:before {
+    content: "\f05d";
+    color: rgba(var(--text), 1);
+    font-size: 19px;
+    margin: 0px 18px 2px 1px;
+}
+
+.b-collection-filters .block-list li > input,
+.b-collection-filters .b-block_list li > input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.b-collection-filters .b-block_list li:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .filter:before,
+.b-collection-filters .b-block_list .filter:before {
+    display: block;
+    width: auto;
+    font-family: inherit;
+    font-size: 10px;
+    line-height: inherit;
+    text-transform: lowercase;
+}
+
+.b-collection-filters .block-list .filter,
+.b-collection-filters .b-block_list .filter {
+    float: right;
+    position: relative;
+    right: -2px;
+    margin: 0 0 0 0.5rem;
+}
+
+.b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-radius: var(--plate-radius);
+    padding-right: 12px;
+}
+
 [data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
     font-family: var(--font-family);
     content: "исключить";
@@ -4716,99 +4805,4 @@ img[alt='morr'] {
 
 .about .Animes_Mangas-1 .image-decor:hover .image-cutter::before {
     opacity: 1;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
-        background: none;
-    }
-    .about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
-        box-shadow: none !important;
-        background: none !important;
-    }
-}
-
-@media screen and (min-width: 150px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-
-@media screen and (min-width: 300px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 2) !important;
-    }
-}
-
-@media screen and (min-width: 350px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 3) !important;
-    }
-}
-
-@media screen and (min-width: 525px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 4) !important;
-    }
-}
-
-@media screen and (min-width: 767px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 5) !important;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 6) !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
-    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
-        width: calc(100% / 7) !important;
-
-    }
-}
-
-/*-------------------------------*/
-.Ssylki-anime-v-1-standard-blok-1 {
-    position: relative;
-    margin: 0;
-    text-align: center;
-}
-
-.Ssylki-anime-v-1-standard {
-    position: relative;
-    display: inline-flex;
-    vertical-align: top;
-    height: 100%;
-    padding: 0;
-    overflow: visible;
-    margin: 5px 0.5% 3.5rem 0.5%;
-}
-
-.Ssylki-anime-v-1-standard .b-link {
-    position: absolute;
-    display: flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-    min-height: 2.5rem;
-    line-height: 1.45;
-    z-index: 1;
-    border-radius: 0.2rem 0.2rem 0 0;
-    background: none;
-    overflow: hidden;
-    transition: opacity 0.4s ease;
-    -webkit-transition: opacity 0.4s ease;
 }

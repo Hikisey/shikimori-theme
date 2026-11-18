@@ -712,7 +712,14 @@ html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-offtopic_marker
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-censored_editor_marker:not(#u) { --chip-tint: 245, 142, 187; }
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-sync_to_shiki_marker:not(#u) { --chip-tint: 121, 169, 207; }
 
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
+    height: auto !important;   /* сайт на узких экранах держит 20px и срезал низ чипов */
+    overflow: visible !important;
+    padding-bottom: 2px;
+}
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
+    height: auto !important;
+    overflow: visible !important;
     width: auto !important;
     padding: 0 !important;
     background: none !important;

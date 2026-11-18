@@ -1,4 +1,4 @@
-/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -3175,7 +3175,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
         /* стрелки лент (только ПК с мышью; CSS-карусель Chromium 135+).
            Общий компонент: чтобы добавить стрелки другой ленте, допишите её прокручиваемый блок в :is(...);
            размеры и цвета задаются токенами --arrow-* в tokens/components.css */
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*) {
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(*) {
             position: absolute;
             top: calc(50% + 14px);
             z-index: 5;
@@ -3196,24 +3196,24 @@ html input[type="checkbox"]:not(#u):focus-visible {
             opacity: .92;
             transition: background-color var(--ease-fast), border-color var(--ease-fast), opacity var(--ease-fast), transform var(--ease-fast);
         }
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(left) {
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(left) {
             content: "" / "Назад";
             left: var(--arrow-inset);
             background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjUgNmwtNiA2IDYgNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
         }
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(right) {
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(right) {
             content: "" / "Вперёд";
             right: var(--arrow-inset);
             background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNSA2bDYgNi02IDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==");
         }
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):hover {
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(*):hover {
             background-color: var(--arrow-bg-hover);
             border-color: var(--arrow-bg-hover);
             opacity: 1;
             transform: scale(1.06);
         }
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):active { transform: scale(.94); }
-        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*):disabled {
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(*):active { transform: scale(.94); }
+        .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > :is(.cc, .b-scroll)::scroll-button(*):disabled {
             opacity: .25;
             cursor: default;
             background-color: var(--plate-bg-strong);

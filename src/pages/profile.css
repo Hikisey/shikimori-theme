@@ -812,6 +812,36 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
+/* Избранное в профиле на ПК: сетка 4 в ряд вместо 8 мелких, постер целиком в пропорции 225:318 */
+@media screen and (min-width: 768px) {
+    .p-profiles-show .cc-favourites:not(#u) {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .p-profiles-show .cc-favourites .c-column:not(#u) {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+    .p-profiles-show .cc-favourites .c-column :is(.cover, .image-decor, .image-cutter):not(#u) {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 225 / 318;
+        max-height: none;
+    }
+    .p-profiles-show .cc-favourites .c-column .image-cutter img:not(#u) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+    .p-profiles-show .cc-favourites:not(#u) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media screen and (max-width: 960px) {
     .p-profiles-show .cc-favourites .c-column:nth-child(7),
     .p-profiles-show .cc-favourites .c-column:nth-child(8) {
@@ -882,11 +912,25 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* Скролл в истории для длинных названий */
-.p-profiles .profile-head .c-history .entry:hover .title {
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: color-mix(in srgb, var(--tone-bfc5d0) 25%, transparent) rgba(var(--shade), 0);
+/* Длинное название в истории при наведении плавно уезжает до конца и обратно (вместо полосы прокрутки).
+   Сдвиг = ширина блока (100cqw) минус ширина текста; короткие названия стоят на месте (min с 0) */
+.p-profiles .profile-head .c-history .entry .title {
+    container-type: inline-size;
+    overflow: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles .profile-head .c-history .entry:hover .title > span {
+        display: inline-block;
+        white-space: nowrap;
+        animation: history-marquee 7s ease-in-out infinite alternate;
+    }
+}
+@keyframes history-marquee {
+    0%, 15% { transform: translateX(0); }
+    85%, 100% { transform: translateX(min(0px, calc(100cqw - 100%))); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .p-profiles .profile-head .c-history .entry .title > span { animation: none !important; }
 }
 
 .p-profiles .profile-head .c-history .entry .title {

@@ -5,7 +5,7 @@
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.14";
+    --theme-version: "1.6.15";
 }
 
 .l-footer:before {

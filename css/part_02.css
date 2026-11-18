@@ -1,4 +1,4 @@
-/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 .buttons .editor-italic:before,
 .buttons .editor-spoiler:before,
 .buttons .editor-smiley:before,
@@ -562,7 +562,14 @@ html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-offtopic_marker
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-censored_editor_marker:not(#u) { --chip-tint: 245, 142, 187; }
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-sync_to_shiki_marker:not(#u) { --chip-tint: 121, 169, 207; }
 
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
+    height: auto !important;   /* сайт на узких экранах держит 20px и срезал низ чипов */
+    overflow: visible !important;
+    padding-bottom: 2px;
+}
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
+    height: auto !important;
+    overflow: visible !important;
     width: auto !important;
     padding: 0 !important;
     background: none !important;
@@ -1479,7 +1486,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     .p-profiles .profile-head .c-history .entry:hover,
     .p-topics .l-menu .reviews .entry:hover,
     .p-topics .l-menu .clubs .entry:hover {
-        transform: scale(1.03);
+        transform: translateY(-2px) !important; /* без scale: масштаб размывал картинку и текст до конца анимации */
         padding-left: 2px;
         padding-right: 5px;
         text-decoration: none !important;
@@ -2491,6 +2498,36 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
+/* Избранное в профиле на ПК: сетка 4 в ряд вместо 8 мелких, постер целиком в пропорции 225:318 */
+@media screen and (min-width: 768px) {
+    .p-profiles-show .cc-favourites:not(#u) {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .p-profiles-show .cc-favourites .c-column:not(#u) {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+    .p-profiles-show .cc-favourites .c-column :is(.cover, .image-decor, .image-cutter):not(#u) {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 225 / 318;
+        max-height: none;
+    }
+    .p-profiles-show .cc-favourites .c-column .image-cutter img:not(#u) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+    .p-profiles-show .cc-favourites:not(#u) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media screen and (max-width: 960px) {
     .p-profiles-show .cc-favourites .c-column:nth-child(7),
     .p-profiles-show .cc-favourites .c-column:nth-child(8) {
@@ -2561,11 +2598,25 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* Скролл в истории для длинных названий */
-.p-profiles .profile-head .c-history .entry:hover .title {
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: color-mix(in srgb, var(--tone-bfc5d0) 25%, transparent) rgba(var(--shade), 0);
+/* Длинное название в истории при наведении плавно уезжает до конца и обратно (вместо полосы прокрутки).
+   Сдвиг = ширина блока (100cqw) минус ширина текста; короткие названия стоят на месте (min с 0) */
+.p-profiles .profile-head .c-history .entry .title {
+    container-type: inline-size;
+    overflow: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles .profile-head .c-history .entry:hover .title > span {
+        display: inline-block;
+        white-space: nowrap;
+        animation: history-marquee 7s ease-in-out infinite alternate;
+    }
+}
+@keyframes history-marquee {
+    0%, 15% { transform: translateX(0); }
+    85%, 100% { transform: translateX(min(0px, calc(100cqw - 100%))); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .p-profiles .profile-head .c-history .entry .title > span { animation: none !important; }
 }
 
 .p-profiles .profile-head .c-history .entry .title {
@@ -4985,93 +5036,4 @@ span.studio {
 .p-animes_collection-index.x1000 .cc-entries,
 .p-animes_collection-index.x1200 .cc-entries {
     margin-top: 4px;
-}
-
-.b-collection-filters .block-list li:before,
-.b-collection-filters .b-block_list li:before {
-    content: "\f10c";
-    color: rgba(var(--text-2), 1);
-    display: inline-block;
-    vertical-align: top;
-    width: 10px;
-    margin: 0px 18px 2px 2px;
-    font: normal normal normal 14px/1 FontAwesome;
-    direction: ltr;
-    line-height: 1;
-    text-transform: none;
-    font-size: 17px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-block_list li:hover {
-        color: rgba(var(--accent), 1) !important;
-        transition: 0s ease-out;
-        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: var(--plate-radius);
-        box-shadow: var(--plate-shadow) !important;
-    }
-}
-
-.b-block_list li.selected {
-    color: rgba(var(--text), 1);
-    transition: 0s ease-out;
-    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-    border-radius: var(--plate-radius);
-    box-shadow: var(--plate-shadow) !important;
-}
-
-.b-block_list li.selected:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-collection-filters .b-block_list li.selected:before {
-    content: "\f05d";
-    color: rgba(var(--text), 1);
-    font-size: 19px;
-    margin: 0px 18px 2px 1px;
-}
-
-.b-collection-filters .block-list li > input,
-.b-collection-filters .b-block_list li > input {
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 0;
-    border: 0;
-    opacity: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.b-collection-filters .b-block_list li:hover:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-collection-filters .block-list .filter:before,
-.b-collection-filters .b-block_list .filter:before {
-    display: block;
-    width: auto;
-    font-family: inherit;
-    font-size: 10px;
-    line-height: inherit;
-    text-transform: lowercase;
-}
-
-.b-collection-filters .block-list .filter,
-.b-collection-filters .b-block_list .filter {
-    float: right;
-    position: relative;
-    right: -2px;
-    margin: 0 0 0 0.5rem;
-}
-
-.b-collection-filters .b-block_list .filter.item-add:before {
-    font-family: var(--font-family);
-    color: rgba(var(--text-2), 1);
-    border-radius: var(--plate-radius);
-    padding-right: 12px;
 }

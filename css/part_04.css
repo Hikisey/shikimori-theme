@@ -1,4 +1,99 @@
-/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+@media (hover: hover) and (pointer: fine) {
+    .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
+        background: none;
+    }
+    .about .Animes_Mangas-1 .b-catalog_entry .cover:hover {
+        box-shadow: none !important;
+        background: none !important;
+    }
+}
+
+@media screen and (min-width: 150px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 2) !important;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 3) !important;
+    }
+}
+
+@media screen and (min-width: 525px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 4) !important;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 5) !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 6) !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry,
+    .about .Razmer-v2-row-1 .Animes_Mangas-1 .b-catalog_entry:last-child {
+        width: calc(100% / 7) !important;
+
+    }
+}
+
+/*-------------------------------*/
+.Ssylki-anime-v-1-standard-blok-1 {
+    position: relative;
+    margin: 0;
+    text-align: center;
+}
+
+.Ssylki-anime-v-1-standard {
+    position: relative;
+    display: inline-flex;
+    vertical-align: top;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+    margin: 5px 0.5% 3.5rem 0.5%;
+}
+
+.Ssylki-anime-v-1-standard .b-link {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    min-height: 2.5rem;
+    line-height: 1.45;
+    z-index: 1;
+    border-radius: 0.2rem 0.2rem 0 0;
+    background: none;
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
+
 .Ssylki-anime-v-1-standard strong {
     width: 100%;
     border-radius: 0.25rem;
@@ -995,7 +1090,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.14";
+    --theme-version: "1.6.15";
 }
 
 .l-footer:before {
