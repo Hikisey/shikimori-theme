@@ -4077,3 +4077,53 @@ body * .b-appear_marker.active:not(#u) {
         background: color-mix(in srgb, var(--glass-deep) 78%, transparent) !important;
     }
 }
+
+/* v1.6.11 — квадратик при нажатии на телефоне: системная подсветка касания и рамка фокуса после тапа */
+html,
+html body * {
+    -webkit-tap-highlight-color: transparent !important;
+}
+html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+/* v1.6.11 — профиль: подписи годов под графиком активности (.x_label, absolute) выходили за низ рамки */
+html body .activity .graph.bar.vertical:not(#u) {
+    margin-bottom: 20px !important;
+}
+
+/* v1.6.11 — rip: панель выбора комментариев («Оффтоп», «18+», «На shiki»), кнопки сливались с фоном */
+html body .b-comments_select-panel:not(#u) {
+    background: color-mix(in srgb, rgb(var(--glass)) 94%, transparent) !important;
+    border: 1px solid rgba(var(--text), .14) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .5) !important;
+    color: rgb(var(--text)) !important;
+}
+html body .b-comments_select-panel button:not(#u) {
+    background: rgba(var(--text), .1) !important;
+    border: 1px solid rgba(var(--text), .24) !important;
+    border-radius: 10px !important;
+    color: rgb(var(--text)) !important;
+    font-weight: 600 !important;
+}
+html body .b-comments_select-panel .actions button[data-kind]:not(.is-danger):not(#u) {
+    background: color-mix(in srgb, rgb(var(--accent)) 45%, rgb(var(--glass))) !important;
+    border-color: color-mix(in srgb, rgb(var(--accent)) 70%, white) !important;
+    color: rgb(255, 255, 255) !important;
+}
+html body .b-comments_select-panel button.is-danger:not(#u) {
+    background: transparent !important;
+    border-color: rgb(255, 110, 110) !important;
+    color: rgb(255, 150, 150) !important;
+}
+html body .b-comments_select-panel button:disabled:not(#u) {
+    opacity: .45 !important;
+}
+
+/* v1.6.11 — главная для гостя: блок «Вход по паролю» (.devise) оставался светло-голубым */
+html body .fc-user-sections .devise:not(#u) {
+    background: rgba(var(--glass), .7) !important;
+    border: 1px solid rgba(var(--text), .1) !important;
+    border-radius: var(--plate-radius) !important;
+}
