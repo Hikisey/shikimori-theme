@@ -72,7 +72,8 @@
 }
 */
 
-/* Вернуть всплывающие карточки с описанием при наведении на аниме (окно с крестиком):
+/* Вернуть всплывающие карточки с описанием при наведении на аниме (окно с крестиком):*/
+/*
 .tooltip { visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
 .tooltip * { visibility: inherit !important; pointer-events: auto !important; }
 */
