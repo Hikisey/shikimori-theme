@@ -1,4 +1,17 @@
-/* shiki glass v1.6.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+.buttons .editor-italic,
+.buttons .editor-spoiler,
+.buttons .editor-smiley,
+.buttons .editor-quote,
+.buttons .editor-image,
+.buttons .editor-link,
+.buttons .editor-strike,
+.buttons .editor-underline,
+.buttons .editor-bold,
+.buttons .editor-file {
+    border: none !important;
+}
+
 .buttons .editor-file input:before {
     color: rgba(var(--accent), 1);
 }

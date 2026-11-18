@@ -1,4 +1,4 @@
-/* shiki glass v1.6.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -1896,6 +1896,11 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+/* rip: оба кружка стоят absolute (right 32px и 7px) и касались друг друга; «/» отодвинут на 8px */
+.l-top_menu-v2 .global-search .random-anime-btn ~ .hotkey-marker {
+    right: 40px !important;
 }
 
 .l-top_menu-v2 .submenu > a.icon-useful:before {
@@ -5195,17 +5200,4 @@ header.head .notice {
 .buttons .editor-strike:hover:before,
 .buttons .editor-underline:hover:before,
 .buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
-}
-
-.buttons .editor-italic,
-.buttons .editor-spoiler,
-.buttons .editor-smiley,
-.buttons .editor-quote,
-.buttons .editor-image,
-.buttons .editor-link,
-.buttons .editor-strike,
-.buttons .editor-underline,
-.buttons .editor-bold,
-.buttons .editor-file {
-    border: none !important;
 }

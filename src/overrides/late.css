@@ -3262,9 +3262,15 @@ img.studio-logo,
 
 @media screen and (max-width: 767px) {
     
+    /* Сетка вместо display:contents и :has(): iOS Safari пересчитывал их с опозданием,
+       и до первого касания ниже профиля статистика наезжала на «комментарии»,
+       а ⇄ уезжала за правый край и расширяла страницу. */
+    html body.p-profiles-show .profile-head {
+        overflow-x: clip;
+    }
     html body.p-profiles-show .profile-head .c-info {
-        display: flex !important;
-        flex-wrap: wrap;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 6.75rem;
         align-items: stretch;
         gap: 10px;
         position: relative !important;
@@ -3272,20 +3278,20 @@ img.studio-logo,
         box-sizing: border-box;
     }
     html body.p-profiles-show .profile-head .c-info .c-lists-info {
-        display: contents !important;
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
     }
     html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar {
-        flex: 1 1 0;
+        position: static !important;
         min-width: 0;
         width: auto !important;
     }
-    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar.manga {
-        flex: 1 1 100%;
-        order: 3;
-    }
     html body.p-profiles-show .profile-head .c-info .c-additionals {
         display: flex !important;
-        flex: 0 0 6.75rem;
+        grid-column: 2;
+        grid-row: 1;
+        position: static !important;
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
@@ -3332,12 +3338,13 @@ img.studio-logo,
         white-space: normal;
     }
     
-    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar.anime .compatibility,
-    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar:first-child .compatibility {
-        right: calc(-10px - 6.75rem) !important;
-    }
-    html body.p-profiles-show .profile-head .c-info:has(.c-additionals) .c-lists-info .b-stats_bar.manga .compatibility {
+    /* ⇄ отсчитывается от .c-info (полосы static), столбиком над правым краем */
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
         right: 0 !important;
+        bottom: calc(100% + 8px) !important;
+    }
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar.manga:not(:first-child) .compatibility {
+        bottom: calc(100% + 60px) !important;
     }
 }
 

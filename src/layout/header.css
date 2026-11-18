@@ -500,6 +500,11 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     justify-content: center;
 }
 
+/* rip: оба кружка стоят absolute (right 32px и 7px) и касались друг друга; «/» отодвинут на 8px */
+.l-top_menu-v2 .global-search .random-anime-btn ~ .hotkey-marker {
+    right: 40px !important;
+}
+
 .l-top_menu-v2 .submenu > a.icon-useful:before {
     color: inherit;
     background-color: currentColor;
