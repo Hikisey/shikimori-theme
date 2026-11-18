@@ -27,6 +27,19 @@
     --btn-bg-hover: var(--accent-hover);
     --btn-text: rgba(var(--text-strong), 1);
 
+    /* метки-переключатели формы комментария («Оффтоп», «18+», «На shiki») и кнопки панели выбора.
+       --chip-tint задаётся у каждой метки свой; включённая метка окрашивается им */
+    --chip-bg: rgba(var(--glass), 0.55);
+    --chip-border: rgba(var(--text), 0.22);
+    --chip-text: rgba(var(--text), 0.88);
+    --chip-on-text: rgb(255, 255, 255);
+    --chip-radius: 9px;
+    --chip-tint: var(--accent);
+
+    /* значки панели редактора комментария */
+    --tool-icon: rgba(var(--text), 0.9);
+    --tool-icon-off: rgba(var(--text), 0.35);
+
     /* стрелки лент (скриншоты, видео и другие карусели) */
     --arrow-size: 38px;
     --arrow-bg: rgba(var(--glass), 0.72);

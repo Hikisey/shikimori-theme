@@ -702,6 +702,88 @@ a.b-link.bubbled-processed {
     }
 }
 
+/* --- форма комментария и панель выбора: метки и значки ---
+   Одна система для shikimori.io и rip: метки «Оффтоп», «18+», «На shiki» (footer .markers)
+   и кнопки панели выбора комментариев (.b-comments_select-panel) — стеклянные «чипы» на токенах
+   --chip-*; значки панели редактора одного цвета (--tool-icon), включая свёрнутые на телефоне
+   группы (.mobile_placeholder), которые сайт красил тёмно-синим.
+   :not(#u) поднимает вес над общими правилами меток (*_marker) из page/badges/late. */
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-offtopic_marker:not(#u) { --chip-tint: var(--accent); }
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-censored_editor_marker:not(#u) { --chip-tint: 245, 142, 187; }
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-sync_to_shiki_marker:not(#u) { --chip-tint: 121, 169, 207; }
+
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
+    width: auto !important;
+    padding: 0 !important;
+    background: none !important;
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u)::before {
+    width: auto !important;
+    min-height: 26px;
+    padding: 4px 12px !important;
+    box-sizing: border-box;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--chip-radius) !important;
+    background: var(--chip-bg) !important;
+    color: var(--chip-text) !important;
+    font-size: 12px !important;
+    font-weight: 600;
+    white-space: nowrap;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(5px);
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(.off):not(#u)::before {
+    border-color: rgba(var(--chip-tint), .9) !important;
+    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
+    color: var(--chip-on-text) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u):hover::before {
+        border-color: rgba(var(--chip-tint), 1) !important;
+        color: var(--chip-on-text) !important;
+    }
+}
+
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group:not(.menu_group-controls):not(#u) {
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(5px);
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:not(#u) {
+    color: var(--tool-icon) !important;
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:is(.is-disabled, :disabled):not(#u) {
+    color: var(--tool-icon-off) !important;
+}
+
+html body .b-comments_select-panel:not(#u) {
+    background: color-mix(in srgb, rgb(var(--glass)) 94%, transparent) !important;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--plate-radius-lg) !important;
+    box-shadow: 0 10px 28px rgba(var(--shade), .5) !important;
+    color: rgb(var(--text)) !important;
+}
+html body .b-comments_select-panel button:not(#u) {
+    background: var(--chip-bg) !important;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--chip-radius) !important;
+    color: var(--chip-text) !important;
+    font-weight: 600 !important;
+}
+html body .b-comments_select-panel .actions button[data-kind]:not(.is-danger):not(#u) {
+    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
+    border-color: rgba(var(--chip-tint), .9) !important;
+    color: var(--chip-on-text) !important;
+}
+html body .b-comments_select-panel button.is-danger:not(#u) {
+    --chip-tint: 255, 110, 110;
+    background: transparent !important;
+    border-color: rgb(var(--chip-tint)) !important;
+    color: rgb(255, 150, 150) !important;
+}
+html body .b-comments_select-panel button:disabled:not(#u) {
+    opacity: .45 !important;
+}
+
 /* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {

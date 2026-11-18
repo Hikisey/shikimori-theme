@@ -1,4 +1,4 @@
-/* shiki glass v1.6.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -242,6 +242,19 @@ html[data-color-mode=light] {
     --btn-bg: color-mix(in srgb, var(--accent-dim) 70%, transparent);
     --btn-bg-hover: var(--accent-hover);
     --btn-text: rgba(var(--text-strong), 1);
+
+    /* метки-переключатели формы комментария («Оффтоп», «18+», «На shiki») и кнопки панели выбора.
+       --chip-tint задаётся у каждой метки свой; включённая метка окрашивается им */
+    --chip-bg: rgba(var(--glass), 0.55);
+    --chip-border: rgba(var(--text), 0.22);
+    --chip-text: rgba(var(--text), 0.88);
+    --chip-on-text: rgb(255, 255, 255);
+    --chip-radius: 9px;
+    --chip-tint: var(--accent);
+
+    /* значки панели редактора комментария */
+    --tool-icon: rgba(var(--text), 0.9);
+    --tool-icon-off: rgba(var(--text), 0.35);
 
     /* стрелки лент (скриншоты, видео и другие карусели) */
     --arrow-size: 38px;
@@ -5171,33 +5184,4 @@ header.head .notice {
     border-radius: 6px;
     padding: 0 6px;
     text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
-}
-
-.buttons .editor-italic:before,
-.buttons .editor-spoiler:before,
-.buttons .editor-smiley:before,
-.buttons .editor-quote:before,
-.buttons .editor-image:before,
-.buttons .editor-link:before,
-.buttons .editor-strike:before,
-.buttons .editor-underline:before,
-.buttons .editor-bold:before {
-    font-family: "shikimori";
-    text-align: center;
-    width: 20px;
-    color: rgba(var(--accent), 1);
-    font-size: 14px;
-    border: none !important;
-}
-
-/* Цвет кнопок тесктового редактора в состоянии hover */
-.buttons .editor-italic:hover:before,
-.buttons .editor-spoiler:hover:before,
-.buttons .editor-smiley:hover:before,
-.buttons .editor-quote:hover:before,
-.buttons .editor-image:hover:before,
-.buttons .editor-link:hover:before,
-.buttons .editor-strike:hover:before,
-.buttons .editor-underline:hover:before,
-.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
 }

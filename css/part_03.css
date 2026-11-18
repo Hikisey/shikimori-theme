@@ -1,4 +1,161 @@
-/* shiki glass v1.6.13 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.14 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    content: "исключить";
+}
+
+.b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-right: 3px solid #af3e0f;
+    border-radius: var(--plate-radius);
+    padding-right: 9px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    content: "добавить";
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .b-question,
+.b-collection-filters .b-block_list .b-question {
+    display: inline-block !important;
+    vertical-align: top;
+    position: absolute;
+    right: 10px;
+}
+
+.b-list_switchers .switcher.alphabet::after {
+    content: "\f1c2";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-weight: bold;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Фильтры каталога: заголовок «Фильтры» по центру --- */
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* место под .c-ms-caret */
+/* в настройках поля по размеру текста, как «Язык интерфейса» */
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+@supports (appearance: base-select) {
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+}
+
+/* ----- телефон и узкие экраны ----- */
+
+@media screen and (min-width: 736px) and (max-width: 880px) {
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 80px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "===";
+        font: bold 20px var(--font-family) !important;
+        width: 51px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0  12px 0  4px;
+    }
+    ul.b-block_list {
+        height: auto !important;
+        text-align: left !important;
+        line-height: 30px;
+        font-size: 15px !important;
+    }
+    .b-collection-filters .b-block_list li.selected:before,
+    .b-collection-filters .block-list li:before,
+    .b-collection-filters .b-block_list li:before {
+        margin: 0  28px 2px 1px;
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .b-block_list {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .b-block_list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+        position: relative;
+        overflow: hidden;
+        height: 44px !important;
+    }
+    section.l-page.l-page aside.l-menu {
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    section.l-page aside.l-menu {
+        display: none;
+    }
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0 ;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 735px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .b-block_list {
+        width: calc(100% - 64px);
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     /* открыта — показана; вид карточки ниже действует и во время закрытия */
     section.l-page.menu-expanded aside.l-menu {
@@ -4654,167 +4811,4 @@ img[alt='morr'] {
     overflow: hidden;
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
-}
-
-.Ssylki-anime-v-1-standard strong {
-    width: 100%;
-    border-radius: 0.25rem;
-    position: relative;
-    z-index: 5;
-    padding-bottom: 130%;
-    overflow: hidden;
-}
-
-div.Ssylki-anime-v-1-standard:hover .Evaluation-v1-standard {
-    opacity: 0;
-}
-
-.Ssylki-anime-v-1-standard .Evaluation-v1-standard {
-    position: absolute;
-    top: 0.9rem;
-    left: -0.5rem;
-    padding: 7px 10px;
-    border-radius: 0 5px 5px 0;
-    font-size: 14px;
-    line-height: 0.8;
-    pointer-events: none;
-    z-index: 8;
-    opacity: 90%;
-    text-align: center;
-    background: var(--tone-6e1515);
-    border-color: var(--tone-6e1515);
-    box-shadow: 0 1px 2px 0 rgba(var(--shade), 0.2196);
-    color: #d9c9e0;
-    text-shadow: 0 1px 2px rgba(var(--shade), 0.502);
-    transition: opacity 0.4s ease-in-out;
-}
-
-.Ssylki-anime-v-1-standard .Evaluation-v1-standard::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    border: 6.6px solid transparent;
-    border-top-color: inherit;
-    border-left-width: 8px;
-    border-right-width: 0 ;
-    filter: brightness(0.6);
-    z-index: -1;
-}
-
-div.Ssylki-anime-v-1-standard:hover::before {
-    opacity: 1;
-}
-
-.Ssylki-anime-v-1-standard::before {
-    content: "";
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(3px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.4s ease-in-out;
-    bottom: -3.15rem;
-    left: -0.1rem;
-    right: -0.1rem;
-    top: -0.1rem;
-    opacity: 0;
-    border-radius: 0.2rem;
-    margin: auto;
-    display: none;
-}
-
-.Ssylki-anime-v-1-standard > strong > a::before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    filter: contrast(102%) grayscale(15%);
-    margin: auto;
-    background-color: var(--tone-151414);
-    background-repeat: no-repeat;
-    background-position: 50% 20%;
-    background-size: cover;
-    border-radius: 0.2rem 0.2rem 0 0;
-    transition: filter 0.4s ease, box-shadow 0.4s ease;
-}
-
-.Ssylki-anime-v-1-standard .Text-dno-ramka-standard {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 4;
-    margin: auto;
-    height: calc(100% + 3rem);
-    border: solid 2px transparent;
-    text-align: center;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    white-space: normal;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    box-shadow: 0 2px 6px 0  rgba(var(--shade), 0.251);
-    background: rgba(var(--glass), 0.15);
-    line-height: 1.5;
-    font-size: 15px;
-    color: #cce0d1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    padding: 129% 0.15rem 0;
-    border-radius: 0.25rem;
-}
-
-.Ssylki-anime-v-1-standard .Fon-standard {
-    position: absolute;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    margin: auto;
-    border-radius: 0.2rem 0.2rem 0 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 6;
-    padding: 0 10px;
-    font-size: 18px;
-    line-height: 1.15;
-    overflow: hidden;
-    font-family: cursive;
-    background-color: var(--tone-1f1e1e);
-    color: #f58ebb;
-    text-shadow: 1px 0 2px rgba(var(--shade), 0.8), -1px 0 2px rgba(var(--shade), 0.8), 0 1px 2px rgba(var(--shade), 0.8), 0 -1px 2px rgba(var(--shade), 0.8);
-    pointer-events: none;
-    opacity: 0;
-    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.5);
-    transition: opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-}
-
-div.Ssylki-anime-v-1-standard:hover .Fon-standard {
-    opacity: 1;
-}
-
-.Ssylki-anime-v-1-standard .Fon-standard::after {
-    position: absolute;
-    content: "";
-    background-image: url("//moe.shikimori.one/system/user_images/original/208335/1426717.jpg");
-    width: 100%;
-    height: 100%;
-    filter: blur(4px) contrast(105%) grayscale(50%);
-    box-shadow: inset 0 0 15px 5px rgba(var(--shade), 0.502);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 0.2rem 0.2rem 0 0;
-    z-index: -1;
 }
