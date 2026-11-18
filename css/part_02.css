@@ -1,4 +1,4 @@
-/* shiki glass v1.6.11 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 .buttons .editor-file input:before {
     color: rgba(var(--accent), 1);
 }
@@ -2355,7 +2355,8 @@ div.compatibility > span.link-replacement > .text.full:before {
 
 @media only screen and (min-width: 1025px) {
     .p-profiles .profile-head .c-brief header.head .misc {
-        top: 236px;
+        /* сразу под аватаром (10px отступ + 160px). Было 236px: при короткой шапке «в сети» падало на «Время за аниме» */
+        top: 172px;
     }
 }
 

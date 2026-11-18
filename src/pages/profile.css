@@ -800,7 +800,8 @@ div.compatibility > span.link-replacement > .text.full:before {
 
 @media only screen and (min-width: 1025px) {
     .p-profiles .profile-head .c-brief header.head .misc {
-        top: 236px;
+        /* сразу под аватаром (10px отступ + 160px). Было 236px: при короткой шапке «в сети» падало на «Время за аниме» */
+        top: 172px;
     }
 }
 

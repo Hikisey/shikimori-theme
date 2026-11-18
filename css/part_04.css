@@ -1,4 +1,4 @@
-/* shiki glass v1.6.11 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.12 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 .Ssylki-anime-v-1-standard .progress-standard {
     position: absolute;
     z-index: 31;
@@ -832,7 +832,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.11";
+    --theme-version: "1.6.12";
 }
 
 .l-footer:before {
