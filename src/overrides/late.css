@@ -4060,3 +4060,20 @@ body * .b-appear_marker:not(#u) {
 body * .b-appear_marker.active:not(#u) {
     display: block;
 }
+
+/* Телефон, профиль: Safari на iOS держит слой с backdrop-filter в старой геометрии,
+   пока страницу не прокрутят (тема догружается после первой отрисовки), и блок
+   «Список аниме» с плашками рисуется не на месте. Размытие этим элементам не нужно:
+   у полосы фон прозрачный, плашкам хватает плотного фона. Анимацию всех свойств
+   у полосы тоже снимаем, чтобы раскладка встала сразу. */
+@media screen and (max-width: 767px) {
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:not(#u),
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transition: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
+        background: color-mix(in srgb, var(--glass-deep) 78%, transparent) !important;
+    }
+}
