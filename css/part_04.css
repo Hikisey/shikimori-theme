@@ -1,4 +1,4 @@
-/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 @media (hover: hover) and (pointer: fine) {
     .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
         background: none;
@@ -1090,7 +1090,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.16";
+    --theme-version: "1.6.17";
 }
 
 .l-footer:before {
@@ -1750,6 +1750,25 @@ header.head h2 a.back {
         background: transparent !important;
         transform: scale(1);
         box-shadow: none;
+    }
+}
+
+/* Новости и вставки карточек: общий «подъём» (cards.css) обнулял margin-top при наведении,
+   новость становилась ниже, курсор уходил с неё и она прыгала туда-обратно.
+   Здесь отступ одинаковый в покое и при наведении */
+.b-message .b-catalog_entry.b-catalog_entry:not(#u),
+.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
+    margin-top: 0;
+}
+
+/* «Сейчас на экранах» на главной: лента обрезает всё за краем (overflow: hidden у сайта),
+   и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
+@media screen and (min-width: 768px) {
+    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
+        padding-top: 10px;
+        padding-bottom: 14px;
+        margin-top: -10px;
+        margin-bottom: -14px;
     }
 }
 

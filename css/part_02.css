@@ -1,4 +1,4 @@
-/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 .b-spoiler .content .before:before {
     content: "[spoiler]";
     color: rgba(var(--accent), 1);

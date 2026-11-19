@@ -597,6 +597,25 @@ header.head h2 a.back {
     }
 }
 
+/* Новости и вставки карточек: общий «подъём» (cards.css) обнулял margin-top при наведении,
+   новость становилась ниже, курсор уходил с неё и она прыгала туда-обратно.
+   Здесь отступ одинаковый в покое и при наведении */
+.b-message .b-catalog_entry.b-catalog_entry:not(#u),
+.b-catalog-entry-embedded .b-catalog_entry.b-catalog_entry:not(#u) {
+    margin-top: 0;
+}
+
+/* «Сейчас на экранах» на главной: лента обрезает всё за краем (overflow: hidden у сайта),
+   и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
+@media screen and (min-width: 768px) {
+    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
+        padding-top: 10px;
+        padding-bottom: 14px;
+        margin-top: -10px;
+        margin-bottom: -14px;
+    }
+}
+
 body#profiles_show .b-catalog_entry,
 .c-column.user_rate .b-catalog_entry {
     background: transparent;

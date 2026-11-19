@@ -1,14 +1,14 @@
-/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Тёмный редактор кода в настройках и замена постеров персонажей.
    Эти две строки нужны здесь: внутри файлов темы Шикимори их вырезает. */
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* 4 части: Шикимори обрабатывает только ~6 первых @import, включая две строки css-club выше */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.16/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.16/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.16/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.16/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.17/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.17/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.17/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.17/css/part_04.css");
 
 /* ===================== Палитра ===================== */
 /* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:
