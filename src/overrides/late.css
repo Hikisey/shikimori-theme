@@ -2881,9 +2881,50 @@ div.Ssylki-Characters:hover .b-link {
     display: none;
 }
 
-.b-db_entry .c-poster .poster,
-.b-db_entry img.image {
-    border-radius: 12px;
+/* v1.6.20: постер аниме — радиус карточки; просмотр увеличивается из угла постера.
+   magnificRelGallery не задаёт removalDelay (в библиотеке 0), класс .mfp-removing
+   при закрытии обычно не успевает отрисоваться. */
+.b-db_entry .c-poster :is(.b-db_entry-poster, .b-image, picture, img) {
+    border-radius: var(--plate-radius);
+}
+.b-db_entry .c-poster picture { overflow: hidden; }
+.b-db_entry .c-poster img { display: block; }
+@media (hover: hover) and (pointer: fine) {
+    .b-db_entry .c-poster .b-image img:hover {
+        border-radius: var(--plate-radius) !important;
+        transform: none;
+    }
+}
+.mfp-container {
+    opacity: 0;
+    transition: opacity .36s ease;
+}
+.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
+.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
+.mfp-image-holder img.mfp-img {
+    border-radius: var(--plate-radius-lg) !important;
+    transform: scale(.62);
+    transform-origin: 18% 22%;
+    opacity: 0;
+    transition: transform .42s cubic-bezier(.2, .75, .2, 1), opacity .36s ease;
+}
+@media screen and (max-width: 767px) {
+    .mfp-image-holder img.mfp-img { transform-origin: 16% 30%; }
+}
+.mfp-wrap.mfp-ready .mfp-image-holder img.mfp-img {
+    transform: scale(1);
+    opacity: 1;
+}
+.mfp-wrap.mfp-removing .mfp-image-holder img.mfp-img {
+    transform: scale(.62);
+    opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+    .mfp-container,
+    .mfp-image-holder img.mfp-img {
+        transform: none;
+        transition: opacity .2s ease;
+    }
 }
 
 .b-link_button,
