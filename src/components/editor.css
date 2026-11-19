@@ -708,9 +708,6 @@ a.b-link.bubbled-processed {
    --chip-*; значки панели редактора одного цвета (--tool-icon), включая свёрнутые на телефоне
    группы (.mobile_placeholder), которые сайт красил тёмно-синим.
    :not(#u) поднимает вес над общими правилами меток (*_marker) из page/badges/late. */
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-offtopic_marker:not(#u) { --chip-tint: var(--accent); }
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-censored_editor_marker:not(#u) { --chip-tint: 245, 142, 187; }
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > .b-sync_to_shiki_marker:not(#u) { --chip-tint: 121, 169, 207; }
 
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
     height: auto !important;   /* сайт на узких экранах держит 20px и срезал низ чипов */

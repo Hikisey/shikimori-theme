@@ -72,7 +72,7 @@ flowchart LR
 | модуль (в порядке каскада) | строк | КБ | что внутри |
 |---|---|---|---|
 | `tokens/palette.css` | 214 | 16.4 | палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) |
-| `tokens/components.css` | 63 | 2.9 | токены компонентов: --plate-*, --heading-*, --btn-*, --arrow-*, --card-*, --tip-*, --tab-*, --field-*, --ease-* (см. «токены компонентов») |
+| `tokens/components.css` | 63 | 2.9 | токены компонентов: --plate-*, --heading-*, --btn-*, --chip-*, --tool-*, --arrow-*, --card-*, --tip-*, --tab-*, --field-*, --ease-* (см. «токены компонентов») |
 | `base/fonts.css` | 54 | 2.1 | @font-face: шрифты и иконочный шрифт |
 | `base/base.css` | 585 | 13.3 | база: ссылки, текст, таблицы, полосы прокрутки, служебные мелочи |
 | `base/animations.css` | 301 | 4.8 | все @keyframes темы |
@@ -120,7 +120,9 @@ flowchart LR
 | плашки | `--plate-bg`, `--plate-bg-strong`, `--plate-shadow`, `--plate-shadow-soft`, `--plate-shadow-strong`, `--plate-blur`, `--plate-radius`, `--plate-radius-lg` | 191 объявление во всех модулях: стеклянный фон, тень, скругление 10/14px, `backdrop-filter` |
 | заголовки | `--heading-radius`, `--heading-height`, `--heading-text`, `--heading-link`, `--heading-dot`, `--heading-dot-hover` | .headline / .midheadline / .subheadline |
 | кнопки | `--btn-bg`, `--btn-bg-hover`, `--btn-text` | .b-link_button, .b-button и кнопки того же цвета |
-| стрелки лент | `--arrow-size`, `--arrow-bg`, `--arrow-bg-hover`, `--arrow-border`, `--arrow-shadow`, `--arrow-icon-size`, `--arrow-inset` | `::scroll-button` лент, общий блок в `components/carousels.css` |
+| метки формы комментария | `--chip-bg`, `--chip-border`, `--chip-text`, `--chip-on-text`, `--chip-radius`, `--chip-tint` | «Оффтоп», «18+», «На shiki» и кнопки панели выбора в `components/editor.css`; включённые окрашены акцентом |
+| значки редактора | `--tool-icon`, `--tool-icon-off` | панель кнопок редактора комментария |
+| стрелки лент | `--arrow-size`, `--arrow-bg`, `--arrow-bg-hover`, `--arrow-border`, `--arrow-shadow`, `--arrow-icon-size`, `--arrow-inset` | `::scroll-button` лент, общий блок в `components/carousels.css`; каждая лента отдельным селектором (rip не принимает `:is(...)::scroll-button`) |
 | карточки | `--card-radius`, `--card-image-radius`, `--card-lift`, `--card-hover-shadow`, `--card-zoom` | .b-catalog_entry |
 | подсказки | `--tip-bg`, `--tip-radius`, `--tip-shadow` | .tipsy |
 | вкладки | `--tab-active`, `--tab-tap-ease` | components/tabs, анимация нажатия переключателей |
@@ -357,6 +359,7 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 | v1.3.9 | «Сортировка» раздвигает фильтры, как остальные списки: это обычный `<select>` с `appearance: base-select`, его окно `::picker(select)` живёт в верхнем слое и в поток не встаёт, поэтому на ПК, пока select `:open`, у его `.c-ms-field` растёт `padding-bottom` ровно на высоту окна (число пунктов через `:has(option:nth-child(n))` × 28px + поля и рамки), с теми же `--drop-time`/`--drop-ease`/`--drop-ease-close`; окно всегда вниз (`position-try-fallbacks: none`). На сенсорных экранах — системный список, без изменений |
 | v1.3.10 | выпадающие списки темнее: `--drop-bg` (base.css) = `color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep))` вместо `--glass-popup` — списки фильтров (`.c-ms-dropdown`), окно «Сортировки» и всех select (`::picker(select)`, `option`) теперь rgb(26, 29, 37) вместо rgb(38, 43, 54) и не выбиваются из тёмной панели; остальное без изменений |
 | v1.3.11 | обои не отъезжают, когда курсор над открытым списком select: окно `::picker(select)` в верхнем слое, и `html:not(:hover) body::before { transform: scale(1) }` (page.css) срабатывал; добавлено `html:has(select:open) body::before { transform: scale(var(--bg-zoom)) }` для ≥ 768px (касается «Сортировки» и всех select, в том числе в настройках) |
+| v1.6.18 | телефон, профиль: «Список аниме» на всю ширину, «правки» и «комментарии» строкой под ним (сетка `.c-info` в одну колонку, `.c-additionals` во второй строке); метки «Оффтоп», «18+», «На shiki» окрашены акцентом палитры вместо своих чисел; AGENTS.md и ARCHITECTURE.md: токены `--chip-*`/`--tool-*`, ловушки rip с `:is(...)::scroll-button`, плавной прокрутки и наведения, меняющего высоту |
 | v1.6.17 | главная, «Сейчас на экранах»: у `.fc-ongoings` запас 10px сверху и 14px снизу (padding и такой же отрицательный margin), приподнятая карточка больше не срезается; новости и вставки карточек: `margin-top: 0` в покое, как и при наведении (общий подъём в cards.css обнулял отступ, новость укорачивалась и прыгала) |
 | v1.6.16 | rip не импортировал part_01: селектор `:is(.cc, .b-scroll)::scroll-button` разбит на два обычных (`.cc::scroll-button`, `.b-scroll::scroll-button`); телефон, профиль: «Список аниме» и плашки «правки / комментарии» с одним фоном `--stat-plate` и рамкой в покое и при касании (раньше касание включало тёмный :hover полосы, а плашки были темнее) |
 | v1.6.15 | rip, телефон: метки формы комментария не срезаются снизу (`.markers` и метки `height: auto; overflow: visible`); история в профиле: при наведении сдвиг `translateY(-2px)` вместо `scale(1.03)`, который размывал картинку и текст до конца анимации; длинное название плавно едет туда и обратно (`container-type` + `100cqw`) вместо полосы прокрутки; избранное в профиле на ПК сеткой 4 в ряд (3 при 768–960px), постеры целиком 225:318; rip: стрелки у лент кадров и видео (у rip лента `.b-scroll`, а не `.cc`) |

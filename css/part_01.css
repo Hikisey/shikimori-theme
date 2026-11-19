@@ -1,4 +1,4 @@
-/* shiki glass v1.6.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -244,7 +244,7 @@ html[data-color-mode=light] {
     --btn-text: rgba(var(--text-strong), 1);
 
     /* метки-переключатели формы комментария («Оффтоп», «18+», «На shiki») и кнопки панели выбора.
-       --chip-tint задаётся у каждой метки свой; включённая метка окрашивается им */
+       включённая метка окрашивается --chip-tint, по умолчанию акцентом палитры (меняется вместе с темой) */
     --chip-bg: rgba(var(--glass), 0.55);
     --chip-border: rgba(var(--text), 0.22);
     --chip-text: rgba(var(--text), 0.88);
@@ -5166,10 +5166,5 @@ header.head .notice {
 
 .b-comments .comments-collapser,
 .b-spoiler .content .after:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-show_more,
-.b-show_more-more .hide-more {
     color: rgba(var(--accent), 1);
 }

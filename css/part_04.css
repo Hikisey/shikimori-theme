@@ -1,4 +1,4 @@
-/* shiki glass v1.6.17 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 @media (hover: hover) and (pointer: fine) {
     .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
         background: none;
@@ -1090,7 +1090,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.17";
+    --theme-version: "1.6.18";
 }
 
 .l-footer:before {
@@ -4445,7 +4445,7 @@ img.studio-logo,
     }
     html body.p-profiles-show .profile-head .c-info {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) 6.75rem;
+        grid-template-columns: minmax(0, 1fr);
         align-items: stretch;
         gap: 10px;
         position: relative !important;
@@ -4464,13 +4464,15 @@ img.studio-logo,
     }
     html body.p-profiles-show .profile-head .c-info .c-additionals {
         display: flex !important;
-        grid-column: 2;
-        grid-row: 1;
+        grid-column: 1;
+        grid-row: 2;
         position: static !important;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
         justify-content: center;
         align-items: stretch;
-        width: 6.75rem !important;
+        width: auto !important;
         max-height: none !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -4479,12 +4481,16 @@ img.studio-logo,
         background: none !important;
         box-shadow: none !important;
     }
+    /* «Список аниме» на всю ширину, «правки» и «комментарии» строкой под ним */
     html body.p-profiles-show .profile-head .c-info .c-additionals > div {
         display: flex;
-        flex-direction: column;
+        flex: 1 1 0;
+        flex-direction: row;
+        gap: 10px;
         justify-content: center;
         align-items: stretch;
-        height: 100%;
+        min-width: 0;
+        height: auto;
         margin: 0 !important;
     }
     html body.p-profiles-show .profile-head .c-info .c-additionals :is(a, span),
@@ -4497,8 +4503,9 @@ img.studio-logo,
         width: 100% !important;
         max-width: none;
         min-width: 0;
-        height: 100% !important;
-        min-height: 0 !important;
+        flex: 1 1 0;
+        height: auto !important;
+        min-height: 44px !important;
         margin: 0 !important;
         padding: 8px 10px !important;
         box-sizing: border-box;
