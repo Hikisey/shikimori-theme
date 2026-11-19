@@ -1,4 +1,4 @@
-/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 @media (hover: hover) and (pointer: fine) {
     .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
         background: none;
@@ -1090,7 +1090,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.15";
+    --theme-version: "1.6.16";
 }
 
 .l-footer:before {
@@ -5236,8 +5236,23 @@ body * .b-appear_marker.active:not(#u) {
         -webkit-backdrop-filter: none !important;
         transition: none !important;
     }
+    /* «Список аниме» и плашки справа («правки», «комментарии») — один фон и рамка в покое и при касании.
+       Раньше полоса была прозрачной, а касание включало её :hover с тёмным фоном, плашки же были темнее полосы */
+    html body.p-profiles .profile-head .c-info:not(#u) {
+        --stat-plate: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        --stat-border: 1px solid rgba(var(--glass-light), .08);
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:is(*, :hover, :active):not(#u),
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):is(*, :hover, :active):not(#u) {
+        background: var(--stat-plate) !important;
+        border: var(--stat-border) !important;
+        border-radius: var(--plate-radius-lg) !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
     html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
-        background: color-mix(in srgb, var(--glass-deep) 78%, transparent) !important;
+        color: rgba(var(--text), .9) !important;
+        font-size: 13px !important;
     }
 }
 

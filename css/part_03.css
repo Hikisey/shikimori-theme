@@ -1,4 +1,18 @@
-/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+.l-menu .ongoing .misc .value,
+span.studio {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_search .b-catalog_entry {
+    transform: scale(1.03);
+}
+
+.p-animes_collection-index.x1000 .cc-entries,
+.p-animes_collection-index.x1200 .cc-entries {
+    margin-top: 4px;
+}
+
 .b-collection-filters .block-list li:before,
 .b-collection-filters .b-block_list li:before {
     content: "\f10c";

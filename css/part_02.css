@@ -1,4 +1,22 @@
-/* shiki glass v1.6.15 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.16 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+.b-spoiler .content .before:before {
+    content: "[spoiler]";
+    color: rgba(var(--accent), 1);
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .after:before {
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .inner,
+.b-spoiler .content .inner-prgrph {
+    border-bottom: 0;
+    border-radius: 6px;
+    padding: 0 6px;
+    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
+}
+
 .buttons .editor-italic:before,
 .buttons .editor-spoiler:before,
 .buttons .editor-smiley:before,
@@ -5022,18 +5040,4 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
 .x1200 .menu-slide-outer.x240 .l-menu,
 .menu-slide-outer.x240 .l-menu {
     width: 22.00%;
-}
-
-.l-menu .ongoing .misc .value,
-span.studio {
-    color: rgba(var(--text), var(--hundred));
-}
-
-.b-collection_search .b-catalog_entry {
-    transform: scale(1.03);
-}
-
-.p-animes_collection-index.x1000 .cc-entries,
-.p-animes_collection-index.x1200 .cc-entries {
-    margin-top: 4px;
 }
