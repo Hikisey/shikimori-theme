@@ -51,18 +51,6 @@
     }
 }
 
-@keyframes runningtext {
-    25% {
-        text-indent: -80em;
-    }
-    25.000000001% {
-        text-indent: 25em;
-    }
-    50% {
-        text-indent: 0em;
-    }
-}
-
 @keyframes spoil {
     50% {
         color: rgba(var(--accent), 1);

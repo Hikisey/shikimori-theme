@@ -302,8 +302,10 @@
     pointer-events: none;
 }
 
-.use-tabs.--ripple > [data-dynamic]:not(.active):hover::after {
-    animation: 1s switch-focus--vertical ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .use-tabs.--ripple > [data-dynamic]:not(.active):hover::after {
+        animation: 1s switch-focus--vertical ease infinite;
+    }
 }
 
 .use-tabs.--ripple > [data-dynamic].active:hover::after {
@@ -493,8 +495,10 @@
     pointer-events: none;
 }
 
-.custom-panel > [data-dynamic]:not(.active):hover::after {
-    animation: 1s switch-focus--vertical ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .custom-panel > [data-dynamic]:not(.active):hover::after {
+        animation: 1s switch-focus--vertical ease infinite;
+    }
 }
 
 .custom-panel > [data-dynamic].active::after {

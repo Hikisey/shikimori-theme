@@ -286,14 +286,16 @@ a:-webkit-any-link {
     color: rgba(var(--link), var(--hundred));
 }
 
-.b-height_shortener .expand:hover span,
-.b-log_entry .spoiler.collapse:hover span,
-.b-log_entry .spoiler.collapsed:hover span,
-.b-log_entry .spoiler.collapse span:hover,
-.b-log_entry .spoiler.collapsed span:hover {
-    color: rgba(var(--accent), var(--hundred));
-    animation: spoilzero 2s ease infinite;
-    border-bottom-color: rgba(var(--text), 0.2);
+@media (hover: hover) and (pointer: fine) {
+    .b-height_shortener .expand:hover span,
+    .b-log_entry .spoiler.collapse:hover span,
+    .b-log_entry .spoiler.collapsed:hover span,
+    .b-log_entry .spoiler.collapse span:hover,
+    .b-log_entry .spoiler.collapsed span:hover {
+        color: rgba(var(--accent), var(--hundred));
+        animation: spoilzero 2s ease infinite;
+        border-bottom-color: rgba(var(--text), 0.2);
+    }
 }
 
 body * [class*="_status_tag"]:not([data-text]):before,
@@ -4164,9 +4166,9 @@ body * .b-appear_marker.active:not(#u) {
 }
 
 /* v1.6.11 — квадратик при нажатии на телефоне: системная подсветка касания и рамка фокуса после тапа */
-html,
-html body * {
-    -webkit-tap-highlight-color: transparent !important;
+/* свойство наследуется: достаточно корня (сайт сам ставит только transparent) */
+html {
+    -webkit-tap-highlight-color: transparent;
 }
 html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
     outline: none !important;
@@ -4212,3 +4214,23 @@ html body .fc-user-sections .devise:not(#u) {
 }
 .mfp-image-holder .mfp-bottom-bar { display: none !important; }
 .mfp-image-holder img.mfp-img { padding: 0 !important; }
+
+/* Включено «Уменьшение движения» в системе: бесконечные украшения (мигание
+   спойлеров, радужные рамки наборов, волна вкладок) проигрываются один раз,
+   обои не наезжают. Крутилки загрузки и карусель истории на телефоне
+   работают как обычно. Если настройка выключена, блок ничего не стоит. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-iteration-count: 1 !important;
+    }
+    .b-ajax:after,
+    .ajax-loading:after,
+    .p-profiles .profile-head .c-history .entry:first-child {
+        animation-iteration-count: infinite !important;
+    }
+    body::before {
+        transition: none !important;
+    }
+}

@@ -1,30 +1,5 @@
-/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
-
-@media (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .list-lines .selectable:hover,
-    .p-userlist_comparer .comparer table .selectable:hover {
-        color: rgba(var(--accent), 1) !important;
-        transform: scale(1.01);
-        background: transparent;
-    }
-    tr.user_rate.selectable.editable:hover:after {
-        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: var(--plate-radius);
-        box-shadow: var(--plate-shadow) !important;
-        transform: scale(1.01);
-    }
-}
-
-tr.user_rate.selectable.editable:after {
-    content: "";
-    width: 100%;
-    padding-top: 2px;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    z-index: -1;
-}
 
 .p-user_rates-index .list-lines .selectable,
 .p-userlist_comparer .comparer table .selectable {
@@ -4565,7 +4540,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.0";
+    --theme-version: "1.7.1";
 }
 
 .l-footer:before {
@@ -4913,14 +4888,16 @@ a:-webkit-any-link {
     color: rgba(var(--link), var(--hundred));
 }
 
-.b-height_shortener .expand:hover span,
-.b-log_entry .spoiler.collapse:hover span,
-.b-log_entry .spoiler.collapsed:hover span,
-.b-log_entry .spoiler.collapse span:hover,
-.b-log_entry .spoiler.collapsed span:hover {
-    color: rgba(var(--accent), var(--hundred));
-    animation: spoilzero 2s ease infinite;
-    border-bottom-color: rgba(var(--text), 0.2);
+@media (hover: hover) and (pointer: fine) {
+    .b-height_shortener .expand:hover span,
+    .b-log_entry .spoiler.collapse:hover span,
+    .b-log_entry .spoiler.collapsed:hover span,
+    .b-log_entry .spoiler.collapse span:hover,
+    .b-log_entry .spoiler.collapsed span:hover {
+        color: rgba(var(--accent), var(--hundred));
+        animation: spoilzero 2s ease infinite;
+        border-bottom-color: rgba(var(--text), 0.2);
+    }
 }
 
 body * [class*="_status_tag"]:not([data-text]):before,
@@ -5583,4 +5560,26 @@ body.p-achievements.p-profiles .b-list_switchers > *:after {
 
 .p-dashboards-show .v2 .my-list .label span {
     color: rgba(var(--text-strong), 1);
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
+.b-review_opinion_marker.is-neutral input:checked + span {
+    color: rgb(var(--text-strong));
+    background: var(--tone-3b3a3e);
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
+.b-review_opinion_marker.is-positive input:checked + span {
+    background: #1c4c20;
+    color: #c6dacb;
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
+.b-review_opinion_marker.is-negative input:checked + span {
+    background: #862a22;
+    color: #ffcfcf;
+}
+
+.navigation-node.navigation-node-neutral.is-empty * {
+    color: var(--glass-shadow) !important;
 }

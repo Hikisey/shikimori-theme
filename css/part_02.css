@@ -1,10 +1,5 @@
-/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
-
-::-webkit-input-placeholder {
-    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
-    transition: 0.5s ease-out;
-}
 
 ::-ms-input-placeholder {
     color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
@@ -842,13 +837,10 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     color: rgba(var(--text-2), 1) !important;
     text-align: center;
     text-indent: 0;
-    animation: none !important;
     width: auto;
 }
 
 .p-profiles .profile-head .c-history .entry .misc {
-    animation: runningtext 18s ease-in-out infinite;
-    animation-delay: 2s;
     text-align: center;
 }
 
@@ -1172,7 +1164,7 @@ body#profiles_show .b-shiki_editor footer {
     width: 100%;
 }
 
-body#user_history_index .tooltip-inner {
+body#user_histories_index .tooltip-inner {
     margin-left: 0;
 }
 
@@ -2387,7 +2379,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         text-shadow: 0 1px 2px rgba(var(--shade), .7);
         z-index: 2;
     }
-    html body.p-profiles-show .profile-head .c-history .subheadline :is(a, a:before) {
+    html body.p-profiles-show .profile-head .c-history .subheadline a {
         color: rgb(var(--text-strong)) !important;
         text-shadow: 0 1px 2px rgba(var(--shade), .7);
     }
@@ -4363,7 +4355,8 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
 }
 
 @media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
-    section.l-page.l-page aside.l-menu:has(.c-ms:is([data-search_url], :has(.c-ms-option:nth-of-type(16))) > .c-ms-dropdown:not([hidden])) {
+    section.l-page.l-page aside.l-menu:has(.c-ms[data-search_url] > .c-ms-dropdown:not([hidden])),
+    section.l-page.l-page aside.l-menu:has(.c-ms > .c-ms-dropdown:not([hidden]) .c-ms-option:nth-of-type(16)) {
         padding-bottom: var(--sheet-typing-room) !important;
     }
     section.l-page.l-page aside.l-menu:has(.c-ms-search:focus) {
@@ -5074,4 +5067,29 @@ body.p-user_history .l-page {
 
 .p-user_rates-index .l-content .order-control:hover {
     color: rgba(var(--accent), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines .selectable:hover,
+    .p-userlist_comparer .comparer table .selectable:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.01);
+        background: transparent;
+    }
+    tr.user_rate.selectable.editable:hover:after {
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
+        transform: scale(1.01);
+    }
+}
+
+tr.user_rate.selectable.editable:after {
+    content: "";
+    width: 100%;
+    padding-top: 2px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    z-index: -1;
 }

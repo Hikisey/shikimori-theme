@@ -1,4 +1,4 @@
-/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -268,6 +268,7 @@ html[data-color-mode=light] {
     font-family: "Comfortaa";
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local("Comfortaa Regular"), local("Comfortaa-Regular"),
     url(https://fonts.gstatic.com/s/comfortaa/v10/-DackuIFgo7Hfy3rR14C3xJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");
     unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
@@ -277,6 +278,7 @@ html[data-color-mode=light] {
     font-family: "Comfortaa";
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local("Comfortaa Regular"), local("Comfortaa-Regular"),
     url(https://fonts.gstatic.com/s/comfortaa/v10/qLBu5CQmSMt1H43OiWJ77VtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
@@ -286,6 +288,7 @@ html[data-color-mode=light] {
     font-family: "Comfortaa";
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local("Comfortaa Bold"), local("Comfortaa-Bold"),
     url(https://fonts.gstatic.com/s/comfortaa/v10/fND5XPYKrF2tQDwwfWZJI5X5f-9o1vgP2EXwfjgl7AY.woff2) format("woff2");
     unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
@@ -295,6 +298,7 @@ html[data-color-mode=light] {
     font-family: "Comfortaa";
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local("Comfortaa Bold"), local("Comfortaa-Bold"),
     url(https://fonts.gstatic.com/s/comfortaa/v10/fND5XPYKrF2tQDwwfWZJI-gdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
@@ -1018,18 +1022,6 @@ a,
     }
     100% {
         color: #5b6ad7;
-    }
-}
-
-@keyframes runningtext {
-    25% {
-        text-indent: -80em;
-    }
-    25.000000001% {
-        text-indent: 25em;
-    }
-    50% {
-        text-indent: 0em;
     }
 }
 
@@ -2285,7 +2277,7 @@ body#profiles_show .cc-franchises .b-badge .no-image {
     border-radius: 6px;
 }
 
-body#dashboard_show .b-catalog_entry.b-catalog_entry {
+body#dashboards_show .b-catalog_entry.b-catalog_entry {
     background: none;
 }
 
@@ -2344,14 +2336,6 @@ body#dashboard_show .b-catalog_entry.b-catalog_entry {
     .l-page {
         background-color: color-mix(in srgb, var(--glass-deep) 0%, transparent);
         box-shadow: none !important;
-    }
-    body:before {
-        content: "";
-        position: fixed;
-        background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-        z-index: 1;
-        width: 100%;
-        height: 100%;
     }
     body#profiles_show .b-clubs {
         flex-wrap: unset;
@@ -4193,8 +4177,10 @@ header.head .notice {
     pointer-events: none;
 }
 
-.use-tabs.--ripple > [data-dynamic]:not(.active):hover::after {
-    animation: 1s switch-focus--vertical ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .use-tabs.--ripple > [data-dynamic]:not(.active):hover::after {
+        animation: 1s switch-focus--vertical ease infinite;
+    }
 }
 
 .use-tabs.--ripple > [data-dynamic].active:hover::after {
@@ -4378,8 +4364,10 @@ header.head .notice {
     pointer-events: none;
 }
 
-.custom-panel > [data-dynamic]:not(.active):hover::after {
-    animation: 1s switch-focus--vertical ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .custom-panel > [data-dynamic]:not(.active):hover::after {
+        animation: 1s switch-focus--vertical ease infinite;
+    }
 }
 
 .custom-panel > [data-dynamic].active::after {
@@ -4881,9 +4869,11 @@ header.head .notice {
     transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
-.b-spoiler label:hover {
-    color: rgba(var(--accent), 1);
-    animation: spoilzero 2s ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .b-spoiler label:hover {
+        color: rgba(var(--accent), 1);
+        animation: spoilzero 2s ease infinite;
+    }
 }
 
 .b-quote {
@@ -5884,4 +5874,9 @@ option {
 
 textarea#user_rate_text {
     width: 99%;
+}
+
+::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
 }

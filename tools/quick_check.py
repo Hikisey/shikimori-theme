@@ -20,7 +20,7 @@ import argparse, glob, os, re, subprocess, sys, tempfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T = os.path.join(ROOT, 'tools')
 # унаследованный приём иконочного шрифта: url("/\x/…") — 5 мест; плюс \fXXX в content
-HOVER_MAX = 189  # правил с :hover вне (hover: hover) — число может только уменьшаться
+HOVER_MAX = 185  # правил с :hover вне (hover: hover) — число может только уменьшаться
 ALLOWED_BACKSLASH = re.compile(r'''content:\s*['"](?:\\f[0-9a-f]{3})+['"]|url\("/\\x/''', re.I)
 
 

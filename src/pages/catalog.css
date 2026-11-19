@@ -572,7 +572,8 @@ section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:
           прокручивая к полю в фокусе, оставляет под ним место размером с клавиатуру;
        3) пока такой список открыт, внизу панели есть запас прокрутки
           (padding-bottom), чтобы к верху могли подняться и последние поля. */
-    section.l-page.l-page aside.l-menu:has(.c-ms:is([data-search_url], :has(.c-ms-option:nth-of-type(16))) > .c-ms-dropdown:not([hidden])) {
+    section.l-page.l-page aside.l-menu:has(.c-ms[data-search_url] > .c-ms-dropdown:not([hidden])),
+    section.l-page.l-page aside.l-menu:has(.c-ms > .c-ms-dropdown:not([hidden]) .c-ms-option:nth-of-type(16)) {
         padding-bottom: var(--sheet-typing-room) !important;
     }
     section.l-page.l-page aside.l-menu:has(.c-ms-search:focus) {

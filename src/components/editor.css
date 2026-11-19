@@ -106,9 +106,11 @@
     transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
-.b-spoiler label:hover {
-    color: rgba(var(--accent), 1);
-    animation: spoilzero 2s ease infinite;
+@media (hover: hover) and (pointer: fine) {
+    .b-spoiler label:hover {
+        color: rgba(var(--accent), 1);
+        animation: spoilzero 2s ease infinite;
+    }
 }
 
 /* стоп */
