@@ -4186,10 +4186,31 @@ html body .fc-user-sections .devise:not(#u) {
     border-radius: var(--plate-radius) !important;
 }
 
-/* v1.6.21: magnific на ПК ставит html { overflow: hidden; margin-right: Npx }.
-   Полоса уже зарезервирована через scrollbar-gutter: stable — лишний margin
-   сдвигает страницу и липкое меню. Телефоны (узже 1024) не трогаем. */
+/* v1.6.22: на ПК полоса прокрутки остаётся видимой при просмотре постера.
+   magnific ставит на html инлайн overflow: hidden и margin-right — инлайн
+   бьёт обычные правила, но не !important. Телефоны (узже 1024) не трогаем.
+   Серая подложка .mfp-figure:after (#444) убирается, остаётся снимок на фоне. */
 @media screen and (min-width: 1024px) {
-    html[style*="margin-right"],
+    html {
+        overflow-y: scroll !important;
+        margin-right: 0 !important;
+        scrollbar-gutter: stable;
+    }
     body[style*="margin-right"] { margin-right: 0 !important; }
+    /* подложка не должна накрывать 10px-полосу (::webkit-scrollbar) */
+    .mfp-bg,
+    .mfp-wrap {
+        position: fixed;
+        left: 0;
+        right: 10px;
+        width: auto !important;
+    }
 }
+.mfp-figure:after { display: none !important; }
+.mfp-image-holder .mfp-content,
+.mfp-figure {
+    background: none !important;
+    box-shadow: none !important;
+}
+.mfp-image-holder .mfp-bottom-bar { display: none !important; }
+.mfp-image-holder img.mfp-img { padding: 0 !important; }
