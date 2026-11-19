@@ -1,4 +1,4 @@
-/* shiki glass v1.7.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.2 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 .p-user_rates-index .list-lines .selectable,
@@ -2684,6 +2684,33 @@ body#clubs_edit .b-options-floated a:active:after {
     }
 }
 
+@media screen and (max-width: 767px) {
+    html body .b-comments {
+        backdrop-filter: blur(5px) saturate(110%);
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
+    }
+    html body :is(.b-review, .b-review-topic) .b-comments {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    html body .b-comments .b-comment {
+        position: relative;
+        isolation: isolate;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    html body .b-comments [class*="_marker"]::before,
+    html body.p-profiles-show .cc-2a > .c-column .subheadline {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    html body .review-slide .b-review-topic {
+        isolation: isolate;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
+
 .p-dashboards-show .v2 .db-update .tags {
     height: 50px;
 }
@@ -4540,7 +4567,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.1";
+    --theme-version: "1.7.2";
 }
 
 .l-footer:before {
@@ -5556,30 +5583,4 @@ body.p-achievements.p-profiles .b-list_switchers > *:after {
 .p-dashboards-show .v2 .my-list .label .misc-links a,
 .p-dashboards-show .v2 .my-list .label .misc-links a:after {
     color: rgba(var(--link), var(--hundred));
-}
-
-.p-dashboards-show .v2 .my-list .label span {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
-.b-review_opinion_marker.is-neutral input:checked + span {
-    color: rgb(var(--text-strong));
-    background: var(--tone-3b3a3e);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
-.b-review_opinion_marker.is-positive input:checked + span {
-    background: #1c4c20;
-    color: #c6dacb;
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
-.b-review_opinion_marker.is-negative input:checked + span {
-    background: #862a22;
-    color: #ffcfcf;
-}
-
-.navigation-node.navigation-node-neutral.is-empty * {
-    color: var(--glass-shadow) !important;
 }

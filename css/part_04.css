@@ -1,5 +1,31 @@
-/* shiki glass v1.7.1 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.2 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.p-dashboards-show .v2 .my-list .label span {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
+.b-review_opinion_marker.is-neutral input:checked + span {
+    color: rgb(var(--text-strong));
+    background: var(--tone-3b3a3e);
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
+.b-review_opinion_marker.is-positive input:checked + span {
+    background: #1c4c20;
+    color: #c6dacb;
+}
+
+.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
+.b-review_opinion_marker.is-negative input:checked + span {
+    background: #862a22;
+    color: #ffcfcf;
+}
+
+.navigation-node.navigation-node-neutral.is-empty * {
+    color: var(--glass-shadow) !important;
+}
 
 @media (hover: hover) and (pointer: fine) {
     .subheadline a[title="morr"]:hover:after {
