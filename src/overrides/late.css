@@ -4185,3 +4185,11 @@ html body .fc-user-sections .devise:not(#u) {
     border: 1px solid rgba(var(--text), .1) !important;
     border-radius: var(--plate-radius) !important;
 }
+
+/* v1.6.21: magnific на ПК ставит html { overflow: hidden; margin-right: Npx }.
+   Полоса уже зарезервирована через scrollbar-gutter: stable — лишний margin
+   сдвигает страницу и липкое меню. Телефоны (узже 1024) не трогаем. */
+@media screen and (min-width: 1024px) {
+    html[style*="margin-right"],
+    body[style*="margin-right"] { margin-right: 0 !important; }
+}
