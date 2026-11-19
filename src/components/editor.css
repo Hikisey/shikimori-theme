@@ -713,18 +713,32 @@ html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
     height: auto !important;   /* сайт на узких экранах держит 20px и срезал низ чипов */
     overflow: visible !important;
     padding-bottom: 2px;
+    display: flex !important;   /* чипы в одну строку и по центру высоты кнопки «Написать» */
+    align-items: center;
+    gap: 6px;
+    align-self: center;
 }
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
     height: auto !important;
     overflow: visible !important;
     width: auto !important;
     padding: 0 !important;
+    margin: 0 !important;
     background: none !important;
+    display: flex !important;
+    align-items: center;
 }
 html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u)::before {
     width: auto !important;
-    min-height: 26px;
-    padding: 4px 12px !important;
+    height: 26px !important;   /* у «Оффтопа» свои отступы и высота строки из badges/page: текст уезжал вверх */
+    min-height: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: static !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    padding: 0 12px !important;
     box-sizing: border-box;
     border: 1px solid var(--chip-border) !important;
     border-radius: var(--chip-radius) !important;

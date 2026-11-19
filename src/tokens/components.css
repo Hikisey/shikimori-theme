@@ -52,7 +52,7 @@
     /* карточки аниме и манги .b-catalog_entry */
     --card-radius: 14px;
     --card-image-radius: 12px;
-    --card-lift: translateY(-6px) scale(1.03);
+    --card-lift: translateY(-6px);   /* без scale: увеличение мылило карточку, пока шла анимация */
     --card-hover-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .35);
     --card-zoom: scale(1.06);
 

@@ -1,4 +1,45 @@
-/* shiki glass v1.6.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+.b-collection_search .field input {
+    border: 0 solid rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg) !important;
+}
+
+.p-studios .studio .animes .num,
+.p-studios .studio .years .num {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+
+.b-header_filters .filter-line a.current {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+.x1000 .menu-slide-outer.x199 .l-menu,
+.x1200 .menu-slide-outer.x199 .l-menu,
+.menu-slide-outer.x199 .l-menu,
+.x1000 .menu-slide-outer.x240 .l-menu,
+.x1200 .menu-slide-outer.x240 .l-menu,
+.menu-slide-outer.x240 .l-menu {
+    width: 22.00%;
+}
+
+.l-menu .ongoing .misc .value,
+span.studio {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_search .b-catalog_entry {
+    transform: scale(1.03);
+}
+
+.p-animes_collection-index.x1000 .cc-entries,
+.p-animes_collection-index.x1200 .cc-entries {
+    margin-top: 4px;
+}
+
 .b-collection-filters .block-list li:before,
 .b-collection-filters .b-block_list li:before {
     content: "\f10c";
@@ -1755,7 +1796,7 @@ tr.user_rate.selectable.editable:after {
         box-shadow: none;
     }
     .p-user_rates-index .list-posters .user_rate:hover {
-        transform: translateY(-6px) scale(1.03);
+        transform: var(--card-lift);
         box-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .3);
         z-index: 2;
     }
@@ -4777,32 +4818,4 @@ img[alt='morr'] {
     filter: contrast(102%) grayscale(15%);
     transition: box-shadow 0.4s ease;
     -webkit-transition: box-shadow 0.4s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
-        box-shadow: none;
-    }
-}
-
-.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
-    content: "";
-    display: flex;
-    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    background-size: 600%;
-    z-index: -1;
-    filter: blur(3px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.4s ease-in-out;
-    left: -0.25rem;
-    right: -0.25rem;
-    top: -0.25rem;
-    padding-bottom: 0;
-    bottom: -3.15rem;
-    opacity: 0;
-}
-
-.about .Animes_Mangas-1 .image-decor:hover .image-cutter::before {
-    opacity: 1;
 }

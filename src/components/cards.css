@@ -208,7 +208,7 @@
 
 .b-catalog_entry {
     border-radius: var(--card-radius);
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     transition: transform .35s var(--ease-out),
         box-shadow .35s var(--ease-out),
         background-color .35s ease !important;
@@ -217,15 +217,17 @@
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry.b-catalog_entry:hover {
         transform: var(--card-lift);
-        margin-top: 0;
         box-shadow: var(--card-hover-shadow);
         z-index: 2;
     }
 }
 
-/* Лёгкий зум картинки внутри обложки (не выходит за края) */
+/* Лёгкий зум картинки внутри обложки (не выходит за края).
+   clip-path режет по скруглению и во время анимации: одного overflow хватало не всегда,
+   и в конце движения углы картинки на миг вылезали */
 .b-catalog_entry .cover {
     overflow: hidden;
+    clip-path: inset(0 round var(--card-image-radius));
 }
 
 .b-catalog_entry .cover img:not(._),

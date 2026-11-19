@@ -609,10 +609,8 @@ header.head h2 a.back {
    и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
 @media screen and (min-width: 768px) {
     .p-dashboards-show .v2 .fc-ongoings:not(#u) {
-        padding-top: 10px;
-        padding-bottom: 14px;
-        margin-top: -10px;
-        margin-bottom: -14px;
+        padding: 10px 12px 34px;   /* сверху подъём, по бокам и снизу тень карточки */
+        margin: -10px -12px -34px;
     }
 }
 

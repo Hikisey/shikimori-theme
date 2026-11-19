@@ -1,4 +1,4 @@
-/* shiki glass v1.6.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* ===== tokens/palette =====
    палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
 
@@ -268,7 +268,7 @@ html[data-color-mode=light] {
     /* карточки аниме и манги .b-catalog_entry */
     --card-radius: 14px;
     --card-image-radius: 12px;
-    --card-lift: translateY(-6px) scale(1.03);
+    --card-lift: translateY(-6px);   /* без scale: увеличение мылило карточку, пока шла анимация */
     --card-hover-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .35);
     --card-zoom: scale(1.06);
 
@@ -4952,7 +4952,7 @@ header.head .notice {
 
 .b-catalog_entry {
     border-radius: var(--card-radius);
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     transition: transform .35s var(--ease-out),
         box-shadow .35s var(--ease-out),
         background-color .35s ease !important;
@@ -4961,15 +4961,17 @@ header.head .notice {
 @media (hover: hover) and (pointer: fine) {
     .b-catalog_entry.b-catalog_entry:hover {
         transform: var(--card-lift);
-        margin-top: 0;
         box-shadow: var(--card-hover-shadow);
         z-index: 2;
     }
 }
 
-/* Лёгкий зум картинки внутри обложки (не выходит за края) */
+/* Лёгкий зум картинки внутри обложки (не выходит за края).
+   clip-path режет по скруглению и во время анимации: одного overflow хватало не всегда,
+   и в конце движения углы картинки на миг вылезали */
 .b-catalog_entry .cover {
     overflow: hidden;
+    clip-path: inset(0 round var(--card-image-radius));
 }
 
 .b-catalog_entry .cover img:not(._),
@@ -5152,19 +5154,4 @@ header.head .notice {
 .b-spoiler label:hover {
     color: rgba(var(--accent), 1);
     animation: spoilzero 2s ease infinite;
-}
-
-/* стоп */
-.b-quote {
-    background: var(--plate-bg) !important;
-    border: none !important;
-    color: rgba(var(--text), 1);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-    border-radius: 6px !important;
-    font-style: normal;
-}
-
-.b-comments .comments-collapser,
-.b-spoiler .content .after:before {
-    color: rgba(var(--accent), 1);
 }

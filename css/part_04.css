@@ -1,4 +1,32 @@
-/* shiki glass v1.6.18 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.6.19 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+@media (hover: hover) and (pointer: fine) {
+    .about .Animes_Mangas-1 .b-catalog_entry:hover > a .image-cutter::after {
+        box-shadow: none;
+    }
+}
+
+.about .Animes_Mangas-1 .b-catalog_entry a .image-cutter::before {
+    content: "";
+    display: flex;
+    background: linear-gradient(1145deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    background-size: 600%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.4s ease-in-out;
+    left: -0.25rem;
+    right: -0.25rem;
+    top: -0.25rem;
+    padding-bottom: 0;
+    bottom: -3.15rem;
+    opacity: 0;
+}
+
+.about .Animes_Mangas-1 .image-decor:hover .image-cutter::before {
+    opacity: 1;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .about .Animes_Mangas-1 .b-catalog_entry .cover .image-decor:hover .image-cutter {
         background: none;
@@ -1090,7 +1118,7 @@ div.Ssylki-anime:hover .Text-2 {
 /* Название и версия темы в подвале (слева внизу). Версия = тег релиза. */
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.6.18";
+    --theme-version: "1.6.19";
 }
 
 .l-footer:before {
@@ -1765,10 +1793,8 @@ header.head h2 a.back {
    и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
 @media screen and (min-width: 768px) {
     .p-dashboards-show .v2 .fc-ongoings:not(#u) {
-        padding-top: 10px;
-        padding-bottom: 14px;
-        margin-top: -10px;
-        margin-bottom: -14px;
+        padding: 10px 12px 34px;   /* сверху подъём, по бокам и снизу тень карточки */
+        margin: -10px -12px -34px;
     }
 }
 
