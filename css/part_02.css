@@ -1,1047 +1,16 @@
-/* shiki glass v1.6.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
-/* стоп */
-.b-quote {
-    background: var(--plate-bg) !important;
-    border: none !important;
-    color: rgba(var(--text), 1);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-    border-radius: 6px !important;
-    font-style: normal;
-}
+/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+html:root { --sg-p2: ""; }
 
-.b-comments .comments-collapser,
-.b-spoiler .content .after:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-show_more,
-.b-show_more-more .hide-more {
-    color: rgba(var(--accent), 1);
-}
-
-.b-spoiler .content .before:before {
-    content: "[spoiler]";
-    color: rgba(var(--accent), 1);
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .after:before {
-    animation: spoil 2s ease infinite;
-}
-
-.b-spoiler .content .inner,
-.b-spoiler .content .inner-prgrph {
-    border-bottom: 0;
-    border-radius: 6px;
-    padding: 0 6px;
-    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
-}
-
-.buttons .editor-italic:before,
-.buttons .editor-spoiler:before,
-.buttons .editor-smiley:before,
-.buttons .editor-quote:before,
-.buttons .editor-image:before,
-.buttons .editor-link:before,
-.buttons .editor-strike:before,
-.buttons .editor-underline:before,
-.buttons .editor-bold:before {
-    font-family: "shikimori";
-    text-align: center;
-    width: 20px;
-    color: rgba(var(--accent), 1);
-    font-size: 14px;
-    border: none !important;
-}
-
-/* Цвет кнопок тесктового редактора в состоянии hover */
-.buttons .editor-italic:hover:before,
-.buttons .editor-spoiler:hover:before,
-.buttons .editor-smiley:hover:before,
-.buttons .editor-quote:hover:before,
-.buttons .editor-image:hover:before,
-.buttons .editor-link:hover:before,
-.buttons .editor-strike:hover:before,
-.buttons .editor-underline:hover:before,
-.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
-}
-
-.buttons .editor-italic,
-.buttons .editor-spoiler,
-.buttons .editor-smiley,
-.buttons .editor-quote,
-.buttons .editor-image,
-.buttons .editor-link,
-.buttons .editor-strike,
-.buttons .editor-underline,
-.buttons .editor-bold,
-.buttons .editor-file {
-    border: none !important;
-}
-
-.buttons .editor-file input:before {
-    color: rgba(var(--accent), 1);
-}
-
-.b-shiki_editor .body .preview {
-    background: var(--plate-bg);
-    border: none !important;
-}
-
-.b-shiki_editor footer .unpreview:not(.link) {
-    color: rgba(var(--text), 1);
-}
-
-.b-shiki_editor footer .preview,
-.b-shiki_editor footer .cancel {
-    color: rgba(var(--text), 1) !important;
-}
-
-.b-shiki_editor footer .cancel {
-    border: none !important;
-}
-
-.b-comment .inner .name-date a.name .normal {
-    color: rgba(var(--text), 1);
-}
-
-.b-log_entry .id-label {
-    padding-right: 1px;
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-log_entry .id-label:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-log_entry .change-details .field-changes .label {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .notice {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .example .textarea {
-    background: var(--plate-bg);
-    color: rgba(var(--text), 1);
-    border: none !important;
-    border-radius: 8px;
-}
-
-.b-bb_codes-examples .example span {
-    color: rgba(var(--text-2), 1);
-}
-
-.b-bb_codes-examples .example span:after {
-    color: rgba(var(--text-2), 1);
-    content: ")";
-}
-
-.b-bb_codes-examples .example span:before {
-    color: rgba(var(--text-2), 1);
-    content: "(";
-}
-
-.buttons .editor-file {
-    color: rgba(var(--accent), 1);
-}
-
-.buttons .editor-file:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.b-shiki_editor .images .link-value,
-.b-shiki_editor .links .link-value,
-.b-shiki_editor .quotes .link-value,
-.b-shiki_editor .email .link-value,
-.b-shiki_editor .upload .link-value {
-    background: var(--plate-bg) !important;
-    border-color: rgba(var(--glass), 0.4) !important;
-    color: rgba(var(--text), 1);
-    line-height: 20px;
-    border-radius: 8px;
-}
-
-.b-quote .quoteable:before {
-    content: "\f10d";
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-.b-spoiler_block > div,
-.b-quote-v2 {
-    background-color: rgba(var(--glass), 0.3);
-    border-left: 4px solid rgba(var(--text), 0.3);
-}
-
-.b-spoiler_block > div {
-    display: flow-root;
-}
-
-.b-spoiler_block > span {
-    color: rgba(var(--text), 1) !important;
-    background-color: rgba(var(--glass), 0);
-    display: inline-flex;
-    font-size: 13px;
-    line-height: 23px;
-    border-radius: 9px;
-    padding: 0 10px;
-    transition: 0.2s all, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
-
-    z-index: 3;
-    position: relative;
-    border: 2px solid rgba(var(--text), 0.2) !important;
-    text-transform: lowercase;
-}
-
-.b-spoiler_block.is-opened > span {
-    border-radius: 9px 9px 0 0;
-    border-left: 4px solid rgba(var(--text), 0.2) !important;
-    border-right: 3px solid rgba(var(--text), 0.2) !important;
-}
-
-.b-spoiler_block > span:active {
-    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
-}
-
-.b-spoiler_inline:not(.is-opened) {
-    background-color: rgba(var(--glass), 1);
-}
-
-@media screen and (min-width: 1024px) {
-    @media (hover: hover) and (pointer: fine) {
-        .b-spoiler_block > span:hover {
-            background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
-            color: var(--tone-e4e4e4) !important;
-        }
-    }
-}
-
-/*Новый тех ред > убрать кнопку Скрыть*/
-.b-shiki_editor-v2 footer .hide {
-    display: none!important;
-}
-
-.b-log_entry .spoiler.collapse span,
-.b-log_entry .spoiler.collapsed span {
-    border: 2px dashed rgba(var(--text), 0.2);
-    border-radius: 6px;
-    transition: var(--ease-base);
-    padding: 0 4px;
-}
-
-.b-comment .b-height_shortener .expand span {
-    margin-left: 60px;
-}
-
-.b-height_shortener .expand:hover span,
-.b-height_shortener .expand:hover {
-    color: var(--tone-e4e4e4) !important;
-}
-
-input[type="submit"],
-input[type="text"],
-input[type="email"],
-input[type="number"],
-.b-shiki_editor footer .unpreview,
-.b-shiki_editor footer .preview,
-.b-offtopic_marker::before,
-.b-summary_marker::before {
-    border-radius: 2px;
-}
-
-.inner aside.markers {
-    top: 8px;
-    position: relative;
-}
-
-.b-ajax:before,
-.b-ajax,
-.ac_loading,
-.ac_loading:before,
-.b-shiki_editor .b-ajax,
-.b-shiki_editor.b-ajax {
-    background: var(--plate-bg) !important;
-    box-shadow: 0 0 20px rgba(var(--glass), 0.5);
-}
-
-.ajax-loading:after {
-    content: '\f1ce';
-    width: 16.5px;
-    height: 16.7px;
-    color: rgba(var(--text), var(--hundred));
-    font: normal normal normal 16px/1 FontAwesome !important;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    top: 50%;
-    margin-right: -2px;
-    position: absolute;
-    margin-top: -9px;
-    right: 50%;
-    animation: rotateload 0.7s linear infinite;
-}
-
-.ajax-loading,
-.ajax-loading.vk-like {
-    background: none;
-}
-
-.b-shiki_editor .links,
-.b-shiki_editor .images,
-.b-shiki_editor .quotes,
-.b-shiki_editor .email,
-.b-shiki_editor .upload {
-    height: 35px;
-}
-
-.b-shiki_editor .links {
-    height: 63px;
-}
-
-.b-comment>.inner header .name-date.name-date {
-    white-space: normal;
-    line-height: 1.7;
-}
-
-.block .b-comment.shiki-object:last-child {
-    border-bottom: none !important;
-}
-
-.b-shiki_editor footer {
-    padding: 0 0 10px 0;
-}
-
-.b-log_entry a.bubbled-processed,
-a.b-link.bubbled-processed {
-    /* color:  rgba(var(--text-strong), var(--hundred));
-     font-weight: bold;*/
-}
-
-.b-log_entry.b-abuse_request .b-offtopic_marker {
-    left: 16px;
-    position: relative;
-    width: 65px;
-    top: 4.5px;
-}
-
-.b-log_entry.b-abuse_request .marker.b-summary_marker {
-    top: 4.5px;
-    position: relative;
-    width: 50px;
-}
-
-.b-log_entry.b-abuse_request .marker.b-abuse_marker {
-    top: 4.5px;
-    position: relative;
-    width: 55px;
-    left: -3px;
-}
-
-.b-comment:hover header .hash {
-    color: rgba(var(--accent), var(--hundred)) !important;
-}
-
-.b-comment-info.b-comment {
-    color: rgba(var(--text-2), 0.75);
-}
-
-.b-log_entry a .id-label,
-.b-log_entry .link .id-label {
-    color: rgba(var(--accent), var(--hundred));
-    transition: var(--ease-base);
-}
-
-.b-log_entry a:hover .id-label,
-.b-log_entry .link:hover .id-label {
-    color: rgba(var(--accent), var(--hundred));
-}
-
-.b-comments .comments-collapser:after {
-    content: '\f139';
-    font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    font-size: 20px;
-    color: rgba(var(--text-2), 0.6);
-}
-
-.b-comments .comments-collapser:hover:after {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-comments .comments-collapser {
-    font-size: 0;
-    text-decoration: none;
-    margin: 6px 10px 0 0;
-    border: none;
-}
-
-.b-height_shortener .expand:after {
-    content: "далее" !important;
-    font-size: 13px;
-    background-color: rgba(var(--glass), 0.3);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05);
-    padding: 0 27px;
-    line-height: 16px;
-    left: 0;
-    position: absolute;
-    border-radius: 4px;
-    transition: 0.1s ease-in-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-height_shortener .expand:hover:after {
-        background-color: rgba(var(--accent), 0.3);
-    }
-}
-
-.b-height_shortener .expand {
-    font-size: 0;
-    height: 17px;
-}
-
-.b-height_shortener .expand:hover {
-    font-size: 0;
-}
-
-.b-height_shortener .expand:hover {
-    color: rgba(var(--accent), var(--hundred));
-    animation: none !important;
-    border: none;
-}
-
-.b-height_shortener .expand:before {
-    content: '\f078\f078';
-    text-rendering: auto;
-    font: normal normal normal 14px/1 FontAwesome;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
-    position: absolute;
-    left: 8px;
-    color: rgba(var(--accent), 0.7);
-    line-height: 15px;
-    letter-spacing: 64px;
-}
-
-.b-shiki_editor aside.markers label > span {
-    padding: 3px 8px;
-    border: none;
-    border-radius: 9px !important;
-}
-
-.b-comment > .inner header a[href*="/EngiNier"] img {
-    border: 2px solid #a7843d75;
-}
-
-.b-comment > .inner header a[href*="/Cosmo+%E2%98%AD"] img {
-    border: 2px solid #3ba2bd75;
-}
-
-.b-shiki_editor footer .hide {
-    display: none;
-    opacity: 0.6;
-}
-
-.b-replies {
-    padding-top: 0;
-}
-
-.b-comment:first-child {
-    border-top-width: 0 !important;
-}
-
-.b-comment > .inner header img {
-    margin: 0 10px 0 0;
-}
-
-.b-quote {
-    margin: 5px 0;
-}
-
-/* CSS редактор */
-.cm-s-solarized.cm-s-light {
-    background-color: var(--tone-1f2123);
-    color: #9eb8c7;
-    text-shadow: none;
-}
-
-.cm-s-solarized .cm-number {
-    color: #8f6fec;
-}
-
-.cm-s-solarized.cm-s-light .CodeMirror-gutters {
-    background-color: var(--tone-282e33);
-}
-
-.cm-s-solarized .cm-property {
-    color: #2bb39b;
-}
-
-.cm-s-solarized.cm-s-light div.CodeMirror-selected {
-    background: color-mix(in srgb, var(--tone-6b6965) 40%, transparent);
-}
-
-.CodeMirror-dialog-top {
-    border-bottom: none;
-    top: 0px;
-    background: var(--tone-171717);
-}
-
-.cm-s-solarized .cm-variable {
-    color: #dade38;
-}
-
-.cm-s-solarized .cm-tag {
-    color: var(--tone-a8a99f);
-}
-
-.CodeMirror-search-field {
-    width: 400px !important;
-}
-
-.editor-container .buttons.m15 {
-    margin-bottom: 5px !important;
-    position: fixed;
-    top: 53px;
-    right: 20px;
-    z-index: 100;
-}
-
-.fullwidth > .b-spoiler > label::after {
-    content: "Открыть";
-    float: right;
-    padding: 0.4em 0.5em 0.15em 0.5em;
-    margin: -0.25em -0.5em;
-    border-radius: 4px;
-    color: rgba(var(--text-2), 1);
-    font-size: 0.7em;
-    line-height: inherit;
-    position: absolute;
-    right: 17px;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .fullwidth > .b-spoiler > label:hover::after,
-    .fullwidth > .b-spoiler > label[style*="none"]:hover::after {
-        background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-        color: rgba(var(--text-strong), 1);
-    }
-}
-
-.fullwidth > .b-spoiler > label[style*="none"]::after {
-    content: "Закрыть";
-    background: color-mix(in srgb, var(--glass-deep) 60%, transparent);
-    color: rgba(var(--text-strong), 1);
-}
-
-.fullwidth > .b-spoiler > label > span {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.fullwidth > .b-spoiler > .content > .before {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 2em;
-    margin-top: -40px;
-    margin-bottom: 0.5em;
-    font-size: 1.25em;
-    z-index: 1;
-}
-
-.fullwidth > .b-spoiler > .content > .before::before,
-.fullwidth > .b-spoiler > .content > .after {
-    display: none;
-}
-
-.fullwidth > .b-spoiler > .content > .inner,
-.fullwidth > .b-spoiler > .content .inner-prgrph {
-    border: 0;
-}
-
-.fullwidth .b-spoiler .content .inner,
-.fullwidth .b-spoiler .content .inner-prgrph {
-    text-shadow: none;
-}
-
-@media only screen and (min-width: 1025px) {
-    .editor-container .b-offtopic_marker:before,
-    .editor-container .b-summary_marker:before {
-        margin-top: -4px;
-    }
-    .editor-container .buttons.m15 {
-        right: 50% !important;
-        margin-right: -593px;
-    }
-    .b-comments {
-        margin-bottom: 10px !important;
-    }
-    .b-comment .b-height_shortener {
-        margin-left: 55px;
-        position: relative;
-    }
-}
-
-/* --- форма комментария и панель выбора: метки и значки ---
-   Одна система для shikimori.io и rip: метки «Оффтоп», «18+», «На shiki» (footer .markers)
-   и кнопки панели выбора комментариев (.b-comments_select-panel) — стеклянные «чипы» на токенах
-   --chip-*; значки панели редактора одного цвета (--tool-icon), включая свёрнутые на телефоне
-   группы (.mobile_placeholder), которые сайт красил тёмно-синим.
-   :not(#u) поднимает вес над общими правилами меток (*_marker) из page/badges/late. */
-
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
-    height: auto !important;   /* сайт на узких экранах держит 20px и срезал низ чипов */
-    overflow: visible !important;
-    padding-bottom: 2px;
-    display: flex !important;   /* чипы в одну строку и по центру высоты кнопки «Написать» */
-    align-items: center;
-    gap: 6px;
-    align-self: center;
-}
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
-    height: auto !important;
-    overflow: visible !important;
-    width: auto !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    background: none !important;
-    display: flex !important;
-    align-items: center;
-}
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u)::before {
-    width: auto !important;
-    height: 26px !important;   /* у «Оффтопа» свои отступы и высота строки из badges/page: текст уезжал вверх */
-    min-height: 0 !important;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    position: static !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-    padding: 0 12px !important;
-    box-sizing: border-box;
-    border: 1px solid var(--chip-border) !important;
-    border-radius: var(--chip-radius) !important;
-    background: var(--chip-bg) !important;
-    color: var(--chip-text) !important;
-    font-size: 12px !important;
-    font-weight: 600;
-    white-space: nowrap;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(5px);
-}
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(.off):not(#u)::before {
-    border-color: rgba(var(--chip-tint), .9) !important;
-    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
-    color: var(--chip-on-text) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-    html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u):hover::before {
-        border-color: rgba(var(--chip-tint), 1) !important;
-        color: var(--chip-on-text) !important;
-    }
-}
-
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group:not(.menu_group-controls):not(#u) {
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(5px);
-}
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:not(#u) {
-    color: var(--tool-icon) !important;
-}
-html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:is(.is-disabled, :disabled):not(#u) {
-    color: var(--tool-icon-off) !important;
-}
-
-html body .b-comments_select-panel:not(#u) {
-    background: color-mix(in srgb, rgb(var(--glass)) 94%, transparent) !important;
-    border: 1px solid var(--chip-border) !important;
-    border-radius: var(--plate-radius-lg) !important;
-    box-shadow: 0 10px 28px rgba(var(--shade), .5) !important;
-    color: rgb(var(--text)) !important;
-}
-html body .b-comments_select-panel button:not(#u) {
-    background: var(--chip-bg) !important;
-    border: 1px solid var(--chip-border) !important;
-    border-radius: var(--chip-radius) !important;
-    color: var(--chip-text) !important;
-    font-weight: 600 !important;
-}
-html body .b-comments_select-panel .actions button[data-kind]:not(.is-danger):not(#u) {
-    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
-    border-color: rgba(var(--chip-tint), .9) !important;
-    color: var(--chip-on-text) !important;
-}
-html body .b-comments_select-panel button.is-danger:not(#u) {
-    --chip-tint: 255, 110, 110;
-    background: transparent !important;
-    border-color: rgb(var(--chip-tint)) !important;
-    color: rgb(255, 150, 150) !important;
-}
-html body .b-comments_select-panel button:disabled:not(#u) {
-    opacity: .45 !important;
-}
-
-/* ----- телефон и узкие экраны ----- */
-
-@media screen and (max-width: 1023px) {
-    .item-cancel,
-    .item-reply,
-    .item-edit,
-    .item-ignore,
-    .item-delete-cancel,
-    .item-moderation,
-    .item-moderation-cancel,
-    .item-delete,
-    .item-request-reject,
-    .item-cancel:after,
-    .item-reply:after,
-    .item-edit:after,
-    .item-ignore:after,
-    .item-delete-cancel:after,
-    .item-moderation:after,
-    .item-moderation-cancel:after,
-    .item-delete:after,
-    .item-request-reject:after,
-    .item-cancel:before,
-    .item-reply:before,
-    .item-edit:before,
-    .item-ignore:before,
-    .item-delete-cancel:before,
-    .item-moderation:before,
-    .item-moderation-cancel:before,
-    .item-delete:before,
-    .item-request-reject:before,
-    .item-delete-confirm:after,
-    .item-delete-confirm:before,
-    .item-abuse:before,
-    .item-abuse:after,
-    .item-spoiler:before,
-    .item-spoiler:after,
-    .item-offtopic:before,
-    .item-offtopic:after {
-        font-family: var(--font-family);
-        color: rgba(var(--text), var(--hundred));
-    }
-    .b-shiki_editor aside.markers {
-        float: right;
-        height: 20px;
-        margin-right: 10px;
-        margin-top: 4px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: nowrap;
-        width: 80%;
-        float: left !important;
-    }
-    .editor-controls {
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .buttons .editor-quote {
-        display: inline-block !important;
-    }
-    .b-shiki_editor .links.links p,
-    .b-shiki_editor .images.links p,
-    .b-shiki_editor .quotes.links p,
-    .b-shiki_editor .email.links p,
-    .b-shiki_editor .upload.links p {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links,
-    .b-shiki_editor .images,
-    .b-shiki_editor .quotes,
-    .b-shiki_editor .email,
-    .b-shiki_editor .upload {
-        width: 100%;
-        height: 46px;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
-    .b-shiki_editor .links input,
-    .b-shiki_editor .images input,
-    .b-shiki_editor .quotes input,
-    .b-shiki_editor .email input,
-    .b-shiki_editor .upload input {
-        margin-top: 8px;
-    }
-    .b-shiki_editor .hidden-block {
-        width: 100%;
-        max-width: 460px;
-    }
-    .b-comment > .inner header .name-date {
-        margin-left: 55px !important;
-    }
-    .buttons .editor-italic:before,
-    .buttons .editor-spoiler:before,
-    .buttons .editor-smiley:before,
-    .buttons .editor-quote:before,
-    .buttons .editor-image:before,
-    .buttons .editor-link:before,
-    .buttons .editor-strike:before,
-    .buttons .editor-underline:before,
-    .buttons .editor-bold:before {
-        font-size: 22px !important;
-    }
-    .CodeMirror-dialog-top {
-        margin-top: 80px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fullwidth>.b-spoiler>label:not(._) {
-        white-space: nowrap;
-        padding: 0.47em 6em 0.47em 1em;
-    }
-    .buttons .editor-italic,
-    .buttons .editor-spoiler,
-    .buttons .editor-smiley,
-    .buttons .editor-quote,
-    .buttons .editor-image,
-    .buttons .editor-link,
-    .buttons .editor-strike,
-    .buttons .editor-underline,
-    .buttons .editor-bold,
-    .buttons .editor-file {
-        margin-left: 0 ;
-        padding: 7px 13px;
-    }
-    .buttons .editor-bold {
-        padding: 7px 13px;
-    }
-    .b-shiki_editor aside.buttons {
-        white-space: normal;
-    }
-    .editor-controls {
-        white-space: normal;
-        overflow-x: auto;
-        height: 50px;
-    }
-    .b-shiki_editor aside.buttons .editor-spoiler {
-        margin-left: 0  !important;
-    }
-    .editor-container .b-summary_marker {
-        width: 10px !important;
-    }
-    .editor-container .b-summary_marker:before {
-        margin-left: -34px;
-    }
-}
-
-@media screen and (max-width: 480px) and (orientation: portrait) {
-    .b-shiki_editor aside.buttons {
-        width: 70%;
-        float: left !important;
-    }
-    .b-shiki_editor aside.buttons .editor-spoiler {
-        margin-left: 35px;
-    }
-    .b-shiki_editor .links,
-    .b-shiki_editor .images,
-    .b-shiki_editor .quotes,
-    .b-shiki_editor .email,
-    .b-shiki_editor .upload {
-        height: 43px;
-    }
-    .b-comments {
-        padding-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .b-comments .comments-loader.comments-loader,
-    .b-comments .comments-hider.comments-hider,
-    .b-comments .comments-expander.comments-expander {
-        padding: 5px 4px;
-    }
-    .b-comments .comments-loader.click-loader {
-        padding: 5px 30px 5px 30px;
-    }
-}
-
-@media screen and (max-width: 420px) and (orientation: portrait) {
-    .b-shiki_editor .hidden-block {
-        margin-bottom: 40px;
-    }
-}
-
-/* --- метка «rip» у комментариев, написанных на shikimori.rip --- */
-/* у своих комментариев rip ставит .b-from_rip_marker, у пришедших с шикимори — .b-shiki_sync_marker */
-.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
-    content: "rip";
-    display: inline-block;
-    margin-left: 7px;
-    padding: 0 6px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    line-height: 15px;
-    border-radius: 6px;
-    background: rgba(var(--accent), .18);
-    border: 1px solid rgba(var(--accent), .45);
-    color: rgba(var(--accent), 1);
-    vertical-align: 1px;
-}
-
-/* ===== components/modals =====
-   окна: просмотр картинок (mfp), bulma-модалки, обратная связь */
-
-.x1200 .b-modal > .inner,
-.b-modal > .inner {
-    max-width: 920px;
-    background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
-    box-shadow: var(--plate-shadow-strong);
-}
-
-.bulma .modal-card-body {
-    background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
-    border-radius: var(--plate-radius-lg);
-}
-
-.bulma span {
-    font: bold 16px var(--font-family);
-}
-
-.bulma .play-icon::before {
-    display: none;
-}
-
-/*Боле затемнённый фон. при клики на картинки*/
-.mfp-container {
-    backdrop-filter: blur(calc(var(--glass-blur) * .8));
-    -webkit-backdrop-filter: blur(4px); /* Safari: без var() */
-    background-color: color-mix(in srgb, var(--tone-191717) 94.9%, transparent);
-}
-
-/* mfp-bg */
-.mfp-bg {
-    opacity: 0;
-}
-
-/* Feedback */
-.b-feedback > .hover-activator {
-    height: 0px !important;
-}
-
-.b-feedback > .marker-positioner > .marker-text {
-    font-size: 0px;
-    height: 0px;
-    line-height: 0;
-    padding: 0;
-}
-
-.b-feedback > .marker-positioner {
-    width: 0px;
-}
-
-/* ===== components/forms =====
-   поля, select и мультиселект фильтров (.c-ms), галочки, @starting-style выезда списков */
-
-/* цвет текста */
-.b-input label {
-    display: block;
-    line-height: 1.65;
-}
-
-/* под шкалой в профиле сколько пробыл на сайте */
-/* Поиск по названию в списке аниме */
-input {
-    color: var(--field-text);
-    background: var(--plate-bg);
-}
-
-.b-input input,
-.b-input textarea {
-    background: var(--plate-bg);
-    color: var(--field-text);
-    border: none !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-}
-
-input,
-select,
-button,
-textarea {
-    background-color: var(--plate-bg);
-    font-family: var(--font-family);
-    border: none !important;
-}
-
-.subheadline-input {
-    background-color: var(--glass-deep) !important;
-    color: var(--field-text);
-    border: 1px solid var(--glass-deep) !important;
-    border-radius: 4px !important;
-    padding: 5px 0 3px 4px !important;
-    line-height: 14px !important;
-    right: 10px;
-}
-
-.ac_results {
-    border: none;
-    background: none;
-}
-
-.ac_results li:not(._) {
-    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
-    color: rgba(var(--text-strong), var(--hundred));
-    border: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .ac_results li:hover {
-        background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
-        color: rgba(var(--text-strong), var(--hundred));
-        border: none;
-    }
-}
-
-option {
-    color: rgba(var(--text), var(--hundred));
-}
-
-.b-form {
-    width: 100%;
-}
-
-.b-input.select.optional.user_rate_score,
-.b-input.integer.optional.user_rate_episodes,
-.b-input.select.optional.user_rate_status,
-.b-input.integer.optional.user_rate_rewatches {
-    margin: 0 5px 3px;
-    display: inline-block;
-}
-
-textarea#user_rate_text {
-    width: 99%;
-}
-
-/* Chrome/Opera/Safari */
 ::-webkit-input-placeholder {
     color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
     transition: 0.5s ease-out;
 }
 
-/* Firefox 19 */
-/* IE 10 */
 ::-ms-input-placeholder {
     color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
     transition: 0.5s ease-out;
 }
 
-/* Firefox 18 */
 ::-moz-placeholder {
     color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
     transition: 0.5s ease-out;
@@ -1205,17 +174,14 @@ input[type="checkbox"]:checked:before,
     color: #d2c1ac !important;
 }
 
-/* Options Page */
 .b-input.boolean {
     display: table;
-    /*** Comments Fix ****/
 }
 
 .subheadline-input {
     padding: 4px 0 4px 5px;
 }
 
-/* --- Настройки: кнопка выбора файла (аватар) в стиле темы --- */
 input[type="file"] {
     color: rgb(var(--text-2));
 }
@@ -1238,7 +204,6 @@ input[type="file"]::file-selector-button {
     }
 }
 
-/* --- само поле (select, мультиселект фильтров) --- */
 select:not(#u),
 .c-ms-control:not(#u) {
     -webkit-appearance: none;
@@ -1263,7 +228,6 @@ select:not(#u),
                 border-color var(--ease-fast), box-shadow var(--ease-fast) !important;
 }
 
-/* без base-select (Firefox, старый Chromium): стрелка рисуется фоном */
 select:not(#u) {
     padding-right: 30px !important;
     background: var(--field-arrow), var(--field-bg) !important;
@@ -1291,7 +255,6 @@ select:not(#u):active,
     transition-duration: var(--ui-press) !important;
 }
 
-/* --- части мультиселекта --- */
 .c-ms-caret {
     border-top-color: rgb(var(--text-2)) !important;
     right: 11px !important;
@@ -1306,7 +269,6 @@ select:not(#u):active,
 
 .c-ms-chip { background: var(--accent-dim) !important; border-radius: 6px !important; }
 
-/* --- выпадающий список фильтров --- */
 .c-ms-dropdown:not(#u) {
     top: calc(100% + var(--drop-gap)) !important;
     background: var(--drop-bg) !important;
@@ -1323,8 +285,6 @@ select:not(#u):active,
 }
 
 @starting-style {
-    /* двойной класс: иначе более позднее правило .c-ms-dropdown:not([hidden]) того же веса
-       перебивает начальный вид, и список открывается без анимации */
     .c-ms-dropdown.c-ms-dropdown:not([hidden]) {
         clip-path: inset(0 0 100% 0 round var(--drop-radius));
         transform: var(--drop-shift);
@@ -1347,11 +307,9 @@ select:not(#u):active,
 
 .c-ms-option.c-ms-option.is-on { color: rgb(var(--accent)) !important; }
 
-/* варианты в системном окне (Firefox) */
 select option { background: var(--drop-bg); color: var(--field-text); }
 
 @supports (appearance: base-select) {
-    /* --- выезжающий список select (Chromium с base-select) --- */
     select:not(#u),
     select:not(#u)::picker(select) { appearance: base-select !important; }
     select:not(#u) {
@@ -1359,9 +317,8 @@ select option { background: var(--drop-bg); color: var(--field-text); }
         align-items: center;
         gap: 8px;
         padding-right: 11px !important;
-        background: var(--field-bg) !important; /* стрелку рисует ::picker-icon */
+        background: var(--field-bg) !important;
     }
-    /* стрелка как у фильтров и так же поворачивается */
     select:not(#u)::picker-icon {
         display: block !important;
         content: "";
@@ -1431,16 +388,10 @@ select option { background: var(--drop-bg); color: var(--field-text); }
     select:not(#u) option::checkmark { display: none; }
 }
 
-/* ================================================================
-   v1.2.13 — галочки: ровно по тексту и плавное включение/выключение
-   ================================================================ */
-/* сама галочка — кружок 18px, текст по центру его высоты */
 label:has(> input[type="checkbox"]) {
     display: flex !important;
     width: fit-content;
     min-height: 26px;
-    /* кружок ставится на линию строки текста (первой, если текст в две строки),
-       а затем сдвигается так, чтобы его центр совпал с серединой строчных букв */
     align-items: baseline;
     gap: 10px;
     line-height: 1.4;
@@ -1451,11 +402,8 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     margin-right: 0 !important;
     font: inherit;
     align-self: baseline;
-    /* низ кружка на базовой линии → центр на 9px выше; поднять до середины строчных (0.5ex) */
-    transform: translateY(calc(8.5px - .5ex)) !important; /* -0.5px: глаз видит середину по заглавным, чуть выше строчных */
+    transform: translateY(calc(8.5px - .5ex)) !important;
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 767px) {
     .label {
@@ -1468,11 +416,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 }
 
 @media (hover: none) and (pointer: coarse) {
-    /* ================================================================
-       v1.2.7 — iPhone: нативные списки, без клавиатуры, обои из кеша
-       ================================================================ */
-    /* Сенсорные экраны: select — обычный системный (колёсико iOS).
-       Новый base-select WebKit 26 на iPhone не открывался и дёргал анимации в настройках. */
     select:not(#u),
     select:not(#u)::picker(select) {
         -webkit-appearance: none !important;
@@ -1486,9 +429,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     select:not(#u)::picker-icon { display: none !important; }
     select:not(#u):active { transform: none !important; }
 }
-
-/* ===== pages/clubs =====
-   клубы */
 
 .b-clubs-menu .admin .b-user {
     transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -1531,11 +471,10 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* history-yeah */
     .p-profiles .profile-head .c-history .entry:hover,
     .p-topics .l-menu .reviews .entry:hover,
     .p-topics .l-menu .clubs .entry:hover {
-        transform: translateY(-2px) !important; /* без scale: масштаб размывал картинку и текст до конца анимации */
+        transform: translateY(-2px) !important;
         padding-left: 2px;
         padding-right: 5px;
         text-decoration: none !important;
@@ -1635,7 +574,7 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
 
 .b-club .logo {
     width: 52px;
-    aspect-ratio: 1 / 1; /* место под логотип клуба занято до загрузки картинки — блоки ниже не прыгают */
+    aspect-ratio: 1 / 1;
 }
 
 .b-clubs {
@@ -1666,8 +605,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     transition: none !important;
     animation: none !important;
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 960px) {
     .b-club .logo {
@@ -1733,9 +670,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     }
 }
 
-/* ===== pages/profile =====
-   профиль: шапка, баннер, история, списки-статистика, совместимость, друзья */
-
 .b-shiki_editor footer .about-bb_codes:hover:before {
     color: rgba(var(--text-2), 1);
 }
@@ -1753,12 +687,10 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     pointer-events: none;
 }
 
-/* история-время */
 .p-profiles .profile-head .c-history .entry .misc.date {
     color: rgba(var(--text-2), 1) !important;
 }
 
-/* история-история */
 .p-profiles .profile-head .c-history .entry .misc {
     color: rgba(var(--accent), 1) !important;
     overflow: hidden;
@@ -1769,7 +701,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     border-radius: 8px 8px 0 0;
 }
 
-/* цвета шкал списков — из акцента, чтобы не выбивались из темы */
 .b-stats_bar .bar .third {
     background: rgba(var(--time-empty), 1);
     background: color-mix(in srgb, var(--glass-deep) 72%, rgb(var(--shade)));
@@ -1788,7 +719,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     opacity: 1;
 }
 
-/* цвета манга шкалы */
 .b-stats_bar.manga .bar .first {
     background: rgba(var(--manga-complete), 1);
     background: color-mix(in srgb, rgb(var(--manga-complete)) 88%, rgb(var(--shade)));
@@ -1801,7 +731,6 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     opacity: 1;
 }
 
-/* список аниме и манги */
 .b-stats_bar a.title {
     color: rgba(var(--text-strong), 1);
 }
@@ -1814,14 +743,12 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     }
 }
 
-/* под списком кол-во просмотреных прочитанных и т.д. */
 .b-stats_bar .stat_names .stat_name a,
 .b-stats_bar .stat_names .stat_name .size:before,
 .b-stats_bar .stat_names .stat_name .size:after {
     color: rgba(var(--text-2), 1);
 }
 
-/* под списком кол-во просмотреных прочитанных и т.д. */
 .b-stats_bar .stat_names .stat_name a:hover {
     color: rgba(var(--link), 1);
 }
@@ -2048,7 +975,6 @@ div.compatibility > a:before {
     content: '\f2be';
 }
 
-/* задаем параемтры стандарта для всех значков совместимости*/
 .b-stats_bar.manga .compatibility a:before,
 .b-stats_bar.anime .compatibility a:before,
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .text.weak:before,
@@ -2071,8 +997,6 @@ div.compatibility > a:before {
     transition: 0.3s ease-out, margin 0s, padding 0s, opacity 0s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s, line-height 0s, min-height 0s, min-width 0s;
 }
 
-/* Красим совместимость*/
-/* нету */
 .b-stats_bar .compatibility span.link-replacement .text.zero:before,
 .b-stats_bar .compatibility .text.zero:before {
     color: rgba(var(--text-2), var(--hundred));
@@ -2088,7 +1012,6 @@ div.compatibility > a:before {
     }
 }
 
-/* низкая */
 .b-stats_bar .compatibility span.link-replacement .text.weak:before,
 .b-stats_bar .compatibility .text.weak:before {
     color: #c3a87e;
@@ -2104,7 +1027,6 @@ div.compatibility > a:before {
     }
 }
 
-/* средняя */
 .b-stats_bar .compatibility span.link-replacement .text.modarate:before,
 .b-stats_bar .compatibility .text.moderate:before {
     color: #c5c23e;
@@ -2120,7 +1042,6 @@ div.compatibility > a:before {
     }
 }
 
-/* высокая */
 .b-stats_bar .compatibility span.link-replacement .text.high:before,
 .b-stats_bar .compatibility .text.high:before {
     color: #96c53e;
@@ -2136,7 +1057,6 @@ div.compatibility > a:before {
     }
 }
 
-/* полная */
 .b-stats_bar .compatibility span.link-replacement .text.full:before,
 .b-stats_bar .compatibility .text.full:before {
     color: #3ec557;
@@ -2165,7 +1085,6 @@ div.compatibility > a:before {
     }
 }
 
-/*****рейтинг совместимости******/
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate:before,
 .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility .rate:after {
     font-size: 0;
@@ -2450,7 +1369,6 @@ body.p-profiles .subheadline .misc-links > a:before {
     text-shadow: 0 1px 2px rgba(var(--shade), .8);
 }
 
-/* Низкая совместимость */
 div.compatibility > a > .text.weak:before {
     color: #af8d58;
 }
@@ -2467,7 +1385,6 @@ div.compatibility > span.link-replacement > .text.weak:before {
     }
 }
 
-/* Средняя совместимость */
 div.compatibility > a > .text.moderate:before {
     background-color: #f1f8e9;
     color: #8bc34a;
@@ -2485,7 +1402,6 @@ div.compatibility > span.link-replacement > .text.moderate:before {
     }
 }
 
-/* Высокая совместимость */
 div.compatibility > a > .text.high:before {
     background-color: #adff2f;
     color: #adff2f;
@@ -2503,7 +1419,6 @@ div.compatibility > span.link-replacement > .text.high:before {
     }
 }
 
-/* Полная совместимость */
 div.compatibility > a > .text.full:before {
     background-color: #e1f5fe;
     color: #03a9f4;
@@ -2521,7 +1436,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/*----------*/
 .b-shiki_editor.previewed .b-spoiler label:hover,
 .p-profiles .about.block .b-spoiler label:hover {
     animation: none !important;
@@ -2535,7 +1449,6 @@ div.compatibility > span.link-replacement > .text.full:before {
 
 @media only screen and (min-width: 1025px) {
     .p-profiles .profile-head .c-brief header.head .misc {
-        /* сразу под аватаром (10px отступ + 160px). Было 236px: при короткой шапке «в сети» падало на «Время за аниме» */
         top: 172px;
     }
 }
@@ -2547,7 +1460,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* Избранное в профиле на ПК: сетка 4 в ряд вместо 8 мелких, постер целиком в пропорции 225:318 */
 @media screen and (min-width: 768px) {
     .p-profiles-show .cc-favourites:not(#u) {
         display: grid;
@@ -2602,8 +1514,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* ----------- */
-/*выключить повторные всплывающие постеры*/
 #profiles_show .tooltip-inner {
     width: 450px;
 }
@@ -2618,24 +1528,17 @@ div.compatibility > span.link-replacement > .text.full:before {
     margin-left: 0;
 }
 
-/*--------*/
-/*1*/
 .about .Blok-0 {
     display: block;
     text-align: center;
 }
 
-/*-------------------------------*/
-/*Стандарт*/
 .about .Blok-1 {
     display: block;
     text-align: center;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* v1.2.22: карточка поднимается на 6px, и у нижнего края курсор оказывался уже не над ней:
-       наведение пропадало, карточка опускалась, и так по кругу (мигание курсора).
-       Невидимая полоска под поднятой карточкой держит наведение; на контент она не ложится. */
     .b-catalog_entry:not(.cc-favourites.sortable .b-catalog_entry):hover::after {
         content: "";
         position: absolute;
@@ -2647,8 +1550,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* Длинное название в истории при наведении плавно уезжает до конца и обратно (вместо полосы прокрутки).
-   Сдвиг = ширина блока (100cqw) минус ширина текста; короткие названия стоят на месте (min с 0) */
 .p-profiles .profile-head .c-history .entry .title {
     container-type: inline-size;
     overflow: hidden;
@@ -2672,13 +1573,11 @@ div.compatibility > span.link-replacement > .text.full:before {
     text-overflow: clip;
 }
 
-/* Вторая строка истории на малых разрешениях */
 .p-profiles .profile-head .c-history .entry .misc {
     text-overflow: ellipsis !important;
 }
 
 @media (min-width: 1200px) {
-    /* --- Баннер над профилем --- */
     .p-profiles-show .profile-head:before {
         content: "";
         display: block;
@@ -2690,7 +1589,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* --- Без анимаций графика активности и истории --- */
 .activity .graph.vertical .line .bar {
     animation: none;
 }
@@ -2699,7 +1597,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     animation: none;
 }
 
-/* --- Ник в профиле: обводка под цвет темы --- */
 .p-profiles .profile-head .c-brief header.head h1 {
     color: rgb(var(--text)) !important;
     text-shadow: 0 0 1px rgba(var(--accent), .9),
@@ -2708,7 +1605,6 @@ div.compatibility > span.link-replacement > .text.full:before {
 }
 
 @media (min-width: 1200px) {
-    /* --- Под баннером мягкое свечение в цвет самой картинки --- */
     .p-profiles-show .profile-head {
         position: relative;
         display: flow-root;
@@ -2740,8 +1636,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     .p-profiles-show .profile-head > * { position: relative; z-index: 1; }
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     .p-profiles-favorites .item-edit:after {
@@ -2859,11 +1753,6 @@ div.compatibility > span.link-replacement > .text.full:before {
         margin-bottom: -1rem !important;
         transition: none;
     }
-    /*.p-profiles-show.x1200 .profile-content .c-left, .p-profiles-show.x1000 .profile-content .c-left {
-         width: 100%;
-         margin: 28% auto 13.25rem auto;
-         top: 14.45rem;
-       }*/
     .p-profiles .cc-2a > .c-column {
         width: 48% !important;
         margin: 0 1% !important;
@@ -3039,7 +1928,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     div.compatibility > a:before {
         content: "\f0ec";
     }
-    /* SOVMEST */
     .b-stats_bar.anime .compatibility a:before {
         font-size: 26px;
         color: rgba(var(--anime-inprocess), var(--hundred));
@@ -3057,7 +1945,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     .b-stats_bar .compatibility .text.weak:before {
         position: absolute;
     }
-    /* размещение значков совметсимости 768 px<*/
     .b-stats_bar.anime .compatibility a:before,
     .b-stats_bar.anime .compatibility .text.zero:before,
     .b-stats_bar.anime .compatibility .text.weak:before,
@@ -3315,7 +2202,6 @@ div.compatibility > span.link-replacement > .text.full:before {
 }
 
 @media screen and (max-width: 767px) {
-    /* --- профиль: аккуратные карточки списков, ничего не наезжает --- */
     html body.p-profiles .profile-head .c-brief header.head .misc {
         position: static !important;
         top: auto !important;
@@ -3354,12 +2240,10 @@ div.compatibility > span.link-replacement > .text.full:before {
         overflow: hidden !important;
         font-size: 12px;
     }
-    /* подписи ANIME/MANGA не нужны: название списка уже в заголовке карточки */
     html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar::before {
         display: none !important;
         content: none !important;
     }
-    /* совместимость — значок в правом верхнем углу карточки */
     html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility {
         position: absolute !important;
         top: 9px !important;
@@ -3398,7 +2282,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
     html body.p-profiles .profile-head .c-info .c-additionals > b { display: none; }
     html body.p-profiles .profile-head .c-info .c-additionals > div { display: inline-block; margin: 0 6px; }
-    /* друзья и клубы — две стеклянные карточки */
     body.p-profiles-show .cc-2a {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
@@ -3435,10 +2318,6 @@ div.compatibility > span.link-replacement > .text.full:before {
         padding: 6px 16px 8px !important;
         border-radius: 16px;
     }
-    /* ================================================================
-       v1.2.21 — телефоны: баннер профиля, стекло плашек, панель фильтров
-       ================================================================ */
-    /* --- баннер профиля: во всю ширину сверху, аватар и ник на его нижнем крае --- */
     body.p-profiles-show .profile-head {
         position: relative;
         z-index: 0;
@@ -3451,7 +2330,7 @@ div.compatibility > span.link-replacement > .text.full:before {
         top: 0;
         left: 0;
         right: 0;
-        display: block !important; /* у сайта тут clearfix с display: table — он сжимал баннер до 0 */
+        display: block !important;
         width: auto !important;
         height: var(--profile-banner-height-mobile);
         background: var(--profile-banner) var(--profile-banner-position) / cover no-repeat;
@@ -3466,7 +2345,6 @@ div.compatibility > span.link-replacement > .text.full:before {
         transform: translateZ(0);
         pointer-events: none;
     }
-    /* мягкое свечение в цвет картинки под баннером */
     body.p-profiles-show .profile-head::after {
         content: "";
         position: absolute;
@@ -3494,7 +2372,6 @@ div.compatibility > span.link-replacement > .text.full:before {
         position: relative;
         z-index: 1;
     }
-    /* v1.4.2 — «История»: стекло и читаемый текст; колонка выше баннера */
     html body.p-profiles-show .profile-head .c-history {
         z-index: 2;
     }
@@ -3517,7 +2394,6 @@ div.compatibility > span.link-replacement > .text.full:before {
 }
 
 @media screen and (max-width: 1023px) {
-    /* v1.4.2 — телефон: ярче текст, колонка действий, центр аватара */
     html body.p-profiles-show .profile-head .c-brief header :is(.notice, .notice span, .misc, .misc span) {
         color: color-mix(in srgb, rgb(var(--text-2)) 35%, rgb(var(--text))) !important;
     }
@@ -3624,10 +2500,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* ===== pages/anime =====
-   страница аниме/манги/персонажа: описание, постер, кадры и видео, плеер, «добавить в список» */
-
-/* цвет смотрю, планы и т.д. */
 .b-db_entry-note .name-container .note .relation,
 .b-db_entry-note .name-container .note .additional {
     color: rgba(var(--text-2), 1) !important;
@@ -3647,7 +2519,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: #f2ddcc;
 }
 
-/* кнопка "Отложено" на страничке аниме*/
 .b-add_to_list.on_hold .trigger,
 .b-add_to_list.on_hold .option {
     background: #864e13;
@@ -3655,7 +2526,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: var(--tone-ebeef1);
 }
 
-/* кнопка "Запланировано" на страничке аниме*/
 .b-add_to_list.planned .trigger,
 .b-add_to_list.planned .option {
     background: #173969;
@@ -3663,7 +2533,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: #cfe0ec;
 }
 
-/* кнопка "Смотрю" на страничке аниме*/
 .b-add_to_list.watching .trigger,
 .b-add_to_list.watching .option {
     background: color-mix(in srgb, rgb(var(--accent)) 38%, var(--glass-deep));
@@ -3671,7 +2540,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: rgb(var(--text-strong));
 }
 
-/* кнопка "Пересмотравиваю" на страничке аниме*/
 .b-add_to_list.rewatching .trigger,
 .b-add_to_list.rewatching .option {
     background: #115652;
@@ -3700,7 +2568,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     min-width: 225px;
 }
 
-/* надпись красным "Удалить из списка" */
 .b-add_to_list .expanded-options .remove-trigger .text {
     color: #ffa09e;
 }
@@ -3718,7 +2585,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     background: var(--plate-bg-strong) !important;
 }
 
-/* цвет кнопки троеточие у описания аниме */
 .p-animes-show .other-names.click-loader span,
 .p-mangas-show .other-names.click-loader span,
 .p-ranobe-show .other-names.click-loader span {
@@ -3767,13 +2633,10 @@ div.compatibility > span.link-replacement > .text.full:before {
     }
 }
 
-/* цвет рейтенга текста */
 .b-rate .text-score {
     color: rgba(var(--text), 1);
 }
 
-/* оценки справа в аниме */
-/* текст отзывы, комментарии и т.д. под вкладкой У аниме: */
 .b-db_entry > .c-about .additional-links .line-container > .link,
 .b-db_entry > .c-about .additional-links .line-container > a {
     color: rgba(var(--accent), 1);
@@ -3784,17 +2647,14 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: rgba(var(--accent), 1);
 }
 
-/* закрашенные звезды */
 .b-rate .stars.score {
     color: rgba(var(--text-strong), 1);
 }
 
-/* при наводке звезды */
 .b-rate .stars.hover {
     color: #e7a61d;
 }
 
-/* пустые звезды */
 .b-rate .stars.background {
     color: rgba(var(--text-strong), 0.2);
 }
@@ -3803,7 +2663,6 @@ div.compatibility > span.link-replacement > .text.full:before {
     color: rgba(var(--text-2), 1);
 }
 
-/* знак в новостях эпизод*/
 .b-anime_status_tag.episode:before {
     background: #3d249e;
     color: var(--tone-e9f1f3);
@@ -3995,11 +2854,6 @@ label.b-subposter-action.upload.b-tooltipped {
 .b-log_entry a.bubbled-processed:hover,
 a.b-link.bubbled-processed:hover,
 a.b-db_entry-variant-list_item span.b-link:hover {
-    /*
-       color:  rgba(var(--accent), var(--hundred)) !important;
-     font-weight: bold !important;
-     box-shadow: none !important;
-     background: transparent !important;*/
 }
 
 .b-add_to_list.on_hold .edit,
@@ -4026,8 +2880,6 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 .b-add_to_list.rewatching .trigger-arrow:before {
     color: #bfdeda;
 }
-
-/*--------------------------------------------------------*/
 
 .b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
     text-decoration: none !important;
@@ -4318,7 +3170,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     border-radius: var(--plate-radius-lg) !important;
 }
 
-/* --- Та же анимация выезда для остальных выпадающих меню --- */
 .l-top_menu-v2 .menu-dropdown.active > .submenu,
 .l-top_menu-v2 .menu-dropdown:hover > .submenu,
 .l-top_menu-v2 .menu-dropdown:focus-within > .submenu,
@@ -4330,7 +3181,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     transform-origin: top center;
 }
 
-/* поле оценки в фильтрах — тот же вид, без стрелки */
 .c-score-input {
     background: var(--field-bg) !important;
     color: rgb(var(--text)) !important;
@@ -4356,7 +3206,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .c-score.is-filled .c-score-input { border-color: var(--field-filled-border) !important; }
 
-/* при переходе к другому полю открытый список закрывается */
 .c-filters:has(.c-filter-select:focus) .c-ms-dropdown,
 .c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-dropdown,
 .c-filters:has(.c-score-input:focus) .c-ms-dropdown {
@@ -4370,8 +3219,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     box-shadow: var(--field-shadow) !important;
 }
 
-/* ===== v1.2.16 — страница аниме: кадры и видео сразу после описания, горизонтальные ленты ===== */
-/* порядок: блок кадров/видео поднимается сразу под описание (и для гостя — внутри .resources-loader, и для вошедшего — внутри первого .block) */
 .p-db_entries-show .l-content > .block:has(> .b-db_entry),
 .p-db_entries-show .l-content .resources-loader {
     display: flex !important;
@@ -4406,8 +3253,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 
 .p-db_entries-show .cc.m0 > .c-videos { margin-bottom: 0 !important; }
 
-/* лента: одна строка, листается вбок (стрелки на ПК, Shift+колесо, тачпад, свайп), с привязкой к кадрам */
-/* v1.2.17: заголовок и лента — одна стеклянная панель, полоса прокрутки скрыта */
 .p-db_entries-show .cc.m0 > .c-screenshots,
 .p-db_entries-show .cc.m0 > .c-videos {
     position: relative !important;
@@ -4451,7 +3296,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll)::-webkit-scrollbar,
 .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll)::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
-/* карточки 16:9 одинаковой высоты */
 .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot,
 .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video {
     display: block !important;
@@ -4487,7 +3331,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     height: 100% !important;
 }
 
-/* кнопка «плей» по центру */
 .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .video-link::before {
     top: 50% !important;
     left: 50% !important;
@@ -4509,7 +3352,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
     z-index: 2;
 }
 
-/* подпись снизу на градиенте, метка вида сверху слева */
 .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video .name {
     top: auto !important;
     right: 0 !important;
@@ -4553,8 +3395,6 @@ a.b-db_entry-variant-list_item .b-link.b-link:hover {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* v1.2.22: кадр не сдвигается вверх, а чуть растёт от нижнего края — нижняя кромка стоит
-       на месте, и курсор у неё больше не выпадает из кадра (раньше наведение мигало) */
     .p-db_entries-show .cc.m0 > .c-screenshots > :is(.cc, .b-scroll) > .c-screenshot:hover,
     .p-db_entries-show .cc.m0 > .c-videos > :is(.cc, .b-scroll) > .b-video:hover {
         transform: scale(1.03);
@@ -4569,7 +3409,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* наведение (только ПК): лёгкий подъём на 3px и мягкая тёмная тень снизу */
     a:hover > img.studio-logo,
     .p-studios .studio a:hover > img.logo {
         transform: translateY(-3px);
@@ -4577,7 +3416,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 }
 
-/* v1.2.18 — «На других сайтах»: иконки сайтов на светлом круглом бейдже (чёрная W Википедии, тёмные MAL/World Art больше не сливаются) */
 .b-external_link > a.b-link::before {
     width: 20px !important;
     height: 20px !important;
@@ -4588,8 +3426,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     background-repeat: no-repeat !important;
     box-shadow: 0 1px 4px rgba(var(--shade), 0.35);
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     .b-catalog_entry-tooltip .b-add_to_list {
@@ -4653,7 +3489,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 
     @supports (-webkit-touch-callout: none) {
-        /* iOS приближает страницу при фокусе на полях мельче 16px */
         select:not(#u),
         .c-ms-search,
         .c-score-input,
@@ -4666,7 +3501,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
 }
 
 @media screen and (max-width: 480px) {
-    /* --- страница аниме: действия под постером плитками «значок над текстом» --- */
     .b-db_entry > .c-image .c-actions {
         min-width: 0 !important;
         flex: 1 1 0 !important;
@@ -4719,7 +3553,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 }
 
-/* --- shikimori.rip: теги «Платформы», «Темы», «Тех./Эро тэги» и «Показать все» на страницах новелл --- */
 .line .value :is(.b-platform-tag, .b-genre-tag) {
     display: inline-flex;
     align-items: center;
@@ -4762,10 +3595,6 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 }
 
-/* ===== pages/settings =====
-   настройки профиля и аккаунта, сервисы входа */
-
-/* цвет кнопки написать */
 .b-form input[type="submit"],
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
@@ -4951,7 +3780,6 @@ a.start.b-button,
     }
 }
 
-/* Подписи полей */
 .b-input label,
 .b-input > label,
 .edit_user label,
@@ -4959,7 +3787,6 @@ a.start.b-button,
     color: rgb(var(--text)) !important;
 }
 
-/* --- Подсказки у сервисов в настройках: под плиткой, а не поверх заголовка --- */
 body.p-profiles-edit .tipsy.tipsy-s {
     transform: translateY(calc(100% + 38px));
 }
@@ -4973,8 +3800,6 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
 .oauth a:is(.yandex,.google,.google_oauth2,[href*="auth/yandex"],[href*="auth/google"]):not(._)::before {
     filter: brightness(1.12) saturate(1.1) !important;
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 767px) {
     .profile-actions .mail:before,
@@ -4990,7 +3815,6 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     .block.edit-page.misc .c-column {
         width: 100%;
     }
-    /* стеклянные подложки под свободно лежащим текстом */
     .l-page > div > header.head,
     .l-page > div > .pagination,
     .p-profiles .profile-head .c-brief header.head,
@@ -5002,7 +3826,7 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     body.p-user_preferences .l-content .block:not(.block .block) {
         background: var(--glass-bg) !important;
         backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
         border: var(--glass-border);
         border-radius: var(--plate-radius-lg);
         box-sizing: border-box;
@@ -5023,10 +3847,6 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
     }
 }
 
-/* ===== pages/catalog =====
-   каталог: фильтры слева, коллекции, поиск */
-
-/* справа выборы фильтров в списке аниме */
 .b-block_list li {
     color: rgba(var(--text), 1);
     transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -5044,4 +3864,1214 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
 
 .p-animes_collection-index .pagination .link.disabled {
     color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input {
+    border: 0 solid rgba(var(--glass), 0.4);
+    background-color: var(--plate-bg) !important;
+}
+
+.p-studios .studio .animes .num,
+.p-studios .studio .years .num {
+    color: rgba(var(--text), 1);
+}
+
+.b-collection_search .field input::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--glass-shadow) 60%, transparent);
+}
+
+.b-header_filters .filter-line a.current {
+    color: rgba(var(--link), var(--hundred)) !important;
+}
+
+.x1000 .menu-slide-outer.x199 .l-menu,
+.x1200 .menu-slide-outer.x199 .l-menu,
+.menu-slide-outer.x199 .l-menu,
+.x1000 .menu-slide-outer.x240 .l-menu,
+.x1200 .menu-slide-outer.x240 .l-menu,
+.menu-slide-outer.x240 .l-menu {
+    width: 22.00%;
+}
+
+.l-menu .ongoing .misc .value,
+span.studio {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-collection_search .b-catalog_entry {
+    transform: scale(1.03);
+}
+
+.p-animes_collection-index.x1000 .cc-entries,
+.p-animes_collection-index.x1200 .cc-entries {
+    margin-top: 4px;
+}
+
+.b-collection-filters .block-list li:before,
+.b-collection-filters .b-block_list li:before {
+    content: "\f10c";
+    color: rgba(var(--text-2), 1);
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    margin: 0px 18px 2px 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    direction: ltr;
+    line-height: 1;
+    text-transform: none;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-block_list li:hover {
+        color: rgba(var(--accent), 1) !important;
+        transition: 0s ease-out;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border-radius: var(--plate-radius);
+        box-shadow: var(--plate-shadow) !important;
+    }
+}
+
+.b-block_list li.selected {
+    color: rgba(var(--text), 1);
+    transition: 0s ease-out;
+    background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+    border-radius: var(--plate-radius);
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-block_list li.selected:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.b-collection-filters .b-block_list li.selected:before {
+    content: "\f05d";
+    color: rgba(var(--text), 1);
+    font-size: 19px;
+    margin: 0px 18px 2px 1px;
+}
+
+.b-collection-filters .block-list li > input,
+.b-collection-filters .b-block_list li > input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.b-collection-filters .b-block_list li:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .filter:before,
+.b-collection-filters .b-block_list .filter:before {
+    display: block;
+    width: auto;
+    font-family: inherit;
+    font-size: 10px;
+    line-height: inherit;
+    text-transform: lowercase;
+}
+
+.b-collection-filters .block-list .filter,
+.b-collection-filters .b-block_list .filter {
+    float: right;
+    position: relative;
+    right: -2px;
+    margin: 0 0 0 0.5rem;
+}
+
+.b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-radius: var(--plate-radius);
+    padding-right: 12px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-add:before {
+    font-family: var(--font-family);
+    content: "исключить";
+}
+
+.b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    color: rgba(var(--text-2), 1);
+    border-right: 3px solid #af3e0f;
+    border-radius: var(--plate-radius);
+    padding-right: 9px;
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus::before {
+    font-family: var(--font-family);
+    content: "добавить";
+}
+
+[data-locale="ru"] .b-collection-filters .b-block_list .filter.item-minus:hover:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-collection-filters .block-list .b-question,
+.b-collection-filters .b-block_list .b-question {
+    display: inline-block !important;
+    vertical-align: top;
+    position: absolute;
+    right: 10px;
+}
+
+.b-list_switchers .switcher.alphabet::after {
+    content: "\f1c2";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-weight: bold;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.c-filters .c-filters-head {
+    align-items: center !important;
+    min-height: 32px;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; }
+
+.c-filters:has(.c-filter-select:focus) .c-ms-control[aria-expanded="true"] .c-ms-caret,
+.c-filters:has(.c-ms-control:focus) .c-ms:not(:has(.c-ms-control:focus)) .c-ms-control[aria-expanded="true"] .c-ms-caret {
+    transform: translateY(-50%) !important;
+}
+
+@supports (appearance: base-select) {
+    select:not(#u).c-filter-select { display: flex !important; width: 100% !important; }
+}
+
+@media screen and (min-width: 736px) and (max-width: 880px) {
+    span.switcher.b-tooltipped.popularity,
+    span.switcher.b-tooltipped.alphabet {
+        width: 80px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "===";
+        font: bold 20px var(--font-family) !important;
+        width: 51px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0  12px 0  4px;
+    }
+    ul.b-block_list {
+        height: auto !important;
+        text-align: left !important;
+        line-height: 30px;
+        font-size: 15px !important;
+    }
+    .b-collection-filters .b-block_list li.selected:before,
+    .b-collection-filters .block-list li:before,
+    .b-collection-filters .b-block_list li:before {
+        margin: 0  28px 2px 1px;
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .b-block_list {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .b-block_list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 6px;
+        position: relative;
+        overflow: hidden;
+        height: 44px !important;
+    }
+    section.l-page.l-page aside.l-menu {
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+    }
+    section.l-page aside.l-menu {
+        display: none;
+    }
+    .p-animes_collection-index.x1000 .cc-entries,
+    .p-animes_collection-index.x1200 .cc-entries {
+        padding: 0 ;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 735px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .b-block_list {
+        width: calc(100% - 64px);
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    span.switcher.switcher.b-tooltipped.popularity,
+    span.switcher.switcher.b-tooltipped.alphabet {
+        width: 30px;
+    }
+    .b-list_switchers .switcher.popularity:before,
+    .b-list_switchers .switcher.alphabet:before {
+        content: "";
+        font: bold 20px var(--font-family) !important;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.l-page.menu-expanded aside.l-menu {
+        display: block !important;
+    }
+    section.l-page.l-page aside.l-menu {
+        position: fixed !important;
+        z-index: 950 !important;
+        top: max(16px, env(safe-area-inset-top, 0px)) !important;
+        bottom: max(16px, env(safe-area-inset-bottom, 0px)) !important;
+        left: 16px !important;
+        right: 16px !important;
+        width: min(calc(100vw - 32px), 440px) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: 70vh;
+        max-height: min(72dvh, calc(100dvh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+        margin: auto !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        transform: none !important;
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-bar) 50%, transparent) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(125%);
+        border: 1px solid rgba(var(--glass-light), 0.14) !important;
+        border-radius: 22px !important;
+        outline: none !important;
+        box-shadow:
+            inset 0 1px 0 rgba(var(--glass-light), 0.22),
+            inset 0 0 0 1px color-mix(in srgb, var(--accent-dim) 38%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--accent-dim) 25%, transparent),
+            0 20px 50px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
+        scrollbar-width: thin;
+        scrollbar-color: color-mix(in srgb, var(--accent-dim) 60%, transparent) transparent;
+    }
+    section.l-page.l-page aside.l-menu .c-filters {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    section.l-page.l-page aside.l-menu .c-filters-head {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: color-mix(in srgb, var(--glass-bar) 45%, transparent);
+        backdrop-filter: blur(calc(var(--glass-blur) * 1.6)) saturate(115%);
+        -webkit-backdrop-filter: blur(8px) saturate(115%);
+        border-bottom: 1px solid color-mix(in srgb, var(--accent-dim) 45%, transparent);
+        border-radius: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        color: rgb(var(--accent));
+    }
+    section.l-page.l-page aside.l-menu {
+        --field-bg: color-mix(in srgb, var(--glass-deep) 50%, transparent);
+        --field-font: 16px;
+        --field-height: 40px;
+    }
+    section.l-page aside.l-menu .c-ms-control:not(#u) { height: auto !important; min-height: 40px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
+    section.l-page aside.l-menu .c-ms-chip { font-size: 14px !important; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    select:not(#u).c-filter-select { display: block !important; width: 100% !important; }
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    section.l-page aside.l-menu .c-ms:not([data-search_url]):not(:has(.c-ms-option:nth-of-type(16))) .c-ms-search {
+        display: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-options:not(#u) { margin-top: 0 !important; }
+}
+
+@media screen and (max-width: 767px) {
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        display: block;
+        width: 100% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+        background: rgba(var(--glass-light), .03) !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(var(--glass-light), .08) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: rgb(var(--text)) !important;
+        outline: none !important;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u)::placeholder { color: rgba(var(--text), .5); }
+    section.l-page aside.l-menu .c-ms-options:not(#u) {
+        margin-top: 0 !important;
+        max-height: 220px;
+        overflow-y: auto;
+    }
+    section.l-page.l-page aside.l-menu:not(#u) {
+        max-height: min(72svh, calc(100svh - 170px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))) !important;
+    }
+    section.l-page.l-page aside.l-menu {
+        background:
+            linear-gradient(160deg, rgba(var(--glass-light), 0.09) 0%, rgba(var(--glass-light), 0.03) 30%, rgba(var(--glass-light), 0) 60%),
+            color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+        backdrop-filter: blur(calc(var(--glass-blur) * 3.6)) saturate(130%);
+        -webkit-backdrop-filter: blur(18px) saturate(130%);
+        padding: 0 16px 18px !important;
+    }
+    section.l-page.l-page aside.l-menu .c-filters-head {
+        margin: 0 -16px 14px !important;
+        padding: 15px 16px 12px !important;
+        background: color-mix(in srgb, var(--glass-deep) 70%, transparent);
+        font-size: 15px;
+        letter-spacing: .04em;
+    }
+    section.l-page.l-page aside.l-menu .c-ms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 14px !important;
+        padding: 0 !important;
+    }
+    section.l-page.l-page aside.l-menu .c-ms-field:last-child { margin-bottom: 0 !important; }
+    section.l-page.l-page aside.l-menu .c-ms-title {
+        margin: 0 !important;
+        padding: 0 2px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        color: rgb(var(--text-2)) !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.l-page.l-page aside.l-menu {
+        opacity: 0;
+        transform: none !important;
+        animation: none;
+        transition: opacity var(--sheet-time) ease,
+                    display var(--sheet-time) allow-discrete;
+    }
+    section.l-page.menu-expanded aside.l-menu {
+        opacity: 1;
+        transform: none !important;
+        animation: shiki-sheet-fade var(--sheet-time) ease backwards;
+        touch-action: pan-y;
+    }
+}
+
+section.l-page aside.l-menu .c-ms-dropdown:not(#u) {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+}
+section.l-page aside.l-menu .c-ms {
+    display: grid !important;
+    grid-template-rows: min-content 0fr;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    transition: grid-template-rows var(--drop-time) var(--drop-ease-close);
+}
+section.l-page aside.l-menu .c-ms:has(> .c-ms-dropdown:not([hidden])) {
+    grid-template-rows: min-content 1fr;
+    transition: grid-template-rows var(--drop-time) var(--drop-ease);
+}
+section.l-page aside.l-menu .c-ms-dropdown:not(#u),
+section.l-page aside.l-menu .c-ms-dropdown[hidden]:not(#u) {
+    display: block !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    overflow: clip !important;
+    margin-top: 0 !important;
+    border-width: 0 !important;
+    clip-path: none !important;
+    transform: var(--drop-shift) !important;
+    animation: none !important;
+    opacity: 0 !important;
+    visibility: hidden;
+    transition: margin-top var(--drop-time) var(--drop-ease-close),
+                transform var(--drop-time) var(--drop-ease-close),
+                opacity var(--drop-time) var(--drop-fade-close),
+                border-width var(--drop-time) step-end,
+                visibility 0s linear var(--drop-time) !important;
+}
+section.l-page aside.l-menu .c-ms-dropdown:not([hidden]):not(#u) {
+    margin-top: var(--drop-gap) !important;
+    border-width: 1px !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible;
+    transition: margin-top var(--drop-time) var(--drop-ease),
+                transform var(--drop-time) var(--drop-ease),
+                opacity 0s, border-width 0s, visibility 0s !important;
+}
+section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms,
+section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms {
+    grid-template-rows: min-content 0fr;
+    transition: grid-template-rows var(--drop-time) var(--drop-ease-close);
+}
+section.l-page aside.l-menu .c-filters:has(.c-filter-select:focus) .c-ms-dropdown:not(#u),
+section.l-page aside.l-menu .c-filters:has(.c-score-input:focus) .c-ms-dropdown:not(#u) {
+    transform: var(--drop-shift) !important;
+    opacity: 0 !important;
+    visibility: hidden;
+    margin-top: 0 !important;
+    transition: margin-top var(--drop-time) var(--drop-ease-close),
+                transform var(--drop-time) var(--drop-ease-close),
+                opacity var(--drop-time) var(--drop-fade-close),
+                border-width var(--drop-time) step-end,
+                visibility 0s linear var(--drop-time) !important;
+}
+
+@media screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    section.l-page.l-page aside.l-menu:has(.c-ms:is([data-search_url], :has(.c-ms-option:nth-of-type(16))) > .c-ms-dropdown:not([hidden])) {
+        padding-bottom: var(--sheet-typing-room) !important;
+    }
+    section.l-page.l-page aside.l-menu:has(.c-ms-search:focus) {
+        scroll-snap-type: y proximity;
+        scroll-padding-top: var(--sheet-head);
+    }
+    section.l-page aside.l-menu .c-ms-field:has(.c-ms-search:focus) {
+        scroll-snap-align: start;
+    }
+    section.l-page aside.l-menu .c-ms-search:not(#u) {
+        scroll-margin-top: calc(var(--sheet-head) + 76px);
+        scroll-margin-bottom: var(--sheet-typing-room);
+    }
+    section.l-page aside.l-menu .c-ms:is([data-search_url], :has(.c-ms-option:nth-of-type(16))) .c-ms-options:not(#u) {
+        max-height: var(--drop-max-typing);
+    }
+    section.l-page aside.l-menu .c-ms-control:not(#u):active {
+        transform: none !important;
+    }
+}
+
+@supports (appearance: base-select) and selector(:open) {
+    @media not ((hover: none) and (pointer: coarse)) {
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select) {
+            --sort-n: 1;
+            --sort-opt: 28px;
+            padding-bottom: 0;
+            transition: padding-bottom var(--drop-time) var(--drop-ease-close);
+        }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(2)) { --sort-n: 2; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(3)) { --sort-n: 3; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(4)) { --sort-n: 4; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(5)) { --sort-n: 5; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(6)) { --sort-n: 6; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(7)) { --sort-n: 7; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(8)) { --sort-n: 8; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(9)) { --sort-n: 9; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(10)) { --sort-n: 10; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(11)) { --sort-n: 11; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(12)) { --sort-n: 12; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(13)) { --sort-n: 13; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(14)) { --sort-n: 14; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select option:nth-child(15)) { --sort-n: 15; }
+        section.l-page aside.l-menu .c-ms-field:has(> .c-filter-select:open) {
+            padding-bottom: calc(var(--drop-gap) + 2px + 2 * var(--drop-pad) + var(--sort-n) * var(--sort-opt));
+            transition: padding-bottom var(--drop-time) var(--drop-ease);
+        }
+        section.l-page aside.l-menu .c-filter-select option:not(#u) {
+            box-sizing: border-box;
+            block-size: var(--sort-opt);
+            line-height: 18px;
+        }
+        section.l-page aside.l-menu .c-filter-select::picker(select) {
+            position-try-fallbacks: none;
+            max-height: none;
+        }
+        section.l-page aside.l-menu .c-filter-select:not(:open)::picker(select) {
+            transition: clip-path var(--drop-time) var(--drop-ease-close),
+                        transform var(--drop-time) var(--drop-ease-close),
+                        display var(--drop-time) allow-discrete,
+                        overlay var(--drop-time) allow-discrete !important;
+        }
+    }
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1) !important;
+    top: 2px;
+    position: relative;
+    padding-top: 2px;
+}
+
+.p-dashboards-show .v2 .db-update .name,
+.b-comment > .inner .name-date .name,
+.b-comment > .inner header .name-date a.name,
+.b-topic > .inner header .name-date a.name,
+.b-dialog > .inner header .name-date a.name,
+.b-message > .inner header .name-date a.name {
+    font-size: 16px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    color: rgba(var(--text), 1);
+    font-size: 13px !important;
+}
+
+.b-message > .inner header .name-date a.name {
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-message > .inner header .name-date {
+    line-height: 24px;
+    overflow: visible;
+    white-space: normal;
+}
+
+.p-messages .mass-actions .action:after {
+    display: none;
+}
+
+.b-dialog > .inner div.body {
+    color: rgba(var(--text), 1);
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .sticky-topics .topic,
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    border-bottom: 1px solid rgba(var(--text), 0.1) !important;
+}
+
+.b-dialog,
+.p-dashboards-show .cc-news .c-news_topics .b-topic,
+.b-user.detailed,
+.b-comment,
+.b-db_entry-note,
+.p-topics .l-menu .clubs .entry,
+.p-topics .l-menu .sticky-topics .topic {
+    margin: 4px 0;
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.b-comments .comments-loaded,
+.b-message .comments-loaded {
+    padding-bottom: 10px !important;
+}
+
+.b-dialog:first-child {
+    padding-top: 15px;
+}
+
+.b-dialog .to_dialog {
+    background: none !important;
+    box-shadow: none !important;
+    color: rgba(var(--accent), 1);
+}
+
+.b-message {
+    margin: 10px 0;
+    border-top: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(var(--text), 0.1);
+}
+
+.b-message:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.b-dialog .b-message {
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+    margin-top: 0;
+}
+
+.b-comments-notifier {
+    background: rgba(var(--accent), 1);
+    color: var(--tone-f9f9f9);
+    line-height: 41px;
+    transition: 0.5s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    font-size: 19px;
+    font-weight: bold;
+    width: 37px;
+    height: 37px;
+    margin: 0;
+    top: 80px !important;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-comments-notifier:hover {
+        background-color: rgba(var(--accent), 1);
+    }
+}
+
+.b-message .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    box-shadow: var(--plate-shadow) !important;
+}
+
+.b-catalog_entry.completed .image-decor:before,
+.b-topic .b-catalog_entry.completed .image-decor:before,
+.b-message .b-catalog_entry.completed .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #419541 0);
+}
+
+.b-catalog_entry.dropped .image-decor:before,
+.b-topic .b-catalog_entry.dropped .image-decor:before,
+.b-message .b-catalog_entry.dropped .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
+}
+
+.b-catalog_entry.on_hold .image-decor:before,
+.b-topic .b-catalog_entry.on_hold .image-decor:before,
+.b-message .b-catalog_entry.on_hold .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+.b-catalog_entry.planned .image-decor:before,
+.b-topic .b-catalog_entry.planned .image-decor:before,
+.b-message .b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+.b-catalog_entry.rewatching .image-decor:before,
+.b-topic .b-catalog_entry.rewatching .image-decor:before,
+.b-message .b-catalog_entry.rewatching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #1F6F6A 0);
+}
+
+.b-catalog_entry.watching .image-decor:before,
+.b-topic .b-catalog_entry.watching .image-decor:before,
+.b-message .b-catalog_entry.watching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
+}
+
+.b-message .b-catalog_entry,
+.l-content.swiss .b-catalog_entry,
+.b-catalog-entry-embedded .b-catalog_entry {
+    background: transparent !important;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.b-message > .inner .was_updated:hover {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.tooltip-details .b-message {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.b-message .inner {
+    min-height: 38px;
+}
+
+.b-shiki_editor.previewed .body .preview .b-comment,
+.b-shiki_editor.previewed .body .preview .b-message {
+    border: none !important;
+}
+
+.p-messages .b-postloader.collapsed {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    font-size: 11px;
+    padding: 3px 2px 2px 15px;
+    background: var(--plate-bg-strong);
+    box-shadow: var(--plate-shadow) !important;
+    width: 135px;
+    height: 15px;
+    border-radius: 9px;
+    position: relative;
+    margin-left: -22px;
+    top: -2px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.b-dialog .to_dialog:after,
+.to-review:after {
+    content: 'перейти к диалогу';
+}
+
+.b-dialog .to_dialog:before,
+.to-review:before {
+    font: normal normal normal 15px FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    background: rgba(var(--glass), var(--hundred));
+    color: rgba(var(--text-strong), 0.7);
+    box-shadow: var(--plate-shadow) !important;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: 0.3s;
+}
+
+.b-dialog .to_dialog:before {
+    content: '\f0e6';
+}
+
+.b-dialog .to_dialog:hover:after,
+.b-dialog .to_dialog:hover:before,
+.to-review:hover:before,
+.to-review:hover:after {
+    color: rgba(var(--accent), 1);
+}
+
+.b-dialog .to_dialog,
+.to-review {
+    font-size: 0 !important;
+}
+
+.p-messages .mass-actions,
+.b-options-floated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+body.p-profiles .mass-actions .action a,
+body .headline .misc-links a,
+body .midheadline .misc-links a,
+body .subheadline .misc-links a {
+    margin: 0;
+    font-size: 0;
+    position: relative;
+    padding: 0 0 0 13px;
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a,
+body.p-db_entries-works .headline .misc-links a,
+body.p-db_entries-works .midheadline .misc-links a,
+body.p-db_entries-works .subheadline .misc-links a {
+    font-size: inherit !important;
+    right: -3rem;
+}
+
+body.p-profiles .mass-actions .action a:after,
+body.p-profiles .subheadline .misc-links > a:after,
+.headline .misc-links > a:after,
+.midheadline .misc-links > a:after,
+.subheadline .misc-links > a:after {
+    content: '';
+    display: inline-flex !important;
+    background: rgba(var(--glass), 1);
+    color: rgba(var(--text-strong), 0.7);
+    height: 32px;
+    width: 33px;
+    font-family: 'FontAwesome', sans-serif;
+    padding: 0 0 2px 1px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 3px rgba(var(--shade), 0.1);
+    transition: 0.2s all;
+    z-index: 2;
+}
+
+body.p-profiles .mass-actions .action a:before,
+.headline .misc-links > a:before,
+.midheadline .misc-links > a:before,
+.subheadline .misc-links > a:before {
+    content: '';
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    font-size: 11px;
+    letter-spacing: -6px;
+    background: rgba(var(--glass), 0.7);
+    width: 18px;
+    border-radius: 8px;
+    z-index: 2;
+    color: var(--heading-link);
+}
+
+body.p-profiles .mass-actions .action a:before {
+    content: '\f00c\f00c';
+}
+
+body.p-profiles .mass-actions .action a[href*='/read']:after {
+    content: '\f2b6';
+    font-size: 15px;
+}
+
+body.p-profiles .mass-actions .action a[href*='/dele']:after {
+    content: '\f014';
+    font-size: 18px;
+}
+
+body.p-profiles .mass-actions .action a:hover:before {
+    color: rgba(var(--text), 1);
+}
+
+body.p-profiles .mass-actions .action a:hover:AFTER,
+.headline .misc-links > a:hover:after,
+.midheadline .misc-links > a:hover:after,
+.subheadline .misc-links > a:hover:after {
+    color: var(--heading-link);
+}
+
+body.p-db_entries-works .p-profiles .mass-actions .action a:after,
+body.p-db_entries-works .p-profiles .subheadline .misc-links > a:after,
+.p-db_entries-works .headline .misc-links > a:after,
+.p-db_entries-works .midheadline .misc-links > a:after,
+.p-db_entries-works .subheadline .misc-links > a:after,
+body.p-db_entries-works .p-profiles .mass-actions .action a:before,
+.p-db_entries-works .headline .misc-links > a:before,
+.p-db_entries-works .midheadline .misc-links > a:before,
+.p-db_entries-works .subheadline .misc-links > a:before {
+    display: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    color: rgba(var(--text-strong), 1) !important;
+    border-radius: 50%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:after {
+    content: none !important;
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:first-child {
+    background: rgba(52, 105, 54, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(2n) {
+    background: rgba(65, 100, 144, 0.4);
+}
+
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:nth-child(3n) {
+    background: rgba(148, 70, 113, 0.4);
+}
+
+body#messages_index .l-page,
+body#dialogs_index .l-page,
+body#dialogs_show .l-page,
+body.p-user_history .l-page {
+    max-width: 800px;
+}
+
+.b-comment > .inner div.body,
+.b-message > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body {
+    margin-left: 58px;
+}
+
+.b-dialog > .inner div.body .inner div.body {
+    margin-left: 40px;
+}
+
+@media only screen and (min-width: 1075px) {
+    .b-comments-notifier[style*="none"] {
+        display: block !important;
+        visibility: hidden;
+        z-index: 9;
+    }
+    .b-comments-notifier:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        height: 56px;
+        margin: auto;
+        background: linear-gradient(to bottom, color-mix(in srgb, var(--glass-deep) calc(var(--hundred) * 100%), transparent) 0 , color-mix(in srgb, var(--glass-deep) 80%, transparent) 80%, color-mix(in srgb, var(--glass-deep) 40%, transparent) 100%);
+        z-index: -1;
+        opacity: 0;
+        visibility: visible;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        box-shadow: 0 1px 20px 10px color-mix(in srgb, var(--glass-deep) 40%, transparent);
+    }
+    .x1000 .b-comments-notifier:after {
+        max-width: 100%;
+    }
+    .b-comments-notifier[style*=": 0"]:after {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .b-comments-notifier {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.p-db_entries-works .p-profiles .mass-actions .action a,
+    body.p-db_entries-works .headline .misc-links a,
+    body.p-db_entries-works .midheadline .misc-links a,
+    body.p-db_entries-works .subheadline .misc-links a {
+        font-size: 0 !important;
+        right: -3rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .b-dialog > .inner header img {
+        margin: 1px 10px 7px 0 !important;
+        width: 48px !important;
+    }
+    .b-dialog .b-message .inner header img {
+        margin: 7px 7px 4px 0 !important;
+        width: 37px !important;
+    }
+    .b-message > .inner .name-date .time {
+        padding-top: 0;
+        line-height: 14px;
+    }
+    .b-comments-notifier {
+        display: none !important;
+    }
+    .b-comment > .inner div.body,
+    .b-message > .inner div.body,
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-topic.aside-expanded > .inner,
+    .b-dialog.aside-expanded > .inner,
+    .b-message.aside-expanded > .inner,
+    .b-comment.aside-expanded > .inner,
+    .b-topic.aside-expanded > .b-comments {
+        margin-left: 0 ;
+        min-height: 200px;
+    }
+    .b-topic.aside-expanded > .inner aside.buttons,
+    .b-comment.aside-expanded > .inner aside.buttons,
+    .b-dialog.aside-expanded > .inner aside.buttons,
+    .b-message.aside-expanded > .inner aside.buttons {
+        display: block;
+        margin-right: 0 ;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100% !important;
+        background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        z-index: 3;
+        padding: 10px 14px;
+    }
+    .b-message > .inner div.body .b-catalog_entry {
+        max-width: 600px;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 300px;
+        max-width: 600px;
+    }
+    .b-comment > .inner header .name-date a.name,
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name,
+    .b-message > .inner header .name-date a.name {
+        font-size: 14px;
+    }
+    .b-dialog > .inner > header .name-date a.name {
+        font-size: 16px;
+    }
+    .b-topic > .inner header .name-date a.name,
+    .b-dialog > .inner header .name-date a.name {
+        top: 2px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-dialog .to_dialog {
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+    .b-dialog .b-message {
+        margin-left: 0 ;
+    }
+    .b-dialog > .inner div.body {
+        margin-left: 10px !important;
+    }
+    .b-message > .inner div.body .b-catalog_entry.cc .content {
+        width: 140px;
+        min-height: 160px;
+    }
+    .b-message > .inner div.body .entry-tooltip_container {
+        min-height: 180px;
+    }
+    .b-message {
+        padding-bottom: 15px;
+    }
+    .block.m0 .b-message {
+        padding-bottom: 10px !important;
+    }
+}
+
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,
+.b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .option {
+    max-width: 200px;
+}
+
+.p-user_rates-index .list-lines tr td .episodes_total:after,
+.p-user_rates-index .list-lines tr td .episodes_total:before {
+    color: rgba(var(--accent), 1);
+}
+
+.p-user_rates-index .l-content .b-options-floated span:before,
+.p-user_rates-index .l-content .b-options-floated span:after {
+    color: rgba(var(--text-2), 1);
+    font-size: 0;
+}
+
+.p-user_rates-index .l-content .b-options-floated span:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .v2 .db-update .name:hover,
+.b-comment > .inner .name-date .name:hover,
+.b-comments .comments-collapser:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.p-user_rates-index .list-lines tr td .episodes_total {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.p-user_rates-index .list-lines tr .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines tr .name a:hover,
+    .b-user.detailed .history .line a .event:hover {
+        background: none;
+        box-shadow: none;
+        color: rgba(var(--accent), 1);
+        text-decoration: none;
+        border: none;
+    }
+}
+
+.p-user_rates-index .list-lines tr.editable {
+    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+.p-user_rates-index .stat-categories .category {
+    color: rgba(var(--accent), 1);
+    line-height: normal !important;
+    margin: 0 0 0 2px;
+    padding: 0 7px;
+    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .stat-categories .category:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.1);
+        box-shadow: none;
+        background: none;
+    }
+}
+
+.p-user_rates-index .stat-categories .category.active {
+    color: rgba(var(--accent), 1);
+}
+
+.p-user_rates-index .list-groups .summary.lines {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .l-content .order-control {
+    color: rgba(var(--text-2), 1);
+}
+
+.p-user_rates-index .l-content .order-control:hover {
+    color: rgba(var(--accent), 1);
 }

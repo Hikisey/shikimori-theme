@@ -1,14 +1,33 @@
-/* shiki glass v1.6.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 /* Тёмный редактор кода в настройках и замена постеров персонажей.
    Эти две строки нужны здесь: внутри файлов темы Шикимори их вырезает. */
 @import url("https://css-club.web.app/css/CodeMirror_dark.css");
 @import url("https://css-club.web.app/css/custom_posters.min.css");
 
 /* 4 части: Шикимори обрабатывает только ~6 первых @import, включая две строки css-club выше */
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.23/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.23/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.23/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.6.23/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.0/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.0/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.0/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.7.0/css/part_04.css");
+
+/* Если какая-то из четырёх частей не загрузилась (Шикимори хранит ошибку 8 часов),
+   в левом нижнем углу появится надпись с её номером. Тогда откройте
+   https://shikimori.io/tests/reset_styles_cache (или shikimori.rip/tests/reset_styles_cache)
+   и вставьте туда адрес этой части. Когда всё загрузилось, надписи нет. */
+@media screen and (min-width: 1px) {
+  html::after {
+    content: var(--sg-p1, "shiki glass: не загрузилась часть 1. ") var(--sg-p2, "shiki glass: не загрузилась часть 2. ") var(--sg-p3, "shiki glass: не загрузилась часть 3. ") var(--sg-p4, "shiki glass: не загрузилась часть 4. ");
+    position: fixed;
+    left: 8px;
+    bottom: 8px;
+    z-index: 2147483647;
+    max-width: calc(100vw - 16px);
+    color: #ff8080;
+    font: bold 12px/1.4 sans-serif;
+    text-shadow: 0 1px 2px #000;
+    pointer-events: none;
+  }
+}
 
 /* ===================== Палитра ===================== */
 /* Четыре группы: АКЦЕНТ, ФОН, СТЕКЛО, ТЕКСТ. Всё остальное тема считает сама:

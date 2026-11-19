@@ -1,6 +1,6 @@
 # shiki glass — архитектура проекта
 
-> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.5.0**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
+> подробная карта темы для [шикимори](https://shikimori.one), актуально для **v1.7**: где что лежит, как шикимори загружает и чистит css, как устроена палитра, как выходят релизы и чем отличаются телефон и пк.
 
 ## содержание
 
@@ -26,9 +26,9 @@
 | | |
 |---|---|
 | **репозиторий** | github.com/Hikisey/shikimori-theme |
-| **текущая версия** | v1.5.0 (подвал сайта: «shiki glass v1.5.0»), 4 части по ≤ 155 КБ |
+| **текущая версия** | см. подвал сайта «shiki glass vX.Y.Z» и последний тег; 4 части по ≤ 155 КБ |
 | **основа** | тема E-design от ed-main, переписанная и расширенная |
-| **объём** | 35 модулей в `src/`, около 19 700 строк и 567 КБ без сжатия (с комментариями); выпускаются 4 частями `css/part_NN.css` по ≤ 155 КБ |
+| **объём** | 36 модулей в `src/` (~620 КБ с комментариями); сборка вырезает комментарии, выпускается 4 частями `css/part_NN.css` по ≤ 155 КБ (~560 КБ, запас ~58 КБ на v1.7.0) |
 | **подключение** | по строке `@import` на каждую часть (с тегом версии) + блок палитры в «Внешнем виде сайта» |
 | **без js** | всё сделано на чистом css: шикимори не пускает скрипты в стили |
 
@@ -51,7 +51,7 @@ flowchart LR
 
 | путь | зачем |
 |---|---|
-| `src/` | исходники: 35 модулей по слоям (таблица ниже) и `manifest.txt` с порядком каскада |
+| `src/` | исходники: 36 модулей по слоям (таблица ниже) и `manifest.txt` с порядком каскада |
 | `css/part_NN.css` | то, что подключается: модули подряд, нарезанные между правилами на 4 части ≤ 155 КБ. руками не правятся |
 | `tools/build.py` | сборка `src/` → `css/`, подстановка версии в подвал, печать строк `@import` |
 | `tools/quick_check.py`, `tools/shot.js` | быстрая проверка: сборка во временную папку, эмуляция фильтра, жёсткие правила, скриншот сохранённой страницы |
@@ -149,7 +149,13 @@ flowchart LR
 
 - **сборка:** `python3 tools/build.py [--version X.Y.Z]` — склейка модулей по `src/manifest.txt`, нарезка между правилами по `css/part_NN.css` (≤ 155 000 байт, жёсткий предел 160 КБ и 4 части), версия в `layout/footer.css`, в конце строки `@import`. модуль, которого нет в манифесте, в сборку не попадёт — скрипт предупредит.
 - **быстрая проверка (по умолчанию для мелких правок):** `python3 tools/quick_check.py --page <сохранённая страница> [--phone]` — сборка во временную папку, эмуляция фильтра шикимори с проверкой, что не пропало ни одно правило, проверка ссылок после camo, жёсткие правила (behavior, `@view-transition`, обратные слэши, размер частей), счётчик `:hover` вне медиазапроса, скриншот страницы с темой и палитрой из `site.css`.
-- **полная регрессия (перед релизом):** сравнение вычисленных стилей и скриншотов с прошлым тегом на пк и телефоне (инструменты у автора).
+- **сборка без комментариев:** `build.py` убирает комментарии из `css/part_NN.css` (в `src/` они остаются). Шикимори и так вырезает их при загрузке, а размер файла считается с ними; без них в 4 части помещается на ~56 КБ больше. В начале каждой части — метка `html:root { --sg-pN: ""; }`; блок в `site.css` показывает в левом нижнем углу надпись «не загрузилась часть N», если метки нет.
+- **проверки quick_check (с v1.7.0):** вложенный `:has()`, псевдоэлемент внутри `:is()`/`:where()`, неизвестный id страницы (`tools/page_ids.txt`), `backdrop-filter` без пары `-webkit-` и `-webkit-backdrop-filter` с `var()`, повтор `@keyframes`, рост числа `:hover` вне медиазапроса (`HOVER_MAX`), запас размера.
+- **полная регрессия (перед релизом):** `tools/regress/` —
+  - `mkstyle.py <папка частей> <site.css> <out.css>` — стиль, каким его отдаёт Шикимори (фильтр + палитра);
+  - `cdiff.js A.css B.css out.json страницы…` — вычисленные стили всех элементов и `::before`/`::after` (Chromium, ширины из `WIDTHS`, по умолчанию 1366 и 390, переходы и анимации выключены) — должно быть 0 отличий для правок без изменения вида;
+  - `shots.js style.css папка chromium|webkit pc|phone страницы…` + `imgdiff.py A B diff` — скриншоты (WebKit = движок Safari) и доля изменившихся пикселей; сеть кешируется (`NETCACHE`), шум ~0,02 %;
+  - `coverage.js style.css out.json страницы…` — какие селекторы не совпали ни на одной сохранённой странице.
 
 ## палитра
 
@@ -230,16 +236,16 @@ background: color-mix(in srgb, var(--glass-deep) 55%, transparent);
 
 ## site.css: установка и настройка
 
-1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/v1.5.0/site.css
+1. **открыть site.css нужного тега** — raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/site.css
 2. **скопировать целиком** — сначала 2 сторонних импорта (тёмный CodeMirror, свои постеры), потом 4 импорта темы (все с raw.githubusercontent)
 3. **вставить в «Внешний вид сайта»** — заменить всё старое, сохранить, обновить страницу с Ctrl+Shift+R
 4. **менять только блок «Палитра»** — `@media screen and (min-width: 1px) { html:root { … } }`, обёртку не удалять
 
 ```css
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.5.0/css/part_01.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.5.0/css/part_02.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.5.0/css/part_03.css");
-@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/v1.5.0/css/part_04.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/css/part_01.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/css/part_02.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/css/part_03.css");
+@import url("https://raw.githubusercontent.com/Hikisey/shikimori-theme/vX.Y.Z/css/part_04.css");
 ```
 
 `html:root` в палитре нужен, чтобы вес селектора совпал с палитрой темы и пользовательский блок, идущий позже, побеждал.

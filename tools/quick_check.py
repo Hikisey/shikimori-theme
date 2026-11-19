@@ -20,6 +20,7 @@ import argparse, glob, os, re, subprocess, sys, tempfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T = os.path.join(ROOT, 'tools')
 # унаследованный приём иконочного шрифта: url("/\x/…") — 5 мест; плюс \fXXX в content
+HOVER_MAX = 189  # правил с :hover вне (hover: hover) — число может только уменьшаться
 ALLOWED_BACKSLASH = re.compile(r'''content:\s*['"](?:\\f[0-9a-f]{3})+['"]|url\("/\\x/''', re.I)
 
 
@@ -77,7 +78,41 @@ def main():
                 if ':hover' in head and 'hover' not in stack:
                     total += 1
                 stack.append('rule')
-    print(f':hover вне @media (hover: hover): {total} правил (новые правила с :hover кладите в медиазапрос)')
+    print(f':hover вне @media (hover: hover): {total} правил (предел {HOVER_MAX}; новые правила с :hover кладите в медиазапрос)')
+    if total > HOVER_MAX:
+        ok = False; print(f'НАВЕДЕНИЕ: правил с :hover вне медиазапроса стало больше ({total} > {HOVER_MAX})')
+    # дополнительные проверки по собранным частям (комментарии уже вырезаны сборкой)
+    known = {l.strip() for l in open(os.path.join(T, 'page_ids.txt'), encoding='utf-8') if l.strip() and not l.startswith('#')}
+    kf = {}
+    for p in parts:
+        s = re.sub(r'/\*.*?\*/', '', open(p, encoding='utf-8').read(), flags=re.S)
+        name = os.path.basename(p)
+        for m in re.finditer(r':has\(', s):
+            depth, j = 1, m.end()
+            while j < len(s) and depth:
+                depth += {'(': 1, ')': -1}.get(s[j], 0); j += 1
+            if ':has(' in s[m.end():j]:
+                ok = False; print(f'HAS: вложенный :has() в {name}: {s[m.start():j][:90]}')
+        for m in re.finditer(r':(?:is|where)\([^(){}]*::?(?:before|after)\b', s):
+            ok = False; print(f'IS: псевдоэлемент внутри :is()/:where() в {name}: {m.group(0)[:90]}')
+        for m in re.finditer(r'#([a-z_]+_(?:index|show|edit|new))\b', s):
+            if m.group(1) not in known:
+                ok = False; print(f'ID: неизвестная страница #{m.group(1)} в {name} (опечатка? список — tools/page_ids.txt)')
+        for m in re.finditer(r'@keyframes\s+([\w-]+)', s):
+            kf[m.group(1)] = kf.get(m.group(1), 0) + 1
+        for m in re.finditer(r'([^{}]*)\{([^{}]*)\}', s):
+            body = m.group(2)
+            if re.search(r'(?<![-\w])backdrop-filter\s*:(?!\s*none)', body) and '-webkit-backdrop-filter' not in body:
+                ok = False; print(f'BLUR: backdrop-filter без -webkit-backdrop-filter в {name}: {m.group(1).strip()[:80]}')
+            if re.search(r'-webkit-backdrop-filter\s*:[^;]*var\(', body):
+                ok = False; print(f'BLUR: -webkit-backdrop-filter с var() в {name}: {m.group(1).strip()[:80]}')
+    for k, v in kf.items():
+        if v > 1:
+            ok = False; print(f'KEYFRAMES: @keyframes {k} объявлен {v} раз(а)')
+    room = 4 * 155_000 - sum(os.path.getsize(p) for p in parts)
+    print(f'запас до 4 × 155 КБ: {room} байт')
+    if room < 5000:
+        print('ВНИМАНИЕ: запас меньше 5 КБ')
     if a.page:
         site = open(os.path.join(ROOT, 'site.css'), encoding='utf-8').read()
         site = re.sub(r'@import url\("[^"]*"\);', '', site)

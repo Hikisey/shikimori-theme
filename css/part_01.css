@@ -1,78 +1,59 @@
-/* shiki glass v1.6.23 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
-/* ===== tokens/palette =====
-   палитра: акцент, фон, стекло, текст и производные оттенки (переопределяется блоком «Палитра» в site.css) */
+/* shiki glass v1.7.0 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
-    /* =====================================================================
-       ПАЛИТРА ТЕМЫ — все цвета берутся отсюда.
-       Цвета пишутся rgb-тройкой «R, G, B» (так работает rgba(var(--x), .5)).
-       Чтобы перекрасить тему, вставьте в «Внешний вид сайта» ПОСЛЕ строк @import:
-         @media screen and (min-width: 1px) { html:root { --accent: 90, 150, 255; } }
-       (обёртка @media обязательна — без неё Шикимори применит стиль только к ПК).
-       Старые имена (--bright-color, --block-color, --page-bg …) тоже понимаются.
-       ===================================================================== */
     html:root {
-        /* ---------- АКЦЕНТ: всё «красное» считается из одного цвета ---------- */
-        --accent: var(--bright-color, 232, 108, 108);   /* основной акцент: ссылки, значки, подсветка */
-        --link: var(--accent);                          /* цвет ссылок (по умолчанию = акцент) */
-        /* оттенки (--accent-dim, --accent-hover, --link-hover) вычисляются ниже сами */
+        --accent: var(--bright-color, 232, 108, 108);
+        --link: var(--accent);
 
-        /* ---------- ФОН ---------- */
-        --bg-color: var(--page-bg, 28, 30, 33);         /* цвет под обоями на ПК (виден, пока обои грузятся) */
-        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145); /* то же на телефоне */
-        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp"); /* обои на ПК */
-        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp"); /* обои на телефоне */
-        --bg-zoom: 1.08;                                /* приближение обоев на ПК (1 — без зума) */
-        --bg-blur: 0px;                                 /* размытие обоев на ПК */
-        --bg-blur-mobile: 1.5px;                        /* размытие обоев на телефоне */
-        --bg-dim: .5;                                   /* затемнение обоев (0 — нет, 1 — чёрный) */
-        --bg-brightness-mobile: .9;                     /* яркость обоев на телефоне (1 — как есть) */
-        --profile-banner: none;                         /* баннер профиля: url("…") */
-        --profile-banner-height: 300px;                 /* высота баннера */
-        --profile-banner-height-mobile: 170px;          /* высота баннера на телефоне */
-        --profile-banner-position: center;              /* какая часть картинки видна */
-        --profile-banner-glow: .5;                      /* сила свечения баннера под шапкой */
+        --bg-color: var(--page-bg, 28, 30, 33);
+        --bg-color-mobile: var(--page-bg-mobile, 167, 148, 145);
+        --bg-image: url("https://cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg.webp");
+        --bg-image-mobile: url("//cdn.jsdelivr.net/gh/Hikisey/shikimori-theme/bg_m.webp");
+        --bg-zoom: 1.08;
+        --bg-blur: 0px;
+        --bg-blur-mobile: 1.5px;
+        --bg-dim: .5;
+        --bg-brightness-mobile: .9;
+        --profile-banner: none;
+        --profile-banner-height: 300px;
+        --profile-banner-height-mobile: 170px;
+        --profile-banner-position: center;
+        --profile-banner-glow: .5;
 
-        /* ---------- СТЕКЛО: блоки, меню, окна ---------- */
-        --glass: var(--block-color, 30, 34, 42);        /* заливка стекла; тёмные оттенки меню и окон считаются из неё */
-        --glass-light: var(--white-color, 255, 255, 255); /* рамки и блики на стекле */
-        --glass-blur: 5px;                              /* размытие под стеклом (телефон, стрелки лент) */
-        --shade: 0, 0, 0;                               /* цвет теней и затемнений */
+        --glass: var(--block-color, 30, 34, 42);
+        --glass-light: var(--white-color, 255, 255, 255);
+        --glass-blur: 5px;
+        --shade: 0, 0, 0;
 
-        /* ---------- ТЕКСТ ---------- */
-        --text: var(--light-color, 236, 240, 247);      /* основной текст */
-        --text-2: var(--dark-color, 196, 204, 216);     /* второстепенный текст, подписи */
-        --text-3: var(--dull-color, 140, 148, 160);     /* приглушённый: даты, счётчики */
-        --text-strong: var(--white-color, 255, 255, 255); /* самый яркий: заголовки, текст на кнопках */
-        --hundred: 1;                                   /* непрозрачность части текста */
+        --text: var(--light-color, 236, 240, 247);
+        --text-2: var(--dark-color, 196, 204, 216);
+        --text-3: var(--dull-color, 140, 148, 160);
+        --text-strong: var(--white-color, 255, 255, 255);
+        --hundred: 1;
 
-        /* ---------- СТАТУСЫ И ОЦЕНКИ (по желанию) ---------- */
         --very-high-rating: 129, 199, 132;
         --high-rating: 156, 204, 101;
         --average-rating: 255, 202, 40;
         --small-rating: 239, 108, 108;
-        --time-filled: var(--accent);                   /* полоска просмотра: заполнено */
-        --time-empty: 34, 38, 46;                       /* полоска просмотра: пусто */
+        --time-filled: var(--accent);
+        --time-empty: 34, 38, 46;
         --anime-inprocess: var(--accent);
         --anime-complete: var(--accent);
         --manga-inprocess: var(--accent);
         --manga-complete: var(--accent);
     }
-    /* ---------- Производные оттенки (не трогайте: считаются из палитры выше) ----------
-       Ниже — значения по умолчанию для старых браузеров, затем те же оттенки,
-       вычисленные из --accent / --glass / --text / --link (Chrome 119+, Safari 16.4+, Firefox 128+). */
     html:root {
-        --accent-dim: rgb(178, 58, 64); /* тёмный акцент: кнопки, подложка ника */
-        --accent-hover: rgb(214, 82, 82); /* акцент кнопок под курсором */
-        --glass-deep: rgb(20, 22, 28); /* самое тёмное стекло: меню, затемнение обоев */
-        --glass-bar: rgb(18, 20, 26); /* верхняя панель */
-        --glass-bar-hover: rgb(26, 29, 37); /* пункты панели под курсором */
-        --glass-popup: rgb(38, 43, 54); /* всплывающие окна и подсказки */
-        --glass-active: rgb(26, 28, 34); /* нажатые и выбранные элементы */
-        --glass-shadow: rgb(10, 12, 16); /* тени блоков */
-        --text-input: rgb(165, 172, 184); /* текст в полях ввода */
-        --link-hover: rgb(245, 150, 150); /* ссылки под курсором */
-        /* внутренние оттенки (tone-…) — считаются из стекла, текста и акцента сами */
+        --accent-dim: rgb(178, 58, 64);
+        --accent-hover: rgb(214, 82, 82);
+        --glass-deep: rgb(20, 22, 28);
+        --glass-bar: rgb(18, 20, 26);
+        --glass-bar-hover: rgb(26, 29, 37);
+        --glass-popup: rgb(38, 43, 54);
+        --glass-active: rgb(26, 28, 34);
+        --glass-shadow: rgb(10, 12, 16);
+        --text-input: rgb(165, 172, 184);
+        --link-hover: rgb(245, 150, 150);
         --tone-6e1515: rgb(110, 21, 21);
         --tone-010101: rgb(1, 1, 1);
         --tone-0c0c0c: rgb(12, 12, 12);
@@ -209,28 +190,20 @@
     }
 }
 
-/* Цвет ссылок в истории на светлой схеме */
 html[data-color-mode=light] {
     --link-color: #adbfde;
 }
 
-/* ===== tokens/components =====
-   токены компонентов: общие значения плашек, заголовков, кнопок, стрелок лент, карточек и анимаций наведения.
-   Меняются в одном месте и действуют на все одинаковые элементы.
-   Свои значения можно задать в site.css внутри html:root { ... } — они перекроют эти. */
-
 :root {
-    /* плашки (стеклянные блоки) */
     --plate-bg: rgba(var(--glass), 0.4);
     --plate-bg-strong: rgba(var(--glass), 0.6);
     --plate-shadow: 0 2px 6px 2px rgba(var(--shade), 0.2);
     --plate-shadow-soft: 0 2px 6px 2px rgba(var(--shade), 0.1);
     --plate-shadow-strong: 0 2px 6px 2px rgba(var(--shade), 0.3);
-    --plate-blur: blur(var(--glass-blur)); /* только для backdrop-filter; в -webkit-backdrop-filter всегда фиксированное значение */
+    --plate-blur: blur(var(--glass-blur));
     --plate-radius: 10px;
     --plate-radius-lg: 14px;
 
-    /* заголовки .headline / .midheadline / .subheadline */
     --heading-radius: 13px;
     --heading-height: 28px;
     --heading-text: rgba(var(--text-2), 1);
@@ -238,13 +211,10 @@ html[data-color-mode=light] {
     --heading-dot: linear-gradient(270deg, rgba(var(--text-2), 1), rgba(var(--text-2), 0.3));
     --heading-dot-hover: linear-gradient(270deg, rgba(var(--accent), 1), rgba(var(--accent), 0.3));
 
-    /* кнопки */
     --btn-bg: color-mix(in srgb, var(--accent-dim) 70%, transparent);
     --btn-bg-hover: var(--accent-hover);
     --btn-text: rgba(var(--text-strong), 1);
 
-    /* метки-переключатели формы комментария («Оффтоп», «18+», «На shiki») и кнопки панели выбора.
-       включённая метка окрашивается --chip-tint, по умолчанию акцентом палитры (меняется вместе с темой) */
     --chip-bg: rgba(var(--glass), 0.55);
     --chip-border: rgba(var(--text), 0.22);
     --chip-text: rgba(var(--text), 0.88);
@@ -252,11 +222,9 @@ html[data-color-mode=light] {
     --chip-radius: 9px;
     --chip-tint: var(--accent);
 
-    /* значки панели редактора комментария */
     --tool-icon: rgba(var(--text), 0.9);
     --tool-icon-off: rgba(var(--text), 0.35);
 
-    /* стрелки лент (скриншоты, видео и другие карусели) */
     --arrow-size: 38px;
     --arrow-bg: rgba(var(--glass), 0.72);
     --arrow-bg-hover: rgba(var(--accent), .9);
@@ -265,45 +233,36 @@ html[data-color-mode=light] {
     --arrow-icon-size: 20px 20px;
     --arrow-inset: 8px;
 
-    /* карточки аниме и манги .b-catalog_entry */
     --card-radius: 14px;
     --card-image-radius: 12px;
-    --card-lift: translateY(-6px);   /* без scale: увеличение мылило карточку, пока шла анимация */
+    --card-lift: translateY(-6px);
     --card-hover-shadow: 0 16px 32px rgba(var(--shade), 0.5), 0 0 0 1px rgba(var(--accent), .35);
     --card-zoom: scale(1.06);
 
-    /* всплывающие подсказки .tipsy */
     --tip-bg: color-mix(in srgb, var(--glass-deep) 90%, transparent);
     --tip-radius: 12px;
     --tip-shadow: var(--plate-shadow-strong);
 
-    /* вкладки и переключатели */
     --tab-active: rgba(var(--accent), 1);
     --tab-tap-ease: cubic-bezier(0.55, 0.06, 0.68, 0.19);
 
-    /* поля ввода и выпадающие списки */
     --field-text: rgb(var(--text));
     --drop-shift: translateY(-4px);
-    --drop-time: var(--ui-drop);   /* списки фильтров: та же длительность, что у «Сортировки» (base.css) */
-    --drop-ease: var(--ui-ease);   /* и та же кривая при раскрытии, без перелёта */
-    --drop-ease-close: cubic-bezier(.2, .5, .6, .6);   /* сворачивание: быстро в начале, без медленного хвоста в конце */
-    --drop-fade-close: cubic-bezier(.6, 0, .9, .4);    /* рамка и фон гаснут к самому концу сворачивания */
-    --drop-max-typing: min(320px, 45svh);              /* телефон: высота вариантов в списке с поиском (уходит под клавиатуру и листается) */
+    --drop-time: var(--ui-drop);
+    --drop-ease: var(--ui-ease);
+    --drop-ease-close: cubic-bezier(.2, .5, .6, .6);
+    --drop-fade-close: cubic-bezier(.6, 0, .9, .4);
+    --drop-max-typing: min(320px, 45svh);
 
-    /* шторка фильтров на телефоне: открытие и закрытие */
     --sheet-time: .25s;
     --sheet-shift: 16px;
-    --sheet-head: 58px;          /* высота липкого заголовка «Фильтры»: поле в фокусе встаёт под ним */
-    --sheet-typing-room: 60svh;  /* запас под полем при вводе ≈ клавиатура */
+    --sheet-head: 58px;
+    --sheet-typing-room: 60svh;
 
-    /* плавность наведения и переходов */
     --ease-out: cubic-bezier(.22, 1, .36, 1);
     --ease-fast: 0.2s ease;
     --ease-base: 0.3s ease;
 }
-
-/* ===== base/fonts =====
-   @font-face: шрифты и иконочный шрифт */
 
 @font-face {
     font-family: "Comfortaa";
@@ -341,18 +300,6 @@ html[data-color-mode=light] {
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
-/* ----------------------------------------------------------------
-   Подменные шрифты на время загрузки Comfortaa (первое открытие сайта).
-   Пока Comfortaa качается, текст раскладывается системным шрифтом, а он
-   уже и ниже — когда Comfortaa приходит, строки и всё по центру
-   «дёргаются». Здесь системные шрифты подогнаны под размеры Comfortaa
-   (size-adjust — ширина, ascent/descent — высота строки), поэтому
-   замена шрифта почти ничего не сдвигает. Коэффициенты посчитаны по
-   ширине русского и английского текста интерфейса (tools: fontTools).
-   unicode-range как у Comfortaa: прочие символы (★, японский…) берутся
-   из обычного sans-serif, как раньше. Порядок: Arial/Liberation Sans,
-   DejaVu Sans, Noto Sans — что найдётся в системе.
-   ---------------------------------------------------------------- */
 @font-face {
     font-family: "Comfortaa Fallback";
     font-style: normal;
@@ -441,11 +388,7 @@ html[data-color-mode=light] {
     font-display: block;
 }
 
-/* ===== base/base =====
-   база: ссылки, текст, таблицы, полосы прокрутки, служебные мелочи */
-
 :root {
-    /* подменные шрифты — base/fonts.css: пока грузится Comfortaa, вёрстка не прыгает */
     --font-family: "Comfortaa", "Comfortaa Fallback", "Comfortaa Fallback DejaVu", "Comfortaa Fallback Noto", sans-serif !important;
     --font-main: "Comfortaa", "Comfortaa Fallback", "Comfortaa Fallback DejaVu", "Comfortaa Fallback Noto", sans-serif !important;
     --font-alt: var(--font-family);
@@ -489,7 +432,6 @@ html[data-color-mode=light] {
     position: relative;
 }
 
-/* цвет вкладок под никнеймом */
 .b-link,
 .b-mention,
 .b-mention:before,
@@ -510,12 +452,10 @@ html[data-color-mode=light] {
     color: rgba(var(--accent), 1) !important;
 }
 
-/* инфо-описание */
 .line .value {
     color: rgba(var(--text), 1) !important;
 }
 
-/* инфо тег */
 .line .key {
     color: rgba(var(--text-2), 1) !important;
     font-weight: bold;
@@ -532,7 +472,6 @@ html[data-color-mode=light] {
     text-align: center;
 }
 
-/* цвет никнеймов */
 a .title span {
     color: rgba(var(--text-strong), 1);
     transition: 0.2s all;
@@ -542,7 +481,6 @@ a:hover .title span {
     color: rgba(var(--accent), 1) !important;
 }
 
-/* цвет тегов в настройки -уведомления*/
 .b-table th {
     color: rgba(var(--text-strong), 1);
 }
@@ -850,7 +788,6 @@ hr {
     margin-bottom: 20px;
 }
 
-/* Lists Fix */
 .b-list {
     margin-left: 15px;
 }
@@ -877,7 +814,6 @@ hr {
     margin-bottom: 0;
 }
 
-/* Кнопка быстрого перехода в CSS*/
 .css .b-link[href*="/edit/styles"]:before {
     font: normal normal normal 14px/1 FontAwesome;
     text-rendering: auto;
@@ -924,13 +860,11 @@ hr {
     }
 }
 
-/*-------------------------------*/
 .magnet {
     margin-top: 1.5rem;
     margin-bottom: 2.5%;
 }
 
-/* --- Ссылки акцентным цветом --- */
 a,
 .b-link { transition: color .15s ease, opacity .15s ease; }
 
@@ -941,17 +875,11 @@ a,
     color: rgb(var(--accent));
 }
 
-/* ================================================================
-   ОБЩИЙ КОМПОНЕНТ «поле-список»: все select на сайте и фильтры
-   каталога (Мой список, Статус…). Единственное место со стилями
-   полей-списков: менять вид — только переменными ниже.
-   (:not(#u) поднимает вес над старыми правилами сайта)
-   ================================================================ */
 :root {
     --ui-ease: cubic-bezier(.22, 1, .36, 1);
-    --ui-press: .08s;      /* нажатие */
-    --ui-release: .28s;    /* возврат */
-    --ui-drop: .24s;       /* выезд списка */
+    --ui-press: .08s;
+    --ui-release: .28s;
+    --ui-drop: .24s;
 
     --field-bg: color-mix(in srgb, var(--glass-deep) 85%, transparent);
     --field-border: rgba(var(--glass-light), .10);
@@ -969,8 +897,6 @@ a,
     --drop-gap: 4px;
     --drop-radius: 10px;
     --drop-pad: 4px;
-    /* выпадающие списки (фильтры, «Сортировка», все select): тёмное стекло, как поля и панель.
-       Раньше был --glass-popup — заметно светлее и с синевой, список выбивался из темы */
     --drop-bg: color-mix(in srgb, var(--glass-popup) 35%, var(--glass-deep));
     --drop-border: rgba(var(--text), .12);
     --drop-shadow: 0 12px 30px color-mix(in srgb, var(--glass-shadow) 60%, transparent);
@@ -978,8 +904,6 @@ a,
     --opt-radius: 6px;
     --opt-hover: rgba(var(--accent), .18);
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     .mobile-slider-next:before {
@@ -1019,9 +943,6 @@ a,
     .magnet {
         display: none;
     }
-    /* ================================================================
-       Телефоны: читаемость текста поверх обоев
-       ================================================================ */
     :root {
         --glass-bg: color-mix(in srgb, var(--glass-deep) 55%, transparent);
         --glass-border: 1px solid rgba(var(--glass-light), .06);
@@ -1030,13 +951,6 @@ a,
     }
 }
 
-/* ================================================================
-   iPhone и другие сенсорные экраны: текст не выделяется долгим
-   нажатием (интерфейс ведёт себя как приложение). Поля ввода,
-   редактор и contenteditable остаются выделяемыми — иначе нельзя
-   печатать и править текст. Меню ссылок и картинок по долгому
-   нажатию оставлено (открыть в новой вкладке, сохранить картинку).
-   ================================================================ */
 @media (hover: none) and (pointer: coarse) {
     body {
         -webkit-user-select: none;
@@ -1059,10 +973,6 @@ a,
     }
 }
 
-/* ===== base/animations =====
-   все @keyframes темы */
-
-/* Tabs */
 @keyframes switch-focus--vertical {
     0%,
     100% {
@@ -1099,7 +1009,6 @@ a,
     }
 }
 
-/*- - -*/
 @keyframes spoile {
     0% {
         color: #5b6ad7;
@@ -1341,7 +1250,6 @@ a,
     }
 }
 
-/* выезд списка: без прозрачности (используют меню панели и фильтры) */
 @keyframes shiki-drop {
     from { clip-path: inset(0 0 100% 0 round 10px); transform: translateY(-4px); }
     to   { clip-path: inset(0 0 0 0 round 10px); transform: none; }
@@ -1351,7 +1259,6 @@ a,
     from { opacity: 0; }
 }
 
-/* шторка фильтров на телефоне: появление снизу вверх, без масштаба и перелёта */
 @keyframes shiki-sheet {
     from { opacity: 0; transform: translate(-50%, calc(-50% + var(--sheet-shift))); }
     to   { opacity: 1; transform: translate(-50%, -50%); }
@@ -1361,9 +1268,6 @@ a,
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
-/* ===== base/colors =====
-   цветовые классы bb-кодов и подсветки (.red, .green, …) */
 
 .yellow-fade-animated {
     background: rgba(var(--glass), 0.1) !important;
@@ -1408,9 +1312,6 @@ a,
     border-radius: 9px !important;
     padding: 1px !important;
 }
-
-/* ===== layout/header =====
-   верхняя панель .l-top_menu-v2, выпадающие меню, глобальный поиск */
 
 .l-top_menu-v2 {
     position: sticky;
@@ -1597,7 +1498,6 @@ span.submenu-triangle.icon-avatar img {
     color: rgba(var(--text-strong), 1);
 }
 
-/* Верхняя панель: непрозрачная, без мерцания; цвет задают --menu-bar и --menu-bar-hover */
 .l-top_menu-v2 {
     background: var(--glass-bar) !important;
     box-shadow: 0 2px 18px 4px rgba(var(--shade), 0.45) !important;
@@ -1612,7 +1512,6 @@ span.submenu-triangle.icon-avatar img {
         border-color .6s var(--ease-out) !important;
 }
 
-/* При наведении панель слегка светлеет */
 .l-top_menu-v2:hover,
 .l-top_menu-v2:focus-within {
     background: var(--glass-bar-hover) !important;
@@ -1633,7 +1532,6 @@ span.submenu-triangle.icon-avatar img {
     color: rgba(var(--text-2), 1);
 }
 
-/* Выпадающие меню панели — непрозрачные, в цвет панели */
 .l-top_menu-v2 .submenu,
 .l-top_menu-v2 .menu-dropdown .submenu,
 .l-top_menu-v2 .menu-dropdown.active .submenu {
@@ -1713,7 +1611,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     background-color: rgba(var(--glass-light), .06) !important;
 }
 
-/* Кнопка раздела/профиля с открытым меню — в тон меню */
 .l-top_menu-v2 .menu-dropdown.active > button,
 .l-top_menu-v2 .menu-dropdown.active > span,
 .l-top_menu-v2 .menu-dropdown:hover > button,
@@ -1721,7 +1618,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     background: var(--glass-bar-hover) !important;
 }
 
-/* Пункты внутри выпадающих меню — мягкая подсветка под курсором */
 .l-top_menu-v2 .submenu>a:not(._),
 .l-top_menu-v2 .submenu .submenu-title.submenu-title {
     background: transparent !important;
@@ -1737,8 +1633,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 .l-top_menu-v2 .submenu>a.icon-site_rules:after {
     content: 'Правила';
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     .l-top_menu-v2 .menu-icon.trigger:before {
@@ -1825,8 +1719,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 }
 
 @media screen and (max-width: 767px) {
-    /* --- фильтры каталога и списков: карточка по центру экрана --- */
-    /* лёгкое затемнение вокруг, без размытия — стекло только у самой карточки */
     section.l-page.l-page::after {
         content: "";
         position: fixed;
@@ -1834,14 +1726,13 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         z-index: 900;
         background: color-mix(in srgb, var(--glass-shadow) 28%, transparent);
     }
-    /* кнопка фильтра поверх затемнения; в открытом виде — крестик */
     .l-page .menu-toggler {
         z-index: 999 !important;
         bottom: calc(15px + env(safe-area-inset-bottom, 0px)) !important;
     }
     .l-page .menu-toggler .toggler {
         backdrop-filter: var(--plate-blur);
-        -webkit-backdrop-filter: blur(5px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        -webkit-backdrop-filter: blur(5px);
         transition: background-color var(--ease-fast);
     }
     .l-page.menu-expanded .menu-toggler .toggler {
@@ -1851,12 +1742,9 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         content: "\f00d" !important;
         font-size: 22px !important;
     }
-    /* --- панель фильтров: плотное матовое стекло --- */
     section.l-page.l-page::after {
         background: color-mix(in srgb, var(--glass-shadow) 45%, transparent);
     }
-    /* --- круглая кнопка фильтра/крестика целиком на экране
-       (у сайта у .menu-toggler ширина 26px, а круг — 49px, он вылезал за край) --- */
     .l-page .menu-toggler {
         width: auto !important;
         height: auto !important;
@@ -1866,9 +1754,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     .l-page.menu-expanded .menu-toggler .toggler {
         box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 55%, transparent) !important;
     }
-    /* затемнение плавно появляется и исчезает вместе с карточкой фильтров:
-       появление — @keyframes (работает в любом Safari), исчезание —
-       transition с display allow-discrete */
     section.l-page.l-page::after {
         display: none;
         opacity: 0;
@@ -1883,9 +1768,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     }
 }
 
-/* значок форума в верхней панели: ширина значка задана заранее, чтобы при
-   первой загрузке (иконочный шрифт ещё не пришёл, вместо значка узкая
-   буква) соседние значки и поиск не сдвигались, когда шрифт загрузится */
 .l-top_menu-v2 .menu-icon.forum::before,
 .l-top_menu-v2 .menu-icon.mail::before {
     width: 1em;
@@ -1893,11 +1775,9 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     text-align: center;
 }
 
-/* --- шапка: случайное аниме и пункты меню RIP --- */
-/* кнопка «?» — как круг «/» (hotkey-marker) слева от неё */
 .l-top_menu-v2 .global-search .random-anime-btn,
 .l-top_menu-v2.is-search-mobile .random-anime-btn-mobile {
-    border: 1px solid rgba(var(--text), .2) !important; /* у button тема снимает рамку с !important */
+    border: 1px solid rgba(var(--text), .2) !important;
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -1911,7 +1791,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     justify-content: center;
 }
 
-/* rip: оба кружка стоят absolute (right 32px и 7px) и касались друг друга; «/» отодвинут на 8px */
 .l-top_menu-v2 .global-search .random-anime-btn ~ .hotkey-marker {
     right: 40px !important;
 }
@@ -1928,9 +1807,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         color: rgba(var(--accent), 1);
     }
 }
-
-/* ===== layout/page =====
-   каркас страницы: html/body, обои, .l-page, колонки и сетки .cc/.c-column */
 
 body {
     font-family: var(--font-family) !important;
@@ -1952,17 +1828,6 @@ body {
     overflow-y: auto;
 }
 
-/* ПК (от 1024px, как и вся вёрстка Шикимори для ПК): полоса прокрутки окна
-   есть всегда, даже на коротких страницах (без ползунка). Иначе страницы
-   с прокруткой (Настройки → Профиль) и без неё (→ Аккаунт) отличаются по
-   ширине на полосу прокрутки, и всё по центру сдвигается на половину её.
-   v1.3.6 пыталась это сделать через scrollbar-gutter под (hover: hover) and
-   (pointer: fine) — у пользователя не сработало, поэтому без условия
-   по указателю и с overflow-y: scroll (работает в любом браузере).
-   overflow ставится на html, а у body сбрасывается в visible: так прокрутка
-   остаётся у окна (body не становится своей областью прокрутки, sticky и
-   fixed работают как раньше); горизонтальная обрезка переезжает с body на html.
-   Телефоны (ширина меньше 1024) не затронуты. */
 @media screen and (min-width: 1024px) {
     html {
         overflow-x: hidden;
@@ -2094,7 +1959,6 @@ body * [class*="_status_tag"]:not([data-text]) {
     padding: 2px 9px;
 }
 
-/* надпись коллекция на зеленом */
 body * .b-anime_status_tag.collection:before {
     background: linear-gradient(45deg, #2b684e, #1f5430, #476024) !important;
 }
@@ -2105,19 +1969,16 @@ body * .b-abuse_marker:before {
     color: #e4c6c6;
 }
 
-/* статус "онгоин" */
 body * .b-anime_status_tag.b-anime_status_tag.ongoing:before {
     background: #014493;
     color: #d7e6f8;
 }
 
-/* статус "игнор" */
 body * .b-anime_status_tag.b-anime_status_tag.ignored:before {
     background: #96120b;
     color: #fbdede;
 }
 
-/* статус "анонс" */
 body * .b-anime_status_tag.b-anime_status_tag.anons:before {
     background: #9c3417;
     color: #fbe5de;
@@ -2522,10 +2383,6 @@ body#dashboard_show .b-catalog_entry.b-catalog_entry {
     }
 }
 
-/* ===================== Оформление ===================== */
-/* --- Обои с плавным зумом --- */
-/* Обои сразу приближены (без анимации при загрузке страницы),
-   плавно отъезжают, когда курсор уходит на вкладки браузера, и возвращаются. */
 html { background: rgb(var(--bg-color)); }
 
 body { background: none !important; }
@@ -2538,7 +2395,6 @@ body::before {
     background: var(--bg-image) center / cover no-repeat;
     transform: scale(var(--bg-zoom));
     filter: blur(var(--bg-blur));
-    /* одинаковая анимация на приближение и отдаление */
     transition: transform 2.5s var(--ease-out);
     pointer-events: none;
     will-change: transform;
@@ -2549,18 +2405,12 @@ html:not(:hover) body::before {
     transform: scale(1);
 }
 
-/* Открытый select: его окно (::picker(select)) браузер рисует в верхнем слое,
-   вне дерева страницы, и пока курсор над ним, у html нет :hover — обои начинали
-   отъезжать, как будто курсор ушёл со страницы. Пока select открыт, обои
-   остаются приближенными. Отдельным правилом: где :open не понимают, оно просто
-   пропускается, а отъезд при уходе курсора работает как раньше. */
 @media screen and (min-width: 768px) {
     html:has(select:open) body::before {
         transform: scale(var(--bg-zoom));
     }
 }
 
-/* --- Мягкий светлый текст без «кислотной» белизны --- */
 body,
 .b-text,
 .text,
@@ -2589,8 +2439,6 @@ html input[type="checkbox"]:not(#u) {
     cursor: pointer;
 }
 
-/* галочка внутри — картинка (SVG) ровно по центру кружка, «вырастает» из центра;
-   не зависит от шрифта и высоты строки */
 html input[type="checkbox"]:not(#u)::before {
     content: none !important;
     display: none !important;
@@ -2625,8 +2473,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         border-color: rgba(var(--accent), .8) !important;
     }
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     .l-page {
@@ -2765,11 +2611,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
 }
 
 @media screen and (max-width: 767px) {
-    /* ================================================================
-       Телефоны (iPhone / Safari и др.): размытый фон, фильтры по центру
-       экрана, подписи без наложения на значки
-       ================================================================ */
-    /* обои: мягкое размытие и лёгкое затемнение, чтобы текст читался */
     html body::before,
     html:not(:hover) body::before {
         transform: scale(1.04);
@@ -2777,8 +2618,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
         -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
     }
-    /* шапка профиля и содержимое идут обычным потоком: шапка растёт по
-       содержимому и не наезжает на «Друзья», нет пустой полосы */
     html body#profiles_show .l-page { margin-top: 5px !important; }
     html body#profiles_show .profile-head {
         top: 0 !important;
@@ -2802,7 +2641,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     html body#profiles_show .profile-content > .cc-2.block > .c-right { order: 1; }
     html body#profiles_show .profile-content > .cc-2.block > .c-right > .block:last-child { margin-bottom: 0 !important; }
     html body#profiles_show .profile-content > .cc-2.block > .c-left { order: 2; margin-top: 14px !important; }
-    /* «Время за аниме»: строка заголовка над шкалой — слева название, справа значение */
     html body#profiles_show .profile-content .c-left .lifetime {
         line-height: normal !important;
     }
@@ -2845,7 +2683,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
         font-size: 12px !important;
         white-space: nowrap;
     }
-    /* мягкая тень у текста, который лежит прямо на обоях */
     .l-page {
         text-shadow: 0 1px 2px rgba(var(--shade), 0.6), 0 0 8px rgba(var(--shade), 0.35);
     }
@@ -2854,17 +2691,11 @@ html input[type="checkbox"]:not(#u):focus-visible {
         padding: 10px 12px !important;
         margin-bottom: 10px !important;
     }
-    /* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
-       Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
     html { background-color: rgb(var(--bg-color-mobile)) !important; }
     html body::before {
         background: var(--bg-image-mobile) center / cover no-repeat;
         background-color: rgb(var(--bg-color-mobile));
     }
-    /* ================================================================
-       v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
-       ================================================================ */
-    /* цветные заголовки главной — как «Темы дня» */
     html body .headline:is(.skyblue, .orange, .magenta, .blue, .green, .red, .yellow) {
         background: var(--plate-bg-strong) !important;
         color: var(--heading-text) !important;
@@ -2876,9 +2707,8 @@ html input[type="checkbox"]:not(#u):focus-visible {
         box-sizing: border-box;
         gap: 10px;
         backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
     }
-    /* кнопки — справа, в одну строку, внутри полосы */
     html body .headline > .misc-links {
         display: flex !important;
         align-items: center;
@@ -2922,17 +2752,12 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* ===== components/badges =====
-   статусы и метки: *_status_tag, *_marker, .b-tag */
-
-/* цвет значка отзыв */
 .locale-ru .b-summary_marker:before {
     background-color: #1a421d;
     border: rgba(var(--glass), 0.4);
     color: #c4e9ed;
 }
 
-/* цвет значка оффтоп */
 .locale-ru .b-offtopic_marker.off:before,
 .locale-ru .b-offtopic_marker.active.off:before {
     color: #f6e5ec;
@@ -3025,17 +2850,12 @@ html input[type="checkbox"]:not(#u):focus-visible {
     transition: var(--ease-fast);
 }
 
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 767px) {
     .b-form .b-summary_marker {
         top: 0 ;
         right: 11px;
     }
 }
-
-/* ===== components/carousels =====
-   ленты, стрелки, пагинация, кнопка «наверх» */
 
 .slide.animes .cc-2a .c-column.m0,
 .slide.mangas .cc-2a .c-column.m0,
@@ -3169,12 +2989,8 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* стрелки лент: скриншоты и видео на странице аниме/манги */
 @supports selector(::scroll-button(*)) {
     @media (hover: hover) and (pointer: fine) {
-        /* стрелки лент (только ПК с мышью; CSS-карусель Chromium 135+).
-           Общий компонент: чтобы добавить стрелки другой ленте, допишите её прокручиваемый блок отдельным селектором (rip не принимает :is(...)::scroll-button);
-           размеры и цвета задаются токенами --arrow-* в tokens/components.css */
         .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .cc::scroll-button(*),
         .p-db_entries-show .cc.m0 > :is(.c-screenshots, .c-videos) > .b-scroll::scroll-button(*) {
             position: absolute;
@@ -3190,7 +3006,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
             background-position: 50% 50%;
             background-size: var(--arrow-icon-size);
             backdrop-filter: blur(calc(var(--glass-blur) * 1.6));
-            -webkit-backdrop-filter: blur(8px); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+            -webkit-backdrop-filter: blur(8px);
             box-shadow: var(--arrow-shadow);
             color: transparent;
             cursor: pointer;
@@ -3229,8 +3045,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 767px) {
     .slide.animes .cc-2a .c-column.m0 {
         margin-bottom: 15px !important;
@@ -3247,11 +3061,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* ===== components/tooltips =====
-   подсказки .tipsy, .b-tooltipped, всплывающие карточки */
-
-/* Всплывающие карточки с описанием при наведении (окно с крестиком) скрыты.
-   Вернуть можно блоком в «Внешнем виде сайта» (см. README). */
 .tooltip {
     visibility: hidden !important;
     opacity: 0 !important;
@@ -3263,7 +3072,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     pointer-events: none !important;
 }
 
-/* открываюшееся при наводке на героя окно */
 .tooltip-inner {
     background: none repeat scroll 0 0 var(--tip-bg);
     border: none;
@@ -3294,8 +3102,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     opacity: 1 !important;
 }
 
-/* v1.2.22: подсказка не перехватывает курсор — иначе, оказавшись под ним,
-   она снимает наведение с кнопки и сама исчезает */
 .tipsy {
     pointer-events: none;
 }
@@ -3396,8 +3202,6 @@ html input[type="checkbox"]:not(#u):focus-visible {
     top: 3px;
 }
 
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 1023px) {
     .b-catalog_entry-tooltip .trigger {
         max-width: 527px;
@@ -3422,15 +3226,11 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
-/* ===== components/headings =====
-   заголовки .headline / .subheadline / .midheadline */
-
 header.head .misc {
     max-width: 100%;
     width: 100%;
 }
 
-/* цвет заголовков */
 header.head h2,
 header.head h1 {
     border-bottom: none;
@@ -3439,7 +3239,6 @@ header.head h1 {
     display: block;
 }
 
-/* стрелка назад */
 header.head h1 a.back:before,
 header.head h2 a.back:before {
     color: rgba(var(--text-strong), 1);
@@ -3569,7 +3368,6 @@ header.head p.notice span {
     background: transparent !important;
 }
 
-/* красное ерорные названия */
 .b-errors .subheadline {
     background: #632c2ae8;
     border-left: none;
@@ -3594,8 +3392,6 @@ header.head p.notice span {
 header.head .notice {
     font-size: 13px !important;
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 1023px) {
     header.head {
@@ -3652,15 +3448,11 @@ header.head .notice {
         padding: 10px 12px !important;
         margin-bottom: 10px !important;
     }
-    /* заголовки разделов — тот же стеклянный «чип» */
     .l-page .subheadline {
         backdrop-filter: var(--glass-filter);
-        -webkit-backdrop-filter: blur(5px) saturate(110%); /* Safari: без var() — у -webkit-backdrop-filter баг с переменными */
+        -webkit-backdrop-filter: blur(5px) saturate(110%);
     }
 }
-
-/* ===== components/users =====
-   пользователи и аватары: .b-user, .b-user16, .b-menu-line */
 
 .b-user.named_avatar .name {
     color: rgba(var(--text-strong), 1);
@@ -3699,10 +3491,8 @@ header.head .notice {
     border-radius: 50%;
 }
 
-/* «В избранном у»: квадрат аватарки занят до загрузки картинки (они грузятся
-   лениво), иначе при первом открытии блоки правой колонки съезжают вниз */
 .b-favoured .b-user.avatar img {
-    width: 36px; /* картинка x32 + рамка 2px (box-sizing: border-box) — тот же размер, что после загрузки */
+    width: 36px;
     height: auto;
     aspect-ratio: 1 / 1;
 }
@@ -3754,8 +3544,6 @@ header.head .notice {
     margin-top: 0px;
 }
 
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 1023px) {
     @media (hover: hover) and (pointer: fine) {
         .userbox img.avatar:hover {
@@ -3803,10 +3591,6 @@ header.head .notice {
     }
 }
 
-/* ===== components/buttons =====
-   кнопки .b-link_button, .b-button, button, кнопки действий */
-
-/* кнопка смотреть онлайн */
 .b-link_button {
     background-color: var(--btn-bg) !important;
 }
@@ -3826,7 +3610,6 @@ header.head .notice {
     box-shadow: var(--plate-shadow);
 }
 
-/* нет комментариев */
 .buttons .cancel {
     margin-right: 10px !important;
     margin-left: 10px !important;
@@ -4017,8 +3800,6 @@ header.head .notice {
     text-transform: uppercase;
 }
 
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 1023px) {
     .item-delete:after {
         content: "Удалить" !important;
@@ -4060,11 +3841,6 @@ header.head .notice {
     }
 }
 
-/* ===== components/stats =====
-   полоски-шкалы .bar */
-
-/* цвет кликабельных текстов на блоках как Авторы, Избранное и т.д. */
-/* Цвета шкал от темного до светлого - сверху вниз */
 .bar.simple .bar.s3 {
     background: rgba(var(--small-rating), 1);
     transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
@@ -4118,15 +3894,10 @@ header.head .notice {
     font-size: 10px !important;
 }
 
-/* Activity Graph Fix */
 .bar.vertical .line {
     border-right: 1px solid transparent;
 }
 
-/* ===== components/tabs =====
-   вкладки и переключатели: .b-options-floated, .b-list_switchers, use-tabs */
-
-/* напрямую, хронология франшиза */
 .b-options-floated a,
 .b-options-floated .link {
     font-size: 13px;
@@ -4143,7 +3914,6 @@ header.head .notice {
     display: none;
 }
 
-/* свернуть списки в списке аниме */
 .b-options-floated .action {
     color: var(--tab-active);
     border: none;
@@ -4365,7 +4135,6 @@ header.head .notice {
     display: block;
 }
 
-/* Test colors */
 .use-tabs > .active.--red {
     --c-tab: 350deg 100%;
 }
@@ -4379,7 +4148,6 @@ header.head .notice {
 }
 
 @media (min-width: 960px) {
-    /* Vertical */
     .use-tabs.--vertical {
         display: grid;
         grid-template-columns: 200px 1fr;
@@ -4392,7 +4160,6 @@ header.head .notice {
     .use-tabs.--vertical > div > div {
         padding: 18px 15px;
     }
-    /* Vertical + Right */
     .use-tabs.--vertical.--right {
         grid-template-columns: 1fr 212px;
     }
@@ -4406,7 +4173,6 @@ header.head .notice {
     }
 }
 
-/* Ripple */
 .use-tabs.--ripple > [data-dynamic] {
     position: relative;
     overflow: hidden;
@@ -4439,7 +4205,6 @@ header.head .notice {
     animation: switch-tap--vertical 0s var(--tab-tap-ease);
 }
 
-/* Tabline */
 .use-tabs.--tabline {
     justify-content: flex-start;
 }
@@ -4448,12 +4213,10 @@ header.head .notice {
     border-bottom-color: hsla(var(--c-tab) var(--l-text-active) / 100%);
 }
 
-/* Centered */
 .use-tabs.--centered {
     justify-content: center;
 }
 
-/* Stretch */
 .use-tabs.--stretched > [data-dynamic] {
     flex-grow: 1;
 }
@@ -4564,7 +4327,6 @@ header.head .notice {
     position: relative;
 }
 
-/* Test colors */
 .custom-panel > .active.--red {
     --c-tab: 350deg 100%;
 }
@@ -4578,7 +4340,6 @@ header.head .notice {
 }
 
 @media (min-width: 960px) {
-    /* Vertical */
     .custom-panel.--vertical {
         display: grid;
         grid-template-columns: 200px 1fr;
@@ -4590,7 +4351,6 @@ header.head .notice {
     .custom-panel.--vertical > div > div {
         padding: 18px 24px;
     }
-    /* Vertical + Right */
     .custom-panel.--vertical.--right {
         grid-template-columns: 1fr 212px;
     }
@@ -4630,7 +4390,6 @@ header.head .notice {
     animation: switch-tap--vertical 0.24s var(--tab-tap-ease);
 }
 
-/* Tabline */
 .custom-panel.--tabline {
     justify-content: flex-start;
 }
@@ -4639,7 +4398,6 @@ header.head .notice {
     border-bottom-color: hsla(var(--c-tab) var(--l-text-active) / 100%);
 }
 
-/* Centered */
 .custom-panel.--centered {
     justify-content: center;
 }
@@ -4677,8 +4435,6 @@ header.head .notice {
         border-left: none;
     }
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 960px) {
     .use-tabs.--On.--centered::before {
@@ -4723,11 +4479,6 @@ header.head .notice {
     }
 }
 
-/* ===== components/plates =====
-   стеклянные плашки .block */
-
-/* ----- телефон и узкие экраны ----- */
-
 @media screen and (max-width: 960px) {
     .cc-2 > .c-column > .block:last-child,
     .cc-2 > .c-column > .subcontent:last-child {
@@ -4741,9 +4492,6 @@ header.head .notice {
         margin-top: 64px;
     }
 }
-
-/* ===== components/cards =====
-   карточки аниме/манги .b-catalog_entry, обложки .image-decor */
 
 .b-catalog-entry-embedded .b-catalog_entry {
     padding-bottom: 0 !important;
@@ -4853,7 +4601,6 @@ header.head .notice {
     font-size: 11.5px;
 }
 
-/*-------*/
 .b-catalog_entry .cover .image-cutter::before {
     padding-bottom: 155.5555%;
 }
@@ -4869,7 +4616,6 @@ header.head .notice {
     object-position: center;
 }
 
-/*Коллекции фикс ещё +*/
 .image-cutter.see-more.image-cutter::before {
     padding-bottom: 39%;
 }
@@ -4942,9 +4688,6 @@ header.head .notice {
     }
 }
 
-/*------*/
-/* ===================== Исправления и доработки ===================== */
-/* --- Карточки аниме: обложка и подложка двигаются вместе --- */
 .b-catalog_entry .cover {
     transform: none !important;
     box-shadow: none !important;
@@ -4966,9 +4709,6 @@ header.head .notice {
     }
 }
 
-/* Лёгкий зум картинки внутри обложки (не выходит за края).
-   clip-path режет по скруглению и во время анимации: одного overflow хватало не всегда,
-   и в конце движения углы картинки на миг вылезали */
 .b-catalog_entry .cover {
     overflow: hidden;
     clip-path: inset(0 round var(--card-image-radius));
@@ -4986,13 +4726,11 @@ header.head .notice {
     }
 }
 
-/* Название подсвечивается акцентом */
 .b-catalog_entry .title,
 .b-catalog_entry .name {
     transition: color .25s ease;
 }
 
-/* --- Скругления и плавность --- */
 .b-catalog_entry .cover,
 .b-catalog_entry .image,
 .b-catalog_entry img {
@@ -5002,8 +4740,6 @@ header.head .notice {
 .b-catalog_entry .cover {
     transition: transform .25s ease, box-shadow .25s ease;
 }
-
-/* ----- телефон и узкие экраны ----- */
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
     #cutted_covers_1 .image-cutter {
@@ -5043,10 +4779,6 @@ header.head .notice {
     }
 }
 
-/* ===== components/editor =====
-   комментарии, редактор .b-shiki_editor, спойлеры, цитаты, код */
-
-/* цвет описания аниме */
 .b-prgrph,
 .b-spoiler_prgrph {
     color: rgba(var(--text), 1);
@@ -5127,14 +4859,12 @@ header.head .notice {
     box-shadow: var(--plate-shadow-soft) !important;
 }
 
-/* полоса оттеняющая, если не развернуто */
 .b-height_shortener .shade {
     background-image: none;
     height: 30px;
     z-index: 0;
 }
 
-/* слово развернуть */
 .b-height_shortener .expand {
     color: rgba(var(--accent), 1);
 }
@@ -5154,4 +4884,1004 @@ header.head .notice {
 .b-spoiler label:hover {
     color: rgba(var(--accent), 1);
     animation: spoilzero 2s ease infinite;
+}
+
+.b-quote {
+    background: var(--plate-bg) !important;
+    border: none !important;
+    color: rgba(var(--text), 1);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
+    border-radius: 6px !important;
+    font-style: normal;
+}
+
+.b-comments .comments-collapser,
+.b-spoiler .content .after:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-show_more,
+.b-show_more-more .hide-more {
+    color: rgba(var(--accent), 1);
+}
+
+.b-spoiler .content .before:before {
+    content: "[spoiler]";
+    color: rgba(var(--accent), 1);
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .after:before {
+    animation: spoil 2s ease infinite;
+}
+
+.b-spoiler .content .inner,
+.b-spoiler .content .inner-prgrph {
+    border-bottom: 0;
+    border-radius: 6px;
+    padding: 0 6px;
+    text-shadow: 0 0 8px rgba(var(--text-strong), 0.2);
+}
+
+.buttons .editor-italic:before,
+.buttons .editor-spoiler:before,
+.buttons .editor-smiley:before,
+.buttons .editor-quote:before,
+.buttons .editor-image:before,
+.buttons .editor-link:before,
+.buttons .editor-strike:before,
+.buttons .editor-underline:before,
+.buttons .editor-bold:before {
+    font-family: "shikimori";
+    text-align: center;
+    width: 20px;
+    color: rgba(var(--accent), 1);
+    font-size: 14px;
+    border: none !important;
+}
+
+.buttons .editor-italic:hover:before,
+.buttons .editor-spoiler:hover:before,
+.buttons .editor-smiley:hover:before,
+.buttons .editor-quote:hover:before,
+.buttons .editor-image:hover:before,
+.buttons .editor-link:hover:before,
+.buttons .editor-strike:hover:before,
+.buttons .editor-underline:hover:before,
+.buttons .editor-bold:hover:before { color: rgba(var(--accent), 1);
+}
+
+.buttons .editor-italic,
+.buttons .editor-spoiler,
+.buttons .editor-smiley,
+.buttons .editor-quote,
+.buttons .editor-image,
+.buttons .editor-link,
+.buttons .editor-strike,
+.buttons .editor-underline,
+.buttons .editor-bold,
+.buttons .editor-file {
+    border: none !important;
+}
+
+.buttons .editor-file input:before {
+    color: rgba(var(--accent), 1);
+}
+
+.b-shiki_editor .body .preview {
+    background: var(--plate-bg);
+    border: none !important;
+}
+
+.b-shiki_editor footer .unpreview:not(.link) {
+    color: rgba(var(--text), 1);
+}
+
+.b-shiki_editor footer .preview,
+.b-shiki_editor footer .cancel {
+    color: rgba(var(--text), 1) !important;
+}
+
+.b-shiki_editor footer .cancel {
+    border: none !important;
+}
+
+.b-comment .inner .name-date a.name .normal {
+    color: rgba(var(--text), 1);
+}
+
+.b-log_entry .id-label {
+    padding-right: 1px;
+    color: rgba(var(--text-strong), 1);
+}
+
+.b-log_entry .id-label:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.b-log_entry .change-details .field-changes .label {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-bb_codes-examples .notice {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-bb_codes-examples .example .textarea {
+    background: var(--plate-bg);
+    color: rgba(var(--text), 1);
+    border: none !important;
+    border-radius: 8px;
+}
+
+.b-bb_codes-examples .example span {
+    color: rgba(var(--text-2), 1);
+}
+
+.b-bb_codes-examples .example span:after {
+    color: rgba(var(--text-2), 1);
+    content: ")";
+}
+
+.b-bb_codes-examples .example span:before {
+    color: rgba(var(--text-2), 1);
+    content: "(";
+}
+
+.buttons .editor-file {
+    color: rgba(var(--accent), 1);
+}
+
+.buttons .editor-file:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.b-shiki_editor .images .link-value,
+.b-shiki_editor .links .link-value,
+.b-shiki_editor .quotes .link-value,
+.b-shiki_editor .email .link-value,
+.b-shiki_editor .upload .link-value {
+    background: var(--plate-bg) !important;
+    border-color: rgba(var(--glass), 0.4) !important;
+    color: rgba(var(--text), 1);
+    line-height: 20px;
+    border-radius: 8px;
+}
+
+.b-quote .quoteable:before {
+    content: "\f10d";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.b-spoiler_block > div,
+.b-quote-v2 {
+    background-color: rgba(var(--glass), 0.3);
+    border-left: 4px solid rgba(var(--text), 0.3);
+}
+
+.b-spoiler_block > div {
+    display: flow-root;
+}
+
+.b-spoiler_block > span {
+    color: rgba(var(--text), 1) !important;
+    background-color: rgba(var(--glass), 0);
+    display: inline-flex;
+    font-size: 13px;
+    line-height: 23px;
+    border-radius: 9px;
+    padding: 0 10px;
+    transition: 0.2s all, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+
+    z-index: 3;
+    position: relative;
+    border: 2px solid rgba(var(--text), 0.2) !important;
+    text-transform: lowercase;
+}
+
+.b-spoiler_block.is-opened > span {
+    border-radius: 9px 9px 0 0;
+    border-left: 4px solid rgba(var(--text), 0.2) !important;
+    border-right: 3px solid rgba(var(--text), 0.2) !important;
+}
+
+.b-spoiler_block > span:active {
+    background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+}
+
+.b-spoiler_inline:not(.is-opened) {
+    background-color: rgba(var(--glass), 1);
+}
+
+@media screen and (min-width: 1024px) {
+    @media (hover: hover) and (pointer: fine) {
+        .b-spoiler_block > span:hover {
+            background-color: color-mix(in srgb, var(--accent-hover) 60%, transparent);
+            color: var(--tone-e4e4e4) !important;
+        }
+    }
+}
+
+.b-shiki_editor-v2 footer .hide {
+    display: none!important;
+}
+
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span {
+    border: 2px dashed rgba(var(--text), 0.2);
+    border-radius: 6px;
+    transition: var(--ease-base);
+    padding: 0 4px;
+}
+
+.b-comment .b-height_shortener .expand span {
+    margin-left: 60px;
+}
+
+.b-height_shortener .expand:hover span,
+.b-height_shortener .expand:hover {
+    color: var(--tone-e4e4e4) !important;
+}
+
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="number"],
+.b-shiki_editor footer .unpreview,
+.b-shiki_editor footer .preview,
+.b-offtopic_marker::before,
+.b-summary_marker::before {
+    border-radius: 2px;
+}
+
+.inner aside.markers {
+    top: 8px;
+    position: relative;
+}
+
+.b-ajax:before,
+.b-ajax,
+.ac_loading,
+.ac_loading:before,
+.b-shiki_editor .b-ajax,
+.b-shiki_editor.b-ajax {
+    background: var(--plate-bg) !important;
+    box-shadow: 0 0 20px rgba(var(--glass), 0.5);
+}
+
+.ajax-loading:after {
+    content: '\f1ce';
+    width: 16.5px;
+    height: 16.7px;
+    color: rgba(var(--text), var(--hundred));
+    font: normal normal normal 16px/1 FontAwesome !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: 50%;
+    margin-right: -2px;
+    position: absolute;
+    margin-top: -9px;
+    right: 50%;
+    animation: rotateload 0.7s linear infinite;
+}
+
+.ajax-loading,
+.ajax-loading.vk-like {
+    background: none;
+}
+
+.b-shiki_editor .links,
+.b-shiki_editor .images,
+.b-shiki_editor .quotes,
+.b-shiki_editor .email,
+.b-shiki_editor .upload {
+    height: 35px;
+}
+
+.b-shiki_editor .links {
+    height: 63px;
+}
+
+.b-comment>.inner header .name-date.name-date {
+    white-space: normal;
+    line-height: 1.7;
+}
+
+.block .b-comment.shiki-object:last-child {
+    border-bottom: none !important;
+}
+
+.b-shiki_editor footer {
+    padding: 0 0 10px 0;
+}
+
+.b-log_entry a.bubbled-processed,
+a.b-link.bubbled-processed {
+}
+
+.b-log_entry.b-abuse_request .b-offtopic_marker {
+    left: 16px;
+    position: relative;
+    width: 65px;
+    top: 4.5px;
+}
+
+.b-log_entry.b-abuse_request .marker.b-summary_marker {
+    top: 4.5px;
+    position: relative;
+    width: 50px;
+}
+
+.b-log_entry.b-abuse_request .marker.b-abuse_marker {
+    top: 4.5px;
+    position: relative;
+    width: 55px;
+    left: -3px;
+}
+
+.b-comment:hover header .hash {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.b-comment-info.b-comment {
+    color: rgba(var(--text-2), 0.75);
+}
+
+.b-log_entry a .id-label,
+.b-log_entry .link .id-label {
+    color: rgba(var(--accent), var(--hundred));
+    transition: var(--ease-base);
+}
+
+.b-log_entry a:hover .id-label,
+.b-log_entry .link:hover .id-label {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.b-comments .comments-collapser:after {
+    content: '\f139';
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    font-size: 20px;
+    color: rgba(var(--text-2), 0.6);
+}
+
+.b-comments .comments-collapser:hover:after {
+    color: rgba(var(--text-strong), var(--hundred));
+}
+
+.b-comments .comments-collapser {
+    font-size: 0;
+    text-decoration: none;
+    margin: 6px 10px 0 0;
+    border: none;
+}
+
+.b-height_shortener .expand:after {
+    content: "далее" !important;
+    font-size: 13px;
+    background-color: rgba(var(--glass), 0.3);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.05);
+    padding: 0 27px;
+    line-height: 16px;
+    left: 0;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.1s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .b-height_shortener .expand:hover:after {
+        background-color: rgba(var(--accent), 0.3);
+    }
+}
+
+.b-height_shortener .expand {
+    font-size: 0;
+    height: 17px;
+}
+
+.b-height_shortener .expand:hover {
+    font-size: 0;
+}
+
+.b-height_shortener .expand:hover {
+    color: rgba(var(--accent), var(--hundred));
+    animation: none !important;
+    border: none;
+}
+
+.b-height_shortener .expand:before {
+    content: '\f078\f078';
+    text-rendering: auto;
+    font: normal normal normal 14px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    position: absolute;
+    left: 8px;
+    color: rgba(var(--accent), 0.7);
+    line-height: 15px;
+    letter-spacing: 64px;
+}
+
+.b-shiki_editor aside.markers label > span {
+    padding: 3px 8px;
+    border: none;
+    border-radius: 9px !important;
+}
+
+.b-comment > .inner header a[href*="/EngiNier"] img {
+    border: 2px solid #a7843d75;
+}
+
+.b-comment > .inner header a[href*="/Cosmo+%E2%98%AD"] img {
+    border: 2px solid #3ba2bd75;
+}
+
+.b-shiki_editor footer .hide {
+    display: none;
+    opacity: 0.6;
+}
+
+.b-replies {
+    padding-top: 0;
+}
+
+.b-comment:first-child {
+    border-top-width: 0 !important;
+}
+
+.b-comment > .inner header img {
+    margin: 0 10px 0 0;
+}
+
+.b-quote {
+    margin: 5px 0;
+}
+
+.cm-s-solarized.cm-s-light {
+    background-color: var(--tone-1f2123);
+    color: #9eb8c7;
+    text-shadow: none;
+}
+
+.cm-s-solarized .cm-number {
+    color: #8f6fec;
+}
+
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+    background-color: var(--tone-282e33);
+}
+
+.cm-s-solarized .cm-property {
+    color: #2bb39b;
+}
+
+.cm-s-solarized.cm-s-light div.CodeMirror-selected {
+    background: color-mix(in srgb, var(--tone-6b6965) 40%, transparent);
+}
+
+.CodeMirror-dialog-top {
+    border-bottom: none;
+    top: 0px;
+    background: var(--tone-171717);
+}
+
+.cm-s-solarized .cm-variable {
+    color: #dade38;
+}
+
+.cm-s-solarized .cm-tag {
+    color: var(--tone-a8a99f);
+}
+
+.CodeMirror-search-field {
+    width: 400px !important;
+}
+
+.editor-container .buttons.m15 {
+    margin-bottom: 5px !important;
+    position: fixed;
+    top: 53px;
+    right: 20px;
+    z-index: 100;
+}
+
+.fullwidth > .b-spoiler > label::after {
+    content: "Открыть";
+    float: right;
+    padding: 0.4em 0.5em 0.15em 0.5em;
+    margin: -0.25em -0.5em;
+    border-radius: 4px;
+    color: rgba(var(--text-2), 1);
+    font-size: 0.7em;
+    line-height: inherit;
+    position: absolute;
+    right: 17px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .fullwidth > .b-spoiler > label:hover::after,
+    .fullwidth > .b-spoiler > label[style*="none"]:hover::after {
+        background: color-mix(in srgb, var(--glass-deep) 80%, transparent);
+        color: rgba(var(--text-strong), 1);
+    }
+}
+
+.fullwidth > .b-spoiler > label[style*="none"]::after {
+    content: "Закрыть";
+    background: color-mix(in srgb, var(--glass-deep) 60%, transparent);
+    color: rgba(var(--text-strong), 1);
+}
+
+.fullwidth > .b-spoiler > label > span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fullwidth > .b-spoiler > .content > .before {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2em;
+    margin-top: -40px;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+    z-index: 1;
+}
+
+.fullwidth > .b-spoiler > .content > .before::before,
+.fullwidth > .b-spoiler > .content > .after {
+    display: none;
+}
+
+.fullwidth > .b-spoiler > .content > .inner,
+.fullwidth > .b-spoiler > .content .inner-prgrph {
+    border: 0;
+}
+
+.fullwidth .b-spoiler .content .inner,
+.fullwidth .b-spoiler .content .inner-prgrph {
+    text-shadow: none;
+}
+
+@media only screen and (min-width: 1025px) {
+    .editor-container .b-offtopic_marker:before,
+    .editor-container .b-summary_marker:before {
+        margin-top: -4px;
+    }
+    .editor-container .buttons.m15 {
+        right: 50% !important;
+        margin-right: -593px;
+    }
+    .b-comments {
+        margin-bottom: 10px !important;
+    }
+    .b-comment .b-height_shortener {
+        margin-left: 55px;
+        position: relative;
+    }
+}
+
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers:not(#u) {
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 2px;
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    align-self: center;
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u) {
+    height: auto !important;
+    overflow: visible !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    display: flex !important;
+    align-items: center;
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u)::before {
+    width: auto !important;
+    height: 26px !important;
+    min-height: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: static !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    padding: 0 12px !important;
+    box-sizing: border-box;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--chip-radius) !important;
+    background: var(--chip-bg) !important;
+    color: var(--chip-text) !important;
+    font-size: 12px !important;
+    font-weight: 600;
+    white-space: nowrap;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(5px);
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(.off):not(#u)::before {
+    border-color: rgba(var(--chip-tint), .9) !important;
+    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
+    color: var(--chip-on-text) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    html body :is(.b-shiki_editor, .b-shiki_editor-v2) .markers > [class*="_marker"]:not(#u):hover::before {
+        border-color: rgba(var(--chip-tint), 1) !important;
+        color: var(--chip-on-text) !important;
+    }
+}
+
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group:not(.menu_group-controls):not(#u) {
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(5px);
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:not(#u) {
+    color: var(--tool-icon) !important;
+}
+html body :is(.b-shiki_editor, .b-shiki_editor-v2) .menubar .menu_group > button:is(.is-disabled, :disabled):not(#u) {
+    color: var(--tool-icon-off) !important;
+}
+
+html body .b-comments_select-panel:not(#u) {
+    background: color-mix(in srgb, rgb(var(--glass)) 94%, transparent) !important;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--plate-radius-lg) !important;
+    box-shadow: 0 10px 28px rgba(var(--shade), .5) !important;
+    color: rgb(var(--text)) !important;
+}
+html body .b-comments_select-panel button:not(#u) {
+    background: var(--chip-bg) !important;
+    border: 1px solid var(--chip-border) !important;
+    border-radius: var(--chip-radius) !important;
+    color: var(--chip-text) !important;
+    font-weight: 600 !important;
+}
+html body .b-comments_select-panel .actions button[data-kind]:not(.is-danger):not(#u) {
+    background: color-mix(in srgb, rgb(var(--chip-tint)) 45%, rgba(var(--glass), .7)) !important;
+    border-color: rgba(var(--chip-tint), .9) !important;
+    color: var(--chip-on-text) !important;
+}
+html body .b-comments_select-panel button.is-danger:not(#u) {
+    --chip-tint: 255, 110, 110;
+    background: transparent !important;
+    border-color: rgb(var(--chip-tint)) !important;
+    color: rgb(255, 150, 150) !important;
+}
+html body .b-comments_select-panel button:disabled:not(#u) {
+    opacity: .45 !important;
+}
+
+@media screen and (max-width: 1023px) {
+    .item-cancel,
+    .item-reply,
+    .item-edit,
+    .item-ignore,
+    .item-delete-cancel,
+    .item-moderation,
+    .item-moderation-cancel,
+    .item-delete,
+    .item-request-reject,
+    .item-cancel:after,
+    .item-reply:after,
+    .item-edit:after,
+    .item-ignore:after,
+    .item-delete-cancel:after,
+    .item-moderation:after,
+    .item-moderation-cancel:after,
+    .item-delete:after,
+    .item-request-reject:after,
+    .item-cancel:before,
+    .item-reply:before,
+    .item-edit:before,
+    .item-ignore:before,
+    .item-delete-cancel:before,
+    .item-moderation:before,
+    .item-moderation-cancel:before,
+    .item-delete:before,
+    .item-request-reject:before,
+    .item-delete-confirm:after,
+    .item-delete-confirm:before,
+    .item-abuse:before,
+    .item-abuse:after,
+    .item-spoiler:before,
+    .item-spoiler:after,
+    .item-offtopic:before,
+    .item-offtopic:after {
+        font-family: var(--font-family);
+        color: rgba(var(--text), var(--hundred));
+    }
+    .b-shiki_editor aside.markers {
+        float: right;
+        height: 20px;
+        margin-right: 10px;
+        margin-top: 4px;
+    }
+    .b-shiki_editor aside.buttons {
+        white-space: nowrap;
+        width: 80%;
+        float: left !important;
+    }
+    .editor-controls {
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .buttons .editor-quote {
+        display: inline-block !important;
+    }
+    .b-shiki_editor .links.links p,
+    .b-shiki_editor .images.links p,
+    .b-shiki_editor .quotes.links p,
+    .b-shiki_editor .email.links p,
+    .b-shiki_editor .upload.links p {
+        width: 100%;
+        height: 46px;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .b-shiki_editor .links,
+    .b-shiki_editor .images,
+    .b-shiki_editor .quotes,
+    .b-shiki_editor .email,
+    .b-shiki_editor .upload {
+        width: 100%;
+        height: 46px;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    .b-shiki_editor .links input,
+    .b-shiki_editor .images input,
+    .b-shiki_editor .quotes input,
+    .b-shiki_editor .email input,
+    .b-shiki_editor .upload input {
+        margin-top: 8px;
+    }
+    .b-shiki_editor .hidden-block {
+        width: 100%;
+        max-width: 460px;
+    }
+    .b-comment > .inner header .name-date {
+        margin-left: 55px !important;
+    }
+    .buttons .editor-italic:before,
+    .buttons .editor-spoiler:before,
+    .buttons .editor-smiley:before,
+    .buttons .editor-quote:before,
+    .buttons .editor-image:before,
+    .buttons .editor-link:before,
+    .buttons .editor-strike:before,
+    .buttons .editor-underline:before,
+    .buttons .editor-bold:before {
+        font-size: 22px !important;
+    }
+    .CodeMirror-dialog-top {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .fullwidth>.b-spoiler>label:not(._) {
+        white-space: nowrap;
+        padding: 0.47em 6em 0.47em 1em;
+    }
+    .buttons .editor-italic,
+    .buttons .editor-spoiler,
+    .buttons .editor-smiley,
+    .buttons .editor-quote,
+    .buttons .editor-image,
+    .buttons .editor-link,
+    .buttons .editor-strike,
+    .buttons .editor-underline,
+    .buttons .editor-bold,
+    .buttons .editor-file {
+        margin-left: 0 ;
+        padding: 7px 13px;
+    }
+    .buttons .editor-bold {
+        padding: 7px 13px;
+    }
+    .b-shiki_editor aside.buttons {
+        white-space: normal;
+    }
+    .editor-controls {
+        white-space: normal;
+        overflow-x: auto;
+        height: 50px;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 0  !important;
+    }
+    .editor-container .b-summary_marker {
+        width: 10px !important;
+    }
+    .editor-container .b-summary_marker:before {
+        margin-left: -34px;
+    }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .b-shiki_editor aside.buttons {
+        width: 70%;
+        float: left !important;
+    }
+    .b-shiki_editor aside.buttons .editor-spoiler {
+        margin-left: 35px;
+    }
+    .b-shiki_editor .links,
+    .b-shiki_editor .images,
+    .b-shiki_editor .quotes,
+    .b-shiki_editor .email,
+    .b-shiki_editor .upload {
+        height: 43px;
+    }
+    .b-comments {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .b-comments .comments-loader.comments-loader,
+    .b-comments .comments-hider.comments-hider,
+    .b-comments .comments-expander.comments-expander {
+        padding: 5px 4px;
+    }
+    .b-comments .comments-loader.click-loader {
+        padding: 5px 30px 5px 30px;
+    }
+}
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
+    .b-shiki_editor .hidden-block {
+        margin-bottom: 40px;
+    }
+}
+
+.b-comment:has(> .inner > .markers > .b-from_rip_marker) > .inner > header .name::after {
+    content: "rip";
+    display: inline-block;
+    margin-left: 7px;
+    padding: 0 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    line-height: 15px;
+    border-radius: 6px;
+    background: rgba(var(--accent), .18);
+    border: 1px solid rgba(var(--accent), .45);
+    color: rgba(var(--accent), 1);
+    vertical-align: 1px;
+}
+
+.x1200 .b-modal > .inner,
+.b-modal > .inner {
+    max-width: 920px;
+    background: color-mix(in srgb, var(--glass-deep) 90%, transparent);
+    box-shadow: var(--plate-shadow-strong);
+}
+
+.bulma .modal-card-body {
+    background: color-mix(in srgb, var(--glass-deep) 80%, transparent) !important;
+    border-radius: var(--plate-radius-lg);
+}
+
+.bulma span {
+    font: bold 16px var(--font-family);
+}
+
+.bulma .play-icon::before {
+    display: none;
+}
+
+.mfp-container {
+    backdrop-filter: blur(calc(var(--glass-blur) * .8));
+    -webkit-backdrop-filter: blur(4px);
+    background-color: color-mix(in srgb, var(--tone-191717) 94.9%, transparent);
+}
+
+.mfp-bg {
+    opacity: 0;
+}
+
+.b-feedback > .hover-activator {
+    height: 0px !important;
+}
+
+.b-feedback > .marker-positioner > .marker-text {
+    font-size: 0px;
+    height: 0px;
+    line-height: 0;
+    padding: 0;
+}
+
+.b-feedback > .marker-positioner {
+    width: 0px;
+}
+
+.b-input label {
+    display: block;
+    line-height: 1.65;
+}
+
+input {
+    color: var(--field-text);
+    background: var(--plate-bg);
+}
+
+.b-input input,
+.b-input textarea {
+    background: var(--plate-bg);
+    color: var(--field-text);
+    border: none !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
+}
+
+input,
+select,
+button,
+textarea {
+    background-color: var(--plate-bg);
+    font-family: var(--font-family);
+    border: none !important;
+}
+
+.subheadline-input {
+    background-color: var(--glass-deep) !important;
+    color: var(--field-text);
+    border: 1px solid var(--glass-deep) !important;
+    border-radius: 4px !important;
+    padding: 5px 0 3px 4px !important;
+    line-height: 14px !important;
+    right: 10px;
+}
+
+.ac_results {
+    border: none;
+    background: none;
+}
+
+.ac_results li:not(._) {
+    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ac_results li:hover {
+        background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
+        color: rgba(var(--text-strong), var(--hundred));
+        border: none;
+    }
+}
+
+option {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-form {
+    width: 100%;
+}
+
+.b-input.select.optional.user_rate_score,
+.b-input.integer.optional.user_rate_episodes,
+.b-input.select.optional.user_rate_status,
+.b-input.integer.optional.user_rate_rewatches {
+    margin: 0 5px 3px;
+    display: inline-block;
+}
+
+textarea#user_rate_text {
+    width: 99%;
 }
