@@ -2710,15 +2710,7 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 }
 
 @media screen and (max-width: 767px) {
-    html body .b-comments {
-        backdrop-filter: blur(5px) saturate(110%);
-        -webkit-backdrop-filter: blur(5px) saturate(110%);
-    }
-    html body :is(.b-review, .b-review-topic) .b-comments {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-    html body .b-comments .b-comment {
+    html body :is(.b-review, .b-review-topic) .b-comments .b-comment {
         position: relative;
         isolation: isolate;
         backdrop-filter: none;
@@ -5560,4 +5552,17 @@ a.name[href*="/morr"] {
 
 .b-catalog_entry.on_hold .image-decor:before {
     background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+.b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+.b-form .variants .variant a {
+    font-weight: bold;
+}
+
+.b-animes-menu .menu-topics-block .entry:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
 }
