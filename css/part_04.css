@@ -1,6 +1,11 @@
 /* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+.b-animes-menu .menu-topics-block .entry:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
 .p-dashboards-show .cc-second .c-forum {
     width: 30.33333%;
     margin-bottom: 21px;

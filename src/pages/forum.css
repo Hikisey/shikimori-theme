@@ -803,10 +803,12 @@
    наложение: backdrop-filter делал карточку опорной для вложенных absolute и
    отдельным слоем. */
 @media screen and (max-width: 767px) {
-    /* комментарии в рецензии: у рецензии своё размытие, второй слой внутри не нужен */
-    html body :is(.b-review, .b-review-topic) .b-comments .b-comment {
+    html body .b-comments .b-comment {
         position: relative;
         isolation: isolate;
+    }
+    /* комментарии в рецензии: у рецензии своё размытие, второй слой внутри не нужен */
+    html body :is(.b-review, .b-review-topic) .b-comments .b-comment {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }

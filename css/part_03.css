@@ -2710,9 +2710,11 @@ body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
 }
 
 @media screen and (max-width: 767px) {
-    html body :is(.b-review, .b-review-topic) .b-comments .b-comment {
+    html body .b-comments .b-comment {
         position: relative;
         isolation: isolate;
+    }
+    html body :is(.b-review, .b-review-topic) .b-comments .b-comment {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
@@ -5560,9 +5562,4 @@ a.name[href*="/morr"] {
 
 .b-form .variants .variant a {
     font-weight: bold;
-}
-
-.b-animes-menu .menu-topics-block .entry:hover .name {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
 }
