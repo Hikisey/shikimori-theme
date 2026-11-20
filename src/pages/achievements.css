@@ -1226,3 +1226,15 @@ body#clubs_edit .b-options-floated a:active:after {
         border-color: rgba(var(--accent), .7) !important;
     }
 }
+
+.b-options-floated a span.brackets:before,
+.b-options-floated .link span.brackets:before {
+    color: rgba(var(--text-2), 1);
+    content: "(";
+}
+body.p-achievements.p-profiles a.menu-icon:hover {
+    color: rgba(var(--link), 1) !important;
+}
+body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
+    color: #fff7e8;
+}

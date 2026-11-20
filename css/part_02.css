@@ -1,4 +1,4 @@
-/* shiki glass v1.7.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.8 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
 .subheadline-input {
@@ -3560,6 +3560,40 @@ img.studio-logo:is([src*="/studios/original/11."], [src*="/studios/original/44."
     }
 }
 
+.p-animes .c-about .watch-online > a.kind {
+    background-color: var(--btn-bg);
+    border-radius: 15px;
+    border-color: var(--tone-3e4d5d);
+    color: rgb(var(--text));
+    text-align: center;
+    padding: 8px 20px;
+    min-width: 154px;
+    max-width: 200px;
+    font-size: 13px;
+    font-family: var(--font-alt);
+    line-height: 1.3;
+}
+.b-db_entry-variant-list_item .image img {
+    border-radius: 4px;
+}
+.b-db_entry .c-poster picture { overflow: hidden; }
+.b-db_entry .c-poster img { display: block; }
+@media (hover: hover) and (pointer: fine) {
+    .b-db_entry .c-poster .b-image img:hover {
+        border-radius: var(--plate-radius) !important;
+        transform: none;
+    }
+}
+#players select:not(#u):is(:focus, :open),
+.players-loader select:not(#u):is(:focus, :open) {
+    border-color: rgba(var(--accent), .55) !important;
+    box-shadow: 0 0 0 2px rgba(var(--accent), .28) !important;
+}
+.p-db_entries-show .l-content .cc.m0:has(> .c-screenshots, > .c-videos),
+.p-db_entries-show .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos) { order: -1 !important; }
+.p-db_entries-show .resources-loader > :is(.cc-characters, .cc-themes) { order: 2; }
+.watch-online :is(.b-link_button, .watch-online-play):after { content: none !important; display: none !important; }
+
 .b-form input[type="submit"],
 .b-shiki_editor.previewed footer .unpreview,
 .b-poll .poll-actions .vote,
@@ -5076,35 +5110,4 @@ tr.user_rate.selectable.editable:after {
 .p-userlist_comparer .comparer table .selectable {
     transition: 0.15s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
-}
-
-.p-userlist_comparer .comparer table .exact-same,
-.p-userlist_comparer .legend .exact-same {
-    background-color: rgba(0, 160, 35, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .almost-same,
-.p-userlist_comparer .legend .almost-same {
-    background-color: rgba(0, 86, 20, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .slightly-difr,
-.p-userlist_comparer .legend .slightly-difr {
-    background-color: rgba(160, 0, 0, 0.4);
-    border-radius: 4px;
-}
-
-.p-userlist_comparer .comparer table .abslt-difr,
-.p-userlist_comparer .legend .abslt-difr {
-    background-color: rgba(117, 21, 1, 0.4);
-    border-radius: 4px;
-}
-
-.p-user_rates-index .list-lines tr.edit-form form {
-    background-color: color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    border: none;
-    box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
-    border-radius: var(--plate-radius);
 }

@@ -1,5 +1,35 @@
-/* shiki glass v1.7.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.8 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.b-oauth_application .name-logo:hover .name {
+    color: rgba(var(--accent), 1);
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-info-right .b-tag:hover {
+        background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent);
+        color: rgb(var(--text-strong)) !important;
+    }
+}
+
+input.ac_input.ac_loading {
+    box-shadow: none;
+    background: none !important;
+}
+
+.p-profiles .profile-head .c-info .c-additionals div a {
+    color: rgba(var(--link), 1);
+}
+
+.cc-8 > .c-column {
+    width: calc(12.5% - 10px);
+    margin: 5px;
+}
+
+.p-profiles-show .achievements .header .title {
+    color: rgba(var(--text-2), 1);
+}
 
 .c-buttons.cc-3a .c-control {
     background: rgba(var(--glass), 0.5);
@@ -215,14 +245,6 @@ body.p-achievements.p-profiles .subheadline {
     z-index: -1;
     margin-bottom: 25px !important;
     justify-content: center;
-}
-
-body.p-achievements.p-profiles a.menu-icon:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
-    color: #fff7e8;
 }
 
 .fullwidth > .b-spoiler > label {
@@ -561,10 +583,6 @@ body.p-achievements.p-profiles .p-mangas-show .other-names,
 body.p-achievements.p-profiles .p-ranobe-show .other-names {
     color: #c7b083 !important;
     background: #5233109e !important;
-}
-
-.b-db_entry-variant-list_item .image img {
-    border-radius: 4px;
 }
 
 .l-top_menu-v2 .menu-icon.search:before,
@@ -1640,14 +1658,6 @@ div.Ssylki-Characters:hover .b-link {
 .b-db_entry .c-poster :is(.b-db_entry-poster, .b-image, picture, img) {
     border-radius: var(--plate-radius);
 }
-.b-db_entry .c-poster picture { overflow: hidden; }
-.b-db_entry .c-poster img { display: block; }
-@media (hover: hover) and (pointer: fine) {
-    .b-db_entry .c-poster .b-image img:hover {
-        border-radius: var(--plate-radius) !important;
-        transform: none;
-    }
-}
 .mfp-container {
     opacity: 0;
     transition: opacity .36s ease;
@@ -2601,11 +2611,6 @@ header.head :is(h1, h2) {
     max-width: 100% !important;
     margin: 0 0 8px;
 }
-#players select:not(#u):is(:focus, :open),
-.players-loader select:not(#u):is(:focus, :open) {
-    border-color: rgba(var(--accent), .55) !important;
-    box-shadow: 0 0 0 2px rgba(var(--accent), .28) !important;
-}
 @media (hover: hover) and (pointer: fine) {
     #toggle-players:hover { background: transparent !important; color: rgba(var(--accent), 1) !important; }
 }
@@ -2663,9 +2668,6 @@ header.head :is(h1, h2) {
         transform: none !important;
     }
 }
-.p-db_entries-show .l-content .cc.m0:has(> .c-screenshots, > .c-videos),
-.p-db_entries-show .resources-loader > .cc.m0:has(> .c-screenshots, > .c-videos) { order: -1 !important; }
-.p-db_entries-show .resources-loader > :is(.cc-characters, .cc-themes) { order: 2; }
 .b-anime_theme :is(.episodes, .sequence, .artists),
 .shiki-votes,
 .mal-based,
@@ -2689,7 +2691,6 @@ header.head :is(h1, h2) {
     font-weight: 600;
     color: var(--btn-text) !important;
 }
-.watch-online :is(.b-link_button, .watch-online-play):after { content: none !important; display: none !important; }
 @media (hover: hover) and (pointer: fine) {
     .watch-online :is(.b-link_button, .watch-online-play):hover,
     .watch-online > a.kind:hover { background: var(--btn-bg-hover) !important; color: var(--btn-text) !important; }
