@@ -258,3 +258,12 @@ body.p-profiles-edit .tipsy.tipsy-s .tipsy-arrow.tipsy-arrow {
         box-shadow: 0 4px 14px color-mix(in srgb, var(--glass-shadow) 50%, transparent);
     }
 }
+
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles-edit .list .profile-action a:not(.b-button):hover {
+        color: rgba(var(--link), 1) !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+}
+.b-edit_styles .editor-container > .buttons:not(.m15) { display: none !important; }

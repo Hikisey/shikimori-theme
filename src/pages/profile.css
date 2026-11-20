@@ -1855,3 +1855,55 @@ div.compatibility > span.link-replacement > .text.full:before {
         padding-right: 0 !important;
     }
 }
+
+.b-user_history-line a {
+    color: rgba(var(--text-strong), 1);
+    font-weight: bold;
+}
+@media screen and (max-width: 1023px) {
+    
+    html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    html body.p-profiles-show .profile-head :is(.c-history, .c-history.x2, .c-history.x3) {
+        z-index: 2 !important;
+    }
+}
+/* Телефон, профиль: Safari на iOS держит слой с backdrop-filter в старой геометрии,
+   пока страницу не прокрутят (тема догружается после первой отрисовки), и блок
+   «Список аниме» с плашками рисуется не на месте. Размытие этим элементам не нужно:
+   у полосы фон прозрачный, плашкам хватает плотного фона. Анимацию всех свойств
+   у полосы тоже снимаем, чтобы раскладка встала сразу. */
+@media screen and (max-width: 767px) {
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:not(#u),
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transition: none !important;
+    }
+    /* «Список аниме» и плашки справа («правки», «комментарии») — один фон и рамка в покое и при касании.
+       Раньше полоса была прозрачной, а касание включало её :hover с тёмным фоном, плашки же были темнее полосы */
+    html body.p-profiles .profile-head .c-info:not(#u) {
+        --stat-plate: color-mix(in srgb, var(--glass-deep) 55%, transparent);
+        --stat-border: 1px solid rgba(var(--glass-light), .08);
+    }
+    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:is(*, :hover, :active):not(#u),
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):is(*, :hover, :active):not(#u) {
+        background: var(--stat-plate) !important;
+        border: var(--stat-border) !important;
+        border-radius: var(--plate-radius-lg) !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
+        color: rgba(var(--text), .9) !important;
+        font-size: 13px !important;
+    }
+}
+/* v1.6.11 — профиль: подписи годов под графиком активности (.x_label, absolute) выходили за низ рамки */
+html body .activity .graph.bar.vertical:not(#u) {
+    margin-bottom: 20px !important;
+}

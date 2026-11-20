@@ -1,5 +1,71 @@
-/* shiki glass v1.7.4 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+.p-userlist_comparer .comparer table .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+.p-user_rates-index .list-lines tr .index {
+    color: rgba(var(--text), 1) !important;
+}
+
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger {
+    font-size: 13px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-animes_collection-index .pagination .link.disabled:hover,
+    .p-mangas_collection-index .pagination .link.disabled:hover,
+    .p-recommendations-index .pagination .link.disabled:hover,
+    .p-userlist_comparer-show .pagination .link.disabled:hover {
+        box-shadow: none;
+        background: transparent;
+        color: rgba(var(--text), var(--hundred)) !important;
+    }
+}
+
+.b-stats_bar .compatibility a[href^='/comparer']:before {
+    display: none;
+}
+
+.p-user_rates-index .list-groups .summary.posters {
+    border: none;
+    background: var(--plate-bg);
+    color: rgba(var(--text-2), var(--hundred));
+    border-radius: 10%;
+}
+
+.p-user_rates-index .list-groups .summary .stat-value:after {
+    font-size: 0;
+}
+
+.p-user_rates-index .list-groups .summary.lines.library {
+    border-top: 1px solid rgba(var(--text-3), var(--hundred));
+}
+
+.b-user_rate-extended .b-catalog_entry {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.b-message > .inner div.body .b-catalog_entry.cc .content .b-user_rate {
+    right: 0;
+    width: 300px;
+}
+
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .plus::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .edit::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .trigger:hover .trigger-arrow::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .plus::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .edit::before,
+.b-db_entry-note .name-container .b-user_rate .b-add_to_list .option:hover .trigger-arrow::before {
+    color: rgba(var(--accent), var(--hundred));
+}
+
+.p-user_rates-index .list-posters .user_rate .edit-user_rate:before {
+    background: #453065b5;
+}
 
 @media (hover: hover) and (pointer: fine) {
     .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
@@ -4286,7 +4352,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.4";
+    --theme-version: "1.7.5";
 }
 
 .l-footer:before {
@@ -4397,14 +4463,6 @@ div.Ssylki-anime:hover .Text-2 {
     color: rgba(var(--accent), 1) !important;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles-edit .list .profile-action a:not(.b-button):hover {
-        color: rgba(var(--link), 1) !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
-}
-
 .buttons .main-controls a {
     color: rgba(var(--link), 1);
 }
@@ -4419,11 +4477,6 @@ div.Ssylki-anime:hover .Text-2 {
 
 .b-user_history-line a:hover {
     color: rgba(var(--link), 1) !important;
-    font-weight: bold;
-}
-
-.b-user_history-line a {
-    color: rgba(var(--text-strong), 1);
     font-weight: bold;
 }
 
@@ -5529,87 +5582,4 @@ header.head .misc {
     color: rgba(var(--text-strong), 1);
     transition: var(--ease-fast);
     border: none !important;
-}
-
-.b-user.avatar img,
-.b-user.named_avatar img,
-.b-user.avatar_fixed_margin img,
-.b-user16 img,
-.b-club .logo,
-.b-comment > .inner header img,
-.p-profiles-edit .account .avatar-edit img,
-.b-user.detailed .info .image-name .image,
-.b-message > .inner header img,
-.b-dialog > .inner header img,
-.p-topics .l-menu .clubs .entry img,
-.name-logo .logo {
-    border-radius: 50%;
-    border: 2px solid rgba(var(--glass), 0.6);
-    transition: 0s ease, transform 1s ease, border-color 1s ease;
-}
-
-.b-comment {
-    padding-top: 10px;
-}
-
-.b-comment .inner {
-    min-height: 50px;
-}
-
-.headline.linkheadline > a,
-.linkheadline.midheadline > a,
-.linkheadline.subheadline > a,
-.headline.linkheadline > a:hover,
-.linkheadline.midheadline > a:hover,
-.linkheadline.subheadline > a:hover {
-    text-decoration: none;
-}
-
-.l-page > div:last-child {
-    min-height: 0;
-}
-
-.p-profiles-index .cc-achievements .b-achievement,
-.p-profiles-index .cc-franchises-genres .c-genres .b-achievement {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    float: none;
-    border-radius: 8px;
-    transition: box-shadow 0.16s ease;
-    width: calc(26% - 36px);
-    margin: 0 12px 15px !important;
-    min-height: 338px;
-    box-shadow: var(--plate-shadow);
-}
-
-.b-achievement .c-image .inner {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border-radius: 20px;
-}
-
-body.p-achievements.p-profiles .b-options-floated {
-    position: absolute;
-    left: 10px;
-    top: -32px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 86px !important;
-    margin: 0 auto;
-    height: 15px;
-    padding: 11px 7px 6px;
-    background: color-mix(in srgb, var(--tone-131010) 78.04%, transparent);
-    color: #887146;
-    box-sizing: content-box;
-    border-radius: 50%/ 33px 33px 0 0;
-}
-
-.block2 .cc-achievements .b-achievement .title {
-    color: #cce0d1;
 }

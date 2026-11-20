@@ -1,5 +1,88 @@
-/* shiki glass v1.7.4 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.b-user.avatar img,
+.b-user.named_avatar img,
+.b-user.avatar_fixed_margin img,
+.b-user16 img,
+.b-club .logo,
+.b-comment > .inner header img,
+.p-profiles-edit .account .avatar-edit img,
+.b-user.detailed .info .image-name .image,
+.b-message > .inner header img,
+.b-dialog > .inner header img,
+.p-topics .l-menu .clubs .entry img,
+.name-logo .logo {
+    border-radius: 50%;
+    border: 2px solid rgba(var(--glass), 0.6);
+    transition: 0s ease, transform 1s ease, border-color 1s ease;
+}
+
+.b-comment {
+    padding-top: 10px;
+}
+
+.b-comment .inner {
+    min-height: 50px;
+}
+
+.headline.linkheadline > a,
+.linkheadline.midheadline > a,
+.linkheadline.subheadline > a,
+.headline.linkheadline > a:hover,
+.linkheadline.midheadline > a:hover,
+.linkheadline.subheadline > a:hover {
+    text-decoration: none;
+}
+
+.l-page > div:last-child {
+    min-height: 0;
+}
+
+.p-profiles-index .cc-achievements .b-achievement,
+.p-profiles-index .cc-franchises-genres .c-genres .b-achievement {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    float: none;
+    border-radius: 8px;
+    transition: box-shadow 0.16s ease;
+    width: calc(26% - 36px);
+    margin: 0 12px 15px !important;
+    min-height: 338px;
+    box-shadow: var(--plate-shadow);
+}
+
+.b-achievement .c-image .inner {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 20px;
+}
+
+body.p-achievements.p-profiles .b-options-floated {
+    position: absolute;
+    left: 10px;
+    top: -32px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 86px !important;
+    margin: 0 auto;
+    height: 15px;
+    padding: 11px 7px 6px;
+    background: color-mix(in srgb, var(--tone-131010) 78.04%, transparent);
+    color: #887146;
+    box-sizing: content-box;
+    border-radius: 50%/ 33px 33px 0 0;
+}
+
+.block2 .cc-achievements .b-achievement .title {
+    color: #cce0d1;
+}
 
 .c-genres .block2 .cc-achievements .b-achievement .title {
     color: #f3eabf;
@@ -1911,19 +1994,6 @@ img.studio-logo,
     }
 }
 
-@media screen and (max-width: 1023px) {
-
-    html body.p-profiles-show .profile-head .c-brief .avatar .profile-actions a,
-    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
-    html body.p-profiles-show .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    html body.p-profiles-show .profile-head :is(.c-history, .c-history.x2, .c-history.x3) {
-        z-index: 2 !important;
-    }
-}
-
 @media screen and (max-width: 767px) {
 
     html body.p-profiles-show .profile-head {
@@ -2632,7 +2702,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     order: 20;
     z-index: 6;
 }
-.b-edit_styles .editor-container > .buttons:not(.m15) { display: none !important; }
 .p-profiles-edit .b-edit_styles .editor-container :is(input, button)[type="submit"] {
     background: var(--btn-bg) !important;
     color: var(--btn-text) !important;
@@ -2684,40 +2753,11 @@ body * .b-appear_marker.active:not(#u) {
     display: block;
 }
 
-@media screen and (max-width: 767px) {
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:not(#u),
-    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        transition: none !important;
-    }
-    html body.p-profiles .profile-head .c-info:not(#u) {
-        --stat-plate: color-mix(in srgb, var(--glass-deep) 55%, transparent);
-        --stat-border: 1px solid rgba(var(--glass-light), .08);
-    }
-    html body.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar:is(*, :hover, :active):not(#u),
-    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):is(*, :hover, :active):not(#u) {
-        background: var(--stat-plate) !important;
-        border: var(--stat-border) !important;
-        border-radius: var(--plate-radius-lg) !important;
-        box-shadow: none !important;
-        transform: none !important;
-    }
-    html body.p-profiles .profile-head .c-info .c-additionals :is(a, span):not(#u) {
-        color: rgba(var(--text), .9) !important;
-        font-size: 13px !important;
-    }
-}
-
 html {
     -webkit-tap-highlight-color: transparent;
 }
 html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
     outline: none !important;
-}
-
-html body .activity .graph.bar.vertical:not(#u) {
-    margin-bottom: 20px !important;
 }
 
 @media screen and (min-width: 1024px) {
