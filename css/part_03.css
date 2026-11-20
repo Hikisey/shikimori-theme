@@ -1,4 +1,4 @@
-/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 .b-catalog_entry .cover .misc,
@@ -4426,9 +4426,86 @@ div.Ssylki-anime:hover .Text-2 {
     }
 }
 
+.b-catalog_entry .cover:hover .title {
+    color: rgba(var(--accent), var(--hundred));
+    text-decoration: none;
+}
+.b-catalog_entry .cover .misc span {
+    color: rgba(var(--text-2), var(--hundred));
+}
+.b-catalog_entry,
+.b-catalog_entry .cover .image-decor,
+.b-catalog_entry .cover .image-decor img,
+.b-catalog_entry .cover .image-cutter,
+.b-catalog_entry .cover .image-cutter img {
+    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
+}
+.b-catalog_entry .cover .image-decor .image-cutter {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9px;
+}
+.b-catalog_entry .cover .image-decor > .text:before {
+    background: #b97b43bf;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+@media screen and (min-width: 150px) {
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+.about .Animes_Mangas .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+.b-catalog_entry .collection_score_mal_icon {
+    display: none !important;
+}
+
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.6";
+    --theme-version: "1.7.7";
 }
 
 .l-footer:before {
@@ -4926,11 +5003,6 @@ body * [class*="new_marker"] {
     color: rgba(var(--accent), var(--hundred));
 }
 
-.b-catalog_entry .cover:hover .title {
-    color: rgba(var(--accent), var(--hundred));
-    text-decoration: none;
-}
-
 .b-catalog_entry .cover .title {
     color: rgba(var(--text-strong), var(--hundred));
 }
@@ -4940,16 +5012,8 @@ body * [class*="new_marker"] {
     transition: var(--ease-base);
 }
 
-.b-catalog_entry .cover .misc span {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
 .b-catalog_entry-tooltip .inner a.name {
     color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
 }
 
 .b-catalog_entry-tooltip .inner .additional-images .link .title {
@@ -4966,22 +5030,6 @@ body * [class*="new_marker"] {
 
 .b-catalog_entry-tooltip .inner .rating .text {
     color: rgba(var(--text), var(--hundred));
-}
-
-.b-catalog_entry,
-.b-catalog_entry .cover .image-decor,
-.b-catalog_entry .cover .image-decor img,
-.b-catalog_entry .cover .image-cutter,
-.b-catalog_entry .cover .image-cutter img {
-    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
-}
-
-.b-catalog_entry .cover .image-decor .image-cutter {
-    display: block;
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 9px;
 }
 
 .b-catalog_entry.completed .cover .misc span {
@@ -5200,10 +5248,6 @@ a.b-menu-line.entry.b-link .time {
 
 .b-form .variants .variant a {
     color: rgba(var(--link), var(--hundred));
-}
-
-.b-clubs.index .b-postloader {
-    width: 100%;
 }
 
 .p-dashboards-show .generated-news-line .info .name,
@@ -5487,14 +5531,6 @@ a.name[href*="/morr"] {
     font-weight: bold;
 }
 
-.b-catalog_entry .cover .image-decor > .text:before {
-    background: #b97b43bf;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
-    margin: 0;
-}
-
 .b-animes-menu .menu-topics-block .entry:hover .name {
     color: rgba(var(--accent), 1);
     text-decoration: none;
@@ -5545,24 +5581,4 @@ input.ac_input.ac_loading {
 
 .p-profiles-show .achievements .header .title {
     color: rgba(var(--text-2), 1);
-}
-
-.c-buttons.cc-3a .c-control {
-    background: rgba(var(--glass), 0.5);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
-    border-radius: 22px;
-    padding: 2px 0px;
-    transition: var(--ease-base);
-}
-
-.c-column.c-control.show-options {
-    float: right;
-    margin-right: 0px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-column.c-control.show-options:hover {
-        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
-        box-shadow: var(--plate-shadow) !important;
-    }
 }

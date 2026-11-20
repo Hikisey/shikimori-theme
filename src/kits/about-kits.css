@@ -1355,3 +1355,80 @@ div.Ssylki-anime:hover .Text-2 {
         opacity: 0;
     }
 }
+
+.b-catalog_entry .cover:hover .title {
+    color: rgba(var(--accent), var(--hundred));
+    text-decoration: none;
+}
+.b-catalog_entry .cover .misc span {
+    color: rgba(var(--text-2), var(--hundred));
+}
+.b-catalog_entry,
+.b-catalog_entry .cover .image-decor,
+.b-catalog_entry .cover .image-decor img,
+.b-catalog_entry .cover .image-cutter,
+.b-catalog_entry .cover .image-cutter img {
+    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
+}
+.b-catalog_entry .cover .image-decor .image-cutter {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9px;
+}
+.b-catalog_entry .cover .image-decor > .text:before {
+    background: #b97b43bf;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+@media screen and (min-width: 150px) {
+    .about .b-catalog_entry,
+    .about .b-catalog_entry:last-child {
+        width: calc(100% / 1) !important;
+    }
+}
+.about .Animes_Mangas .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.about .Animes_Mangas-1 .b-catalog_entry .cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: all;
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none;
+}
+.k-0-1 .b-catalog_entry,
+.k-0-1 .b-catalog_entry .cover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .k-0-1 .b-catalog_entry .cover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+    .b-catalog_entry:hover .cover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+.b-catalog_entry:hover .title,
+.b-catalog_entry:hover .name {
+    color: rgb(var(--accent)) !important;
+}
+.b-catalog_entry .collection_score_mal_icon {
+    display: none !important;
+}

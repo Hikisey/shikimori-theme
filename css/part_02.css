@@ -1,4 +1,4 @@
-/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
 .subheadline-input {
@@ -4957,6 +4957,13 @@ body.p-user_history .l-page {
     .block.m0 .b-message {
         padding-bottom: 10px !important;
     }
+}
+
+.b-catalog_entry-tooltip .inner a.name:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+.b-clubs.index .b-postloader {
+    width: 100%;
 }
 
 .b-db_entry-variant-list_item > .info .b-user_rate .b-add_to_list .trigger,

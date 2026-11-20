@@ -436,11 +436,6 @@ body * [class*="new_marker"] {
     color: rgba(var(--accent), var(--hundred));
 }
 
-.b-catalog_entry .cover:hover .title {
-    color: rgba(var(--accent), var(--hundred));
-    text-decoration: none;
-}
-
 .b-catalog_entry .cover .title {
     color: rgba(var(--text-strong), var(--hundred));
 }
@@ -450,16 +445,8 @@ body * [class*="new_marker"] {
     transition: var(--ease-base);
 }
 
-.b-catalog_entry .cover .misc span {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
 .b-catalog_entry-tooltip .inner a.name {
     color: rgba(var(--text-strong), var(--hundred));
-}
-
-.b-catalog_entry-tooltip .inner a.name:hover {
-    color: rgba(var(--link), var(--hundred));
 }
 
 .b-catalog_entry-tooltip .inner .additional-images .link .title {
@@ -476,22 +463,6 @@ body * [class*="new_marker"] {
 
 .b-catalog_entry-tooltip .inner .rating .text {
     color: rgba(var(--text), var(--hundred));
-}
-
-.b-catalog_entry,
-.b-catalog_entry .cover .image-decor,
-.b-catalog_entry .cover .image-decor img,
-.b-catalog_entry .cover .image-cutter,
-.b-catalog_entry .cover .image-cutter img {
-    transition: 0s ease-out, box-shadow .2s ease-out, transform .2s ease-out;
-}
-
-.b-catalog_entry .cover .image-decor .image-cutter {
-    display: block;
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 9px;
 }
 
 .b-catalog_entry.completed .cover .misc span {
@@ -713,10 +684,6 @@ a.b-menu-line.entry.b-link .time {
 
 .b-form .variants .variant a {
     color: rgba(var(--link), var(--hundred));
-}
-
-.b-clubs.index .b-postloader {
-    width: 100%;
 }
 
 .p-dashboards-show .generated-news-line .info .name,
@@ -998,14 +965,6 @@ a.name[href*="/morr"] {
 
 .b-form .variants .variant a {
     font-weight: bold;
-}
-
-.b-catalog_entry .cover .image-decor > .text:before {
-    background: #b97b43bf;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
-    margin: 0;
 }
 
 .b-animes-menu .menu-topics-block .entry:hover .name {
@@ -2430,13 +2389,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-@media screen and (min-width: 150px) {
-    .about .b-catalog_entry,
-    .about .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-
 @media screen and (min-width: 250px) {
     .about .b-catalog_entry,
     .about .b-catalog_entry:last-child {
@@ -2553,16 +2505,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.about .Animes_Mangas .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
 @media screen and (max-width: 250px) {
     .about .Animes_Mangas .b-catalog_entry .cover .misc {
         display: none;
@@ -2636,16 +2578,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.about .Animes_Mangas-1 .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
 div.Ssylki-anime-v-1-standard:hover .b-link {
     opacity: 0;
 }
@@ -2681,30 +2613,6 @@ div.Ssylki-Characters:hover .b-link {
     max-height: none !important;
     margin: 0 !important;
     padding: 0;
-}
-
-.k-0-1 .b-catalog_entry,
-.k-0-1 .b-catalog_entry .cover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .k-0-1 .b-catalog_entry .cover:hover {
-        transform: none !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
-    .b-catalog_entry:hover .cover {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-}
-
-.b-catalog_entry:hover .title,
-.b-catalog_entry:hover .name {
-    color: rgb(var(--accent)) !important;
 }
 
 .l-top_menu-v2 .menu-icon,
@@ -3331,10 +3239,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
 .b-catalog_entry .collection_score .score_marker_star {
     color: rgb(var(--accent));
     font-size: 10px;
-}
-
-.b-catalog_entry .collection_score_mal_icon {
-    display: none !important;
 }
 
 .b-catalog_entry > .collection_score,

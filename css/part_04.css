@@ -1,5 +1,25 @@
-/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.7 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.c-buttons.cc-3a .c-control {
+    background: rgba(var(--glass), 0.5);
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
+    border-radius: 22px;
+    padding: 2px 0px;
+    transition: var(--ease-base);
+}
+
+.c-column.c-control.show-options {
+    float: right;
+    margin-right: 0px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-column.c-control.show-options:hover {
+        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
+        box-shadow: var(--plate-shadow) !important;
+    }
+}
 
 .b-catalog_entry .cover .misc,
 .p-dashboards-show .midheadline .b-link,
@@ -1351,13 +1371,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-@media screen and (min-width: 150px) {
-    .about .b-catalog_entry,
-    .about .b-catalog_entry:last-child {
-        width: calc(100% / 1) !important;
-    }
-}
-
 @media screen and (min-width: 250px) {
     .about .b-catalog_entry,
     .about .b-catalog_entry:last-child {
@@ -1474,16 +1487,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.about .Animes_Mangas .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
 @media screen and (max-width: 250px) {
     .about .Animes_Mangas .b-catalog_entry .cover .misc {
         display: none;
@@ -1557,16 +1560,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
 }
 
-.about .Animes_Mangas-1 .b-catalog_entry .cover {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    pointer-events: all;
-    background: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none;
-}
-
 div.Ssylki-anime-v-1-standard:hover .b-link {
     opacity: 0;
 }
@@ -1602,30 +1595,6 @@ div.Ssylki-Characters:hover .b-link {
     max-height: none !important;
     margin: 0 !important;
     padding: 0;
-}
-
-.k-0-1 .b-catalog_entry,
-.k-0-1 .b-catalog_entry .cover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: none !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .k-0-1 .b-catalog_entry .cover:hover {
-        transform: none !important;
-        box-shadow: none !important;
-        background: none !important;
-    }
-    .b-catalog_entry:hover .cover {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-}
-
-.b-catalog_entry:hover .title,
-.b-catalog_entry:hover .name {
-    color: rgb(var(--accent)) !important;
 }
 
 .l-top_menu-v2 .menu-icon,
@@ -2239,10 +2208,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
 .b-catalog_entry .collection_score .score_marker_star {
     color: rgb(var(--accent));
     font-size: 10px;
-}
-
-.b-catalog_entry .collection_score_mal_icon {
-    display: none !important;
 }
 
 .b-catalog_entry > .collection_score,
