@@ -2747,10 +2747,6 @@ div.Ssylki-Characters:hover .b-link {
     outline: none !important;
 }
 
-.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
-    display: none;
-}
-
 /* v1.6.20: постер аниме — радиус карточки; просмотр увеличивается из угла постера.
    magnificRelGallery не задаёт removalDelay (в библиотеке 0), класс .mfp-removing
    при закрытии обычно не успевает отрисоваться.
@@ -2770,8 +2766,6 @@ div.Ssylki-Characters:hover .b-link {
     opacity: 0;
     transition: opacity .36s ease;
 }
-.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
-.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
 .mfp-image-holder img.mfp-img {
     border-radius: var(--plate-radius-lg) !important;
     transform: scale(.85);
@@ -3314,19 +3308,6 @@ img.studio-logo,
     position: relative;
 }
 
-.b-catalog_entry .image-decor .collection_score:not(#u) {
-    display: flex;
-    position: absolute;
-    right: 6px;
-    bottom: 6px;
-    z-index: 2;
-    padding: 0;
-    background: none;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-}
-
 /* общее правило body * [class*="_marker"] красит маркер в серую плашку — перебиваем */
 body .b-catalog_entry .collection_score .collection_score_marker {
     display: inline-flex;
@@ -3659,42 +3640,6 @@ header.head :is(h1, h2) {
     align-items: center !important;
     gap: 0 8px;
 }
-header.head :is(h1, h2) a.back {
-    display: inline-flex !important;
-    align-items: center !important;
-    align-self: center !important;
-    gap: 6px;
-    width: auto !important;
-    min-width: 0;
-    height: 30px;
-    font-size: 0 !important;
-    line-height: 1 !important;
-    position: relative;
-    margin: 0 4px 0 0;
-    vertical-align: middle;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) a.back:before {
-    position: static !important;
-    left: auto;
-    top: auto !important;
-    font-size: 30px !important;
-    font-weight: 700;
-    line-height: 1 !important;
-    flex: none;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) a.back:after {
-    position: static !important;
-    margin: 0 !important;
-    font-size: 13px !important;
-    font-weight: 600;
-    line-height: 1 !important;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) > :is(.misc, a.misc) {
-    flex: 1 0 100%;
-}
 
 .p-user_tools .b-useful_card {
     background: var(--plate-bg) !important;
@@ -3933,26 +3878,10 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     cursor: pointer;
 }
 
-/* v1.6.8: .b-appear_marker — служебный невидимый маркер «прочитано».
-   Общее body * [class*="_marker"] делало из него серую полоску с отступами,
-   а когда сайт снимал маркер при наведении, страница прыгала. */
-body * .b-appear_marker:not(#u) {
-    display: none;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: none !important;
-}
-body * .b-appear_marker.active:not(#u) {
-    display: block;
-}
-
 /* v1.6.11 — квадратик при нажатии на телефоне: системная подсветка касания и рамка фокуса после тапа */
 /* свойство наследуется: достаточно корня (сайт сам ставит только transparent) */
 html {
     -webkit-tap-highlight-color: transparent;
-}
-html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
-    outline: none !important;
 }
 
 /* v1.6.22: на ПК полоса прокрутки остаётся видимой при просмотре постера.
@@ -3975,7 +3904,6 @@ html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(
         width: auto !important;
     }
 }
-.mfp-figure:after { display: none !important; }
 .mfp-image-holder .mfp-content,
 .mfp-figure {
     background: none !important;

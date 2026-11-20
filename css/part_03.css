@@ -1,5 +1,81 @@
-/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
+
+.b-catalog_entry .cover .misc,
+.p-dashboards-show .midheadline .b-link,
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .history > .title .link,
+.p-dashboards .user_list .list-change .note,
+.p-dashboards .c-my_list .list-change .note,
+.bar.vertical .line .x_label,
+.p-dashboards-show .contests .contest .notice,
+.b-forums .forum .topics,
+.name-date .time,
+.p-profiles .profile-head .c-history .entry .misc,
+.p-profiles-show .lifetime .times .time,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.b-comment > .inner header .name-date .time,
+.b-replies,
+.b-options-floated,
+.p-messages .mass-actions .action,
+.p-animes_collection-index .pagination,
+.p-mangas_collection-index .pagination,
+.p-recommendations-index .pagination,
+.p-userlist_comparer-show .pagination,
+.b-rate .score-notice,
+.b-animes-menu .block-list .date,
+.bar.horizontal .line .x_label,
+.b-animes-menu .friend-rate .status,
+.b-summary_marker::before,
+.b-offtopic_marker::before,
+.tipsy,
+header.head .misc,
+header.head a.edit,
+.p-studios .studio .animes,
+.p-studios .studio .years,
+.p-contests .contest-match .vs .help,
+.p-contests .contest-match .vs .next,
+.p-contests .contest-match .vs .finish,
+.p-contests .contest-match .vs .refrain,
+.p-contests .contest-match .vs .refrained,
+.p-contests .match-day .matches-num,
+.b-lang_trigger,
+.b-club .info,
+.b-new_marker::before,
+.b-user.detailed .info .last-online,
+.b-user.detailed .history .line .date,
+.p-recommendations-index .b-header_filters .hint,
+.p-recommendations-favourites .b-header_filters .hint,
+.p-userlist_comparer .comparer table .notice,
+.p-topics .l-menu .calendar .entry .misc,
+.p-topics .l-menu .reviews .entry .misc,
+.p-topics .l-menu .clubs .entry .misc,
+.p-topics .l-menu .contests .contest .notice,
+.p-topics .l-menu .sticked-topics .topic .notice,
+.b-log_entry .date,
+.b-log_entry .spoiler.collapse,
+.b-log_entry .spoiler.collapsed,
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span,
+.b-js-action,
+.b-input .hint,
+.b-review-topic .review-votes_count,
+.p-topics .l-menu .sticky-topics .topic .notice {
+    font-size: 12px !important;
+    color: var(--heading-text);
+}
+
+.p-user_rates-index .list-lines tr td .new-value input {
+    border-radius: 4px;
+    border: none;
+    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
+}
+
+.p-userlist_comparer .comparer table a {
+    color: rgba(var(--text-strong), 1) !important;
+}
 
 .p-userlist_comparer .comparer table .name a {
     color: rgba(var(--text-strong), 1);
@@ -4352,7 +4428,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.5";
+    --theme-version: "1.7.6";
 }
 
 .l-footer:before {
@@ -5489,97 +5565,4 @@ input.ac_input.ac_loading {
         background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
         box-shadow: var(--plate-shadow) !important;
     }
-}
-
-.b-catalog_entry .cover .misc,
-.p-dashboards-show .midheadline .b-link,
-.p-dashboards .user_list .list-type > .title .switch,
-.p-dashboards .user_list .list-type > .title .link,
-.p-dashboards .user_list .history > .title .switch,
-.p-dashboards .user_list .history > .title .link,
-.p-dashboards .user_list .list-change .note,
-.p-dashboards .c-my_list .list-change .note,
-.p-dashboards-show .contests .contest .notice,
-.b-forums .forum .topics,
-.name-date .time,
-.p-profiles .profile-head .c-history .entry .misc,
-.p-profiles-show .lifetime .times .time,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
-.b-comment > .inner header .name-date .time,
-.b-replies,
-.b-options-floated,
-.p-messages .mass-actions .action,
-.p-animes_collection-index .pagination,
-.p-mangas_collection-index .pagination,
-.p-recommendations-index .pagination,
-.p-userlist_comparer-show .pagination,
-.b-show_more,
-.b-rate .score-notice,
-.b-animes-menu .block-list .date,
-.bar.horizontal .line .x_label,
-.b-animes-menu .friend-rate .status,
-.bar.horizontal .line .bar-container .value,
-.tipsy,
-header.head a.edit,
-.p-studios .studio .animes,
-.p-studios .studio .years,
-.p-contests-index .contest .date,
-.p-contests .contest-match .vs .help,
-.p-contests .contest-match .vs .next,
-.p-contests .contest-match .vs .finish,
-.p-contests .contest-match .vs .refrain,
-.p-contests .contest-match .vs .refrained,
-.p-contests .match-day .matches-num,
-.b-lang_trigger,
-.b-club .info,
-.b-user.detailed .info .last-online,
-.b-user.detailed .history .line .date,
-.p-recommendations-index .b-header_filters .hint,
-.p-recommendations-favourites .b-header_filters .hint,
-.p-userlist_comparer .comparer table .notice,
-.p-topics .l-menu .calendar .entry .misc,
-.p-topics .l-menu .reviews .entry .misc,
-.p-topics .l-menu .clubs .entry .misc,
-.p-topics .l-menu .contests .contest .notice,
-.p-topics .l-menu .sticked-topics .topic .notice,
-.b-log_entry .date,
-.b-log_entry .spoiler.collapse,
-.b-log_entry .spoiler.collapsed,
-.b-log_entry .spoiler.collapse span,
-.b-log_entry .spoiler.collapsed span,
-.b-js-action,
-.b-input .hint,
-.b-review-topic .review-votes_count,
-.b-show_more-more .hide-more,
-.p-topics .l-menu .sticky-topics .topic .notice {
-    font-size: 12px !important;
-}
-
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
-header.head .misc {
-    font-size: 12px;
-    transition: 0.3s ease-out, -webkit-0.3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s;
-}
-
-.b-stats_bar a.title,
-.b-stats_bar .title {
-    font-size: 15px;
-    margin-bottom: 2px;
-    transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
-}
-
-.b-options-floated {
-    height: 28px;
-    width: auto;
-    line-height: 28px;
-    margin-top: 0;
-    z-index: 1;
-}
-
-.p-topics .l-menu .sticky-topics .topic,
-.p-topics .l-menu .sticky-topics .topic .title,
-.p-topics .l-menu .sticky-topics .topic .title:after {
-    color: rgba(var(--text-strong), 1);
-    transition: var(--ease-fast);
-    border: none !important;
 }

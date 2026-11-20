@@ -298,3 +298,16 @@
         width: 270px;
     }
 }
+
+.b-catalog_entry .image-decor .collection_score:not(#u) {
+    display: flex;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    z-index: 2;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}

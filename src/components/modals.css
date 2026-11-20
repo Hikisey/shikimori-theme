@@ -48,3 +48,7 @@
 .b-feedback > .marker-positioner {
     width: 0px;
 }
+
+.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
+.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
+.mfp-figure:after { display: none !important; }

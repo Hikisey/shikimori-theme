@@ -1,4 +1,4 @@
-/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -977,6 +977,10 @@ a,
     }
 }
 
+html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
+    outline: none !important;
+}
+
 @keyframes switch-focus--vertical {
     0%,
     100% {
@@ -1793,6 +1797,10 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         border-color: rgba(var(--accent), .55) !important;
         color: rgba(var(--accent), 1);
     }
+}
+
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
 }
 
 body {
@@ -2823,6 +2831,16 @@ html input[type="checkbox"]:not(#u):focus-visible {
     }
 }
 
+body * .b-appear_marker:not(#u) {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+}
+body * .b-appear_marker.active:not(#u) {
+    display: block;
+}
+
 .slide.animes .cc-2a .c-column.m0,
 .slide.mangas .cc-2a .c-column.m0,
 .slide.ranobe .cc-2a .c-column.m0 {
@@ -3418,6 +3436,43 @@ header.head .notice {
         backdrop-filter: var(--glass-filter);
         -webkit-backdrop-filter: blur(5px) saturate(110%);
     }
+}
+
+header.head :is(h1, h2) a.back {
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: center !important;
+    gap: 6px;
+    width: auto !important;
+    min-width: 0;
+    height: 30px;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    position: relative;
+    margin: 0 4px 0 0;
+    vertical-align: middle;
+    color: rgba(var(--link), 1) !important;
+}
+header.head :is(h1, h2) a.back:before {
+    position: static !important;
+    left: auto;
+    top: auto !important;
+    font-size: 30px !important;
+    font-weight: 700;
+    line-height: 1 !important;
+    flex: none;
+    color: rgba(var(--link), 1) !important;
+}
+header.head :is(h1, h2) a.back:after {
+    position: static !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    line-height: 1 !important;
+    color: rgba(var(--link), 1) !important;
+}
+header.head :is(h1, h2) > :is(.misc, a.misc) {
+    flex: 1 0 100%;
 }
 
 .b-user.named_avatar .name {
@@ -4749,6 +4804,19 @@ header.head .notice {
     }
 }
 
+.b-catalog_entry .image-decor .collection_score:not(#u) {
+    display: flex;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    z-index: 2;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
 .b-prgrph,
 .b-spoiler_prgrph {
     color: rgba(var(--text), 1);
@@ -5782,6 +5850,10 @@ html body .b-comments_select-panel button:disabled:not(#u) {
     width: 0px;
 }
 
+.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
+.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
+.mfp-figure:after { display: none !important; }
+
 .b-input label {
     display: block;
     line-height: 1.65;
@@ -5807,88 +5879,4 @@ textarea {
     background-color: var(--plate-bg);
     font-family: var(--font-family);
     border: none !important;
-}
-
-.subheadline-input {
-    background-color: var(--glass-deep) !important;
-    color: var(--field-text);
-    border: 1px solid var(--glass-deep) !important;
-    border-radius: 4px !important;
-    padding: 5px 0 3px 4px !important;
-    line-height: 14px !important;
-    right: 10px;
-}
-
-.ac_results {
-    border: none;
-    background: none;
-}
-
-.ac_results li:not(._) {
-    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
-    color: rgba(var(--text-strong), var(--hundred));
-    border: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .ac_results li:hover {
-        background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
-        color: rgba(var(--text-strong), var(--hundred));
-        border: none;
-    }
-}
-
-option {
-    color: rgba(var(--text), var(--hundred));
-}
-
-.b-form {
-    width: 100%;
-}
-
-.b-input.select.optional.user_rate_score,
-.b-input.integer.optional.user_rate_episodes,
-.b-input.select.optional.user_rate_status,
-.b-input.integer.optional.user_rate_rewatches {
-    margin: 0 5px 3px;
-    display: inline-block;
-}
-
-textarea#user_rate_text {
-    width: 99%;
-}
-
-::-webkit-input-placeholder {
-    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
-    transition: 0.5s ease-out;
-}
-
-::-moz-placeholder {
-    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
-    transition: 0.5s ease-out;
-}
-
-:focus::-webkit-input-placeholder {
-    opacity: 0.5;
-}
-
-:focus::-moz-placeholder {
-    opacity: 0.5;
-}
-
-.ac_results .animes .name-ru:hover {
-    color: rgba(var(--accent), var(--hundred)) !important;
-}
-
-.select select {
-    color: rgba(var(--text-strong), var(--hundred)) !important;
-}
-
-.bulma .select:not(.is-multiple):not(.is-loading):after {
-    border-color: rgba(var(--text), var(--hundred)) !important;
-}
-
-.bulma label.label {
-    color: var(--tone-9fa9b5) !important;
-    font: bold 13px var(--font-family) !important;
 }

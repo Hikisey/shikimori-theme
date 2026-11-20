@@ -1,5 +1,98 @@
-/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.b-catalog_entry .cover .misc,
+.p-dashboards-show .midheadline .b-link,
+.p-dashboards .user_list .list-type > .title .switch,
+.p-dashboards .user_list .list-type > .title .link,
+.p-dashboards .user_list .history > .title .switch,
+.p-dashboards .user_list .history > .title .link,
+.p-dashboards .user_list .list-change .note,
+.p-dashboards .c-my_list .list-change .note,
+.p-dashboards-show .contests .contest .notice,
+.b-forums .forum .topics,
+.name-date .time,
+.p-profiles .profile-head .c-history .entry .misc,
+.p-profiles-show .lifetime .times .time,
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
+.b-comment > .inner header .name-date .time,
+.b-replies,
+.b-options-floated,
+.p-messages .mass-actions .action,
+.p-animes_collection-index .pagination,
+.p-mangas_collection-index .pagination,
+.p-recommendations-index .pagination,
+.p-userlist_comparer-show .pagination,
+.b-show_more,
+.b-rate .score-notice,
+.b-animes-menu .block-list .date,
+.bar.horizontal .line .x_label,
+.b-animes-menu .friend-rate .status,
+.bar.horizontal .line .bar-container .value,
+.tipsy,
+header.head a.edit,
+.p-studios .studio .animes,
+.p-studios .studio .years,
+.p-contests-index .contest .date,
+.p-contests .contest-match .vs .help,
+.p-contests .contest-match .vs .next,
+.p-contests .contest-match .vs .finish,
+.p-contests .contest-match .vs .refrain,
+.p-contests .contest-match .vs .refrained,
+.p-contests .match-day .matches-num,
+.b-lang_trigger,
+.b-club .info,
+.b-user.detailed .info .last-online,
+.b-user.detailed .history .line .date,
+.p-recommendations-index .b-header_filters .hint,
+.p-recommendations-favourites .b-header_filters .hint,
+.p-userlist_comparer .comparer table .notice,
+.p-topics .l-menu .calendar .entry .misc,
+.p-topics .l-menu .reviews .entry .misc,
+.p-topics .l-menu .clubs .entry .misc,
+.p-topics .l-menu .contests .contest .notice,
+.p-topics .l-menu .sticked-topics .topic .notice,
+.b-log_entry .date,
+.b-log_entry .spoiler.collapse,
+.b-log_entry .spoiler.collapsed,
+.b-log_entry .spoiler.collapse span,
+.b-log_entry .spoiler.collapsed span,
+.b-js-action,
+.b-input .hint,
+.b-review-topic .review-votes_count,
+.b-show_more-more .hide-more,
+.p-topics .l-menu .sticky-topics .topic .notice {
+    font-size: 12px !important;
+}
+
+.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
+header.head .misc {
+    font-size: 12px;
+    transition: 0.3s ease-out, -webkit-0.3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s;
+}
+
+.b-stats_bar a.title,
+.b-stats_bar .title {
+    font-size: 15px;
+    margin-bottom: 2px;
+    transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+.b-options-floated {
+    height: 28px;
+    width: auto;
+    line-height: 28px;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.p-topics .l-menu .sticky-topics .topic,
+.p-topics .l-menu .sticky-topics .topic .title,
+.p-topics .l-menu .sticky-topics .topic .title:after {
+    color: rgba(var(--text-strong), 1);
+    transition: var(--ease-fast);
+    border: none !important;
+}
 
 .b-user.avatar img,
 .b-user.named_avatar img,
@@ -1575,10 +1668,6 @@ div.Ssylki-Characters:hover .b-link {
     outline: none !important;
 }
 
-.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
-    display: none;
-}
-
 .b-db_entry .c-poster :is(.b-db_entry-poster, .b-image, picture, img) {
     border-radius: var(--plate-radius);
 }
@@ -1594,8 +1683,6 @@ div.Ssylki-Characters:hover .b-link {
     opacity: 0;
     transition: opacity .36s ease;
 }
-.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
-.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
 .mfp-image-holder img.mfp-img {
     border-radius: var(--plate-radius-lg) !important;
     transform: scale(.85);
@@ -2130,19 +2217,6 @@ img.studio-logo,
     position: relative;
 }
 
-.b-catalog_entry .image-decor .collection_score:not(#u) {
-    display: flex;
-    position: absolute;
-    right: 6px;
-    bottom: 6px;
-    z-index: 2;
-    padding: 0;
-    background: none;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-}
-
 body .b-catalog_entry .collection_score .collection_score_marker {
     display: inline-flex;
     align-items: center;
@@ -2474,42 +2548,6 @@ header.head :is(h1, h2) {
     align-items: center !important;
     gap: 0 8px;
 }
-header.head :is(h1, h2) a.back {
-    display: inline-flex !important;
-    align-items: center !important;
-    align-self: center !important;
-    gap: 6px;
-    width: auto !important;
-    min-width: 0;
-    height: 30px;
-    font-size: 0 !important;
-    line-height: 1 !important;
-    position: relative;
-    margin: 0 4px 0 0;
-    vertical-align: middle;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) a.back:before {
-    position: static !important;
-    left: auto;
-    top: auto !important;
-    font-size: 30px !important;
-    font-weight: 700;
-    line-height: 1 !important;
-    flex: none;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) a.back:after {
-    position: static !important;
-    margin: 0 !important;
-    font-size: 13px !important;
-    font-weight: 600;
-    line-height: 1 !important;
-    color: rgba(var(--link), 1) !important;
-}
-header.head :is(h1, h2) > :is(.misc, a.misc) {
-    flex: 1 0 100%;
-}
 
 .p-user_tools .b-useful_card {
     background: var(--plate-bg) !important;
@@ -2743,21 +2781,8 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     cursor: pointer;
 }
 
-body * .b-appear_marker:not(#u) {
-    display: none;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: none !important;
-}
-body * .b-appear_marker.active:not(#u) {
-    display: block;
-}
-
 html {
     -webkit-tap-highlight-color: transparent;
-}
-html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
-    outline: none !important;
 }
 
 @media screen and (min-width: 1024px) {
@@ -2775,7 +2800,6 @@ html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(
         width: auto !important;
     }
 }
-.mfp-figure:after { display: none !important; }
 .mfp-image-holder .mfp-content,
 .mfp-figure {
     background: none !important;

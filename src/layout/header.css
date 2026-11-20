@@ -512,3 +512,7 @@ span.submenu-triangle.submenu-triangle.icon-profile {
         color: rgba(var(--accent), 1);
     }
 }
+
+.l-top_menu-v2 .submenu>a.icon-site_rules span.text {
+    display: none;
+}

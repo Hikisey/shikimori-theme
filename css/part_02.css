@@ -1,5 +1,89 @@
-/* shiki glass v1.7.5 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.6 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.subheadline-input {
+    background-color: var(--glass-deep) !important;
+    color: var(--field-text);
+    border: 1px solid var(--glass-deep) !important;
+    border-radius: 4px !important;
+    padding: 5px 0 3px 4px !important;
+    line-height: 14px !important;
+    right: 10px;
+}
+
+.ac_results {
+    border: none;
+    background: none;
+}
+
+.ac_results li:not(._) {
+    background: color-mix(in srgb, var(--tone-282d56) 80%, transparent);
+    color: rgba(var(--text-strong), var(--hundred));
+    border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ac_results li:hover {
+        background: color-mix(in srgb, var(--tone-54588a) 87.84%, transparent);
+        color: rgba(var(--text-strong), var(--hundred));
+        border: none;
+    }
+}
+
+option {
+    color: rgba(var(--text), var(--hundred));
+}
+
+.b-form {
+    width: 100%;
+}
+
+.b-input.select.optional.user_rate_score,
+.b-input.integer.optional.user_rate_episodes,
+.b-input.select.optional.user_rate_status,
+.b-input.integer.optional.user_rate_rewatches {
+    margin: 0 5px 3px;
+    display: inline-block;
+}
+
+textarea#user_rate_text {
+    width: 99%;
+}
+
+::-webkit-input-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+::-moz-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+.ac_results .animes .name-ru:hover {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.select select {
+    color: rgba(var(--text-strong), var(--hundred)) !important;
+}
+
+.bulma .select:not(.is-multiple):not(.is-loading):after {
+    border-color: rgba(var(--text), var(--hundred)) !important;
+}
+
+.bulma label.label {
+    color: var(--tone-9fa9b5) !important;
+    font: bold 13px var(--font-family) !important;
+}
 
 .b-form.green-form {
     background: #20422082;
@@ -5016,80 +5100,4 @@ tr.user_rate.selectable.editable:after {
     border: none;
     box-shadow: 2px 2px 8px 1px rgba(var(--shade), 0.2);
     border-radius: var(--plate-radius);
-}
-
-.b-catalog_entry .cover .misc,
-.p-dashboards-show .midheadline .b-link,
-.p-dashboards .user_list .list-type > .title .switch,
-.p-dashboards .user_list .list-type > .title .link,
-.p-dashboards .user_list .history > .title .switch,
-.p-dashboards .user_list .history > .title .link,
-.p-dashboards .user_list .list-change .note,
-.p-dashboards .c-my_list .list-change .note,
-.bar.vertical .line .x_label,
-.p-dashboards-show .contests .contest .notice,
-.b-forums .forum .topics,
-.name-date .time,
-.p-profiles .profile-head .c-history .entry .misc,
-.p-profiles-show .lifetime .times .time,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
-.b-comment > .inner header .name-date .time,
-.b-replies,
-.b-options-floated,
-.p-messages .mass-actions .action,
-.p-animes_collection-index .pagination,
-.p-mangas_collection-index .pagination,
-.p-recommendations-index .pagination,
-.p-userlist_comparer-show .pagination,
-.b-rate .score-notice,
-.b-animes-menu .block-list .date,
-.bar.horizontal .line .x_label,
-.b-animes-menu .friend-rate .status,
-.b-summary_marker::before,
-.b-offtopic_marker::before,
-.tipsy,
-header.head .misc,
-header.head a.edit,
-.p-studios .studio .animes,
-.p-studios .studio .years,
-.p-contests .contest-match .vs .help,
-.p-contests .contest-match .vs .next,
-.p-contests .contest-match .vs .finish,
-.p-contests .contest-match .vs .refrain,
-.p-contests .contest-match .vs .refrained,
-.p-contests .match-day .matches-num,
-.b-lang_trigger,
-.b-club .info,
-.b-new_marker::before,
-.b-user.detailed .info .last-online,
-.b-user.detailed .history .line .date,
-.p-recommendations-index .b-header_filters .hint,
-.p-recommendations-favourites .b-header_filters .hint,
-.p-userlist_comparer .comparer table .notice,
-.p-topics .l-menu .calendar .entry .misc,
-.p-topics .l-menu .reviews .entry .misc,
-.p-topics .l-menu .clubs .entry .misc,
-.p-topics .l-menu .contests .contest .notice,
-.p-topics .l-menu .sticked-topics .topic .notice,
-.b-log_entry .date,
-.b-log_entry .spoiler.collapse,
-.b-log_entry .spoiler.collapsed,
-.b-log_entry .spoiler.collapse span,
-.b-log_entry .spoiler.collapsed span,
-.b-js-action,
-.b-input .hint,
-.b-review-topic .review-votes_count,
-.p-topics .l-menu .sticky-topics .topic .notice {
-    font-size: 12px !important;
-    color: var(--heading-text);
-}
-
-.p-user_rates-index .list-lines tr td .new-value input {
-    border-radius: 4px;
-    border: none;
-    background: color-mix(in srgb, var(--tone-121223) 40%, transparent);
-}
-
-.p-userlist_comparer .comparer table a {
-    color: rgba(var(--text-strong), 1) !important;
 }

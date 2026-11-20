@@ -615,3 +615,7 @@ a,
         -webkit-touch-callout: default;
     }
 }
+
+html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(:focus-visible) {
+    outline: none !important;
+}

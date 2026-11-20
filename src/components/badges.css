@@ -109,3 +109,16 @@
         right: 11px;
     }
 }
+
+/* v1.6.8: .b-appear_marker — служебный невидимый маркер «прочитано».
+   Общее body * [class*="_marker"] делало из него серую полоску с отступами,
+   а когда сайт снимал маркер при наведении, страница прыгала. */
+body * .b-appear_marker:not(#u) {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+}
+body * .b-appear_marker.active:not(#u) {
+    display: block;
+}
