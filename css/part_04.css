@@ -1,6 +1,63 @@
 /* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+@media (hover: hover) and (pointer: fine) {
+    .subheadline a[title="morr"]:hover:after {
+        line-height: 20px;
+        padding-top: 2px;
+        margin-top: -2px;
+    }
+}
+
+.name-date a.name[title="morr"],
+a.name[href*="/morr"] {
+    color: #fdc47a !important;
+    font-size: 19px !important;
+    line-height: 15px !important;
+}
+
+.subheadline a[title="morr"] {
+    color: #fdc47a !important;
+}
+
+.name-date a.name[title="EngiNier"],
+.b-comment>.inner a.name[href*="/EngiNier"],
+.subheadline a[title="EngiNier"] {
+    color: var(--tone-e2e2e2)!important;
+}
+
+.name-date a.name[title="Cosmo+%E2%98%AD"],
+.b-comment>.inner a.name[href*="/Cosmo+%E2%98%AD"],
+.subheadline a[title="Cosmo+%E2%98%AD"] {
+    color: #9ee0f1!important;
+}
+
+.b-user16 a[title="morr"] {
+    color: #fdc47a !important;
+    font-weight: bold;
+}
+
+.name-date a.name[title="EngiNier"]:hover:after,
+.name-date a.name[href*="/EngiNier"]:hover:after,
+.subheadline a[title="EngiNier"]:hover:after,
+.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
+.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
+.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
+    content:"Edesign Admin";
+}
+
+.b-catalog_entry.completed .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #419541 0);
+}
+
+.b-catalog_entry.dropped .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
+}
+
+.b-catalog_entry.watching .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
+}
+
 .b-catalog_entry.on_hold .image-decor:before {
     background: linear-gradient(135deg, transparent 31px, #c5833d 0);
 }

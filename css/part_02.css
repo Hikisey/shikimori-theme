@@ -1,6 +1,32 @@
 /* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
 
+.mfp-container {
+    backdrop-filter: blur(calc(var(--glass-blur) * .8));
+    -webkit-backdrop-filter: blur(4px);
+    background-color: color-mix(in srgb, var(--tone-191717) 94.9%, transparent);
+}
+
+.mfp-bg {
+    opacity: 0;
+}
+
+.b-feedback > .hover-activator {
+    height: 0px !important;
+}
+
+.b-feedback > .marker-positioner > .marker-text {
+    font-size: 0px;
+    height: 0px;
+    line-height: 0;
+    padding: 0;
+}
+
+.b-feedback > .marker-positioner {
+    width: 0px;
+}
+
+.mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
 .mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
 .mfp-figure:after { display: none !important; }
 
@@ -509,6 +535,41 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     .ac_results .character-suggest .animes div a:hover {
         background: none !important;
         box-shadow: none;
+    }
+}
+
+@keyframes sg-rise {
+    from { opacity: 0; translate: 0 8px; }
+}
+
+@keyframes sg-pop {
+    from { opacity: 0; scale: .96; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html body .b-subposter-action {
+        transition: color .15s, opacity .15s,
+                    scale .32s cubic-bezier(.34, 1.56, .64, 1);
+    }
+    html body .l-top_menu-v2 .menu-icon:not(#u) {
+        transition: background-color .25s ease, color .25s ease,
+                    scale .32s cubic-bezier(.34, 1.56, .64, 1) !important;
+    }
+    html body .l-top_menu-v2 .menu-icon:not(#u):active {
+        transition: scale .08s ease-out !important;
+    }
+    html body :is(.b-button, input[type="submit"], .comments-loader, .b-subposter-action, .l-top_menu-v2 .menu-icon):active {
+        scale: .95;
+        transition: scale .08s ease-out;
+    }
+
+    html body .b-comments .b-comment {
+        animation: sg-rise .32s cubic-bezier(.22, 1, .36, 1) backwards;
+    }
+
+    .b-modal > .inner,
+    .bulma .modal.is-active .modal-card {
+        animation: sg-pop .24s cubic-bezier(.22, 1, .36, 1) backwards;
     }
 }
 
@@ -5075,57 +5136,4 @@ body.p-user_history .l-page {
 .p-user_rates-index .l-content .b-options-floated span:after {
     color: rgba(var(--text-2), 1);
     font-size: 0;
-}
-
-.p-user_rates-index .l-content .b-options-floated span:hover {
-    color: rgba(var(--accent), 1);
-}
-
-.p-dashboards-show .v2 .db-update .name:hover,
-.b-comment > .inner .name-date .name:hover,
-.b-comments .comments-collapser:hover,
-.b-topic > .inner header .name-date a.name:hover,
-.p-user_rates-index .list-lines tr td .episodes_total {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.p-user_rates-index .list-lines tr .name a {
-    color: rgba(var(--text-strong), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .list-lines tr .name a:hover,
-    .b-user.detailed .history .line a .event:hover {
-        background: none;
-        box-shadow: none;
-        color: rgba(var(--accent), 1);
-        text-decoration: none;
-        border: none;
-    }
-}
-
-.p-user_rates-index .list-lines tr.editable {
-    transition: 0.1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
-}
-
-.p-user_rates-index .stat-categories .category {
-    color: rgba(var(--accent), 1);
-    line-height: normal !important;
-    margin: 0 0 0 2px;
-    padding: 0 7px;
-    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .stat-categories .category:hover {
-        color: rgba(var(--accent), 1) !important;
-        transform: scale(1.1);
-        box-shadow: none;
-        background: none;
-    }
-}
-
-.p-user_rates-index .stat-categories .category.active {
-    color: rgba(var(--accent), 1);
 }

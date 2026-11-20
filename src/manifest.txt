@@ -20,6 +20,7 @@ components/cards.css
 components/editor.css
 components/modals.css
 components/forms.css
+components/motion.css
 pages/clubs.css
 pages/profile.css
 pages/anime.css

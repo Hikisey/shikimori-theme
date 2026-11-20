@@ -1,0 +1,51 @@
+/* ===== components/motion =====
+   лёгкие анимации в духе Telegram (прототип, ветка seam-glass).
+   анимируются только transform-свойства (scale, translate) и opacity —
+   их браузер считает на видеокарте, без перерасчёта раскладки.
+   всё внутри prefers-reduced-motion: no-preference: при «Уменьшить движение»
+   ничего из этого не работает. hover здесь не используется. */
+
+@keyframes sg-rise {
+    from { opacity: 0; translate: 0 8px; }
+}
+
+@keyframes sg-pop {
+    from { opacity: 0; scale: .96; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    /* 1. нажатие: кнопка чуть «проседает» под пальцем (0.08 с) и пружинит
+       обратно (0.32 с, лёгкий перелёт). свойство scale отдельно от transform —
+       не спорит с transform, который кнопкам задают другие правила. */
+    html body .b-subposter-action {
+        transition: color .15s, opacity .15s,
+                    scale .32s cubic-bezier(.34, 1.56, .64, 1);
+    }
+    /* значки шапки: их переход задан в overrides/late.css с !important —
+       здесь тот же список плюс scale */
+    html body .l-top_menu-v2 .menu-icon:not(#u) {
+        transition: background-color .25s ease, color .25s ease,
+                    scale .32s cubic-bezier(.34, 1.56, .64, 1) !important;
+    }
+    html body .l-top_menu-v2 .menu-icon:not(#u):active {
+        transition: scale .08s ease-out !important;
+    }
+    html body :is(.b-button, input[type="submit"], .comments-loader, .b-subposter-action, .l-top_menu-v2 .menu-icon):active {
+        scale: .95;
+        transition: scale .08s ease-out;
+    }
+
+    /* 2. комментарии появляются снизу (8px) с проявлением, 0.32 с — и при
+       открытии страницы, и подгруженные «Загрузить ещё». без лесенки:
+       порядок детей в списке разный (кнопки, скрытые блоки). */
+    html body .b-comments .b-comment {
+        animation: sg-rise .32s cubic-bezier(.22, 1, .36, 1) backwards;
+    }
+
+    /* 3. окна (жалоба, обратная связь, bulma-окна): проявление с лёгким
+       увеличением 0.96 → 1, 0.24 с */
+    .b-modal > .inner,
+    .bulma .modal.is-active .modal-card {
+        animation: sg-pop .24s cubic-bezier(.22, 1, .36, 1) backwards;
+    }
+}

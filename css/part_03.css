@@ -1,6 +1,59 @@
 /* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
+.p-user_rates-index .l-content .b-options-floated span:hover {
+    color: rgba(var(--accent), 1);
+}
+
+.p-dashboards-show .v2 .db-update .name:hover,
+.b-comment > .inner .name-date .name:hover,
+.b-comments .comments-collapser:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.p-user_rates-index .list-lines tr td .episodes_total {
+    color: rgba(var(--accent), 1) !important;
+}
+
+.p-user_rates-index .list-lines tr .name a {
+    color: rgba(var(--text-strong), 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .list-lines tr .name a:hover,
+    .b-user.detailed .history .line a .event:hover {
+        background: none;
+        box-shadow: none;
+        color: rgba(var(--accent), 1);
+        text-decoration: none;
+        border: none;
+    }
+}
+
+.p-user_rates-index .list-lines tr.editable {
+    transition: 0.1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
+}
+
+.p-user_rates-index .stat-categories .category {
+    color: rgba(var(--accent), 1);
+    line-height: normal !important;
+    margin: 0 0 0 2px;
+    padding: 0 7px;
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    min-height 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-user_rates-index .stat-categories .category:hover {
+        color: rgba(var(--accent), 1) !important;
+        transform: scale(1.1);
+        box-shadow: none;
+        background: none;
+    }
+}
+
+.p-user_rates-index .stat-categories .category.active {
+    color: rgba(var(--accent), 1);
+}
+
 .p-user_rates-index .list-groups .summary.lines {
     color: rgba(var(--text-2), 1);
 }
@@ -5501,61 +5554,4 @@ body.p-achievements.p-profiles .b-list_switchers > *:after {
 
 .navigation-node.navigation-node-neutral.is-empty * {
     color: var(--glass-shadow) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .subheadline a[title="morr"]:hover:after {
-        line-height: 20px;
-        padding-top: 2px;
-        margin-top: -2px;
-    }
-}
-
-.name-date a.name[title="morr"],
-a.name[href*="/morr"] {
-    color: #fdc47a !important;
-    font-size: 19px !important;
-    line-height: 15px !important;
-}
-
-.subheadline a[title="morr"] {
-    color: #fdc47a !important;
-}
-
-.name-date a.name[title="EngiNier"],
-.b-comment>.inner a.name[href*="/EngiNier"],
-.subheadline a[title="EngiNier"] {
-    color: var(--tone-e2e2e2)!important;
-}
-
-.name-date a.name[title="Cosmo+%E2%98%AD"],
-.b-comment>.inner a.name[href*="/Cosmo+%E2%98%AD"],
-.subheadline a[title="Cosmo+%E2%98%AD"] {
-    color: #9ee0f1!important;
-}
-
-.b-user16 a[title="morr"] {
-    color: #fdc47a !important;
-    font-weight: bold;
-}
-
-.name-date a.name[title="EngiNier"]:hover:after,
-.name-date a.name[href*="/EngiNier"]:hover:after,
-.subheadline a[title="EngiNier"]:hover:after,
-.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
-.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
-.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
-    content:"Edesign Admin";
-}
-
-.b-catalog_entry.completed .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #419541 0);
-}
-
-.b-catalog_entry.dropped .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
-}
-
-.b-catalog_entry.watching .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
 }
