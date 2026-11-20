@@ -172,3 +172,7 @@
         min-height: 155px;
     }
 }
+
+.b-catalog_entry-tooltip .inner .line .value a:hover {
+    color: rgba(var(--link), var(--hundred));
+}

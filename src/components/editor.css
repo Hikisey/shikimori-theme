@@ -1008,3 +1008,7 @@ html body .b-comments_select-panel button:disabled:not(#u) {
     color: rgba(var(--accent), 1);
     vertical-align: 1px;
 }
+
+.b-bb_codes-examples .result a:hover {
+    color: rgba(var(--link), 1);
+}

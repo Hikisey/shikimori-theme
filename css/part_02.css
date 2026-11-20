@@ -1,5 +1,40 @@
-/* shiki glass v1.7.8 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p2: ""; }
+
+.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
+.mfp-figure:after { display: none !important; }
+
+.mfp-wrap.mfp-ready .mfp-image-holder img.mfp-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.b-input label {
+    display: block;
+    line-height: 1.65;
+}
+
+input {
+    color: var(--field-text);
+    background: var(--plate-bg);
+}
+
+.b-input input,
+.b-input textarea {
+    background: var(--plate-bg);
+    color: var(--field-text);
+    border: none !important;
+    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
+}
+
+input,
+select,
+button,
+textarea {
+    background-color: var(--plate-bg);
+    font-family: var(--font-family);
+    border: none !important;
+}
 
 .subheadline-input {
     background-color: var(--glass-deep) !important;
@@ -470,6 +505,13 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     select:not(#u):active { transform: none !important; }
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .ac_results .character-suggest .animes div a:hover {
+        background: none !important;
+        box-shadow: none;
+    }
+}
+
 .b-clubs-menu .admin .b-user {
     transition: 1s ease-out, -webkit-1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
@@ -708,6 +750,11 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
         border-radius: 50%;
         object-fit: cover;
     }
+}
+
+.cc-4.clubs .b-user16 span {
+    top: -5px;
+    position: relative;
 }
 
 .b-shiki_editor footer .about-bb_codes:hover:before {
@@ -2549,6 +2596,20 @@ div.compatibility > span.link-replacement > .text.full:before {
 }
 html body .activity .graph.bar.vertical:not(#u) {
     margin-bottom: 20px !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles .profile-head .c-info .c-additionals div a:hover {
+        color: rgba(var(--link), 1) !important;
+        transform: scale(1.1) !important;
+    }
+}
+.p-profiles-show .about a:hover {
+    color: rgba(var(--link), 1);
+}
+.b-user_history-line a:hover {
+    color: rgba(var(--link), 1) !important;
+    font-weight: bold;
 }
 
 .b-db_entry-note .name-container .note .relation,
@@ -5067,47 +5128,4 @@ body.p-user_history .l-page {
 
 .p-user_rates-index .stat-categories .category.active {
     color: rgba(var(--accent), 1);
-}
-
-.p-user_rates-index .list-groups .summary.lines {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-user_rates-index .l-content .order-control {
-    color: rgba(var(--text-2), 1);
-}
-
-.p-user_rates-index .l-content .order-control:hover {
-    color: rgba(var(--accent), 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-user_rates-index .list-lines .selectable:hover,
-    .p-userlist_comparer .comparer table .selectable:hover {
-        color: rgba(var(--accent), 1) !important;
-        transform: scale(1.01);
-        background: transparent;
-    }
-    tr.user_rate.selectable.editable:hover:after {
-        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border-radius: var(--plate-radius);
-        box-shadow: var(--plate-shadow) !important;
-        transform: scale(1.01);
-    }
-}
-
-tr.user_rate.selectable.editable:after {
-    content: "";
-    width: 100%;
-    padding-top: 2px;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    z-index: -1;
-}
-
-.p-user_rates-index .list-lines .selectable,
-.p-userlist_comparer .comparer table .selectable {
-    transition: 0.15s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
-    min-height 0s;
 }

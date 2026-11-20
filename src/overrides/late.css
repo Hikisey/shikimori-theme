@@ -1,4 +1,14 @@
-
+/* overrides/late.css — последнее слово темы.
+   Сюда кладутся только правила, которые обязаны идти после всех модулей:
+   1) правило перебивает правило более позднего модуля с той же специфичностью и важностью
+      (перенос «домой» поставил бы его раньше перебиваемого, и оно бы проиграло);
+   2) правило касается всего сайта сразу и должно побеждать по порядку
+      (например, блок prefers-reduced-motion в конце файла);
+   3) общие селекторы меток body * [class*="_marker"], цвета-классы и правила только для shikimori.rip,
+      которые пересекаются с правилами многих модулей.
+   Всё остальное живёт в своём модуле. Перед переносом правила отсюда проверьте:
+   tools/regress/late/move.py (статическая проверка каскада) и сверку вычисленных стилей cdiff2.js
+   (см. docs/ARCHITECTURE.md, раздел про late.css). Новые правила сюда не добавлять без причины из списка. */
 
 .tags > [class*="_status_tag"],
 .tags > * {
@@ -10,21 +20,6 @@
     padding: 2px 9px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .b-comments .comments-loader:hover,
-    .b-comments .comments-hider:hover,
-    .b-comments .comments-expander:hover {
-        background-color: rgb(var(--glass-light));
-        color: rgb(var(--text-strong));
-    }
-    a.name:hover {
-        color: rgba(var(--link), 1) !important;
-        text-decoration: none !important;
-        background: none !important;
-        box-shadow: none !important;
-    }
-}
-
 .c-brief header.head .notice,
 .c-brief header.head .misc,
 .c-brief header.head a.edit,
@@ -34,13 +29,6 @@
     color: rgba(var(--text), 1) !important;
     transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     text-shadow 0s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-profiles .profile-head .c-info .c-additionals div a:hover {
-        color: rgba(var(--link), 1) !important;
-        transform: scale(1.1) !important;
-    }
 }
 
 .b-user16:hover,
@@ -55,15 +43,6 @@
 
 .p-profiles-show .about a {
     color: rgba(var(--link), 1);
-}
-
-.p-profiles-show .about a:hover {
-    color: rgba(var(--link), 1);
-}
-
-.b-user_history-line a:hover {
-    color: rgba(var(--link), 1) !important;
-    font-weight: bold;
 }
 
 .p-userlist_comparer .comparer table .name a:hover {
@@ -95,10 +74,6 @@
     color: rgba(var(--text-strong), 1);
 }
 
-.b-bb_codes-examples .result a:hover {
-    color: rgba(var(--link), 1);
-}
-
 body.localized_names-ru .name-ru {
     color: rgba(var(--text-strong), 1);
     font-weight: bold;
@@ -128,17 +103,6 @@ body.localized_names-ru .name-ru {
     color: var(--heading-text);
     transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .headline > a:hover,
-    .midheadline > a:hover,
-    .subheadline > a:hover {
-        text-decoration: none;
-        color: var(--heading-link) !important;
-        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
-        border: none;
-    }
 }
 
 .b-db_entry-note .name-container .name {
@@ -255,11 +219,6 @@ body * [class*="broadcast_marker"]:before {
     content: '📢 рассылка' !important;
     background-color: #772448;
     color: var(--tone-eadddd);
-}
-
-body * .b-anime_status_tag.released:before {
-    background-color: #1A421D;
-    color: #C4E9ED;
 }
 
 body * .b-anime_status_tag.episode:before {
@@ -434,10 +393,6 @@ body * [class*="new_marker"] {
 }
 
 .b-catalog_entry-tooltip .inner .line .value a {
-    color: rgba(var(--link), var(--hundred));
-}
-
-.b-catalog_entry-tooltip .inner .line .value a:hover {
     color: rgba(var(--link), var(--hundred));
 }
 
@@ -641,13 +596,6 @@ body#profiles_show .b-catalog_entry,
     box-shadow: var(--plate-shadow);
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .ac_results .character-suggest .animes div a:hover {
-        background: none !important;
-        box-shadow: none;
-    }
-}
-
 .b-status-line .section.main .comments:before,
 .b-news_wall-topic .status-line .comments,
 .b-status-line .section.created_at time:before,
@@ -847,11 +795,6 @@ body.p-achievements.p-profiles .b-list_switchers > *:after {
     color: rgba(var(--text-strong), var(--hundred));
 }
 
-.p-dashboards-show .v2 .my-list .label .misc-links a,
-.p-dashboards-show .v2 .my-list .label .misc-links a:after {
-    color: rgba(var(--link), var(--hundred));
-}
-
 .p-dashboards-show .v2 .my-list .label span {
     color: rgba(var(--text-strong), 1);
 }
@@ -956,11 +899,6 @@ a.name[href*="/morr"] {
     width: 30.33333%;
     margin-bottom: 21px;
     float: right;
-}
-
-.cc-4.clubs .b-user16 span {
-    top: -5px;
-    position: relative;
 }
 
 .b-oauth_application .name-logo .name {
@@ -1135,15 +1073,6 @@ header.head .misc {
 
 .b-comment .inner {
     min-height: 50px;
-}
-
-.headline.linkheadline > a,
-.linkheadline.midheadline > a,
-.linkheadline.subheadline > a,
-.headline.linkheadline > a:hover,
-.linkheadline.midheadline > a:hover,
-.linkheadline.subheadline > a:hover {
-    text-decoration: none;
 }
 
 .l-page > div:last-child {
@@ -2641,10 +2570,6 @@ div.Ssylki-Characters:hover .b-link {
     opacity: 0;
     transition: transform .42s cubic-bezier(.2, .75, .2, 1), opacity .36s ease;
 }
-.mfp-wrap.mfp-ready .mfp-image-holder img.mfp-img {
-    transform: scale(1);
-    opacity: 1;
-}
 .mfp-wrap.mfp-removing .mfp-image-holder img.mfp-img {
     transform: scale(.85);
     opacity: 0;
@@ -3299,13 +3224,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     }
 }
 
-.p-dashboards-show .v2 .devise .links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35em 1em;
-}
-
 .b-collection-filters .random-anime-button {
     display: block;
     width: 100%;
@@ -3542,9 +3460,6 @@ header.head :is(h1, h2) {
     color: var(--field-text) !important;
     box-shadow: none;
 }
-.p-user_tools .b-useful_search input::placeholder {
-    color: rgba(var(--text-2), .9);
-}
 .p-user_tools .b-useful_controls :is(a, button, .b-button, .b-link_button):not(.vote) {
     background: var(--btn-bg) !important;
     color: var(--btn-text) !important;
@@ -3557,7 +3472,6 @@ header.head :is(h1, h2) {
     border: 0;
     border-radius: 8px;
 }
-.p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }
 @media (hover: hover) and (pointer: fine) {
     .p-user_tools .b-useful_controls :is(a, button, .b-button, .b-link_button):not(.vote):hover {
         background: var(--btn-bg-hover) !important;
@@ -3699,19 +3613,6 @@ header.head :is(h1, h2) {
     .p-profiles-edit .b-edit_styles .editor-container :is(input, button)[type="submit"]:hover {
         background: var(--btn-bg-hover) !important;
     }
-}
-
-/* v1.6.7: главная shikimori.rip — «Написать новость» и «Скрыть»/«Показать» у «Новостей сайта»
-   (из components/buttons: перебивает .p-dashboards-show .subheadline-buttons a выше) */
-.p-dashboards-show .v2 .block2 > .subheadline-buttons {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    top: 0;
-    margin: 0 !important;
-    padding: 0;
-    right: 4px;
-    height: var(--heading-height);
 }
 .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) {
     display: inline-flex;

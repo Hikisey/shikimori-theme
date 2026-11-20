@@ -1,4 +1,4 @@
-/* shiki glass v1.7.8 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -2841,6 +2841,11 @@ body * .b-appear_marker.active:not(#u) {
     display: block;
 }
 
+body * .b-anime_status_tag.released:before {
+    background-color: #1A421D;
+    color: #C4E9ED;
+}
+
 .slide.animes .cc-2a .c-column.m0,
 .slide.mangas .cc-2a .c-column.m0,
 .slide.ranobe .cc-2a .c-column.m0 {
@@ -3210,6 +3215,10 @@ body * .b-appear_marker.active:not(#u) {
     }
 }
 
+.b-catalog_entry-tooltip .inner .line .value a:hover {
+    color: rgba(var(--link), var(--hundred));
+}
+
 header.head .misc {
     max-width: 100%;
     width: 100%;
@@ -3473,6 +3482,25 @@ header.head :is(h1, h2) a.back:after {
 }
 header.head :is(h1, h2) > :is(.misc, a.misc) {
     flex: 1 0 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .headline > a:hover,
+    .midheadline > a:hover,
+    .subheadline > a:hover {
+        text-decoration: none;
+        color: var(--heading-link) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border: none;
+    }
+}
+.headline.linkheadline > a,
+.linkheadline.midheadline > a,
+.linkheadline.subheadline > a,
+.headline.linkheadline > a:hover,
+.linkheadline.midheadline > a:hover,
+.linkheadline.subheadline > a:hover {
+    text-decoration: none;
 }
 
 .b-user.named_avatar .name {
@@ -5805,6 +5833,10 @@ html body .b-comments_select-panel button:disabled:not(#u) {
     vertical-align: 1px;
 }
 
+.b-bb_codes-examples .result a:hover {
+    color: rgba(var(--link), 1);
+}
+
 .x1200 .b-modal > .inner,
 .b-modal > .inner {
     max-width: 920px;
@@ -5851,32 +5883,3 @@ html body .b-comments_select-panel button:disabled:not(#u) {
 }
 
 .mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
-.mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
-.mfp-figure:after { display: none !important; }
-
-.b-input label {
-    display: block;
-    line-height: 1.65;
-}
-
-input {
-    color: var(--field-text);
-    background: var(--plate-bg);
-}
-
-.b-input input,
-.b-input textarea {
-    background: var(--plate-bg);
-    color: var(--field-text);
-    border: none !important;
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.07) !important;
-}
-
-input,
-select,
-button,
-textarea {
-    background-color: var(--plate-bg);
-    font-family: var(--font-family);
-    border: none !important;
-}

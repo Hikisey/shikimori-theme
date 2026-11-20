@@ -243,3 +243,8 @@
         object-fit: cover;
     }
 }
+
+.cc-4.clubs .b-user16 span {
+    top: -5px;
+    position: relative;
+}

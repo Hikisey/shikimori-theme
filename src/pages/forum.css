@@ -865,3 +865,22 @@
 }
 .p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
 .p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
+
+@media (hover: hover) and (pointer: fine) {
+    .b-comments .comments-loader:hover,
+    .b-comments .comments-hider:hover,
+    .b-comments .comments-expander:hover {
+        background-color: rgb(var(--glass-light));
+        color: rgb(var(--text-strong));
+    }
+    a.name:hover {
+        color: rgba(var(--link), 1) !important;
+        text-decoration: none !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+}
+.p-user_tools .b-useful_search input::placeholder {
+    color: rgba(var(--text-2), .9);
+}
+.p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }

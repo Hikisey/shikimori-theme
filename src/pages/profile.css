@@ -1907,3 +1907,17 @@ div.compatibility > span.link-replacement > .text.full:before {
 html body .activity .graph.bar.vertical:not(#u) {
     margin-bottom: 20px !important;
 }
+
+@media (hover: hover) and (pointer: fine) {
+    .p-profiles .profile-head .c-info .c-additionals div a:hover {
+        color: rgba(var(--link), 1) !important;
+        transform: scale(1.1) !important;
+    }
+}
+.p-profiles-show .about a:hover {
+    color: rgba(var(--link), 1);
+}
+.b-user_history-line a:hover {
+    color: rgba(var(--link), 1) !important;
+    font-weight: bold;
+}

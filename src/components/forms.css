@@ -529,3 +529,10 @@ label:has(> input[type="checkbox"]) > input[type="checkbox"]:not(#u) {
     select:not(#u)::picker-icon { display: none !important; }
     select:not(#u):active { transform: none !important; }
 }
+
+@media (hover: hover) and (pointer: fine) {
+    .ac_results .character-suggest .animes div a:hover {
+        background: none !important;
+        box-shadow: none;
+    }
+}

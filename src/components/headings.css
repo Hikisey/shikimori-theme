@@ -271,3 +271,22 @@ header.head :is(h1, h2) a.back:after {
 header.head :is(h1, h2) > :is(.misc, a.misc) {
     flex: 1 0 100%;
 }
+
+@media (hover: hover) and (pointer: fine) {
+    .headline > a:hover,
+    .midheadline > a:hover,
+    .subheadline > a:hover {
+        text-decoration: none;
+        color: var(--heading-link) !important;
+        background: color-mix(in srgb, var(--glass-shadow) 15%, transparent);
+        border: none;
+    }
+}
+.headline.linkheadline > a,
+.linkheadline.midheadline > a,
+.linkheadline.subheadline > a,
+.headline.linkheadline > a:hover,
+.linkheadline.midheadline > a:hover,
+.linkheadline.subheadline > a:hover {
+    text-decoration: none;
+}

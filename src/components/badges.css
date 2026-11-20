@@ -122,3 +122,8 @@ body * .b-appear_marker:not(#u) {
 body * .b-appear_marker.active:not(#u) {
     display: block;
 }
+
+body * .b-anime_status_tag.released:before {
+    background-color: #1A421D;
+    color: #C4E9ED;
+}

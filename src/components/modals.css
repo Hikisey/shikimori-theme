@@ -52,3 +52,8 @@
 .mfp-wrap.mfp-ready .mfp-container { opacity: 1; }
 .mfp-wrap.mfp-removing .mfp-container { opacity: 0; }
 .mfp-figure:after { display: none !important; }
+
+.mfp-wrap.mfp-ready .mfp-image-holder img.mfp-img {
+    transform: scale(1);
+    opacity: 1;
+}
