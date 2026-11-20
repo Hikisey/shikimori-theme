@@ -905,9 +905,34 @@ html input[type="checkbox"]:not(#u):focus-visible {
     /* Обои на телефоне: свой лёгкий кадр (900×1440, 180 КБ) по ссылке без camo-прокси
        Шикимори (у прокси Vary: Cookie — Safari качал обои заново на каждой странице). */
     html { background-color: rgb(var(--bg-color-mobile)) !important; }
+    /* Слой обоев на телефоне — у html, а не у body. Шикимори открывает страницы
+       через Turbolinks: <body> (и стиль темы внутри него) заменяется целиком,
+       а <html> остаётся. Слой body::before пересоздавался, и Safari заново
+       запрашивал картинку: у camo-прокси shikimori.io Vary: Cookie, а куки
+       ddos-guard меняются на каждом ответе — обои мигали цветом фона, пока
+       картинка качалась (WebKit, проверено). html::before переживает замену
+       body, картинка не перезапрашивается. Вид тот же: те же размеры,
+       масштаб, размытие и затемнение. */
     html body::before {
+        content: none;
+    }
+    html::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
         background: var(--bg-image-mobile) center / cover no-repeat;
         background-color: rgb(var(--bg-color-mobile));
+        transform: scale(1.04);
+        filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+        -webkit-filter: blur(var(--bg-blur-mobile)) brightness(var(--bg-brightness-mobile));
+        pointer-events: none;
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    /* как раньше: на странице ачивок профиля обоев нет (правило achievements.css) */
+    html:has(> body.p-achievements.p-profiles)::before {
+        background: none;
     }
     /* ================================================================
        v1.2.8 — телефоны: заголовки с кнопками (Контент и т. п.)
