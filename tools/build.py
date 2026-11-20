@@ -13,7 +13,7 @@
     python3 tools/build.py --out /tmp/x      # собрать в другую папку (css/ не трогать)
 
 Пределы Шикимори (см. docs/ARCHITECTURE.md, «пределы импорта»):
-- обрабатываются только первые ~6 @import, включая 2 из css-club → частей темы не больше 4;
+- shikimori.io подключает только 4 первых @import → частей темы не больше 4, и в site.css они идут первыми;
 - файл ~231 КБ уже не импортировался (225 КБ — ещё да) → части ≤ 155 КБ,
   жёсткий предел скрипта 160 КБ.
 
@@ -24,7 +24,7 @@ import argparse, glob, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HARD_LIMIT = 160_000   # байт на часть; ~231 КБ Шикимори уже не импортировал
-MAX_PARTS = 4          # Шикимори берёт только ~6 первых @import, 2 из них — css-club
+MAX_PARTS = 4          # shikimori.io берёт только 4 первых @import (части темы стоят в site.css первыми)
 RAW = 'https://raw.githubusercontent.com/Hikisey/shikimori-theme/{tag}/css/{name}'
 
 
@@ -164,7 +164,7 @@ def main():
             sys.exit(f'{name}: больше {HARD_LIMIT} байт — Шикимори может не импортировать')
         names.append(name)
     if len(names) > MAX_PARTS:
-        sys.exit(f'частей {len(names)} > {MAX_PARTS}: Шикимори обрабатывает только ~6 @import (2 из них css-club)')
+        sys.exit(f'частей {len(names)} > {MAX_PARTS}: shikimori.io подключает только 4 первых @import')
     room = MAX_PARTS * a.max - sum(os.path.getsize(os.path.join(a.out, x)) for x in names)
     print(f'модулей: {len(mods)}, частей: {len(parts)}, всего {len(s.encode())} байт, запас {room} байт')
     if room < 5000:
