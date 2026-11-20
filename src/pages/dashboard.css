@@ -284,3 +284,52 @@
         max-height: 130px;
     }
 }
+
+/* «Сейчас на экранах» на главной: лента обрезает всё за краем (overflow: hidden у сайта),
+   и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
+@media screen and (min-width: 768px) {
+    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
+        padding: 10px 12px 34px;   /* сверху подъём, по бокам и снизу тень карточки */
+        margin: -10px -12px -34px;
+    }
+}
+.p-dashboards-show .v2 .block2.site_news :is(.headline.skyblue a, .skyblue a) {
+    color: rgba(var(--accent), 1);
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons > span[style] {
+    color: rgba(var(--accent), 1) !important;
+}
+.p-dashboards-show .top-reviews-carousel:before {
+    background: linear-gradient(to right, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
+}
+.p-dashboards-show .top-reviews-carousel:after {
+    background: linear-gradient(to left, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
+}
+.p-dashboards-show .v2 .devise .links a {
+    margin: 0;
+    white-space: nowrap;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
+    display: flex;
+    margin: 0;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
+    line-height: 22px;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
+    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    color: rgba(var(--text-strong), 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
+        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+        border-color: rgba(var(--accent), .5) !important;
+        color: rgba(var(--text-strong), 1) !important;
+    }
+}
+/* v1.6.11 — главная для гостя: блок «Вход по паролю» (.devise) оставался светло-голубым */
+html body .fc-user-sections .devise:not(#u) {
+    background: rgba(var(--glass), .7) !important;
+    border: 1px solid rgba(var(--text), .1) !important;
+    border-radius: var(--plate-radius) !important;
+}

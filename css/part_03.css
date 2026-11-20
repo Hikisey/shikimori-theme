@@ -1,4 +1,4 @@
-/* shiki glass v1.7.3 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.4 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p3: ""; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2508,6 +2508,44 @@ body#clubs_edit .b-options-floated a:active:after {
     }
 }
 
+.b-comment > .inner .name-date .name:hover,
+.b-comment > .inner header .name-date a.name:hover,
+.b-dialog > .inner header .name-date a.name:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.b-message > .inner header .name-date a.name:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+.b-comments .comments-loader:active,
+.b-comments .comments-hider:active,
+.b-comments .comments-expander:active {
+    background: var(--plate-bg);
+    color: rgba(var(--text-2), 1);
+    border: none;
+}
+.b-tag {
+    border-bottom: 1px dashed rgba(var(--accent), 1);
+    color: rgba(var(--accent), 1);
+}
+.p-topics .l-menu .clubs .entry .misc {
+    color: rgba(var(--text-2), 1) !important;
+}
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+.b-critique_votes span,
+.b-critique_votes:before {
+    color: rgba(var(--text-2), var(--hundred));
+}
+.b-comment > .inner header .name-date {
+    overflow: visible;
+    margin-left: 60px;
+}
+.b-topic.b-review-topic > .inner header img {
+    border-radius: 50%;
+}
+.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
+.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
+
 .p-dashboards-show .v2 .db-update .tags {
     height: 50px;
 }
@@ -2786,6 +2824,52 @@ body#clubs_edit .b-options-floated a:active:after {
     .p-dashboards-show .v2 .db-updates .inner .db-update {
         max-height: 130px;
     }
+}
+
+@media screen and (min-width: 768px) {
+    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
+        padding: 10px 12px 34px;
+        margin: -10px -12px -34px;
+    }
+}
+.p-dashboards-show .v2 .block2.site_news :is(.headline.skyblue a, .skyblue a) {
+    color: rgba(var(--accent), 1);
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons > span[style] {
+    color: rgba(var(--accent), 1) !important;
+}
+.p-dashboards-show .top-reviews-carousel:before {
+    background: linear-gradient(to right, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
+}
+.p-dashboards-show .top-reviews-carousel:after {
+    background: linear-gradient(to left, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
+}
+.p-dashboards-show .v2 .devise .links a {
+    margin: 0;
+    white-space: nowrap;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
+    display: flex;
+    margin: 0;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
+    line-height: 22px;
+}
+.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
+    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+    color: rgba(var(--text-strong), 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
+        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
+        border-color: rgba(var(--accent), .5) !important;
+        color: rgba(var(--text-strong), 1) !important;
+    }
+}
+html body .fc-user-sections .devise:not(#u) {
+    background: rgba(var(--glass), .7) !important;
+    border: 1px solid rgba(var(--text), .1) !important;
+    border-radius: var(--plate-radius) !important;
 }
 
 .name-date a.name[title="morr"]::after,
@@ -4202,7 +4286,7 @@ div.Ssylki-anime:hover .Text-2 {
 
 :root {
     --theme-name: "shiki glass";
-    --theme-version: "1.7.3";
+    --theme-version: "1.7.4";
 }
 
 .l-footer:before {
@@ -4274,22 +4358,6 @@ div.Ssylki-anime:hover .Text-2 {
     padding: 2px 9px;
 }
 
-.b-comment > .inner .name-date .name:hover,
-.b-comment > .inner header .name-date a.name:hover,
-.b-dialog > .inner header .name-date a.name:hover,
-.b-topic > .inner header .name-date a.name:hover,
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-comments .comments-loader:active,
-.b-comments .comments-hider:active,
-.b-comments .comments-expander:active {
-    background: var(--plate-bg);
-    color: rgba(var(--text-2), 1);
-    border: none;
-}
-
 @media (hover: hover) and (pointer: fine) {
     .b-comments .comments-loader:hover,
     .b-comments .comments-hider:hover,
@@ -4327,15 +4395,6 @@ div.Ssylki-anime:hover .Text-2 {
 .b-user.named_avatar img:hover,
 .b-user16:hover a {
     color: rgba(var(--accent), 1) !important;
-}
-
-.b-tag {
-    border-bottom: 1px dashed rgba(var(--accent), 1);
-    color: rgba(var(--accent), 1);
-}
-
-.p-topics .l-menu .clubs .entry .misc {
-    color: rgba(var(--text-2), 1) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -4472,10 +4531,6 @@ a:-webkit-any-link {
         background: none;
         box-shadow: none;
     }
-}
-
-.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
-    color: rgba(var(--link), 1) !important;
 }
 
 .p-studios .studio .name {
@@ -4868,13 +4923,6 @@ header.head h2 a.back {
     margin-top: 0;
 }
 
-@media screen and (min-width: 768px) {
-    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
-        padding: 10px 12px 34px;
-        margin: -10px -12px -34px;
-    }
-}
-
 body#profiles_show .b-catalog_entry,
 .c-column.user_rate .b-catalog_entry {
     background: transparent;
@@ -5018,11 +5066,6 @@ body#profiles_show .b-catalog_entry,
 .b-topic > .inner > header .about > span,
 a.b-menu-line.entry.b-link.person-tooltip .time,
 a.b-menu-line.entry.b-link .time {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-.b-critique_votes span,
-.b-critique_votes:before {
     color: rgba(var(--text-2), var(--hundred));
 }
 
@@ -5513,11 +5556,6 @@ header.head .misc {
     min-height: 50px;
 }
 
-.b-comment > .inner header .name-date {
-    overflow: visible;
-    margin-left: 60px;
-}
-
 .headline.linkheadline > a,
 .linkheadline.midheadline > a,
 .linkheadline.subheadline > a,
@@ -5525,10 +5563,6 @@ header.head .misc {
 .linkheadline.midheadline > a:hover,
 .linkheadline.subheadline > a:hover {
     text-decoration: none;
-}
-
-.b-topic.b-review-topic > .inner header img {
-    border-radius: 50%;
 }
 
 .l-page > div:last-child {
@@ -5578,78 +5612,4 @@ body.p-achievements.p-profiles .b-options-floated {
 
 .block2 .cc-achievements .b-achievement .title {
     color: #cce0d1;
-}
-
-.c-genres .block2 .cc-achievements .b-achievement .title {
-    color: #f3eabf;
-}
-
-body.p-achievements.p-profiles :-moz-placeholder {
-    color: #827160 !important;
-    transition: 0.5s ease-out;
-}
-
-body.p-achievements.p-profiles .headline,
-body.p-achievements.p-profiles .subheadline {
-    background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
-    color: #ffe1a7 !important;
-
-    position: relative;
-    z-index: -1;
-    margin-bottom: 25px !important;
-    justify-content: center;
-}
-
-body.p-achievements.p-profiles a.menu-icon:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
-    color: #fff7e8;
-}
-
-.fullwidth > .b-spoiler > label {
-    display: block !important;
-    padding: 0.47em 6em 0.47em 6em;
-    box-shadow: var(--plate-shadow) !important;
-    background: var(--plate-bg-strong);
-    border: 0;
-    border-radius: 11px;
-    color: rgba(var(--text-strong), 1);
-    font-size: 1.25em;
-    line-height: 1em;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: center;
-    margin: 5px 0px;
-    position: relative;
-}
-
-.fullwidth > .b-spoiler > .content > .inner {
-    display: block;
-    min-height: 0;
-    padding: 0.5em 1em;
-    margin: 0.5em 0;
-    animation: 0.24s fadeIn cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-.use-tabs > [data-dynamic] {
-    display: inline-block;
-    padding: 4px 16px;
-    margin: 4px;
-    border: 2px solid;
-    border-radius: 40px;
-    color: hsla(var(--c-tab) var(--l-text-inactive) / 100%);
-    font-weight: bold;
-    line-height: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.24s ease;
-    user-select: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .use-tabs > [data-dynamic]:hover {
-        background: hsla(var(--c-tab) var(--l-background) / 8%);
-    }
 }

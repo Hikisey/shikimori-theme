@@ -10,22 +10,6 @@
     padding: 2px 9px;
 }
 
-.b-comment > .inner .name-date .name:hover,
-.b-comment > .inner header .name-date a.name:hover,
-.b-dialog > .inner header .name-date a.name:hover,
-.b-topic > .inner header .name-date a.name:hover,
-.b-message > .inner header .name-date a.name:hover {
-    color: rgba(var(--accent), 1) !important;
-}
-
-.b-comments .comments-loader:active,
-.b-comments .comments-hider:active,
-.b-comments .comments-expander:active {
-    background: var(--plate-bg);
-    color: rgba(var(--text-2), 1);
-    border: none;
-}
-
 @media (hover: hover) and (pointer: fine) {
     .b-comments .comments-loader:hover,
     .b-comments .comments-hider:hover,
@@ -63,15 +47,6 @@
 .b-user.named_avatar img:hover,
 .b-user16:hover a {
     color: rgba(var(--accent), 1) !important;
-}
-
-.b-tag {
-    border-bottom: 1px dashed rgba(var(--accent), 1);
-    color: rgba(var(--accent), 1);
-}
-
-.p-topics .l-menu .clubs .entry .misc {
-    color: rgba(var(--text-2), 1) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -208,10 +183,6 @@ a:-webkit-any-link {
         background: none;
         box-shadow: none;
     }
-}
-
-.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
-    color: rgba(var(--link), 1) !important;
 }
 
 .p-studios .studio .name {
@@ -607,15 +578,6 @@ header.head h2 a.back {
     margin-top: 0;
 }
 
-/* «Сейчас на экранах» на главной: лента обрезает всё за краем (overflow: hidden у сайта),
-   и приподнятая при наведении карточка срезалась сверху. Запас сверху и снизу внутри ленты */
-@media screen and (min-width: 768px) {
-    .p-dashboards-show .v2 .fc-ongoings:not(#u) {
-        padding: 10px 12px 34px;   /* сверху подъём, по бокам и снизу тень карточки */
-        margin: -10px -12px -34px;
-    }
-}
-
 body#profiles_show .b-catalog_entry,
 .c-column.user_rate .b-catalog_entry {
     background: transparent;
@@ -759,11 +721,6 @@ body#profiles_show .b-catalog_entry,
 .b-topic > .inner > header .about > span,
 a.b-menu-line.entry.b-link.person-tooltip .time,
 a.b-menu-line.entry.b-link .time {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-.b-critique_votes span,
-.b-critique_votes:before {
     color: rgba(var(--text-2), var(--hundred));
 }
 
@@ -1254,11 +1211,6 @@ header.head .misc {
     min-height: 50px;
 }
 
-.b-comment > .inner header .name-date {
-    overflow: visible;
-    margin-left: 60px;
-}
-
 .headline.linkheadline > a,
 .linkheadline.midheadline > a,
 .linkheadline.subheadline > a,
@@ -1266,10 +1218,6 @@ header.head .misc {
 .linkheadline.midheadline > a:hover,
 .linkheadline.subheadline > a:hover {
     text-decoration: none;
-}
-
-.b-topic.b-review-topic > .inner header img {
-    border-radius: 50%;
 }
 
 .l-page > div:last-child {
@@ -3485,14 +3433,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     }
 }
 
-.p-dashboards-show .v2 .block2.site_news :is(.headline.skyblue a, .skyblue a) {
-    color: rgba(var(--accent), 1);
-}
-
-.p-dashboards-show .v2 .block2 > .subheadline-buttons > span[style] {
-    color: rgba(var(--accent), 1) !important;
-}
-
 .p-dashboards-show .headline-with-help {
     color: rgb(var(--text-strong));
 }
@@ -3509,14 +3449,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     box-shadow: var(--drop-shadow);
     color: rgb(var(--text));
     border-radius: var(--drop-radius);
-}
-
-.p-dashboards-show .top-reviews-carousel:before {
-    background: linear-gradient(to right, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
-}
-
-.p-dashboards-show .top-reviews-carousel:after {
-    background: linear-gradient(to left, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
 }
 
 .p-dashboards-show .review-slide,
@@ -3553,11 +3485,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.35em 1em;
-}
-
-.p-dashboards-show .v2 .devise .links a {
-    margin: 0;
-    white-space: nowrap;
 }
 
 .b-collection-filters .random-anime-button {
@@ -3847,7 +3774,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     border: 0;
     border-radius: 8px;
 }
-.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
 .p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }
 @media (hover: hover) and (pointer: fine) {
     .p-user_tools .b-useful_controls :is(a, button, .b-button, .b-link_button):not(.vote):hover {
@@ -4014,10 +3940,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     right: 4px;
     height: var(--heading-height);
 }
-.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
-    display: flex;
-    margin: 0;
-}
 .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) {
     display: inline-flex;
     align-items: center;
@@ -4036,20 +3958,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     letter-spacing: .2px;
     text-transform: none;
     cursor: pointer;
-}
-.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
-    line-height: 22px;
-}
-.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
-    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
-    color: rgba(var(--text-strong), 1) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
-        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
-        border-color: rgba(var(--accent), .5) !important;
-        color: rgba(var(--text-strong), 1) !important;
-    }
 }
 
 /* v1.6.8: .b-appear_marker — служебный невидимый маркер «прочитано».
@@ -4109,13 +4017,6 @@ html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(
 /* v1.6.11 — профиль: подписи годов под графиком активности (.x_label, absolute) выходили за низ рамки */
 html body .activity .graph.bar.vertical:not(#u) {
     margin-bottom: 20px !important;
-}
-
-/* v1.6.11 — главная для гостя: блок «Вход по паролю» (.devise) оставался светло-голубым */
-html body .fc-user-sections .devise:not(#u) {
-    background: rgba(var(--glass), .7) !important;
-    border: 1px solid rgba(var(--text), .1) !important;
-    border-radius: var(--plate-radius) !important;
 }
 
 /* v1.6.22: на ПК полоса прокрутки остаётся видимой при просмотре постера.

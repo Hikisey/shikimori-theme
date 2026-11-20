@@ -1,5 +1,79 @@
-/* shiki glass v1.7.3 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.4 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
+
+.c-genres .block2 .cc-achievements .b-achievement .title {
+    color: #f3eabf;
+}
+
+body.p-achievements.p-profiles :-moz-placeholder {
+    color: #827160 !important;
+    transition: 0.5s ease-out;
+}
+
+body.p-achievements.p-profiles .headline,
+body.p-achievements.p-profiles .subheadline {
+    background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
+    color: #ffe1a7 !important;
+
+    position: relative;
+    z-index: -1;
+    margin-bottom: 25px !important;
+    justify-content: center;
+}
+
+body.p-achievements.p-profiles a.menu-icon:hover {
+    color: rgba(var(--link), 1) !important;
+}
+
+body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
+    color: #fff7e8;
+}
+
+.fullwidth > .b-spoiler > label {
+    display: block !important;
+    padding: 0.47em 6em 0.47em 6em;
+    box-shadow: var(--plate-shadow) !important;
+    background: var(--plate-bg-strong);
+    border: 0;
+    border-radius: 11px;
+    color: rgba(var(--text-strong), 1);
+    font-size: 1.25em;
+    line-height: 1em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    margin: 5px 0px;
+    position: relative;
+}
+
+.fullwidth > .b-spoiler > .content > .inner {
+    display: block;
+    min-height: 0;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    animation: 0.24s fadeIn cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.use-tabs > [data-dynamic] {
+    display: inline-block;
+    padding: 4px 16px;
+    margin: 4px;
+    border: 2px solid;
+    border-radius: 40px;
+    color: hsla(var(--c-tab) var(--l-text-inactive) / 100%);
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.24s ease;
+    user-select: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .use-tabs > [data-dynamic]:hover {
+        background: hsla(var(--c-tab) var(--l-background) / 8%);
+    }
+}
 
 .use-tabs > [data-dynamic]:active {
     background: hsla(var(--c-tab) var(--l-background) / 16%);
@@ -2078,14 +2152,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     }
 }
 
-.p-dashboards-show .v2 .block2.site_news :is(.headline.skyblue a, .skyblue a) {
-    color: rgba(var(--accent), 1);
-}
-
-.p-dashboards-show .v2 .block2 > .subheadline-buttons > span[style] {
-    color: rgba(var(--accent), 1) !important;
-}
-
 .p-dashboards-show .headline-with-help {
     color: rgb(var(--text-strong));
 }
@@ -2102,14 +2168,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     box-shadow: var(--drop-shadow);
     color: rgb(var(--text));
     border-radius: var(--drop-radius);
-}
-
-.p-dashboards-show .top-reviews-carousel:before {
-    background: linear-gradient(to right, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
-}
-
-.p-dashboards-show .top-reviews-carousel:after {
-    background: linear-gradient(to left, color-mix(in srgb, var(--glass-deep) 90%, transparent), transparent) !important;
 }
 
 .p-dashboards-show .review-slide,
@@ -2146,11 +2204,6 @@ body .b-catalog_entry .collection_score .collection_score_marker {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.35em 1em;
-}
-
-.p-dashboards-show .v2 .devise .links a {
-    margin: 0;
-    white-space: nowrap;
 }
 
 .b-collection-filters .random-anime-button {
@@ -2440,7 +2493,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     border: 0;
     border-radius: 8px;
 }
-.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
 .p-user_tools .b-useful_card .vote.down { color: rgba(var(--accent), 1); }
 @media (hover: hover) and (pointer: fine) {
     .p-user_tools .b-useful_controls :is(a, button, .b-button, .b-link_button):not(.vote):hover {
@@ -2602,10 +2654,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     right: 4px;
     height: var(--heading-height);
 }
-.p-dashboards-show .v2 .block2 > .subheadline-buttons form {
-    display: flex;
-    margin: 0;
-}
 .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) {
     display: inline-flex;
     align-items: center;
@@ -2624,20 +2672,6 @@ header.head :is(h1, h2) > :is(.misc, a.misc) {
     letter-spacing: .2px;
     text-transform: none;
     cursor: pointer;
-}
-.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news) span {
-    line-height: 22px;
-}
-.p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):active {
-    background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
-    color: rgba(var(--text-strong), 1) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-    .p-dashboards-show .v2 .block2 > .subheadline-buttons :is(a.b-link_button, .js-toggle-site-news):hover {
-        background: color-mix(in srgb, var(--accent-dim) 70%, transparent) !important;
-        border-color: rgba(var(--accent), .5) !important;
-        color: rgba(var(--text-strong), 1) !important;
-    }
 }
 
 body * .b-appear_marker:not(#u) {
@@ -2684,12 +2718,6 @@ html body :is(a, button, [role="button"], .b-link_button, .b-js-link):focus:not(
 
 html body .activity .graph.bar.vertical:not(#u) {
     margin-bottom: 20px !important;
-}
-
-html body .fc-user-sections .devise:not(#u) {
-    background: rgba(var(--glass), .7) !important;
-    border: 1px solid rgba(var(--text), .1) !important;
-    border-radius: var(--plate-radius) !important;
 }
 
 @media screen and (min-width: 1024px) {

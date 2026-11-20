@@ -827,3 +827,41 @@
         -webkit-backdrop-filter: none !important;
     }
 }
+
+.b-comment > .inner .name-date .name:hover,
+.b-comment > .inner header .name-date a.name:hover,
+.b-dialog > .inner header .name-date a.name:hover,
+.b-topic > .inner header .name-date a.name:hover,
+.b-message > .inner header .name-date a.name:hover {
+    color: rgba(var(--accent), 1) !important;
+}
+.b-comments .comments-loader:active,
+.b-comments .comments-hider:active,
+.b-comments .comments-expander:active {
+    background: var(--plate-bg);
+    color: rgba(var(--text-2), 1);
+    border: none;
+}
+.b-tag {
+    border-bottom: 1px dashed rgba(var(--accent), 1);
+    color: rgba(var(--accent), 1);
+}
+.p-topics .l-menu .clubs .entry .misc {
+    color: rgba(var(--text-2), 1) !important;
+}
+.b-animes-menu .menu-topics-block .history-entry-tooltip .tooltip-details a:hover {
+    color: rgba(var(--link), 1) !important;
+}
+.b-critique_votes span,
+.b-critique_votes:before {
+    color: rgba(var(--text-2), var(--hundred));
+}
+.b-comment > .inner header .name-date {
+    overflow: visible;
+    margin-left: 60px;
+}
+.b-topic.b-review-topic > .inner header img {
+    border-radius: 50%;
+}
+.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
+.p-user_tools .b-useful_card .vote.up { color: rgb(var(--text-strong)); }
