@@ -5,10 +5,6 @@
     height: 50px;
 }
 
-.p-dashboards-show .cc-news .c-news_topics .b-topic {
-    margin: 10px 0 !important;
-}
-
 .p-dashboards-show .c-content .options .option {
     color: rgba(var(--accent), 1);
     border: none !important;
@@ -24,10 +20,6 @@
 
 .p-dashboards-show .c-content .options .option.active {
     color: rgba(var(--accent), 1);
-}
-
-.p-dashboards-show .cc-news .c-generated_news .b-topic {
-    border: 1px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -48,7 +40,7 @@
     color: rgba(var(--text-2), 1);
     text-decoration: none !important;
     border-bottom: none;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 /*на Телефоне_контент вылизал фикс > Test*/
@@ -84,79 +76,12 @@
     display: inline-block;
 }
 
-.p-dashboard .l-menu .ongoing .title {
-    color: rgba(var(--text-strong), var(--hundred));
-    border: none;
-}
-
-.p-dashboard .l-menu .ongoing .title:hover {
-    color: rgba(var(--accent), var(--hundred));
-    border: none;
-}
-
-.p-dashboard .l-menu .ongoing .key {
-    color: rgba(var(--text-2), var(--hundred));
-}
-
-.p-dashboard .l-menu .ongoing:hover .title {
-    text-decoration: none;
-}
-
-.p-dashboard .l-menu .ongoing {
-    padding: 3px 0;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-dashboard .l-menu .ongoing:hover {
-        background: color-mix(in srgb, var(--glass-shadow) 25%, transparent);
-        box-shadow: var(--plate-shadow) !important;
-        transform: scale(1.05);
-        text-decoration: none !important;
-        border: none !important;
-        border-radius: var(--plate-radius);
-        padding-left: 4px;
-        padding-right: 5px;
-    }
-}
-
-.p-dashboard .l-menu .ongoing {
-    transition: 0.3s ease-out;
-}
-
-.p-dashboard .l-menu .season {
-    border: none;
-}
-
-.p-dashboard .l-menu .season .title:hover,
-.p-dashboard .l-menu .season:hover .title {
-    color: rgba(var(--accent), var(--hundred));
-    text-decoration: none;
-}
-
-.p-dashboard .l-menu .season .title {
-    color: rgba(var(--text-strong), var(--hundred));
-}
-
 .p-profiles .profile-head .c-info .c-additionals::-webkit-scrollbar,
-.b-hot_topics::-webkit-scrollbar,
 .b-topic-minified > .inner .status-line::-webkit-scrollbar,
 .buttons > div::-webkit-scrollbar,
 .b-code::-webkit-scrollbar,
 .b-shiki_editor .hidden-block::-webkit-scrollbar {
     height: 8px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .p-dashboard .l-content .b-catalog_entry:hover {
-        box-shadow: none;
-        background: none !important;
-        transform: scale(1);
-    }
-}
-
-.p-dashboard .l-content .b-catalog_entry,
-.p-dashboard .l-menu .ongoing {
-    border-top: none;
 }
 
 .p-dashboards-show .generated-news-line .b-tag {
@@ -291,15 +216,6 @@
     background: rgb(132 193 220 / 10%);
 }
 
-.b-hot_topics .topic a .poster {
-    margin-left: -23px;
-    margin-top: -4px;
-    position: absolute;
-    height: 19px;
-    width: 19px;
-    border-radius: 50%;
-}
-
 .p-dashboards-show .midheadline .b-link {
     line-height: normal;
     vertical-align: bottom;
@@ -314,19 +230,6 @@
     padding: 5px 10px 0;
     border: none !important;
     background: var(--plate-bg);
-}
-
-.p-dashboards-show .cc-news .c-news_topics .b-topic {
-    border-top-width: 1px;
-    padding-top: 10px;
-}
-
-.p-dashboards-show .cc-news .c-news_topics .b-topic {
-    margin-bottom: 30px;
-}
-
-.p-dashboards-show .cc-news .c-generated_news .b-topic {
-    margin-bottom: 5px;
 }
 
 .c-generated_news div.block {
@@ -351,13 +254,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .p-dashboards-show .cc-news .c-news_topics.c-news_topics {
-        margin-right: 25px;
-        width: calc(69% - 25px);
-    }
-    .p-dashboards-show .cc-news .c-generated_news.c-generated_news {
-        width: 30%;
-    }
     .p-dashboards-show .cc-second .c-forum.c-forum {
         width: 30%;
         margin-right: 7px !important;
@@ -370,81 +266,21 @@
     }
 }
 
-/* ----- телефон и узкие экраны ----- */
-
-@media screen and (max-width: 1023px) {
-    .b-hot_topics {
-        margin-top: 0 ;
-    }
-    .p-dashboards-show .cc-news .c-news_topics .b-topic .name-date a {
-        line-height: 1.4;
-    }
-}
-
 @media screen and (max-width: 767px) {
     .p-dashboards-show .cc-second .c-forum.c-forum {
         width: 100%;
     }
-    .p-dashboards-show .cc-news .c-news_topics {
-        width: 100% !important;
-    }
     .p-profiles .profile-head .c-info .c-additionals::-webkit-scrollbar,
-    .b-hot_topics::-webkit-scrollbar,
     .b-topic-minified > .inner .status-line::-webkit-scrollbar,
     .buttons > div::-webkit-scrollbar,
     .b-code::-webkit-scrollbar,
     .b-shiki_editor .hidden-block::-webkit-scrollbar {
         height: 3px;
     }
-    .b-hot_topics .topic:nth-child(5),
-    .b-hot_topics .topic:nth-child(6),
-    .b-hot_topics .topic:nth-child(7),
-    .b-hot_topics .topic:nth-child(8),
-    .b-hot_topics .topic:nth-child(9) {
-        display: block;
-    }
-    .b-hot_topics .topic {
-        width: calc(100% - 89px);
-        padding: 10px;
-    }
-    .b-hot_topics {
-        white-space: normal;
-        overflow-x: auto;
-        height: 55px;
-    }
-    .b-hot_topics .topic.subject:after {
-        content: "\f07d";
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 22px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        position: absolute;
-        padding: 0  5px 8px 10px;
-        top: 12px;
-    }
-    .b-hot_topics .topic.subject:before {
-        content: "\f0a6";
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 22px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        position: absolute;
-        padding: 0  5px 10px 117px;
-        top: 12px;
-    }
-    .c-news_topics.m0 {
-        margin-top: 18px;
-    }
 }
 
 @media screen and (max-width: 480px) {
     .p-dashboards-show .v2 .db-updates .inner .db-update {
         max-height: 130px;
-    }
-    .p-dashboards-show .cc-ongoings .c-column:nth-child(3),
-    .p-dashboards-show .cc-ongoings .c-column:nth-child(2),
-    .p-dashboards-show .cc-ongoings .c-column:nth-child(1) {
-        display: inline-block !important;
-        clear: none;
     }
 }

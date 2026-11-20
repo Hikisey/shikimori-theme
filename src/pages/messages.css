@@ -47,7 +47,6 @@
 }
 
 .b-dialog,
-.p-dashboards-show .cc-news .c-news_topics .b-topic,
 .b-user.detailed,
 .b-comment,
 .b-db_entry-note,
@@ -58,7 +57,6 @@
 }
 
 .b-dialog,
-.p-dashboards-show .cc-news .c-news_topics .b-topic,
 .b-user.detailed,
 .b-comment,
 .b-db_entry-note,
@@ -107,7 +105,7 @@
     background: rgba(var(--accent), 1);
     color: var(--tone-f9f9f9);
     line-height: 41px;
-    transition: 0.5s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: 0.5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 19px;
     font-weight: bold;
     width: 37px;
@@ -445,9 +443,6 @@ body.p-user_history .l-page {
         pointer-events: none;
         transition: opacity 0.25s ease;
         box-shadow: 0 1px 20px 10px color-mix(in srgb, var(--glass-deep) 40%, transparent);
-    }
-    .x1000 .b-comments-notifier:after {
-        max-width: 100%;
     }
     .b-comments-notifier[style*=": 0"]:after {
         opacity: 1;

@@ -48,7 +48,7 @@
 .p-profiles .profile-head .c-brief header h1.aliases::after,
 .p-profiles .profile-head .c-brief header .notice a {
     color: rgba(var(--text), 1) !important;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     text-shadow 0s;
 }
 
@@ -155,7 +155,7 @@ body.localized_names-ru .name-ru {
 .p-topics .l-menu .clubs .entry {
     margin-bottom: 0;
     padding: 0 3px 0;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s,
     background 0s;
     border-top: none;
     text-decoration: none !important;
@@ -170,7 +170,7 @@ body.localized_names-ru .name-ru {
 .subheadline > a,
 .p-topics .l-menu .sticky-topics .topic {
     color: var(--heading-text);
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
+    transition: var(--ease-fast), margin 0s, padding 0s, opacity 0s, color 0.2s, font-size 0s, width 0s, height 0s, top 0s, bottom 0s,
     border 0s, border-radius 0s, left 0s, right 0s, line-height 0s, min-height 0s;
 }
 
@@ -1091,15 +1091,6 @@ a.name[href*="/morr"] {
     text-decoration: none;
 }
 
-.p-dashboards-show .cc-news .c-news_topics {
-    margin-right: 25px;
-    width: calc(69% - 25px);
-}
-
-.p-dashboards-show .cc-news .c-generated_news {
-    width: 30%;
-}
-
 @media (hover: hover) and (pointer: fine) {
     .c-info-right .b-tag:hover {
         background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent);
@@ -1196,7 +1187,6 @@ header.head a.edit,
 .p-topics .l-menu .clubs .entry .misc,
 .p-topics .l-menu .contests .contest .notice,
 .p-topics .l-menu .sticked-topics .topic .notice,
-.b-video_player .cc-player_controls .episode-title .video-link,
 .b-log_entry .date,
 .b-log_entry .spoiler.collapse,
 .b-log_entry .spoiler.collapsed,
@@ -1206,10 +1196,7 @@ header.head a.edit,
 .b-input .hint,
 .b-review-topic .review-votes_count,
 .b-show_more-more .hide-more,
-.p-dashboard .l-menu .ongoing .misc,
-.p-dashboard .l-menu .season .notice,
-.p-topics .l-menu .sticky-topics .topic .notice,
-.b-hot_topics .topic {
+.p-topics .l-menu .sticky-topics .topic .notice {
     font-size: 12px !important;
 }
 
@@ -1251,7 +1238,6 @@ header.head .misc {
 .p-profiles-edit .account .avatar-edit img,
 .b-user.detailed .info .image-name .image,
 .b-message > .inner header img,
-.b-hot_topics .topic a.with-author img,
 .b-dialog > .inner header img,
 .p-topics .l-menu .clubs .entry img,
 .name-logo .logo {
@@ -1337,11 +1323,6 @@ body.p-achievements.p-profiles .b-options-floated {
 
 .c-genres .block2 .cc-achievements .b-achievement .title {
     color: #f3eabf;
-}
-
-body.p-achievements.p-profiles :-ms-input-placeholder {
-    color: #827160 !important;
-    transition: 0.5s ease-out;
 }
 
 body.p-achievements.p-profiles :-moz-placeholder {
@@ -1890,17 +1871,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         margin: 0 5px !important;
         width: calc(14.28% - 10px);
     }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(14.28% - 10px);
-        margin: 0 5px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(12.5% - 10px) !important;
-        margin: 0 5px !important;
-    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -1937,11 +1907,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 3%;
     }
     .l-page .menu-toggler .toggler {
@@ -1973,10 +1939,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         overflow-x: auto;
         float: left !important;
     }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(16.66% - 10px);
-        margin: 0 5px;
-    }
     .b-topic-minified > .inner .status-line {
         overflow: hidden;
         white-space: normal;
@@ -2001,9 +1963,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     .p-profiles .profile-head .c-history,
     .p-profiles .profile-head .c-history.x2,
-    .p-profiles .profile-head .c-history.x3,
-    .x1000 > .l-page div .profile-head .c-history.x2,
-    .x1000 > .l-page div .profile-head .c-history.x3 {
+    .p-profiles .profile-head .c-history.x3 {
         background: none;
         border-radius: 5%;
         padding: 0  5px 0 ;
@@ -2220,23 +2180,12 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 1.25%;
         margin-left: 1.25%;
     }
     .c-column.block_m {
         width: 100%;
-    }
-    .b-hot_topics .topic.subject {
-        color: rgba(var(--text), var(--hundred));
-        font-size: 18px !important;
-        width: 100%;
-        bottom: 3px;
-        padding: 17px 20px 13px 0 ;
     }
     .p-profiles-show .lifetime .title {
         color: rgba(var(--text-2), var(--hundred));
@@ -2251,9 +2200,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     .p-profiles .profile-head .c-history,
     .p-profiles .profile-head .c-history.x2,
-    .p-profiles .profile-head .c-history.x3,
-    .x1000 > .l-page div .profile-head .c-history.x2,
-    .x1000 > .l-page div .profile-head .c-history.x3 {
+    .p-profiles .profile-head .c-history.x3 {
         top: auto !important;
         z-index: auto;
         transition: none !important;
@@ -2263,8 +2210,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .b-form a.remove {
         margin-top: 17px;
     }
-    .x1000 .menu-slide-outer.x199 .l-menu,
-    .x1000 .menu-slide-outer.x240 .l-menu,
     .x1200 .menu-slide-outer.x199 .l-menu,
     .x1200 .menu-slide-outer.x240 .l-menu,
     .menu-slide-outer.x199 .l-menu,
@@ -2272,10 +2217,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         width: 100%;
         padding: 0  10px 0  17px;
         outline: 55555px solid color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(33.33% - 20px);
-        margin: 0 10px;
     }
     .b-main_search .input input {
         font-size: 14px;
@@ -2318,11 +2259,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 2%;
         margin-left: 2%;
     }
@@ -2372,10 +2309,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     span.current-value[data-field="chapters"] {
         display: none;
-    }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(33.33% - 8px);
-        margin: 0 4px !important;
     }
 }
 
@@ -3414,7 +3347,6 @@ img.studio-logo,
 }
 
 .p-dashboards-show .v2 :is(.fc-ongoings, .cc-ongoings) .inner > .b-catalog_entry,
-.p-dashboards-show .cc-ongoings .c-column,
 .b-catalog_entry.c-column {
     min-width: 0;
     max-width: 100%;

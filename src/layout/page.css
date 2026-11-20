@@ -35,8 +35,6 @@ body {
 @media screen and (min-width: 1024px) {
     html {
         overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-gutter: stable;
     }
     body {
         overflow: visible;
@@ -66,7 +64,7 @@ body.localized_names-ru .name-ru:hover {
 }
 
 body.localized_names-ru .name-ru:before {
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .l-page {
@@ -431,10 +429,6 @@ body#dashboards_show .block2 {
     margin-bottom: 27px;
 }
 
-body#dashboards_show .cc-news {
-    margin-top: -31px;
-}
-
 body#clubs_index .subheadline,
 body#profiles_clubs .subheadline {
     width: 100%;
@@ -497,7 +491,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
     background: none;
 }
 
-.x1000 .l-page,
 .x1200 .l-page {
     max-width: 1200px;
 }
@@ -506,11 +499,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
     min-height: 50px;
     margin: 0px auto 25px;
     position: relative;
-}
-
-.x1000 .l-page {
-    margin: 65px auto 25px;
-    border-radius: 8px;
 }
 
 .l-page {
@@ -559,7 +547,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1199px) {
-    .x1000 .l-page,
     .x1200 .l-page {
         margin-top: 0;
     }

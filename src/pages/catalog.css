@@ -4,7 +4,7 @@
 /* справа выборы фильтров в списке аниме */
 .b-block_list li {
     color: rgba(var(--text), 1);
-    transition: 0.1s ease-out, -webkit-0 .1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: 0.1s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     font-family: var(--font-family);
 }
@@ -39,10 +39,8 @@
     color: rgba(var(--link), var(--hundred)) !important;
 }
 
-.x1000 .menu-slide-outer.x199 .l-menu,
 .x1200 .menu-slide-outer.x199 .l-menu,
 .menu-slide-outer.x199 .l-menu,
-.x1000 .menu-slide-outer.x240 .l-menu,
 .x1200 .menu-slide-outer.x240 .l-menu,
 .menu-slide-outer.x240 .l-menu {
     width: 22.00%;
@@ -57,7 +55,6 @@ span.studio {
     transform: scale(1.03);
 }
 
-.p-animes_collection-index.x1000 .cc-entries,
 .p-animes_collection-index.x1200 .cc-entries {
     margin-top: 4px;
 }
@@ -228,7 +225,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
 }
 
 @media screen and (max-width: 1023px) {
-    .p-animes_collection-index.x1000 .cc-entries,
     .p-animes_collection-index.x1200 .cc-entries {
         padding: 0  12px 0  4px;
     }
@@ -269,7 +265,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
     section.l-page aside.l-menu {
         display: none;
     }
-    .p-animes_collection-index.x1000 .cc-entries,
     .p-animes_collection-index.x1200 .cc-entries {
         padding: 0 ;
     }
@@ -331,7 +326,6 @@ select:not(#u):not(.c-filter-select) { width: auto !important; max-width: 100%; 
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
-        transform: none !important;
         /* «жидкое стекло» */
         background:
             linear-gradient(160deg, rgba(var(--glass-light), 0.13) 0%, rgba(var(--glass-light), 0.04) 32%, rgba(var(--glass-light), 0) 60%),

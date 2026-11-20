@@ -192,7 +192,7 @@
 }
 
 .c-actions .new_comment:before {
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -202,7 +202,7 @@
 }
 
 .c-actions .new_review:before {
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -212,7 +212,7 @@
 
 .c-actions .fav-add:before {
     color: rgba(var(--accent), 1);
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .c-actions .fav-add:hover:before {
@@ -220,7 +220,7 @@
 }
 
 .c-actions .edit:before {
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--accent), 1);
 }
 
@@ -235,18 +235,6 @@
 .p-anime_videos-index .c-videos .title {
     color: rgba(var(--text-strong), 1);
     font-size: 11px;
-}
-
-.b-video_player .cc-player_controls .increment-user_rate .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .show-options .icon:before {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-video_player .cc-player_controls .create-user_rate .icon:before {
-    color: rgba(var(--text-strong), 1);
 }
 
 .b-db_entry > .c-about .additional-links .key {
@@ -401,14 +389,6 @@ a.b-db_entry-variant-list_item span.b-link:hover {
     color: #bfdeda;
 }
 
-/*--------------------------------------------------------*/
-
-.b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
-    text-decoration: none !important;
-    border: none;
-    background: none;
-}
-
 .c-actions .new_comment:after,
 .c-actions .new_review:after,
 .c-actions .fav-add:after,
@@ -452,13 +432,6 @@ a.b-db_entry-variant-list_item span.b-link:hover {
 .b-animes-menu .block,
 .b-animes-menu .b-favoured {
     margin-bottom: 20px;
-}
-
-.b-video_player .cc-player_controls .increment-user_rate.watched {
-    background-color: #5aef6b;
-    padding: 0 4px;
-    border-radius: 5px;
-    opacity: 0.7;
 }
 
 .b-animes-menu #rates_statuses_stats .bar-container {
@@ -511,41 +484,6 @@ body.p-db_entries-works .subheadline .misc-links {
     box-shadow: var(--plate-shadow) !important;
 }
 
-.b-video_player .cc-player_controls .cc-navigation > .c-control {
-    width: 28%;
-    margin-right: 2%;
-}
-
-.b-video_player .cc-player_controls .cc-navigation > .c-control.prev,
-.b-video_player .cc-player_controls .cc-navigation > .c-control.next {
-    background: var(--plate-bg-strong);
-    box-shadow: var(--plate-shadow);
-    border-radius: 24px;
-    padding: 4px 0px;
-    margin-top: 5px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .b-video_player .cc-player_controls .cc-navigation > .c-control.prev:hover,
-    .b-video_player .cc-player_controls .cc-navigation > .c-control.next:hover {
-        background-size: 250% 250%;
-    }
-}
-
-.b-video_player .cc-player_controls .cc-navigation > .c-control.prev:hover {
-    animation: prev 1.5s ease-in-out infinite;
-}
-
-.b-video_player .cc-player_controls .cc-navigation > .c-control.next:hover {
-    animation: next 1.5s ease-in-out infinite;
-}
-
-.b-video_player .cc-player_controls .cc-navigation > .c-control.episode-num {
-    width: 40%;
-    box-shadow: var(--plate-shadow);
-    border-radius: 27px;
-}
-
 .c-column.c-control.increment-user_rate.watched {
     background: #205520 !important;
     transition: var(--ease-base);
@@ -560,35 +498,9 @@ a.c-column.c-control.increment-user_rate,
     right: 31.333333%;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .b-video_player .cc-player_controls .c-column.c-control.increment-user_rate:hover {
-        background: #145814ba !important;
-        box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
-    }
-}
-
-.b-video_player .cc-player_controls .increment-user_rate.watched .icon:before,
-.b-video_player .cc-player_controls .increment-user_rate:hover .icon:before {
-    color: #cce0d1;
-}
-
 .c-column.c-control.increment-user_rate.watched .label.label,
 .c-column.c-control.increment-user_rate:hover .label.label {
     color: #99bba7;
-}
-
-.b-video_player .cc-player_controls .show-options:hover .icon:before {
-    color: #fff7e5;
-}
-
-.b-video_player .cc-player_controls .increment-user_rate .icon:before,
-.b-video_player .cc-player_controls .show-options .icon:before,
-.b-video_player .cc-player_controls .create-user_rate .icon:before {
-    line-height: 32px;
-}
-
-.b-video_player .cc-player_controls .cc-options > .c-video_stats {
-    width: 100%;
 }
 
 .b-video_variant .video-language:after {

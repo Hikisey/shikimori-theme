@@ -87,11 +87,6 @@ textarea#user_rate_text {
 }
 
 /* Firefox 19 */
-/* IE 10 */
-::-ms-input-placeholder {
-    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
-    transition: 0.5s ease-out;
-}
 
 /* Firefox 18 */
 ::-moz-placeholder {
@@ -104,10 +99,6 @@ textarea#user_rate_text {
 }
 
 :focus::-moz-placeholder {
-    opacity: 0.5;
-}
-
-:focus::-ms-input-placeholder {
     opacity: 0.5;
 }
 

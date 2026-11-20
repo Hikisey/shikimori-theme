@@ -1,458 +1,5 @@
-/* shiki glass v1.7.2 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.3 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
-
-.p-dashboards-show .v2 .my-list .label span {
-    color: rgba(var(--text-strong), 1);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.neutral,
-.b-review_opinion_marker.is-neutral input:checked + span {
-    color: rgb(var(--text-strong));
-    background: var(--tone-3b3a3e);
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.positive,
-.b-review_opinion_marker.is-positive input:checked + span {
-    background: #1c4c20;
-    color: #c6dacb;
-}
-
-.b-review-topic.is-review_review_author_details > .inner .review-info .opinion.negative,
-.b-review_opinion_marker.is-negative input:checked + span {
-    background: #862a22;
-    color: #ffcfcf;
-}
-
-.navigation-node.navigation-node-neutral.is-empty * {
-    color: var(--glass-shadow) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .subheadline a[title="morr"]:hover:after {
-        line-height: 20px;
-        padding-top: 2px;
-        margin-top: -2px;
-    }
-}
-
-.name-date a.name[title="morr"],
-a.name[href*="/morr"] {
-    color: #fdc47a !important;
-    font-size: 19px !important;
-    line-height: 15px !important;
-}
-
-.subheadline a[title="morr"] {
-    color: #fdc47a !important;
-}
-
-.name-date a.name[title="EngiNier"],
-.b-comment>.inner a.name[href*="/EngiNier"],
-.subheadline a[title="EngiNier"] {
-    color: var(--tone-e2e2e2)!important;
-}
-
-.name-date a.name[title="Cosmo+%E2%98%AD"],
-.b-comment>.inner a.name[href*="/Cosmo+%E2%98%AD"],
-.subheadline a[title="Cosmo+%E2%98%AD"] {
-    color: #9ee0f1!important;
-}
-
-.b-user16 a[title="morr"] {
-    color: #fdc47a !important;
-    font-weight: bold;
-}
-
-.name-date a.name[title="EngiNier"]:hover:after,
-.name-date a.name[href*="/EngiNier"]:hover:after,
-.subheadline a[title="EngiNier"]:hover:after,
-.name-date a.name[title="Cosmo+%E2%98%AD"]:hover:after,
-.name-date a.name[href*="/Cosmo+%E2%98%AD"]:hover:after,
-.subheadline a[title="Cosmo+%E2%98%AD"]:hover:after {
-    content:"Edesign Admin";
-}
-
-.b-catalog_entry.completed .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #419541 0);
-}
-
-.b-catalog_entry.dropped .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #ca4929 0);
-}
-
-.b-catalog_entry.watching .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #4c30bd 0);
-}
-
-.b-catalog_entry.on_hold .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
-}
-
-.b-catalog_entry.planned .image-decor:before {
-    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
-}
-
-.b-form .variants .variant a {
-    font-weight: bold;
-}
-
-.b-catalog_entry .cover .image-decor > .text:before {
-    background: #b97b43bf;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
-    margin: 0;
-}
-
-.b-animes-menu .menu-topics-block .entry:hover .name {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
-}
-
-.p-dashboards-show .cc-second .c-forum {
-    width: 30.33333%;
-    margin-bottom: 21px;
-    float: right;
-}
-
-.cc-4.clubs .b-user16 span {
-    top: -5px;
-    position: relative;
-}
-
-.b-oauth_application .name-logo .name {
-    color: rgba(var(--accent), 1);
-    text-decoration: none !important;
-    transition: 1s ease;
-}
-
-.b-oauth_application .name-logo:hover .name {
-    color: rgba(var(--accent), 1);
-    text-decoration: none;
-}
-
-.p-dashboards-show .cc-news .c-news_topics {
-    margin-right: 25px;
-    width: calc(69% - 25px);
-}
-
-.p-dashboards-show .cc-news .c-generated_news {
-    width: 30%;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-info-right .b-tag:hover {
-        background-color: color-mix(in srgb, var(--accent-hover) 70%, transparent);
-        color: rgb(var(--text-strong)) !important;
-    }
-}
-
-input.ac_input.ac_loading {
-    box-shadow: none;
-    background: none !important;
-}
-
-.p-profiles .profile-head .c-info .c-additionals div a {
-    color: rgba(var(--link), 1);
-}
-
-.cc-8 > .c-column {
-    width: calc(12.5% - 10px);
-    margin: 5px;
-}
-
-.p-profiles-show .achievements .header .title {
-    color: rgba(var(--text-2), 1);
-}
-
-.c-buttons.cc-3a .c-control {
-    background: rgba(var(--glass), 0.5);
-    box-shadow: 0 2px 6px 2px rgba(var(--shade), 0.15);
-    border-radius: 22px;
-    padding: 2px 0px;
-    transition: var(--ease-base);
-}
-
-.c-column.c-control.show-options {
-    float: right;
-    margin-right: 0px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .c-column.c-control.show-options:hover {
-        background: color-mix(in srgb, var(--accent-hover) 40%, transparent) !important;
-        box-shadow: var(--plate-shadow) !important;
-    }
-}
-
-.b-catalog_entry .cover .misc,
-.p-dashboards-show .midheadline .b-link,
-.p-dashboards .user_list .list-type > .title .switch,
-.p-dashboards .user_list .list-type > .title .link,
-.p-dashboards .user_list .history > .title .switch,
-.p-dashboards .user_list .history > .title .link,
-.p-dashboards .user_list .list-change .note,
-.p-dashboards .c-my_list .list-change .note,
-.p-dashboards-show .contests .contest .notice,
-.b-forums .forum .topics,
-.name-date .time,
-.p-profiles .profile-head .c-history .entry .misc,
-.p-profiles-show .lifetime .times .time,
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility span.link-replacement,
-.b-comment > .inner header .name-date .time,
-.b-replies,
-.b-options-floated,
-.p-messages .mass-actions .action,
-.p-animes_collection-index .pagination,
-.p-mangas_collection-index .pagination,
-.p-recommendations-index .pagination,
-.p-userlist_comparer-show .pagination,
-.b-show_more,
-.b-rate .score-notice,
-.b-animes-menu .block-list .date,
-.bar.horizontal .line .x_label,
-.b-animes-menu .friend-rate .status,
-.bar.horizontal .line .bar-container .value,
-.tipsy,
-header.head a.edit,
-.p-studios .studio .animes,
-.p-studios .studio .years,
-.p-contests-index .contest .date,
-.p-contests .contest-match .vs .help,
-.p-contests .contest-match .vs .next,
-.p-contests .contest-match .vs .finish,
-.p-contests .contest-match .vs .refrain,
-.p-contests .contest-match .vs .refrained,
-.p-contests .match-day .matches-num,
-.b-lang_trigger,
-.b-club .info,
-.b-user.detailed .info .last-online,
-.b-user.detailed .history .line .date,
-.p-recommendations-index .b-header_filters .hint,
-.p-recommendations-favourites .b-header_filters .hint,
-.p-userlist_comparer .comparer table .notice,
-.p-topics .l-menu .calendar .entry .misc,
-.p-topics .l-menu .reviews .entry .misc,
-.p-topics .l-menu .clubs .entry .misc,
-.p-topics .l-menu .contests .contest .notice,
-.p-topics .l-menu .sticked-topics .topic .notice,
-.b-video_player .cc-player_controls .episode-title .video-link,
-.b-log_entry .date,
-.b-log_entry .spoiler.collapse,
-.b-log_entry .spoiler.collapsed,
-.b-log_entry .spoiler.collapse span,
-.b-log_entry .spoiler.collapsed span,
-.b-js-action,
-.b-input .hint,
-.b-review-topic .review-votes_count,
-.b-show_more-more .hide-more,
-.p-dashboard .l-menu .ongoing .misc,
-.p-dashboard .l-menu .season .notice,
-.p-topics .l-menu .sticky-topics .topic .notice,
-.b-hot_topics .topic {
-    font-size: 12px !important;
-}
-
-.p-profiles .profile-head .c-info .c-lists-info .b-stats_bar .compatibility a,
-header.head .misc {
-    font-size: 12px;
-    transition: 0.3s ease-out, -webkit-0.3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s;
-}
-
-.b-stats_bar a.title,
-.b-stats_bar .title {
-    font-size: 15px;
-    margin-bottom: 2px;
-    transition: width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, min-height 0s;
-}
-
-.b-options-floated {
-    height: 28px;
-    width: auto;
-    line-height: 28px;
-    margin-top: 0;
-    z-index: 1;
-}
-
-.p-topics .l-menu .sticky-topics .topic,
-.p-topics .l-menu .sticky-topics .topic .title,
-.p-topics .l-menu .sticky-topics .topic .title:after {
-    color: rgba(var(--text-strong), 1);
-    transition: var(--ease-fast);
-    border: none !important;
-}
-
-.b-user.avatar img,
-.b-user.named_avatar img,
-.b-user.avatar_fixed_margin img,
-.b-user16 img,
-.b-club .logo,
-.b-comment > .inner header img,
-.p-profiles-edit .account .avatar-edit img,
-.b-user.detailed .info .image-name .image,
-.b-message > .inner header img,
-.b-hot_topics .topic a.with-author img,
-.b-dialog > .inner header img,
-.p-topics .l-menu .clubs .entry img,
-.name-logo .logo {
-    border-radius: 50%;
-    border: 2px solid rgba(var(--glass), 0.6);
-    transition: 0s ease, transform 1s ease, border-color 1s ease;
-}
-
-.b-comment {
-    padding-top: 10px;
-}
-
-.b-comment .inner {
-    min-height: 50px;
-}
-
-.b-comment > .inner header .name-date {
-    overflow: visible;
-    margin-left: 60px;
-}
-
-.headline.linkheadline > a,
-.linkheadline.midheadline > a,
-.linkheadline.subheadline > a,
-.headline.linkheadline > a:hover,
-.linkheadline.midheadline > a:hover,
-.linkheadline.subheadline > a:hover {
-    text-decoration: none;
-}
-
-.b-topic.b-review-topic > .inner header img {
-    border-radius: 50%;
-}
-
-.l-page > div:last-child {
-    min-height: 0;
-}
-
-.p-profiles-index .cc-achievements .b-achievement,
-.p-profiles-index .cc-franchises-genres .c-genres .b-achievement {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    float: none;
-    border-radius: 8px;
-    transition: box-shadow 0.16s ease;
-    width: calc(26% - 36px);
-    margin: 0 12px 15px !important;
-    min-height: 338px;
-    box-shadow: var(--plate-shadow);
-}
-
-.b-achievement .c-image .inner {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border-radius: 20px;
-}
-
-body.p-achievements.p-profiles .b-options-floated {
-    position: absolute;
-    left: 10px;
-    top: -32px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 86px !important;
-    margin: 0 auto;
-    height: 15px;
-    padding: 11px 7px 6px;
-    background: color-mix(in srgb, var(--tone-131010) 78.04%, transparent);
-    color: #887146;
-    box-sizing: content-box;
-    border-radius: 50%/ 33px 33px 0 0;
-}
-
-.block2 .cc-achievements .b-achievement .title {
-    color: #cce0d1;
-}
-
-.c-genres .block2 .cc-achievements .b-achievement .title {
-    color: #f3eabf;
-}
-
-body.p-achievements.p-profiles :-ms-input-placeholder {
-    color: #827160 !important;
-    transition: 0.5s ease-out;
-}
-
-body.p-achievements.p-profiles :-moz-placeholder {
-    color: #827160 !important;
-    transition: 0.5s ease-out;
-}
-
-body.p-achievements.p-profiles .headline,
-body.p-achievements.p-profiles .subheadline {
-    background: linear-gradient(to right, rgba(53, 22, 0, 0.6), rgba(115, 67, 6, 0.9), rgba(53, 20, 0, 0.6));
-    color: #ffe1a7 !important;
-
-    position: relative;
-    z-index: -1;
-    margin-bottom: 25px !important;
-    justify-content: center;
-}
-
-body.p-achievements.p-profiles a.menu-icon:hover {
-    color: rgba(var(--link), 1) !important;
-}
-
-body.p-achievements.p-profiles .l-top_menu-v2 .menu-dropdown a {
-    color: #fff7e8;
-}
-
-.fullwidth > .b-spoiler > label {
-    display: block !important;
-    padding: 0.47em 6em 0.47em 6em;
-    box-shadow: var(--plate-shadow) !important;
-    background: var(--plate-bg-strong);
-    border: 0;
-    border-radius: 11px;
-    color: rgba(var(--text-strong), 1);
-    font-size: 1.25em;
-    line-height: 1em;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: center;
-    margin: 5px 0px;
-    position: relative;
-}
-
-.fullwidth > .b-spoiler > .content > .inner {
-    display: block;
-    min-height: 0;
-    padding: 0.5em 1em;
-    margin: 0.5em 0;
-    animation: 0.24s fadeIn cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-.use-tabs > [data-dynamic] {
-    display: inline-block;
-    padding: 4px 16px;
-    margin: 4px;
-    border: 2px solid;
-    border-radius: 40px;
-    color: hsla(var(--c-tab) var(--l-text-inactive) / 100%);
-    font-weight: bold;
-    line-height: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.24s ease;
-    user-select: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .use-tabs > [data-dynamic]:hover {
-        background: hsla(var(--c-tab) var(--l-background) / 8%);
-    }
-}
 
 .use-tabs > [data-dynamic]:active {
     background: hsla(var(--c-tab) var(--l-background) / 16%);
@@ -930,17 +477,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         margin: 0 5px !important;
         width: calc(14.28% - 10px);
     }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(14.28% - 10px);
-        margin: 0 5px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(12.5% - 10px) !important;
-        margin: 0 5px !important;
-    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -977,11 +513,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 3%;
     }
     .l-page .menu-toggler .toggler {
@@ -1013,10 +545,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         overflow-x: auto;
         float: left !important;
     }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(16.66% - 10px);
-        margin: 0 5px;
-    }
     .b-topic-minified > .inner .status-line {
         overflow: hidden;
         white-space: normal;
@@ -1041,9 +569,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     .p-profiles .profile-head .c-history,
     .p-profiles .profile-head .c-history.x2,
-    .p-profiles .profile-head .c-history.x3,
-    .x1000 > .l-page div .profile-head .c-history.x2,
-    .x1000 > .l-page div .profile-head .c-history.x3 {
+    .p-profiles .profile-head .c-history.x3 {
         background: none;
         border-radius: 5%;
         padding: 0  5px 0 ;
@@ -1260,23 +786,12 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 1.25%;
         margin-left: 1.25%;
     }
     .c-column.block_m {
         width: 100%;
-    }
-    .b-hot_topics .topic.subject {
-        color: rgba(var(--text), var(--hundred));
-        font-size: 18px !important;
-        width: 100%;
-        bottom: 3px;
-        padding: 17px 20px 13px 0 ;
     }
     .p-profiles-show .lifetime .title {
         color: rgba(var(--text-2), var(--hundred));
@@ -1291,9 +806,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     .p-profiles .profile-head .c-history,
     .p-profiles .profile-head .c-history.x2,
-    .p-profiles .profile-head .c-history.x3,
-    .x1000 > .l-page div .profile-head .c-history.x2,
-    .x1000 > .l-page div .profile-head .c-history.x3 {
+    .p-profiles .profile-head .c-history.x3 {
         top: auto !important;
         z-index: auto;
         transition: none !important;
@@ -1303,8 +816,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .b-form a.remove {
         margin-top: 17px;
     }
-    .x1000 .menu-slide-outer.x199 .l-menu,
-    .x1000 .menu-slide-outer.x240 .l-menu,
     .x1200 .menu-slide-outer.x199 .l-menu,
     .x1200 .menu-slide-outer.x240 .l-menu,
     .menu-slide-outer.x199 .l-menu,
@@ -1312,10 +823,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
         width: 100%;
         padding: 0  10px 0  17px;
         outline: 55555px solid color-mix(in srgb, var(--glass-deep) 80%, transparent);
-    }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(33.33% - 20px);
-        margin: 0 10px;
     }
     .b-main_search .input input {
         font-size: 14px;
@@ -1358,11 +865,7 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     .p-animes_collection-index .cc-entries > .c-column,
     .p-mangas_collection-index .cc-entries > .c-column,
     .p-recommendations-index .cc-entries > .c-column,
-    .p-userlist_comparer-show .cc-entries > .c-column,
-    .p-animes_collection-index.x1000 .cc-entries > .c-column,
-    .p-mangas_collection-index.x1000 .cc-entries > .c-column,
-    .p-recommendations-index.x1000 .cc-entries > .c-column,
-    .p-userlist_comparer-show.x1000 .cc-entries > .c-column {
+    .p-userlist_comparer-show .cc-entries > .c-column {
         margin-right: 2%;
         margin-left: 2%;
     }
@@ -1412,10 +915,6 @@ body.p-achievements.p-profiles .b-anime_status_tag.episode,
     }
     span.current-value[data-field="chapters"] {
         display: none;
-    }
-    .p-dashboards-show .cc-ongoings .c-column {
-        width: calc(33.33% - 8px);
-        margin: 0 4px !important;
     }
 }
 
@@ -2442,7 +1941,6 @@ img.studio-logo,
 }
 
 .p-dashboards-show .v2 :is(.fc-ongoings, .cc-ongoings) .inner > .b-catalog_entry,
-.p-dashboards-show .cc-ongoings .c-column,
 .b-catalog_entry.c-column {
     min-width: 0;
     max-width: 100%;

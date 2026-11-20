@@ -1,4 +1,4 @@
-/* shiki glass v1.7.2 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
+/* shiki glass v1.7.3 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p1: ""; }
 
 @media screen and (min-width: 1px) {
@@ -496,7 +496,7 @@ a:hover {
 .b-js-link {
     border: none;
     padding: 0 8px 0 8px;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-js-link:hover {
@@ -1369,10 +1369,8 @@ a,
     background: none;
 }
 
-.x1000 .menu-slide-outer.x199 .l-content,
 .x1200 .menu-slide-outer.x199 .l-content,
 .menu-slide-outer.x199 .l-content,
-.x1000 .menu-slide-outer.x240 .l-content,
 .x1200 .menu-slide-outer.x240 .l-content,
 .menu-slide-outer.x240 .l-content {
     width: 75.5%;
@@ -1687,13 +1685,11 @@ span.submenu-triangle.submenu-triangle.icon-profile {
     .l-top_menu-v2 .logo-container .logo.logo {
         width: 110px;
     }
-    .x1000 .menu-slide-outer.x199 .l-content,
     .menu-slide-outer.x199 .l-content {
         width: 98% !important;
     }
     .x1200 .menu-slide-outer.x240 .l-content,
     .menu-slide-outer.x240 .l-content,
-    .x1000 .menu-slide-outer.x240 .l-content,
     .x1200 .menu-slide-outer.x199 .l-content {
         width: 98% !important;
         top: 5px;
@@ -1704,7 +1700,6 @@ span.submenu-triangle.submenu-triangle.icon-profile {
 }
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
-    .x1000 .menu-slide-outer.x199 .l-content,
     .menu-slide-outer.x199 .l-content {
         width: 98% !important;
     }
@@ -1823,8 +1818,6 @@ body {
 @media screen and (min-width: 1024px) {
     html {
         overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-gutter: stable;
     }
     body {
         overflow: visible;
@@ -1854,7 +1847,7 @@ body.localized_names-ru .name-ru:hover {
 }
 
 body.localized_names-ru .name-ru:before {
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .l-page {
@@ -2215,10 +2208,6 @@ body#dashboards_show .block2 {
     margin-bottom: 27px;
 }
 
-body#dashboards_show .cc-news {
-    margin-top: -31px;
-}
-
 body#clubs_index .subheadline,
 body#profiles_clubs .subheadline {
     width: 100%;
@@ -2281,7 +2270,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
     background: none;
 }
 
-.x1000 .l-page,
 .x1200 .l-page {
     max-width: 1200px;
 }
@@ -2290,11 +2278,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
     min-height: 50px;
     margin: 0px auto 25px;
     position: relative;
-}
-
-.x1000 .l-page {
-    margin: 65px auto 25px;
-    border-radius: 8px;
 }
 
 .l-page {
@@ -2343,7 +2326,6 @@ body#dashboards_show .b-catalog_entry.b-catalog_entry {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1199px) {
-    .x1000 .l-page,
     .x1200 .l-page {
         margin-top: 0;
     }
@@ -3095,7 +3077,7 @@ html input[type="checkbox"]:not(#u):focus-visible {
     padding: 9px 17px;
     font-size: 11px;
     box-shadow: 0 0 5px color-mix(in srgb, var(--glass-shadow) 10%, transparent);
-    transition: 0.1s ease, -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: 0.1s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     color: rgba(var(--text-strong), 1);
     border-radius: 19px;
 }
@@ -3243,7 +3225,7 @@ header.head a.misc {
     padding: 5px 50px;
     border-radius: var(--plate-radius-lg);
     color: rgba(var(--text), 1);
-    transition: 0.2s ease-out, -webkit-0 .2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: 0.2s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     margin: 8px;
     pointer-events: auto;
@@ -3281,7 +3263,7 @@ header.head a.misc {
     border-radius: var(--heading-radius);
     box-shadow: var(--plate-shadow);
     background: var(--plate-bg-strong);
-    transition: var(--ease-base), -webkit-0 var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-base), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
     font-size: 14px;
     color: var(--heading-text);
     height: var(--heading-height);
@@ -3327,7 +3309,7 @@ header.head a.misc {
     height: 8px;
     border-radius: 50%;
     font-size: 0;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -4828,7 +4810,7 @@ header.head .notice {
     font-family: var(--font-family);
     color: rgba(var(--text), 1) !important;
     border-radius: var(--plate-radius) !important;
-    transition: 0.3s ease-out, -webkit-0 .3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
+    transition: 0.3s ease-out, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s,
     min-height 0s;
     border: none!important;
     box-shadow: var(--plate-shadow-soft);
@@ -4862,11 +4844,11 @@ header.head .notice {
     border: 2px dashed color-mix(in srgb, var(--tone-a5aae6) 20%, transparent);
     border-radius: 6px;
     padding: 0 6px;
-    transition: var(--ease-fast), -webkit-0 var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: var(--ease-fast), width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 .b-spoiler {
-    transition: 0.5s ease, -webkit-0 .5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
+    transition: 0.5s ease, width 0s, margin 0s, padding 0s, font-size 0s, height 0s, top 0s, left 0s, line-height 0s, min-height 0s;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -5879,4 +5861,34 @@ textarea#user_rate_text {
 ::-webkit-input-placeholder {
     color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
     transition: 0.5s ease-out;
+}
+
+::-moz-placeholder {
+    color: color-mix(in srgb, var(--text-input) calc(var(--hundred) * 100%), transparent) !important;
+    transition: 0.5s ease-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+.ac_results .animes .name-ru:hover {
+    color: rgba(var(--accent), var(--hundred)) !important;
+}
+
+.select select {
+    color: rgba(var(--text-strong), var(--hundred)) !important;
+}
+
+.bulma .select:not(.is-multiple):not(.is-loading):after {
+    border-color: rgba(var(--text), var(--hundred)) !important;
+}
+
+.bulma label.label {
+    color: var(--tone-9fa9b5) !important;
+    font: bold 13px var(--font-family) !important;
 }
