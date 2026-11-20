@@ -1,6 +1,18 @@
 /* shiki glass v1.7.9 — тема и обновления: https://github.com/Hikisey/shikimori-theme */
 html:root { --sg-p4: ""; }
 
+.b-catalog_entry.on_hold .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, #c5833d 0);
+}
+
+.b-catalog_entry.planned .image-decor:before {
+    background: linear-gradient(135deg, transparent 31px, var(--tone-fdfdfd) 0);
+}
+
+.b-form .variants .variant a {
+    font-weight: bold;
+}
+
 .b-animes-menu .menu-topics-block .entry:hover .name {
     color: rgba(var(--accent), 1);
     text-decoration: none;
